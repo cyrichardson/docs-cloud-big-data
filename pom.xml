@@ -32,6 +32,7 @@
           <showXslMessages>true</showXslMessages>
 	  <feedbackEmail>david.hendler@rackspace.com</feedbackEmail>
 	  <highlightSource>false</highlightSource>
+	  <publicationNotificationEmails>david.hendler@rackspace.com</publicationNotificationEmails>
         </configuration>
       </plugin>
     </plugins>
