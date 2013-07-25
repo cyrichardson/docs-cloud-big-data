@@ -42,8 +42,8 @@ format="SVG" scale="60"/>
     <?rax title.font.size="30px" 
       pdf.url="../../cbd-devguide-latest.pdf" 
       status.bar.text.font.size="40px"
-      status.bar.text="Preview" 
-      scanonical.url.base="http://docs.rackspace.com/servers/api/v2/cbd-devguide/content"?>
+      status.bar.text="Early Access" 
+      canonical.url.base="http://docs.rackspace.com/servers/api/v2/cbd-devguide/content"?>
   <titleabbrev>&PRODNAME; Developer Guide</titleabbrev> 
   <info>
     <author>
@@ -59,7 +59,7 @@ format="SVG" scale="60"/>
       <year>2012</year>
       <year>2013</year>
     </copyright>
-    <releaseinfo>API v1.0 Preview</releaseinfo>
+    <releaseinfo>API v1.0 Early Access</releaseinfo>
     <productname>&PRODNAME;</productname>
     <pubdate/>
     <legalnotice role="rs-api">
@@ -80,11 +80,21 @@ format="SVG" scale="60"/>
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
       <revision>
+        <date>2013-08-15</date>
+        <revdescription>
+          <itemizedlist>
+            <listitem>
+              <para>Initial Early Access release.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
+      <revision>
         <date>2013-02-07</date>
         <revdescription>
           <itemizedlist spacing="compact">
             <listitem>
-              <para>Initial Preview release.</para>
+              <para>Initial Preview release. </para>
             </listitem>
           </itemizedlist>
         </revdescription>
@@ -100,49 +110,59 @@ format="SVG" scale="60"/>
       associated with deploying, managing, and scaling Hadoop
       clusters, allowing you to focus on your core business.
     </para>
-    <para>
-      There are two primary use cases for &PRODNAME;: (1) To create
-      on-demand infrastructure for applications in production where physical
-      servers would be too costly and time-consuming to configure and maintain
-      and (2) To develop, test, and pilot data analysis applications.
-    </para>
-    <para>
-      Among the benefits of &PRODNAME;, it allows you to:
-      <itemizedlist>      
+    <para>There are two primary use cases for &PRODNAME;:  </para>
+    <itemizedlist>
       <listitem>
-        <para>Create or resize Hadoop clusters in minutes and pay only for what you use.</para>
+        <para>To create on-demand infrastructure for applications in
+          production where physical servers would be too costly and
+          time-consuming to configure and maintain.</para>
       </listitem>
+      <listitem>
+        <para>To develop, test, and pilot data analysis
+          applications.</para>
+      </listitem>
+    </itemizedlist>
+    <para> The benefits of &PRODNAME; include allowing you to: <itemizedlist>
         <listitem>
-          <para>Access Hortonworks Data Platform (HDP), an enterprise-ready distribution that is
-          100% Apache open source.</para>
-        </listitem>
-        <listitem>          
-          <para>Provision and manage Hadoop using an easy-to-use Control Panel and a RESTful API.</para>
-        </listitem>
-        <listitem>          
-          <para>Seamlessly access data in Cloud Files containers.</para>
-        </listitem>
-        <listitem>
-          <para>Gain interoperability with any third party software tool that supports HDP.</para>
+          <para>Create or resize Hadoop clusters in minutes and pay
+            only for what you use.</para>
         </listitem>
         <listitem>
-          <para>Fanatical Support® on a 24x7x365 basis via chat, phone or ticket.</para>
+          <para>Access Hortonworks Data Platform (HDP), an
+            enterprise-ready distribution that is 100% Apache open
+            source.</para>
+        </listitem>
+        <listitem>
+          <para>Provision and manage Hadoop using an easy-to-use
+            Control Panel and a RESTful API.</para>
+        </listitem>
+        <listitem>
+          <para>Seamlessly access data in Cloud Files
+            containers.</para>
+        </listitem>
+        <listitem>
+          <para>Gain interoperability with any third party software
+            tool that supports HDP.</para>
+        </listitem>
+        <listitem>
+          <para>Fanatical Support® on a 24x7x365 basis via chat, phone
+            or ticket.</para>
         </listitem>
       </itemizedlist>
     </para>
     <para>Interactions with &PRODABBV; occur programmatically via the
       API, as described in this developer guide.
     </para>
-    <para>The Preview program enables customers and Rackers by invitation to test
+    <para>The Early Access program enables customers and Rackers by invitation to test
       an early version of the product and provide feedback of the
-      product and capabilities. The &PRODABBV; Preview Program is a
+      product and capabilities. The &PRODABBV; Early Access Program is a
       pre-production service offering covered by the Beta Services
       terms (<link
         xlink:href="http://www.rackspace.com/information/legal/testterms/">
         rackspace.com/information/legal/testterms/</link>) in
         our Rackspace Cloud Terms of Service.</para>
     <para>
-      Preview users must meet the following criteria:
+      Early Access users must meet the following criteria:
       <itemizedlist spacing="compact">
         <listitem>
           <para>
@@ -165,7 +185,7 @@ format="SVG" scale="60"/>
     </para>
 
 <para>
-  The following is supported during the Preview Program:
+  The following is supported during the Early Access Program:
   <itemizedlist spacing="compact">
     <listitem>
       <para>
@@ -180,7 +200,7 @@ format="SVG" scale="60"/>
 </para>
 
 
-    <para>The Preview Program has some limitations. By using the &PRODNAME; 
+    <para>The Early Access Program has some limitations. By using the &PRODNAME; 
       API, you agree and understand that:<itemizedlist spacing="compact">
         <listitem>
           <para>&PRODABBV; includes a Swift integration feature wherein Hadoop, 
@@ -189,7 +209,7 @@ format="SVG" scale="60"/>
             containers in DFW.</para>
         </listitem>
         <listitem>
-          <para>There is no charge for this service during the Preview
+          <para>There is no charge for this service during the Early Access
             period.</para>
         </listitem>
         <listitem>
@@ -197,7 +217,7 @@ format="SVG" scale="60"/>
             this service becomes generally available.</para>
         </listitem>
         <listitem>
-          <para>If you participate in this Preview Program, you will
+          <para>If you participate in this Early Access Program, you will
             receive a notification prior to general availability.
           </para>
         </listitem>
@@ -210,7 +230,7 @@ format="SVG" scale="60"/>
         </listitem>
       </itemizedlist>
     </para>
-    <para>There are some resource limits during the Preview Program:
+    <para>There are some resource limits during the Early Access Program:
       <itemizedlist spacing="compact">
         <listitem>
           <para>
@@ -284,7 +304,7 @@ format="SVG" scale="60"/>
     <section xml:id="API_Contract_Changes-d1e363">
       <title>API Contract Changes</title>
       <para>The API contract is not locked and may change during the
-        Preview Program.</para>
+        Early Access Program.</para>
       <para>Rackspace will notify customers in Release Notes when and
         if the contract does change.</para>
     </section>
