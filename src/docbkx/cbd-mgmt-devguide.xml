@@ -109,10 +109,12 @@
             service on the Rackspace open cloud. It alleviates the
             pain associated with deploying, managing and scaling
             Hadoop clusters, allowing you to focus on your core
-            business. Interactions with Cloud Big Data occur
-            programmatically via the Cloud Big Data API as described
-            in this <citetitle>Cloud Big Data Developer Guide for
-                Service Management</citetitle>.</para>
+            business. </para>
+        <para>Interactions with Cloud Big Data occur programmatically
+            via the Cloud Big Data API as described in this
+                <citetitle>Cloud Big Data Developer Guide for Service
+                Management</citetitle> and in the <citetitle>Cloud Big Data
+            Developer Guide</citetitle>.</para>
         <para>Rackspace Cloud Big Data is just as flexible and
             feature-rich as running Hadoop on your own. You will
             benefit from on-demand servers, utility-based pricing, and
@@ -127,7 +129,7 @@
         <remark>Reviewers: If you have an architecture diagram for
             Cloud Big Data that you want included here, please send it
             to me.</remark>
-        <para>The following figure shows an overview of Cloud Big
+        <para security="reviewers">The following figure shows an overview of Cloud Big
             Data: <!--<informalfigure>
                 <mediaobject>
                     <imageobject>
@@ -202,9 +204,11 @@
                             Data Developer Guide</citetitle>.</para>
                 </listitem>
             </itemizedlist>
-            <para>To use the information provided here, you should
-                first have a general understanding of the Cloud Big
-                Data service. You should also be familiar with: </para>
+            <para xmlns:wadl="http://wadl.dev.java.net/2009/02"> These
+                guides are intended to assist software developers who
+                want to develop applications using the &PRODNAME; API.
+                It assumes the reader has a general understanding of
+                Big Data concepts and is familiar with: </para>
             <itemizedlist spacing="compact">
                 <listitem>
                     <para>Hadoop, HDFS, and MapReduce</para>
@@ -388,68 +392,36 @@
     <chapter xml:id="Concepts-d1e563">
         <title>Concepts</title>
         <?dbhtml stop-chunking?>
-        <para> To use the Cloud Databases API effectively, you should
-            understand several key concepts: </para>
-        <remark>Reviewer: Daniel Morris is asking Daniel Salinas to
-            do an initial write-up of this chapter.</remark>
-        <section xml:id="DatabaseInstance-d1e588">
-            <title>Database Instance</title>
-            <para>A database instance is an isolated MySQL instance in
-                a single tenant environment on a shared physical host
-                machine.</para>
-            <remark security="writeronly">Writer: once we support
-                MSSQL, we need to describe here what is used for MSSQL
-                in place of database instance.</remark>
-        </section>
-        <section xml:id="Database">
-            <title>Database</title>
-            <para>A MySQL database within a database instance.</para>
-            <remark security="writeronly">Writer: once we support
-                MSSQL, we need to modify the wording here, such as:
-                The actual database, whether it is in MySQL or
-                MSSQL.</remark>
-        </section>
-        <section xml:id="Flavor">
-            <title>Flavor</title>
-            <para>A flavor is an available hardware configuration for
-                a database instance. Each flavor has a unique
-                combination of memory capacity and priority for CPU
-                time.</para>
-        </section>
-        <section xml:id="Volume">
-            <title>Volume</title>
-            <para>A volume is user-specified storage that contains the
-                MySQL data directory. Volumes are automatically
-                provisioned on dedicated Internet Small Computer
-                System Interface (iSCSI) storage area networks (SAN)
-                that provide for increased performance, scalability,
-                availability and manageability. Applications with high
-                I/O demands are performance optimized and data is
-                protected through both local and network RAID-10.
-                Additionally, network RAID provides synchronous
-                replication of volumes with automatic failover and
-                load balancing across available storage
-                clusters.</para>
-        </section>
+        <para> To use the Cloud Big Data API effectively, you should
+            understand the terminology found in the Glossary at the
+            end of the book.</para>
     </chapter>
     <chapter xml:id="General_API_Information-d1e633">
         <title>General API Information</title>
-        <para> The Cloud Databases Management API is implemented using
-            a ReSTful web service interface. Most functions of the
-            customer-facing Cloud Databases API may be accessed on
-            behalf of a customer. The Cloud Databases Management API
-            also extends this functionality to include operations for
-            managing features of the public API<remark>as well as
-                additional data fields not available to
-                customers</remark>.</para>
+        <para> The  &PRODNAME;  API is implemented using a ReSTful web
+            service interface. Most functions of the customer-facing
+            &PRODNAME; API may be accessed on behalf of a customer.
+            The &PRODNAME; Management API also extends this
+            functionality to include operations for managing features
+            of the public API<remark>as well as additional data fields
+                not available to customers</remark>.</para>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02"> Like
+            other products in the Rackspace Cloud suite, &PRODNAME;
+            shares a common token-based authentication system that
+            allows seamless access between products and services. </para>
+        <note xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <para> All requests to authenticate against and operate
+                the service are performed using SSL over HTTP (HTTPS)
+                on TCP port 443. </para>
+        </note>
         <section xml:id="Authentication-d1e647">
             <title>Authentication</title>
-            <para>Every ReST request against the Cloud Databases
-                Management API requires that the caller be
-                authenticated with HTTP Basic Auth.</para>
+            <para>Every ReST request against the&PRODNAME; API
+                requires that the caller be authenticated with HTTP
+                Basic Auth.</para>
             <note>
-                <para>If you cannot access the Cloud Databases
-                    Management API, please email the Cloud DB team at
+                <para>If you cannot access the &PRODNAME; Management
+                    API, please email the &PRODNAME; team at
                         <email>clouddb_all@rackspace.com</email> to
                     request access. Access will be granted on an
                     as-needed basis until access to the Management API
