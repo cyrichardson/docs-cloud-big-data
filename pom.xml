@@ -15,15 +15,16 @@
         <version>1.8.0</version>
         <executions>
           <execution>
-            <id>cbd-devguide</id>
             <goals>
-	      <goal>generate-webhelp</goal>
+	             <goal>generate-webhelp</goal>
             </goals>
             <phase>generate-sources</phase>
             <configuration>
               <security>internal</security>      
               <includes>
-		cbd-devguide.xml
+<!--		cbd-devguide.xml, -->
+		cbd-mgmt-devguide.xml <!--,
+		cbd-getting-started.xml -->
               </includes>
             </configuration>
           </execution>

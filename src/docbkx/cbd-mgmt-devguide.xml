@@ -44,7 +44,7 @@
     <?rax title.font.size="30px" subtitle.font.size="20px"?>
     <title>Rackspace Cloud Big Data Developer Guide for Service
         Management</title>
-    <?rax status.bar.text="RAX INTERNAL"?>
+    <?rax status.bar.text="EARLY ACCESS"?>
     <titleabbrev>Rackspace Cloud Big Data Management Developer
         Guide</titleabbrev>
     <info>
@@ -416,31 +416,157 @@
         </note>
         <section xml:id="Authentication-d1e647">
             <title>Authentication</title>
-            <para>Every ReST request against the&PRODNAME; API
-                requires that the caller be authenticated with HTTP
-                Basic Auth.</para>
+            <para xmlns:wadl="http://wadl.dev.java.net/2009/02"> Every
+                ReST request against the &PRODNAME; Service requires
+                the inclusion of a specific authorization token,
+                supplied by the <code>X-Auth-Token</code> HTTP header.
+                Customers obtain this token by first using the
+                Rackspace Cloud Authentication Service and supplying a
+                valid username and API access key. </para>
+            <para xmlns:wadl="http://wadl.dev.java.net/2009/02"> To
+                authenticate, submit a <code>POST/v2.0/tokens</code>
+                request, presenting valid Rackspace customer
+                credentials in the message body to a Rackspace
+                authentication endpoint. </para>
             <note>
                 <para>If you cannot access the &PRODNAME; Management
                     API, please email the &PRODNAME; team at
-                        <email>clouddb_all@rackspace.com</email> to
+                        <email>cbdteam@rackspace.com</email> to
                     request access. Access will be granted on an
                     as-needed basis until access to the Management API
                     is integrated with Global Auth.</para>
             </note>
+            <para>
+                <emphasis role="bold">GET YOUR CREDENTIALS</emphasis>
+            </para>
+            <para> You can use either of two sets of credentials: <itemizedlist>
+                <listitem>
+                    <para>your <code>username</code> and
+                        <code>password</code></para>
+                </listitem>
+                <listitem>
+                    <para>your <code>username</code> and <code>API
+                        key</code></para>
+                </listitem>
+            </itemizedlist>
+            </para>
+            <para>
+                Your <code>username</code> and
+                <code>password</code> are the ones you use to login to the 
+                Rackspace control panel. Once you are logged in, you can use 
+                the Rackspace control panel to obtain your <code>API key</code>.
+            </para>
+            <para>
+                Use the control panel for the region in which your account is based: 
+                <itemizedlist spacing="compact">
+                    <listitem>
+                        <para>
+                            US-based accounts use the control panel at <link xlink:href="https://manage.rackspacecloud.com/">https://manage.rackspacecloud.com/</link>.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para> UK-based accounts use the control panel at
+                            <link xlink:href="https://lon.manage.rackspacecloud.com/">
+                                https://lon.manage.rackspacecloud.com/</link>. 
+                        </para>
+                    </listitem>
+                </itemizedlist> 
+            </para>
+            <para>
+                <emphasis role="bold">CHOOSE YOUR AUTHENTICATION </emphasis>
+            </para>
+            <para>
+                Use the authentication endpoint for the region in which your account is based:
+                <itemizedlist>
+                    <listitem>
+                        <para>All accounts authenticate through
+                            <link xlink:href="https://identity.api.rackspacecloud.com/v2.0/tokens">
+                                identity.api.rackspacecloud.com/v2.0/tokens</link>.</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <emphasis role="bold">SEND YOUR CREDENTIALS TO YOUR AUTHENTICATION
+                    ENDPOINT</emphasis>
+            </para>
+            <para> If you know your credentials and your authentication
+                endpoint, and you can issue a <code>POST
+                    /v2.0/tokens</code> request in an API call, you have
+                all the basic information you need to use the Rackspace
+                Cloud Identity Service. 
+            </para>
+            <para> You can use <link xlink:href="http://curl.haxx.se/"
+                >cURL</link> to try the authentication process in two
+                steps: get a token; send the token to a service.<orderedlist>
+                    <listitem>
+                        <para>Get an authentication token by providing
+                            your username and either your API key or your
+                            password. Here are examples of both
+                            approaches:</para>
+                        <para><emphasis>You can request a token by
+                            providing your username and your API
+                            key.</emphasis></para>
+                        <para>
+                            <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d 
+'{ "auth":{ "RAX-KSKEY:apiKeyCredentials":{ "username":"theUserName", "apiKey":"00a00000a000a0000000a000a00aaa0a" } } }' -H "Content-type: application/json"</literallayout>
+                        </para>
+                        <para><emphasis>You can request a token by
+                            providing your username and your
+                            password.</emphasis></para>
+                        <para>
+                            <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d
+'{"auth":{"passwordCredentials":{"username":"theUserName","password":"thePassword"}}}' -H "Content-type: application/json"</literallayout>
+                        </para>
+                        <para> Successful authentication returns a token
+                            which you can use as evidence that your
+                            identity has already been authenticated. To
+                            use the token, pass it to other services as an
+                            <code>X-Auth-Token</code> header. </para>
+                        <para> Authentication also returns a service
+                            catalog, listing the endpoints you can use for
+                            Cloud services. </para>
+                    </listitem>
+                    <listitem>
+                        <para>Use the authentication token to send a GET
+                            to a service you would like to use. Here is an
+                            example of passing an authentication token to
+                            the Cloud Files service, using the Cloud Files
+                            service catalog endpoint that was returned
+                            along with the token.</para>
+                        <para><emphasis>You can use a token and a service endpoint to tell a service 
+                            that your credentials are valid.</emphasis></para>
+                    </listitem>
+                </orderedlist>
+            </para>
+            
+            
+            <para>Authentication tokens are typically valid for 24 hours.
+                Applications should be designed to re-authenticate after
+                receiving a 401 (Unauthorized) response from a service
+                endpoint. </para>
+            <important>
+                <para>If you are programmatically parsing an authentication
+                    response, please be aware that service names are stable
+                    for the life of the particular service and can be used as
+                    keys. You should also be aware that a user's service
+                    catalog can include multiple uniquely-named services which
+                    perform similar functions. In Auth 2.0,
+                    the service type attribute can be used as a key by which
+                    to recognize similar services; see the tip below.
+                </para>
+            </important>    
         </section>
         <section xml:id="Service_Access_Endpoints-d1e753">
             <title>Service Access</title>
-            <para>The Database Service is a regionalized service. The
-                user of the service is therefore responsible for
+            <para>The &PRODNAME; Service is a regionalized service.
+                The user of the service is therefore responsible for
                 appropriate replication, caching, and overall
-                maintenance of Cloud Databases data across regional
-                boundaries to other Cloud Databases servers.</para>
+                maintenance of &PRODNAME; data across regional
+                boundaries to other Cloud Servers.</para>
             <?rax-fo keep-with-next?>
-            <para>Replace the sample account ID number,
-                    <parameter>1234</parameter>, as shown in the URLs
-                in this guide, with your actual account number
-                returned as part of the authentication service
-                response.</para>
+            <para>Replace the account ID number with your actual
+                account number returned as part of the authentication
+                service response.</para>
             <para>You will find the actual account number after the
                 final '/' in the <code>publicURL</code> field returned
                 by the authentication response. In the following
@@ -451,27 +577,20 @@
         </section>
         <section xml:id="Request_Response_Types-d1e503">
             <title>Request/Response Types</title>
-            <para> The Cloud Databases API supports both the JSON and
-                XML data serialization formats. The request format is
-                specified using the <code>Content-Type</code> header
-                and is <emphasis>required</emphasis> for calls that
-                have a request body. The response format can be
-                specified in requests either by using the
-                    <code>Accept</code> header or by adding an
-                    <code>.xml</code> or <code>.json</code> extension
-                to the request URI. Note that it is possible for a
-                response to be serialized using a format different
-                from the request. If no response format is specified,
-                JSON is the default. If conflicting formats are
-                specified using both an <code>Accept</code> header and
-                a query extension, the query extension takes
-                precedence.</para>
-            <para security="writeronly">Some operations support an Atom representation that
-                can be used to efficiently determine when the state of
-                services has changed. </para>
-            <remark>Reviewer: the previous sentence will be hidden
-                for the Private Beta, since it does not appear that
-                Atom will be supported yet. Correct?</remark>
+            <para> The &PRODNAME; API supports  JSON  data
+                serialization formats. The request format is specified
+                using the <code>Content-Type</code> header and is
+                    <emphasis>required</emphasis> for calls that have
+                a request body. The response format can be specified
+                in requests either by using the <code>Accept</code>
+                header or by adding a <code>.json</code> extension to
+                the request URI.</para>
+            <para>Note that it is possible for a response to be
+                serialized using a format different from the request.
+                If no response format is specified, JSON is the
+                default. If conflicting formats are specified using
+                both an Accept header and a query extension, the query
+                extension takes precedence.</para>
             <table rules="all">
                 <caption>Response Formats</caption>
                 <?dbfo keep-together="always"?>
@@ -496,37 +615,116 @@
                         <td>.xml</td>
                         <td>No</td>
                     </tr>
-                    <tr security="writeronly">
-                        <td>ATOM</td>
-                        <td>application/atom+xml</td>
-                        <td>.atom</td>
-                        <td>No</td>
-                    </tr>
                 </tbody>
             </table>
-            <remark>Reviewer: the ATOM row in the table above will be
-                hidden for the Private Beta, since it does not appear
-                that Atom will be supported yet. Correct?</remark>
-            <para>In the request example below, notice that
-                    <parameter>Content-Type</parameter> is set to
-                    <parameter>application/json</parameter>, but
+            <para><remark>Reviewer: Is this correct for Cloud Big
+                    Data? If so, please provide appropirate examples
+                    for the Request with Headers: JSON and Response
+                    with Headers: XML.</remark>In the request example
+                below, notice that <parameter>Content-Type</parameter>
+                is set to <parameter>application/json</parameter>, but
                     <parameter>application/xml</parameter> is
                 requested via the <parameter>Accept</parameter>
                 header:</para>
             <example xml:id="request_with_headers_json">
                 <title>Request with Headers: JSON</title>
                 <?dbfo keep-together="always"?>
-                <programlisting language="json"><xi:include href="samples/db-request-types.json" parse="text"><xi:fallback>Missing code sample!<?rax fail?></xi:fallback></xi:include></programlisting>
+                <programlisting language="json">POST /v1.0/1234/instances HTTP/1.1
+Host: ord.databases.api.rackspacecloud.com
+Content-Type: application/json
+Accept: application/xml
+X-Auth-Token: eaaafd18-0fed-4b3a-81b4-663c99ec1cbb
+{
+"instance": {
+"name": "'my_instance_name'",
+"flavorRef": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/1",
+"volume": {
+"size": "2"
+}
+}
+}</programlisting>
             </example>
             <para><?rax-fo keep-with-next?>Therefore an XML response format is returned:</para>
             <example>
                 <title>Response with Headers: XML</title>
                 <?dbfo keep-together="always"?>
-                <programlisting language="xml"><xi:include href="samples/db-response-types.xml" parse="text"><xi:fallback>Missing code sample!<?rax fail?></xi:fallback></xi:include></programlisting>
+                <programlisting language="xml">HTTP/1.1 200 OK
+Content-Type: application/xml
+Content-Length: 380
+Date: Thu, 17 Nov 2011 02:37:37 GMT
+&lt;instance created="2011-11-03T15:57:52Z"
+hostname="d735f61b985bb003a61dc72948dbf4e7174da12c.rackspaceclouddb.com"
+id="00ff11ee-22dd-33cc-44bb-55aa66007799" name="orion" status="BUILD" updated="2011-11-03T15:57:55Z"
+xmlns="http://docs.openstack.org/database/api/v1.0">
+&lt;links>
+&lt;link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/00ff11ee-22dd-33cc-44bb-55aa66007799" rel="self"/>
+&lt;link href="https://ord.databases.api.rackspacecloud.com/instances/00ff11ee-22dd-33cc-44bb-55aa66007799" rel="bookmark"
+/>
+&lt;/links>
+&lt;volume size="2"/>
+&lt;flavor id="2">
+&lt;links>
+&lt;link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/2"
+rel="self"/>
+&lt;link href="https://ord.databases.api.rackspacecloud.com/flavors/2"
+rel="bookmark"/>
+&lt;/links>
+&lt;/flavor>
+&lt;/instance></programlisting>
             </example>
         </section>
+        <section xml:id="volume_status"
+            xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <title>Faults</title>
+            <para>When an error occurs, the &PRODNAME; Service returns
+                a fault object containing an HTTP error response code
+                that denotes the type of error. In the body of the
+                response, the system will return additional
+                information about the fault.</para>
+            <para>The following table lists possible fault types with
+                their associated error codes and descriptions.</para>
+            <informaltable rules="all">
+                <thead>
+                    <tr align="center">
+                        <td colspan="2">Fault Type</td>
+                        <td colspan="1">Associated Error Code</td>
+                        <td colspan="3">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2"><code>unauthorized</code></td>
+                        <td colspan="1">401</td>
+                        <td colspan="3">The supplied token is not
+                            authorized to access the resources, either
+                            it's expired or invalid.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><code>forbidden</code></td>
+                        <td colspan="1">403</td>
+                        <td colspan="3">Access to the requested
+                            resource was denied.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><code>itemNotFound</code></td>
+                        <td colspan="1">404</td>
+                        <td colspan="3">The back-end services did not
+                            find anything matching the
+                            Request-URI.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><code>lavaFault (not yet
+                                implemented)</code></td>
+                        <td colspan="1">500</td>
+                        <td colspan="3">An unknown exception
+                            occurred.</td>
+                    </tr>
+                </tbody>
+            </informaltable>
+        </section>
         <section xml:id="sync_asynch_responses" security="writeronly">
-            <title>Synchronous and Asynchronous Responses</title>
+            <title>FROM DATABASES - Synchronous and Asynchronous
+                Responses</title>
             <remark>Reviewer: please give me the updated info for this
                 section. Need to replace info about callback URL,
                 etc.</remark>
@@ -617,7 +815,7 @@
                 the POST /xxxx call.</para>
         </section>
         <section xml:id="Content_Compression-d1e1120" security="writeronly">
-            <title>Content Compression</title>
+            <title>FROM DATABASES - Content Compression</title>
             <para> Request and response body data may be encoded with gzip compression to accelerate
                 interactive performance of API calls and responses. This is controlled using the
                     <code>Accept-Encoding</code> header on the request from the client and indicated
@@ -648,7 +846,7 @@
             </table>
         </section>
         <section xml:id="Persistent_Connections-d1e1187" security="writeronly">
-            <title>Persistent Connections</title>
+            <title>FROM DATABASES - Persistent Connections</title>
             <para>
                 By default, the API supports persistent connections
                 via HTTP/1.1 keepalives. All connections will be kept
@@ -666,8 +864,13 @@
             </note>
         </section>
         <?hard-pagebreak?>
-        <section xml:id="Limits-d1e1208">
+        <section xml:id="Limits-d1e1208" security="reviewer">
             <title>Limits</title>
+            <remark>Reviewer: Please provide information for this
+                section or let me know that it is not needed for the
+                Admin Guide. The info currently here is from Cloud
+                Databases as Rhett Dillingham had asked that this
+                guide for Cloud Big Data be modeled after that Guide. </remark>
             <para>
                 All accounts, by default, have a preconfigured set of
                 thresholds (or limits) to manage capacity and prevent
@@ -782,21 +985,24 @@
         </section>
         <section xml:id="datetimeformat">
             <title>Date/Time Format</title>
-            <para> The Database Service uses an ISO-8601 compliant
+            <para> The &PRODNAME; Service uses an ISO-8601 compliant
                 date format for the display and consumption of
                 date/time values. </para>
+            <remark>Reviewer:  Do I need to keep the following
+                paragraph for &PRODNAME;? It is from Cloud
+                Databases.</remark>
             <para>The system timezone is in UTC. MySQL converts
                 TIMESTAMP values from the current time zone to UTC for
                 storage, and back from UTC to the current time zone
                 for retrieval. This does not occur for other types,
                 such as DATETIME. </para>
                 <example>
-                    <title>DB Service Date/Time Format</title>
+                    <title>&PRODNAME; Service Date/Time Format</title>
                     <programlisting>yyyy-MM-dd'T'HH:mm:ss.SSSZ</programlisting>
                 <para>See the table below for a description of the date/time format codes.</para>
-                    <para>May 19th, 2011 at 8:07:08 AM, GMT-5 would have the following
-                    format:</para>
-                    <programlisting>2011-05-19T08:07:08-05:00</programlisting>
+                    <para>May 19th, 2013 at 8:07:08 AM, GMT-5 would
+                    have the following format:</para>
+                    <programlisting>2013-05-19T08:07:08-05:00</programlisting>
                 </example>
             <table rules="all">
                 <caption>Explanation of Date/Time Format Codes</caption>
@@ -848,7 +1054,7 @@
             
         </section>
         <section xml:id="pagination" security="writeronly">
-            <title>Pagination</title>
+            <title>FROM DATABASES - Pagination</title>
             <remark>Reviewer: please review and give me your updates
                 for this section. Dev needs to determine which API
                 calls support pagination and then supply examples. I
@@ -1016,190 +1222,8 @@
                     </itemizedlist></para>
             </section>
         </section>
-        <section xml:id="efficient_polling_changes_since_parm" security="writeronly">
-            <title>Efficient Polling with the
-                    <parameter>Changes-Since</parameter>
-                Parameter</title>
-            <remark>Reviewer: I have hidden this section, since it
-                does not appear that it will be supported for Private
-                Beta. Correct?</remark>
-            <para> The ReST API allows you to poll for the status of
-                certain operations by performing a &GET; on various
-                URIs. Rather than re-downloading and re-parsing the
-                full status at each polling interval, your ReST client
-                may use the <parameter>changes-since</parameter>
-                parameter to check for changes since a previous
-                request. The <parameter>changes-since</parameter> time
-                is specified as <link
-                    xlink:href="http://en.wikipedia.org/wiki/Unix_time"
-                    >Unix time</link> (the number of seconds since
-                January 1, 1970, 00:00:00 UTC, not counting leap
-                seconds). If nothing has changed since the
-                    <parameter>changes-since</parameter> time, a
-                    <returnvalue>304 (Not Modified)</returnvalue>
-                response will be returned. If data has changed, only
-                the items changed since the specified time will be
-                returned in the response. </para>
-            <remark>Reviewer: does the following sentence apply, and
-                should it be included?</remark>
-            <para>For example, performing a &GET; against
-                    https://api.servers.rackspacecloud.com/v1.0/224532/servers?<parameter>changes-since</parameter>=1244012982
-                would list all servers that have changed since Wed, 03
-                Jun 2009 07:09:42 UTC. </para>
-        </section>
-        <section xml:id="DB_faults">
-            <title>Faults</title>
-            <remark>Reviewer: need to update this section as needed
-                for Cloud Databases.</remark>
-            <para> When an error occurs, the Database Service returns
-                a fault object containing an HTTP error response code
-                that denotes the type of error. In the body of the
-                response, the system will return additional
-                information about the fault. </para>
-            <para>The following table lists possible fault types with their associated error codes
-                and descriptions.</para>
-            <informaltable rules="all">
-                <thead>
-                    <tr align="center">
-                        <td colspan="2">Fault Type</td>
-                        <td colspan="1">Associated Error Code</td>
-                        <td colspan="3">Description</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="2"><code>badRequest</code></td>
-                        <td colspan="1">400</td>
-                        <td colspan="3">There was one or more errors in the user request.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><code>unauthorized</code></td>
-                        <td colspan="1">401</td>
-                        <td colspan="3">The supplied token is not authorized to access the resources, either it's expired or invalid.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><code>forbidden</code></td>
-                        <td colspan="1">403</td>
-                        <td colspan="3">Access to the requested
-                            resource was denied.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><code>itemNotFound</code></td>
-                        <td colspan="1">404</td>
-                        <td colspan="3">The back-end services did not
-                            find anything matching the
-                            Request-URI.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><code>badMethod</code></td>
-                        <td colspan="1">405</td>
-                        <td colspan="3">The request method is not allowed for this resource.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><code>overLimit</code></td>
-                        <td colspan="1">413</td>
-                        <td colspan="3">Either the number of entities in the request is larger than
-                            allowed limits, or the user has exceeded allowable request rate limits.
-                            See the <code>details</code> element for more specifics. Contact support
-                            if you think you need higher request rate limits.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><code>badMediaType</code></td>
-                        <td colspan="1">415</td>
-                        <td colspan="3">The requested content type is not supported by this service.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"
-                                ><code>unprocessableEntity</code></td>
-                        <td colspan="1">422</td>
-                        <td colspan="3">The requested resource could
-                            not be processed on at the moment.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"
-                            ><code>instanceFault</code></td>
-                        <td colspan="1">500</td>
-                        <td colspan="3">This is a generic server error and the message contains the reason for the error. This error could wrap several error messages and is a catch all.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"
-                            ><code>notImplemented</code></td>
-                        <td colspan="1">501</td>
-                        <td colspan="3">The requested method or resource is not implemented.</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"
-                                ><code>serviceUnavailable</code></td>
-                        <td colspan="1">503</td>
-                        <td colspan="3">The Database Service is not
-                            available.</td>
-                    </tr>
-                </tbody>
-            </informaltable>
-            <para>The following two <code>instanceFault</code>
-                examples show errors when the server has erred or
-                cannot perform the requested operation:</para>
-            
-            <example>
-                <title>Example instanceFault Response: XML</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="xml">
-<xi:include href="samples/db-faults-instanceFault.xml" parse="text"/>
-                    </programlisting>
-            </example>
-            <example>
-                <title>Example instanceFault Response: JSON</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="json">
-<xi:include href="samples/db-faults-instanceFault.json" parse="text"/>
-                    </programlisting>
-            </example>
-            <para> The error code (<code>code</code>) is returned in the body of the response for
-                convenience. The <code>message</code> element returns a human-readable message that
-                is appropriate for display to the end user. The <code>details</code> element is
-                optional and may contain information that is useful for tracking down an error, such
-                as a stack trace. The <code>details</code> element may or may not be appropriate for
-                display to an end user, depending on the role and experience of the end user.</para>
-            <para>The fault's root element (for example,
-                    <code>instanceFault</code>) may change depending
-                on the type of error. </para>
-            <para><?rax-fo keep-with-next?>The following two <code>badRequest</code> examples
-                show errors when the volume size is invalid:</para>
-            <example>
-                <title>Example badRequest Fault on Volume Size Errors:
-                    XML</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="xml">
-<xi:include href="samples/db-faults-badRequest.xml" parse="text"/>
-                    </programlisting>
-            </example>
-            <example>
-                <title>Example badRequest Fault on Volume Size Errors:
-                    JSON</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="json">
-<xi:include href="samples/db-faults-badRequest.json" parse="text"/>
-                    </programlisting>
-            </example>
-            <para> The next two examples show
-                    <code>itemNotFound</code> errors:</para>
-            <example>
-                <title>Example itemNotFound Fault: XML</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="xml">
-<xi:include href="samples/db-faults-itemNotFound.xml" parse="text"/>
-                    </programlisting>
-            </example>
-            <example>
-                <title>Example itemNotFound Fault: JSON</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="json">
-<xi:include href="samples/db-faults-itemNotFound.json" parse="text"/>
-                    </programlisting>
-            </example>
-        </section>
-        <section xml:id="database_instance_status">
-            <title>Database Instance Status</title>
+        <section xml:id="database_instance_status" security="writeronly" >
+            <title>FROM DATABASES - Database Instance Status</title>
             <para><?rax-fo keep-with-next?>When making an API call to create, list, or delete
                 database instance(s), the following database instance
                 status values are possible:</para>
@@ -1257,136 +1281,56 @@
         xmlns="http://docbook.org/ns/docbook"
         role="api-reference">
         <title>API Operations</title>
-        
-        <section xml:id="Database_Instance_Management">
-            <title>Database Instance Management</title>
-            <para>This section describes the operations that are supported for managing database instances.</para>
-            <wadl:resources
-                xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <wadl:resource href="../../../xsd/management.wadl#instances">
-                    <wadl:method href="getIndex"/>
-                </wadl:resource>
-                <wadl:resource href="../../../xsd/management.wadl#instanceId">
-                    <wadl:method href="showinstances"/>
-                </wadl:resource>
-                <wadl:resource href="../../../xsd/management.wadl#diagnostics">
-                    <wadl:method href="getdiagnosticdetails"/>
-                </wadl:resource>
-                <wadl:resource
-                    href="../../../xsd/management.wadl#rootdetails">
-                    <wadl:method href="getrootdetails"/>
-                </wadl:resource>
-                <wadl:resource
-                    href="../../../xsd/management.wadl#hwInfo">
-                    <wadl:method href="getHwInfo"/>
-                </wadl:resource>
-            </wadl:resources>
-        </section>
-
-        <section xml:id="Host_Information">
-            <title>Host Information</title>
-            <para>This section describes the operations that are supported for getting host information.</para>
-            <wadl:resources
-                    xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <wadl:resource href="../../../xsd/management.wadl#hosts">
-                    <wadl:method href="gethosts"/>
-                </wadl:resource>
-                <wadl:resource href="../../../xsd/management.wadl#hostid">
-                    <wadl:method href="gethostbyid"/>
-                </wadl:resource>
-                <wadl:resource href="../../../xsd/management.wadl#instanceAction-hostId">
-                    <wadl:method href="updateHostInstances"/>
-                </wadl:resource>
-            </wadl:resources>
-        </section>
-
-        <section xml:id="Management_Instances_Actions">
-            <title>Management Instance Actions</title>
-            <para>This section describes the actions that are supported for database instances.</para>
+        <para>This chapter describes each of the &PRODNAME; management
+            operations.</para>            
+        <section xml:id="Limits_Management-001">
+            <title>Limits Management</title>
+            <para>This section describes the operations that are supported for limits.</para>
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <wadl:resource href="../../../xsd/management.wadl#instanceAction" >
-                    <wadl:method href="rebootInstance"/>
-                    <wadl:method href="resetInstanceTaskStatus"/>
-                    <wadl:method href="migrateInstance"/>
-                    
-                </wadl:resource>
-            </wadl:resources>
+                <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#limits"/> 
+                <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#limit"/> 
+            </wadl:resources>  
+        </section>
+
+        <section xml:id="Clusters_Management-001">
+            <title>Clusters Management</title>
+            <para>This section describes the operations that are supported for clusters.</para>
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">          
+                <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#clusters"/>
+                <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#cluster"/> 
+                <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#logs"/> 
+                <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#action"/> 
+                <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#status"/> 
+                <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#nodes"/> 
+                <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#nodeAction"/> 
+            </wadl:resources>   
+        </section>
+
+        <section xml:id="Tenant_Management-001">
+            <title>Tenant Management</title>
+            <para>This section describes the operations that are supported for tenants.</para>
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#tenants"/> 
+                <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#tenant"/> 
+                <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#tenantClusters"/> 
+            </wadl:resources>   
         </section>
         <?hard-pagebreak?>
 
-        <section xml:id="Storage_Management">
-            <title>Storage Management</title>
-            <para>This section describes the operations that are supported for getting information about storage devices.</para>
-            <wadl:resources
-                xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <wadl:resource href="../../../xsd/management.wadl#storage">
-                    <wadl:method href="indexstorage"/>
-                </wadl:resource>
-            </wadl:resources>
+        <section xml:id="Hosts_Management-001">
+            <title>Host Management</title>
+            <para>This section describes the operations that are supported for getting information about hosts.</para>
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">   
+                <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#hosts"/>        
+            </wadl:resources>   
         </section>
         
-        <section xml:id="Account_Information">
-            <title>Account Information</title>
-            <para>This section describes the operations that are
-                supported for accounts.</para>
-            <wadl:resources
-                xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <wadl:resource
-                    href="../../../xsd/management.wadl#accounts">
-                    <wadl:method href="getaccounts"/>
-                </wadl:resource>
-                <wadl:resource href="../../../xsd/management.wadl#accountid">
-                    <wadl:method href="getaccountbyid"/>
-                </wadl:resource>
-            </wadl:resources>
-        </section>
-        <section xml:id="Usage_Information">
-            <title>Usage Information</title>
-            <para>This section describes the operations that are
-                supported for usage.</para>
-            <wadl:resources
-                xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <wadl:resource
-                    href="../../../xsd/management.wadl#usage">
-                    <wadl:method href="getusageall"/>
-                </wadl:resource>
-                <wadl:resource
-                    href="../../../xsd/management.wadl#instanceid">
-                    <wadl:method href="getusagebyinstance"/>
-                </wadl:resource>
-                <wadl:resource
-                    href="../../../xsd/management.wadl#tenantid">
-                    <wadl:method href="getusagebytenant"/>
-                </wadl:resource>
-            </wadl:resources>
-        </section>
-        <section xml:id="Monitoring">
-            <title>Monitoring Information</title>
-            <para>This section describes the operations that are
-                supported for monitoring.</para>
-            <wadl:resources
-                xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <wadl:resource
-                    href="../../../xsd/management.wadl#monitoring">
-                    <wadl:method href="getMonitoringStatus"/>
-                </wadl:resource>
-            </wadl:resources>
-            <section xml:id="Monitoring_Actions">
-                <title>Monitoring Actions</title>
-                <para>This section describes the actions that are
-                    supported for monitoring.</para>
-                <wadl:resources
-                    xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                    <wadl:resource
-                        href="../../../xsd/management.wadl#agentAction">
-                        <wadl:method href="agentInstall"/>
-                        <wadl:method href="agentRemove"/>
-                        <wadl:method href="agentStart"/>
-                        <wadl:method href="agentRestart"/>
-                        <wadl:method href="agentStop"/>
-                    </wadl:resource>
-                </wadl:resources>
-            </section>
+        <section xml:id="Servers_Management-001">
+            <title>Server Management</title>
+            <para>This section describes the operations that are supported for getting information about servers.</para>
+            <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#servers"/>             
+            </wadl:resources>   
         </section>
            
     </chapter>

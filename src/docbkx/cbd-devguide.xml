@@ -557,12 +557,6 @@ format="SVG" scale="60"/>
             <td>.json</td>
             <td>Yes</td>
           </tr>
-          <tr>
-            <td>XML</td>
-            <td>application/xml</td>
-            <td>.xml</td>
-            <td>No</td>
-          </tr>
         </tbody>
       </table>
     </section>
