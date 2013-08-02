@@ -20,9 +20,9 @@
             </goals>
             <phase>generate-sources</phase>
             <configuration>
-              <security>internal</security>      
+              <security>reviewer</security>      
               <includes>
-<!--		cbd-devguide.xml, -->
+    cbd-devguide.xml,
 		cbd-mgmt-devguide.xml <!--,
 		cbd-getting-started.xml -->
               </includes>
