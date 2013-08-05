@@ -1,0 +1,214 @@
+<html xmlns:rax="http://docs.rackspace.com/api">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   </head>
+   <body>
+      <h1>Wadl: cbd-mgmt-devguide.wadl</h1>
+      <p><b>WADL Location: </b>file:/Users/cath6184/Documents/Cloud_Big_Data/cloud-big-data/src/wadl/cbd-mgmt-devguide.wadl
+      </p>
+      <ul>
+         <li><a href="#limits_listLimits">List Limits ({versions}/limits)</a></li>
+         <li><a href="#limits_postLimits">Post Limits ({versions}/limits)</a></li>
+         <li><a href="#limit_getTenantLimits">Get Tenant Limits ({versions}/limits/{tenantId})</a></li>
+         <li><a href="#clusters_getClusters">Get Clusters ({versions}/clusters)</a></li>
+         <li><a href="#cluster_getCluster">Get Specific Cluster ({versions}/clusters/{clusterId})</a></li>
+         <li><a href="#logs_getClusterLogs">Get Cluster Logs ({versions}/clusters/logs)</a></li>
+         <li><a href="#action_postClusterAction">Post Cluster Action ({versions}/clusters/action)</a></li>
+         <li><a href="#status_getClusterStatus">Get Cluster Status ({versions}/clusters/status)</a></li>
+         <li><a href="#nodes_postClusterNodeAction">Post Cluster Node Action ({versions}/clusters/nodes)</a></li>
+         <li><a href="#tenants_getTenants">Get Tenants ({versions}/tenants)</a></li>
+         <li><a href="#tenant_getTenant">Get Specific Tenant ({versions}/tenants/{tenantId})</a></li>
+         <li><a href="#tenantClusters_getTenantClusters">Get Tenant Clusters ({versions}/tenants/{tenantId}/clusters)</a></li>
+         <li><a href="#hosts_getHosts">Get Hosts ({versions}/hosts)</a></li>
+         <li><a href="#servers_getServers">Get Servers ({versions}/servers)</a></li>
+      </ul>
+      <h2>List Limits</h2>
+      <anchor id="limits_listLimits"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {versions}/limits --&gt;
+             &lt;resource href="@@PATH_TO@@/cbd-mgmt-devguide.wadl#limits"&gt;
+               &lt;method href="listLimits"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- List Limits: Returns a list of resource limits for all tenants. This operation returns a list of resource limits for all tenants. --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Post Limits</h2>
+      <anchor id="limits_postLimits"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {versions}/limits --&gt;
+             &lt;resource href="@@PATH_TO@@/cbd-mgmt-devguide.wadl#limits"&gt;
+               &lt;method href="postLimits"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Post Limits: Sets resource limits for a specific tenant. This operation sets resource limits for a specific tenant. --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Get Tenant Limits</h2>
+      <anchor id="limit_getTenantLimits"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {versions}/limits/{tenantId} --&gt;
+             &lt;resource href="@@PATH_TO@@/cbd-mgmt-devguide.wadl#limit"&gt;
+               &lt;method href="getTenantLimits"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Get Tenant Limits: Returns the resource limits for a specific tenant. This operation returns the resource limits for a specific tenant. --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Get Clusters</h2>
+      <anchor id="clusters_getClusters"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {versions}/clusters --&gt;
+             &lt;resource href="@@PATH_TO@@/cbd-mgmt-devguide.wadl#clusters"&gt;
+               &lt;method href="getClusters"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Get Clusters: Lists all clusters for all tenants (paginated). This operation lists all clusters for all tenants (paginated). --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Get Specific Cluster</h2>
+      <anchor id="cluster_getCluster"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {versions}/clusters/{clusterId} --&gt;
+             &lt;resource href="@@PATH_TO@@/cbd-mgmt-devguide.wadl#cluster"&gt;
+               &lt;method href="getCluster"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Get Specific Cluster: Returns details about a specified cluster. This operation returns details about a specified cluster. --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Get Cluster Logs</h2>
+      <anchor id="logs_getClusterLogs"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {versions}/clusters/logs --&gt;
+             &lt;resource href="@@PATH_TO@@/cbd-mgmt-devguide.wadl#logs"&gt;
+               &lt;method href="getClusterLogs"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Get Cluster Logs: Returns the provisioning logs for a cluster. This operation returns the provisioning logs for a cluster. --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Post Cluster Action</h2>
+      <anchor id="action_postClusterAction"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {versions}/clusters/action --&gt;
+             &lt;resource href="@@PATH_TO@@/cbd-mgmt-devguide.wadl#action"&gt;
+               &lt;method href="postClusterAction"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Post Cluster Action: Performs an action, such as set status, on a cluster. This operation performs an action, such as set status, on a cluster. --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Get Cluster Status</h2>
+      <anchor id="status_getClusterStatus"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {versions}/clusters/status --&gt;
+             &lt;resource href="@@PATH_TO@@/cbd-mgmt-devguide.wadl#status"&gt;
+               &lt;method href="getClusterStatus"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Get Cluster Status: Gets a status report on the cluster (in order to make sure all servers are accessible over the network, services are running, check HDFS doe... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Post Cluster Node Action</h2>
+      <anchor id="nodes_postClusterNodeAction"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {versions}/clusters/nodes --&gt;
+             &lt;resource href="@@PATH_TO@@/cbd-mgmt-devguide.wadl#nodes"&gt;
+               &lt;method href="postClusterNodeAction"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Post Cluster Node Action: Performs an action on a node (such as replace, reboot, etc.). This operation performs an action on a node (such as replace, reboot, etc.). --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Get Tenants</h2>
+      <anchor id="tenants_getTenants"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {versions}/tenants --&gt;
+             &lt;resource href="@@PATH_TO@@/cbd-mgmt-devguide.wadl#tenants"&gt;
+               &lt;method href="getTenants"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Get Tenants: Returns a list of tenants with profiles. This operation returns a list of tenants with profiles. --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Get Specific Tenant</h2>
+      <anchor id="tenant_getTenant"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {versions}/tenants/{tenantId} --&gt;
+             &lt;resource href="@@PATH_TO@@/cbd-mgmt-devguide.wadl#tenant"&gt;
+               &lt;method href="getTenant"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Get Specific Tenant: Returns details about a specific tenant. This operation returns details about a specific tenant. --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Get Tenant Clusters</h2>
+      <anchor id="tenantClusters_getTenantClusters"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {versions}/tenants/{tenantId}/clusters --&gt;
+             &lt;resource href="@@PATH_TO@@/cbd-mgmt-devguide.wadl#tenantClusters"&gt;
+               &lt;method href="getTenantClusters"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Get Tenant Clusters: Returns a list of clusters for a tenant. --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Get Hosts</h2>
+      <anchor id="hosts_getHosts"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {versions}/hosts --&gt;
+             &lt;resource href="@@PATH_TO@@/cbd-mgmt-devguide.wadl#hosts"&gt;
+               &lt;method href="getHosts"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Get Hosts: Returns all hosts in the system. --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Get Servers</h2>
+      <anchor id="servers_getServers"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {versions}/servers --&gt;
+             &lt;resource href="@@PATH_TO@@/cbd-mgmt-devguide.wadl#servers"&gt;
+               &lt;method href="getServers"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Get Servers: Returns all servers in the system. --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre></body>
+   <link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css">
+   <link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css"><script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"> </script><script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js" type="text/javascript"> </script><script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js" type="text/javascript"> </script><script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCss.js" type="text/javascript"> </script><script type="text/javascript">
+               SyntaxHighlighter.config.space = ' ';
+               SyntaxHighlighter.defaults['smart-tabs'] = false;
+               SyntaxHighlighter.defaults['auto-links'] = false;
+               SyntaxHighlighter.all()
+  </script></html>

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE book [
 <!-- Some useful entities borrowed from HTML -->
         <!ENTITY ndash "&#x2013;">
@@ -11,6 +10,8 @@
         <!ENTITY PUT '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
         <!ENTITY POST '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
         <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+        <!ENTITY PRODNAME "Cloud Big Data">
+        <!ENTITY PRODABBV "CBD">
         
         <!-- changing authentication endpoints; define entities for US & UK rather than maintaining in text -->
         <!ENTITY ENDPOINT-US "https://identity.api.rackspacecloud.com/v1.1/">
@@ -23,6 +24,20 @@
         <!ENTITY SHOULD '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">SHOULD</emphasis>'>
         <!ENTITY MUST '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST</emphasis>'>
         <!ENTITY MUST_NOT '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST NOT</emphasis>'>
+
+        <!ENTITY CHECK '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+                 <imageobject>
+                  <imagedata fileref="img/Check_mark_23x20_02.svg"
+                             format="SVG" scale="60"/>
+                </imageobject>
+              </inlinemediaobject>'>
+
+        <!ENTITY ARROW '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+                 <imageobject>
+                  <imagedata fileref="img/Arrow_east.svg"
+                             format="SVG" scale="60"/>
+                </imageobject>
+              </inlinemediaobject>'>
 ]>
 
 <book version="5.0"
@@ -34,166 +49,50 @@
          xmlns:html="http://www.w3.org/1999/xhtml"
          xml:id="cdb-getting-started">
     
-    <?rax title.font.size="35px" subtitle.font.size="20px"?>
-    <title>Rackspace Cloud Databases Getting Started Guide</title>
-    <titleabbrev>Rackspace Cloud Databases and Servers Getting Started Guide</titleabbrev>
+    <?rax title.font.size="30px" subtitle.font.size="20px"?>
+    <title>Rackspace Cloud Big Data Getting Started Guide</title>
+    <?rax status.bar.text.font.size="40px"
+          status.bar.text="Early Access"?>   
+    <titleabbrev>Rackspace Cloud Big Data Getting Started
+        Guide</titleabbrev>
      
     <info>
-        
+        <author>
+            <personname>
+                <firstname/>
+                <surname/>
+            </personname>
+            <affiliation>
+                <orgname>Rackspace Cloud</orgname>
+            </affiliation>
+        </author>       
         <copyright>
-            <year>2011</year>
-            <year>2012</year>
             <year>2013</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
-        <releaseinfo>API v1.0</releaseinfo>
-        <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-06-17</pubdate>
+        <releaseinfo>API v1.0 Early Access</releaseinfo>
+        <productname>Rackspace Cloud Big Data</productname>
+        <pubdate>2013-08-15</pubdate>
         <legalnotice role="rs-api">
             <annotation>
-                <remark>Copyright details are filled in by the template.</remark>
+                <remark>Copyright details are filled in by the doc build process.</remark>
             </annotation>
         </legalnotice>
+        <abstract>
+            <para>This document is intended for software developers
+                interested in developing service management
+                applications using the Rackspace &PRODNAME;
+                Application Programming Interface
+                    (<abbrev>API</abbrev>). </para>
+        </abstract>
         <revhistory>
             <revision>
-                <date>2013-06-17</date>
+                <date>2013-08-15</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Updated authentication information.
-                                See <xref
-                                   linkend="Generating_Auth_Token"
-                                />.</para>
-                        </listitem>
-                        <listitem>
-                            <para>Added Sydney (SYD) endpoint. See
-                                   <xref
-                                   linkend="Service_Access_Endpoints-d1e753"
-                                />.</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2013-04-03</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Updated response examples for new
-                                8GB and 16GB flavors in <xref
-                                   linkend="List_Flavors"/>.</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2013-03-28</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Updated response examples for
-                                Flavors API calls in <xref
-                                   linkend="List_Flavors"/>.</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2013-02-21</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Corrected link for reference to
-                                   <link
-                                   xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createDatabase__version___accountId__instances__instanceId__databases_.html"
-                                   >Create Database</link> in <xref
-                                   linkend="Create_DB_Instance"
-                                />.</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2012-11-15</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Fixed broken link (<link
-                                   xlink:href="http://www.rackspace.co.uk"
-                                   >http://www.rackspace.co.uk</link>)
-                                in <xref
-                                   linkend="Generating_Auth_Token"
-                                />.</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2012-10-29</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Updated information for cURL
-                                command-line options (see <xref
-                                   linkend="DB_using-curl-cli"
-                                />).</para>
-                        </listitem>
-                        <listitem>
-                            <para>Updated service catalog info for
-                                auth response examples (refer to <xref
-                                   linkend="Generating_Auth_Token"
-                                />).</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2012-09-04</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Updated auth response examples
-                                (refer to <xref
-                                   linkend="Generating_Auth_Token"
-                                />).</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2012-09-04</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Added information for pricing and
-                                service level (refer to <xref
-                                   linkend="Pricing_SLA-d1e1362"
-                                />).</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2012-08-02</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Corrected request examples for
-                                authentication (refer to <xref
-                                   linkend="Generating_Auth_Token"
-                                />).</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision>
-                <date>2012-08-01</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Initial Unlimited Availability (UA)
-                                release for Rackspace Cloud
-                                Databases.</para>
+                            <para>Initial Early Access (EA)
+                                release.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -201,7 +100,7 @@
         </revhistory>
     <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
       <raxm:displayname>Getting Started Guide</raxm:displayname>
-      <raxm:product version="v1.0">cdb</raxm:product>
+      <raxm:product version="v1.0">cbd</raxm:product>
       <raxm:priority>10</raxm:priority>
     </raxm:metadata>
     </info>
@@ -212,20 +111,16 @@
             are described in the table below:</para>
         <?rax revhistory?>
     </chapter>
-    <chapter xml:id="DB_Overview">
+    <chapter xml:id="CBD_Overview">
         <title>Overview</title>
-        <para>Follow the steps described in this guide to use the
-            Rackspace Cloud Databases API and the Cloud
-            Servers<trademark/> section of the Rackspace Cloud Control
-            Panel to create and access your database instances via
-            Rackspace Cloud Servers.</para>
-        <para>For details about using the Cloud Databases API, refer
-            to the <citetitle>Cloud Databases Developer
-                Guide</citetitle> at <link
-                xlink:href="http://docs.rackspace.com/"
+        <para>Follow the steps described in this guide to get started
+            using the Rackspace &PRODNAME; API.</para>
+        <para>For details about using the &PRODNAME; API, refer to the
+                <citetitle>Cloud Big Data Developer Guide</citetitle>
+            at <link xlink:href="http://docs.rackspace.com/"
                 >http://docs.rackspace.com/</link>.</para>
-        <para>For more details about Rackspace Cloud Databases, refer
-            to <link
+        <para>For more details about Rackspace &PRODNAME;, refer to
+                <link
                 xlink:href="http://www.rackspace.com/cloud/cloud_hosting_products/databases/"
                 >http://www.rackspace.com/cloud/cloud_hosting_products/databases/</link>.
             This site also offers links to Rackspace's official
@@ -234,7 +129,7 @@
         <para>Please visit our <link
                 xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
                 >Product Feedback Forum</link> and let us know what
-            you think about Cloud Databases!</para>
+            you think about &PRODNAME;.</para>
         <section xml:id="Prerequisites_Examples">
             <title>Prerequisites for Running Examples</title>
             <para>In order to run the examples in this guide, you must

@@ -13,9 +13,17 @@
         <!ENTITY PRODNAME "Cloud Big Data">
         <!ENTITY PRODABBV "CBD">
         
-<!-- changing authentication endpoints; define entities for US & UK rather than maintaining in text -->
-        <!ENTITY ENDPOINT-US "https://auth.api.rackspacecloud.com/v2.0/">
-        <!ENTITY ENDPOINT-UK "https://lon.identity.api.rackspacecloud.com/v1.1/">   
+        <!-- changing authentication endpoints; define entities for US & UK rather than maintaining in text -->
+        <!ENTITY ENDPOINT-US "https://identity.api.rackspacecloud.com/v1.1/">
+        <!ENTITY ENDPOINT-UK "https://lon.identity.api.rackspacecloud.com/v1.1/">
+        <!ENTITY ENDPOINT-US-20 "https://identity.api.rackspacecloud.com/v2.0/">
+        <!ENTITY ENDPOINT-UK-20 "https://lon.identity.api.rackspacecloud.com/v2.0/">
+
+        <!-- Useful for specs -->
+        <!ENTITY MAY '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MAY</emphasis>'>
+        <!ENTITY SHOULD '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">SHOULD</emphasis>'>
+        <!ENTITY MUST '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST</emphasis>'>
+        <!ENTITY MUST_NOT '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST NOT</emphasis>'>
 
         <!ENTITY CHECK '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
                  <imageobject>
