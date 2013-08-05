@@ -30,8 +30,8 @@ format="SVG" scale="60"/>
 format="SVG" scale="60"/>
 </imageobject>
 </inlinemediaobject>'>
-]>
 
+]>
 <book xmlns="http://docbook.org/ns/docbook"
   xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -40,15 +40,11 @@ format="SVG" scale="60"/>
   xmlns:html="http://www.w3.org/1999/xhtml"
   xmlns:wadl="http://wadl.dev.java.net/2009/02"
   version="5.0-extension RackBook-2.0" xml:id="cbd-devguide">
-  <?rax title.font.size="30px" subtitle.font.size="20px"?>
+  <?rax 
+    title.font.size="30px" 
+    subtitle.font.size="20px"         
+    canonical.url.base="http://docs-internal.rackspace.com/cbd/api/v1/cbd-devguide/content"?>
   <title>Rackspace &PRODNAME; Developer Guide</title>
-  <?rax status.bar.text.font.size="40px"
-          status.bar.text="Early Access"?>
-  <!--   <?rax title.font.size="30px" 
-      pdf.url="../../cbd-devguide-latest.pdf" 
-      status.bar.text.font.size="40px"
-      status.bar.text="Early Access" 
-      canonical.url.base="http://docs.rackspace.com/servers/api/v2/cbd-devguide/content"?> -->
   <titleabbrev>&PRODNAME; Developer Guide</titleabbrev>
   <info>
     <author>
@@ -102,6 +98,11 @@ format="SVG" scale="60"/>
         </revdescription>
       </revision>
     </revhistory>
+    <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
+      <raxm:displayname>API Developer Guide</raxm:displayname>
+      <raxm:product version="v1.0">cbd</raxm:product>
+      <raxm:priority>20</raxm:priority>
+    </raxm:metadata>
   </info>
   <chapter xml:id="overview">
     <title>Overview</title>
@@ -2206,14 +2207,6 @@ format="SVG" scale="60"/>
   </chapter>
   <glossary xml:id="glossary_1">
     <title>Glossary</title>
-    <info>
-      <raxm:metadata
-        xmlns:raxm="http://docs.rackspace.com/api/metadata">
-        <raxm:type>concept</raxm:type>
-        <raxm:product version="v1.0">cdns</raxm:product>
-        <raxm:priority>50</raxm:priority>
-      </raxm:metadata>
-    </info>
     <glossentry>
       <glossterm>Cluster</glossterm>
       <glossdef>

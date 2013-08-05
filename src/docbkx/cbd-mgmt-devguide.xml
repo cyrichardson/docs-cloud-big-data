@@ -50,12 +50,10 @@
     version="5.0">
    
     <?rax title.font.size="30px" subtitle.font.size="20px"?>
-    <title>Rackspace Cloud Big Data Developer Guide for Service
-        Management</title>
+    <title>Rackspace Cloud Big Data Developer Guide for Service Management</title>
     <?rax status.bar.text.font.size="40px"
-          status.bar.text="Early Access"?>
-    <titleabbrev>Rackspace Cloud Big Data Management Developer
-        Guide</titleabbrev>
+          status.bar.text="Early Access"
+	  canonical.url.base="http://docs-internal.rackspace.com/cbd/api/v1/cbd-mgmt-devguide/content"?>
     <info>
         <author>
             <personname>
@@ -98,17 +96,10 @@
                     </itemizedlist>
                 </revdescription>
             </revision>
-        </revhistory>
-        
-    <cover>
-        <para>this is a placeholder for the front cover</para>
-    </cover>
-    <cover>
-        <para>this is a placeholder for the back cover</para>
-    </cover>
+        </revhistory>        
     <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
       <raxm:displayname>API Admin Developer Guide</raxm:displayname>
-      <raxm:product version="v1.0">cdb</raxm:product>
+      <raxm:product version="v1.0">cbd</raxm:product>
       <raxm:priority>30</raxm:priority>
     </raxm:metadata>
     </info>

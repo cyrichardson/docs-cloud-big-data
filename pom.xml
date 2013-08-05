@@ -32,10 +32,29 @@
         <configuration>
           <branding>rackspace</branding>      
           <showXslMessages>true</showXslMessages>
-	  <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
-	  <highlightSource>false</highlightSource>
-	  <publicationNotificationEmails>catherine.richardson@rackspace.com</publicationNotificationEmails>
+          <enableDisqus>intranet</enableDisqus>
+	        <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
+	        <highlightSource>false</highlightSource>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+          <descriptors>
+            <descriptor>includewars.xml</descriptor>
+          </descriptors>
+        </configuration>
+        <executions>
+          <execution>
+            <id>assembly</id>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <phase>package</phase>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
