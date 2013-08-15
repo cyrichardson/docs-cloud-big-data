@@ -72,7 +72,7 @@
         </copyright>
         <releaseinfo>API v1.0 Early Access</releaseinfo>
         <productname>Rackspace Cloud Big Data</productname>
-        <pubdate>2013-08-12</pubdate>
+        <pubdate>2013-09-04</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the doc build process.</remark>
@@ -87,7 +87,7 @@
         </abstract>
         <revhistory>
             <revision>
-                <date>2013-08-12</date>
+                <date>2013-09-04</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -105,50 +105,153 @@
     </raxm:metadata>
     </info>
     <chapter xml:id="DB_Doc_Change_History">
-        <title>Document Change History</title>
+        <title>Document Change History</title>            
         <para>This version of the Getting Started replaces and
             obsoletes all previous versions. The most recent changes
             are described in the table below:</para>
         <?rax revhistory?>
     </chapter>
-    <chapter xml:id="CBD_Overview">
+      <chapter xml:id="CBD_Overview">
         <title>Overview</title>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Rackspace
+            &PRODNAME; (&PRODABBV;) is an on-demand Hadoop service for
+            the Rackspace open cloud. The service supports a RESTful
+            API and alleviates the pain associated with deploying,
+            managing, and scaling Hadoop clusters, allowing you to
+            focus on your core business. </para>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Rackspace
+            Cloud Big Data is just as flexible and feature-rich as
+            running Hadoop on your own. You will benefit from
+            on-demand servers, utility-based pricing, and have access
+            to the full set of Hadoop features and APIs. However, you
+            will not have to worry about provisioning, growing, or
+            maintaining your Hadoop infrastructure. Our service uses
+            an environment, which is specifically optimized for
+            Hadoop. This ensures that your jobs will run efficiently
+            and reliably. Please note that you will still be
+            responsible for developing, troubleshooting, and deploying
+            your applications. </para>
+        <remark xmlns:wadl="http://wadl.dev.java.net/2009/02"
+            >Reviewers: If you have an architecture diagram for Cloud
+            Big Data that you want included here, please send it to
+            me.</remark>
+        <para security="reviewers"
+            xmlns:wadl="http://wadl.dev.java.net/2009/02">The
+            following figure shows an overview of Cloud Big Data: </para>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">There are
+            two primary use cases for &PRODNAME;: </para>
+        <itemizedlist xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <listitem>
+                <para>To create on-demand infrastructure for
+                    applications in production where physical servers
+                    would be too costly and time-consuming to
+                    configure and maintain.</para>
+            </listitem>
+            <listitem>
+                <para>To develop, test, and pilot data analysis
+                    applications.</para>
+            </listitem>
+        </itemizedlist>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02"> The
+            benefits of &PRODNAME; include allowing you to: <itemizedlist>
+                <listitem>
+                    <para>Create or resize Hadoop clusters in minutes
+                        and pay only for what you use.</para>
+                </listitem>
+                <listitem>
+                    <para>Access Hortonworks Data Platform (HDP), an
+                        enterprise-ready distribution that is 100%
+                        Apache open source.</para>
+                </listitem>
+                <listitem>
+                    <para>Provision and manage Hadoop using an
+                        easy-to-use Control Panel and a ReSTful
+                        API.</para>
+                </listitem>
+                <listitem>
+                    <para>Seamlessly access data in Cloud Files
+                        containers.</para>
+                </listitem>
+                <listitem>
+                    <para>Gain interoperability with any third party
+                        software tool that supports HDP.</para>
+                </listitem>
+                <listitem>
+                    <para>Fanatical Support® on a 24x7x365 basis via
+                        chat, phone or ticket.</para>
+                </listitem>
+            </itemizedlist>
+        </para>
         <para>Follow the steps described in this guide to get started
             using the Rackspace &PRODNAME; API.</para>
-        <para>For details about using the &PRODNAME; API, refer to the
-                <citetitle>Cloud Big Data Developer Guide</citetitle>
-            at <link xlink:href="http://docs.rackspace.com/"
-                >http://docs.rackspace.com/</link>.</para>
-        <para>For more details about Rackspace &PRODNAME;, refer to
-                <link
-                xlink:href="http://www.rackspace.com/cloud/cloud_hosting_products/databases/"
-                >http://www.rackspace.com/cloud/cloud_hosting_products/databases/</link>.
-            This site also offers links to Rackspace's official
-            support channels, including knowledge center articles,
-            forums, phone, chat, and email. </para>
-        <para>Please visit our <link
-                xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
-                >Product Feedback Forum</link> and let us know what
-            you think about &PRODNAME;.</para>
-        <section xml:id="Prerequisites_Examples">
-            <title>Prerequisites for Running Examples</title>
-            <para>In order to run the examples in this guide, you must
-                have the following prerequisites: <itemizedlist
-                    spacing="compact">
+        <section xml:id="core_concepts">
+            <title>Early Access Program</title>
+            <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
+                Early Access program enables customers and Rackers, by
+                invitation, to test an early version of the product
+                and provide feedback of the product and capabilities.
+                The &PRODNAME; Early Access Program is a
+                pre-production service offering covered by the Beta
+                Services terms (<link
+                    xlink:href="http://www.rackspace.com/information/legal/testterms/"
+                    >
+                    rackspace.com/information/legal/testterms/</link>)
+                in our Rackspace Cloud Terms of Service.</para>
+            <para xmlns:wadl="http://wadl.dev.java.net/2009/02"> Early
+                Access users must meet the following criteria:
+                    <itemizedlist spacing="compact">
                     <listitem>
-                        <para>Rackspace Cloud account</para>
+                        <para>A Rackspace Cloud account.</para>
                     </listitem>
                     <listitem>
-                        <para>Rackspace Cloud username and password,
-                            as specified during registration</para>
+                        <para>Prior knowledge of HTTP/1.1
+                            conventions.</para>
                     </listitem>
-                </itemizedlist></para>
+                    <listitem>
+                        <para>Basic familiarity with Cloud and ReSTful
+                            APIs.</para>
+                    </listitem>
+                    <listitem>
+                        <para>A willingness to provide feedback to
+                            Rackspace’s Product and Product Marketing
+                            functions.</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>The Early Access Program has some limitations. </para>
+            <para>By using the &PRODNAME; API, you agree and
+                understand that:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>There is no charge for this service during
+                        the Early Access period.</para>
+                </listitem>
+                <listitem>
+                    <para>If you participate in this Early Access
+                        Program, you will receive a notification prior
+                        to general availability.</para>
+                </listitem>
+                <listitem>
+                    <para>There is no Service Level Agreement.</para>
+                </listitem>
+                <listitem>
+                    <para>The API contract is not locked and may
+                        change during the Early Access Program.
+                        Rackspace will notify customers in Release
+                        Notes when and if the contract does change.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>Support is available from 8 AM - 5 PM
+                        (Central Time) Monday - Friday.</para>
+                </listitem>
+            </itemizedlist>
         </section>
-        <section xml:id="Pricing_SLA-d1e1362">
+ <!--       <section xml:id="Pricing_SLA-d1e1362">
             <title>Pricing and Service Level</title>
-            <para>Cloud Databases is part of the Rackspace Cloud and
-                your use through the API will be billed as per the
-                pricing schedule at <link
+            <para>&PRODNAME; is part of the Rackspace Cloud and your
+                use through the API will be billed as per the pricing
+                schedule at <link
                     xlink:href="http://www.rackspace.com/cloud/public/databases/pricing"
                     >http://www.rackspace.com/cloud/public/databases/pricing</link>.
                 Cloud Servers is also part of the Rackspace Cloud and
@@ -164,6 +267,20 @@
                     xlink:href="http://www.rackspace.com/cloud/legal/sla"
                     >http://www.rackspace.com/cloud/legal/sla</link>
                 respectively.</para>
+        </section>  -->
+        <section xml:id="Prerequisites_Examples">
+            <title>Prerequisites for Running Examples</title>
+            <para>In order to run the examples in this guide, you must
+                have the following prerequisites: <itemizedlist
+                    spacing="compact">
+                    <listitem>
+                        <para>Rackspace Cloud account</para>
+                    </listitem>
+                    <listitem>
+                        <para>Rackspace Cloud username and password,
+                            as specified during registration</para>
+                    </listitem>
+                </itemizedlist></para>
         </section>
     </chapter>
     <chapter xml:id="DB_Sending_API_Requests">
@@ -343,7 +460,7 @@
         <para>The following example demonstrates how to use cURL to
             obtain the authentication token and the account number.
             You will need to supply the authentication token and
-            account number when making subsequent Cloud Databases API
+            account number when making subsequent &PRODNAME; API
             calls.</para>
         <para>Remember to replace the names in the Authenticate
             Request examples below with their respective
@@ -445,11 +562,12 @@
         </note>
         <example>
             <title>Authenticate Response: XML</title>
-            <programlisting language="xml"><xi:include href="../../src/resources/samples/db-auth-20.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <programlisting language="xml"><xi:include href="../../src/resources/samples/auth-20.xml" parse="text"/></programlisting>
         </example>
+
         <example>
             <title>Authenticate Response: JSON</title>
-            <programlisting language="json"><xi:include href="../../src/resources/samples/db-auth-20.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <programlisting language="json"><xi:include href="../../src/resources/samples/auth-20.json" parse="text"/></programlisting>
         </example>
         <para>The authentication token <code>id</code> is returned
             along with an <code>expires</code> attribute that
@@ -500,26 +618,27 @@
                 </listitem>
             </itemizedlist>
         </note>
-        <para>The <code>publicURL</code> endpoints for
-                <code>cloudDatabases</code> (for example
-                <code>https://ord.databases.api.rackspacecloud.com/v1.0/1100111</code>)
+        <para>The <code>publicURL</code> endpoints for &PRODNAME; (for
+            example
+                <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</code>)
             are also returned in the response. </para>
         <para>You will find the actual account number after the final
             '/' in the <code>publicURL</code> field. In this example,
             you can see that the account number is 1100111. You need
-            to specify your account number on most of the Cloud
-            Databases API calls, wherever you see the field <emphasis
+            to specify your account number on most of the &PRODNAME;
+            API calls, wherever you see the field <emphasis
                 role="bold">your_acct_id</emphasis> specified in the
             examples in this guide.</para>
         <para>After authentication, you can use cURL to perform &GET;,
-            &DELETE;, and &POST; requests for the Cloud Databases
+            &DELETE;, and &POST; requests for the &PRODNAME;
             API.</para>
     </chapter>
     <chapter xml:id="Service_Access_Endpoints-d1e753">
         <title>Service Access/Endpoints</title>
-        <para>The endpoints to use for your Cloud Databases API calls
-            are summarized in the table below.</para>
-        
+        <para>The endpoint to use for your &PRODNAME; API calls for
+            the EA release is
+                    <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/<parameter>1234</parameter>/.</code></para>
+ <!--       
         <para>
             <table rules="all">
                 <caption>Regionalized Service Endpoints</caption>
@@ -533,52 +652,29 @@
                     <tr align="left">
                         <td colspan="2">Chicago (ORD)</td>
                         <td colspan="5"
-                                ><code>https://ord.databases.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
-                        </td>
+                                ><code>https://ord.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/ </td>
                     </tr>
                     <tr align="left">
                         <td colspan="2">Dallas/Ft. Worth (DFW)</td>
                         <td colspan="5"
-                                ><code>https://dfw.databases.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
-                        </td>
+                                ><code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/ </td>
                     </tr>
                     <tr align="left">
                         <td colspan="2">London (LON)</td>
                         <td colspan="5">
-                            <code>https://lon.databases.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
-                        </td>
+                            <code>https://lon.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/ </td>
                     </tr>
                     <tr align="left">
                         <td colspan="2">Sydney (SYD)</td>
                         <td colspan="5">
-                            <code>https://syd.databases.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
-                        </td>
+                            <code>https://syd.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/ </td>
                     </tr>
                 </tbody>
             </table>
-        </para>
+        </para> -->
         <note>
-            <title>Notes:</title>
-            <itemizedlist>
-                <listitem>
-                    <para>Choose the endpoint from the table for the
-                        datacenter where your Cloud resources are
-                        located.</para>
-                </listitem>
-                <listitem>
-                    <para>The Cloud Server that you use in <xref
-                            linkend="Create_Cloud_Server"/> must be
-                        located in the same datacenter where your
-                        database resides.</para>
-                </listitem>
-                <listitem>
-                    <para>All examples in this guide assume that you
-                        are operating against the ORD datacenter,
-                        however if you are using a different
-                        datacenter, be sure to use the associated
-                        endpoint from the table above instead.</para>
-                </listitem>
-            </itemizedlist>
+            <para>All examples in this guide assume that you are
+                operating against the DFW datacenter.</para> 
         </note>
         <para>Replace the sample account ID number,
                 <parameter>1234</parameter>, with your actual account
@@ -587,560 +683,688 @@
                 <emphasis role="bold">your_acct_id</emphasis>
             specified in this guide. Refer to <xref
                 linkend="Generating_Auth_Token"/>.</para>
-        <para>When making a Cloud Databases API call, place the
-            endpoint at the beginning of the request URL, for example:
-                (<code>https://ord.databases.api.rackspacecloud.com/v1.0/your_acct_id/</code>),
-            as you can see in the cURL List Flavors Details Request
-            examples in <xref linkend="List_Flavors"/>.</para>
+        <para>When making a &PRODNAME; API call, place the endpoint at
+            the beginning of the request URL, for example:
+                (<code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/your_acct_id/</code>).</para>
     </chapter>
-    <chapter xml:id="List_Flavors">
-        <title>List Flavors</title>
-        <para> A flavor is an available hardware configuration for a
-            database instance. Each flavor has a unique combination of
-            memory capacity and priority for CPU time. The larger the
-            flavor size you use, the larger the amount of RAM and
-            priority for CPU time your database instance will
-            receive.</para>
-        <para>You need to use the List Flavors API call
-                (<code>/flavors</code>) to find the available
-            configurations for your database instance, and then decide
-            which size you need.</para>
+    <chapter xml:id="profileSetupView">
+        <title>Setting Up and Viewing a Profile</title>
+        <remark>Reviewer: Is there an API call to set up a Profile?
+            I'm working from the Walk-thrus on the wiki and it
+            includes this. But I see no corresponding API call in the
+            current API specifications.</remark>
+        <para>Before you can create Hadoop clusters, you need to
+            create a profile, which consists of a username and
+            password. </para>
+        <para>After setting up your username and password, every
+            Hadoop server you provision using the API will have a
+            local user account  and the specified password. This
+            allows you to remotely SSH into a server in order to
+            transfer data, run or troubleshoot jobs, etc.</para>
+        <para>A password must be at least 8 characters, with a mixture
+            of uppercase, lowercase, numeric and special
+            characters.</para>
+        <para>The following example shows the cURL request to set up a
+            profile:</para>
+        <remark>Reviewer: If there is a Create Profile operation,
+            please provide appropriate cURL request and response. </remark>
+        <example>
+            <title>cURL  Create Profile Request: JSON</title>
+            <programlisting language="bash"><command>curl -i ???</command> </programlisting>
+        </example>
+        <para>The following example show the response for the profile
+            request:</para>
+        <example>
+            <title> Create Profile Response: JSON</title>
+            <programlisting language="json">???</programlisting>
+        </example>
+        <para>Anytime after your profile is created, you can view its
+            details.  </para>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02"
+                ><command>Get Profile</command> displays your profile
+            details including your username, user ID, tenant ID, etc. </para>
+        <informaltable rules="all"
+            xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <thead>
+                <tr align="center">
+                    <td colspan="1">Verb</td>
+                    <td colspan="2">URI</td>
+                    <td colspan="3">Description</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="1">&GET;</td>
+                    <td colspan="2">/profile</td>
+                    <td colspan="3">Returns detailed information for
+                        the current user profile.</td>
+                </tr>
+            </tbody>
+        </informaltable>
         <para>This operation does not require a request body.</para>
-        <para>The following examples show the cURL requests for List
-            Flavors:</para>
+        <para>The following example shows the cURL request to view a
+            profile:</para>
+        <remark>Reviewer: Please provide appropriate cURL to produce
+            the response given in this example.</remark>
         <example>
-            <title>cURL List Flavors Request: XML</title>
-            <programlisting language="bash"><command>curl -i</command> \
--H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
-<option>-H 'Accept: application/xml'</option> \
-<uri>'https://ord.databases.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/flavors'</uri></programlisting>
+            <title>cURL  Get Profile Request: JSON</title>
+            <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/profile -d  \
+-H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
+-H "Accept: application/json"</programlisting>
         </example>
-        <example>
-            <title>cURL List Flavors Request: JSON</title>
-            <programlisting language="bash"><command>curl -i</command> \
--H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
-<option>-H 'Accept: application/json'</option> \
-<uri>'https://ord.databases.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/flavors'</uri></programlisting>
-        </example>
-        <para>Remember to replace the names in the examples above with
+        <para>Remember to replace the names in the example above with
             their actual respective values for all the cURL examples
-            that follow:<itemizedlist spacing="compact">
-                <listitem>
-                    <para><emphasis role="bold"
-                            >your_auth_token</emphasis> &mdash; as
-                        returned in your authentication response (see
-                        the response examples in <xref
-                            linkend="Generating_Auth_Token"/>)</para>
-                </listitem>
-                <listitem>
-                    <para><emphasis role="bold"
-                            >your_acct_id</emphasis> &mdash; as
-                        returned in your authentication response (must
-                        be replaced in the request URL)</para>
-                </listitem>
-            </itemizedlist></para>
-        <para>The following examples show the responses for List
-            Flavors:</para>
+            in this guide:</para>
+        <itemizedlist>
+            <listitem>
+                <para><emphasis role="bold">your_auth_token</emphasis>
+                    &mdash; as returned in your authentication
+                    response (see the response examples in <xref
+                        linkend="Generating_Auth_Token"/>)</para>
+            </listitem>
+            <listitem>
+                <para><emphasis role="bold">your_acct_id</emphasis>
+                    &mdash; as returned in your authentication
+                    response (must be replaced in the request
+                    URL)</para>
+            </listitem>
+        </itemizedlist>
+        <para>The following example shows the response for the profile
+            request:</para>
         <example>
-            <title>List Flavors Response: XML</title>
-            <programlisting language="xml"><xi:include href="../../src/resources/samples/db-flavors-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <title> Get Profile Response: JSON</title>
+            <programlisting language="json"> {"profile":
+            { "username": "john.doe",
+              "user_id" : "12346",
+              "tenant_id" : "123456",
+              "sshkeys": [{"name": "t@test"}],
+              "cloudCredentials": {},
+              "links": [
+                { "rel": "self",
+                  "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/profile"
+                },
+                { "rel": "bookmark",
+                  "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/profile"
+                }
+              ],
+            }
+        }</programlisting>
         </example>
-        <example>
-            <title>List Flavors Response: JSON</title>
-            <programlisting language="json"><xi:include href="../../src/resources/samples/db-flavors-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-        </example>
-        <para>In the previous examples, you can see from the flavor
-                <code>name</code> that there are multiple flavors
-            available, including <code>2GB Instance</code> (with 1
-            virtual CPU and 2 gigabytes of memory) and <code>512MB
-                Instance</code> (with 1 virtual CPU and 0.5 gigabytes
-            of memory). </para>
-        <para>In this example, assume that you decide to use the 512MB
-            Instance (id 1) to provide the needed capacity for your
-            database instance.</para>
-        <para>Notice that there are two kinds of link relations
-            associated with flavor resources. A <code>self</code> link
-            contains a <emphasis>versioned</emphasis> link to the
-            flavor resource. These links should be used in cases where
-            the link will be followed immediately (as you will see in
-            the next section). A <code>bookmark</code> link provides a
-            permanent link to a flavor resource that is appropriate
-            for long term storage and works across API
-            versions.</para>
     </chapter>
     
     <chapter xml:id="Create_DB_Instance">
-            <title>Create a Database Instance with a Database and a
-            User</title>
-            <para>A database instance is an isolated MySQL instance in
-            a single tenant environment on a shared physical host
-            machine. In the example below, you create a database
-            instance with a database and a user. The example instance
-            uses the 512MB Instance flavor and a volume size of 2
-            gigabytes (GB). </para>
-        <para>Refer to <link
-            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createDatabase__version___accountId__instances__instanceId__databases_.html"
-                >Create Database</link> in the <citetitle>Cloud
-                Databases Developer Guide</citetitle> for the
-            restrictions for choosing the database name.</para>
-        <para>The example creates a database instance
-                <code>myrackinstance</code>, with the following: <itemizedlist>
-                <listitem>
-                    <para>the 512MB Instance flavor</para>
-                </listitem>
-                <listitem>
-                    <para>volume size of 2 gigabytes (GB)</para>
-                </listitem>
-                <listitem>
-                    <para>a database named <code>sampledb</code> with:<itemizedlist>
-                            <listitem>
-                                <para><code>utf8</code> character
-                                   set</para>
-                            </listitem>
-                            <listitem>
-                                <para><code>utf8_general_ci</code>
-                                   collation</para>
-                            </listitem>
-                        </itemizedlist></para>
-                </listitem>
-                <listitem>
-                    <para>a user <code>simplestUser</code> with
-                        password <code>password</code></para>
-                </listitem>
-            </itemizedlist>
-        </para>
-        <para>Notice that the request specifies the flavor reference
-                (<code>flavorRef</code>) to the 512MB Instance flavor
-            (id 1) that was returned by the List Flavors Details call:
-                <code>"https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/1"</code>.
-            This is the <code>self</code> link that is the versioned
-            link to the flavor resource. Refer to the response
-            examples in <xref linkend="List_Flavors"/>.</para>
-        <para>The following examples show the cURL requests for Create
-            Instance:</para>
+            <title>Viewing Resource Limits</title>
+            <para>Using Rackspace Cloud Big Data is subject to
+            resource limits. You can view the limits associated with
+            your account using <command>View Resource
+            Limits</command>. </para>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02"
+                ><command>View Resource Limits</command> displays the
+            resource limits such as remaining node count, available
+            RAM, and remaining disk space, for the user.</para>
+        <informaltable rules="all"
+            xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <thead>
+                <tr align="center">
+                    <td colspan="1">Verb</td>
+                    <td colspan="2">URI</td>
+                    <td colspan="3">Description</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="1">&GET;</td>
+                    <td colspan="2">/limits</td>
+                    <td colspan="3">Displays the resource limits for
+                        the user.</td>
+                </tr>
+            </tbody>
+        </informaltable>
+        <para>This operation does not require a request body.</para>
+        <para>The following example shows the cURL request to view
+            resource limits:</para>
+        <remark>Reviewer: Please provide appropriate cURL to produce
+            the response given in this example.</remark>
         <example>
-            <title>cURL Create Instance Request: XML</title>
-            <programlisting language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
-'&lt;?xml version="1.0" ?>
-&lt;instance xmlns="http://docs.openstack.org/database/api/v1.0"
-    name="myrackinstance"
-    flavorRef=
-      "https://ord.databases.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/flavors/1">
-    &lt;databases>
-        &lt;database name="sampledb" character_set="utf8"
-         collate="utf8_general_ci" />
-    &lt;/databases>
-    &lt;users>
-        &lt;user name="simplestUser" password="password">
-            &lt;databases>
-                &lt;database name="sampledb"/>
-            &lt;/databases>
-        &lt;/user>
-    &lt;/users>
-    &lt;volume size="2" />
-&lt;/instance>' \
--H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
-<option>-H 'Content-Type: application/xml'</option> \
-<option>-H 'Accept: application/xml'</option> \
-<uri>'https://ord.databases.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/instances'</uri></programlisting>
+            <title>cURL View Resource Limits Request: JSON</title>
+            <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/limits -d \
+-H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
+-H "Accept: application/json" </programlisting>
         </example>
-        <example>
-            <title>cURL Create Instance Request: JSON</title>
-            <programlisting language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
-'{
-    "instance": {
-        "databases": [
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
+            following example shows the response:</para>
+        <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <title>View Resource Limits Response: JSON</title>
+            <programlisting>        { "limits":
+          { "absolute":
             {
-                "character_set": "utf8",
-                "collate": "utf8_general_ci",
-                "name": "sampledb"
-            }
-        ],
-        "flavorRef": "https://ord.databases.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/flavors/1",
-        "name": "myrackinstance",
-        "users": [
-            {
-                "databases": [
-                    {
-                        "name": "sampledb"
-                    }
-                ],
-            "name": "simplestUser",
-            "password": "password"
-            }
-        ],
-        "volume":
-            {
-                "size": 2
-            }
-    }
-}' \
--H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
-<option>-H 'Content-Type: application/json'</option> \
-<uri>'https://ord.databases.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/instances'</uri></programlisting>
+              "disk": {
+                "limit": 2000,
+                "remaining": 2000
+              },
+              "nodeCount": {
+                "limit": 5,
+                "remaining": 5
+              },
+              "ram": {
+                "limit": 25600,
+                "remaining": 25600
+              },
+              "vcpus": {
+                "limit": 5,
+                "remaining": 5
+              }
+            },
+            "links": [
+              { "href": "http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/limits",
+                "rel": "self"
+              },
+              { "href": "http://dfw.bigdata.api.rackspacecloud.com/1234/limits",
+                "rel": "bookmark"
+              }
+            ]
+          }
+        }</programlisting>
         </example>
-        <para>Remember to replace the names in the examples above with
-            their actual respective values for all the cURL examples
-            that follow:<itemizedlist spacing="compact">
-                <listitem>
-                    <para><emphasis role="bold"
-                            >your_auth_token</emphasis> &mdash; as
-                        returned in your authentication response (see
-                        the response examples in <xref
-                            linkend="Generating_Auth_Token"/>)</para>
-                </listitem>
-                <listitem>
-                    <para><emphasis role="bold"
-                            >your_acct_id</emphasis> &mdash; as
-                        returned in your authentication response (must
-                        be replaced in the request URL)</para>
-                </listitem>
-            </itemizedlist></para>
-        <para>Remember to replace the account id shown in the
-                <code>flavorRef</code> property for the examples with
-            your actual account id:
-                <code>"https://ord.databases.api.rackspacecloud.com/v1.0/</code><emphasis
-                role="bold"
-                >your_acct_id</emphasis><code>/flavors/1"</code>.
-            Rather than the flavor URI shown in the previous sentence,
-            you can also pass the flavor id (integer) as the value for
-            flavorRef. For example, the flavor id for the flavor URI
-            shown above is "1". </para>
-        <para>The following examples show the Create Instance
-            responses:</para>
-            
-            <example>
-                <title>Create Instance Response: XML</title>
-                <programlisting language="xml"><xi:include href="../../src/resources/samples/db-gs-create-database-instance-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-            </example>
-            
-            <example>
-                <title>Create Instance Response: JSON</title>
-                <programlisting language="json"><xi:include href="../../src/resources/samples/db-gs-create-database-instance-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-            </example>
-        <para>You will need to specify the instance id returned (in
-            the response examples above:
-                <code>id="d379ba5c-9a1f-4aa9-9a17-afe237d04c65"</code>)
-            on subsequent API calls that require it, for example List
-            Databases for Instance.</para>
-        <para>Note that the database and user are not listed in the
-            Create Instance responses. Next you will verify that both
-            were successfully created.<note>
-                <para> The operation of creating the database instance
-                    may take up to several minutes. You will not be
-                    able to perform the operations to List Databases
-                    for Instance and List Users for Instance in the
-                    sections that follow until the instance has ACTIVE
-                    status. </para>
-            </note></para>
         </chapter>
     <chapter xml:id="List_DBS_For_Instance">
-        <title>List Databases for Instance</title>
-        <para>In this section you will list the databases in the
-            specified database instance.</para>
-        <para>This operation does not require a request body.</para>
-        <para xmlns="http://docbook.org/ns/docbook">The following
-            examples show the cURL requests for List Databases for
-            Instance:</para>
-        <example>
-            <title>cURL List Databases for Instance Request:
-                XML</title>
-            <programlisting language="bash"><command>curl</command> <option>-i</option> \
--H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
-<option>-H 'Content-Type: application/xml'</option> \
-<option>-H 'Accept: application/xml'</option> \
-<uri>'https://ord.databases.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/instances/</uri><emphasis role="bold">instance_id</emphasis><uri>/databases'</uri></programlisting>
-        </example>
-        <example>
-            <?dbfo keep-together="always"?>
-            <title>cURL List Databases for Instance Request:
-                JSON</title>
-            <programlisting language="bash"><command>curl</command> <option>-i</option> \
--H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
-<option>-H 'Content-Type: application/json'</option> \
-<uri>'https://ord.databases.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/instances/</uri><emphasis role="bold">instance_id</emphasis><uri>/databases'</uri></programlisting>
-        </example>
-        <para>Remember to replace the names in the examples above with
-            their actual respective values:<itemizedlist spacing="compact">
-                <listitem>
-                    <para><emphasis role="bold"
-                            >your_auth_token</emphasis> &mdash; as
-                        returned in your authentication response (see
-                        the examples in <xref
-                            linkend="Generating_Auth_Token"/>)</para>
-                </listitem>
-                <listitem>
-                    <para><emphasis role="bold"
-                            >your_acct_id</emphasis> &mdash; as
-                        returned in your authentication response (see
-                        the examples in <xref
-                            linkend="Generating_Auth_Token"/>)</para>
-                </listitem>
-                <listitem>
-                    <para><emphasis role="bold">instance_id</emphasis>
-                        &mdash; as returned in your create instance
-                        response (see the examples in <xref
-                            linkend="Create_DB_Instance"/>)</para>
-                </listitem>
-            </itemizedlist></para>
-        <para>The following examples show the responses for Create
-            User:</para>
-        <example>
-            <title>List Databases for Instance Response: XML</title>
-            <programlisting language="xml">HTTP/1.1 200 OK
-Content-Type: application/xml
-Content-Length: 109
-Date: Thu, 05 Apr 2012 18:20:18 GMT
+        <title>Creating and Managing Hadoop Clusters</title>
+        <para>Now you are ready to create and manage Hadoop clusters
+            using the Rackspace Cloud Big Data API. </para>
+        <section xml:id="createCluster">
+            <title>Creating a Cluster  </title><para xmlns:wadl="http://wadl.dev.java.net/2009/02">This operation
+                creates a new Hadoop cluster. After you submit the
+                operation,  it will take a few minutes for the service
+                to build and configure your cluster.</para>
+            <informaltable rules="all"
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Verb</td>
+                        <td colspan="2">URI</td>
+                        <td colspan="3">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">&POST;</td>
+                        <td colspan="2">/clusters</td>
+                        <td colspan="3">Create a new cluster.</td>
+                    </tr>
+                </tbody>
+            </informaltable><para>The example below creates a 5-data node Hadoop cluster with the
+                name slice.</para>
+            <para><code>clusterType</code> must specify HADOOP_HDP1_1
+                for now. <code>flavorID</code> specifies the RAM,
+                virtual CPUs, and disk storage associated with each
+                data node in your Hadoop cluster. </para>
+            <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
+                following examples show the cURL request and
+                corresponding response for Create Cluster:</para>
+            <remark>Reviewer: Please provide appropriate cURL to
+                produce the response given in this example.</remark>
+            <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <title>cURL Create Cluster Request: JSON</title>
+                <programlisting>curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>clusters \
+'{"cluster":
+      { "name": "slice",
+        "clusterType": "HADOOP_HDP1_1",
+        "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
+        "nodeCount": 5
+      }
+    }' \          
+-H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
+-H "Accept: application/json"
+                  </programlisting>
+              
+            </example>
+            <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <title>Create Cluster Response: JSON</title>
+                <programlisting>    {"cluster":
+      { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
+        "created": "2012-12-27T10:10:10Z",
+        "updated": "",
+        "name": "slice",
+        "clusterType": "HADOOP_HDP1_1",
+        "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
+        "nodeCount": 5,
+        "status": "BUILD",
+        "links": [
+          { "rel": "self",
+            "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
+          },
+          { "rel": "bookmark",
+            "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
+          }
+        ],
+      }
+    }</programlisting>
+ 
+            </example>   
+        </section>
+        <section xml:id="listFlavors">
+            <title>Listing Flavors</title>
+            <para>A flavor is an available hardware configuration for
+                a cluster. Each flavor has a unique combination of
+                memory capacity and priority for CPU time. The larger
+                the flavor size you use, the larger the amount of RAM
+                and priority for CPU time your cluster will
+                receive</para>
+            <para>You need to use the <command>List Flavors</command>
+                API call ( /flavors ) to find the available
+                configurations for your cluster, and then decide which
+                size you need.</para>
+            <para>This operation does not require a request
+                body.</para>
+            <informaltable rules="all">
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Verb</td>
+                        <td colspan="2">URI</td>
+                        <td colspan="3">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2">/flavors</td>
+                        <td colspan="3">List all available flavors.</td>
+                    </tr>
+                </tbody>
+            </informaltable>
+            <para>This operation does not require a request
+                body.</para>
+            <para>The following example shows the cURL request for
+                    <command>List Flavors</command>:</para>
+            <remark>Reviewer: Please provide appropriate cURL to
+                produce the response given in this example.</remark>
+            <example>
+                <title>cURL List Flavors Request: JSON</title>
+                <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/flavors -d \
+-H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
+-H "Accept: application/json"</programlisting>
+            </example>
+            <para>The following example shows the response for
+                    <command>List Flavors</command>:</para>
+            <example>
+                <title>List Flavors Response: JSON</title>
+                <programlisting>        { "flavors": [
+          {
+            "disk": 256,
+            "id": "4fba3bca-7c76-11e2-b737-beeffa00040e",
+            "links": [
+              { "href": "http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/flavors/4fba3bca-7c76-11e2-b737-beeffa00040e", 
+                "rel": "self"
+              },
+              { "href": "http://dfw.bigdata.api.rackspacecloud.com/1234/flavors/4fba3bca-7c76-11e2-b737-beeffa00040e", 
+                "rel": "bookmark"
+              }
+            ],
+            "name": "Tiny Hadoop Instance",
+            "ram": 5120,
+            "vcpus": 1
+          },
+          {
+            "disk": 512,
+            "id": "518400b2-7c76-11e2-b737-beeffa00040e",
+            "links": [
+              { "href": "http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/flavors/518400b2-7c76-11e2-b737-beeffa00040e", 
+                "rel": "self"
+              },
+              { "href": "http://dfw.bigdata.api.rackspacecloud.com/1234/flavors/518400b2-7c76-11e2-b737-beeffa00040e", 
+                "rel": "bookmark"
+              }
+            ],
+            "name": "Small Hadoop Instance",
+            "ram": 8192,
+            "vcpus": 2
+          },
+          {
+            "disk": 1024,
+            "id": "5413894c-7c76-11e2-b737-beeffa00040e",
+            "links": [
+              { "href": "http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/flavors/5413894c-7c76-11e2-b737-beeffa00040e", 
+                "rel": "self"
+              },
+              { "href": "http://dfw.bigdata.api.rackspacecloud.com/1234/flavors/5413894c-7c76-11e2-b737-beeffa00040e", 
+                "rel": "bookmark"
+              }
+            ],
+            "name": "Medium Hadoop Instance",
+            "ram": 15360,
+            "vcpus": 4
+          },
+          {
+            "disk": 2000,
+            "id": "559dd2b8-7c76-11e2-b737-beeffa00040e",
+            "links": [
+              { "href": "http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/flavors/559dd2b8-7c76-11e2-b737-beeffa00040e", 
+                "rel": "self"
+              },
+              { "href": "http://dfw.bigdata.api.rackspacecloud.com/1234/flavors/559dd2b8-7c76-11e2-b737-beeffa00040e", 
+                "rel": "bookmark"
+              }
+            ],
+            "name": "Large Hadoop Instance",
+            "ram": 27648,
+            "vcpus": 8
+          }
+        ] }</programlisting>
 
-&lt;databases xmlns="http://docs.openstack.org/database/api/v1.0">
-    &lt;database name="sampledb"/>
-&lt;/databases>
+            </example> 
+        </section>
+        <section xml:id="viewDetails">
+            <title>Viewing Details</title>
+            <para><command>Get Node Details</command> lists all server
+                nodes for the specified cluster.</para>
+            <informaltable rules="all">
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Verb</td>
+                        <td colspan="2">URI</td>
+                        <td colspan="3">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2">/clusters/{id}/nodes</td>
+                        <td colspan="3">List all nodes for a cluster.</td>
+                    </tr>
+                </tbody>
+            </informaltable>
+            <para>The cluster has a NAMENODE and a GATEWAY node in
+                addition to DATANODEs. A server has a private IP
+                address, which is used for backend (Hadoop) data
+                transfer, and a public IP, which allows you to access
+                it over the public internet. Use the gateway node to
+                do your work, including using tools such as Pig and
+                Hive. In the example, you can remotely SSH into the
+                gateway node over the IP address, using the username
+                and the password you added to your profile during
+                setup.</para>
+            <para>This operation does not have a request body.</para>
+            <para>The following example show the cURL request and
+                corresponding response to List all Nodes for a
+                Cluster:</para>
+            <remark>Reviewer: Please provide appropriate cURL to
+                produce the response given in this example.</remark>
+            <example>
+                <title>cURL List Cluster Nodes Request: JSON</title>
+                <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes -d \
+-H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json"</programlisting>
+            </example>
+            <example>
+                <title>List Cluster Nodes Response: JSON</title>
+                <programlisting>        {"nodes":
+          [ 
+            { "id": "000",
+              "created": "2012-12-27T10:10:10Z", 
+              "role": "NAMENODE",
+              "name": "NAMENODE-1", 
+              "status": "ACTIVE",
+              "addresses": {
+                "public": [{ "addr": "168.x.x.3", "version": 4 }],
+                "private": [{ "addr": "10.x.x.3", "version": 4}]
+              },
+              "services": [
+                { "name": "namenode" },
+                { "name": "jobtracker" },
+                { "name": "ssh",
+                  "uri": "ssh://user@168.x.x.3"
+                }
+              ],
+              "links": [
+                { "rel": "self",
+                  "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
+                },
+                { "rel": "bookmark",
+                  "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
+                }
+              ],
+            },
+            { "id": "aaa",
+              "role": "GATEWAY",
+              "name": "GATEWAY-1", 
+              "status": "ACTIVE",
+              "addresses": {
+                "public": [{ "addr": "168.x.x.4", "version": 4 }],
+                "private": [{ "addr": "10.x.x.4", "version": 4}]
+              },
+              "services": [
+                { "name": "pig" },
+                { "name": "hive" },
+                { "name": "ssh",
+                  "uri": "ssh://user@168.x.x.4"
+                },
+                { "name": "status",
+                  "uri": "http://10.x.x.4"
+                },
+                { "name": "hdfs-scp",
+                  "uri": "scp://user@168.x.x.4:9022"
+                }
+              ],
+              "links": [
+                { "rel": "self",
+                  "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/aaa"
+                },
+                { "rel": "bookmark",
+                  "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/aaa"
+                }
+              ],
+            },
+            { "id": "bbb",
+              "role": "DATANODE",
+              "name": "DATANODE-1",  
+              "status": "ACTIVE",
+              "addresses": {
+                "public": [{ "addr": "168.x.x.5", "version": 4 }],
+                "private": [{ "addr": "10.x.x.5", "version": 4}]
+              },
+              "services": [
+                { "name": "datanode" },
+                { "name": "tasktracker" },
+                { "name": "ssh",
+                  "uri": "ssh://user@168.x.x.5"
+                }
+              ],
+              "links": [
+                { "rel": "self",
+                  "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/bbb"
+                },
+                { "rel": "bookmark",
+                  "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/bbb"
+                }
+              ],
+            },
+            { "id": "ccc",
+              "role": "DATANODE",
+              "name": "DATANODE-2",  
+              "status": "ACTIVE",
+              "addresses": {
+                "public": [{ "addr": "168.x.x.6", "version": 4 }],
+                "private": [{ "addr": "10.x.x.6", "version": 4}]
+              },
+              "services": [
+                { "name": "datanode" },
+                { "name": "tasktracker" },
+                { "name": "ssh",
+                  "uri": "ssh://user@168.x.x.6"
+                }
+              ],
+              "links": [
+                { "rel": "self",
+                  "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/ccc"
+                },
+                { "rel": "bookmark",
+                  "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/ccc"
+                }
+              ],
+            } 
+          ]
+        }</programlisting>
+ 
+            </example> <para/>
+        </section>
+        <section xml:id="resizeClusters">
+            <title>Resizing Clusters</title>
+            <para>You can increase the size of an existing cluster
+                using the resize command. Downsizing clusters is not
+                currently supported. </para>
+            <informaltable rules="all">
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Verb</td>
+                        <td colspan="2">URI</td>
+                        <td colspan="3">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">&POST;</td>
+                        <td colspan="2">/clusters/{clusterId}/action</td>
+                        <td colspan="3">Resizes a cluster.</td>
+                    </tr>
+                </tbody>
+            </informaltable>
+            <para>The following example resizes the previously created
+                cluster slice to include 10 data nodes.  Note that 10
+                is the total number of data nodes in the cluster, not
+                the additional number of nodes. After you initiate the
+                resize operation, you can use <command>List Cluster
+                    Nodes</command> to confirm that your cluster has
+                been resized.</para>
+            <remark>Reviewer: Please provide appropriate cURL to
+                produce the response given in this example.</remark>
+            <para>The following examples show the cURL request and
+                corresponding response to resize a  cluster:</para>
+            <example>
+                <title>cURL Resize Cluster Request: JSON</title>
+                <programlisting>curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_account_ID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis>/resize -d \
+'{"resize":{ "nodeCount": 10 }} ' \
+-H "Accept: application/json" \
+-H "X-Auth-Token:<emphasis role="bold">your_auth_token</emphasis>" \
+-H "Content-Type: application/json"  
 </programlisting>
-        </example>
-        <example>
-            <title>List Databases for Instance Response: JSON</title>
-            <programlisting language="json">HTTP/1.1 200 OK
-Content-Type: application/json
-Content-Length: 37
-Date: Thu, 05 Apr 2012 18:13:53 GMT
-
-{
-    "databases": [
-        {
-            "name": "sampledb"
+            </example>
+            <example>
+                <title>Resize Cluster Response: JSON</title>
+                <programlisting>        {"cluster":
+          { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
+            "created": "2012-12-27T10:10:10Z",
+            "updated": "2012-12-27T16:20:10Z",
+            "name": "slice",
+            "clusterType": "HADOOP_HDP1_1",
+            "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
+            "nodeCount": 10,
+            "status": "RESIZING",
+            "links": [
+              { "rel": "self",
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
+              },
+              { "rel": "bookmark",
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
+              }
+            ],
+          }
+        } </programlisting>
+     
+            </example>
+        </section>
+        <section xml:id="deleteCluster">
+            <title>Deleting Clusters</title>
+            <para>Use <command>Delete Cluster</command> to remove
+                unused Hadoop clusters. This gets rid of any servers
+                associated with the cluster and any data stored in
+                it.</para>
+            <para> You cannot delete clusters that are in the process
+                of being created or resized.</para>
+            <informaltable rules="all">
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Verb</td>
+                        <td colspan="2">URI</td>
+                        <td colspan="3">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">&DELETE;</td>
+                        <td colspan="2">/clusters/{id}</td>
+                        <td colspan="3">Deletes a cluster.</td>
+                    </tr>
+                </tbody>
+            </informaltable>
+            <para>The following examples show the cURL request and
+                corresponding response to delete a cluster:</para>
+            <remark>Reviewer: Please provide appropriate cURL to
+                produce the response given in this example.</remark>
+            <example>
+                <title>cURL Delete Cluster Request: JSON</title>
+                <programlisting>curl -i -X DELETE https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_account_ID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis> -d \
+-H "Accept: application/json" \
+-H "X-Auth-Token:<emphasis role="bold">your_auth_token</emphasis>" \
+-H "Content-Type: application/json"</programlisting>
+            </example>
+            <example>
+                <title>Delete Cluster Response: JSON</title>
+                <programlisting>Status: 202 Accepted
+        Date: Mon, 06 Aug 2012 21:54:21 GMT
+        Content-Type: application/json
+        {"cluster":
+          { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
+            "created": "2012-12-27T10:10:10Z",
+            "updated": "2012-12-27T20:14:10Z",
+            "name": "slice",
+            "clusterType": "HADOOP_HDP1_1",
+            "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
+            "nodeCount": 5,
+            "status": "DELETING",
+            "links": [
+              { "rel": "self",
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
+              },
+              { "rel": "bookmark",
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
+              }
+            ]
+          }
         }
-    ]
-}</programlisting>
-        </example>
-        <para>You can see that the database <code>sampledb</code> was
-            successfully created. Next you will list the users.</para>
+</programlisting>
+             
+            </example>
+        </section>
     </chapter>
     <chapter xml:id="List_Users_DB_Instance">
-        <title>List Users in Database Instance</title>
-        <para>In this section you will list the users in the specified
-            database instance.</para>
-        <para>This operation does not require a request body.</para>
-        <para>The following examples show the cURL requests for List
-            Users in Database Instance:</para>
-        <example>
-            <title>cURL List Users in Database Instance Request:
-                XML</title>
-            <programlisting language="bash"><command>curl</command> <option>-i</option> \
--H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
-<option>-H 'Content-Type: application/xml'</option> \
-<option>-H 'Accept: application/xml'</option> \
-<uri>'https://ord.databases.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/instances/</uri><emphasis role="bold">instance_id</emphasis><uri>/users'</uri></programlisting>
-        </example>
-        <example>
-            <?dbfo keep-together="always"?>
-            <title>cURL List Users in Database Instance Request:
-                JSON</title>
-            <programlisting language="bash"><command>curl</command> <option>-i</option> \
--H 'X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>' \
-<option>-H 'Content-Type: application/json'</option> \
-<uri>'https://ord.databases.api.rackspacecloud.com/v1.0/</uri><emphasis role="bold">your_acct_id</emphasis><uri>/instances/</uri><emphasis role="bold">instance_id</emphasis><uri>/users'</uri></programlisting>
-        </example>
-        <para>Remember to replace the names in the examples above with
-            their actual respective values:<itemizedlist
-                spacing="compact">
-                <listitem>
-                    <para><emphasis role="bold"
-                            >your_auth_token</emphasis> &mdash; as
-                        returned in your authentication response (see
-                        the examples in <xref
-                            linkend="Generating_Auth_Token"/>)</para>
-                </listitem>
-                <listitem>
-                    <para><emphasis role="bold"
-                            >your_acct_id</emphasis> &mdash; as
-                        returned in your authentication response (see
-                        the examples in <xref
-                            linkend="Generating_Auth_Token"/>)</para>
-                </listitem>
-                <listitem>
-                    <para><emphasis role="bold">instance_id</emphasis>
-                        &mdash; as returned in your create instance
-                        response (see the examples in <xref
-                            linkend="Create_DB_Instance"/>)</para>
-                </listitem>
-            </itemizedlist></para>
-        <para>The following examples show the responses for List
-            Users in Database Instance:</para>
-        <example>
-            <title>List Users in Database Instance Response:
-                XML</title>
-            <programlisting language="xml">HTTP/1.1 200 OK
-Content-Type: application/xml
-Content-Length: 109
-Date: Thu, 05 Apr 2012 18:20:18 GMT
-
-&lt;?xml version="1.0" ?>
-&lt;users xmlns="http://docs.openstack.org/database/api/v1.0">
-    &lt;user name="simplestUser">
-        &lt;databases>
-            &lt;database>
-                &lt;name>
-                    sampledb
-                &lt;/name>
-            &lt;/database>
-        &lt;/databases>
-    &lt;/user>
-&lt;/users>
-</programlisting>
-        </example>
-        <example>
-            <title>List Users in Database Instance Response:
-                JSON</title>
-            <programlisting language="json">HTTP/1.1 200 OK
-Content-Type: application/json
-Content-Length: 113
-Date: Thu, 05 Apr 2012 18:13:53 GMT
-
-{
-    "users": [
-        {
-            "databases": [
-                {
-                    "name": "sampledb"
-                }
-            ],
-            "name": "simplestUser"
-        }
-    ]
-}</programlisting>
-        </example>
-        <para>You can see that the user <code>simplestUser</code> was
-            successfully created.</para>
-    </chapter>
-    <chapter xml:id="Create_Cloud_Server">
-        <title>Create a New Cloud Server</title>
-        <para>Create a Cloud Server (or use an existing Cloud Server)
-            to access your database.</para>
-        <note>
-            <para>If you are using an existing Cloud Server on your
-                account, skip this step and go directly to <xref
-                    linkend="Configure_Cloud_Server_DB"/>.</para>
-        </note>
-        <para>Create a Cloud Server using the Cloud Servers section of
-            the Cloud Control Panel (login here: <link
-                xlink:href="http://mycloud.rackspace.com/"
-                >Cloud Control Panel</link>).</para>
-        <procedure>
-            <title>To create a Cloud Server using the Cloud Control
-                Panel:</title>
-            <step>
-                <para>Click <guimenuitem>Servers</guimenuitem> to view
-                    the Cloud Servers page.</para>
-            </step>
-            <step>
-                <para> Using the <guimenu>Region</guimenu> drop-down
-                    menu, select the appropriate region, depending on
-                    whether you want to create a first generation
-                    Cloud Server or a next generation Cloud Server.
-                    (The type of Cloud Server does not matter for this
-                    exercise.)</para>
-            </step>
-            <step>
-                <para> Select an image from a list of different
-                    operating systems, including Linux Distributions
-                    and Windows Images:</para>
-                <para><inlinemediaobject>
-                         <imageobject>
-                            <imagedata
-                                fileref="images/Choose_CS_Image_CCP.png"
-                                contentwidth="6in"/>
-                         </imageobject>
-                    </inlinemediaobject></para>
-            </step>
-            <step>
-                <para> Specify the <guilabel>Server Name</guilabel>
-                    and select a <guilabel>Size</guilabel> for your
-                    Cloud Server, then click <guibutton>Create
-                        Server</guibutton>. </para>
-            </step>
-        </procedure>
-        <note>
-            <para>You can also create a Cloud Server using the Cloud
-                Servers API. Refer to the <link
-                    xlink:href="http://docs.rackspace.com/">Next Generation Cloud
-                    Servers Developer Guide</link> for
-                details.</para>
-        </note>
-    </chapter>
-    <chapter xml:id="Configure_Cloud_Server_DB">
-        <title>Configuring an Application to Use Your Cloud
-            Database</title>
-        <para>If you are configuring an application to use your
-            database on a Cloud Server, you need to configure the
-            application with the hostname for the database instance
-            and user name / password for the database. Refer to the
-            response examples in <xref linkend="Create_DB_Instance"/>
-            for the <code>hostname</code> returned and the request
-            examples for the user name and password you
-            specified.</para>
-    </chapter>
-    <chapter xml:id="MySQL_GUI_Admin">
-        <title>MySQL GUI Administration</title>
-        <para> If you want to access your database using the command
-            line MySQL client, then you have now completed the
-                <citetitle>Getting Started</citetitle>.</para>
-        <para>Otherwise, you can use a GUI tool such as phpMyAdmin to
-            interact with your database instance. Common operations
-            include managing databases, tables, fields, relations,
-            indexes, users, and permissions. Included below is a
-            procedure to set up phpMyAdmin on an Ubuntu 11.04 Cloud
-            Server. </para>
-        <para>For more detailed installation configuration
-            instructions see the phpMyAdmin documentation at: <link
-                xlink:href="http://www.phpmyadmin.net/documentation/"
-                >http://www.phpmyadmin.net/documentation/</link>. <note>
-                <para>Rackspace does not provide phpMyAdmin support,
-                    and the user is responsible for any security
-                    related configuration.</para>
-            </note></para>
-        <procedure>
-            <title>To install and configure phpMyAdmin on an Ubuntu
-                11.04 Cloud Server:</title>
-            <step>
-                <para> Install phpMyAdmin:</para>
-                <para>
-                    <command>sudo apt-get install
-                    phpmyadmin</command></para>
-            </step>
-            <step>
-                <para> Set up a symbolic link to the phpmyadmin config
-                    file:</para>
-                <para><command>sudo ln -s /etc/phpmyadmin/apache.conf
-                        /etc/apache2/conf.d/phpmyadmin.conf</command>
-                </para>
-            </step>
-            <step>
-                <para>Edit the
-                        <code>/etc/phpmyadmin/config-db.php</code>
-                    config file to point to your database
-                    instance:</para>
-                <para><command>$dbserver='&lt;cloud database
-                        hostname>';</command>
-                </para>
-            </step>
-            <step>
-                <para>Restart apache:</para>
-                <para><command>sudo apachectl restart</command></para>
-            </step>
-            <step>
-                <para>Access phpMyAdmin at
-                    http://&lt;your_ipaddress>/phpMyAdmin:</para>
-                <para><inlinemediaobject>
-                        <imageobject>
-                            <imagedata fileref="images/phpMyAdmin.png"
-                                contentwidth="6in"/>
-                        </imageobject>
-                    </inlinemediaobject></para>
-            </step>
-        </procedure>
-        <para>This concludes the <citetitle>Getting
-            Started</citetitle>. Thank you for using Rackspace Cloud
-            products.</para>
+        <title>Additional Resources</title>
+        <para>Using this guide with the <citetitle>Cloud Big Data
+                Developer Guide</citetitle>, you can get started using
+            the Cloud Bid Data API whenever you'd like. The
+                <citetitle>Cloud Big Data Developer Guide</citetitle>
+            provides information about all Cloud Big Data API
+            operations. Refer to this guide at  <link
+                xlink:href="http://docs-internal.rackspace.com/"
+                >http://docs-internal.rackspace.com/</link></para>
+        <para>Please visit our <link
+                xlink:href="http://feedback.rackspace.com/forums/71021-product-feedback/category/6841-cloud-sites"
+                >Product Feedback Forum</link> and let us know what
+            you think about Cloud Big Data.</para>
+        <para>For more details about Rackspace &PRODNAME;, refer to
+                <link
+                xlink:href="http://www.rackspace.com/cloud/cloud_hosting_products/databases/"
+                >http://www.rackspace.com/cloud/cloud_hosting_products/databases/</link>.
+            This site also offers links to Rackspace's official
+            support channels, including knowledge center articles,
+            forums, phone, chat, and email. </para>
+        <para>Please visit our <link
+                xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+                >Product Feedback Forum</link> and let us know what
+            you think about &PRODNAME;.</para>
+        <para>This API uses standard HTTP 1.1 response codes as
+            documented at: <link
+                xlink:href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"
+                >www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>. </para>
     </chapter>
 </book>
-
