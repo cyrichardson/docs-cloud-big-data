@@ -274,13 +274,13 @@ format="SVG" scale="60"/>
             <para> Up to 5 data nodes</para>
           </listitem>
           <listitem>
-            <para>Up to 5 virtual CPUs</para>
+            <para>Up to 10 virtual CPUs</para>
           </listitem>
           <listitem>
-            <para>Up to 25 GBs of RAM</para>
+            <para>Up to 40 GBs of RAM</para>
           </listitem>
           <listitem>
-            <para>Up to 2 Terabytes of disk space</para>
+            <para>Up to 5 Terabytes of disk space</para>
           </listitem>
         </itemizedlist>
       </para>
@@ -307,7 +307,7 @@ format="SVG" scale="60"/>
         to Rackspace's official support channels, including knowledge
         base articles, forums, phone, chat, and email. </para>
       <para>Email all support questions to:
-          <email>cbdteam@rackspace.com</email>. </para>
+          <email>cbdbeta@rackspace.com</email>. </para>
       <para>You can follow Rackspace updates and announcements via
         twitter at: <link
           xlink:href="http://www.twitter.com/rackspace"
@@ -317,13 +317,6 @@ format="SVG" scale="60"/>
           xlink:href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"
           >www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>.
       </para>
-    </section>
-    <section xml:id="API_Contract_Changes-d1e363">
-      <title>API Contract Changes</title>
-      <para>The API contract is not locked and may change during the
-        Early Access Program.</para>
-      <para>Rackspace will notify customers in Release Notes when and
-        if the contract does change.</para>
     </section>
   </chapter>
   <chapter xml:id="Concepts-d1e563">
@@ -385,17 +378,12 @@ format="SVG" scale="60"/>
         the ones you use to login to the Rackspace control panel. Once
         you are logged in, you can use the Rackspace control panel to
         obtain your <code>API key</code>. </para>
-      <para>Use the control panel for the region in which your account
-        is based: <itemizedlist spacing="compact">
+      <para>
+        <itemizedlist spacing="compact">
           <listitem>
-            <para> US-based accounts use the control panel at <link
-                xlink:href="https://manage.rackspacecloud.com/"
-                >https://manage.rackspacecloud.com/</link>. </para>
-          </listitem>
-          <listitem>
-            <para> UK-based accounts use the control panel at <link
-                xlink:href="https://lon.manage.rackspacecloud.com/">
-                https://lon.manage.rackspacecloud.com/</link>. </para>
+            <para> US and UK based accounts use the control panel at
+                <link xlink:href="https://manage.rackspacecloud.com/"
+                >https://mycloud.rackspace.com/</link>. </para>
           </listitem>
         </itemizedlist>
       </para>
@@ -540,6 +528,11 @@ format="SVG" scale="60"/>
         </thead>
         <tbody>
           <tr>
+            <td colspan="2"><code>badRequest</code></td>
+            <td colspan="1">400</td>
+            <td colspan="3">Error in user provided request.</td>
+          </tr>
+          <tr>
             <td colspan="2"><code>unauthorized</code></td>
             <td colspan="1">401</td>
             <td colspan="3">The supplied token is not authorized to
@@ -559,21 +552,31 @@ format="SVG" scale="60"/>
               anything matching the Request-URI.</td>
           </tr>
           <tr>
-            <td colspan="2"><code>lavaFault (not yet
-                implemented)</code></td>
+            <td colspan="2"><code>conflictingRequest</code></td>
+            <td colspan="1">409</td>
+            <td colspan="3">The requested resource cannot be operated
+              on at the moment.</td>
+          </tr>
+          <tr>
+            <td colspan="2"><code>overLimit</code></td>
+            <td colspan="1">413</td>
+            <td colspan="3">Resource quota exceeded.</td>
+          </tr>
+          <tr>
+            <td colspan="2"><code>lavaFault</code></td>
             <td colspan="1">500</td>
             <td colspan="3">An unknown exception occurred.</td>
+          </tr>
+          <tr>
+            <td colspan="2"><code>serviceUnavailable</code></td>
+            <td colspan="1">503</td>
+            <td colspan="3">The service is currently unavailable.</td>
           </tr>
         </tbody>
       </informaltable>
     </section>
     <section xml:id="Limits-d1e1208" security="reviewer">
       <title>Limits</title>
-      <remark>Reviewer: Please provide information for this section or
-        let me know that it is not needed for the Admin Guide. The
-        info currently here is from Cloud Databases as Rhett
-        Dillingham had asked that this guide for Cloud Big Data be
-        modeled after that Guide. </remark>
       <para>All accounts, by default, have a preconfigured set of
         thresholds (or limits) to manage capacity and prevent abuse of
         the system. The system recognizes two kinds of limits:
@@ -587,13 +590,13 @@ format="SVG" scale="60"/>
           human-readable wild-card URI and a machine-processable
           regular expression. The regular expression boundary matcher
           '^' takes effect after the root URI path. For example, the
-          regular expression ^/v1.0/instances would match the bolded
+          regular expression ^/v1.0/clusters would match the bolded
           portion of the following URI:
-            https://ord.databases.api.rackspacecloud.com<emphasis
-            role="bold">/v1.0/instances</emphasis>. </para>
+            https://dfw.bigdata.api.rackspacecloud.com<emphasis
+            role="bold">/v1.0/clusters</emphasis>. </para>
         <para>The following table specifies the default rate limits
           for all API operations for all &GET;, &POST;, &PUT;, and
-          &DELETE; calls for databases and database instances: </para>
+          &DELETE; calls for clusters: </para>
         <table rules="all">
           <caption>Default Rate Limits</caption>
           <thead>
@@ -607,50 +610,48 @@ format="SVG" scale="60"/>
           <tbody>
             <tr>
               <td colspan="1">&GET; changes-since</td>
-              <td colspan="2">*/instances/*</td>
-              <td colspan="2">^/vd+.d+/instances.*</td>
+              <td colspan="2">*/clusters/*</td>
+              <td colspan="2">^/vd+.d+/clusters.*</td>
               <td colspan="1">3/minute</td>
             </tr>
             <tr>
               <td colspan="1">&POST;</td>
-              <td colspan="2">*/instances/*</td>
-              <td colspan="2">^/vd+.d+/instances.*</td>
-              <td colspan="1">10/minute</td>
+              <td colspan="2">*/clusters/*</td>
+              <td colspan="2">^/vd+.d+/clusters.*</td>
+              <td colspan="1">2/minute</td>
             </tr>
             <tr>
-              <td colspan="1">&POST; instances</td>
-              <td colspan="2">*/instances/*</td>
-              <td colspan="2">^/vd+.d+/instances.*</td>
+              <td colspan="1">&POST; clusters</td>
+              <td colspan="2">*/clusters/*</td>
+              <td colspan="2">^/vd+.d+/clusters.*</td>
               <td colspan="1">50/day</td>
             </tr>
             <tr>
               <td colspan="1">&PUT;</td>
-              <td colspan="2">*/instances/*</td>
-              <td colspan="2">^/vd+.d+/instances.*</td>
-              <td colspan="1">10/minute</td>
+              <td colspan="2">*/clusters/*</td>
+              <td colspan="2">^/vd+.d+/clusters.*</td>
+              <td colspan="1">2/minute</td>
             </tr>
             <tr>
               <td colspan="1">&DELETE;</td>
-              <td colspan="2">*/instances/*</td>
-              <td colspan="2">^/vd+.d+/instances.*</td>
-              <td colspan="1">100/minute</td>
+              <td colspan="2">*/clusters/*</td>
+              <td colspan="2">^/vd+.d+/clusters.*</td>
+              <td colspan="1">5/minute</td>
             </tr>
           </tbody>
         </table>
         <para>Rate limits are applied in order relative to the verb,
           going from least to most specific. For example, although the
-          threshold for &POST; to /v1.0/* is 10 per minute, one cannot
+          threshold for &POST; to /v1.0/* is 2 per minute, one cannot
           &POST; to /v1.0/* more than 50 times within a single day. </para>
         <para>If you exceed the thresholds established for your
-          account, a <errorcode>413 (Rate Control)</errorcode> HTTP
+          account, a <errorcode>413 (OverLimit)</errorcode> HTTP
           response will be returned with a <code>Retry-After</code>
           header to notify the client when it can attempt to try
           again. </para>
       </section>
       <section xml:id="Absolute_Limits-d1e1397">
         <title>Absolute Limits</title>
-        <remark>Reviewer: Need to update this entire section. Please
-          give me your updates.</remark>
         <para>Refer to the following table for the absolute limits
           that are set.</para>
         <table rules="all">
@@ -664,16 +665,26 @@ format="SVG" scale="60"/>
           </thead>
           <tbody>
             <tr>
-              <td colspan="1">Instances</td>
-              <td colspan="3">Maximum number of instances allowed for
-                your account</td>
+              <td colspan="1">Node Count</td>
+              <td colspan="3">Maximum no. of allowed data nodes</td>
               <td colspan="1">5</td>
             </tr>
             <tr>
-              <td colspan="1">Volume Size</td>
-              <td colspan="3">Maximum volume size per instance in
-                gigabytes (GB) for your account</td>
-              <td colspan="1">25</td>
+              <td colspan="1">Disk</td>
+              <td colspan="3">Maximum disk capacity across all data
+                nodes in gigabytes (GB) </td>
+              <td colspan="1">5120</td>
+            </tr>
+            <tr>
+              <td colspan="1">Ram</td>
+              <td>Maximum ram across all data nodes in gigabytes
+                (GB)</td>
+              <td colspan="3">40960</td>
+            </tr>
+            <tr>
+              <td colspan="1">Vcpus</td>
+              <td colspan="3">Maximum vcpus across all data nodes</td>
+              <td colspan="1">10</td>
             </tr>
           </tbody>
         </table>
@@ -684,14 +695,7 @@ format="SVG" scale="60"/>
       <para>The &PRODNAME; Service uses an ISO-8601 compliant
         date format for the display and consumption of
         date/time values. </para>
-      <remark>Reviewer:  Do I need to keep the following
-        paragraph for &PRODNAME;? It is from Cloud
-        Databases.</remark>
-      <para>The system timezone is in UTC. MySQL converts
-        TIMESTAMP values from the current time zone to UTC for
-        storage, and back from UTC to the current time zone
-        for retrieval. This does not occur for other types,
-        such as DATETIME. </para>
+      <para>The system timezone is in UTC. </para>
       <example>
         <title>&PRODNAME; Service Date/Time Format</title>
         <programlisting>yyyy-MM-dd'T'HH:mm:ss.SSSZ</programlisting>
@@ -749,199 +753,34 @@ format="SVG" scale="60"/>
       </table>
       
     </section>
-    <section xml:id="pagination">
-      <title>Pagination</title>
-      <remark>Reviewer: Please review and give me your updates
-        for this section. Dev needs to determine which API
-        calls support pagination and then supply examples.
-        I</remark>
-      <para>To reduce load on the service, list operations will
-        return a maximum of 100 items at a time. This is
-        referred to as <emphasis>pagination</emphasis>.</para>
-      <para>Pagination is the ability to limit the size of the
-        returned data as well as retrieve a specified subset
-        of a large data set. Pagination has two key concepts:
-        limit and offset. <emphasis>Limit</emphasis> is the
-        restriction on the maximum number of items for that
-        type that can be returned. <emphasis>Offset</emphasis>
-        is the starting point for the return data. For
-        example, an offset of 50 specifies that the items that
-        are returned should start with item number 51 (since
-        the numbering is one-based) in the collection. </para>
-      <para>It is important to note that offset <emphasis>must</emphasis> be a multiple of the
-        limit (or zero), otherwise a Bad Request Exception will be thrown. Both limit and
-        offset are specified via request parameters on the URI. The parameters are named
-        <code>limit</code> and <code>offset</code> respectively, and both apply only to
-        &GET; calls. If unspecified, they default to <code>limit=100</code> and
-        <code>offset=0</code>. See the examples that follow.</para>
-      <example>
-        <title>Examples of Limits and Offsets for Paging Calls</title>
-        <?dbfo keep-together="always"?>
-        <programlisting language="xml">Reviewer: Need code example.</programlisting>
-      </example>
-      <para>Pagination applies only to the calls listed in the following table: </para>
-      <remark>Reviewer: need to update the table of paginated API
-        calls below:</remark>
-      <informaltable rules="all">
-        <thead>
-          <tr align="center">
-            <td colspan="1">Verb</td>
-            <td colspan="2">URI</td>
-            <td colspan="3">Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="1">&GET;</td>
-            <td colspan="2">{versions}/clusters</td>
-            <td colspan="3">List all clusters for all
-              tenants. </td>
-          </tr>
-          
-          
-          
-        </tbody>
-      </informaltable>
-      <!--            
-            <para>See the following section for examples of paged List
-                Databases calls.</para>
-            <section xml:id="Pagination_Elements_and_Attributes-d1e1754">
-                <title>Pagination Elements and Attributes</title>
-                <remark>Reviewer: please review and give me your
-                    updates for this section.</remark>
-                <para>For any collection in a result, there is a <code>totalEntries</code> attribute
-                    representing the total number of entries there are for this item type. If the
-                    number of items requested in the &GET; call is less then the total number of
-                    items for this type, then there will be pagination links <code>previous</code>
-                    and/or <code>next</code>, specifying how to get to the previous and/or next set
-                    of records. </para>
-                <note>
-                    <para>The <code>previous</code> and/or <code>next</code> link elements are
-                        displayed only if there are items available in the corresponding link. See
-                        the following examples for details.</para>
-                </note>
-                <example>
-                    <title>List Databases Request with limit:
-                        XML</title>
-                    <?dbfo keep-together="always"?>
-                    <programlisting language="xml">Reviewer: Need code example.</programlisting>
-                </example>
-                <example>
-                    <title>List Databases Request with limit:
-                        JSON</title>
-                    <?dbfo keep-together="always"?>
-                    <programlisting language="xml">Reviewer: Need code example.</programlisting>
-                </example>
-                <example>
-                    <title>List Databases Response with totalEntries:
-                        XML</title>
-                    <?dbfo keep-together="always"?>
-                    <programlisting language="xml">Reviewer: Need code example.</programlisting>
-                </example>
-                <example>
-                    <title>List Databases Response with totalEntries:
-                        JSON</title>
-                    <?dbfo keep-together="always"?>
-                    <programlisting language="xml">Reviewer: Need code example.</programlisting>
-                </example>
-                <para> In the previous two response examples, note that
-                        <code>totalEntries=112</code> and that a link has been provided to retrieve
-                    the next 3 results (<code>limit=3</code>) in the link element identified by the
-                    attribute <code>rel="next"</code> (XML) or <code>"rel":"next"</code> (JSON). </para>
-                <para>The following example shows links to both previous and next results in the
-                    responses, since the request specified to start with the fourth item in the
-                    collection (<code>offset=3</code>):</para>
-                <example>
-                    <title>List Databases Request with limit and
-                        offset: XML</title>
-                    <?dbfo keep-together="always"?>
-                    <programlisting language="xml">Reviewer: Need code example.</programlisting>
-                </example>
-                <example>
-                    <title>List Databases Request with limit and
-                        offset: JSON</title>
-                    <?dbfo keep-together="always"?>
-                    <programlisting language="xml">Reviewer: Need code example.</programlisting>
-                </example>
-                <example>
-                    <title>List Databases Response with Links to
-                        previous and next Results: XML</title>
-                    <?dbfo keep-together="always"?>
-                    <programlisting language="xml">Reviewer: Need code example.</programlisting>
-                </example>
-                <example>
-                    <title>List Databases Response with Links to
-                        previous and next Results: JSON</title>
-                    <?dbfo keep-together="always"?>
-                    <programlisting language="xml">Reviewer: Need code example.</programlisting>
-                </example>
-                <para>
-                    <?rax-fo keep-with-next?> In the previous two response examples, note that
-                        <code>totalEntries=112</code> and two links have been provided to:<itemizedlist>
-                        <listitem>
-                            <para>Retrieve the next 3 results (<code>limit=3</code>) via the link
-                                element identified by the attribute <code>rel="next"</code> (XML) or
-                                    <code>"rel":"next"</code> (JSON)</para>
-                        </listitem>
-                        <listitem>
-                            <para>Retrieve the previous 3 results via the link element identified by
-                                the attribute <code>rel="previous"</code> (XML) or
-                                    <code>"rel":"previous"</code> (JSON) </para>
-                        </listitem>
-                    </itemizedlist></para>
-            </section>
--->            
-    </section>
     <section xml:id="database_instance_status" security="writeronly" >
-      <title>FROM DATABASES - Database Instance Status</title>
-      <para><?rax-fo keep-with-next?>When making an API call to create, list, or delete
-        database instance(s), the following database instance
+      <title>Cluster Status</title>
+      <para><?rax-fo keep-with-next?>When making an API call to
+        create, list, or delete cluster(s), the following cluster
         status values are possible:</para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>BUILD &ndash; The database instance is being provisioned.</para>
+          <para>BUILDING &ndash; The cluster is being
+            provisioned.</para>
         </listitem>
         <listitem>
-          <para>REBOOT &ndash; The database instance is
-            rebooting.</para>
+          <para>CONFIGURING &ndash; The cluster is being
+            configured.</para>
         </listitem>
         <listitem>
-          <para>ACTIVE &ndash; The database instance is
-            online and available to take requests.</para>
+          <para>ACTIVE &ndash; The cluster is online and available to
+            for use.</para>
         </listitem>
         <listitem>
-          <para>BACKUP &ndash; The database instance is
-            currently running a backup process.</para>
+          <para>DELETING &ndash; The cluster is being deleted.</para>
         </listitem>
         <listitem>
-          <para>BLOCKED &ndash; The database instance is
-            unresponsive at the moment.</para>
+          <para>UPDATING &ndash; The cluster is being updated at the
+            moment, either being resized or another update
+            operation.</para>
         </listitem>
         <listitem>
-          <para>RESIZE &ndash; The database instance is being
-            resized at the moment.</para>
-        </listitem>
-        <listitem>
-          <para>SHUTDOWN &ndash; The database instance is
-            terminating services. Also, SHUTDOWN is
-            returned if for any reason the MySQL instance
-            is shut down but not the actual server. </para>
-          <para>
-            <note>
-              <para>If MySQL has crashed (causing the
-                SHUTDOWN status), you can try
-                rebooting the database instance to see
-                if that corrects the problem. If the
-                instance still does not recover, you
-                can escalate the issue to
-                NebOps.</para>
-            </note>
-          </para>
-        </listitem>
-        <listitem>
-          <para>ERROR &ndash; The last operation for the
-            database instance failed due to an
-            error.</para>
+          <para>ERROR &ndash; The cluster failed to start  up.</para>
         </listitem>
       </itemizedlist>
     </section> 
@@ -988,7 +827,8 @@ format="SVG" scale="60"/>
       { "name": "slice",
         "clusterType": "HADOOP_HDP1_1",
         "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
-        "nodeCount": 5
+        "nodeCount": 5,
+        "postInitScript" :  "http://example.com/configure_cluster.sh"
       }
     }
     </literallayout>
@@ -1004,6 +844,8 @@ format="SVG" scale="60"/>
         "clusterType": "HADOOP_HDP1_1",
         "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
         "nodeCount": 5,
+        "postInitScriptStatus": "PENDING",
+        "progress": 0.0,
         "status": "BUILD",
         "links": [
           { "rel": "self",
@@ -1063,6 +905,8 @@ format="SVG" scale="60"/>
               "clusterType": "HADOOP_HDP1_1",
               "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
               "nodeCount": 5,
+              "postInitScriptStatus": "SUCCEEDED",
+              "progress": 1.0,
               "status": "ACTIVE",
               "links": [
                 { "rel": "self",
@@ -1080,6 +924,8 @@ format="SVG" scale="60"/>
               "clusterType": "HBASE_HDP1_1",
               "flavorId": "518400b2-7c76-11e2-b737-beeffa00040e",
               "nodeCount": 20,
+              "postInitScriptStatus": null,
+              "progress": 1.0,
               "status": "ACTIVE",
               "links": [
                 { "rel": "self",
@@ -1145,6 +991,8 @@ format="SVG" scale="60"/>
             "clusterType": "HADOOP_HDP1_1",
             "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
             "nodeCount": 5,
+            "postInitScriptStatus": "SUCCEEDED",
+            "progress": 1.0,
             "status": "ACTIVE",
             "links": [
               { "rel": "self",
@@ -1207,6 +1055,8 @@ format="SVG" scale="60"/>
             "clusterType": "HADOOP_HDP1_1",
             "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
             "nodeCount": 10,
+            "postInitScriptStatus": "PENDING",
+            "progress": 0.5,
             "status": "RESIZING",
             "links": [
               { "rel": "self",
@@ -1266,6 +1116,7 @@ format="SVG" scale="60"/>
               "created": "2012-12-27T10:10:10Z", 
               "role": "NAMENODE",
               "name": "NAMENODE-1", 
+              "postInitScriptStatus": null,
               "status": "ACTIVE",
               "addresses": {
                 "public": [{ "addr": "168.x.x.3", "version": 4 }],
@@ -1290,6 +1141,7 @@ format="SVG" scale="60"/>
             { "id": "aaa",
               "role": "GATEWAY",
               "name": "GATEWAY-1", 
+              "postInitScriptStatus": null,
               "status": "ACTIVE",
               "addresses": {
                 "public": [{ "addr": "168.x.x.4", "version": 4 }],
@@ -1319,7 +1171,8 @@ format="SVG" scale="60"/>
             },
             { "id": "bbb",
               "role": "DATANODE",
-              "name": "DATANODE-1",  
+              "name": "DATANODE-1",
+              "postInitScriptStatus": null,
               "status": "ACTIVE",
               "addresses": {
                 "public": [{ "addr": "168.x.x.5", "version": 4 }],
@@ -1343,7 +1196,8 @@ format="SVG" scale="60"/>
             },
             { "id": "ccc",
               "role": "DATANODE",
-              "name": "DATANODE-2",  
+              "name": "DATANODE-2",
+              "postInitScriptStatus": null,
               "status": "ACTIVE",
               "addresses": {
                 "public": [{ "addr": "168.x.x.6", "version": 4 }],
@@ -1415,6 +1269,7 @@ format="SVG" scale="60"/>
             "created": "2012-12-27T10:10:10Z", 
             "role": "NAMENODE",
             "name": "NAMENODE-1", 
+            "postInitScriptStatus": null,
             "status": "ACTIVE",
             "addresses": {
               "public": [{ "addr": "168.x.x.3", "version": 4 }],
@@ -1561,6 +1416,7 @@ format="SVG" scale="60"/>
             "clusterType": "HADOOP_HDP1_1",
             "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
             "nodeCount": 5,
+            "postInitScriptStatus": null,
             "status": "DELETING",
             "links": [
               { "rel": "self",
@@ -1614,7 +1470,8 @@ format="SVG" scale="60"/>
             { "username": "john.doe",
               "user_id" : "12346",
               "tenant_id" : "123456",
-              "sshkeys": [{"name": "t@test"}],
+              "sshkeys": [{"name": "t@test",
+                                   "publicKey": "ssh-rsa AAAAB3..."}],
               "cloudCredentials": {},
               "links": [
                 { "rel": "self",
@@ -1631,7 +1488,7 @@ format="SVG" scale="60"/>
       <para/>
     </section>
     <section xml:id="Update_Profile">
-      <title>Update Profile</title>
+      <title>Create/Update Profile</title>
       <informaltable rules="all">
         <thead>
           <tr align="center">
@@ -1644,8 +1501,8 @@ format="SVG" scale="60"/>
           <tr>
             <td colspan="1">&POST;</td>
             <td colspan="2">/profile</td>
-            <td colspan="3">Updates the information on an existing
-              profile.</td>
+            <td colspan="3">Create or updates the information on an
+              existing profile.</td>
           </tr>
         </tbody>
       </informaltable>
@@ -1654,8 +1511,8 @@ format="SVG" scale="60"/>
       <simpara>Error Response Code(s): <errorcode>400</errorcode>
         (Malformed Data), <errorcode>400</errorcode> (Unacceptable
         parameters) </simpara>
-      <para>This call allows you to update the information for an
-        existing profile.</para>
+      <para>This call allows you to create or update the information
+        for an existing profile.</para>
       <para>The following example shows the request and corresponding
         response to updating a profile:</para>
       <example>
@@ -2132,20 +1989,20 @@ format="SVG" scale="60"/>
           { "absolute":
             {
               "disk": {
-                "limit": 2000,
-                "remaining": 2000
+                "limit": 5120,
+                "remaining": 5120
               },
               "nodeCount": {
                 "limit": 5,
                 "remaining": 5
               },
               "ram": {
-                "limit": 25600,
-                "remaining": 25600
+                "limit": 40960,
+                "remaining": 40960
               },
               "vcpus": {
-                "limit": 5,
-                "remaining": 5
+                "limit": 10,
+                "remaining": 10
               }
             },
             "links": [
