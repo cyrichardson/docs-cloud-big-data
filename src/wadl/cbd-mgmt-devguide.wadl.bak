@@ -68,10 +68,12 @@
 					   	</resource>	
 			 	       	<resource id="nodes" path="nodes">
 			 	       		<resource id="nodeId" path="{nodeId}">
-			 	       		</resource>
+			 	       		
 			 	       	     	<resource id="nodeAction" path="action">
-			 	       	     	</resource>	 	       	
+			 	       	      	       	
 					                 <method href="#postClusterNodeAction" />
+			 	       	     	</resource>	
+			 	       		</resource>
 					    </resource>	
 					</resource>
 			 	</resource>

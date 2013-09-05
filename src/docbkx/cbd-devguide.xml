@@ -69,9 +69,9 @@ format="SVG" scale="60"/>
       </annotation>
     </legalnotice>
     <abstract>
-      <para>This document is intended for software developers
-        interested in developing applications using the Rackspace
-        &PRODNAME; Application Programming Interface
+      <para condition="">This document is intended for software
+        developers interested in developing applications using the
+        Rackspace &PRODNAME; Application Programming Interface
           (<abbrev>API</abbrev>). </para>
     </abstract>
     <revhistory xmlns:svg="http://www.w3.org/2000/svg"

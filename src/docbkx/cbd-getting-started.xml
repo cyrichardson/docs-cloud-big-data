@@ -47,9 +47,9 @@
          xmlns:svg="http://www.w3.org/2000/svg"
          xmlns:m="http://www.w3.org/1998/Math/MathML"
          xmlns:html="http://www.w3.org/1999/xhtml"
-         xml:id="cdb-getting-started">
+         xml:id="cbd-getting-started">
     
-    <?rax title.font.size="30px" subtitle.font.size="20px"?>
+    <?rax title.font.size="35px" subtitle.font.size="20px"?>
     <title>Rackspace Cloud Big Data Getting Started Guide</title>
     <?rax status.bar.text.font.size="40px"
           status.bar.text="Early Access"?>   
@@ -57,22 +57,14 @@
         Guide</titleabbrev>
      
     <info>
-        <author>
-            <personname>
-                <firstname/>
-                <surname/>
-            </personname>
-            <affiliation>
-                <orgname>Rackspace Cloud</orgname>
-            </affiliation>
-        </author>       
+        
         <copyright>
             <year>2013</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo>API v1.0 Early Access</releaseinfo>
         <productname>Rackspace Cloud Big Data</productname>
-        <pubdate>2013-09-04</pubdate>
+        <pubdate>2013-09-16</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the doc build process.</remark>
@@ -87,7 +79,7 @@
         </abstract>
         <revhistory>
             <revision>
-                <date>2013-09-04</date>
+                <date>2013-09-16</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -115,7 +107,7 @@
         <title>Overview</title>
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Rackspace
             &PRODNAME; (&PRODABBV;) is an on-demand Hadoop service for
-            the Rackspace open cloud. The service supports a RESTful
+            the Rackspace open cloud. The service supports a ReSTful
             API and alleviates the pain associated with deploying,
             managing, and scaling Hadoop clusters, allowing you to
             focus on your core business. </para>
@@ -182,6 +174,18 @@
                 </listitem>
             </itemizedlist>
         </para>
+        <para>This guide provides two ways to step through the Cloud
+            Big Data API:</para>
+        <itemizedlist>
+            <listitem>
+                <para>using the API directly (<xref
+                        linkend="Using_the_API_Directly"/>)</para>
+            </listitem>
+            <listitem>
+                <para>using a CLI python-lavaclient (<xref
+                        linkend="Using_Python_lavaclient"/>)</para>
+            </listitem>
+        </itemizedlist>
         <para>Follow the steps described in this guide to get started
             using the Rackspace &PRODNAME; API.</para>
         <section xml:id="core_concepts">
@@ -283,7 +287,64 @@
                 </itemizedlist></para>
         </section>
     </chapter>
-    <chapter xml:id="DB_Sending_API_Requests">
+    <chapter xml:id="Service_Access_Endpoints-d1e753">
+        <title>Service Access/Endpoints</title>
+        <para>The endpoints to use for your Cloud Big Data API calls
+            are summarized in the table below.</para>
+        <para>
+            <table rules="all">
+                <caption>Regionalized Service Endpoints</caption>
+                <thead>
+                    <tr align="center">
+                        <td colspan="2">Region</td>
+                        <td colspan="5">Endpoint</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="left">
+                        <td colspan="2">Chicago (ORD)</td>
+                        <td colspan="5"
+                                ><code>https://ord.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
+                        </td>
+                    </tr>
+                    <tr align="left">
+                        <td colspan="2">Dallas/Ft. Worth (DFW)</td>
+                        <td colspan="5"
+                                ><code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
+                        </td>
+                    </tr>
+                    <tr align="left">
+                        <td colspan="2">London (LON)</td>
+                        <td colspan="5"
+                                ><code>https://lon.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </para>
+        <note>
+            <para>All examples in this guide assume that you are
+                operating against the DFW datacenter, however if you
+                are using a different datacenter, be sure to use the
+                associated endpoint from the table above
+                instead.</para>
+        </note>
+        <para>Replace the sample account ID number,
+                <parameter>1234</parameter>, with your actual account
+            number returned as part of the authentication response.
+            Use your actual account number wherever you see the field
+                <emphasis role="bold">your_acct_id</emphasis>
+            specified in this guide. Refer to <xref
+                linkend="Generating_Auth_Token"/>.</para>
+        <para>When making a Cloud Bid Data API call, place the
+            endpoint at the beginning of the request URL, for example:
+                (<code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/your_acct_id/</code>).</para>
+    </chapter>
+    <chapter xml:id="Using_the_API_Directly">
+        <title>Using the API Directly</title>
+        <para>This chapter in the Getting Started Guide describes how to use Cloud Big Data by using the API directly.</para>
+      
+    <section xml:id="DB_Sending_API_Requests">
         <title>Send Requests to the API</title>
         <para>You have several options for sending requests through an
             API: </para>
@@ -448,8 +509,8 @@
                 long line, removing all the backslash line
                 continuation characters.</para>
         </section>
-    </chapter>
-    <chapter xml:id="Generating_Auth_Token">
+    </section>
+    <section xml:id="Generating_Auth_Token">
         <title>Generate an Authentication Token</title>
         <para>You need to generate a token whether you use cURL or a
             ReST client.</para>
@@ -517,8 +578,12 @@
                     UK-based account. </para>
             </listitem>
         </itemizedlist>
+        <para> If you are unsure how your account was created, use the
+            Rackspace contact information at either site to ask for
+            help. </para>  
         <para>Notice that you authenticate using a special URL for
-            Cloud authentication services. For example, you may use
+            Cloud authentication services. For example, for US-based
+            accounts, you use
                 <code>https://identity.api.rackspacecloud.com/v2.0/tokens</code>,
             as shown in the following Authenticate Request examples.
             Note that the <code>v2.0</code> component in the URL
@@ -632,62 +697,10 @@
         <para>After authentication, you can use cURL to perform &GET;,
             &DELETE;, and &POST; requests for the &PRODNAME;
             API.</para>
-    </chapter>
-    <chapter xml:id="Service_Access_Endpoints-d1e753">
-        <title>Service Access/Endpoints</title>
-        <para>The endpoint to use for your &PRODNAME; API calls for
-            the EA release is
-                    <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/<parameter>1234</parameter>/.</code></para>
- <!--       
-        <para>
-            <table rules="all">
-                <caption>Regionalized Service Endpoints</caption>
-                <thead>
-                    <tr align="center">
-                        <td colspan="2">Region</td>
-                        <td colspan="5">Endpoint</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr align="left">
-                        <td colspan="2">Chicago (ORD)</td>
-                        <td colspan="5"
-                                ><code>https://ord.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/ </td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="2">Dallas/Ft. Worth (DFW)</td>
-                        <td colspan="5"
-                                ><code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/ </td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="2">London (LON)</td>
-                        <td colspan="5">
-                            <code>https://lon.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/ </td>
-                    </tr>
-                    <tr align="left">
-                        <td colspan="2">Sydney (SYD)</td>
-                        <td colspan="5">
-                            <code>https://syd.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/ </td>
-                    </tr>
-                </tbody>
-            </table>
-        </para> -->
-        <note>
-            <para>All examples in this guide assume that you are
-                operating against the DFW datacenter.</para> 
-        </note>
-        <para>Replace the sample account ID number,
-                <parameter>1234</parameter>, with your actual account
-            number returned as part of the authentication response.
-            Use your actual account number wherever you see the field
-                <emphasis role="bold">your_acct_id</emphasis>
-            specified in this guide. Refer to <xref
-                linkend="Generating_Auth_Token"/>.</para>
-        <para>When making a &PRODNAME; API call, place the endpoint at
-            the beginning of the request URL, for example:
-                (<code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/your_acct_id/</code>).</para>
-    </chapter>
-    <chapter xml:id="profileSetupView">
+    </section>
+
+
+    <section xml:id="profileSetupView">
         <title>Setting Up and Viewing a Profile</title>
         <remark>Reviewer: Is there an API call to set up a Profile?
             I'm working from the Walk-thrus on the wiki and it
@@ -790,9 +803,9 @@
             }
         }</programlisting>
         </example>
-    </chapter>
+    </section>
     
-    <chapter xml:id="Create_DB_Instance">
+    <section xml:id="Create_DB_Instance">
             <title>Viewing Resource Limits</title>
             <para>Using Rackspace Cloud Big Data is subject to
             resource limits. You can view the limits associated with
@@ -866,8 +879,8 @@
           }
         }</programlisting>
         </example>
-        </chapter>
-    <chapter xml:id="List_DBS_For_Instance">
+        </section>
+    <section xml:id="List_DBS_For_Instance">
         <title>Creating and Managing Hadoop Clusters</title>
         <para>Now you are ready to create and manage Hadoop clusters
             using the Rackspace Cloud Big Data API. </para>
@@ -1325,7 +1338,7 @@
             "links": [
               { "rel": "self",
                 "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
-              },
+              },REST
               { "rel": "bookmark",
                 "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
               }
@@ -1336,9 +1349,692 @@
              
             </example>
         </section>
+    </section>
+
     </chapter>
-    <chapter xml:id="List_Users_DB_Instance">
+    <chapter xml:id="Using_Python_lavaclient">
+        <title>Using the Python Lava Client</title>
+        <para>This chapter explains how to get started using
+            python-lavaclient, which is a convenient python binding
+            and command-line client that utilizes the ReSTful
+            API.</para>
+        <section xml:id="setting_Up">
+            <title>Setting Up</title>
+            <para>This section describes prerequisites, installing,
+                and setting up to use the python-lavaclient.</para>
+            <section xml:id="Prerequisites">
+                <title>Prerequisites</title>
+                <para>You will need the following in order to use
+                    python-lavaclient:</para>
+                <itemizedlist>
+                    <listitem>
+                        <para>a computer running Linux or Mac OS
+                            X</para>
+                    </listitem>
+                    <listitem>
+                        <para>Python 2.7.2 or later</para>
+                    </listitem>
+                    <listitem>
+                        <para>a Rackspace Cloud account and access to
+                            Rackspace Cloud Big Data</para>
+                    </listitem>
+                </itemizedlist>
+            </section>
+            <section xml:id="installing_Client">
+                <title>Installing the Client</title>
+                <para>Download python-lavaclient to your computer from
+                        <link xlink:href="http://bit.ly/cbd-client"
+                        >http://bit.ly/cbd-client</link>. Then extract
+                    the archive using the following command:</para>
+                <programlisting>$ tar xvzf python-lava-0.8.6.tgz</programlisting>
+                <para>This creates a python-lavaclient folder. Go into
+                    the folder and install the client using the
+                    following
+                    commands:<programlisting>$ cd python-lavaclient 
+$ sudo python setup.py install</programlisting></para>
+                <para>Using the following command, run the help
+                    command to make sure the utility has been
+                    installed correctly and note the usage
+                    information:</para>
+                <programlisting>$ lava help</programlisting>
+            </section>
+            <section xml:id="authenticate_Against_API">
+                <title>Authentication</title>
+                <para>You need to authenticate your session before you
+                    can start using Rackspace Cloud Big Data. You need
+                    your Cloud username and API Key in order to
+                    complete this step. Run the auth command and,when
+                    prompted, enter your username and API Key. Your
+                    access token and API URL will be displayed on the
+                    console.</para>
+                <programlisting>$ lava auth
+Username: &lt;enter your Cloud username>
+API Key: &lt;enter your API Key></programlisting>
+                <para>Successful execution displays your
+                    authentication token and access endpoint as shown
+                    in the following example.</para>
+                <example>
+                    <title>Authentication Response Using CLI
+                        Utility</title>
+                    <programlisting>AUTH_TOKEN=692c2a14-39ad-4ee0-991d-06cd7331f3ca
+LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</programlisting>
+                </example>
+                <para>Export the AUTH_TOKEN and LAVA_API_URL
+                    environment variables as shown below.</para>
+                <example>
+                    <title>Export Environment Variables</title>
+                    <programlisting>$ export AUTH_TOKEN=692c2a14-39ad-4ee0-991d-06cd7331f3ca
+$ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</programlisting>
+                </example>
+                <note>
+                    <para>The <command>export</command> commands above
+                        are valid only for the current session. You
+                        need to rerun the <command>export</command>
+                        commands if, for example, you create a new
+                        console window.</para>
+                </note>
+                <para>To confirm that the client is running, run the
+                        <command>list</command> command. The first
+                    time that you run this command, it does not return
+                    any output. </para>
+                <programlisting>$ lava list</programlisting>
+            </section>
+            <section xml:id="setting_Up_Profile">
+                <title>Setting Up a Profile</title>
+                <para>Before you can create Hadoop clusters, you need
+                    to create a profile that consists of a
+                        <parameter>username</parameter> and
+                        <parameter>password</parameter>. This is done
+                    using the <command>create-profile</command>
+                    command as shown below. In this example, a user
+                    with the name <parameter>joe</parameter> is
+                    created and his password is
+                        <parameter>Fool1234!</parameter>.</para>
+                <example>
+                    <title>Creating a Profile</title>
+                    <programlisting>$ lava create-profile joe Foo1234!</programlisting>
+                </example>
+                <para>A password must be at least 8 characters, with a
+                    mixture of uppercase, lowercase, numeric and
+                    special characters.</para>
+                <para>After creating your profile, every Hadoop server
+                    you provision using the API will have a local user
+                    account called <emphasis role="bold"
+                        >joe</emphasis> with the specified password.
+                    Now you can remotely SSH into a server in order to
+                    transfer data, run or troubleshoot jobs, and so
+                    on.</para>
+                <para>To confirm that your profile was successfully
+                    created, run the <command>get-profile</command>
+                    command.</para>
+                <example>
+                    <title>Get-profile Command to Retrieve a
+                        Profile</title>
+                    <programlisting>$ lava get-profile
++-------------+-----------+-------------+
+| Username | User ID | Tenant ID |
++-------------+---------+---------------+
+| joe | 118091 | 12345 |
++-------------+-----------+-------------+</programlisting>
+                </example>
+            </section>
+            <section xml:id="view_Resource_Limits">
+                <title>Viewing Resource Limits</title>
+                <para>Using Rackspace Cloud Big Data is subject to
+                    resource limits. You can view the limits
+                    associated with your account using the
+                        <command>quotas</command> command. </para>
+                <example>
+                    <title>Quotas Command to View Resource Limits </title>
+                    <programlisting>$ lava quotas
++-------------+-----------------+-------------+-----------------+-----------+---------------+------------+----------------+
+| Nodes Limit | Nodes Remaining | VCPUs Limit | VCPUs Remaining | RAM Limit | Ram Remaining | Disk Limit | Disk Remaining |
++-------------+-----------------+-------------+-----------------+-----------+---------------+------------+----------------+
+| 5 | 5 | 5 | 5 | 25600 | 25600 | 2048 | 2048 |
++-------------+-----------------+-------------+-----------------+-----------+---------------+------------+----------------+</programlisting>
+                </example>
+            </section>
+        </section>
+        <section xml:id="create_Manage_Clusters">
+            <title>Creating and Managing Hadoop Clusters</title>
+            <para>This section explains how to create and manage
+                Hadoop clusters using Rackspace Cloud Big Data using
+                the python-lavaclient. After you complete this
+                section, you will have a working Apache Hadoop
+                cluster.</para>
+            <section xml:id="boot_Hadoop_Cluster">
+                <title>Booting a Hadoop Cluster</title>
+                <para>Use the <command>boot</command> command to
+                    provision a Hadoop cluster. The example below
+                    creates a 3-data node Hadoop cluster with the name
+                        <emphasis role="bold">foo</emphasis>.</para>
+                <example>
+                    <title>Boot Command to Provision a Cluster </title>
+                    <programlisting>$ lava boot --type=HADOOP_HDP1_1 --flavor=4fba3bca-7c76-11e2-b737-beeffa00040e --count=3 foo
++----------+--------------------------------------+
+| Property | Value |
++----------+--------------------------------------+
+| Id | 4820deb2-6212-44f9-b92f-979fe723ffb8 |
+| Name | foo |
+| Status | BUILD |
+| Nodes | 3 |
+| Type | HADOOP_HDP1_1 |
+| Flavor | 4fba3bca-7c76-11e2-b737-beeffa00040e |
++----------+--------------------------------------+</programlisting>
+                </example>
+                <para>The <parameter>type</parameter> argument must
+                    specify HADOOP_HDP1_1. The
+                        <parameter>flavor</parameter> argument
+                    specifies the RAM, virtual CPUs, and disk storage
+                    associated with each data node in your Hadoop
+                    cluster. You can enumerate the flavors and
+                    associated resources using the
+                        <command>flavor-list</command> command, as
+                    shown below.</para>
+                <example>
+                    <title>Flavor-list Command to Enumerate the
+                        Flavors and Associated Resources</title>
+                    <programlisting>$ lava flavor-list
++--------------------------------------+------------------------+-------+------+------+
+| Id | Name | Mem | Disk | CPUs |
++--------------------------------------+------------------------+-------+------+------+
+| 4fba3bca-7c76-11e2-b737-beeffa00040e | Tiny Hadoop Instance | 5120 | 256 | 1 |
+| 518400b2-7c76-11e2-b737-beeffa00040e | Small Hadoop Instance | 8192 | 512 | 2 |
+| 5413894c-7c76-11e2-b737-beeffa00040e | Medium Hadoop Instance | 15360 | 1024 | 4 |
+| 559dd2b8-7c76-11e2-b737-beeffa00040e | Large Hadoop Instance | 27648 | 2048 | 8 |
++--------------------------------------+------------------------+-------+------+------+</programlisting>
+                </example>
+                <para>After you run the <command>boot</command>
+                    command, it takes a few minutes for the service to
+                    build and configure your cluster. Use the
+                        <command>list</command> command to query the
+                    build status of your cluster.</para>
+                <example>
+                    <title>List Command to Query Status</title>
+                    <programlisting>$ lava list
++--------------------------------------+------+--------+-------+---------------+
+| Id | Name | Status | Nodes | Type |
++--------------------------------------+------+--------+-------+---------------+
+| 4820deb2-6212-44f9-b92f-979fe723ffb8 | foo | ACTIVE | 3 | HADOOP_HDP1_1 |
++--------------------------------------+------+--------+-------+---------------+</programlisting>
+                </example>
+                <para>When your cluster is ready, the status shows
+                        <emphasis role="bold"
+                    >ACTIVE</emphasis>.</para>
+            </section>
+            <section xml:id="viewing_Details">
+                <title>Viewing Details</title>
+                <para>Use the <command>show</command> and
+                        <command>nodes</command> commands to query
+                    your cluster, as shown in the following
+                    example.</para>
+                <example>
+                    <title>Show and Nodes Commands to Query
+                        Cluster</title>
+                    <programlisting>$ lava show foo
++----------+--------------------------------------+
+| Property | Value |
++----------+--------------------------------------+
+| Id | 4820deb2-6212-44f9-b92f-979fe723ffb8 |
+| Name | foo |
+| Status | ACTIVE |
+| Nodes | 3 |
+| Type | HADOOP_HDP1_1 |
+| Flavor | 4fba3bca-7c76-11e2-b737-beeffa00040e |
++----------+--------------------------------------+
+$ lava nodes foo
++--------------------------------------+--------------+----------+--------+----------------+----------------+
+| Id | Name | Role | Status | Public IP | Private IP |
++--------------------------------------+--------------+----------+--------+----------------+----------------+
+| f530a9f1-79a8-4378-bf2a-b7f7e0c2bdd3 | NAMENODE-88 | NAMENODE | ACTIVE | 166.78.132.85 | 10.190.240.88 |
+| 87a1bf57-daa6-4dd5-b711-f428cc44fe74 | DATANODE-182 | DATANODE | ACTIVE | 166.78.132.228 | 10.190.240.228 |
+| 82136cd0-2c98-4c76-9224-54aef9942de3 | DATANODE-183 | DATANODE | ACTIVE | 166.78.132.84 | 10.190.240.84 |
+| 8a9929ed-9ba3-4a22-b5a7-8a36a81179a6 | DATANODE-184 | DATANODE | ACTIVE | 166.78.132.88 | 10.190.240.85 |
+| 55ed5001-fdc3-44f1-a82c-97532007f3b3 | GATEWAY-89 | GATEWAY | ACTIVE | 166.78.132.227 | 10.190.240.227 |
++--------------------------------------+--------------+----------+--------+----------------+----------------+
+</programlisting>
+                </example>
+                <para>The example shows that the cluster has:</para>
+                <itemizedlist>
+                    <listitem>
+                        <para>a <emphasis role="bold">name
+                                node</emphasis></para>
+                    </listitem>
+                    <listitem>
+                        <para>a <emphasis role="bold">gateway
+                                node</emphasis></para>
+                    </listitem>
+                    <listitem>
+                        <para>3 <emphasis role="bold">data
+                                nodes</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+                <para>A server has:<itemizedlist>
+                        <listitem>
+                            <para>a <emphasis role="bold">private
+                                   IP</emphasis> address that is used
+                                for backend (Hadoop) data
+                                transfer</para>
+                        </listitem>
+                        <listitem>
+                            <para>a <emphasis role="bold">public
+                                   IP</emphasis> that allows you to
+                                access it over the public
+                                internet</para>
+                        </listitem>
+                    </itemizedlist>Use the gateway node to do your
+                    work, including using tools such as Pig and Hive.
+                    In the above example, you can remotely SSH into
+                    the gateway node over IP address 166.78.132.227,
+                    using the username (<emphasis role="bold"
+                        >joe</emphasis>) and the password you added to
+                    your profile during setup.</para>
+            </section>
+            <section xml:id="resize_Cluster">
+                <title>Resizing Clusters</title>
+                <para>You can increase the size of an existing cluster
+                    using the <command>resize</command> command.
+                    Downsizing clusters is not currently supported.
+                    The following example resizes the previously
+                    created cluster <emphasis role="bold"
+                        >foo</emphasis> to include 5 data nodes.<example>
+                        <title>Resize Command to Increase Cluster
+                            Size</title>
+                        <programlisting>$ lava resize --count=5 foo
+</programlisting>
+                    </example></para>
+                <para>Note that 5 is the <emphasis role="italic">total
+                        number</emphasis> of data nodes in the
+                    cluster, not the additional number of nodes. After
+                    you initiate the <command>resize</command>
+                    operation, use the <command>show</command> or
+                        <command>list</command> commands to confirm
+                    that your cluster has been resized. </para>
+            </section>
+            <section xml:id="delete_Cluster">
+                <title>Deleting Clusters</title>
+                <para>Use the <command>delete</command> command to
+                    remove unused Hadoop clusters. Using this command
+                    gets rid of any servers associated with the
+                    cluster and any data stored in it.</para>
+                <example>
+                    <title>Delete Command to Remove Clusters</title>
+                    <programlisting>$ lava delete foo
+</programlisting>
+                </example>
+                <note>
+                    <para>You cannot delete clusters that are in the
+                        process of being created or resized. </para>
+                </note>
+            </section>
+        </section>
+        
+
+<!-- Possible additions from CBD wiki getting started  
+            
+        <section xml:id="word_Count_Application">
+            <title>Running a Sample Word Count Application</title>
+            <para>This section explains how to run WordCount, which is
+                a sample MapReduce application that ships with the
+                Apache Hadoop distribution. The application simply
+                counts the occurrence of every word in the provided
+                text. </para>
+            <para>Prior to working through this section, be sure you
+                have worked through the sections <xref
+                    linkend="setting_Up"/> and <xref
+                    linkend="create_Manage_Clusters"/> to set up a
+                3-node cluster.</para>
+            <section xml:id="copy_Input_Data">
+                <title>Copying Input Data</title>
+                <para>The sample application requires some input text
+                    data to work against. A real application normally
+                    runs against an input folder containing many large
+                    files. For this exercise, let's assume that you
+                    have downloaded <citetitle>The Complete Works of
+                        William Shakespeare</citetitle> (a single
+                    file) onto your computer or laptop. </para>
+                <para>You can use several different techniques to
+                    transfer data into Hadoop. For convenience,
+                    Rackspace provides a secure copy protocol (SCP)
+                    service that you can use to upload and access data
+                    in Hadoop. The SCP service runs on the gateway
+                    node that is automatically provisioned by
+                    Rackspace Cloud Big Data. The SCP service reads
+                    and writes directly into the Hadoop File System,
+                    not the local disk on the gateway node. </para>
+                <para>Use the nodes command to determine the IP
+                    address of the gateway node. In the example below,
+                    the gateway node has the public IP address
+                    166.78.132.227.</para>
+                <example>
+                    <title>Nodes Command to Determine IP
+                        Address</title>
+                    <programlisting>$ lava nodes foo
++_______________________________________+______________+___________+__________+___________+_________________+
+| Id | Name | Role | Status | Public IP | Private IP |
++_______________________________________+______________+___________+__________+___________+_________________+
+| f530a9f1-79a8-4378-bf2a-b7f7e0c2bdd3 | NAMENODE-88 | NAMENODE | ACTIVE | 166.78.132.85 | 10.190.240.88 |
+| 87a1bf57-daa6-4dd5-b711-f428cc44fe74 | DATANODE-182 | DATANODE | ACTIVE | 166.78.132.228 | 10.190.240.228 |
+| 82136cd0-2c98-4c76-9224-54aef9942de3 | DATANODE-183 | DATANODE | ACTIVE | 166.78.132.84 | 10.190.240.84 |
+| 8a9929ed-9ba3-4a22-b5a7-8a36a81179a6 | DATANODE-184 | DATANODE | ACTIVE | 166.78.132.88 | 10.190.240.85 |
+| 55ed5001-fdc3-44f1-a82c-97532007f3b3 | GATEWAY-89 | GATEWAY | ACTIVE | 166.78.132.227 | 10.190.240.227 |
++_______________________________________+______________+___________+__________+___________+_________________+
+</programlisting>
+                </example>
+                <para>Run the following commands to create a folder on
+                    the Hadoop file system (called
+                        <parameter>input</parameter>) and upload your
+                    input text data into it.</para>
+                <programlisting>$ ssh joe@166.78.132.227 mkdir input</programlisting>
+                <programlisting>$ scp -P 9022 input.txt joe@166.78.132.227:input</programlisting>
+                <para>Your Hadoop cluster now has some input data on
+                    it in order for you to work with.</para>
+                <note>
+                    <para>The SCP service runs on port 9022. Using the
+                        default port (22)  ends up copying data to the
+                        local disk on the gateway server (not the
+                        Hadoop file system).</para>
+                </note>
+            </section>
+            <section xml:id="run_WordCount">
+                <title>Running WordCount</title>
+                <para>To run the sample application, you need to SSH
+                    into the gateway in your cluster. After you are
+                    logged in, run the following command to check out
+                    the sample applications that ship with Apache
+                    Hadoop.</para>
+                <programlisting>$ hadoop jar /usr/lib/hadoop/hadoop-examples.jar</programlisting>
+                <para>The resulting output should look like the
+                    following example. </para>
+                <screenshot>
+                    <title>Example of Sample Applications with Apache
+                        Hadoop</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata format="svg" align="center" scale="50"
+                                fileref="../resources/samples/GSG_CLI_Screen2.png "/>
+                        </imageobject>
+                    </mediaobject>
+                </screenshot>
+                <para>In particular, the WordCount application
+                    requires an input folder (already created) and an
+                    output folder. Launch the application using the
+                    command line shown below.</para>
+                <programlisting>$ hadoop jar /usr/lib/hadoop/hadoop-examples.jar wordcount input output</programlisting>
+                <para/>
+                <para>The resulting output should look like the
+                    following example.<figure>
+                        <title>Output from Creation of folders</title>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata format="svg" align="center" scale="50"
+                                   fileref="../resources/samples/GSG_CLI_Screen1.png"/>
+                            </imageobject>
+                        </mediaobject>
+                    </figure></para>
+                <para>After the command completes successfully, the
+                    results are written to a folder called
+                        <parameter>output</parameter> on the Hadoop
+                    file system. You can view the output folder using
+                    your FTP client, or by running the following
+                    command.</para>
+                <programlisting>$ hadoop fs –ls output</programlisting>
+                <para>At this point, you have used the hadoop script
+                    to launch the sample application. This is a
+                    general-purpose utility for running a variety of
+                    Hadoop-related commands. Look at <citetitle>Hadoop
+                        Commands Guide</citetitle> for a more detailed
+                    explanation. </para>
+                <para>Going back to our command line, the
+                        <command>jar</command> subcommand is used to
+                    launch a MapReduce bundled in a jar file: </para>
+                <programlisting>hadoop jar /usr/lib/hadoop/hadoop-examples.jar wordcount input output</programlisting>
+                <para> The argument following the
+                        <command>jar</command> subcommand is the full
+                    path for the Java package that contains all the
+                    sample applications. The path is followed by the
+                    application to run, namely
+                        <parameter>wordcount</parameter>. The input
+                    and output parameters are specific to the
+                    WordCount application, and specify the input and
+                    output folders respectively.</para>
+            </section>
+        </section>
+        <section xml:id="python_Hadoop_Application">
+            <title>Building a Python Hadoop Application</title>
+            <para>This section explains how to use process data in
+                Hadoop using the Python programming language. Since
+                Hadoop's core components are Java-based, it natively
+                only supports MapReduce applications written in Java.
+                This presents a problem for developers who wish to
+                build data processing applications using an
+                alternative programming language (such as Python or
+                Ruby). Luckily, Hadoop includes a streaming utility,
+                which allows any executable to serve as a mapper or
+                reducer. You can find more details about the tool in
+               <link
+                    xlink:href="http://wiki.apache.org/hadoop/HadoopStreaming/"
+                    >Hadoop Streaming Wiki/</link>.
+                The simple Python MapReduce application in this
+                section relies on streaming. </para>
+            <para>Prior to working through this section, be sure to
+                read <xref linkend="setting_Up"/> and <xref
+                    linkend="create_Manage_Clusters"/> to set up a
+                3-node cluster. Also, take a look at <xref
+                    linkend="run_WordCount"/> in order to learn how to
+                copy data into Hadoop and run the packaged (Java)
+                WordCount application.</para>
+            <section xml:id="code_Python_App">
+                <title>Coding the Python application</title>
+                <para>SSH into your gateway node and use the following
+                    code snippets to create your Python mapper and
+                    reducer. </para>
+                <para>The code for the mapper function is below. Use
+                    your favorite editor to save it as mapper.py on
+                    the gateway node. </para>
+                <note>
+                    <para>Python cares about indentation, so be sure
+                        to maintain it when you copy and paste the
+                        code using your editor.</para>
+                </note>
+                <programlisting>#!/usr/bin/env python
+
+import sys
+
+# input comes from STDIN (standard input)
+for line in sys.stdin:
+
+      # remove leading and trailing whitespace
+      line = line.strip()
+
+      # split the line into words
+      words = line.split()
+
+           # increase counters
+           for word in words:
+           # write the results to STDOUT (standard output);
+           # what we output here will be the input for the
+           # Reduce step, i.e. the input for reducer.py
+           #
+           # tab-delimited; the trivial word count is 1
+           print '%s\t%s' % (word, 1)</programlisting>
+                <para>Similarly, save the following code as <emphasis
+                        role="bold">reducer.py</emphasis> on your
+                    gateway node.</para>
+                <programlisting>#!/usr/bin/env python
+
+from operator import itemgetter
+import sys
+
+current_word = None
+current_count = 0
+word = None
+
+# input comes from STDIN
+for line in sys.stdin:
+
+      # remove leading and trailing whitespace
+      line = line.strip()
+
+      # parse the input we got from mapper.py
+      word, count = line.split('\t', 1)
+
+      # convert count (currently a string) to int
+      try:
+
+          count = int(count)
+
+      except ValueError:
+
+          # count was not a number, so silently
+          # ignore/discard this line
+          continue
+
+      # this IF-switch only works because Hadoop sorts map output
+      # by key (here: word) before it is passed to the reducer
+      if current_word == word:
+
+            current_count += count
+
+      else:
+
+           if current_word:
+
+                 # write result to STDOUT
+                 print '%s\t%s' % (current_word, current_count)
+
+           current_count = count
+           current_word = word
+
+# do not forget to output the last word if needed!
+if current_word == word:
+
+      print '%s\t%s' % (current_word, current_count)</programlisting>
+            </section>
+            <section xml:id="run_Python_App">
+                <title>Running the Python application</title>
+                <para>Use the same input folder for this application
+                    that you created for <xref linkend="run_WordCount"
+                    />. Be sure to follow the steps to copy the data,
+                    if you have not already. To launch the job, run
+                    the following command line from the gateway
+                    node.</para>
+                <programlisting>hadoop jar /usr/lib/hadoop/contrib/streaming/hadoop-streaming-0.20.2-cdh3u2.jar  -input input -output OUTPUT1 -mapper mapper.py -reducer reducer.py -file mapper.py  -file reducer.py</programlisting>
+                <para>When the job completes, the results is in an
+                    HDFS folder called <emphasis role="bold"
+                        >OUTPUT1</emphasis>. The results might be
+                    spread across several files in this folder due to
+                    the fact that Hadoop might utilize several
+                    reducers in parallel. Merge and copy the result
+                    set into a single file on your local (gateway
+                    node) file system using the following
+                    command.</para>
+                <programlisting>$ hadoop fs -getmerge OUTPUT1 result.txt </programlisting>
+                <para>When this command succeeds successfully, the
+                    results will be stored in the <emphasis
+                        role="bold">result.txt</emphasis> file on the
+                    gateway node's local file system.</para>
+                <para>If you are familiar with Python, try to modify
+                    the above application to ignore words that contain
+                    special characters. Also, look at <xref
+                        linkend="MLB_Game_Logs"/> to learn how to use
+                    the Pig tool that ships with Hadoop.</para>
+            </section>
+        </section>
+        <section xml:id="MLB_Game_Logs">
+            <title>Analyzing MLB Game Logs Using Pig</title>
+            <para>Writing MapReduce jobs for Hadoop using Java or
+                Python can grow cumbersome. Luckily, Hadoop includes
+                two query engines called Pig and Hive, which provide a
+                higher level of abstraction for you to work with. This
+                secation shows how you can process some Major League
+                Baseball (MLB) data on Hadoop using Pig. </para>
+            <para>Prior to working through this article, be sure to
+                read <xref linkend="setting_Up"/> and <xref
+                    linkend="create_Manage_Clusters"/> to set up a
+                3-node cluster. Also, take a look at <xref
+                    linkend="run_WordCount"/> in order to learn how to
+                copy data into Hadoop and run the packaged (Java)
+                WordCount application.</para>
+            <section xml:id="code_Pig_App">
+                <title>Coding the Pig Application</title>
+                <para>This application computes the average attendance
+                    for every MLB ballpark for the year 2011. To
+                    accomplish this, you need MLB game logs for 2011,
+                    which you can download from
+                    <link xlink:href=" http://www.retrosheet.org/gamelogs/index.html"
+                        > http://www.retrosheet.org/gamelogs/index.html</link>. </para>
+                <para>The game log information is processed using the
+                    following Pig script:</para>
+                <programlisting>__ See http://www.retrosheet.org/gamelogs/glfields.txt
+
+raw = load 'input' using PigStorage(',') as (date:bytearray, 
+numgames:bytearray,
+dayofweek:bytearray,
+vteam:bytearray,
+vleague:bytearray,
+vteamno:bytearray,
+hteam:bytearray,
+hleage:bytearray,
+hteamno:bytearray,
+vscore:int,
+hscore:int,
+outs:int,
+dayindicator:bytearray,
+completion:bytearray,
+forfeit:bytearray,
+protest:bytearray,
+parkid:bytearray,
+attendance:int
+);
+
+__ Strip quotes from team using tokenize
+final = foreach raw generate FLATTEN(TOKENIZE(hteam)) as team:chararray, attendance;
+final2 = foreach (group final by team) generate group, AVG(final.attendance);
+
+store final2 into 'result2';</programlisting>
+                <para>SSH into the gateway node. Then cut and paste
+                    the above snippet into a text file called
+                        <emphasis role="bold"
+                        >attendance.pig</emphasis>.</para>
+            </section>
+            <section xml:id="run_Pig_App">
+                <title>Running the Pig Application</title>
+                <para>Download the 2011 MLB game logs (a single file)
+                    on to your development machine or laptop. Launch a
+                    command prompt and run the following commands from
+                    to create a folder on the Hadoop file system
+                    (called <emphasis role="bold">input</emphasis>)
+                    and upload the log data to it.</para>
+                <programlisting>$ ssh joe@166.78.132.227 sudo -u hdfs mkdir input</programlisting>
+                <programlisting>$ scp -P 9022 GL2011.txt joe@166.78.132.227:input</programlisting>
+                <para>To launch the Pig script, SSH into the gateway
+                    node and run the following command:</para>
+                <programlisting>$ pig attendance.pig</programlisting>
+                <para>When the script completes, run the following
+                    command to merge and pull the resulting output
+                    from HDFS onto the gateway node's local
+                    disk:</para>
+                <programlisting>$ hadoop fs -getmerge result RESULT.TXT</programlisting>
+                <para>The <emphasis role="bold">RESULT.TXT</emphasis>
+                    file should contain the average attendance for
+                    every ballpark for 2011. You can view the results
+                    using the following command:</para>
+                <programlisting>$ less RESULT.TXT</programlisting>
+                <para>Pig is a very powerful querying tool and can
+                    accomplish many tasks. Take a look at <link
+                        xlink:href="http://pig.apache.org/docs/r0.7.0/piglatin_ref1.html"
+                        >Pig Latin Reference Manual</link> to learn
+                    more about Pig's capabilities.</para>
+            </section>
+
+        </section>
+-->
+    </chapter>
+    <chapter xml:id="Additional_Resources">
         <title>Additional Resources</title>
+        <para>Email cbdbeta@rackspace.com if you have any questions or
+            concerns in using any of the steps in this guide. </para>
         <para>Using this guide with the <citetitle>Cloud Big Data
                 Developer Guide</citetitle>, you can get started using
             the Cloud Bid Data API whenever you'd like. The

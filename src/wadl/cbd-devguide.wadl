@@ -17,15 +17,15 @@
 	         xmlns:raxapi="http://docs.rackspace.com/volume/api/v1"
 	         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	         xmlns:dbaas="http://docs.openstack.org/database/api/v1.0"
-	         xmlns:queues="http://docs.openstack.org/database/api/v1.0">
+	         xmlns:cbd="http://docs.openstack.org/database/api/v1.0"
+	         xmlns:clusters="http://docs.openstack.org/database/api/v1.0">
 	
 	
 <!--*******************************************************-->
 <!-- GRAMMARS                                              -->
 <!--*******************************************************-->
 	
-<!-- What do I need here for Cloud Big Data Admin Guide? 
+<!-- What do I need here for Cloud Big Data Dev Guide? 
 	<grammars>
 		<include href="../common/xsd/api.xsd"/> (identity grammars)
 		<include href="../common/xsd/api-common.xsd"/> (identity grammars)
@@ -38,20 +38,12 @@
 <!--*******************************************************-->	
 	
 <resources base="https://dfw.bigdata.api.rackspacecloud.com/">
-	<resource id="version" path="{version}">
-		
-		<resource id="limits" path="limits">
-			<method href="#listLimits" />	
-			<method href="#postLimits" />
-				<resource id="limit" path="{tenantId}">
-					<param name="tenantId" style="template" type="xsd:string">
-						<doc>Specifies the tenant ID.</doc></param>
-					<method href="#getTenantLimits"/>
-				</resource>
-		</resource>
+	<resource id="version" path="{version}">		
 		
 		<resource id="clusters" path="clusters">
-			<method href="#getClusters" />
+			<method href="#createCluster" />	
+			<method href="#listClusters" />
+
 				<resource id="cluster" path="{clusterId}">
 					<param name="clusterId" style="template" type="xsd:string">
 						<doc>Specifies the cluster ID.</doc></param>
@@ -106,47 +98,53 @@
 <!--*******************************************************-->
 
 <!--*******************************************************-->
-<!-- LIMIT METHODS                                         -->
+<!-- CLUSTER METHODS                                         -->
 <!--*******************************************************-->	
 	
 <!--*******************************************************-->	
-<!-- List Limits: listLimits                               -->	  
+<!-- Create Cluster: createCluster                         -->	  
 <!--*******************************************************-->
 	
-		<method name="GET" id="listLimits">
-			<wadl:doc xml:lang="EN" title="List Limits" xmlns="http://docbook.org/ns/docbook">
-				<para role="shortdesc">Returns a list of resource limits for all tenants.</para> 
-				<para>This operation returns a list of resource limits for all tenants.</para>	
+		<method name="POST" id="createCluster">
+			<wadl:doc xml:lang="EN" title="Create New Cluster" xmlns="http://docbook.org/ns/docbook">
+				<para role="shortdesc">Creates a new cluster.</para> 
+				<para>This operation creates a new cluster.</para>	
 			</wadl:doc>
-			<response status="200">		
+			<request>
+				<representation mediaType="application/json" element="clusters:cluster" >
+					<doc>
+						<xsdxt:code href="../wadl/samples/cbd_createCluster_request.json"/>
+					</doc>
+				</representation>
+			</request><response status="200">		
 				<representation mediaType="application/json" >
 					<doc>
-						<xsdxt:code href="../wadl/samples/cbd_listLimits_response.json"/>
+						<xsdxt:code href="../wadl/samples/cbd_createCLuster_response.json"/>
 					</doc>
 				</representation>
 			</response>
 		</method>
 	
 <!--*******************************************************-->
-<!-- Post Limits: postLimits                               -->	
+<!-- List All Clusters: listClusters                       -->	
 <!--*******************************************************-->	
 
-	<method name="POST" id="postLimits" >
-		<wadl:doc xml:lang="EN" title="Post Limits" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Sets resource limits for a specific tenant.</para> 
-			<para>This operation sets resource limits for a specific tenant.</para>	
+	<method name="GET" id="listClusters" >
+		<wadl:doc xml:lang="EN" title="List All CLusters" xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Lists all clusters for an account.</para> 
+			<para>This operation lists all cluster for an account.</para>	
 		</wadl:doc>
 		<request>
-			<representation mediaType="application/json" element="queues:Queue" >
+			<representation mediaType="application/json" element="clusters:Cluster" >
 				<doc>
-					<xsdxt:code href="../wadl/samples/cbd_postLimits_request.json"/>
+					<xsdxt:code href="../wadl/samples/cbd_listClusters_request.json"/>
 				</doc>
 			</representation>
 		</request>
-		<response status="202">		
+		<response status="200">		
 			<representation mediaType="application/json" >
 				<doc>
-					<xsdxt:code href="../wadl/samples/cbd_postLimits_response.json"/>
+					<xsdxt:code href="../wadl/samples/cbd_listClusters_response.json"/>
 				</doc>
 			</representation>
 		</response>
@@ -236,7 +234,7 @@
 			<para>This operation performs an action, such as set status, on a cluster. </para>
 		</wadl:doc>
 		<request>
-			<representation mediaType="application/json" element="queues:Queue" >
+			<representation mediaType="application/json" element="clusters:Cluster" >
 				<doc>
 					<xsdxt:code href="../wadl/samples/cbd_postClusterAction_request.json"/>
 				</doc>
