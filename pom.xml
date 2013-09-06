@@ -23,8 +23,8 @@
           <security>reviewer</security>  
  <!--             <security>internal</security>  --> 
               <includes>
-<!--    cbd-devguide.xml,
-		cbd-mgmt-devguide.xml, -->
+    cbd-devguide.xml,
+		cbd-mgmt-devguide.xml,
 		cbd-getting-started.xml
               </includes>
             </configuration>
