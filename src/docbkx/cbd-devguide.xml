@@ -61,7 +61,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0 Early Access</releaseinfo>
     <productname>Rackspace &PRODNAME;</productname>
-    <pubdate>2013-08-15</pubdate>
+    <pubdate>2013-09-16</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the doc build
@@ -78,7 +78,7 @@ format="SVG" scale="60"/>
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
       <revision>
-        <date>2013-08-15</date>
+        <date>2013-09-16</date>
         <revdescription>
           <itemizedlist>
             <listitem>
@@ -113,13 +113,13 @@ format="SVG" scale="60"/>
     <para>Rackspace Cloud Big Data is just as flexible and
       feature-rich as running Hadoop on your own. You will benefit
       from on-demand servers, utility-based pricing, and have access
-      to the full set of Hadoop features and APIs. However, you won’t
-      have to worry about provisioning, growing, or maintaining your
-      Hadoop infrastructure. Our service uses an environment, which is
-      specifically optimized for Hadoop. This ensures that your jobs
-      will run efficiently and reliably. Please note that you will
-      still be responsible for developing, troubleshooting, and
-      deploying your applications. </para>
+      to the full set of Hadoop features and APIs. However, you will
+      not have to worry about provisioning, growing, or maintaining
+      your Hadoop infrastructure. Our service uses an environment,
+      which is specifically optimized for Hadoop. This ensures that
+      your jobs will run efficiently and reliably. Please note that
+      you will still be responsible for developing, troubleshooting,
+      and deploying your applications. </para>
     <remark>Reviewers: If you have an architecture diagram for Cloud
       Big Data that you want included here, please send it to
       me.</remark>
@@ -176,7 +176,7 @@ format="SVG" scale="60"/>
           <para>Hadoop, HDFS, and MapReduce</para>
         </listitem>
         <listitem>
-          <para>ReSTful web services</para>
+          <para>RESTful web services</para>
         </listitem>
         <listitem>
           <para>HTTP/1.1 conventions</para>
@@ -268,10 +268,10 @@ format="SVG" scale="60"/>
           </listitem>
         </itemizedlist>
       </para>
-      <para>There are some resource limits during the Early Access
-        Program: <itemizedlist spacing="compact">
+      <para>The following resource limits apply during the Early
+        Access Program: <itemizedlist spacing="compact">
           <listitem>
-            <para> Up to 5 data nodes</para>
+            <para>Up to 5 data nodes</para>
           </listitem>
           <listitem>
             <para>Up to 10 virtual CPUs</para>
@@ -280,7 +280,7 @@ format="SVG" scale="60"/>
             <para>Up to 40 GBs of RAM</para>
           </listitem>
           <listitem>
-            <para>Up to 5 Terabytes of disk space</para>
+            <para>Up to 5 terabytes of disk space</para>
           </listitem>
         </itemizedlist>
       </para>
@@ -331,7 +331,7 @@ format="SVG" scale="60"/>
     xmlns:m="http://www.w3.org/1998/Math/MathML"
     xmlns:html="http://www.w3.org/1999/xhtml">
     <title>General API Information</title>
-    <para>The &PRODNAME; API is implemented using a ReSTful web
+    <para>The &PRODNAME; API is implemented using a RESTful web
       service interface. Like other products in the Rackspace Cloud
       suite, &PRODNAME; shares a common token-based authentication
       system that allows seamless access between products and
@@ -346,7 +346,7 @@ format="SVG" scale="60"/>
     </note>
     <section xml:id="Authentication-d1e647">
       <title>Authentication</title>
-      <para>Every ReST request against the &PRODNAME; Service requires
+      <para>Every REST request against the &PRODNAME; Service requires
         the inclusion of a specific authorization token, supplied by
         the <code>X-Auth-Token</code> HTTP header. Customers obtain
         this token by first using the Rackspace Cloud Authentication
@@ -575,7 +575,7 @@ format="SVG" scale="60"/>
         </tbody>
       </informaltable>
     </section>
-    <section xml:id="Limits-d1e1208" security="reviewer">
+    <section xml:id="Limits-d1e1208" >
       <title>Limits</title>
       <para>All accounts, by default, have a preconfigured set of
         thresholds (or limits) to manage capacity and prevent abuse of
@@ -590,7 +590,7 @@ format="SVG" scale="60"/>
           human-readable wild-card URI and a machine-processable
           regular expression. The regular expression boundary matcher
           '^' takes effect after the root URI path. For example, the
-          regular expression ^/v1.0/clusters would match the bolded
+          regular expression ^/v1.0/clusters would match the bold
           portion of the following URI:
             https://dfw.bigdata.api.rackspacecloud.com<emphasis
             role="bold">/v1.0/clusters</emphasis>. </para>
@@ -666,7 +666,8 @@ format="SVG" scale="60"/>
           <tbody>
             <tr>
               <td colspan="1">Node Count</td>
-              <td colspan="3">Maximum no. of allowed data nodes</td>
+              <td colspan="3">Maximum number of allowed data
+                nodes</td>
               <td colspan="1">5</td>
             </tr>
             <tr>
@@ -753,11 +754,11 @@ format="SVG" scale="60"/>
       </table>
       
     </section>
-    <section xml:id="database_instance_status" security="writeronly" >
+    <section xml:id="cluster_status" >
       <title>Cluster Status</title>
       <para><?rax-fo keep-with-next?>When making an API call to
-        create, list, or delete cluster(s), the following cluster
-        status values are possible:</para>
+        create, list, or delete a cluster or clusters, the following
+        cluster status values are possible:</para>
       <itemizedlist spacing="compact">
         <listitem>
           <para>BUILDING &ndash; The cluster is being
@@ -789,9 +790,191 @@ format="SVG" scale="60"/>
   </chapter>
   <chapter xml:id="volume">
     <title>API Operations</title>
+    <!--     
+    <section xml:id="Sample">
+      <title>Sample Call</title>
+      <informaltable rules="all">
+        <thead>
+          <tr align="center">
+            <td colspan="1">Verb</td>
+            <td colspan="2">URI</td>
+            <td colspan="3">Description</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="1">&DELETE;</td>
+            <td colspan="2">/clusters/{id}</td>
+            <td colspan="3">Deletes a cluster.</td>
+          </tr>
+        </tbody>
+      </informaltable>
+      <simpara>
+        Normal Response Code(s): <returnvalue>200</returnvalue> (OK)
+      </simpara>
+      <simpara> Error Response Code(s): <errorcode>400</errorcode> (missingOrInvalidParams),
+        <errorcode>404</errorcode> (Resource Not Found), <errorcode>409</errorcode> (Invalid State)
+      </simpara>
+      <para> This call XXX.</para>
+      <para> The following example shows the request and corresponding response to XXX:</para>
+      <example>
+        <title> Request: JSON</title>
+        <literallayout class="monospaced">
+        
+        </literallayout>
+      </example>
+      <example>
+        <title> Response: JSON</title>
+        <literallayout class="monospaced">
+
+
+        </literallayout>
+      </example>
+      <para></para>
+    </section>
+-->
     <para>The CBD API allows you to manage Hadoop clusters.</para>
     <!-- adding API commands here -->
-    <section xml:id="Create_Cluster">
+    <section xml:id="profileOperations">
+      <title>Profiles</title>
+      <para>This section describes API operations for profiles.</para>
+      <section xml:id="createUpdateProfile">
+        <title>Create/Update Profile</title>
+        <informaltable rules="all">
+          <thead>
+            <tr align="center">
+              <td colspan="1">Verb</td>
+              <td colspan="2">URI</td>
+              <td colspan="3">Description</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="1">&POST;</td>
+              <td colspan="2">/profile</td>
+              <td colspan="3">Create or updates the information on an
+                existing profile.</td>
+            </tr>
+          </tbody>
+        </informaltable>
+        <simpara>Normal Response Code(s):
+            <returnvalue>200</returnvalue> (OK) </simpara>
+        <simpara>Error Response Code(s): <errorcode>400</errorcode>
+          (Malformed Data), <errorcode>400</errorcode> (Unacceptable
+          parameters) </simpara>
+        <para>This call allows you to create or update the information
+          for an existing profile.</para>
+        <note>
+          <para>You must create your profile before you create a
+            cluster.</para>
+        </note>
+        <para>The following example shows the request and
+          corresponding response to updating a profile:</para>
+        <example>
+          <title>Update Profile Request: JSON</title>
+          <literallayout class="monospaced">
+        { "profile": {
+            "username": "john.doe",
+            "password": "j0Hnd03",
+            "sshkeys": [
+              { "name": "t@test",
+                "publicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCtUFnkFrqDDCgEqW1akQkpMOX
+                Owwvg73PLn5Z5QgvxjvJhRCg9ZTR/OWXpWcYqFVNagH4Zs8NOb9921TyQ+ydMnatOM
+                haxMh1ZwTgaUcvndOF8fY+kcERiw1l0iT95w42F8IdUH42Z+8KihZM8gVsbMS6qYTi
+                OM29WHX7y37wuJIzqf3N2TiVXrqfjwugvY/bZ+47EUn78uk6aPZYJGXdDgaFqnIXUV
+                N+hRFYXgKnU0Ui0aQkuYwnAW8KmanLoNU2xodrb6/XqWnSAAmwl7aoGKFunQsT6xDW
+                yQk+ncUHUcdofDUqgd3lXmHGrTmQW97vqexDEnhsJ+AwbLGD5dukr t@test"
+              }
+            ],
+            "cloudCredentials": {
+              "username": "jdoe",
+              "apikey": "df23gkh34h52gkdgfakgf"
+            }
+        }
+        </literallayout>
+        </example>
+        <example>
+          <title>Update Profile Response: JSON</title>
+          <literallayout class="monospaced">
+        {"profile":
+          { "username": "john.doe",
+            "user_id" : "12346",
+            "tenant_id" : "123456",
+            "sshkeys": [{"name": "t@test", "publicKey" : "ssh-rsa ....."}],
+            "cloudCredentials": {"username": "jdoe"},
+            "links": [
+              { "rel": "self",
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/profile"
+              },
+              { "rel": "bookmark",
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/profile"
+              }
+            ],
+          }
+        }
+        </literallayout>
+        </example>
+      </section>
+      <section xml:id="viewProfileInformation">
+        <title>View Profile Information</title>
+        <informaltable rules="all">
+          <thead>
+            <tr align="center">
+              <td colspan="1">Verb</td>
+              <td colspan="2">URI</td>
+              <td colspan="3">Description</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="1">&GET;</td>
+              <td colspan="2">/profile</td>
+              <td colspan="3">Returns detailed information for the
+                current user profile.</td>
+            </tr>
+          </tbody>
+        </informaltable>
+        <simpara>Normal Response Code(s):
+            <returnvalue>200</returnvalue> (OK) </simpara>
+        <simpara>Error Response Code(s): N/A </simpara>
+        <para>The following example shows the request and
+          corresponding response to viewing profile
+          information:</para>
+        <example>
+          <title>Get Profile Request: JSON</title>
+          <literallayout class="monospaced">
+        N/A
+        </literallayout>
+        </example>
+        <example>
+          <title>Get Profile Response: JSON</title>
+          <literallayout class="monospaced">
+        {"profile":
+            { "username": "john.doe",
+              "user_id" : "12346",
+              "tenant_id" : "123456",
+              "sshkeys": [{"name": "t@test",
+                                   "publicKey": "ssh-rsa AAAAB3..."}],
+              "cloudCredentials": {},
+              "links": [
+                { "rel": "self",
+                  "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/profile"
+                },
+                { "rel": "bookmark",
+                  "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/profile"
+                }
+              ],
+            }
+        }
+        </literallayout>
+        </example>
+        <para/>
+      </section>
+    </section>
+    <section xml:id="clusterOperations">
+      <title>Clusters</title>
+      <!--    
+    <section xml:id="Create_New_Cluster">
       <title>Create New Cluster</title>
       <informaltable rules="all">
         <thead>
@@ -809,20 +992,96 @@ format="SVG" scale="60"/>
           </tr>
         </tbody>
       </informaltable>
-      <simpara>Normal Response Code(s): <returnvalue>200
-          (OK)</returnvalue>
+      <simpara>
+        Normal Response Code(s): <returnvalue>200</returnvalue>
       </simpara>
-      <simpara>Error Response Code(s): 400 (Invalid Response Body),
-        400 (User profile needs to be created), 400 (Invalid Node
-        Count), 400 (Not Valid flavor), 400 (Malformed Data), 413
-        (Quota Exceeded)</simpara>
-      <para>This call creates a new cluster.</para>
-      <para>The following example show the request and corresponding
-        response to List all Clusters for the specified
-        account:</para>
-      <example>
-        <title>Create Cluster Request: JSON</title>
-        <literallayout class="monospaced">    
+      <simpara> Error Response Code(s): <errorcode>400</errorcode> (Invalid Response
+        Body), <errorcode>400</errorcode> (User profile needs to be created),
+        <errorcode>400</errorcode> (Invalid Node Count, <errorcode>400</errorcode>
+        (Quota exceeded), <errorcode>400</errorcode> (Malformed Data)</simpara>
+      <para> This call creates a new cluster.</para>
+      <para> The POST request must contain a 'clusters' object that contains the 
+        parameters for the create request.
+      </para>
+        <para> The following examples show the requests and corresponding responses to list all clusters for the specified account:</para>
+        <example>
+          <title>Create Cluster Request: JSON</title>
+          <literallayout class="monospaced">
+        GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/7654321/clusters 
+        Accept: application/json 
+        X-Auth-Token:ea85e6ac-baff-4a6c-bf43-848020ea3812
+        Content-Type: application/json
+        Content-Length: 78
+        {"cluster":
+          { "name": "slice",
+            "clusterType": "hadoop",
+            "flavorId": "2",
+            "nodeCount": 5
+           } 
+         }
+        </literallayout>
+        </example>
+        <example>
+          <title>Create Cluster Response: JSON</title>
+          <literallayout class="monospaced">
+        Status: 200 OK
+        Date: Mon, 06 Aug 2012 21:54:21 GMT
+        Content-Type: application/json
+        Content-Length: 114
+        {"cluster":
+          { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
+            "created": "2012-12-27T10:10:10Z",
+            "updated": "", 
+            "name": "slice",
+            "clusterType": "hadoop",
+            "flavorId": "2",
+            "nodeCount": 5,
+            "status": "BUILD",
+           } 
+          }
+        </literallayout>
+        </example>
+        <para></para>
+    </section>
+-->
+      <para>This section describes the API operations for
+        clusters.</para>
+      <section xml:id="createNewCluster">
+        <title>Create New Cluster</title>
+        <informaltable rules="all">
+          <thead>
+            <tr align="center">
+              <td colspan="1">Verb</td>
+              <td colspan="2">URI</td>
+              <td colspan="3">Description</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="1">&POST;</td>
+              <td colspan="2">/clusters</td>
+              <td colspan="3">Create a new cluster.</td>
+            </tr>
+          </tbody>
+        </informaltable>
+        <simpara>Normal Response Code(s): <returnvalue>200
+            (OK)</returnvalue>
+        </simpara>
+        <simpara>Error Response Code(s): 400 (Invalid Response Body),
+          400 (User profile needs to be created), 400 (Invalid Node
+          Count), 400 (Not Valid flavor), 400 (Malformed Data), 413
+          (Quota Exceeded)</simpara>
+        <para>This call creates a new cluster.</para>
+        <note>
+          <para>You must create your profile before you create a
+            cluster.</para>
+        </note>
+        <para>The following example show the request and corresponding
+          response to List all Clusters for the specified
+          account:</para>
+        <example>
+          <title>Create Cluster Request: JSON</title>
+          <literallayout class="monospaced">    
     {"cluster":
       { "name": "slice",
         "clusterType": "HADOOP_HDP1_1",
@@ -832,10 +1091,10 @@ format="SVG" scale="60"/>
       }
     }
     </literallayout>
-      </example>
-      <example>
-        <title>Create Cluster Response: JSON</title>
-        <literallayout class="monospaced">
+        </example>
+        <example>
+          <title>Create Cluster Response: JSON</title>
+          <literallayout class="monospaced">
     {"cluster":
       { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
         "created": "2012-12-27T10:10:10Z",
@@ -858,44 +1117,44 @@ format="SVG" scale="60"/>
       }
     }
       </literallayout>
-      </example>
-    </section>
-    <section xml:id="List_All_Clusters">
-      <title>List All Clusters</title>
-      <informaltable rules="all">
-        <thead>
-          <tr align="center">
-            <td colspan="1">Verb</td>
-            <td colspan="2">URI</td>
-            <td colspan="3">Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="1">&GET;</td>
-            <td colspan="2">/clusters</td>
-            <td colspan="3">List all clusters for account.</td>
-          </tr>
-        </tbody>
-      </informaltable>
-      <simpara>Normal Response Code(s): <returnvalue>200
-          (OK)</returnvalue>
-      </simpara>
-      <simpara>Error Response Code(s): </simpara>
-      <para>This call lists all clusters for the specified
-        account.</para>
-      <para>The following example show the request and corresponding
-        response to List all Clusters for the specified
-        account:</para>
-      <example>
-        <title>List Clusters Request: JSON</title>
-        <literallayout class="monospaced">
+        </example>
+      </section>
+      <section xml:id="listAllClusters">
+        <title>List All Clusters</title>
+        <informaltable rules="all">
+          <thead>
+            <tr align="center">
+              <td colspan="1">Verb</td>
+              <td colspan="2">URI</td>
+              <td colspan="3">Description</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="1">&GET;</td>
+              <td colspan="2">/clusters</td>
+              <td colspan="3">List all clusters for account.</td>
+            </tr>
+          </tbody>
+        </informaltable>
+        <simpara>Normal Response Code(s): <returnvalue>200
+            (OK)</returnvalue>
+        </simpara>
+        <simpara>Error Response Code(s): </simpara>
+        <para>This call lists all clusters for the specified
+          account.</para>
+        <para>The following example show the request and corresponding
+          response to List all Clusters for the specified
+          account:</para>
+        <example>
+          <title>List Clusters Request: JSON</title>
+          <literallayout class="monospaced">
         N/A
         </literallayout>
-      </example>
-      <example>
-        <title>List Clusters Response: JSON</title>
-        <literallayout class="monospaced">
+        </example>
+        <example>
+          <title>List Clusters Response: JSON</title>
+          <literallayout class="monospaced">
         {"clusters":
           [
             { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
@@ -939,46 +1198,46 @@ format="SVG" scale="60"/>
           ]
         }
         </literallayout>
-      </example>
-    </section>
-    <section xml:id="Get_Cluster_Details">
-      <title>Get Cluster Details</title>
-      <informaltable rules="all">
-        <thead>
-          <tr align="center">
-            <td colspan="1">Verb</td>
-            <td colspan="2">URI</td>
-            <td colspan="3">Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="1">&GET;</td>
-            <td colspan="2">/clusters/{id}</td>
-            <td colspan="3">Gets details for a cluster.</td>
-          </tr>
-        </tbody>
-      </informaltable>
-      <simpara>Normal Response Code(s): <returnvalue>200
-          (OK)</returnvalue>
-      </simpara>
-      <simpara>Error Response Code(s): <errorcode>404</errorcode> (Not
-        Found)</simpara>
-      <para>This call gets details for the specified cluster.</para>
-      <para>The following example show the request and corresponding
-        response to Get Details for a Cluster:</para>
-      <example>
-        <title>Get Cluster Details: JSON</title>
-        <literallayout class="monospaced">
+        </example>
+      </section>
+      <section xml:id="getClusterDetails">
+        <title>Get Cluster Details</title>
+        <informaltable rules="all">
+          <thead>
+            <tr align="center">
+              <td colspan="1">Verb</td>
+              <td colspan="2">URI</td>
+              <td colspan="3">Description</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="1">&GET;</td>
+              <td colspan="2">/clusters/{id}</td>
+              <td colspan="3">Gets details for a cluster.</td>
+            </tr>
+          </tbody>
+        </informaltable>
+        <simpara>Normal Response Code(s): <returnvalue>200
+            (OK)</returnvalue>
+        </simpara>
+        <simpara>Error Response Code(s): <errorcode>404</errorcode>
+          (Not Found)</simpara>
+        <para>This call gets details for the specified cluster.</para>
+        <para>The following example show the request and corresponding
+          response to Get Details for a Cluster:</para>
+        <example>
+          <title>Get Cluster Details Request: JSON</title>
+          <literallayout class="monospaced">
         GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/7654321/clusters/ac111111-2d86-4597-8010-cbe787bbbc41
         Accept: application/json 
         X-Auth-Token:ea85e6ac-baff-4a6c-bf43-848020ea3812
         Content-Type: application/json
         </literallayout>
-      </example>
-      <example>
-        <title>Get Cluster Details: JSON</title>
-        <literallayout class="monospaced">
+        </example>
+        <example>
+          <title>Get Cluster Details Response: JSON</title>
+          <literallayout class="monospaced">
         Status: 200 OK
         Date: Mon, 06 Aug 2012 21:54:21 GMT
         Content-Type: application/json
@@ -1006,47 +1265,47 @@ format="SVG" scale="60"/>
         }
 
         </literallayout>
-      </example>
-    </section>
-    <section xml:id="Resize_Custer">
-      <title>Resize a Cluster</title>
-      <informaltable rules="all">
-        <thead>
-          <tr align="center">
-            <td colspan="1">Verb</td>
-            <td colspan="2">URI</td>
-            <td colspan="3">Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="1">&POST;</td>
-            <td colspan="2">/clusters/{clusterId}/action</td>
-            <td colspan="3">Resizes a cluster.</td>
-          </tr>
-        </tbody>
-      </informaltable>
-      <simpara>Normal Response Code(s): <returnvalue>200
-          (OK)</returnvalue>
-      </simpara>
-      <simpara>Error Response Code(s): <errorcode>400</errorcode>
-        (Unacceptable parameters), <errorcode>400</errorcode>
-        (Malformed data), <errorcode>404</errorcode> (Not Found),
-          <errorcode>409</errorcode> (Invalid State)</simpara>
-      <para>The following example show the request and corresponding
-        response to Performing an Action on a cluster:</para>
-      <example>
-        <title>Perform Action on a Cluster Request: JSON</title>
-        <literallayout class="monospaced">
+        </example>
+      </section>
+      <section xml:id="resizeCluster">
+        <title>Resize a Cluster</title>
+        <informaltable rules="all">
+          <thead>
+            <tr align="center">
+              <td colspan="1">Verb</td>
+              <td colspan="2">URI</td>
+              <td colspan="3">Description</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="1">&POST;</td>
+              <td colspan="2">/clusters/{clusterId}/action</td>
+              <td colspan="3">Resizes a cluster.</td>
+            </tr>
+          </tbody>
+        </informaltable>
+        <simpara>Normal Response Code(s): <returnvalue>200
+            (OK)</returnvalue>
+        </simpara>
+        <simpara>Error Response Code(s): <errorcode>400</errorcode>
+          (Unacceptable parameters), <errorcode>400</errorcode>
+          (Malformed data), <errorcode>404</errorcode> (Not Found),
+            <errorcode>409</errorcode> (Invalid State)</simpara>
+        <para>The following example show the request and corresponding
+          response to  resize a cluster:</para>
+        <example>
+          <title>Resize Cluster Request: JSON</title>
+          <literallayout class="monospaced">
         {"resize":
             { "nodeCount": 10
             }
         } 
         </literallayout>
-      </example>
-      <example>
-        <title>Perform Action on a Cluster: JSON</title>
-        <literallayout class="monospaced">
+        </example>
+        <example>
+          <title>Resize Cluster Response: JSON</title>
+          <literallayout class="monospaced">
         {"cluster":
           { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
             "created": "2012-12-27T10:10:10Z",
@@ -1069,47 +1328,119 @@ format="SVG" scale="60"/>
           }
         } 
         </literallayout>
-      </example>
+        </example>
+      </section>
+      <section xml:id="deleteCluster">
+        <title>Delete Cluster</title>
+        <informaltable rules="all">
+          <thead>
+            <tr align="center">
+              <td colspan="1">Verb</td>
+              <td colspan="2">URI</td>
+              <td colspan="3">Description</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="1">&DELETE;</td>
+              <td colspan="2">/clusters/{id}</td>
+              <td colspan="3">Deletes a cluster.</td>
+            </tr>
+          </tbody>
+        </informaltable>
+        <simpara>Normal Response Code(s):
+            <returnvalue>204</returnvalue>
+        </simpara>
+        <simpara>Error Response Code(s): <errorcode>400</errorcode>
+          (missingOrInvalidParams), <errorcode>404</errorcode>
+          (Resource Not Found), <errorcode>409</errorcode> (Invalid
+          State) </simpara>
+        <para>This call deletes a cluster.</para>
+        <para>The following examples show the requests and
+          corresponding responses to delete a cluster:</para>
+        <example>
+          <title>Delete Cluster Request: JSON</title>
+          <literallayout class="monospaced">
+        DELETE https://dfw.bigdata.api.rackspacecloud.com/v1.0/7654321/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41
+        Accept: application/json 
+        X-Auth-Token:ea85e6ac-baff-4a6c-bf43-848020ea3812
+        Content-Type: application/json
+        </literallayout>
+        </example>
+        <example>
+          <title>Delete Cluster Response: JSON</title>
+          <literallayout class="monospaced">
+        Status: 202 Accepted
+        Date: Mon, 06 Aug 2012 21:54:21 GMT
+        Content-Type: application/json
+        {"cluster":
+          { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
+            "created": "2012-12-27T10:10:10Z",
+            "updated": "2012-12-27T20:14:10Z",
+            "name": "slice",
+            "clusterType": "HADOOP_HDP1_1",
+            "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
+            "nodeCount": 5,
+            "postInitScriptStatus": null,
+            "status": "DELETING",
+            "links": [
+              { "rel": "self",
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
+              },
+              { "rel": "bookmark",
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
+              }
+            ]
+          }
+        }
+
+        </literallayout>
+        </example>
+        <para/>
+      </section>
     </section>
-    <section xml:id="List_Cluster_Nodes">
-      <title>List Cluster Nodes</title>
-      <informaltable rules="all">
-        <thead>
-          <tr align="center">
-            <td colspan="1">Verb</td>
-            <td colspan="2">URI</td>
-            <td colspan="3">Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="1">&GET;</td>
-            <td colspan="2">/clusters/{id}/nodes</td>
-            <td colspan="3">List all nodes for a cluster.</td>
-          </tr>
-        </tbody>
-      </informaltable>
-      <simpara>Normal Response Code(s): <returnvalue>200
-          (OK)</returnvalue>
-      </simpara>
-      <simpara>Error Response Code(s): <errorcode>404</errorcode> (Not
-        Found)</simpara>
-      <para>This call lists all server nodes for the specified
-        cluster.</para>
-      <para>The following example show the request and corresponding
-        response to List all Nodes for a Cluster:</para>
-      <example>
-        <title>List Cluster Nodes Request: JSON</title>
-        <literallayout class="monospaced">
+    <section xml:id="nodeOperations">
+      <title>Nodes</title>
+      <para>This section describes API operations for nodes.</para>
+      <section xml:id="listClusterNodes">
+        <title>List Cluster Nodes</title>
+        <informaltable rules="all">
+          <thead>
+            <tr align="center">
+              <td colspan="1">Verb</td>
+              <td colspan="2">URI</td>
+              <td colspan="3">Description</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="1">&GET;</td>
+              <td colspan="2">/clusters/{id}/nodes</td>
+              <td colspan="3">List all nodes for a cluster.</td>
+            </tr>
+          </tbody>
+        </informaltable>
+        <simpara>Normal Response Code(s): <returnvalue>200
+            (OK)</returnvalue>
+        </simpara>
+        <simpara>Error Response Code(s): <errorcode>404</errorcode>
+          (Not Found)</simpara>
+        <para>This call lists all server nodes for the specified
+          cluster.</para>
+        <para>The following example show the request and corresponding
+          response to List all Nodes for a Cluster:</para>
+        <example>
+          <title>List Cluster Nodes Request: JSON</title>
+          <literallayout class="monospaced">
         GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/7654321/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes
         Accept: application/json 
         X-Auth-Token:ea85e6ac-baff-4a6c-bf43-848020ea3812
         Content-Type: application/json
         </literallayout>
-      </example>
-      <example>
-        <title>List Cluster Nodes Response: JSON</title>
-        <literallayout class="monospaced">
+        </example>
+        <example>
+          <title>List Cluster Nodes Response: JSON</title>
+          <literallayout class="monospaced">
         {"nodes":
           [ 
             { "id": "000",
@@ -1223,47 +1554,48 @@ format="SVG" scale="60"/>
         }
 
         </literallayout>
-      </example>
-    </section>
-    <section xml:id="Get_Node_Details">
-      <title>Get Node Details</title>
-      <informaltable rules="all">
-        <thead>
-          <tr align="center">
-            <td colspan="1">Verb</td>
-            <td colspan="2">URI</td>
-            <td colspan="3">Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="1">&GET;</td>
-            <td colspan="2">/clusters/{id}/nodes/{id}</td>
-            <td colspan="3">Get details for node in a cluster.</td>
-          </tr>
-        </tbody>
-      </informaltable>
-      <simpara>Normal Response Code(s): <returnvalue>200
-          (OK)</returnvalue>
-      </simpara>
-      <simpara>Error Response Code(s): <errorcode>404</errorcode> (Not
-        Found)</simpara>
-      <para>This call gets details for a node as specified by the
-        cluster id and node id.</para>
-      <para> The following example show the request and corresponding
-        response to Get Details for a Node within a Cluster:</para>
-      <example>
-        <title>Get Node Details Request: JSON</title>
-        <literallayout class="monospaced">
+        </example>
+      </section>
+      <section xml:id="getNodeDetails">
+        <title>Get Node Details</title>
+        <informaltable rules="all">
+          <thead>
+            <tr align="center">
+              <td colspan="1">Verb</td>
+              <td colspan="2">URI</td>
+              <td colspan="3">Description</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="1">&GET;</td>
+              <td colspan="2">/clusters/{id}/nodes/{id}</td>
+              <td colspan="3">Get details for node in a cluster.</td>
+            </tr>
+          </tbody>
+        </informaltable>
+        <simpara>Normal Response Code(s): <returnvalue>200
+            (OK)</returnvalue>
+        </simpara>
+        <simpara>Error Response Code(s): <errorcode>404</errorcode>
+          (Not Found)</simpara>
+        <para>This call gets details for a node as specified by the
+          cluster id and node id.</para>
+        <para> The following example show the request and
+          corresponding response to Get Details for a Node within a
+          Cluster:</para>
+        <example>
+          <title>Get Node Details Request: JSON</title>
+          <literallayout class="monospaced">
         GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/7654321/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes/000
         Accept: application/json 
         X-Auth-Token:ea85e6ac-baff-4a6c-bf43-848020ea3812
         Content-Type: application/json
         </literallayout>
-      </example>
-      <example>
-        <title>Get Node Details Response: JSON</title>
-        <literallayout class="monospaced">
+        </example>
+        <example>
+          <title>Get Node Details Response: JSON</title>
+          <literallayout class="monospaced">
         {"node":
           { "id": "000",
             "created": "2012-12-27T10:10:10Z", 
@@ -1294,306 +1626,46 @@ format="SVG" scale="60"/>
         }
 
         </literallayout>
-      </example>
+        </example>
+      </section>
     </section>
-    <!--    
-    <section xml:id="Create_New_Cluster">
-      <title>Create New Cluster</title>
-      <informaltable rules="all">
-        <thead>
-          <tr align="center">
-            <td colspan="1">Verb</td>
-            <td colspan="2">URI</td>
-            <td colspan="3">Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="1">&POST;</td>
-            <td colspan="2">/clusters</td>
-            <td colspan="3">Create a new cluster.</td>
-          </tr>
-        </tbody>
-      </informaltable>
-      <simpara>
-        Normal Response Code(s): <returnvalue>200</returnvalue>
-      </simpara>
-      <simpara> Error Response Code(s): <errorcode>400</errorcode> (Invalid Response
-        Body), <errorcode>400</errorcode> (User profile needs to be created),
-        <errorcode>400</errorcode> (Invalid Node Count, <errorcode>400</errorcode>
-        (Quota exceeded), <errorcode>400</errorcode> (Malformed Data)</simpara>
-      <para> This call creates a new cluster.</para>
-      <para> The POST request must contain a 'clusters' object that contains the 
-        parameters for the create request.
-      </para>
-        <para> The following examples show the requests and corresponding responses to list all clusters for the specified account:</para>
+    <section xml:id="flavorOperations">
+      <title>Flavors</title>
+      <para>This section describes API operations for flavors.</para>
+      <section xml:id="listFlavors">
+        <title>List Available Flavors</title>
+        <informaltable rules="all">
+          <thead>
+            <tr align="center">
+              <td colspan="1">Verb</td>
+              <td colspan="2">URI</td>
+              <td colspan="3">Description</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="1">&GET;</td>
+              <td colspan="2">/flavors</td>
+              <td colspan="3">List all available flavors.</td>
+            </tr>
+          </tbody>
+        </informaltable>
+        <simpara>Normal Response Code(s):
+            <returnvalue>200</returnvalue> (OK) </simpara>
+        <simpara>Error Response Code(s): N/A </simpara>
+        <para>This call lists all available flavors, including the
+          drive size and amount of RAM.</para>
+        <para>The following example shows the request and
+          corresponding response to listing the flavors:</para>
         <example>
-          <title>Create Cluster Request: JSON</title>
+          <title>List Flavors Request: JSON</title>
           <literallayout class="monospaced">
-        GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/7654321/clusters 
-        Accept: application/json 
-        X-Auth-Token:ea85e6ac-baff-4a6c-bf43-848020ea3812
-        Content-Type: application/json
-        Content-Length: 78
-        {"cluster":
-          { "name": "slice",
-            "clusterType": "hadoop",
-            "flavorId": "2",
-            "nodeCount": 5
-           } 
-         }
+        N/A
         </literallayout>
         </example>
         <example>
-          <title>Create Cluster Response: JSON</title>
+          <title>List Flavors Response: JSON</title>
           <literallayout class="monospaced">
-        Status: 200 OK
-        Date: Mon, 06 Aug 2012 21:54:21 GMT
-        Content-Type: application/json
-        Content-Length: 114
-        {"cluster":
-          { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
-            "created": "2012-12-27T10:10:10Z",
-            "updated": "", 
-            "name": "slice",
-            "clusterType": "hadoop",
-            "flavorId": "2",
-            "nodeCount": 5,
-            "status": "BUILD",
-           } 
-          }
-        </literallayout>
-        </example>
-        <para></para>
-    </section>
--->
-    <section xml:id="Delete_Cluster">
-      <title>Delete Cluster</title>
-      <informaltable rules="all">
-        <thead>
-          <tr align="center">
-            <td colspan="1">Verb</td>
-            <td colspan="2">URI</td>
-            <td colspan="3">Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="1">&DELETE;</td>
-            <td colspan="2">/clusters/{id}</td>
-            <td colspan="3">Deletes a cluster.</td>
-          </tr>
-        </tbody>
-      </informaltable>
-      <simpara>Normal Response Code(s): <returnvalue>204</returnvalue>
-      </simpara>
-      <simpara>Error Response Code(s): <errorcode>400</errorcode>
-        (missingOrInvalidParams), <errorcode>404</errorcode> (Resource
-        Not Found), <errorcode>409</errorcode> (Invalid State) </simpara>
-      <para>This call deletes a cluster.</para>
-      <para>The following examples show the requests and corresponding
-        responses to delete a cluster:</para>
-      <example>
-        <title>Delete Cluster Request: JSON</title>
-        <literallayout class="monospaced">
-        DELETE https://dfw.bigdata.api.rackspacecloud.com/v1.0/7654321/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41
-        Accept: application/json 
-        X-Auth-Token:ea85e6ac-baff-4a6c-bf43-848020ea3812
-        Content-Type: application/json
-        </literallayout>
-      </example>
-      <example>
-        <title>Delete Cluster Response: JSON</title>
-        <literallayout class="monospaced">
-        Status: 202 Accepted
-        Date: Mon, 06 Aug 2012 21:54:21 GMT
-        Content-Type: application/json
-        {"cluster":
-          { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
-            "created": "2012-12-27T10:10:10Z",
-            "updated": "2012-12-27T20:14:10Z",
-            "name": "slice",
-            "clusterType": "HADOOP_HDP1_1",
-            "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
-            "nodeCount": 5,
-            "postInitScriptStatus": null,
-            "status": "DELETING",
-            "links": [
-              { "rel": "self",
-                "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
-              },
-              { "rel": "bookmark",
-                "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
-              }
-            ]
-          }
-        }
-
-        </literallayout>
-      </example>
-      <para/>
-    </section>
-    <section xml:id="View_Profile">
-      <title>View Profile Information</title>
-      <informaltable rules="all">
-        <thead>
-          <tr align="center">
-            <td colspan="1">Verb</td>
-            <td colspan="2">URI</td>
-            <td colspan="3">Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="1">&GET;</td>
-            <td colspan="2">/profile</td>
-            <td colspan="3">Returns detailed information for the
-              current user profile.</td>
-          </tr>
-        </tbody>
-      </informaltable>
-      <simpara>Normal Response Code(s): <returnvalue>200</returnvalue>
-        (OK) </simpara>
-      <simpara>Error Response Code(s): N/A </simpara>
-      <para>The following example shows the request and corresponding
-        response to viewing profile information:</para>
-      <example>
-        <title>Get Profile Request: JSON</title>
-        <literallayout class="monospaced">
-        N/A
-        </literallayout>
-      </example>
-      <example>
-        <title>Get Profile Response: JSON</title>
-        <literallayout class="monospaced">
-        {"profile":
-            { "username": "john.doe",
-              "user_id" : "12346",
-              "tenant_id" : "123456",
-              "sshkeys": [{"name": "t@test",
-                                   "publicKey": "ssh-rsa AAAAB3..."}],
-              "cloudCredentials": {},
-              "links": [
-                { "rel": "self",
-                  "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/profile"
-                },
-                { "rel": "bookmark",
-                  "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/profile"
-                }
-              ],
-            }
-        }
-        </literallayout>
-      </example>
-      <para/>
-    </section>
-    <section xml:id="Update_Profile">
-      <title>Create/Update Profile</title>
-      <informaltable rules="all">
-        <thead>
-          <tr align="center">
-            <td colspan="1">Verb</td>
-            <td colspan="2">URI</td>
-            <td colspan="3">Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="1">&POST;</td>
-            <td colspan="2">/profile</td>
-            <td colspan="3">Create or updates the information on an
-              existing profile.</td>
-          </tr>
-        </tbody>
-      </informaltable>
-      <simpara>Normal Response Code(s): <returnvalue>200</returnvalue>
-        (OK) </simpara>
-      <simpara>Error Response Code(s): <errorcode>400</errorcode>
-        (Malformed Data), <errorcode>400</errorcode> (Unacceptable
-        parameters) </simpara>
-      <para>This call allows you to create or update the information
-        for an existing profile.</para>
-      <para>The following example shows the request and corresponding
-        response to updating a profile:</para>
-      <example>
-        <title>Update Profile Request: JSON</title>
-        <literallayout class="monospaced">
-        { "profile": {
-            "username": "john.doe",
-            "password": "j0Hnd03",
-            "sshkeys": [
-              { "name": "t@test",
-                "publicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCtUFnkFrqDDCgEqW1akQkpMOX
-                Owwvg73PLn5Z5QgvxjvJhRCg9ZTR/OWXpWcYqFVNagH4Zs8NOb9921TyQ+ydMnatOM
-                haxMh1ZwTgaUcvndOF8fY+kcERiw1l0iT95w42F8IdUH42Z+8KihZM8gVsbMS6qYTi
-                OM29WHX7y37wuJIzqf3N2TiVXrqfjwugvY/bZ+47EUn78uk6aPZYJGXdDgaFqnIXUV
-                N+hRFYXgKnU0Ui0aQkuYwnAW8KmanLoNU2xodrb6/XqWnSAAmwl7aoGKFunQsT6xDW
-                yQk+ncUHUcdofDUqgd3lXmHGrTmQW97vqexDEnhsJ+AwbLGD5dukr t@test"
-              }
-            ],
-            "cloudCredentials": {
-              "username": "jdoe",
-              "apikey": "df23gkh34h52gkdgfakgf"
-            }
-        }
-        </literallayout>
-      </example>
-      <example>
-        <title>Update Profile Response: JSON</title>
-        <literallayout class="monospaced">
-        {"profile":
-          { "username": "john.doe",
-            "user_id" : "12346",
-            "tenant_id" : "123456",
-            "sshkeys": [{"name": "t@test", "publicKey" : "ssh-rsa ....."}],
-            "cloudCredentials": {"username": "jdoe"},
-            "links": [
-              { "rel": "self",
-                "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/profile"
-              },
-              { "rel": "bookmark",
-                "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/profile"
-              }
-            ],
-          }
-        }
-        </literallayout>
-      </example>
-    </section>
-    <section xml:id="List_Flavores">
-      <title>List Available Flavors</title>
-      <informaltable rules="all">
-        <thead>
-          <tr align="center">
-            <td colspan="1">Verb</td>
-            <td colspan="2">URI</td>
-            <td colspan="3">Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="1">&GET;</td>
-            <td colspan="2">/flavors</td>
-            <td colspan="3">List all available flavors.</td>
-          </tr>
-        </tbody>
-      </informaltable>
-      <simpara>Normal Response Code(s): <returnvalue>200</returnvalue>
-        (OK) </simpara>
-      <simpara>Error Response Code(s): N/A </simpara>
-      <para>This call lists all available flavors, including the drive
-        size and amount of RAM.</para>
-      <para>The following example shows the request and corresponding
-        response to listing the flavors:</para>
-      <example>
-        <title>List Flavors Request: JSON</title>
-        <literallayout class="monospaced">
-        N/A
-        </literallayout>
-      </example>
-      <example>
-        <title>List Flavors Response: JSON</title>
-        <literallayout class="monospaced">
         { "flavors": [
           {
             "disk": 256,
@@ -1657,43 +1729,44 @@ format="SVG" scale="60"/>
           }
         ] }
         </literallayout>
-      </example>
-    </section>
-    <section xml:id="List_Flavor_Details">
-      <title>List Flavor Details</title>
-      <informaltable rules="all">
-        <thead>
-          <tr align="center">
-            <td colspan="1">Verb</td>
-            <td colspan="2">URI</td>
-            <td colspan="3">Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="1">&GET;</td>
-            <td colspan="2">/flavors/{flavorId}</td>
-            <td colspan="3">Lists the details for a specified
-              flavor.</td>
-          </tr>
-        </tbody>
-      </informaltable>
-      <simpara>Normal Response Code(s): <returnvalue>200</returnvalue>
-        (OK) </simpara>
-      <simpara>Error Response Code(s): <errorcode>404</errorcode>
-        (Resource Not Found) </simpara>
-      <para>This call lists the details for a specified flavor.</para>
-      <para>The following example shows the request and corresponding
-        response to List Flavor Details:</para>
-      <example>
-        <title>List Flavor Details Request: JSON</title>
-        <literallayout class="monospaced">
+        </example>
+      </section>
+      <section xml:id="listFlavorDetails">
+        <title>List Flavor Details</title>
+        <informaltable rules="all">
+          <thead>
+            <tr align="center">
+              <td colspan="1">Verb</td>
+              <td colspan="2">URI</td>
+              <td colspan="3">Description</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="1">&GET;</td>
+              <td colspan="2">/flavors/{flavorId}</td>
+              <td colspan="3">Lists the details for a specified
+                flavor.</td>
+            </tr>
+          </tbody>
+        </informaltable>
+        <simpara>Normal Response Code(s):
+            <returnvalue>200</returnvalue> (OK) </simpara>
+        <simpara>Error Response Code(s): <errorcode>404</errorcode>
+          (Resource Not Found) </simpara>
+        <para>This call lists the details for a specified
+          flavor.</para>
+        <para>The following example shows the request and
+          corresponding response to List Flavor Details:</para>
+        <example>
+          <title>List Flavor Details Request: JSON</title>
+          <literallayout class="monospaced">
         N/A
         </literallayout>
-      </example>
-      <example>
-        <title>List Flavor Details Response: JSON</title>
-        <literallayout class="monospaced">
+        </example>
+        <example>
+          <title>List Flavor Details Response: JSON</title>
+          <literallayout class="monospaced">
         { "flavor":
           {
             "disk": 256,
@@ -1713,40 +1786,47 @@ format="SVG" scale="60"/>
         }
 
         </literallayout>
-      </example>
-    </section>
-    <section xml:id="List_Cluster_Types">
-      <title>List Cluster Types</title>
-      <informaltable rules="all">
-        <thead>
-          <tr align="center">
-            <td colspan="1">Verb</td>
-            <td colspan="2">URI</td>
-            <td colspan="3">Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="1">&GET;</td>
-            <td colspan="2">/types</td>
-            <td colspan="3">Lists the cluster types.</td>
-          </tr>
-        </tbody>
-      </informaltable>
-      <simpara>Normal Response Code(s): <returnvalue>200</returnvalue>
-        (OK) </simpara>
-      <simpara>Error Response Code(s): N/A </simpara>
-      <para>The following example shows the request and corresponding
-        response to List Cluster Types:</para>
-      <example>
-        <title>List Cluster Types Request: JSON</title>
-        <literallayout class="monospaced">
+        </example>
+      </section>
+      <section xml:id="listSupportedClusterTypesForFlavor">
+        <title>List Supported Cluster Types for a Flavor</title>
+        <informaltable rules="all">
+          <thead>
+            <tr align="center">
+              <td colspan="1">Verb</td>
+              <td colspan="2">URI</td>
+              <td colspan="3">Description</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="1">&GET;</td>
+              <td colspan="2">/flavors/{flavorId}/types</td>
+              <td colspan="3">Lists supported cluster types for a
+                specified flavor.</td>
+            </tr>
+          </tbody>
+        </informaltable>
+        <simpara>Normal Response Code(s):
+            <returnvalue>200</returnvalue> (OK) </simpara>
+        <simpara>Error Response Code(s): <errorcode>404</errorcode>
+          (Resource Not Found) </simpara>
+        <para>This call displays all the supported cluster types for a
+          specified flavor.</para>
+        <para>The following example shows the request and
+          corresponding response to List Supported Cluster Types for a
+          Flavor:</para>
+        <example>
+          <title>List Supported Cluster Types for a Flavor Request:
+            JSON</title>
+          <literallayout class="monospaced">
         N/A
         </literallayout>
-      </example>
-      <example>
-        <title>List Cluster Types Response: JSON</title>
-        <literallayout class="monospaced">
+        </example>
+        <example>
+          <title>List Supported Cluster Types for a Flavor Response:
+            JSON</title>
+          <literallayout class="monospaced">
         { "types":
           [
             {
@@ -1764,45 +1844,100 @@ format="SVG" scale="60"/>
           ]
         }
         </literallayout>
-      </example>
-      <para/>
+        </example>
+      </section>
     </section>
-    <section xml:id="List_Cluster_Type_Details">
-      <title>List Cluster Type Details</title>
-      <informaltable rules="all">
-        <thead>
-          <tr align="center">
-            <td colspan="1">Verb</td>
-            <td colspan="2">URI</td>
-            <td colspan="3">Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="1">&GET;</td>
-            <td colspan="2">/types/{typeId}</td>
-            <td colspan="3">Shows the details for a given cluster
-              type.</td>
-          </tr>
-        </tbody>
-      </informaltable>
-      <simpara>Normal Response Code(s): <returnvalue>200</returnvalue>
-        (OK) </simpara>
-      <simpara>Error Response Code(s): <errorcode>404</errorcode>
-        (Resource Not Found) </simpara>
-      <para>This call displays the detailed information for a
-        specified cluster.</para>
-      <para>The following example shows the request and corresponding
-        response to view cluster details:</para>
-      <example>
-        <title>View Cluster Details Request: JSON</title>
-        <literallayout class="monospaced">
+    <section xml:id="typeOperations">
+      <title>Types</title>
+      <para>This section describes the API operations for
+        types.</para>
+      <section xml:id="listClusterTypes">
+        <title>List Cluster Types</title>
+        <informaltable rules="all">
+          <thead>
+            <tr align="center">
+              <td colspan="1">Verb</td>
+              <td colspan="2">URI</td>
+              <td colspan="3">Description</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="1">&GET;</td>
+              <td colspan="2">/types</td>
+              <td colspan="3">Lists the cluster types.</td>
+            </tr>
+          </tbody>
+        </informaltable>
+        <simpara>Normal Response Code(s):
+            <returnvalue>200</returnvalue> (OK) </simpara>
+        <simpara>Error Response Code(s): N/A </simpara>
+        <para>The following example shows the request and
+          corresponding response to List Cluster Types:</para>
+        <example>
+          <title>List Cluster Types Request: JSON</title>
+          <literallayout class="monospaced">
         N/A
         </literallayout>
-      </example>
-      <example>
-        <title>View Cluster Details Response: JSON</title>
-        <literallayout class="monospaced">
+        </example>
+        <example>
+          <title>List Cluster Types Response: JSON</title>
+          <literallayout class="monospaced">
+        { "types":
+          [
+            {
+              "id": "HADOOP_HDP1_1",
+              "links": [
+                { "href": "http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/types/HADOOP_HDP1_1",
+                  "rel": "self"
+                },
+                { "href": "http://dfw.bigdata.api.rackspacecloud.com/1234/types/HADOOP_HDP1_1",
+                  "rel": "bookmark"
+                }
+              ],
+              "name": "Hadoop (HDP 1.1)"
+            }
+          ]
+        }
+        </literallayout>
+        </example>
+      </section>
+      <section xml:id="listClusterTypeDetails">
+        <title>List Cluster Type Details</title>
+        <informaltable rules="all">
+          <thead>
+            <tr align="center">
+              <td colspan="1">Verb</td>
+              <td colspan="2">URI</td>
+              <td colspan="3">Description</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="1">&GET;</td>
+              <td colspan="2">/types/{typeId}</td>
+              <td colspan="3">Shows the details for a given cluster
+                type.</td>
+            </tr>
+          </tbody>
+        </informaltable>
+        <simpara>Normal Response Code(s):
+            <returnvalue>200</returnvalue> (OK) </simpara>
+        <simpara>Error Response Code(s): <errorcode>404</errorcode>
+          (Resource Not Found) </simpara>
+        <para>This call displays the detailed information for a
+          specified cluster.</para>
+        <para>The following example shows the request and
+          corresponding response to view cluster details:</para>
+        <example>
+          <title>List Cluster Type Details Request: JSON</title>
+          <literallayout class="monospaced">
+        N/A
+        </literallayout>
+        </example>
+        <example>
+          <title>List Cluster Type Details Response: JSON</title>
+          <literallayout class="monospaced">
         { "type":
           {
             "id": "HADOOP_HDP1_1",
@@ -1819,44 +1954,45 @@ format="SVG" scale="60"/>
           }
         }
         </literallayout>
-      </example>
-    </section>
-    <section xml:id="List_Supported_Flavors">
-      <title>List Supported Flavors for Type</title>
-      <informaltable rules="all">
-        <thead>
-          <tr align="center">
-            <td colspan="1">Verb</td>
-            <td colspan="2">URI</td>
-            <td colspan="3">Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="1">&GET;</td>
-            <td colspan="2">/types/{typeId}/flavors</td>
-            <td colspan="3">Lists the supported flavors for a
-              specified cluster type.</td>
-          </tr>
-        </tbody>
-      </informaltable>
-      <simpara>Normal Response Code(s): <returnvalue>200</returnvalue>
-        (OK) </simpara>
-      <simpara>Error Response Code(s): <errorcode>404</errorcode>
-        (Resource Not Found) </simpara>
-      <para>This call lists all the flavors that a specified cluster
-        type supports.</para>
-      <para>The following example shows the request and corresponding
-        response to list supported flavors:</para>
-      <example>
-        <title>List Supported Flavors for Type Request: JSON</title>
-        <literallayout class="monospaced">
+        </example>
+      </section>
+      <section xml:id="listSupportedFlavorsForType">
+        <title>List Supported Flavors for Type</title>
+        <informaltable rules="all">
+          <thead>
+            <tr align="center">
+              <td colspan="1">Verb</td>
+              <td colspan="2">URI</td>
+              <td colspan="3">Description</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="1">&GET;</td>
+              <td colspan="2">/types/{typeId}/flavors</td>
+              <td colspan="3">Lists the supported flavors for a
+                specified cluster type.</td>
+            </tr>
+          </tbody>
+        </informaltable>
+        <simpara>Normal Response Code(s):
+            <returnvalue>200</returnvalue> (OK) </simpara>
+        <simpara>Error Response Code(s): <errorcode>404</errorcode>
+          (Resource Not Found) </simpara>
+        <para>This call lists all the flavors that a specified cluster
+          type supports.</para>
+        <para>The following example shows the request and
+          corresponding response to list supported flavors:</para>
+        <example>
+          <title>List Supported Flavors for Type Request: JSON</title>
+          <literallayout class="monospaced">
         N/A
         </literallayout>
-      </example>
-      <example>
-        <title>List Supported Flavors for Type Response: JSON</title>
-        <literallayout class="monospaced">
+        </example>
+        <example>
+          <title>List Supported Flavors for Type Response:
+            JSON</title>
+          <literallayout class="monospaced">
         { "flavors": [
           {
             "disk": 1024,
@@ -1890,101 +2026,49 @@ format="SVG" scale="60"/>
           }
         ] }
         </literallayout>
-      </example>
+        </example>
+      </section>
     </section>
-    <section xml:id="List_Supported_Types">
-      <title>List Supported Cluster Types for a Flavor</title>
-      <informaltable rules="all">
-        <thead>
-          <tr align="center">
-            <td colspan="1">Verb</td>
-            <td colspan="2">URI</td>
-            <td colspan="3">Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="1">&GET;</td>
-            <td colspan="2">/flavors/{flavorId}/types</td>
-            <td colspan="3">Lists supported cluster types for a
-              specified flavor.</td>
-          </tr>
-        </tbody>
-      </informaltable>
-      <simpara>Normal Response Code(s): <returnvalue>200</returnvalue>
-        (OK) </simpara>
-      <simpara>Error Response Code(s): <errorcode>404</errorcode>
-        (Resource Not Found) </simpara>
-      <para>This call displays all the supported cluster types for a
-        specified flavor.</para>
-      <para>The following example shows the request and corresponding
-        response to List Supported Cluster Types for a Flavor:</para>
-      <example>
-        <title>List Supported Cluster Types for a Flavor Request:
-          JSON</title>
-        <literallayout class="monospaced">
+    <section xml:id="limitsOperations">
+      <title>Resource Limits</title>
+      <para>This section describes the API operation for resource
+        limits.</para>
+      <section xml:id="viewResourceLimits">
+        <title>View Resource Limits</title>
+        <informaltable rules="all">
+          <thead>
+            <tr align="center">
+              <td colspan="1">Verb</td>
+              <td colspan="2">URI</td>
+              <td colspan="3">Description</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="1">&GET;</td>
+              <td colspan="2">/limits</td>
+              <td colspan="3">Displays the resource limits for the
+                user.</td>
+            </tr>
+          </tbody>
+        </informaltable>
+        <simpara>Normal Response Code(s):
+            <returnvalue>200</returnvalue> (OK) </simpara>
+        <simpara>Error Response Code(s): N/A </simpara>
+        <para>This call displays the resource limits such as remaining
+          node count, available RAM, and remaining disk space, for the
+          user.</para>
+        <para>The following example shows the request and
+          corresponding response to View Resource Limits:</para>
+        <example>
+          <title>View Resource Limits Request: JSON</title>
+          <literallayout class="monospaced">
         N/A
         </literallayout>
-      </example>
-      <example>
-        <title>List Supported Cluster Types for a Flavor Response:
-          JSON</title>
-        <literallayout class="monospaced">
-        { "types":
-          [
-            {
-              "id": "HADOOP_HDP1_1",
-              "links": [
-                { "href": "http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/types/HADOOP_HDP1_1",
-                  "rel": "self"
-                },
-                { "href": "http://dfw.bigdata.api.rackspacecloud.com/1234/types/HADOOP_HDP1_1",
-                  "rel": "bookmark"
-                }
-              ],
-              "name": "Hadoop (HDP 1.1)"
-            }
-          ]
-        }
-        </literallayout>
-      </example>
-    </section>
-    <section xml:id="User_Limits">
-      <title>View Resource Limits</title>
-      <informaltable rules="all">
-        <thead>
-          <tr align="center">
-            <td colspan="1">Verb</td>
-            <td colspan="2">URI</td>
-            <td colspan="3">Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="1">&GET;</td>
-            <td colspan="2">/limits</td>
-            <td colspan="3">Displays the resource limits for the
-              user.</td>
-          </tr>
-        </tbody>
-      </informaltable>
-      <simpara>Normal Response Code(s): <returnvalue>200</returnvalue>
-        (OK) </simpara>
-      <simpara>Error Response Code(s): N/A </simpara>
-      <para>This call displays the resource limits such as remaining
-        node count, available RAM, and remaining disk space, for the
-        user.</para>
-      <para>The following example shows the request and corresponding
-        response to View Resource Limits:</para>
-      <example>
-        <title>View Resource Limits Request: JSON</title>
-        <literallayout class="monospaced">
-        N/A
-        </literallayout>
-      </example>
-      <example>
-        <title>View Resource Limits Response: JSON</title>
-        <literallayout class="monospaced">
+        </example>
+        <example>
+          <title>View Resource Limits Response: JSON</title>
+          <literallayout class="monospaced">
         { "limits":
           { "absolute":
             {
@@ -2016,51 +2100,9 @@ format="SVG" scale="60"/>
           }
         }
         </literallayout>
-      </example>
+        </example>
+      </section>
     </section>
-    <!--     
-    <section xml:id="Sample">
-      <title>Sample Call</title>
-      <informaltable rules="all">
-        <thead>
-          <tr align="center">
-            <td colspan="1">Verb</td>
-            <td colspan="2">URI</td>
-            <td colspan="3">Description</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="1">&DELETE;</td>
-            <td colspan="2">/clusters/{id}</td>
-            <td colspan="3">Deletes a cluster.</td>
-          </tr>
-        </tbody>
-      </informaltable>
-      <simpara>
-        Normal Response Code(s): <returnvalue>200</returnvalue> (OK)
-      </simpara>
-      <simpara> Error Response Code(s): <errorcode>400</errorcode> (missingOrInvalidParams),
-        <errorcode>404</errorcode> (Resource Not Found), <errorcode>409</errorcode> (Invalid State)
-      </simpara>
-      <para> This call XXX.</para>
-      <para> The following example shows the request and corresponding response to XXX:</para>
-      <example>
-        <title> Request: JSON</title>
-        <literallayout class="monospaced">
-        
-        </literallayout>
-      </example>
-      <example>
-        <title> Response: JSON</title>
-        <literallayout class="monospaced">
-
-
-        </literallayout>
-      </example>
-      <para></para>
-    </section>
--->
   </chapter>
   <glossary xml:id="glossary_1">
     <title>Glossary</title>
