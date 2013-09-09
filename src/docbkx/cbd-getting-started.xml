@@ -107,7 +107,7 @@
         <title>Overview</title>
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Rackspace
             &PRODNAME; (&PRODABBV;) is an on-demand Hadoop service for
-            the Rackspace open cloud. The service supports a ReSTful
+            the Rackspace open cloud. The service supports a RESTful
             API and alleviates the pain associated with deploying,
             managing, and scaling Hadoop clusters, allowing you to
             focus on your core business. </para>
@@ -127,9 +127,11 @@
             >Reviewers: If you have an architecture diagram for Cloud
             Big Data that you want included here, please send it to
             me.</remark>
-        <para security="reviewers"
+        <para 
             xmlns:wadl="http://wadl.dev.java.net/2009/02">The
             following figure shows an overview of Cloud Big Data: </para>
+          <para>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;Figure
+            Coming by 9/12/2013>>>>>>>>>></para>
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">There are
             two primary use cases for &PRODNAME;: </para>
         <itemizedlist xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -157,7 +159,7 @@
                 </listitem>
                 <listitem>
                     <para>Provision and manage Hadoop using an
-                        easy-to-use Control Panel and a ReSTful
+                        easy-to-use Control Panel and a RESTful
                         API.</para>
                 </listitem>
                 <listitem>
@@ -212,7 +214,7 @@
                             conventions.</para>
                     </listitem>
                     <listitem>
-                        <para>Basic familiarity with Cloud and ReSTful
+                        <para>Basic familiarity with Cloud and RESTful
                             APIs.</para>
                     </listitem>
                     <listitem>
@@ -289,6 +291,11 @@
     </chapter>
     <chapter xml:id="Service_Access_Endpoints-d1e753">
         <title>Service Access/Endpoints</title>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
+            endpoint to use for your Cloud Big Data API calls for the
+            EA release is
+                <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234</code>. </para>
+<!-- Not for EA
         <para>The endpoints to use for your Cloud Big Data API calls
             are summarized in the table below.</para>
         <para>
@@ -322,6 +329,8 @@
                 </tbody>
             </table>
         </para>
+-->        
+        
         <note>
             <para>All examples in this guide assume that you are
                 operating against the DFW datacenter, however if you
@@ -359,30 +368,33 @@
             </listitem>
             <listitem>
                 <para>If you like to use a more graphical interface,
-                    the ReST client for Firefox also works well for
-                    testing and trying out commands, see <link
-                        xlink:href="https://addons.mozilla.org/en-US/firefox/addon/restclient/"
-                        >https://addons.mozilla.org/en-US/firefox/addon/restclient/</link>. </para>
+                        the REST client for Firefox also works well
+                        for testing and trying out commands, see <link
+                            xlink:href="https://addons.mozilla.org/en-US/firefox/addon/restclient/"
+                            >https://addons.mozilla.org/en-US/firefox/addon/restclient/</link>. </para>
             </listitem>
             <listitem>
                 <para>You can also download and install rest-client, a
-                    Java application to test ReSTful web services,
-                    from <link
-                        xlink:href="http://code.google.com/p/rest-client/"
-                        >http://code.google.com/p/rest-client/</link>. </para>
+                        Java application to test RESTful web services,
+                        from <link
+                            xlink:href="http://code.google.com/p/rest-client/"
+                            >http://code.google.com/p/rest-client/</link>. </para>
             </listitem>
         </itemizedlist>
         <section xml:id="DB_using-curl-cli">
             <title>Send API Requests Using cURL</title>
             <para>cURL is a command-line tool that is available on
-                most UNIX®-like environments and Mac OS X® and can be
-                downloaded for Windows® in order to interact with the
-                ReST interfaces. For more information on cURL, visit
-                    <link xlink:href="http://curl.haxx.se/"
-                    >http://curl.haxx.se/</link>. </para>
-            <para>cURL allows you to transmit and receive HTTP requests and responses from the
-                command-line or from within a shell script. This makes it possible to work with the ReST API
-                directly without using one of the client APIs. </para>
+                    most UNIX®-like environments and Mac OS X® and can
+                    be downloaded for Windows® in order to interact
+                    with the REST interfaces. For more information on
+                    cURL, visit <link
+                        xlink:href="http://curl.haxx.se/"
+                        >http://curl.haxx.se/</link>. </para>
+            <para>cURL allows you to transmit and receive HTTP
+                    requests and responses from the command-line or
+                    from within a shell script. This makes it possible
+                    to work with the REST API directly without using
+                    one of the client APIs. </para>
             <para>The following cURL command-line options will be used
                 in this guide to run the examples:</para>
             <variablelist>
@@ -513,11 +525,11 @@
     <section xml:id="Generating_Auth_Token">
         <title>Generate an Authentication Token</title>
         <para>You need to generate a token whether you use cURL or a
-            ReST client.</para>
-        <para>In order to use the ReST API, you will first need to
-            obtain an authentication token, which will need to be
-            passed in for each request using the
-                <code>X-Auth-Token</code> header. </para>
+                REST client.</para>
+        <para>In order to use the REST API, you will first need to
+                obtain an authentication token, which will need to be
+                passed in for each request using the
+                    <code>X-Auth-Token</code> header. </para>
         <para>The following example demonstrates how to use cURL to
             obtain the authentication token and the account number.
             You will need to supply the authentication token and
@@ -703,9 +715,11 @@
     <section xml:id="profileSetupView">
         <title>Setting Up and Viewing a Profile</title>
         <remark>Reviewer: Is there an API call to set up a Profile?
-            I'm working from the Walk-thrus on the wiki and it
-            includes this. But I see no corresponding API call in the
-            current API specifications.</remark>
+                I'm working from the Walk-thrus on the wiki and it
+                includes this. But I see no corresponding API call in
+                the current API specifications. 9/6/2013 Received
+                example POST  request and response from David Dobbins
+                for setting up a profile. Added it here on 9/9/2013. </remark>
         <para>Before you can create Hadoop clusters, you need to
             create a profile, which consists of a username and
             password. </para>
@@ -723,13 +737,77 @@
             please provide appropriate cURL request and response. </remark>
         <example>
             <title>cURL  Create Profile Request: JSON</title>
-            <programlisting language="bash"><command>curl -i ???</command> </programlisting>
+            <programlisting language="bash">curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/profile \
+-H "Accept: application/json" \
+-H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
+-H "Content-Type: application/json" -d\
+'{
+    "profile": {
+        "username": "myuser",
+        "password": "T0pS3cret!",
+        "sshkeys": [
+            {
+                "publicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDV9lu1CPeRmnTrDigLOU2lM60igHW4LXEgei9ajMcuUnJXy
+UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmapHCz9d3IGezuuKh/DJRVl8Q7pICcsRIhQxHijcyfcPsPnTfDQ89LKg6k4uyxZZobQozXH/vwtAcsGAW6hX6hsxlvBIqndPPMw2FXkGt56W+YuNNNQC+P+qTyBQ8mWhy1OQJwvn9N/d0wdUAqogLfTasUXeTRjr+Q7ASC/QZ6ewqgrBzLbbM7SqobhNcD6O2suUGr2uvGzKY4a3oaGO68ur2Z testuser@rackspace.com",
+                "name": "mykey"
+            }
+        ],
+        "cloudCredentials": {
+            "username": "myuser",
+            "apikey": "e96406df8e9a82565deb57f3555054b8"
+        }
+    }
+}' </programlisting>
         </example>
+            <para>Remember to replace the names in the example above
+                with their actual respective values for all the cURL
+                examples in this guide:</para>
+            <itemizedlist>
+                <listitem>
+                    <para><emphasis role="bold"
+                            >your_auth_token</emphasis> &mdash; as
+                        returned in your authentication response (see
+                        the response examples in <xref
+                            linkend="Generating_Auth_Token"/>)</para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="bold"
+                            >your_acct_id</emphasis> &mdash; as
+                        returned in your authentication response (must
+                        be replaced in the request URL)</para>
+                </listitem>
+            </itemizedlist>
         <para>The following example show the response for the profile
             request:</para>
         <example>
             <title> Create Profile Response: JSON</title>
-            <programlisting language="json">???</programlisting>
+            <programlisting language="json">{
+    "profile": {
+        "username": "myuser",
+        "links": [
+            {
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/681390/profile",
+                "rel": "self"
+            },
+            {
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/681390/profile",
+                "rel": "bookmark"
+            }
+        ],
+        "cloudCredentials": {
+            "username": "myuser"
+        },
+        "userId": "194683",
+        "sshkeys": [
+            {
+                "publicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDV9lu1CPeRmnTrDigLOU2lM60igHW4LXEgei9ajMcuUnJXy
+UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmapHCz9d3IGezuuKh/DJRVl8Q7pICcsRIhQxHijcyfcPsPnTfDQ89LKg6k4uyxZZobQozXH/vwtAcsGAW6hX6hsxlvBIqndPPMw2FXkGt56W+YuNNNQC+P+qTyBQ8mWhy1OQJwvn9N/d0wdUAqogLfTasUXeTRjr+Q7ASC/QZ6ewqgrBzLbbM7SqobhNcD6O2suUGr2uvGzKY4a3oaGO68ur2Z testuser@rackspace.com",
+                "name": "mykey"
+            }
+        ],
+        "tenantId": "681390"
+    }
+}</programlisting>
         </example>
         <para>Anytime after your profile is created, you can view its
             details.  </para>
@@ -763,25 +841,9 @@
             <title>cURL  Get Profile Request: JSON</title>
             <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/profile -d  \
 -H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
--H "Accept: application/json"</programlisting>
+-H "Accept: application/json"\
+-H "Content-type: application/json"</programlisting>
         </example>
-        <para>Remember to replace the names in the example above with
-            their actual respective values for all the cURL examples
-            in this guide:</para>
-        <itemizedlist>
-            <listitem>
-                <para><emphasis role="bold">your_auth_token</emphasis>
-                    &mdash; as returned in your authentication
-                    response (see the response examples in <xref
-                        linkend="Generating_Auth_Token"/>)</para>
-            </listitem>
-            <listitem>
-                <para><emphasis role="bold">your_acct_id</emphasis>
-                    &mdash; as returned in your authentication
-                    response (must be replaced in the request
-                    URL)</para>
-            </listitem>
-        </itemizedlist>
         <para>The following example shows the response for the profile
             request:</para>
         <example>
@@ -842,13 +904,49 @@
             <title>cURL View Resource Limits Request: JSON</title>
             <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/limits -d \
 -H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
--H "Accept: application/json" </programlisting>
+-H "Accept: application/json" \
+-H "Content-type: application/json" </programlisting>
+            <!-- from David
+                <programlisting>$ curl -H "X-Auth-Token: $AUTH_TOKEN" $LAVA_API_URL/limits
+{
+    "limits": {
+        "links": [
+            {
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/681390/limits",
+                "rel": "self"
+            },
+            {
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/681390/limits",
+                "rel": "bookmark"
+            }
+        ],
+        "absolute": {
+            "nodeCount": {
+                "limit": 5,
+                "remaining": 5
+            },
+            "vcpus": {
+                "limit": 10,
+                "remaining": 10
+            },
+            "ram": {
+                "limit": 40960,
+                "remaining": 40960
+            },
+            "disk": {
+                "limit": 2048,
+                "remaining": 2048
+            }
+        }
+    }
+}
+</programlisting> -->
         </example>
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
             following example shows the response:</para>
         <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <title>View Resource Limits Response: JSON</title>
-            <programlisting>        { "limits":
+<!--  cyr's          <programlisting>        { "limits":
           { "absolute":
             {
               "disk": {
@@ -877,7 +975,39 @@
               }
             ]
           }
-        }</programlisting>
+        }</programlisting> -->
+                <programlisting>{
+    "limits": {
+        "links": [
+            {
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/681390/limits",
+                "rel": "self"
+            },
+            {
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/681390/limits",
+                "rel": "bookmark"
+            }
+        ],
+        "absolute": {
+            "nodeCount": {
+                "limit": 5,
+                "remaining": 5
+            },
+            "vcpus": {
+                "limit": 10,
+                "remaining": 10
+            },
+            "ram": {
+                "limit": 40960,
+                "remaining": 40960
+            },
+            "disk": {
+                "limit": 2048,
+                "remaining": 2048
+            }
+        }
+    }
+}</programlisting>
         </example>
         </section>
     <section xml:id="List_DBS_For_Instance">
@@ -918,7 +1048,7 @@
                 produce the response given in this example.</remark>
             <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <title>cURL Create Cluster Request: JSON</title>
-                <programlisting>curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>clusters \
+                <programlisting>curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>clusters -d \
 '{"cluster":
       { "name": "slice",
         "clusterType": "HADOOP_HDP1_1",
@@ -927,8 +1057,8 @@
       }
     }' \          
 -H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
--H "Accept: application/json"
-                  </programlisting>
+-H "Accept: application/json" \
+-H "Content-type: application/json"                 </programlisting>
               
             </example>
             <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -995,7 +1125,8 @@
                 <title>cURL List Flavors Request: JSON</title>
                 <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/flavors -d \
 -H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
--H "Accept: application/json"</programlisting>
+-H "Accept: application/json" \
+-H "Content-type: application/json"</programlisting>
             </example>
             <para>The following example shows the response for
                     <command>List Flavors</command>:</para>
@@ -1255,7 +1386,7 @@
                 corresponding response to resize a  cluster:</para>
             <example>
                 <title>cURL Resize Cluster Request: JSON</title>
-                <programlisting>curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_account_ID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis>/resize -d \
+                <programlisting>curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_account_ID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis>/action -d \
 '{"resize":{ "nodeCount": 10 }} ' \
 -H "Accept: application/json" \
 -H "X-Auth-Token:<emphasis role="bold">your_auth_token</emphasis>" \
@@ -1313,7 +1444,7 @@
             <para>The following examples show the cURL request and
                 corresponding response to delete a cluster:</para>
             <remark>Reviewer: Please provide appropriate cURL to
-                produce the response given in this example.</remark>
+                    produce the response given in this example. </remark>
             <example>
                 <title>cURL Delete Cluster Request: JSON</title>
                 <programlisting>curl -i -X DELETE https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_account_ID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis> -d \
@@ -1356,7 +1487,7 @@
         <title>Using the Python Lava Client</title>
         <para>This chapter explains how to get started using
             python-lavaclient, which is a convenient python binding
-            and command-line client that utilizes the ReSTful
+            and command-line client that utilizes the RESTful
             API.</para>
         <section xml:id="setting_Up">
             <title>Setting Up</title>

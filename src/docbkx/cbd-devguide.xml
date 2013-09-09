@@ -40,12 +40,21 @@ format="SVG" scale="60"/>
   xmlns:html="http://www.w3.org/1999/xhtml"
   xmlns:wadl="http://wadl.dev.java.net/2009/02"
   version="5.0-extension RackBook-2.0" xml:id="cbd-devguide">
-  <?rax 
+ <!-- <?rax 
     title.font.size="30px" 
     subtitle.font.size="20px"         
-    canonical.url.base="http://docs-internal.rackspace.com/cbd/api/v1/cbd-devguide/content"?>
+    canonical.url.base="http://docs-internal.rackspace.com/cbd/api/v1/cbd-devguide/content"
+    status.bar.text="Early Access"?>
   <title>Rackspace &PRODNAME; Developer Guide</title>
   <titleabbrev>&PRODNAME; Developer Guide</titleabbrev>
+-->
+  <?rax title.font.size="35px" subtitle.font.size="20px"?>
+  <title>Rackspace Cloud Big Data Developer Guide</title>
+  <?rax status.bar.text.font.size="40px"
+          status.bar.text="Early Access"?>   
+  <titleabbrev>Rackspace Cloud Big Data Developer
+    Guide</titleabbrev>
+
   <info>
     <author>
       <personname>
@@ -69,7 +78,7 @@ format="SVG" scale="60"/>
       </annotation>
     </legalnotice>
     <abstract>
-      <para condition="">This document is intended for software
+      <para >This document is intended for software
         developers interested in developing applications using the
         Rackspace &PRODNAME; Application Programming Interface
           (<abbrev>API</abbrev>). </para>
@@ -123,8 +132,9 @@ format="SVG" scale="60"/>
     <remark>Reviewers: If you have an architecture diagram for Cloud
       Big Data that you want included here, please send it to
       me.</remark>
-    <para security="reviewers">The following figure shows an overview
-      of Cloud Big Data: </para>
+    <para>The following figure shows an overview of Cloud Big Data: </para>
+    <para>&lt;&lt;&lt;&lt;&lt;&lt; Figure coming by 9/12/2013 from
+      David Dobbins>>>>>>></para>
     <para>There are two primary use cases for &PRODNAME;: </para>
     <itemizedlist>
       <listitem>
@@ -466,16 +476,20 @@ format="SVG" scale="60"/>
         of the service is therefore responsible for appropriate
         replication, caching, and overall maintenance of &PRODNAME;
         data across regional boundaries to other Cloud Servers.</para>
+      <para>The endpoint to use for your Cloud Big Data API calls for
+        the EA release is
+          <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234</code>. </para>
       <?rax-fo keep-with-next?>
-      <para>Replace the account ID number with your actual account
+      <para>Replace the sample account ID number, <emphasis
+          role="italic">1234</emphasis>, with your actual account
         number returned as part of the authentication service
         response.</para>
       <para>You will find the actual account number after the final
         '/' in the <code>publicURL</code> field returned by the
         authentication response. In the following example, you can see
         from the <code>publicURL</code> field for
-          <code>cloudServers</code>
-        (publicURL="https://servers.api.rackspacecloud.com/v1.0/322781")
+          <code>cloudServers</code>,
+          <code>publicURL="https://servers.api.rackspacecloud.com/v1.0/322781"</code>,
         that the account number is 322781.</para>
     </section>
     <section xml:id="Request_Response_Types-d1e903">
@@ -530,13 +544,14 @@ format="SVG" scale="60"/>
           <tr>
             <td colspan="2"><code>badRequest</code></td>
             <td colspan="1">400</td>
-            <td colspan="3">Error in user provided request.</td>
+            <td colspan="3">There is an error in the user-provided
+              request.</td>
           </tr>
           <tr>
             <td colspan="2"><code>unauthorized</code></td>
             <td colspan="1">401</td>
             <td colspan="3">The supplied token is not authorized to
-              access the resources, either it's expired or
+              access the resources. Either the token is expired or
               invalid.</td>
           </tr>
           <tr>
@@ -549,18 +564,18 @@ format="SVG" scale="60"/>
             <td colspan="2"><code>itemNotFound</code></td>
             <td colspan="1">404</td>
             <td colspan="3">The back-end services did not find
-              anything matching the Request-URI.</td>
+              anything matching the request URI.</td>
           </tr>
           <tr>
             <td colspan="2"><code>conflictingRequest</code></td>
             <td colspan="1">409</td>
-            <td colspan="3">The requested resource cannot be operated
-              on at the moment.</td>
+            <td colspan="3">The requested resource cannot currently be
+              operated on.</td>
           </tr>
           <tr>
             <td colspan="2"><code>overLimit</code></td>
             <td colspan="1">413</td>
-            <td colspan="3">Resource quota exceeded.</td>
+            <td colspan="3">The resource quota was exceeded.</td>
           </tr>
           <tr>
             <td colspan="2"><code>lavaFault</code></td>
@@ -587,7 +602,7 @@ format="SVG" scale="60"/>
       <section xml:id="Rate_Limits-d1e1222">
         <title>Rate Limits</title>
         <para>Rate limits are specified in terms of both a
-          human-readable wild-card URI and a machine-processable
+          human-readable wildcard URI and a machine-processable
           regular expression. The regular expression boundary matcher
           '^' takes effect after the root URI path. For example, the
           regular expression ^/v1.0/clusters would match the bold
@@ -677,14 +692,14 @@ format="SVG" scale="60"/>
               <td colspan="1">5120</td>
             </tr>
             <tr>
-              <td colspan="1">Ram</td>
-              <td>Maximum ram across all data nodes in gigabytes
+              <td colspan="1">RAM</td>
+              <td>Maximum RAM across all data nodes in gigabytes
                 (GB)</td>
               <td colspan="3">40960</td>
             </tr>
             <tr>
-              <td colspan="1">Vcpus</td>
-              <td colspan="3">Maximum vcpus across all data nodes</td>
+              <td colspan="1">VCPUs</td>
+              <td colspan="3">Maximum VCPUs across all data nodes</td>
               <td colspan="1">10</td>
             </tr>
           </tbody>
@@ -776,9 +791,8 @@ format="SVG" scale="60"/>
           <para>DELETING &ndash; The cluster is being deleted.</para>
         </listitem>
         <listitem>
-          <para>UPDATING &ndash; The cluster is being updated at the
-            moment, either being resized or another update
-            operation.</para>
+          <para>UPDATING &ndash; The cluster is being updated, either
+            being resized or another update operation.</para>
         </listitem>
         <listitem>
           <para>ERROR &ndash; The cluster failed to start  up.</para>
@@ -833,11 +847,13 @@ format="SVG" scale="60"/>
       <para></para>
     </section>
 -->
-    <para>The CBD API allows you to manage Hadoop clusters.</para>
+    <para>The chapter describes all of the API operations provided by
+      the Cloud Big Data service. </para>
     <!-- adding API commands here -->
     <section xml:id="profileOperations">
       <title>Profiles</title>
-      <para>This section describes API operations for profiles.</para>
+      <para>This section describes the operations that are supported
+        for profiles.</para>
       <section xml:id="createUpdateProfile">
         <title>Create/Update Profile</title>
         <informaltable rules="all">
@@ -871,7 +887,7 @@ format="SVG" scale="60"/>
         <para>The following example shows the request and
           corresponding response to updating a profile:</para>
         <example>
-          <title>Update Profile Request: JSON</title>
+          <title>Create/Update Profile Request: JSON</title>
           <literallayout class="monospaced">
         { "profile": {
             "username": "john.doe",
@@ -894,7 +910,7 @@ format="SVG" scale="60"/>
         </literallayout>
         </example>
         <example>
-          <title>Update Profile Response: JSON</title>
+          <title>Create/Update Profile Response: JSON</title>
           <literallayout class="monospaced">
         {"profile":
           { "username": "john.doe",
@@ -1044,8 +1060,8 @@ format="SVG" scale="60"/>
         <para></para>
     </section>
 -->
-      <para>This section describes the API operations for
-        clusters.</para>
+      <para>This section describes the operations that are supported
+        for clusters.</para>
       <section xml:id="createNewCluster">
         <title>Create New Cluster</title>
         <informaltable rules="all">
@@ -1076,6 +1092,12 @@ format="SVG" scale="60"/>
           <para>You must create your profile before you create a
             cluster.</para>
         </note>
+        <para>The <parameter>postInitScript</parameter> input
+          parameter specifies a URL that downloads a script that runs
+          after the cluster is created. The status of the run is shown
+          in the response by the
+            <parameter>postInitScriptStatus</parameter> output
+          parameter. </para>
         <para>The following example show the request and corresponding
           response to List all Clusters for the specified
           account:</para>
@@ -1401,7 +1423,8 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="nodeOperations">
       <title>Nodes</title>
-      <para>This section describes API operations for nodes.</para>
+      <para>This section describes operations that are supported for
+        nodes.</para>
       <section xml:id="listClusterNodes">
         <title>List Cluster Nodes</title>
         <informaltable rules="all">
@@ -1631,7 +1654,8 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="flavorOperations">
       <title>Flavors</title>
-      <para>This section describes API operations for flavors.</para>
+      <para>This section describes operations that are supported for
+        flavors.</para>
       <section xml:id="listFlavors">
         <title>List Available Flavors</title>
         <informaltable rules="all">
@@ -1849,8 +1873,8 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="typeOperations">
       <title>Types</title>
-      <para>This section describes the API operations for
-        types.</para>
+      <para>This section describes the operations that are supported
+        for types.</para>
       <section xml:id="listClusterTypes">
         <title>List Cluster Types</title>
         <informaltable rules="all">
@@ -2031,8 +2055,8 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="limitsOperations">
       <title>Resource Limits</title>
-      <para>This section describes the API operation for resource
-        limits.</para>
+      <para>This section describes the operation that is supported for
+        resource limits.</para>
       <section xml:id="viewResourceLimits">
         <title>View Resource Limits</title>
         <informaltable rules="all">
