@@ -17,15 +17,14 @@
 	         xmlns:raxapi="http://docs.rackspace.com/volume/api/v1"
 	         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	         xmlns:dbaas="http://docs.openstack.org/database/api/v1.0"
-	         xmlns:queues="http://docs.openstack.org/database/api/v1.0">
+	         xmlns:clusters="http://docs.openstack.org/database/api/v1.0">
 	
 	
 <!--*******************************************************-->
 <!-- GRAMMARS                                              -->
 <!--*******************************************************-->
 	
-<!-- What do I need here for Cloud Big Data? 
+<!-- What do I need here for Cloud Big Data Admin Guide? 
 	<grammars>
 		<include href="../common/xsd/api.xsd"/> (identity grammars)
 		<include href="../common/xsd/api-common.xsd"/> (identity grammars)
@@ -38,7 +37,7 @@
 <!--*******************************************************-->	
 	
 <resources base="https://dfw.bigdata.api.rackspacecloud.com/">
-	<resource id="version" path="{versions}">
+	<resource id="version" path="{version}">
 		
 		<resource id="limits" path="limits">
 			<method href="#listLimits" />	
@@ -56,7 +55,7 @@
 					<param name="clusterId" style="template" type="xsd:string">
 						<doc>Specifies the cluster ID.</doc></param>
 					<method href="#getCluster" />
-				 
+					<method href="#deleteCluster" />			 
 						<resource id="logs" path="logs">
 						   <method href="#getClusterLogs" />
 					   	</resource>	
@@ -133,11 +132,11 @@
 
 	<method name="POST" id="postLimits" >
 		<wadl:doc xml:lang="EN" title="Post Limits" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Sets resource limits for a specific tenant.</para> 
+			<para role="shortdesc">Updates resource limits for a specific tenant.</para> 
 			<para>This operation sets resource limits for a specific tenant.</para>	
 		</wadl:doc>
 		<request>
-			<representation mediaType="application/json" element="queues:Queue" >
+			<representation mediaType="application/json" element="clusters:Cluster" >
 				<doc>
 					<xsdxt:code href="../wadl/samples/cbd_postLimits_request.json"/>
 				</doc>
@@ -194,6 +193,25 @@
 			</representation>
 		</response>
 	</method>	
+
+	<!--*******************************************************-->						
+	<!-- Delete Cluster: deleteCluster                            -->
+	<!--*******************************************************-->
+	
+	<method name="DELETE" id="deleteCluster">
+		<wadl:doc xml:lang="EN" title="Delete Cluster" xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Delete a specified cluster. </para> 
+			<para>This operation deletes a specified cluster, which is defined by clusterId.</para>	
+		</wadl:doc>
+		<response status="202">		
+			<representation mediaType="application/json" >
+				<doc>
+					<xsdxt:code href="../wadl/samples/cbd_deleteCluster_response.json"/>
+				</doc>
+			</representation>
+		</response>
+	</method>	
+	
 	
 <!--*******************************************************-->						
 <!-- Get Specific Cluster: getCluster                      -->
@@ -236,7 +254,7 @@
 			<para>This operation performs an action, such as set status, on a cluster. </para>
 		</wadl:doc>
 		<request>
-			<representation mediaType="application/json" element="queues:Queue" >
+			<representation mediaType="application/json" element="clusters:Cluster" >
 				<doc>
 					<xsdxt:code href="../wadl/samples/cbd_postClusterAction_request.json"/>
 				</doc>

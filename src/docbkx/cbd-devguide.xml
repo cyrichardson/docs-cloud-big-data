@@ -96,16 +96,6 @@ format="SVG" scale="60"/>
           </itemizedlist>
         </revdescription>
       </revision>
-      <revision>
-        <date>2013-02-07</date>
-        <revdescription>
-          <itemizedlist spacing="compact">
-            <listitem>
-              <para>Initial Preview release. </para>
-            </listitem>
-          </itemizedlist>
-        </revdescription>
-      </revision>
     </revhistory>
     <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
       <raxm:displayname>API Developer Guide</raxm:displayname>
@@ -132,9 +122,11 @@ format="SVG" scale="60"/>
     <remark>Reviewers: If you have an architecture diagram for Cloud
       Big Data that you want included here, please send it to
       me.</remark>
+<!-- Coming after EA. David Dobbins is working with marketing to create.    
     <para>The following figure shows an overview of Cloud Big Data: </para>
     <para>&lt;&lt;&lt;&lt;&lt;&lt; Figure coming by 9/12/2013 from
       David Dobbins>>>>>>></para>
+-->      
     <para>There are two primary use cases for &PRODNAME;: </para>
     <itemizedlist>
       <listitem>
@@ -855,7 +847,7 @@ format="SVG" scale="60"/>
       <para>This section describes the operations that are supported
         for profiles.</para>
       <section xml:id="createUpdateProfile">
-        <title>Create/Update Profile</title>
+        <title>Create or Update Profile</title>
         <informaltable rules="all">
           <thead>
             <tr align="center">
@@ -868,8 +860,8 @@ format="SVG" scale="60"/>
             <tr>
               <td colspan="1">&POST;</td>
               <td colspan="2">/profile</td>
-              <td colspan="3">Create or updates the information on an
-                existing profile.</td>
+              <td colspan="3">Creates a profile or updates the
+                information in an existing profile.</td>
             </tr>
           </tbody>
         </informaltable>
@@ -1063,7 +1055,7 @@ format="SVG" scale="60"/>
       <para>This section describes the operations that are supported
         for clusters.</para>
       <section xml:id="createNewCluster">
-        <title>Create New Cluster</title>
+        <title>Create Cluster</title>
         <informaltable rules="all">
           <thead>
             <tr align="center">
@@ -1235,7 +1227,7 @@ format="SVG" scale="60"/>
           <tbody>
             <tr>
               <td colspan="1">&GET;</td>
-              <td colspan="2">/clusters/{id}</td>
+              <td colspan="2">/clusters/{clusterId}</td>
               <td colspan="3">Gets details for a cluster.</td>
             </tr>
           </tbody>
@@ -1290,7 +1282,7 @@ format="SVG" scale="60"/>
         </example>
       </section>
       <section xml:id="resizeCluster">
-        <title>Resize a Cluster</title>
+        <title>Resize Cluster</title>
         <informaltable rules="all">
           <thead>
             <tr align="center">
@@ -1365,7 +1357,7 @@ format="SVG" scale="60"/>
           <tbody>
             <tr>
               <td colspan="1">&DELETE;</td>
-              <td colspan="2">/clusters/{id}</td>
+              <td colspan="2">/clusters/{clusterId}</td>
               <td colspan="3">Deletes a cluster.</td>
             </tr>
           </tbody>
@@ -1438,7 +1430,7 @@ format="SVG" scale="60"/>
           <tbody>
             <tr>
               <td colspan="1">&GET;</td>
-              <td colspan="2">/clusters/{id}/nodes</td>
+              <td colspan="2">/clusters/{clusterId}/nodes</td>
               <td colspan="3">List all nodes for a cluster.</td>
             </tr>
           </tbody>
@@ -1592,8 +1584,10 @@ format="SVG" scale="60"/>
           <tbody>
             <tr>
               <td colspan="1">&GET;</td>
-              <td colspan="2">/clusters/{id}/nodes/{id}</td>
-              <td colspan="3">Get details for node in a cluster.</td>
+              <td colspan="2"
+                >/clusters/{clusterId}/nodes/{nodeId}</td>
+              <td colspan="3">Get details for a node in a
+                cluster.</td>
             </tr>
           </tbody>
         </informaltable>
@@ -1604,9 +1598,8 @@ format="SVG" scale="60"/>
           (Not Found)</simpara>
         <para>This call gets details for a node as specified by the
           cluster id and node id.</para>
-        <para> The following example show the request and
-          corresponding response to Get Details for a Node within a
-          Cluster:</para>
+        <para>The following example show the request and corresponding
+          response to Get Details for a Node within a Cluster:</para>
         <example>
           <title>Get Node Details Request: JSON</title>
           <literallayout class="monospaced">
@@ -1826,7 +1819,7 @@ format="SVG" scale="60"/>
             <tr>
               <td colspan="1">&GET;</td>
               <td colspan="2">/flavors/{flavorId}/types</td>
-              <td colspan="3">Lists supported cluster types for a
+              <td colspan="3">Lists the supported cluster types for a
                 specified flavor.</td>
             </tr>
           </tbody>

@@ -127,11 +127,13 @@
             >Reviewers: If you have an architecture diagram for Cloud
             Big Data that you want included here, please send it to
             me.</remark>
+<!-- Coming after EA release - David Dobbins is working with marketing to create this.          
         <para 
             xmlns:wadl="http://wadl.dev.java.net/2009/02">The
             following figure shows an overview of Cloud Big Data: </para>
           <para>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;Figure
             Coming by 9/12/2013>>>>>>>>>></para>
+-->            
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">There are
             two primary use cases for &PRODNAME;: </para>
         <itemizedlist xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -906,41 +908,6 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
 -H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json" </programlisting>
-            <!-- from David
-                <programlisting>$ curl -H "X-Auth-Token: $AUTH_TOKEN" $LAVA_API_URL/limits
-{
-    "limits": {
-        "links": [
-            {
-                "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/681390/limits",
-                "rel": "self"
-            },
-            {
-                "href": "https://dfw.bigdata.api.rackspacecloud.com/681390/limits",
-                "rel": "bookmark"
-            }
-        ],
-        "absolute": {
-            "nodeCount": {
-                "limit": 5,
-                "remaining": 5
-            },
-            "vcpus": {
-                "limit": 10,
-                "remaining": 10
-            },
-            "ram": {
-                "limit": 40960,
-                "remaining": 40960
-            },
-            "disk": {
-                "limit": 2048,
-                "remaining": 2048
-            }
-        }
-    }
-}
-</programlisting> -->
         </example>
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
             following example shows the response:</para>
@@ -1048,7 +1015,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 produce the response given in this example.</remark>
             <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <title>cURL Create Cluster Request: JSON</title>
-                <programlisting>curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>clusters -d \
+                <programlisting>curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/clusters -d \
 '{"cluster":
       { "name": "slice",
         "clusterType": "HADOOP_HDP1_1",
