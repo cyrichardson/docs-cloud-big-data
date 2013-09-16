@@ -188,7 +188,7 @@
 			</request><response status="200">		
 				<representation mediaType="application/json" >
 					<doc>
-						<xsdxt:code href="../wadl/samples/dg_cbd_createCLuster_response.json"/>
+						<xsdxt:code href="../wadl/samples/dg_cbd_createCluster_response.json"/>
 					</doc>
 				</representation>
 			</response>
