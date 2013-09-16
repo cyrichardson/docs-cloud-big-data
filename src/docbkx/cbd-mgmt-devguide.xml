@@ -1016,14 +1016,6 @@
     </chapter>
     <glossary xml:id="glossary_1" >
         <title>Glossary</title>
-        <info>
-            <raxm:metadata
-                xmlns:raxm="http://docs.rackspace.com/api/metadata">
-                <raxm:type>concept</raxm:type>
-                <raxm:product version="v1.0">cdns</raxm:product>
-                <raxm:priority>50</raxm:priority>
-            </raxm:metadata>
-        </info>
         <glossentry xml:id="glosCluster" >
             <glossterm>Cluster</glossterm>
             <glossdef>
