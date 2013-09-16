@@ -38,7 +38,7 @@
 <!--*******************************************************-->	
 	
 <resources base="https://dfw.bigdata.api.rackspacecloud.com/">
-	<resource id="version" path="{version}">
+	<resource id="version" path="/">
 
 		<resource id="profiles" path="profile">
 			<method href="#postProfile" />
@@ -46,60 +46,65 @@
 		</resource>
 		
 		<resource id="clusters" path="clusters">
-			<method href="#postCluster" />	
+			<method href="#createCluster" />	
 			<method href="#getClusters" />
 
-				<resource id="cluster" path="{clusterId}">
-					<param name="clusterId" style="template" type="xsd:string">
-						<doc>Specifies the cluster ID.</doc></param>
-					<method href="#getClusterDetails" />
-					<method href="#deleteCluster" />
+			<resource id="cluster" path="{clusterId}">
+				<param name="clusterId" style="template" type="xsd:string">
+					<doc>Specifies the cluster ID.</doc></param>
+				<method href="#getClusterDetails" />
+				<method href="#deleteCluster" />
+				
+				<resource id="action" path="action">
+					<method href="#postClusterAction" />
+				</resource>
+				<resource id="nodes" path="nodes">
+					<method href="#getClusterNodes" />
+				</resource>
+				<resource id="node" path="{nodeId}">
+					<param name="nodeId" style="template" type="xsd:string">
+						<doc>Specifies the node ID.</doc></param>
+					<method href="#getNodeDetails" />
+				</resource>
+			</resource>
+		</resource>
+	</resource> 
 
-					   	<resource id="action" path="action">
-							<method href="#postClusterAction" />
-					   	</resource>	
-					   	<resource id="nodes" path="nodes">
-							<method href="#getClusterNodes" />
-					   	</resource>	
-					<resource id="node" path="{nodeId}">
-						<param name="nodeId" style="template" type="xsd:string">
-							<doc>Specifies the node ID.</doc></param>
-						<method href="#getNodeDetails" />		 	       				
-			 	     </resource>
-					    </resource>	
-					</resource>
-			 	</resource>			
-		
+	<resource id="flavorsVersion" path="/">
 		<resource id="flavors" path="flavors">
 			<method href="#getFlavors" />
-			<resource id="flavorID" path="{flavorId}">
-				<param name="flavorId" style="template" type="xsd:string"> 
+			<resource id="flavor" path="{flavorId}">
+				<param name="flavorId" style="template" type="xsd:string">
 					<doc>Specifies the flavor ID.</doc></param>
 				<method href="#getFlavorDetails" />
 				<resource id="flavorsSupportedType" path="types">
-					<method href="#getSupportedClusterTypesByFlavor" />	
+					<method href="#getSupportedClusterTypesByFlavor" />
 				</resource>
-			</resource>	
+			</resource>
 		</resource>
-		
+	</resource>
+
+	<resource id="typeVersion" path="/">
 		<resource id="types" path="types">
 			<method href="#getClusterTypes" />
-			<resource id="typeID" path="{typeId}">
-				<param name="typeId" style="template" type="xsd:string"> 
+			<resource id="type" path="{typeId}">
+				<param name="typeId" style="template" type="xsd:string">
 					<doc>Specifies the type ID.</doc></param>
 				<method href="#getClusterTypeDetails" />
 				<resource id="flavorsType" path="flavors">
-					<method href="#getSupportedFlavorsForType" />	
+					<method href="#getSupportedFlavorsForType" />
 				</resource>
-			</resource>	
+			</resource>
 		</resource>
-		
+	</resource>
+	
+	<resource id="limitVersion" path="/">
 		<resource id="limits" path="limits">
-				<method href="#viewResourceLimits" />
+			<method href="#viewResourceLimits" />
 		</resource>
-				
-	</resources>			
-
+	</resource>	
+</resources> 
+	
 	
 <!--*******************************************************-->
 <!-- ALL METHODS                                           -->
@@ -116,7 +121,9 @@
 	<method name="POST" id="postProfile">
 		<wadl:doc xml:lang="EN" title="Create or Update Profile" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Creates a profile or updates the information in an existing profile.</para> 
-			<para>This operation creates a profile or updates the information in an existing profile.</para>	
+			<para>The 400 error code might indicate malformed data or unacceptable parameters.</para>
+			<para>This operation creates a profile or updates the information in an existing profile.</para>		
+	<note><para>You must create your profile before you create a cluster. </para></note>
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json" element="clusters:cluster" >
@@ -164,8 +171,13 @@
 	
 		<method name="POST" id="createCluster">
 			<wadl:doc xml:lang="EN" title="Create Cluster" xmlns="http://docbook.org/ns/docbook">
-				<para role="shortdesc">Creates a new cluster.</para> 
+				<para role="shortdesc">Creates a new cluster.</para> 				
+				<para>The 400 error code might indicate any of the following issues:</para>
+				<itemizedlist spacing="compact"><listitem><para>invalid response body</para></listitem><listitem><para>you need to create a user profile</para></listitem><listitem><para>invalid node count</para></listitem><listitem><para>invalid flavor</para></listitem><listitem><para>malformed data</para></listitem></itemizedlist>
+				<para>The 413 error code might indicate that the quota is exceeded.</para>
 				<para>This operation creates a new cluster.</para>	
+				<note><para>You must create your profile before you create a cluster.</para></note>
+				<para>The <parameter>postInitScript</parameter> input parameter specifies a URL that downloads a script that runs after the cluster is created. The status of the run is shown in the response by the <parameter>postInitScriptStatus</parameter> output parameter.</para>
 			</wadl:doc>
 			<request>
 				<representation mediaType="application/json" element="clusters:cluster" >
@@ -176,7 +188,7 @@
 			</request><response status="200">		
 				<representation mediaType="application/json" >
 					<doc>
-						<xsdxt:code href="../wadl/samples/db_cbd_createCLuster_response.json"/>
+						<xsdxt:code href="../wadl/samples/dg_cbd_createCLuster_response.json"/>
 					</doc>
 				</representation>
 			</response>
@@ -188,15 +200,15 @@
     <!-- List All Clusters: listClusters                       -->	
     <!--*******************************************************-->	
 
-	<method name="GET" id="listClusters" >
+	<method name="GET" id="getClusters" >
 		<wadl:doc xml:lang="EN" title="List All CLusters" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all clusters for an account.</para> 
-			<para>This operation lists all clusters for an account.</para>	
+			<para role="shortdesc">Lists all clusters for your account.</para> 
+			<para>This operation lists all clusters for your account.</para>	
 		</wadl:doc>
 		<response status="200">		
 			<representation mediaType="application/json" >
 				<doc>
-					<xsdxt:code href="../wadl/samples/db_cbd_listClusters_response.json"/>
+					<xsdxt:code href="../wadl/samples/dg_cbd_listClusters_response.json"/>
 				</doc>
 			</representation>
 		</response>
@@ -235,7 +247,9 @@
 	<method name="DELETE" id="deleteCluster">
 		<wadl:doc xml:lang="EN" title="Delete Cluster" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Deletes a specified cluster.</para> 
-			<para>This operation deletes a cluster that is specified by clusterId.</para>	
+			<para>The 400 error code might indicate missing or invalid parameters.</para> 
+			<para>The 409 error code might indicate an invalid state.</para>
+			<para>This operation deletes a cluster that is specified by clusterId.</para>
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json" element="clusters:cluster" >
@@ -263,6 +277,8 @@
 	<method name="POST" id="postClusterAction">
 		<wadl:doc xml:lang="EN" title="Resize Cluster" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Resizes a specified cluster. </para>  
+			<para>The 400 error code might indicate that there are unacceptable parameters or malformed data.</para>
+			<para>The 409 error code might indicate an invalid state.</para>
 			<para>This operation resizes the cluster specified by clusterId.  </para>
 		</wadl:doc>
 		<request>		
@@ -321,7 +337,7 @@
 	<method name="GET" id="getNodeDetails">
 		<wadl:doc xml:lang="EN" title="Get Node Details" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Returns details for a specified node in a specified cluster. </para>  
-			<para>This operation returns details for a node, that specified by nodeId, in a cluster, that is specified by clusterId. </para>
+			<para>This operation returns details for a node, that is specified by nodeId, in a cluster, that is specified by clusterId. </para>
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json" element="clusters:Cluster" >
@@ -471,7 +487,7 @@
 	<method name="GET" id="viewResourceLimits">
 		<wadl:doc xml:lang="EN" title="View Resource Limits" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Displays the resource limits for the user. </para>  
-			<para>This operation displays the resource limits for the user. </para>
+			<para>This operation displays the resource limits, such as remaining node count, available RAM, and remaining disk space, for the user. </para>
 		</wadl:doc>
 		<response status="200">		
 			<representation mediaType="application/json" >
