@@ -802,6 +802,25 @@ format="SVG" scale="60"/>
       <title>Profiles</title>
       <para>This section describes the operations that are supported
         for profiles.</para>
+      <note>
+        <para>Your Cloud Big Data profile is different from your cloud
+          account. Your profile has the following characteristics and
+          requirements:</para>
+        <itemizedlist>
+          <listitem>
+            <para>A profile is the configuration for the
+              administration and login account for the cluster.</para>
+          </listitem>
+          <listitem>
+            <para>Only one profile is allowed for each user or
+              account.</para>
+          </listitem>
+          <listitem>
+            <para>Any updates or additions override the existing
+              profile. </para>
+          </listitem>
+        </itemizedlist>
+      </note>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <wadl:resource href="../../src/wadl/cbd-devguide.wadl#profiles"/>  
       </wadl:resources></section>   
@@ -830,7 +849,7 @@ format="SVG" scale="60"/>
       <para>This section describes operations that are supported for
         flavors.</para>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-        <wadl:resource href="../../src/wadl/cbd-devguide.wadl#flavorsVersion"/>        
+        <wadl:resource href="../../src/wadl/cbd-devguide.wadl#flavorsVersion"/>   
         <wadl:resource href="../../src/wadl/cbd-devguide.wadl#flavors"/> 
         <wadl:resource href="../../src/wadl/cbd-devguide.wadl#flavor"/> 
         <wadl:resource href="../../src/wadl/cbd-devguide.wadl#flavorsSupportedType"/> 
@@ -841,7 +860,7 @@ format="SVG" scale="60"/>
       <para>This section describes the operations that are supported
         for types.</para>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-        <wadl:resource href="../../src/wadl/cbd-devguide.wadl#typeVersion"/>       
+        <wadl:resource href="../../src/wadl/cbd-devguide.wadl#typeVersion"/>  
         <wadl:resource href="../../src/wadl/cbd-devguide.wadl#types"/> 
         <wadl:resource href="../../src/wadl/cbd-devguide.wadl#type"/> 
         <wadl:resource href="../../src/wadl/cbd-devguide.wadl#flavorsType"/> 
@@ -852,7 +871,7 @@ format="SVG" scale="60"/>
       <para>This section describes the operation that is supported for
         resource limits.</para>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-        <wadl:resource href="../../src/wadl/cbd-devguide.wadl#limitVersion"/>       
+        <wadl:resource href="../../src/wadl/cbd-devguide.wadl#limitVersion"/>    
         <wadl:resource href="../../src/wadl/cbd-devguide.wadl#limits"/> 
       </wadl:resources>
     </section>

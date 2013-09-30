@@ -725,6 +725,26 @@
         <para>Before you can create Hadoop clusters, you need to
             create a profile, which consists of a username and
             password. </para>
+            <note>
+                <para>Your Cloud Big Data profile is different from
+                    your cloud account. Your profile has the following
+                    characteristics and requirements:</para>
+                <itemizedlist>
+                    <listitem>
+                        <para>A profile is the configuration for the
+                            administration and login account for the
+                            cluster.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Only one profile is allowed for each
+                            user or account.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Any updates or additions override the
+                            existing profile. </para>
+                    </listitem>
+                </itemizedlist>
+            </note>
         <para>After setting up your username and password, every
             Hadoop server you provision using the API will have a
             local user account  and the specified password. This
@@ -1544,10 +1564,33 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
                         <parameter>username</parameter> and
                         <parameter>password</parameter>. This is done
                     using the <command>create-profile</command>
-                    command as shown below. In this example, a user
-                    with the name <parameter>joe</parameter> is
-                    created and his password is
-                        <parameter>Fool1234!</parameter>.</para>
+                    command as shown below. <note
+                        xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                        <para>Your Cloud Big Data profile is different
+                            from your cloud account. Your profile has
+                            the following characteristics and
+                            requirements:</para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>A profile is the configuration
+                                   for the administration and login
+                                   account for the cluster.</para>
+                            </listitem>
+                            <listitem>
+                                <para>Only one profile is allowed for
+                                   each user or account.</para>
+                            </listitem>
+                            <listitem>
+                                <para>Any updates or additions
+                                   override the existing profile.
+                                </para>
+                            </listitem>
+                        </itemizedlist>
+                    </note></para>
+                <para>In this example, a user with the name
+                        <parameter>joe</parameter> is created and his
+                    password is
+                    <parameter>Fool1234!</parameter>.</para>
                 <example>
                     <title>Creating a Profile</title>
                     <programlisting>$ lava create-profile joe Foo1234!</programlisting>
