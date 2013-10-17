@@ -98,31 +98,29 @@
     </info>
     <chapter xml:id="DB_Doc_Change_History">
         <title>Document Change History</title>            
-        <para>This version of the Getting Started replaces and
-            obsoletes all previous versions. The most recent changes
-            are described in the table below:</para>
+        <para>This version of the document replaces and obsoletes all
+            earlier versions. The most recent changes are described in
+            the following table:</para>
         <?rax revhistory?>
     </chapter>
       <chapter xml:id="CBD_Overview">
         <title>Overview</title>
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Rackspace
-            &PRODNAME; (&PRODABBV;) is an on-demand Hadoop service for
-            the Rackspace open cloud. The service supports a RESTful
-            API and alleviates the pain associated with deploying,
-            managing, and scaling Hadoop clusters, allowing you to
-            focus on your core business. </para>
-        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Rackspace
-            Cloud Big Data is just as flexible and feature-rich as
-            running Hadoop on your own. You will benefit from
-            on-demand servers, utility-based pricing, and have access
-            to the full set of Hadoop features and APIs. However, you
-            will not have to worry about provisioning, growing, or
-            maintaining your Hadoop infrastructure. Our service uses
-            an environment, which is specifically optimized for
-            Hadoop. This ensures that your jobs will run efficiently
-            and reliably. Please note that you will still be
-            responsible for developing, troubleshooting, and deploying
-            your applications. </para>
+            &PRODNAME; is an on-demand Apache Hadoop service for the
+            Rackspace open cloud. The service supports a RESTful API
+            and alleviates the pain associated with deploying,
+            managing, and scaling Hadoop clusters. </para>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Cloud Big
+            Data is just as flexible and feature-rich as Hadoop. With
+            Cloud Big Data, you benefit from on-demand servers,
+            utility-based pricing, and access to the full set of
+            Hadoop features and APIs. However, you do not have to
+            worry about provisioning, growing, or maintaining your
+            Hadoop infrastructure. The Cloud Big Data service uses an
+            environment that is specifically optimized for Hadoop,
+            which ensures that your jobs run efficiently and reliably.
+            Note that you are still responsible for developing,
+            troubleshooting, and deploying your applications. </para>
         <remark xmlns:wadl="http://wadl.dev.java.net/2009/02"
             >Reviewers: If you have an architecture diagram for Cloud
             Big Data that you want included here, please send it to
@@ -134,33 +132,33 @@
           <para>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;Figure
             Coming by 9/12/2013>>>>>>>>>></para>
 -->            
-        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">There are
-            two primary use cases for &PRODNAME;: </para>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
+            primary use cases for &PRODNAME; are as follows: </para>
         <itemizedlist xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <listitem>
-                <para>To create on-demand infrastructure for
-                    applications in production where physical servers
-                    would be too costly and time-consuming to
-                    configure and maintain.</para>
+                <para>Create on-demand infrastructure for applications
+                    in production where physical servers would be too
+                    costly and time-consuming to configure and
+                    maintain.</para>
             </listitem>
             <listitem>
-                <para>To develop, test, and pilot data analysis
+                <para>Develop, test, and pilot data analysis
                     applications.</para>
             </listitem>
         </itemizedlist>
-        <para xmlns:wadl="http://wadl.dev.java.net/2009/02"> The
-            benefits of &PRODNAME; include allowing you to: <itemizedlist>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">&PRODNAME;
+            provides the following benefits: <itemizedlist>
                 <listitem>
                     <para>Create or resize Hadoop clusters in minutes
                         and pay only for what you use.</para>
                 </listitem>
                 <listitem>
                     <para>Access Hortonworks Data Platform (HDP), an
-                        enterprise-ready distribution that is 100%
-                        Apache open source.</para>
+                        enterprise-ready distribution that is 100
+                        percent Apache open source.</para>
                 </listitem>
                 <listitem>
-                    <para>Provision and manage Hadoop using an
+                    <para>Provision and manage Hadoop through an
                         easy-to-use Control Panel and a RESTful
                         API.</para>
                 </listitem>
@@ -169,66 +167,64 @@
                         containers.</para>
                 </listitem>
                 <listitem>
-                    <para>Gain interoperability with any third party
+                    <para>Gain interoperability with any third-party
                         software tool that supports HDP.</para>
                 </listitem>
                 <listitem>
-                    <para>Fanatical Support® on a 24x7x365 basis via
-                        chat, phone or ticket.</para>
+                    <para>Access Fanatical Support® on a 24x7x365
+                        basis via chat, phone, or ticket.</para>
                 </listitem>
             </itemizedlist>
         </para>
-        <para>This guide provides two ways to step through the Cloud
+        <para>This guide provides the following ways to use the Cloud
             Big Data API:</para>
         <itemizedlist>
             <listitem>
-                <para>using the API directly (<xref
+                <para>Using the API directly (<xref
                         linkend="Using_the_API_Directly"/>)</para>
             </listitem>
             <listitem>
-                <para>using a CLI python-lavaclient (<xref
+                <para>Using a Python Lava command-line client  (<xref
                         linkend="Using_Python_lavaclient"/>)</para>
             </listitem>
         </itemizedlist>
-        <para>Follow the steps described in this guide to get started
-            using the Rackspace &PRODNAME; API.</para>
+        <para>Follow the steps described in this guide to start using
+            the Rackspace &PRODNAME; API.</para>
         <section xml:id="core_concepts">
             <title>Early Access Program</title>
             <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
                 Early Access program enables customers and Rackers, by
                 invitation, to test an early version of the product
-                and provide feedback of the product and capabilities.
-                The &PRODNAME; Early Access Program is a
-                pre-production service offering covered by the Beta
+                and provide feedback on the product and its
+                capabilities. The &PRODNAME; Early Access program is a
+                preproduction service offering covered by the Beta
                 Services terms (<link
                     xlink:href="http://www.rackspace.com/information/legal/testterms/"
-                    >
-                    rackspace.com/information/legal/testterms/</link>)
-                in our Rackspace Cloud Terms of Service.</para>
-            <para xmlns:wadl="http://wadl.dev.java.net/2009/02"> Early
+                    >rackspace.com/information/legal/testterms/</link>)
+                in the Rackspace Cloud Terms of Service.</para>
+            <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Early
                 Access users must meet the following criteria:
                     <itemizedlist spacing="compact">
                     <listitem>
-                        <para>A Rackspace Cloud account.</para>
+                        <para>A Rackspace Cloud account</para>
                     </listitem>
                     <listitem>
                         <para>Prior knowledge of HTTP/1.1
-                            conventions.</para>
+                            conventions</para>
                     </listitem>
                     <listitem>
                         <para>Basic familiarity with Cloud and RESTful
-                            APIs.</para>
+                            APIs</para>
                     </listitem>
                     <listitem>
-                        <para>A willingness to provide feedback to
-                            Rackspace’s Product and Product Marketing
-                            functions.</para>
+                        <para>A willingness to provide feedback to the
+                            Rackspace Product and Product Marketing
+                            functions</para>
                     </listitem>
                 </itemizedlist>
             </para>
-            <para>The Early Access Program has some limitations. </para>
-            <para>By using the &PRODNAME; API, you agree and
-                understand that:</para>
+            <para>By using the &PRODNAME; API, you agree to and
+                understand the following conditions:</para>
             <itemizedlist>
                 <listitem>
                     <para>There is no charge for this service during
@@ -236,22 +232,21 @@
                 </listitem>
                 <listitem>
                     <para>If you participate in this Early Access
-                        Program, you will receive a notification prior
+                        program, you will receive a notification prior
                         to general availability.</para>
                 </listitem>
                 <listitem>
                     <para>There is no Service Level Agreement.</para>
                 </listitem>
                 <listitem>
-                    <para>The API contract is not locked and may
-                        change during the Early Access Program.
-                        Rackspace will notify customers in Release
-                        Notes when and if the contract does change.
-                    </para>
+                    <para>The API contract is not locked and might
+                        change during the Early Access program. If the
+                        contract changes, Rackspace will notify
+                        customers in release notes. </para>
                 </listitem>
                 <listitem>
-                    <para>Support is available from 8 AM - 5 PM
-                        (Central Time) Monday - Friday.</para>
+                    <para>Support is available Monday through Friday
+                        from 8 a.m. to 5 p.m. (Central Time).</para>
                 </listitem>
             </itemizedlist>
         </section>
@@ -260,17 +255,17 @@
             <para>&PRODNAME; is part of the Rackspace Cloud and your
                 use through the API will be billed as per the pricing
                 schedule at <link
-                    xlink:href="http://www.rackspace.com/cloud/public/databases/pricing"
-                    >http://www.rackspace.com/cloud/public/databases/pricing</link>.
+                    xlink:href="http://www.rackspace.com/cloud/public/bigdata/pricing"
+                    >http://www.rackspace.com/cloud/public/bigdata/pricing</link>.
                 Cloud Servers is also part of the Rackspace Cloud and
                 your use through the Cloud Control Panel will be
                 billed as per the pricing schedule at <link
                     xlink:href="http://www.rackspace.com/cloud/public/servers/pricing"
                     >http://www.rackspace.com/cloud/public/servers/pricing</link>.</para>
             <para>The Service Level Agreements (SLAs) for Cloud
-                Databases and Cloud Servers are available at <link
-                    xlink:href="http://www.rackspace.com/cloud/legal/sla/#cloud_databases"
-                    >http://www.rackspace.com/cloud/legal/sla/#cloud_databases</link>
+                Big Data and Cloud Servers are available at <link
+                    xlink:href="http://www.rackspace.com/cloud/legal/sla/#cloud_bigdata"
+                    >http://www.rackspace.com/cloud/legal/sla/#cloud_bigdata</link>
                 and <link
                     xlink:href="http://www.rackspace.com/cloud/legal/sla"
                     >http://www.rackspace.com/cloud/legal/sla</link>
@@ -278,24 +273,24 @@
         </section>  -->
         <section xml:id="Prerequisites_Examples">
             <title>Prerequisites for Running Examples</title>
-            <para>In order to run the examples in this guide, you must
-                have the following prerequisites: <itemizedlist
+            <para>To run the examples in this guide, you must have the
+                following prerequisites: <itemizedlist
                     spacing="compact">
                     <listitem>
                         <para>Rackspace Cloud account</para>
                     </listitem>
                     <listitem>
-                        <para>Rackspace Cloud username and password,
+                        <para>Rackspace Cloud user name and password,
                             as specified during registration</para>
                     </listitem>
                 </itemizedlist></para>
         </section>
     </chapter>
     <chapter xml:id="Service_Access_Endpoints-d1e753">
-        <title>Service Access/Endpoints</title>
-        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
-            endpoint to use for your Cloud Big Data API calls for the
-            EA release is
+        <title>Service Endpoints</title>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">During the
+            Early Access program for Cloud Big Data, you use the
+            following endpoint for your API operations:
                 <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234</code>. </para>
 <!-- Not for EA
         <para>The endpoints to use for your Cloud Big Data API calls
@@ -335,138 +330,155 @@
         
         <note>
             <para>All examples in this guide assume that you are
-                operating against the DFW datacenter, however if you
-                are using a different datacenter, be sure to use the
-                associated endpoint from the table above
-                instead.</para>
+                operating against the DFW data center. </para>
+ <!--           <para>However, if you are using a different data center,
+                be sure to use the associated endpoint from the table
+                above instead.</para>
+-->                
         </note>
         <para>Replace the sample account ID number,
                 <parameter>1234</parameter>, with your actual account
-            number returned as part of the authentication response.
-            Use your actual account number wherever you see the field
-                <emphasis role="bold">your_acct_id</emphasis>
+            number, which is returned as part of the authentication
+            response. Use your actual account number wherever you see
+            the field <emphasis role="bold">your_acct_id</emphasis>
             specified in this guide. Refer to <xref
                 linkend="Generating_Auth_Token"/>.</para>
-        <para>When making a Cloud Bid Data API call, place the
-            endpoint at the beginning of the request URL, for example:
-                (<code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/your_acct_id/</code>).</para>
+        <para>When you perform a Cloud Big Data API operation, place
+            the endpoint at the beginning of the request URL. For
+            example:
+                <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/your_acct_id/</code>.</para>
     </chapter>
     <chapter xml:id="Using_the_API_Directly">
         <title>Using the API Directly</title>
-        <para>This chapter in the Getting Started Guide describes how to use Cloud Big Data by using the API directly.</para>
+        <para>This chapter describes how to use Cloud Big Data by
+            using the API directly.</para>
       
     <section xml:id="DB_Sending_API_Requests">
-        <title>Send Requests to the API</title>
+        <title>Sending Requests to the API</title>
         <para>You have several options for sending requests through an
             API: </para>
-        <itemizedlist spacing="compact">
+        <itemizedlist>
             <listitem>
-                <para>Developers and testers may prefer to use cURL,
-                    the command-line tool from <link
-                        xlink:href="http://curl.haxx.se/"
-                        >http://curl.haxx.se/</link>. </para>
-                <para>With cURL you can send HTTP requests and receive
-                    responses back from the command line. </para>
+                <para>Developers and testers might prefer to use cURL,
+                        the command-line tool from <link
+                            xlink:href="http://curl.haxx.se/"
+                            >http://curl.haxx.se/</link>. With cURL,
+                        you can send HTTP requests and receive
+                        responses back from the command line. </para>
             </listitem>
             <listitem>
                 <para>If you like to use a more graphical interface,
-                        the REST client for Firefox also works well
-                        for testing and trying out commands, see <link
+                        the REST client for Mozilla Firefox also works
+                        well for testing and trying out commands. See
+                            <link
                             xlink:href="https://addons.mozilla.org/en-US/firefox/addon/restclient/"
                             >https://addons.mozilla.org/en-US/firefox/addon/restclient/</link>. </para>
             </listitem>
             <listitem>
-                <para>You can also download and install rest-client, a
-                        Java application to test RESTful web services,
+                <para>You can download and install RESTClient, a Java
+                        application used to test RESTful web services,
                         from <link
                             xlink:href="http://code.google.com/p/rest-client/"
                             >http://code.google.com/p/rest-client/</link>. </para>
             </listitem>
         </itemizedlist>
         <section xml:id="DB_using-curl-cli">
-            <title>Send API Requests Using cURL</title>
-            <para>cURL is a command-line tool that is available on
-                    most UNIX®-like environments and Mac OS X® and can
-                    be downloaded for Windows® in order to interact
-                    with the REST interfaces. For more information on
-                    cURL, visit <link
+            <title>Sending API Requests by Using cURL</title>
+            <para>cURL is a command-line tool that is available in
+                    most UNIX system-based environments and Apple Mac
+                    OS X systems, and can be downloaded for Microsoft
+                    Windows to interact with REST interfaces. For more
+                    information about cURL, visit <link
                         xlink:href="http://curl.haxx.se/"
                         >http://curl.haxx.se/</link>. </para>
-            <para>cURL allows you to transmit and receive HTTP
-                    requests and responses from the command-line or
-                    from within a shell script. This makes it possible
-                    to work with the REST API directly without using
-                    one of the client APIs. </para>
-            <para>The following cURL command-line options will be used
-                in this guide to run the examples:</para>
-            <variablelist>
-                <title>cURL Command-Line Options</title>
-                <varlistentry>
-                    <term><option>-d</option></term>
-                    <listitem>
-                        <para>Sends the specified data in a post
-                            request to the HTTP server.</para>
-                    </listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term><option>-i</option></term>
-                    <listitem>
-                        <para>Includes the HTTP header in the
-                            output.</para>
-                    </listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term><option>-H HEADER</option></term>
-                    <listitem>
-                        <para>Specify an HTTP header in the request.</para>
-                    </listitem>
-                </varlistentry>
-                <varlistentry>
-                    <term><option>-X</option></term>
-                    <listitem>
-                        <para>Specifies the request method to use when
-                            communicating with the HTTP server. The
-                            specified request is used instead of the
-                            default method, which is GET. For example,
-                                <option>-X PUT</option> specifies to
-                            use the PUT request method.</para>
-                    </listitem>
-                </varlistentry>
-            </variablelist>
+            <para>cURL enables you to transmit and receive HTTP
+                    requests and responses from the command line or
+                    from within a shell script. As a result, you can
+                    work with the REST API directly without using one
+                    of the client APIs.</para>
+            <para>The following cURL command-line options are used in
+                    this guide to run the examples:</para>
+                <table rules="all">
+                    <caption>cURL Command-Line Options</caption>
+                    <col width="25%"/>
+                    <col width="75%"/>
+                    <thead>
+                        <tr>
+                            <th>Option</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><option>-d</option></td>
+                            <td>Sends the specified data in a POST
+                                request to the HTTP server</td>
+                        </tr>
+                        <tr>
+                            <td><option>-i</option></td>
+                            <td>Includes the HTTP header in the
+                                output</td>
+                        </tr>
+                        <tr>
+                            <td><option>-H HEADER</option></td>
+                            <td>Specifies an HTTP header in the
+                                request</td>
+                        </tr>
+                        <tr>
+                            <td><option>-X</option></td>
+                            <td>Specifies the request operation to use
+                                when communicating with the HTTP
+                                server. The specified request is used
+                                instead of the default operation,
+                                which is GET. For example, <option>-X
+                                   PUT</option> specifies to use the
+                                PUT request operation.</td>
+                        </tr>
+                    </tbody>
+                </table>
             <note>
                 <para>If you have the tools, you can run the cURL JSON
-                    request examples with the following options to
-                    format the output from cURL: <command>&lt;curl
-                        JSON request example> | python
+                        request examples with the following options to
+                        format the output from cURL:
+                            <?sbr?><command>&lt;curl JSON request
+                            example> | python
                         -mjson.tool</command>.</para>
             </note>
-        </section>
-        <section xml:id="DB_copy_paste_examples">
-            <title>Copying and Pasting cURL Request Examples into a
-                Terminal Window</title>
-            <para>To run the cURL request examples shown in this guide
-                on Linux or Mac systems, copy and paste each example
-                from the HTML version of this guide into an ASCII
-                editor (for example <emphasis role="bold"
-                    >vi</emphasis> or <emphasis role="bold"
-                    >TextEdit</emphasis>). Then modify each example
-                with your required account information and so forth,
-                as detailed in this guide.</para>
-            <note>
-                <para>The carriage returns in the cURL request
-                    examples that are part of the cURL syntax are
-                    escaped with a backslash ('\') in order to avoid
-                    prematurely terminating the command. However you
-                    should not escape carriage returns inside the xml
-                    or json message within the command.</para>
-            </note>
-            <para>Consider the following cURL Authenticate Request:
-                XML example that is described in detail in <xref
-                    linkend="Generating_Auth_Token"/>:</para>
-            <example>
-                <title>cURL Authenticate Request: XML</title>
-                <?dbfo keep-together="always"?>
-                <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
+                <procedure>
+                    <title>To run the cURL request examples</title>
+                    <para>To run the cURL request examples shown in
+                        this guide on Linux or Mac systems, perform
+                        the following actions:</para>
+                    <step>
+                        <para>Copy each example from the HTML version
+                            of this guide an paste it into an ASCII
+                            text editor (for example, vi or TextEdit).
+                        </para>
+                    </step>
+                    <step>
+                        <para>Modify each example with your required
+                            account information and other information,
+                            as detailed in this guide.</para>
+                        <note>
+                            <para>The carriage returns in the cURL
+                                request examples that are part of the
+                                cURL syntax are escaped with a
+                                backslash (\) to avoid prematurely
+                                terminating the command. However, you
+                                should not escape carriage returns
+                                inside the XML or JSON message within
+                                the command.</para>
+                        </note>
+                        <para>Consider the following cURL
+                            Authentication Request: XML example, which
+                            is described in detail in <xref
+                                linkend="Generating_Auth_Token"
+                            />.</para>
+                        <example>
+                            <title>cURL Authenticate Request:
+                                XML</title>
+                            <?dbfo keep-together="always"?>
+                            <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
 '&lt;?xml version="1.0" encoding="UTF-8"?>
  &lt;auth&gt;   
     &lt;apiKeyCredentials     
@@ -475,27 +487,27 @@
         apiKey="<emphasis role="bold">your_api_key</emphasis>"/&gt;   
  &lt;/auth&gt;<option>'</option> \
 <uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri></screen>
-            </example>
-            <para>You can see that the lines that are part of the cURL
-                command syntax have all been escaped with a backslash
-                ('\') to indicate that the command continues on the
-                next line:</para>
-            <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
+                        </example>
+                        <para>The lines that are part of the cURL
+                            command syntax have been escaped with a
+                            backslash (\) to indicate that the command
+                            continues on the next line:</para>
+                        <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
   
    
-(... lines within the xml portion of the message are not shown in this example)
-(... the example only shows lines that are part of cURL syntax)     
+(... lines within the XML portion of the message are not shown in this example)
+(... the example shows only lines that are part of cURL syntax)     
      
 
    
  &lt;/auth&gt;<option>'</option> \
 <uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri></screen>
-            <para>However the lines <emphasis>within</emphasis> the
-                xml portion of the message are
-                    <emphasis>not</emphasis> escaped with a backslash
-                ('\') in order to avoid issues with the xml
-                processing:</para>
-            <screen language="bash">'&lt;?xml version="1.0" encoding="UTF-8"?>
+                        <para>However, the lines <emphasis
+                                role="italic">within</emphasis> the
+                            XML portion of the message are not escaped
+                            with a backslash, to avoid issues with XML
+                            processing. </para>
+                        <screen language="bash">'&lt;?xml version="1.0" encoding="UTF-8"?>
  &lt;auth&gt;   
     &lt;apiKeyCredentials     
         xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0"     
@@ -503,66 +515,69 @@
         apiKey="<emphasis role="bold">your_api_key</emphasis>"/&gt;   
  &lt;/auth&gt;<option>'</option> \
 </screen>
-            <note>
-                <para>The final line of the xml message is escaped
-                    since the backslash lies
-                        <emphasis>outside</emphasis> the xml message
-                    and continues the cURL command to the next
-                    line.</para>
-            </note>
-            <para>After you are finished modifying the text for the
-                cURL request example with your information (for
-                example <emphasis role="bold"
-                        ><code>your_username</code></emphasis> and
-                    <emphasis role="bold"
-                    ><code>your_api_key</code></emphasis>), paste it
-                into your terminal window. Then execute the cURL
-                command by pressing <guilabel>Enter</guilabel>.</para>
-            <para>If you have trouble copying and pasting the examples
-                as described, try typing the entire example on one
-                long line, removing all the backslash line
-                continuation characters.</para>
+                        <para>The final line of the XML message is
+                            escaped, but the backslash lies outside
+                            the XML message and continues the cURL
+                            command to the next line. </para>
+                    </step>
+                    <step>
+                        <para>After you are finished modifying the
+                            text for the cURL request example with
+                            your information (for example, user name
+                            and API key), copy and paste the text into
+                            your terminal window. </para>
+                        <tip>
+                            <para>If you have trouble copying and
+                                pasting the examples as described, try
+                                typing the entire example on one long
+                                line, removing all the backslash
+                                line-continuation characters.</para>
+                        </tip>
+                    </step>
+                    <step>
+                        <para>Press <keycombo>
+                                <keycap>Enter</keycap>
+                            </keycombo> to run the cURL
+                            command.</para>
+                    </step>
+                </procedure>
         </section>
     </section>
     <section xml:id="Generating_Auth_Token">
-        <title>Generate an Authentication Token</title>
-        <para>You need to generate a token whether you use cURL or a
-                REST client.</para>
-        <para>In order to use the REST API, you will first need to
-                obtain an authentication token, which will need to be
-                passed in for each request using the
-                    <code>X-Auth-Token</code> header. </para>
-        <para>The following example demonstrates how to use cURL to
-            obtain the authentication token and the account number.
-            You will need to supply the authentication token and
-            account number when making subsequent &PRODNAME; API
-            calls.</para>
-        <para>Remember to replace the names in the Authenticate
-            Request examples below with their respective
-                values:<itemizedlist spacing="compact">
-                <listitem>
-                    <para><emphasis role="bold"
-                            >your_username</emphasis> &mdash; The
-                        username is your common Rackspace Cloud
-                        username, as supplied during
-                        registration.</para>
-                </listitem>
-                <listitem>
-                    <para><emphasis role="bold"
-                            >your_api_key</emphasis> &mdash; The key
-                        is your API access key. The key can be
-                        obtained from the Rackspace Cloud Control
-                        Panel in the <guimenu>&lt;Your
-                            Account></guimenu> / <guimenuitem>API
-                            Keys</guimenuitem> section (login here:
-                            <link
-                            xlink:href="http://mycloud.rackspace.com/"
-                            >Cloud Control Panel</link>).</para>
-                </listitem>
-            </itemizedlist></para>
+        <title>Generating an Authentication Token</title>
+            <para>Whether you use cURL or a REST client to interact
+                with the Cloud Big Data API, you must generate an
+                authentication token. You provide this token in the
+                X-Auth-Token header in each Cloud Big Data API
+                request. <xref linkend="XML-Auth-Request-d1003"/> and
+                    <xref linkend="JSON-Auth-Request-d1003"/>
+                demonstrate how to use cURL to obtain the
+                authentication token as well as your account number.
+                You must provide both when making subsequent Cloud Big
+                Data API requests.</para>
+        <para>Remember to replace the placeholders in the following
+                authentication request examples with your
+                    information:<itemizedlist spacing="compact">
+                    <listitem>
+                        <para><emphasis role="bold"
+                                >your_username</emphasis> &mdash;Your
+                            common Rackspace Cloud user name, as
+                            supplied during registration.</para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis role="bold"
+                                >your_api_key</emphasis> &mdash; Your
+                            API access key. You can obtain the key
+                            from the <link
+                                xlink:href="http://mycloud.rackspace.com/"
+                                >Rackspace Cloud Control Panel</link>
+                            in the <guimenu>&lt;Your
+                                Account></guimenu> / <guimenuitem>API
+                                Keys</guimenuitem> section.</para>
+                    </listitem>
+                </itemizedlist></para>
         <para> You can use either of the following endpoints to access
-            the Authentication Service, regardless of US or UK
-            identities: </para>
+                the Cloud Authentication service: </para>
         <itemizedlist spacing="compact">
             <listitem>
                 <para><link xlink:href="&ENDPOINT-US-20;"
@@ -574,10 +589,10 @@
                         >&ENDPOINT-UK-20;</link></para>
             </listitem>
         </itemizedlist>
-        <para> Your account may be based in either the US or the UK;
-            this is not determined by your physical location but by
-            the location of the Rackspace retail site which was used
-            to create your account: </para>
+        <para> Your account might be based in either the US or the UK.
+                The location of your account is not determined by your
+                physical location but by the location of the Rackspace
+                retail site that was used to create your account: </para>
         <itemizedlist spacing="compact">
             <listitem>
                 <para> If your account was created via <link
@@ -595,15 +610,20 @@
         <para> If you are unsure how your account was created, use the
             Rackspace contact information at either site to ask for
             help. </para>  
-        <para>Notice that you authenticate using a special URL for
-            Cloud authentication services. For example, for US-based
-            accounts, you use
-                <code>https://identity.api.rackspacecloud.com/v2.0/tokens</code>,
-            as shown in the following Authenticate Request examples.
-            Note that the <code>v2.0</code> component in the URL
-            indicates that you are using version 2.0 of the Cloud Auth
-            API.</para>
-        <example>
+        <para>Notice that you authenticate by using a special URL for
+                the Cloud Authentication services. For example, for
+                US-based accounts, you use
+                    <code>https://identity.api.rackspacecloud.com/v2.0/tokens</code>,
+                as shown in the following Authenticate Request
+                examples. Note that the <code>v2.0</code> component in
+                the URL indicates that you are using version 2.0 of
+                the Cloud Authentication API.</para>
+            <note>
+                <para>For UK-based accounts, you can use
+                        <code>'https://lon.identity.api.rackspacecloud.com/v2.0/tokens'</code>
+                    instead.</para>
+            </note>
+        <example xml:id="XML-Auth-Request-d1003">
             <title>cURL Authenticate Request: XML</title>
             <?dbfo keep-together="always"?>
             <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
@@ -618,7 +638,7 @@
 <option>-H 'Accept: application/xml'</option> \
 <uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri></screen>
         </example>
-        <example>
+        <example xml:id="JSON-Auth-Request-d1003">
             <title>cURL Authenticate Request: JSON</title>
             <?dbfo keep-together="always"?>
             <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
@@ -634,11 +654,66 @@
 <option>-H 'Content-Type: application/json'</option> \
 <uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri></screen>
         </example>
-        <note>
-            <para>For UK-based accounts, you may decide to use
-                    <code>'https://lon.identity.api.rackspacecloud.com/v2.0/tokens'</code>
-                instead.</para>
-        </note>
+            <para>In the authentication response (examples follow), the
+                authentication <code>token id</code> is returned with
+                an <code>expires</code> attribute that specifies when
+                the token expires. Remember to supply your
+                authentication token wherever you see the placeholder
+                    <emphasis role="bold">your_auth_token</emphasis>
+                in the examples in this guide.</para>
+            <note>
+                <title>Notes</title>
+                <itemizedlist spacing="compact">
+                    <listitem>
+                        <para>The values that you receive in your
+                            responses vary from the examples shown in
+                            this document because they are specific to
+                            your account.</para>
+                    </listitem>
+                    <listitem>
+                        <para>The information shown in the
+                            authentication response examples is for
+                            US-based accounts. If you authenticate
+                            against the UK-endpoint for the
+                            Authentication service, you see the
+                            service catalog information for UK-based
+                            accounts.</para>
+                    </listitem>
+                    <listitem>
+                        <para> The <code>expires</code> attribute
+                            denotes the time after which the token
+                            will automatically become invalid. A token
+                            might be manually revoked before the time
+                            identified by the <code>expires</code>
+                            attribute. The attribute predicts a
+                            token's maximum possible lifespan but does
+                            not guarantee that it will reach that
+                            lifespan. Clients are encouraged to cache
+                            a token until it expires.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Applications should be designed to
+                            re-authenticate after receiving a 401
+                            (Unauthorized) response from a service
+                            endpoint.</para>
+                    </listitem>
+                </itemizedlist>
+            </note>
+            <para>The <code>publicURL</code> endpoints for &PRODNAME;
+                (for example
+                    <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</code>)
+                are also returned in the response. </para>
+            <para>Your actual account number is after the final slash
+                (/) in the <code>publicURL</code> field. In the
+                following examples, the account number is 1100111. You
+                must specify <emphasis role="italic">your</emphasis>
+                account number on most of the &PRODNAME; API
+                operations, wherever you see the placeholder <emphasis
+                    role="bold">your_acct_id</emphasis> specified in
+                the examples in this guide.</para>
+            <para>After authentication, you can use cURL to perform
+                GET, DELETE, and POST requests for the &PRODNAME;
+                API.</para>
         <example>
             <title>Authenticate Response: XML</title>
             <programlisting language="xml"><xi:include href="../../src/resources/samples/auth-20.xml" parse="text"/></programlisting>
@@ -648,69 +723,6 @@
             <title>Authenticate Response: JSON</title>
             <programlisting language="json"><xi:include href="../../src/resources/samples/auth-20.json" parse="text"/></programlisting>
         </example>
-        <para>The authentication token <code>id</code> is returned
-            along with an <code>expires</code> attribute that
-            specifies when the token expires. </para>
-        <note>
-            <title>Notes</title>
-            <itemizedlist spacing="compact">
-                <listitem>
-                    <para>For all response examples in this guide, the
-                        field values you receive in your responses
-                        will vary from those shown here since they
-                        will be specific to your account.</para>
-                </listitem>
-                <listitem>
-                    <para>The information shown in the Authenticate
-                        Response examples above is for US-based
-                        accounts. If you authenticate against the
-                        UK-endpoint for auth, you will see the service
-                        catalog information for UK-based
-                        accounts.</para>
-                </listitem>
-                <listitem>
-                    <para>The <code>id</code> attribute in the
-                        Authenticate Response specifies the
-                        authentication token. Tokens are valid for a
-                        finite duration.</para>
-                    <para>Remember to supply your authentication token
-                        wherever you see the field <emphasis
-                            role="bold">your_auth_token</emphasis> in
-                        the examples in this guide.</para>
-                </listitem>
-                <listitem>
-                    <para> The <code>expires</code> attribute denotes
-                        the time after which the token will
-                        automatically become invalid. A token may be
-                        manually revoked before the time identified by
-                        the expires attribute; <code>expires</code>
-                        predicts a token's maximum possible lifespan
-                        but does not guarantee that it will reach that
-                        lifespan. Clients are encouraged to cache a
-                        token until it expires.</para>
-                </listitem>
-                <listitem>
-                    <para>Applications should be designed to
-                        re-authenticate after receiving a 401
-                        (Unauthorized) response from a service
-                        endpoint.</para>
-                </listitem>
-            </itemizedlist>
-        </note>
-        <para>The <code>publicURL</code> endpoints for &PRODNAME; (for
-            example
-                <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</code>)
-            are also returned in the response. </para>
-        <para>You will find the actual account number after the final
-            '/' in the <code>publicURL</code> field. In this example,
-            you can see that the account number is 1100111. You need
-            to specify your account number on most of the &PRODNAME;
-            API calls, wherever you see the field <emphasis
-                role="bold">your_acct_id</emphasis> specified in the
-            examples in this guide.</para>
-        <para>After authentication, you can use cURL to perform &GET;,
-            &DELETE;, and &POST; requests for the &PRODNAME;
-            API.</para>
     </section>
 
 
@@ -722,9 +734,8 @@
                 the current API specifications. 9/6/2013 Received
                 example POST  request and response from David Dobbins
                 for setting up a profile. Added it here on 9/9/2013. </remark>
-        <para>Before you can create Hadoop clusters, you need to
-            create a profile, which consists of a username and
-            password. </para>
+        <para>Before you can create Hadoop clusters, you must create a
+                profile, which consists of a user name and password. </para>
             <note>
                 <para>Your Cloud Big Data profile is different from
                     your cloud account. Your profile has the following
@@ -745,16 +756,17 @@
                     </listitem>
                 </itemizedlist>
             </note>
-        <para>After setting up your username and password, every
-            Hadoop server you provision using the API will have a
-            local user account  and the specified password. This
-            allows you to remotely SSH into a server in order to
-            transfer data, run or troubleshoot jobs, etc.</para>
-        <para>A password must be at least 8 characters, with a mixture
-            of uppercase, lowercase, numeric and special
-            characters.</para>
+        <para>After you create a profile, every Hadoop server that you
+                provision by using the API will have a local user
+                account with the specified user name and password.
+                This allows you to remotely SSH into a server to
+                transfer data, run or troubleshoot jobs, and so
+                on.</para>
+        <para>A password must be at least eight characters, with a
+                mixture of uppercase, lowercase, numeric, and special
+                characters.</para>
         <para>The following example shows the cURL request to set up a
-            profile:</para>
+                profile.</para>
         <remark>Reviewer: If there is a Create Profile operation,
             please provide appropriate cURL request and response. </remark>
         <example>
@@ -781,26 +793,28 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
     }
 }' </programlisting>
         </example>
-            <para>Remember to replace the names in the example above
-                with their actual respective values for all the cURL
-                examples in this guide:</para>
+            <para>Remember to replace the placeholders in the example
+                with your actual values for all the cURL examples in
+                this guide:</para>
             <itemizedlist>
                 <listitem>
                     <para><emphasis role="bold"
-                            >your_auth_token</emphasis> &mdash; as
-                        returned in your authentication response (see
-                        the response examples in <xref
+                            >your_auth_token</emphasis> &mdash; Your
+                        authentication token, which is returned in
+                        your authentication response (see the response
+                        examples in <xref
                             linkend="Generating_Auth_Token"/>)</para>
                 </listitem>
                 <listitem>
                     <para><emphasis role="bold"
-                            >your_acct_id</emphasis> &mdash; as
-                        returned in your authentication response (must
-                        be replaced in the request URL)</para>
+                            >your_acct_id</emphasis> &mdash; Your
+                        account ID, which is returned in your
+                        authentication response (must be replaced in
+                        the request URL)</para>
                 </listitem>
             </itemizedlist>
-        <para>The following example show the response for the profile
-            request:</para>
+        <para>The following example shows the response for the profile
+                request.</para>
         <example>
             <title> Create Profile Response: JSON</title>
             <programlisting language="json">{
@@ -831,11 +845,10 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
     }
 }</programlisting>
         </example>
-        <para>Anytime after your profile is created, you can view its
-            details.  </para>
-        <para xmlns:wadl="http://wadl.dev.java.net/2009/02"
-                ><command>Get Profile</command> displays your profile
-            details including your username, user ID, tenant ID, etc. </para>
+        <para>Anytime after you create your profile, you can view its
+                details by using the Get Profile operation. The
+                response displays your profile details, including your
+                user name, user ID, and tenant ID. </para>
         <informaltable rules="all"
             xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <thead>
@@ -855,8 +868,8 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             </tbody>
         </informaltable>
         <para>This operation does not require a request body.</para>
-        <para>The following example shows the cURL request to view a
-            profile:</para>
+        <para>The following examples show the cURL request and
+                corresponding response for viewing a profile.</para>
         <remark>Reviewer: Please provide appropriate cURL to produce
             the response given in this example.</remark>
         <example>
@@ -866,8 +879,6 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
 -H "Accept: application/json"\
 -H "Content-type: application/json"</programlisting>
         </example>
-        <para>The following example shows the response for the profile
-            request:</para>
         <example>
             <title> Get Profile Response: JSON</title>
             <programlisting language="json"> {"profile":
@@ -891,14 +902,13 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
     
     <section xml:id="Create_DB_Instance">
             <title>Viewing Resource Limits</title>
-            <para>Using Rackspace Cloud Big Data is subject to
-            resource limits. You can view the limits associated with
-            your account using <command>View Resource
-            Limits</command>. </para>
-        <para xmlns:wadl="http://wadl.dev.java.net/2009/02"
-                ><command>View Resource Limits</command> displays the
-            resource limits such as remaining node count, available
-            RAM, and remaining disk space, for the user.</para>
+            <para>The use of the Rackspace Cloud Big Data API is
+                subject to resource limits. You can view the limits
+                associated with your account by using the View
+                Resource Limits operation. This operation displays
+                resource limits such as remaining node count,
+                available RAM, and remaining disk space, for the
+                user.</para>
         <informaltable rules="all"
             xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <thead>
@@ -918,8 +928,8 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             </tbody>
         </informaltable>
         <para>This operation does not require a request body.</para>
-        <para>The following example shows the cURL request to view
-            resource limits:</para>
+        <para>The following show the cURL request and corresponding
+                response for viewing resource limits.</para>
         <remark>Reviewer: Please provide appropriate cURL to produce
             the response given in this example.</remark>
         <example>
@@ -929,8 +939,6 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
 -H "Accept: application/json" \
 -H "Content-type: application/json" </programlisting>
         </example>
-        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
-            following example shows the response:</para>
         <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <title>View Resource Limits Response: JSON</title>
 <!--  cyr's          <programlisting>        { "limits":
@@ -1000,126 +1008,55 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
     <section xml:id="List_DBS_For_Instance">
         <title>Creating and Managing Hadoop Clusters</title>
         <para>Now you are ready to create and manage Hadoop clusters
-            using the Rackspace Cloud Big Data API. </para>
-        <section xml:id="createCluster">
-            <title>Creating a Cluster  </title><para xmlns:wadl="http://wadl.dev.java.net/2009/02">This operation
-                creates a new Hadoop cluster. After you submit the
-                operation,  it will take a few minutes for the service
-                to build and configure your cluster.</para>
-            <informaltable rules="all"
-                xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <thead>
-                    <tr align="center">
-                        <td colspan="1">Verb</td>
-                        <td colspan="2">URI</td>
-                        <td colspan="3">Description</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="1">&POST;</td>
-                        <td colspan="2">/clusters</td>
-                        <td colspan="3">Create a new cluster.</td>
-                    </tr>
-                </tbody>
-            </informaltable><para>The example below creates a 5-data node Hadoop cluster with the
-                name slice.</para>
-            <para><code>clusterType</code> must specify HADOOP_HDP1_1
-                for now. <code>flavorID</code> specifies the RAM,
-                virtual CPUs, and disk storage associated with each
-                data node in your Hadoop cluster. </para>
-            <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
-                following examples show the cURL request and
-                corresponding response for Create Cluster:</para>
-            <remark>Reviewer: Please provide appropriate cURL to
-                produce the response given in this example.</remark>
-            <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <title>cURL Create Cluster Request: JSON</title>
-                <programlisting>curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/clusters -d \
-'{"cluster":
-      { "name": "slice",
-        "clusterType": "HADOOP_HDP1_1",
-        "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
-        "nodeCount": 5
-      }
-    }' \          
--H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
--H "Accept: application/json" \
--H "Content-type: application/json"                 </programlisting>
-              
-            </example>
-            <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <title>Create Cluster Response: JSON</title>
-                <programlisting>    {"cluster":
-      { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
-        "created": "2012-12-27T10:10:10Z",
-        "updated": "",
-        "name": "slice",
-        "clusterType": "HADOOP_HDP1_1",
-        "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
-        "nodeCount": 5,
-        "status": "BUILD",
-        "links": [
-          { "rel": "self",
-            "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
-          },
-          { "rel": "bookmark",
-            "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
-          }
-        ],
-      }
-    }</programlisting>
- 
-            </example>   
-        </section>
-        <section xml:id="listFlavors">
-            <title>Listing Flavors</title>
-            <para>A flavor is an available hardware configuration for
-                a cluster. Each flavor has a unique combination of
-                memory capacity and priority for CPU time. The larger
-                the flavor size you use, the larger the amount of RAM
-                and priority for CPU time your cluster will
-                receive</para>
-            <para>You need to use the <command>List Flavors</command>
-                API call ( /flavors ) to find the available
-                configurations for your cluster, and then decide which
-                size you need.</para>
-            <para>This operation does not require a request
-                body.</para>
-            <informaltable rules="all">
-                <thead>
-                    <tr align="center">
-                        <td colspan="1">Verb</td>
-                        <td colspan="2">URI</td>
-                        <td colspan="3">Description</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="1">&GET;</td>
-                        <td colspan="2">/flavors</td>
-                        <td colspan="3">List all available flavors.</td>
-                    </tr>
-                </tbody>
-            </informaltable>
-            <para>This operation does not require a request
-                body.</para>
-            <para>The following example shows the cURL request for
-                    <command>List Flavors</command>:</para>
-            <remark>Reviewer: Please provide appropriate cURL to
-                produce the response given in this example.</remark>
-            <example>
-                <title>cURL List Flavors Request: JSON</title>
-                <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/flavors -d \
+                by using the Rackspace Cloud Big Data API. </para>
+            <section xml:id="Listing-Flavors-d1003">
+                <title>Listing Flavors</title>
+                <para>A flavor is an available hardware configuration
+                    for a cluster. Each flavor has a unique
+                    combination of memory capacity and priority for
+                    CPU time. The larger the flavor size you use, the
+                    larger the amount of RAM and the higher the
+                    priority for CPU time your cluster
+                    receives.</para>
+                <para>You use the List Flavors operation to find the
+                    available configurations for your cluster, and
+                    then you decide which size you need for your
+                    cluster.</para>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/flavors</td>
+                            <td colspan="3">Lists all available
+                                flavors.</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <para>This operation does not require a request
+                    body.</para>
+                <para>The following examples show the cURL request and
+                    the corresponding response for the List Flavors
+                    operation. </para>
+                <remark>Reviewer: Please provide appropriate cURL to
+                    produce the response given in this
+                    example.</remark>
+                <example>
+                    <title>cURL List Flavors Request: JSON</title>
+                    <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/flavors -d \
 -H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json"</programlisting>
-            </example>
-            <para>The following example shows the response for
-                    <command>List Flavors</command>:</para>
-            <example>
-                <title>List Flavors Response: JSON</title>
-                <programlisting>        { "flavors": [
+                </example>
+                <example>
+                    <title>List Flavors Response: JSON</title>
+                    <programlisting>        { "flavors": [
           {
             "disk": 256,
             "id": "4fba3bca-7c76-11e2-b737-beeffa00040e",
@@ -1181,13 +1118,85 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             "vcpus": 8
           }
         ] }</programlisting>
-
-            </example> 
+                </example>
+            </section>
+        <section xml:id="createCluster">
+            <title>Creating a Cluster  </title><para xmlns:wadl="http://wadl.dev.java.net/2009/02">The Create Cluster
+                    operation creates a new Hadoop cluster. After you
+                    submit the operation, it takes a few minutes for
+                    the service to build and configure your
+                    cluster.</para>
+            <informaltable rules="all"
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Verb</td>
+                        <td colspan="2">URI</td>
+                        <td colspan="3">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">&POST;</td>
+                        <td colspan="2">/clusters</td>
+                        <td colspan="3">Creates a new cluster.</td>
+                    </tr>
+                </tbody>
+            </informaltable><para>The following example creates a 5-data-node Hadoop cluster with
+                    the name <code>slice</code>.</para>
+            <para>The value of the <code>clusterType</code> attribute
+                    must be HADOOP_HDP1_1. The <code>flavorID</code>
+                    attribute specifies the RAM, virtual CPUs, and
+                    disk storage associated with each data node in
+                    your Hadoop cluster. </para>
+            <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
+                    following examples show the cURL request and
+                    corresponding response for Create Cluster.</para>
+            <remark>Reviewer: Please provide appropriate cURL to
+                produce the response given in this example.</remark>
+            <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <title>cURL Create Cluster Request: JSON</title>
+                <programlisting>curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/clusters -d \
+'{"cluster":
+      { "name": "slice",
+        "clusterType": "HADOOP_HDP1_1",
+        "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
+        "nodeCount": 5
+      }
+    }' \          
+-H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
+-H "Accept: application/json" \
+-H "Content-type: application/json"                 </programlisting>
+              
+            </example>
+            <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <title>Create Cluster Response: JSON</title>
+                <programlisting>    {"cluster":
+      { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
+        "created": "2012-12-27T10:10:10Z",
+        "updated": "",
+        "name": "slice",
+        "clusterType": "HADOOP_HDP1_1",
+        "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
+        "nodeCount": 5,
+        "status": "BUILD",
+        "links": [
+          { "rel": "self",
+            "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
+          },
+          { "rel": "bookmark",
+            "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
+          }
+        ],
+      }
+    }</programlisting>
+ 
+            </example>   
         </section>
         <section xml:id="viewDetails">
             <title>Viewing Details</title>
-            <para><command>Get Node Details</command> lists all server
-                nodes for the specified cluster.</para>
+            <para>The Get Node Details operation lists all server
+                    nodes for the specified cluster.</para>
             <informaltable rules="all">
                 <thead>
                     <tr align="center">
@@ -1200,24 +1209,26 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/clusters/{id}/nodes</td>
-                        <td colspan="3">List all nodes for a cluster.</td>
+                        <td colspan="3">Lists all nodes for a
+                                cluster.</td>
                     </tr>
                 </tbody>
             </informaltable>
-            <para>The cluster has a NAMENODE and a GATEWAY node in
-                addition to DATANODEs. A server has a private IP
-                address, which is used for backend (Hadoop) data
-                transfer, and a public IP, which allows you to access
-                it over the public internet. Use the gateway node to
-                do your work, including using tools such as Pig and
-                Hive. In the example, you can remotely SSH into the
-                gateway node over the IP address, using the username
-                and the password you added to your profile during
-                setup.</para>
+            <para>In the following example, the cluster has a name
+                    node, a gateway node, and two data nodes. Each
+                    node has a private IP address, which is used for
+                    backend (Hadoop) data transfer, and a public IP
+                    address, which enables you to access it over the
+                    public Internet. Use the gateway node to do your
+                    work, including using tools such as Apache Pig and
+                    Apache Hive. In the example, you can remotely SSH
+                    into the gateway node over the IP address by using
+                    the user name and password that you added to your
+                    profile during setup.</para>
             <para>This operation does not have a request body.</para>
-            <para>The following example show the cURL request and
-                corresponding response to List all Nodes for a
-                Cluster:</para>
+            <para>The following examples show the cURL request and
+                    corresponding response for listing all nodes for a
+                    cluster.</para>
             <remark>Reviewer: Please provide appropriate cURL to
                 produce the response given in this example.</remark>
             <example>
@@ -1341,9 +1352,9 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
         </section>
         <section xml:id="resizeClusters">
             <title>Resizing Clusters</title>
-            <para>You can increase the size of an existing cluster
-                using the resize command. Downsizing clusters is not
-                currently supported. </para>
+            <para>You can increase the size of an existing cluster by
+                    using the <code>resize</code> command. Downsizing
+                    clusters is not currently supported. </para>
             <informaltable rules="all">
                 <thead>
                     <tr align="center">
@@ -1361,16 +1372,20 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 </tbody>
             </informaltable>
             <para>The following example resizes the previously created
-                cluster slice to include 10 data nodes.  Note that 10
-                is the total number of data nodes in the cluster, not
-                the additional number of nodes. After you initiate the
-                resize operation, you can use <command>List Cluster
-                    Nodes</command> to confirm that your cluster has
-                been resized.</para>
+                    cluster, named <code>slice</code>, to include 10
+                    data nodes. When you use the <code>resize</code>
+                    command, you specify the total number of data
+                    nodes that you want the cluster to have, not just
+                    the number of nodes to add. In the example, 10 is
+                    the total number of nodes that the cluster will
+                    have after the command is run. After you initiate
+                    the <code>resize</code> operation, you can use the
+                    List Cluster Nodes operation to confirm that your
+                    cluster has been resized.</para>
             <remark>Reviewer: Please provide appropriate cURL to
                 produce the response given in this example.</remark>
             <para>The following examples show the cURL request and
-                corresponding response to resize a  cluster:</para>
+                    corresponding response to resize a cluster.</para>
             <example>
                 <title>cURL Resize Cluster Request: JSON</title>
                 <programlisting>curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_account_ID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis>/action -d \
@@ -1406,12 +1421,12 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
         </section>
         <section xml:id="deleteCluster">
             <title>Deleting Clusters</title>
-            <para>Use <command>Delete Cluster</command> to remove
-                unused Hadoop clusters. This gets rid of any servers
-                associated with the cluster and any data stored in
-                it.</para>
-            <para> You cannot delete clusters that are in the process
-                of being created or resized.</para>
+            <para>Use the Delete Cluster operation to remove unused
+                    Hadoop clusters. This operation deletes any
+                    servers associated with the cluster and any data
+                    stored in the cluster.</para>
+            <para>You cannot delete clusters that are in the process
+                    of being created or resized.</para>
             <informaltable rules="all">
                 <thead>
                     <tr align="center">
@@ -1429,7 +1444,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 </tbody>
             </informaltable>
             <para>The following examples show the cURL request and
-                corresponding response to delete a cluster:</para>
+                    corresponding response to delete a cluster.</para>
             <remark>Reviewer: Please provide appropriate cURL to
                     produce the response given in this example. </remark>
             <example>
@@ -1472,99 +1487,124 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
     </chapter>
     <chapter xml:id="Using_Python_lavaclient">
         <title>Using the Python Lava Client</title>
-        <para>This chapter explains how to get started using
-            python-lavaclient, which is a convenient python binding
-            and command-line client that utilizes the RESTful
+        <para>This chapter explains how to start using the Python Lava
+            client (python-lavaclient), which is a convenient Python
+            binding and command-line client that uses the RESTful
             API.</para>
         <section xml:id="setting_Up">
             <title>Setting Up</title>
-            <para>This section describes prerequisites, installing,
-                and setting up to use the python-lavaclient.</para>
+            <para>This section describes prerequisites, installation,
+                and setup for the python-lavaclient.</para>
             <section xml:id="Prerequisites">
                 <title>Prerequisites</title>
-                <para>You will need the following in order to use
+                <para>Following are the requirements for using
                     python-lavaclient:</para>
                 <itemizedlist>
                     <listitem>
-                        <para>a computer running Linux or Mac OS
+                        <para>Computer running Linux or Mac OS
                             X</para>
                     </listitem>
                     <listitem>
                         <para>Python 2.7.2 or later</para>
                     </listitem>
                     <listitem>
-                        <para>a Rackspace Cloud account and access to
+                        <para>Rackspace Cloud account and access to
                             Rackspace Cloud Big Data</para>
                     </listitem>
                 </itemizedlist>
             </section>
             <section xml:id="installing_Client">
                 <title>Installing the Client</title>
-                <para>Download python-lavaclient to your computer from
-                        <link xlink:href="http://bit.ly/cbd-client"
-                        >http://bit.ly/cbd-client</link>. Then extract
-                    the archive using the following command:</para>
-                <programlisting>$ tar xvzf python-lava-0.8.6.tgz</programlisting>
-                <para>This creates a python-lavaclient folder. Go into
-                    the folder and install the client using the
-                    following
-                    commands:<programlisting>$ cd python-lavaclient 
-$ sudo python setup.py install</programlisting></para>
-                <para>Using the following command, run the help
-                    command to make sure the utility has been
-                    installed correctly and note the usage
-                    information:</para>
-                <programlisting>$ lava help</programlisting>
+                <para>Perform the following steps to install the
+                    client. </para>
+                <orderedlist>
+                    <listitem>
+                        <para>Download python-lavaclient to your
+                            computer from <link
+                                xlink:href="http://bit.ly/cbd-client"
+                                >http://bit.ly/cbd-client</link>.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Extract the archive by using the
+                            following command: </para>
+                        <programlisting>$ tar xvzf python-lava-0.8.6.tgz</programlisting>
+                        <para>A python-lavaclient folder is created.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>Open the folder and install the client
+                            by using the following commands:</para>
+                        <programlisting>$ cd python-lavaclient 
+$ sudo python setup.py install</programlisting>
+                    </listitem>
+                    <listitem>
+                        <para>Run the help command to ensure that the
+                            client has been installed correctly and
+                            note the usage information: </para>
+                        <programlisting>$ lava help</programlisting>
+                    </listitem>
+                </orderedlist>
             </section>
             <section xml:id="authenticate_Against_API">
-                <title>Authentication</title>
-                <para>You need to authenticate your session before you
-                    can start using Rackspace Cloud Big Data. You need
-                    your Cloud username and API Key in order to
-                    complete this step. Run the auth command and,when
-                    prompted, enter your username and API Key. Your
-                    access token and API URL will be displayed on the
-                    console.</para>
-                <programlisting>$ lava auth
+                <title>Authenticating Your Session</title>
+                <para>Before you can start using Rackspace Cloud Big
+                    Data, you need to authenticate your session. To
+                    complete this step, you need your Cloud user name
+                    and API key.</para>
+                <orderedlist>
+                    <listitem>
+                        <para>Run the <code>auth</code> command. When
+                            prompted, enter your user name and API
+                            key. </para>
+                        <programlisting>$ lava auth
 Username: &lt;enter your Cloud username>
 API Key: &lt;enter your API Key></programlisting>
-                <para>Successful execution displays your
-                    authentication token and access endpoint as shown
-                    in the following example.</para>
-                <example>
-                    <title>Authentication Response Using CLI
-                        Utility</title>
-                    <programlisting>AUTH_TOKEN=692c2a14-39ad-4ee0-991d-06cd7331f3ca
+                        <para>If the command runs successfully, your
+                            authentication token and access endpoint
+                            are displayed, as shown in the following
+                            example.</para>
+                        <example>
+                            <title>Authentication Response Using CLI
+                                Utility</title>
+                            <programlisting>AUTH_TOKEN=692c2a14-39ad-4ee0-991d-06cd7331f3ca
 LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</programlisting>
-                </example>
-                <para>Export the AUTH_TOKEN and LAVA_API_URL
-                    environment variables as shown below.</para>
-                <example>
-                    <title>Export Environment Variables</title>
-                    <programlisting>$ export AUTH_TOKEN=692c2a14-39ad-4ee0-991d-06cd7331f3ca
+                        </example>
+                    </listitem>
+                    <listitem>
+                        <para>Export the AUTH_TOKEN and LAVA_API_URL
+                            environment variables as shown in the
+                            following example.</para>
+                        <example>
+                            <title>Export Environment
+                                Variables</title>
+                            <programlisting>$ export AUTH_TOKEN=692c2a14-39ad-4ee0-991d-06cd7331f3ca
 $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</programlisting>
-                </example>
-                <note>
-                    <para>The <command>export</command> commands above
-                        are valid only for the current session. You
-                        need to rerun the <command>export</command>
-                        commands if, for example, you create a new
-                        console window.</para>
-                </note>
-                <para>To confirm that the client is running, run the
-                        <command>list</command> command. The first
-                    time that you run this command, it does not return
-                    any output. </para>
-                <programlisting>$ lava list</programlisting>
+                        </example>
+                        <note>
+                            <para>The <code>export</code> commands are
+                                valid only for the current session.
+                                You need to rerun the
+                                   <code>export</code> commands if,
+                                for example, you create a new console
+                                window.</para>
+                        </note>
+                    </listitem>
+                    <listitem>
+                        <para>To confirm that the client is running,
+                            run the list command. The first time that
+                            you run this command, it does not return
+                            any output. </para>
+                        <programlisting>$ lava list</programlisting>
+                    </listitem>
+                </orderedlist>
             </section>
             <section xml:id="setting_Up_Profile">
                 <title>Setting Up a Profile</title>
-                <para>Before you can create Hadoop clusters, you need
-                    to create a profile that consists of a
-                        <parameter>username</parameter> and
-                        <parameter>password</parameter>. This is done
-                    using the <command>create-profile</command>
-                    command as shown below. <note
+                <para>Before you can create Hadoop clusters, you must
+                    create a profile that consists of a user name and
+                    password. To create a profile, use the
+                        <code>create-profile</code> command as shown
+                    in the following example.  <note
                         xmlns:wadl="http://wadl.dev.java.net/2009/02">
                         <para>Your Cloud Big Data profile is different
                             from your cloud account. Your profile has
@@ -1587,30 +1627,28 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
                             </listitem>
                         </itemizedlist>
                     </note></para>
-                <para>In this example, a user with the name
-                        <parameter>joe</parameter> is created and his
-                    password is
-                    <parameter>Fool1234!</parameter>.</para>
+                <para>In this example, a profile is created with the
+                    user name <code>joe</code> and the password
+                        <code>Fool1234!</code>. </para>
                 <example>
                     <title>Creating a Profile</title>
                     <programlisting>$ lava create-profile joe Foo1234!</programlisting>
                 </example>
-                <para>A password must be at least 8 characters, with a
-                    mixture of uppercase, lowercase, numeric and
-                    special characters.</para>
-                <para>After creating your profile, every Hadoop server
-                    you provision using the API will have a local user
-                    account called <emphasis role="bold"
-                        >joe</emphasis> with the specified password.
-                    Now you can remotely SSH into a server in order to
-                    transfer data, run or troubleshoot jobs, and so
-                    on.</para>
+                <para>A password must be at least eight characters,
+                    with a mixture of uppercase, lowercase, numeric,
+                    and special characters.</para>
+                <para>After you create your profile, every Hadoop
+                    server that you provision by using the API will
+                    have a local user account with the specified name
+                    and password. This allows you to remotely SSH into
+                    a server to transfer data, run or troubleshoot
+                    jobs, and so on.</para>
                 <para>To confirm that your profile was successfully
-                    created, run the <command>get-profile</command>
+                    created, run the <code>get-profile</code>
                     command.</para>
                 <example>
-                    <title>Get-profile Command to Retrieve a
-                        Profile</title>
+                    <title>Retrieve a Profile by Using the get-profile
+                        Command</title>
                     <programlisting>$ lava get-profile
 +-------------+-----------+-------------+
 | Username | User ID | Tenant ID |
@@ -1621,12 +1659,13 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
             </section>
             <section xml:id="view_Resource_Limits">
                 <title>Viewing Resource Limits</title>
-                <para>Using Rackspace Cloud Big Data is subject to
-                    resource limits. You can view the limits
-                    associated with your account using the
-                        <command>quotas</command> command. </para>
+                <para>The use of Rackspace Cloud Big Data is subject
+                    to resource limits. You can view the limits
+                    associated with your account by using the
+                        <code>quotas</code> command. </para>
                 <example>
-                    <title>Quotas Command to View Resource Limits </title>
+                    <title>View Resource Limits by Using the quotas
+                        Command</title>
                     <programlisting>$ lava quotas
 +-------------+-----------------+-------------+-----------------+-----------+---------------+------------+----------------+
 | Nodes Limit | Nodes Remaining | VCPUs Limit | VCPUs Remaining | RAM Limit | Ram Remaining | Disk Limit | Disk Remaining |
@@ -1639,18 +1678,19 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
         <section xml:id="create_Manage_Clusters">
             <title>Creating and Managing Hadoop Clusters</title>
             <para>This section explains how to create and manage
-                Hadoop clusters using Rackspace Cloud Big Data using
-                the python-lavaclient. After you complete this
+                Hadoop clusters by using Rackspace Cloud Big Data
+                through the python-lavaclient. After you complete this
                 section, you will have a working Apache Hadoop
                 cluster.</para>
             <section xml:id="boot_Hadoop_Cluster">
-                <title>Booting a Hadoop Cluster</title>
-                <para>Use the <command>boot</command> command to
-                    provision a Hadoop cluster. The example below
-                    creates a 3-data node Hadoop cluster with the name
-                        <emphasis role="bold">foo</emphasis>.</para>
+                <title>Provisioning a Hadoop Cluster</title>
+                <para>Use the <code>boot</code> command to provision a
+                    Hadoop cluster. The following example creates a
+                    3-data-node Hadoop cluster with the name
+                        <code>foo</code>.</para>
                 <example>
-                    <title>Boot Command to Provision a Cluster </title>
+                    <title>Provision a Cluster by Using the boot
+                        Command </title>
                     <programlisting>$ lava boot --type=HADOOP_HDP1_1 --flavor=4fba3bca-7c76-11e2-b737-beeffa00040e --count=3 foo
 +----------+--------------------------------------+
 | Property | Value |
@@ -1663,18 +1703,17 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
 | Flavor | 4fba3bca-7c76-11e2-b737-beeffa00040e |
 +----------+--------------------------------------+</programlisting>
                 </example>
-                <para>The <parameter>type</parameter> argument must
-                    specify HADOOP_HDP1_1. The
-                        <parameter>flavor</parameter> argument
+                <para>The <code>type</code> argument must specify
+                    HADOOP_HDP1_1. The <code>flavor</code> argument
                     specifies the RAM, virtual CPUs, and disk storage
                     associated with each data node in your Hadoop
                     cluster. You can enumerate the flavors and
-                    associated resources using the
-                        <command>flavor-list</command> command, as
-                    shown below.</para>
+                    associated resources by using the
+                        <code>flavor-list</code> command, as shown in
+                    the following example.</para>
                 <example>
-                    <title>Flavor-list Command to Enumerate the
-                        Flavors and Associated Resources</title>
+                    <title>List Flavors and Associated Resources by
+                        Using the flavor-list Command </title>
                     <programlisting>$ lava flavor-list
 +--------------------------------------+------------------------+-------+------+------+
 | Id | Name | Mem | Disk | CPUs |
@@ -1685,13 +1724,14 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
 | 559dd2b8-7c76-11e2-b737-beeffa00040e | Large Hadoop Instance | 27648 | 2048 | 8 |
 +--------------------------------------+------------------------+-------+------+------+</programlisting>
                 </example>
-                <para>After you run the <command>boot</command>
-                    command, it takes a few minutes for the service to
-                    build and configure your cluster. Use the
-                        <command>list</command> command to query the
-                    build status of your cluster.</para>
+                <para>After you run the <code>boot</code> command, it
+                    takes a few minutes for the service to build and
+                    configure your cluster. Use the <code>list</code>
+                    command to query the build status of your
+                    cluster.</para>
                 <example>
-                    <title>List Command to Query Status</title>
+                    <title>Query the Status of a Cluster by Using the
+                        list Command</title>
                     <programlisting>$ lava list
 +--------------------------------------+------+--------+-------+---------------+
 | Id | Name | Status | Nodes | Type |
@@ -1699,19 +1739,18 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
 | 4820deb2-6212-44f9-b92f-979fe723ffb8 | foo | ACTIVE | 3 | HADOOP_HDP1_1 |
 +--------------------------------------+------+--------+-------+---------------+</programlisting>
                 </example>
-                <para>When your cluster is ready, the status shows
-                        <emphasis role="bold"
-                    >ACTIVE</emphasis>.</para>
+                <para>When your cluster is ready, the value of
+                        <code>Status</code> is
+                    <code>ACTIVE</code>.</para>
             </section>
             <section xml:id="viewing_Details">
                 <title>Viewing Details</title>
-                <para>Use the <command>show</command> and
-                        <command>nodes</command> commands to query
-                    your cluster, as shown in the following
-                    example.</para>
+                <para>Use the <code>show</code> and <code>nodes</code>
+                    commands to query your cluster, as shown in the
+                    following example.</para>
                 <example>
-                    <title>Show and Nodes Commands to Query
-                        Cluster</title>
+                    <title>Query the Details of a Cluster by Using the
+                        show and nodes Commands</title>
                     <programlisting>$ lava show foo
 +----------+--------------------------------------+
 | Property | Value |
@@ -1735,71 +1774,69 @@ $ lava nodes foo
 +--------------------------------------+--------------+----------+--------+----------------+----------------+
 </programlisting>
                 </example>
-                <para>The example shows that the cluster has:</para>
+                <para>The example shows that the cluster has the
+                    following nodes:</para>
                 <itemizedlist>
                     <listitem>
-                        <para>a <emphasis role="bold">name
-                                node</emphasis></para>
+                        <para>One name node</para>
                     </listitem>
                     <listitem>
-                        <para>a <emphasis role="bold">gateway
-                                node</emphasis></para>
+                        <para>One gateway node</para>
                     </listitem>
                     <listitem>
-                        <para>3 <emphasis role="bold">data
-                                nodes</emphasis></para>
+                        <para>Three data nodes</para>
                     </listitem>
                 </itemizedlist>
-                <para>A server has:<itemizedlist>
+                <para>Each server node has the following IP addresses:<itemizedlist>
                         <listitem>
-                            <para>a <emphasis role="bold">private
-                                   IP</emphasis> address that is used
+                            <para>A private IP address that is used
                                 for backend (Hadoop) data
-                                transfer</para>
+                                transfers</para>
                         </listitem>
                         <listitem>
-                            <para>a <emphasis role="bold">public
-                                   IP</emphasis> that allows you to
-                                access it over the public
-                                internet</para>
+                            <para>A public IP address that allows you
+                                to access the server over the public
+                                Internet</para>
                         </listitem>
                     </itemizedlist>Use the gateway node to do your
                     work, including using tools such as Pig and Hive.
-                    In the above example, you can remotely SSH into
-                    the gateway node over IP address 166.78.132.227,
-                    using the username (<emphasis role="bold"
-                        >joe</emphasis>) and the password you added to
-                    your profile during setup.</para>
+                    In the example, you can remotely SSH into the
+                    gateway node over IP address 166.78.132.227 by
+                    using the user name and password that you used to
+                    create your profile during setup.</para>
             </section>
             <section xml:id="resize_Cluster">
                 <title>Resizing Clusters</title>
                 <para>You can increase the size of an existing cluster
-                    using the <command>resize</command> command.
+                    by using the <code>resize</code> command.
                     Downsizing clusters is not currently supported.
                     The following example resizes the previously
-                    created cluster <emphasis role="bold"
-                        >foo</emphasis> to include 5 data nodes.<example>
-                        <title>Resize Command to Increase Cluster
-                            Size</title>
+                    created cluster <code>foo</code> to include 5 data nodes.<example>
+                        <title>Increase Cluster Size by Using the
+                            resize Command</title>
                         <programlisting>$ lava resize --count=5 foo
 </programlisting>
                     </example></para>
-                <para>Note that 5 is the <emphasis role="italic">total
-                        number</emphasis> of data nodes in the
-                    cluster, not the additional number of nodes. After
-                    you initiate the <command>resize</command>
-                    operation, use the <command>show</command> or
-                        <command>list</command> commands to confirm
-                    that your cluster has been resized. </para>
+                <para>When you use the <code>resize</code> command,
+                    you specify the total number of data nodes that
+                    you want the cluster to have, not just the number
+                    of nodes to add. In the example, 5 is the total
+                    number of nodes that the cluster will have after
+                    the command is run.  After you initiate the
+                        <code>resize</code> operation, use the
+                        <code>show</code> or <code>list</code>
+                    commands to confirm that your cluster has been
+                    resized. </para>
             </section>
             <section xml:id="delete_Cluster">
                 <title>Deleting Clusters</title>
-                <para>Use the <command>delete</command> command to
-                    remove unused Hadoop clusters. Using this command
-                    gets rid of any servers associated with the
-                    cluster and any data stored in it.</para>
+                <para>Use the <code>delete</code> command to remove
+                    unused Hadoop clusters. This command deletes any
+                    servers associated with the cluster and any data
+                    stored in the cluster.</para>
                 <example>
-                    <title>Delete Command to Remove Clusters</title>
+                    <title>Remove Clusters by Using the delete
+                        Command</title>
                     <programlisting>$ lava delete foo
 </programlisting>
                 </example>
@@ -2174,33 +2211,28 @@ store final2 into 'result2';</programlisting>
     </chapter>
     <chapter xml:id="Additional_Resources">
         <title>Additional Resources</title>
-        <para>Email cbdbeta@rackspace.com if you have any questions or
-            concerns in using any of the steps in this guide. </para>
-        <para>Using this guide with the <citetitle>Cloud Big Data
-                Developer Guide</citetitle>, you can get started using
-            the Cloud Bid Data API whenever you'd like. The
-                <citetitle>Cloud Big Data Developer Guide</citetitle>
-            provides information about all Cloud Big Data API
-            operations. Refer to this guide at  <link
+        <para>If you have any questions or concerns about using any of
+            the steps in this guide, send an email to
+            cbdbeta@rackspace.com.</para>
+        <para>For information about all Cloud Big Data API operations,
+            see the <citetitle>Cloud Big Data Developer
+                Guide</citetitle> at <link
                 xlink:href="http://docs-internal.rackspace.com/"
-                >http://docs-internal.rackspace.com/</link></para>
-        <para>Please visit our <link
-                xlink:href="http://feedback.rackspace.com/forums/71021-product-feedback/category/6841-cloud-sites"
-                >Product Feedback Forum</link> and let us know what
-            you think about Cloud Big Data.</para>
-        <para>For more details about Rackspace &PRODNAME;, refer to
-                <link
+                >http://docs-internal.rackspace.com/</link>. All you
+            need to get started with Cloud Big Data is this getting
+            started guide and the developer guide. </para>
+        <para>For more details about Rackspace &PRODNAME;, go to <link
                 xlink:href="http://www.rackspace.com/cloud/cloud_hosting_products/databases/"
                 >http://www.rackspace.com/cloud/cloud_hosting_products/databases/</link>.
-            This site also offers links to Rackspace's official
-            support channels, including knowledge center articles,
-            forums, phone, chat, and email. </para>
-        <para>Please visit our <link
+            This site also offers links to official Rackspace support
+            channels, including knowledge center articles, forums,
+            phone, chat, and email. </para>
+        <para>Visit the <link
                 xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
-                >Product Feedback Forum</link> and let us know what
-            you think about &PRODNAME;.</para>
+                >Product Feedback Forum</link> and tell us what you
+            think about &PRODNAME;.</para>
         <para>This API uses standard HTTP 1.1 response codes as
-            documented at: <link
+            documented at <link
                 xlink:href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"
                 >www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>. </para>
     </chapter>
