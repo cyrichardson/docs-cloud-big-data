@@ -60,12 +60,13 @@
 				</resource>
 				<resource id="nodes" path="nodes">
 					<method href="#getClusterNodes" />
-				</resource>
-				<resource id="node" path="{nodeId}">
-					<param name="nodeId" style="template" type="xsd:string">
-						<doc>Specifies the node ID.</doc></param>
-					<method href="#getNodeDetails" />
-				</resource>
+				
+				    <resource id="node" path="{nodeId}">
+					    <param name="nodeId" style="template" type="xsd:string">
+					    	<doc>Specifies the node ID.</doc></param>
+					    <method href="#getNodeDetails" />
+				    </resource>
+				</resource>	
 			</resource>
 		</resource>
 	</resource> 
@@ -201,7 +202,7 @@
     <!--*******************************************************-->	
 
 	<method name="GET" id="getClusters" >
-		<wadl:doc xml:lang="EN" title="List All CLusters" xmlns="http://docbook.org/ns/docbook">
+		<wadl:doc xml:lang="EN" title="List All Clusters" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Lists all clusters for your account.</para> 
 			<para>This operation lists all clusters for your account.</para>	
 		</wadl:doc>

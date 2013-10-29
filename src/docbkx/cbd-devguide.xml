@@ -54,12 +54,11 @@ format="SVG" scale="60"/>
           status.bar.text="Early Access"?>   
   <titleabbrev>Rackspace Cloud Big Data Developer
     Guide</titleabbrev>
-
   <info>
     <author>
       <personname>
-        <firstname>Catherine</firstname>
-        <surname>Richardson</surname>
+        <firstname></firstname>
+        <surname></surname>
       </personname>
       <affiliation>
         <orgname>Rackspace Cloud</orgname>
@@ -67,10 +66,11 @@ format="SVG" scale="60"/>
     </author>
     <copyright>
       <year>2013</year>
+      <holder>Rackspace US, Inc.</holder>  
     </copyright>
     <releaseinfo>API v1.0 Early Access</releaseinfo>
     <productname>Rackspace &PRODNAME;</productname>
-    <pubdate>2013-09-16</pubdate>
+    <pubdate>2013-10-29</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the doc build
@@ -87,13 +87,16 @@ format="SVG" scale="60"/>
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
       <revision>
+        <date>2013-10-29</date>
+        <revdescription>
+          <para>Corrected the URI for the Get Node Details operation
+            in <xref linkend="nodeOperations"/>.</para>
+        </revdescription>
+      </revision>
+      <revision>
         <date>2013-09-16</date>
         <revdescription>
-          <itemizedlist>
-            <listitem>
-              <para>Initial Early Access release.</para>
-            </listitem>
-          </itemizedlist>
+          <para>Initial Early Access release</para>
         </revdescription>
       </revision>
     </revhistory>
@@ -105,9 +108,9 @@ format="SVG" scale="60"/>
   </info>
   <chapter xml:id="overview">
     <title>Overview</title>
-    <para>Rackspace &PRODNAME; (&PRODABBV;) is an on-demand Hadoop
-      service on the Rackspace open cloud. It alleviates the pain
-      associated with deploying, managing, and scaling Hadoop
+    <para>Rackspace &PRODNAME; (&PRODABBV;) is an on-demand Apache
+      Hadoop service on the Rackspace open cloud. It alleviates the
+      pain associated with deploying, managing, and scaling Hadoop
       clusters, allowing you to focus on your core business. </para>
     <para>Rackspace Cloud Big Data is just as flexible and
       feature-rich as running Hadoop on your own. You will benefit
@@ -175,7 +178,8 @@ format="SVG" scale="60"/>
         concepts and is familiar with: </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>Hadoop, HDFS, and MapReduce</para>
+          <para>Hadoop, Apace Hadoop Distributed File System (HDFS),
+            and MapReduce</para>
         </listitem>
         <listitem>
           <para>RESTful web services</para>
@@ -243,10 +247,10 @@ format="SVG" scale="60"/>
         the &PRODNAME; API, you agree and understand
           that:<itemizedlist spacing="compact">
           <listitem>
-            <para>&PRODABBV; includes a Swift integration feature
-              wherein Hadoop, MapReduce, or Pig jobs can directly
-              reference Cloud Files containers. Currently, it is only
-              possible to reference containers in DFW.</para>
+            <para>&PRODNAME; includes a Swift integration feature
+              wherein Hadoop, MapReduce, or Apache Pig jobs can
+              directly reference Cloud Files containers. Currently, it
+              is only possible to reference containers in DFW.</para>
           </listitem>
           <listitem>
             <para>There is no charge for this service during the Early
