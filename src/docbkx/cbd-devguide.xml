@@ -467,7 +467,7 @@ format="SVG" scale="60"/>
       </important>
     </section>
     <section xml:id="Service_Access_Endpoints-d1e753">
-      <title>Service Access/Endpoints</title>
+      <title>Service Access Endpoints</title>
       <para>The &PRODNAME; Service is a regionalized service. The user
         of the service is therefore responsible for appropriate
         replication, caching, and overall maintenance of &PRODNAME;

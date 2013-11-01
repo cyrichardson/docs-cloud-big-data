@@ -64,7 +64,7 @@
         </copyright>
         <releaseinfo>API v1.0 Early Access</releaseinfo>
         <productname>Rackspace Cloud Big Data</productname>
-        <pubdate>2013-09-16</pubdate>
+        <pubdate>2013-11-01</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the doc build process.</remark>
@@ -78,6 +78,27 @@
                     (<abbrev>API</abbrev>). </para>
         </abstract>
         <revhistory>
+            <revision>
+                <date>2013-11-01</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Added <xref
+                                   linkend="List-Cluster-Types-d1e002"
+                                /> to <xref
+                                   linkend="Create_Manage_Clusters-d1e001"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added <xref
+                                   linkend="List-Clusters-d1e004"/> to
+                                   <xref
+                                   linkend="Create_Manage_Clusters-d1e001"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-09-16</date>
                 <revdescription>
@@ -1005,7 +1026,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
 }</programlisting>
         </example>
         </section>
-    <section xml:id="List_DBS_For_Instance">
+    <section xml:id="Create_Manage_Clusters-d1e001">
         <title>Creating and Managing Hadoop Clusters</title>
         <para>Now you are ready to create and manage Hadoop clusters
                 by using the Rackspace Cloud Big Data API. </para>
@@ -1021,7 +1042,9 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 <para>You use the List Flavors operation to find the
                     available configurations for your cluster, and
                     then you decide which size you need for your
-                    cluster.</para>
+                    cluster. You perform this operation to get a list
+                    of flavors from wh ich to choose when you create a
+                    cluster. </para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -1120,6 +1143,66 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
         ] }</programlisting>
                 </example>
             </section>
+            <section xml:id="List-Cluster-Types-d1e002">
+                <title>Listing Cluster Types</title>
+                <para>You use the List Cluster Types operation to find
+                    the cluster types that are available. You perform
+                    this operation to get a cluster type to use when
+                    you create a cluster.</para>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/types</td>
+                            <td colspan="3">Lists cluster types.</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <para>This operation does not require a request
+                    body.</para>
+                <para>The following examples show the cURL request and
+                    the corresponding response for the List Flavors
+                    operation. </para>
+                <example>
+                    <title>cURL List Cluster Types Request:
+                        JSON</title>
+                    <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/types -d \
+-H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
+-H "Accept: application/json" \
+-H "Content-type: application/json"</programlisting>
+                </example>
+                <example>
+                    <title>List Cluster Types Response: JSON</title>
+                    <programlisting>
+ 
+        { "types":
+          [
+            {
+              "id": "HADOOP_HDP1_1",
+              "links": [
+                { "href": "http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/types/HADOOP_HDP1_1",
+                  "rel": "self"
+                },
+                { "href": "http://dfw.bigdata.api.rackspacecloud.com/1234/types/HADOOP_HDP1_1",
+                  "rel": "bookmark"
+                }
+              ],
+              "name": "Hadoop (HDP 1.1)"
+            }
+          ]
+        }
+        
+        
+</programlisting>
+                </example>
+            </section>
         <section xml:id="createCluster">
             <title>Creating a Cluster  </title><para xmlns:wadl="http://wadl.dev.java.net/2009/02">The Create Cluster
                     operation creates a new Hadoop cluster. After you
@@ -1193,6 +1276,88 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
  
             </example>   
         </section>
+            <section xml:id="List-Clusters-d1e004">
+                <title>Listing Clusters</title>
+                <para>You use the List Clusters operation to find the
+                    available clusters for your account.</para>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/clusters</td>
+                            <td colspan="3">Lists all clusters for
+                                your account.</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <para>This operation does not require a request
+                    body.</para>
+                <para>The following examples show the cURL request and
+                    the corresponding response for the List Flavors
+                    operation. </para>
+                <example>
+                    <title>cURL List Clusters Request: JSON</title>
+                    <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/clusters -d \
+-H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
+-H "Accept: application/json" \
+-H "Content-type: application/json"</programlisting>
+                </example>
+                <example>
+                    <title>List Clusters Response: JSON</title>
+                    <programlisting>
+        {"clusters":
+          [
+            { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
+              "name": "slice",
+              "created": "2012-12-27T10:10:10Z",
+              "updated": "2012-12-27T10:15:10Z", 
+              "clusterType": "HADOOP_HDP1_1",
+              "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
+              "nodeCount": 5,
+              "postInitScriptStatus": "SUCCEEDED",
+              "progress": 1.0,
+              "status": "ACTIVE",
+              "links": [
+                { "rel": "self",
+                  "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
+                },
+                { "rel": "bookmark",
+                  "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
+                }
+              ],
+            },
+            { "id": "ac111111-2d86-4597-8010-cbe787bbbc41",
+              "name": "real",
+              "created": "2012-12-27T10:10:10Z",
+              "updated": "2012-12-27T10:15:10Z", 
+              "clusterType": "HBASE_HDP1_1",
+              "flavorId": "518400b2-7c76-11e2-b737-beeffa00040e",
+              "nodeCount": 20,
+              "postInitScriptStatus": null,
+              "progress": 1.0,
+              "status": "ACTIVE",
+              "links": [
+                { "rel": "self",
+                  "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/ac111111-2d86-4597-8010-cbe787bbbc41"
+                },
+                { "rel": "bookmark",
+                  "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/ac111111-2d86-4597-8010-cbe787bbbc41"
+                }
+              ],
+            },
+          ]
+        }
+        
+</programlisting>
+                </example>
+            </section>
         <section xml:id="viewDetails">
             <title>Viewing Details</title>
             <para>The Get Node Details operation lists all server
