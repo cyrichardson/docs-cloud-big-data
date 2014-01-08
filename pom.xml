@@ -12,24 +12,63 @@
       <plugin>
         <groupId>com.rackspace.cloud.api</groupId>
         <artifactId>clouddocs-maven-plugin</artifactId>
+        <!-- this <version> relates only to the *plugin* used for document formatting -->
+        <!-- the version of the *API* that is the subject of the document is indicated within each document -->      
         <version>1.12.0</version>
         <executions>
+      
           <execution>
+            <id>cbd-mgmt-devguide</id>          
             <goals>
 	             <goal>generate-webhelp</goal>
             </goals>
-            <phase>generate-sources</phase>
+            <phase>generate-sources</phase>          
             <configuration>
- <!--         <security>reviewer</security>   -->
-              <security>internal</security>
               <includes>
-    cbd-devguide.xml,
-		cbd-mgmt-devguide.xml,
-		cbd-getting-started.xml
-              </includes>
+              cbd-mgmt-devguide.xml
+            </includes>            
+            <enableDisqus>intranet</enableDisqus>            
+ <!--           <security>reviewer</security>  -->
+            <security>internal</security>
+            <canonicalUrlBase>http://docs-internal.rackspace.com/cbd/api/v1.0/cbd-mgmt-devguide/content</canonicalUrlBase>
+            <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
             </configuration>
           </execution>
+
+          <execution>
+            <id>cbd-devguide</id>
+            <goals>
+              <goal>generate-webhelp</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <enableDisqus>1</enableDisqus> 
+              <includes>
+                cbd-devguide.xml
+              </includes>
+              <canonicalUrlBase>http://docs.rackspace.com/cbd/api/v1.0/cbd-devguide/content</canonicalUrlBase>
+              <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
+            </configuration>
+          </execution> 
+          
+          <execution>
+            <id>cbd-getting-started</id>
+            <goals>
+              <goal>generate-webhelp</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <enableDisqus>1</enableDisqus> 
+              <includes>
+                cbd-getting-started.xml
+              </includes>
+              <canonicalUrlBase>http://docs.rackspace.com/cbd/api/v1.0/cbd-devguide/content</canonicalUrlBase>
+              <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
+            </configuration>
+          </execution> 
+          
         </executions>
+        
         <configuration>
           <branding>rackspace</branding>      
           <showXslMessages>true</showXslMessages>

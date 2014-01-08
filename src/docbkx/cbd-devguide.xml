@@ -44,14 +44,14 @@ format="SVG" scale="60"/>
     title.font.size="30px" 
     subtitle.font.size="20px"         
     canonical.url.base="http://docs-internal.rackspace.com/cbd/api/v1/cbd-devguide/content"
-    status.bar.text="Early Access"?>
+    status.bar.text="Limited Access"?>
   <title>Rackspace &PRODNAME; Developer Guide</title>
   <titleabbrev>&PRODNAME; Developer Guide</titleabbrev>
 -->
   <?rax title.font.size="35px" subtitle.font.size="20px"?>
   <title>Rackspace Cloud Big Data Developer Guide</title>
   <?rax status.bar.text.font.size="40px"
-          status.bar.text="Early Access"?>   
+          status.bar.text="Limited Access"?>   
   <titleabbrev>Rackspace Cloud Big Data Developer
     Guide</titleabbrev>
   <info>
@@ -66,11 +66,12 @@ format="SVG" scale="60"/>
     </author>
     <copyright>
       <year>2013</year>
-      <holder>Rackspace US, Inc.</holder>  
+      <year>2014</year>
+      <holder>Rackspace US, Inc.</holder>
     </copyright>
-    <releaseinfo>API v1.0 Early Access</releaseinfo>
+    <releaseinfo>API v1.0 Limited Access</releaseinfo>
     <productname>Rackspace &PRODNAME;</productname>
-    <pubdate>2013-10-29</pubdate>
+    <pubdate>2014-01-14</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the doc build
@@ -87,16 +88,22 @@ format="SVG" scale="60"/>
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
       <revision>
+        <date>2014-01-14</date>
+        <revdescription>
+          <para>Limited Access (LA) release</para>
+        </revdescription>
+      </revision>
+      <revision>
         <date>2013-10-29</date>
         <revdescription>
           <para>Corrected the URI for the Get Node Details operation
-            in <xref linkend="nodeOperations"/>.</para>
+            in <xref linkend="nodeOperations"/></para>
         </revdescription>
       </revision>
       <revision>
         <date>2013-09-16</date>
         <revdescription>
-          <para>Initial Early Access release</para>
+          <para>Initial Early Access (EA) release</para>
         </revdescription>
       </revision>
     </revhistory>
@@ -200,16 +207,16 @@ format="SVG" scale="60"/>
       <?rax revhistory?>
     </section>
     <section xml:id="Early_Access-d1e122">
-      <title>Early Access</title>
-      <para>The Early Access program enables customers and Rackers by
-        invitation to test an early version of the product and provide
-        feedback of the product and capabilities. The &PRODABBV; Early
-        Access Program is a pre-production service offering covered by
-        the Beta Services terms (<link
+      <title>Limited Access</title>
+      <para>The Limited Access program enables customers and Rackers
+        by invitation to test an early version of the product and
+        provide feedback of the product and capabilities. The
+        &PRODABBV; Limited Access Program is a pre-production service
+        offering covered by the Beta Services terms (<link
           xlink:href="http://www.rackspace.com/information/legal/testterms/"
           > rackspace.com/information/legal/testterms/</link>) in our
         Rackspace Cloud Terms of Service.</para>
-      <para>Early Access users must meet the following criteria:
+      <para>Limited Access users must meet the following criteria:
           <itemizedlist spacing="compact">
           <listitem>
             <para> A Rackspace Cloud account.</para>
@@ -232,7 +239,7 @@ format="SVG" scale="60"/>
           </listitem>
         </itemizedlist>
       </para>
-      <para>The following is supported during the Early Access
+      <para>The following is supported during the Limited Access
         Program: <itemizedlist spacing="compact">
           <listitem>
             <para> Operating System – CentOS 6.3. </para>
@@ -243,7 +250,7 @@ format="SVG" scale="60"/>
           </listitem>
         </itemizedlist>
       </para>
-      <para>The Early Access Program has some limitations. By using
+      <para>The Limited Access Program has some limitations. By using
         the &PRODNAME; API, you agree and understand
           that:<itemizedlist spacing="compact">
           <listitem>
@@ -253,16 +260,16 @@ format="SVG" scale="60"/>
               is only possible to reference containers in DFW.</para>
           </listitem>
           <listitem>
-            <para>There is no charge for this service during the Early
-              Access period.</para>
+            <para>There is no charge for this service during the
+              Limited Access period.</para>
           </listitem>
           <listitem>
             <para>We will charge for &PRODNAME; when this service
               becomes generally available.</para>
           </listitem>
           <listitem>
-            <para>If you participate in this Early Access Program, you
-              will receive a notification prior to general
+            <para>If you participate in this Limited Access Program,
+              you will receive a notification prior to general
               availability. </para>
           </listitem>
           <listitem>
@@ -274,7 +281,7 @@ format="SVG" scale="60"/>
           </listitem>
         </itemizedlist>
       </para>
-      <para>The following resource limits apply during the Early
+      <para>The following resource limits apply during the Limited
         Access Program: <itemizedlist spacing="compact">
           <listitem>
             <para>Up to 5 data nodes</para>
@@ -294,7 +301,7 @@ format="SVG" scale="60"/>
     <section xml:id="API_Contract_Changes-d1e122">
       <title>API Contract Changes</title>
       <para>The API contract is not locked and may change during the
-        Early Access Program.</para>
+        Limited Access Program.</para>
       <para>Rackspace will notify customers in Release Notes when and
         if the contract does change.</para>
     </section>
@@ -314,6 +321,9 @@ format="SVG" scale="60"/>
         base articles, forums, phone, chat, and email. </para>
       <para>Email all support questions to:
           <email>cbdbeta@rackspace.com</email>. </para>
+      <para>For information about getting started using Cloud Big
+        Data, refer to <citetitle>Getting Started with Rackspace Cloud
+          Big Data</citetitle>.</para>
       <para>You can follow Rackspace updates and announcements via
         twitter at: <link
           xlink:href="http://www.twitter.com/rackspace"
@@ -473,7 +483,7 @@ format="SVG" scale="60"/>
         replication, caching, and overall maintenance of &PRODNAME;
         data across regional boundaries to other Cloud Servers.</para>
       <para>The endpoint to use for your Cloud Big Data API calls for
-        the EA release is
+        the LA release is
           <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234</code>. </para>
       <?rax-fo keep-with-next?>
       <para>Replace the sample account ID number, <emphasis

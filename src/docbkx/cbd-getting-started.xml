@@ -52,7 +52,7 @@
     <?rax title.font.size="35px" subtitle.font.size="20px"?>
     <title>Rackspace Cloud Big Data Getting Started Guide</title>
     <?rax status.bar.text.font.size="40px"
-          status.bar.text="Early Access"?>   
+          status.bar.text="Limited Access"?>   
     <titleabbrev>Rackspace Cloud Big Data Getting Started
         Guide</titleabbrev>
      
@@ -60,11 +60,12 @@
         
         <copyright>
             <year>2013</year>
+            <year>2014</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
-        <releaseinfo>API v1.0 Early Access</releaseinfo>
+        <releaseinfo>API v1.0 Limited Access</releaseinfo>
         <productname>Rackspace Cloud Big Data</productname>
-        <pubdate>2013-11-01</pubdate>
+        <pubdate>2014-01-14</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the doc build process.</remark>
@@ -78,6 +79,17 @@
                     (<abbrev>API</abbrev>). </para>
         </abstract>
         <revhistory>
+            <revision>
+                <date>2014-01-14</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Initial Limited Access (LA)
+                                release.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-11-01</date>
                 <revdescription>
@@ -212,20 +224,20 @@
         <para>Follow the steps described in this guide to start using
             the Rackspace &PRODNAME; API.</para>
         <section xml:id="core_concepts">
-            <title>Early Access Program</title>
+            <title>Limited Access Program</title>
             <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
-                Early Access program enables customers and Rackers, by
-                invitation, to test an early version of the product
+                Limited Access program enables customers and Rackers,
+                by invitation, to test an early version of the product
                 and provide feedback on the product and its
-                capabilities. The &PRODNAME; Early Access program is a
-                preproduction service offering covered by the Beta
+                capabilities. The &PRODNAME; Limited Access program is
+                a preproduction service offering covered by the Beta
                 Services terms (<link
                     xlink:href="http://www.rackspace.com/information/legal/testterms/"
                     >rackspace.com/information/legal/testterms/</link>)
                 in the Rackspace Cloud Terms of Service.</para>
-            <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Early
-                Access users must meet the following criteria:
-                    <itemizedlist spacing="compact">
+            <para xmlns:wadl="http://wadl.dev.java.net/2009/02"
+                >Limited Access users must meet the following
+                criteria: <itemizedlist spacing="compact">
                     <listitem>
                         <para>A Rackspace Cloud account</para>
                     </listitem>
@@ -249,10 +261,10 @@
             <itemizedlist>
                 <listitem>
                     <para>There is no charge for this service during
-                        the Early Access period.</para>
+                        the Limited Access period.</para>
                 </listitem>
                 <listitem>
-                    <para>If you participate in this Early Access
+                    <para>If you participate in this Limited Access
                         program, you will receive a notification prior
                         to general availability.</para>
                 </listitem>
@@ -261,8 +273,8 @@
                 </listitem>
                 <listitem>
                     <para>The API contract is not locked and might
-                        change during the Early Access program. If the
-                        contract changes, Rackspace will notify
+                        change during the Limited Access program. If
+                        the contract changes, Rackspace will notify
                         customers in release notes. </para>
                 </listitem>
                 <listitem>
@@ -310,7 +322,7 @@
     <chapter xml:id="Service_Access_Endpoints-d1e753">
         <title>Service Endpoints</title>
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">During the
-            Early Access program for Cloud Big Data, you use the
+            Limited Access program for Cloud Big Data, you use the
             following endpoint for your API operations:
                 <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234</code>. </para>
 <!-- Not for EA
@@ -2382,8 +2394,8 @@ store final2 into 'result2';</programlisting>
         <para>For information about all Cloud Big Data API operations,
             see the <citetitle>Cloud Big Data Developer
                 Guide</citetitle> at <link
-                xlink:href="http://docs-internal.rackspace.com/"
-                >http://docs-internal.rackspace.com/</link>. All you
+                xlink:href="http://docs.rackspace.com/"
+                >http://docs.rackspace.com/</link>. All you
             need to get started with Cloud Big Data is this getting
             started guide and the developer guide. </para>
         <para>For more details about Rackspace &PRODNAME;, go to <link
