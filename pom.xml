@@ -46,7 +46,6 @@
               <includes>
                 cbd-devguide.xml
               </includes>
-              <security>internal</security>
               <canonicalUrlBase>http://docs.rackspace.com/cbd/api/v1.0/cbd-devguide/content</canonicalUrlBase>
               <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
             </configuration>
@@ -63,7 +62,6 @@
               <includes>
                 cbd-getting-started.xml
               </includes>
-              <security>internal</security>
               <canonicalUrlBase>http://docs.rackspace.com/cbd/api/v1.0/cbd-devguide/content</canonicalUrlBase>
               <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
             </configuration>
