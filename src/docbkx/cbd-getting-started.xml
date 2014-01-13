@@ -226,20 +226,24 @@
         <section xml:id="core_concepts">
             <title>Limited Access Program</title>
             <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
-                Limited Access program enables customers and Rackers,
-                by invitation, to test an early version of the product
-                and provide feedback on the product and its
-                capabilities. The &PRODNAME; Limited Access program is
-                a preproduction service offering covered by the Beta
-                Services terms (<link
-                    xlink:href="http://www.rackspace.com/information/legal/testterms/"
-                    >rackspace.com/information/legal/testterms/</link>)
-                in the Rackspace Cloud Terms of Service.</para>
+                Limited Access program enables customers and Rackers
+                to test an early version of the product and provide
+                feedback on the product and its capabilities.
+                Customers are screened as part of the on-boarding
+                process to ensure correct product/customer fit. </para>
             <para xmlns:wadl="http://wadl.dev.java.net/2009/02"
                 >Limited Access users must meet the following
                 criteria: <itemizedlist spacing="compact">
                     <listitem>
                         <para>A Rackspace Cloud account</para>
+                    </listitem>
+                    <listitem>
+                        <para>Prior knowledge of Hadoop or a 3rd party
+                            tool that works with Hadoop.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Ability to work with the Hortonworks
+                            Data Platform.</para>
                     </listitem>
                     <listitem>
                         <para>Prior knowledge of HTTP/1.1
@@ -260,16 +264,9 @@
                 understand the following conditions:</para>
             <itemizedlist>
                 <listitem>
-                    <para>There is no charge for this service during
-                        the Limited Access period.</para>
-                </listitem>
-                <listitem>
                     <para>If you participate in this Limited Access
                         program, you will receive a notification prior
                         to general availability.</para>
-                </listitem>
-                <listitem>
-                    <para>There is no Service Level Agreement.</para>
                 </listitem>
                 <listitem>
                     <para>The API contract is not locked and might
@@ -277,13 +274,9 @@
                         the contract changes, Rackspace will notify
                         customers in release notes. </para>
                 </listitem>
-                <listitem>
-                    <para>Support is available Monday through Friday
-                        from 8 a.m. to 5 p.m. (Central Time).</para>
-                </listitem>
             </itemizedlist>
         </section>
- <!--       <section xml:id="Pricing_SLA-d1e1362">
+      <section xml:id="Pricing_SLA-d1e1362">
             <title>Pricing and Service Level</title>
             <para>&PRODNAME; is part of the Rackspace Cloud and your
                 use through the API will be billed as per the pricing
@@ -295,6 +288,7 @@
                 billed as per the pricing schedule at <link
                     xlink:href="http://www.rackspace.com/cloud/public/servers/pricing"
                     >http://www.rackspace.com/cloud/public/servers/pricing</link>.</para>
+         
             <para>The Service Level Agreements (SLAs) for Cloud
                 Big Data and Cloud Servers are available at <link
                     xlink:href="http://www.rackspace.com/cloud/legal/sla/#cloud_bigdata"
@@ -303,7 +297,8 @@
                     xlink:href="http://www.rackspace.com/cloud/legal/sla"
                     >http://www.rackspace.com/cloud/legal/sla</link>
                 respectively.</para>
-        </section>  -->
+               
+        </section> 
         <section xml:id="Prerequisites_Examples">
             <title>Prerequisites for Running Examples</title>
             <para>To run the examples in this guide, you must have the
@@ -320,12 +315,7 @@
         </section>
     </chapter>
     <chapter xml:id="Service_Access_Endpoints-d1e753">
-        <title>Service Endpoints</title>
-        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">During the
-            Limited Access program for Cloud Big Data, you use the
-            following endpoint for your API operations:
-                <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234</code>. </para>
-<!-- Not for EA
+        <title>Service Access Endpoints</title>
         <para>The endpoints to use for your Cloud Big Data API calls
             are summarized in the table below.</para>
         <para>
@@ -359,15 +349,11 @@
                 </tbody>
             </table>
         </para>
--->        
-        
         <note>
             <para>All examples in this guide assume that you are
-                operating against the DFW data center. </para>
- <!--           <para>However, if you are using a different data center,
-                be sure to use the associated endpoint from the table
-                above instead.</para>
--->                
+                operating against the DFW data center. If you are
+                using a different data center, be sure to use the
+                associated endpoint from the table above.</para>
         </note>
         <para>Replace the sample account ID number,
                 <parameter>1234</parameter>, with your actual account
@@ -379,7 +365,7 @@
         <para>When you perform a Cloud Big Data API operation, place
             the endpoint at the beginning of the request URL. For
             example:
-                <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/your_acct_id/</code>.</para>
+                <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/yourAcctId/</code>.</para>
     </chapter>
     <chapter xml:id="Using_the_API_Directly">
         <title>Using the API Directly</title>

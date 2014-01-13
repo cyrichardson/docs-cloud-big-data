@@ -209,13 +209,17 @@ format="SVG" scale="60"/>
     <section xml:id="Early_Access-d1e122">
       <title>Limited Access</title>
       <para>The Limited Access program enables customers and Rackers
-        by invitation to test an early version of the product and
-        provide feedback of the product and capabilities. The
-        &PRODABBV; Limited Access Program is a pre-production service
-        offering covered by the Beta Services terms (<link
+        to test an early version of the product and provide feedback
+        of the product and capabilities. Customers are screened as
+        part of the on-boarding process to ensure correct
+        product/customer fit. </para>
+<!--      
+      <para>The &PRODABBV; Limited Access Program is a pre-production
+        service offering covered by the Beta Services terms (<link
           xlink:href="http://www.rackspace.com/information/legal/testterms/"
           > rackspace.com/information/legal/testterms/</link>) in our
         Rackspace Cloud Terms of Service.</para>
+-->        
       <para>Limited Access users must meet the following criteria:
           <itemizedlist spacing="compact">
           <listitem>
@@ -228,6 +232,9 @@ format="SVG" scale="60"/>
           <listitem>
             <para>Ability to work with the Hortonworks Data
               Platform.</para>
+          </listitem>
+          <listitem>
+            <para>Prior knowledge of HTTP/1.1 conventions</para>
           </listitem>
           <listitem>
             <para>Basic familiarity with Cloud and RESTful
@@ -250,8 +257,7 @@ format="SVG" scale="60"/>
           </listitem>
         </itemizedlist>
       </para>
-      <para>The Limited Access Program has some limitations. By using
-        the &PRODNAME; API, you agree and understand
+      <para>By using the &PRODNAME; API, you agree and understand
           that:<itemizedlist spacing="compact">
           <listitem>
             <para>&PRODNAME; includes a Swift integration feature
@@ -260,29 +266,14 @@ format="SVG" scale="60"/>
               is only possible to reference containers in DFW.</para>
           </listitem>
           <listitem>
-            <para>There is no charge for this service during the
-              Limited Access period.</para>
-          </listitem>
-          <listitem>
-            <para>We will charge for &PRODNAME; when this service
-              becomes generally available.</para>
-          </listitem>
-          <listitem>
             <para>If you participate in this Limited Access Program,
               you will receive a notification prior to general
               availability. </para>
           </listitem>
-          <listitem>
-            <para>There is no Service Level Agreement. </para>
-          </listitem>
-          <listitem>
-            <para>Support is available from 8 AM – 5 PM (Central Time)
-              Monday–Friday.</para>
-          </listitem>
         </itemizedlist>
       </para>
       <para>The following resource limits apply during the Limited
-        Access Program: <itemizedlist spacing="compact">
+        Access program: <itemizedlist spacing="compact">
           <listitem>
             <para>Up to 5 data nodes</para>
           </listitem>
@@ -300,27 +291,50 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="API_Contract_Changes-d1e122">
       <title>API Contract Changes</title>
-      <para>The API contract is not locked and may change during the
-        Limited Access Program.</para>
+      <para>The API contract is not locked and might change during the
+        Limited Access program.</para>
       <para>Rackspace will notify customers in Release Notes when and
         if the contract does change.</para>
     </section>
+    <section xml:id="Pricing_SLA-d1e1362">
+      <title>Pricing and Service Level</title>
+      <para>&PRODNAME; is part of the Rackspace Cloud and your use
+        through the API will be billed as per the pricing schedule at
+          <link
+          xlink:href="http://www.rackspace.com/cloud/public/bigdata/pricing"
+          >http://www.rackspace.com/cloud/public/bigdata/pricing</link>.
+        Cloud Servers is also part of the Rackspace Cloud and your use
+        through the Cloud Control Panel will be billed as per the
+        pricing schedule at <link
+          xlink:href="http://www.rackspace.com/cloud/public/servers/pricing"
+          >http://www.rackspace.com/cloud/public/servers/pricing</link>.</para>
+           
+            <para>The Service Level Agreements (SLAs) for Cloud
+                Big Data and Cloud Servers are available at <link
+                    xlink:href="http://www.rackspace.com/cloud/legal/sla/#cloud_bigdata"
+                    >http://www.rackspace.com/cloud/legal/sla/#cloud_bigdata</link>
+                and <link
+                    xlink:href="http://www.rackspace.com/cloud/legal/sla"
+                    >http://www.rackspace.com/cloud/legal/sla</link>
+                respectively.</para>
+
+    </section>
     <section xml:id="Additional_Resources-d1e532">
       <title>Additional Resources</title>
-      <!--
+
       <para>You can download the most current versions of the
         API-related documents from <link
           xlink:href="http://docs.rackspace.com/api/"
           >docs.rackspace.com/api/</link>. 
       </para>
-      -->
+
       <para>For information about Rackspace Cloud products, refer to
           <link xlink:href="http://www.rackspace.com/cloud/">
           www.rackspace.com/cloud</link>. This site also offers links
         to Rackspace's official support channels, including knowledge
         base articles, forums, phone, chat, and email. </para>
       <para>Email all support questions to:
-          <email>cbdbeta@rackspace.com</email>. </para>
+          <email>cbdteam@rackspace.com</email>. </para>
       <para>For information about getting started using Cloud Big
         Data, refer to <citetitle>Getting Started with Rackspace Cloud
           Big Data</citetitle>.</para>
@@ -482,21 +496,51 @@ format="SVG" scale="60"/>
         of the service is therefore responsible for appropriate
         replication, caching, and overall maintenance of &PRODNAME;
         data across regional boundaries to other Cloud Servers.</para>
-      <para>The endpoint to use for your Cloud Big Data API calls for
-        the LA release is
-          <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234</code>. </para>
+      <para>The endpoints to use for your Cloud Big Data API calls are
+        summarized in the table below.</para>
+      <para>
+        <table rules="all">
+          <caption>Regionalized Service Endpoints</caption>
+          <thead>
+            <tr align="center">
+              <td colspan="2">Region</td>
+              <td colspan="5">Endpoint</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr align="left">
+              <td colspan="2">Chicago (ORD)</td>
+              <td colspan="5"
+                  ><code>https://ord.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
+              </td>
+            </tr>
+            <tr align="left">
+              <td colspan="2">Dallas/Ft. Worth (DFW)</td>
+              <td colspan="5"
+                  ><code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
+              </td>
+            </tr>
+            <tr align="left">
+              <td colspan="2">London (LON)</td>
+              <td colspan="5"
+                  ><code>https://lon.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </para>
+      <para>Replace the sample account ID number,
+          <parameter>1234</parameter>, with your actual account
+        number, which is returned as part of the authentication
+        service response. </para>
       <?rax-fo keep-with-next?>
-      <para>Replace the sample account ID number, <emphasis
-          role="italic">1234</emphasis>, with your actual account
-        number returned as part of the authentication service
-        response.</para>
       <para>You will find the actual account number after the final
         '/' in the <code>publicURL</code> field returned by the
-        authentication response. In the following example, you can see
-        from the <code>publicURL</code> field for
-          <code>cloudServers</code>,
-          <code>publicURL="https://servers.api.rackspacecloud.com/v1.0/322781"</code>,
-        that the account number is 322781.</para>
+        authentication response. In the following example from that
+        response, you can see from the <code>publicURL</code> field
+        for <code>cloudServers</code>,
+          <code>publicURL="https://dfw.servers.api.rackspacecloud.com/v2/110011"</code>,
+        that the account number is 110011.</para>
     </section>
     <section xml:id="Request_Response_Types-d1e903">
       <title>Request/Response Types</title>
