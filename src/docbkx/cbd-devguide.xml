@@ -115,20 +115,20 @@ format="SVG" scale="60"/>
   </info>
   <chapter xml:id="overview">
     <title>Overview</title>
-    <para>Rackspace &PRODNAME; (&PRODABBV;) is an on-demand Apache
-      Hadoop service on the Rackspace open cloud. It alleviates the
-      pain associated with deploying, managing, and scaling Hadoop
-      clusters, allowing you to focus on your core business. </para>
-    <para>Rackspace Cloud Big Data is just as flexible and
-      feature-rich as running Hadoop on your own. You will benefit
-      from on-demand servers, utility-based pricing, and have access
-      to the full set of Hadoop features and APIs. However, you will
-      not have to worry about provisioning, growing, or maintaining
-      your Hadoop infrastructure. Our service uses an environment,
-      which is specifically optimized for Hadoop. This ensures that
-      your jobs will run efficiently and reliably. Please note that
-      you will still be responsible for developing, troubleshooting,
-      and deploying your applications. </para>
+    <para>Rackspace &PRODNAME; is an on-demand Apache Hadoop service
+      on the Rackspace open cloud. The service supports a RESTful API
+      and alleviates the pain associated with deploying, managing, and
+      scaling Hadoop clusters. </para>
+    <para>Cloud Big Data is just as flexible and feature-rich as
+      Hadoop. With Cloud Big Data, you benefit from on-demand servers,
+      utility-based pricing, and access to the full set of Hadoop
+      features and APIs. However, you do not have to worry about
+      provisioning, growing, or maintaining your Hadoop
+      infrastructure. The Cloud Big Data service uses an environment
+      that is specifically optimized for Hadoop, which ensures that
+      your jobs run efficiently and reliably. Note that you are still
+      responsible for developing, troubleshooting, and deploying your
+      applications. </para>
     <remark>Reviewers: If you have an architecture diagram for Cloud
       Big Data that you want included here, please send it to
       me.</remark>
@@ -137,27 +137,27 @@ format="SVG" scale="60"/>
     <para>&lt;&lt;&lt;&lt;&lt;&lt; Figure coming by 9/12/2013 from
       David Dobbins>>>>>>></para>
 -->      
-    <para>There are two primary use cases for &PRODNAME;: </para>
+    <para>The primary use cases for &PRODNAME; are as follows: </para>
     <itemizedlist>
       <listitem>
-        <para>To create on-demand infrastructure for applications in
+        <para>Create on-demand infrastructure for applications in
           production where physical servers would be too costly and
           time-consuming to configure and maintain.</para>
       </listitem>
       <listitem>
-        <para>To develop, test, and pilot data analysis
+        <para>Develop, test, and pilot data analysis
           applications.</para>
       </listitem>
     </itemizedlist>
-    <para> The benefits of &PRODNAME; include allowing you to: <itemizedlist>
+    <para>&PRODNAME; provides the following benefits: <itemizedlist>
         <listitem>
           <para>Create or resize Hadoop clusters in minutes and pay
             only for what you use.</para>
         </listitem>
         <listitem>
-          <para>Access Hortonworks Data Platform (HDP), an
-            enterprise-ready distribution that is 100% Apache open
-            source.</para>
+          <para>Access the Hortonworks Data Platform (HDP), an
+            enterprise-ready distribution that is 100 percent Apache
+            open source.</para>
         </listitem>
         <listitem>
           <para>Provision and manage Hadoop using an easy-to-use
@@ -179,13 +179,13 @@ format="SVG" scale="60"/>
     </para>
     <section xml:id="Intended_Audience-d1e122">
       <title>Intended Audience</title>
-      <para>This Guide is intended to assist software developers who
-        want to develop applications using the &PRODNAME; API. It
+      <para>This guide is intended to assist software developers who
+        want to develop applications by using the &PRODNAME; API. It
         assumes the reader has a general understanding of Big Data
-        concepts and is familiar with: </para>
+        concepts and is familiar with the following technology: </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>Hadoop, Apace Hadoop Distributed File System (HDFS),
+          <para>Hadoop, Apache Hadoop Distributed File System (HDFS),
             and MapReduce</para>
         </listitem>
         <listitem>
@@ -201,20 +201,20 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="Document_Change_History-d1e166">
       <title>Document Change History</title>
-      <para>This version of the Developer Guide replaces and obsoletes
-        all previous versions. The most recent changes are described
-        in the table below:</para>
+      <para>This version of the guide replaces and obsoletes all
+        earlier versions. The most recent changes are described in the
+        following table:</para>
       <?rax revhistory?>
     </section>
     <section xml:id="Early_Access-d1e122">
       <title>Limited Access</title>
       <para>The Limited Access program enables customers and Rackers
         to test an early version of the product and provide feedback
-        of the product and capabilities. Customers are screened as
+        on the product and capabilities. Customers are screened as
         part of the on-boarding process to ensure correct
         product/customer fit. </para>
 <!--      
-      <para>The &PRODABBV; Limited Access Program is a pre-production
+      <para>The &PRODABBV; Limited Access program is a pre-production
         service offering covered by the Beta Services terms (<link
           xlink:href="http://www.rackspace.com/information/legal/testterms/"
           > rackspace.com/information/legal/testterms/</link>) in our
@@ -223,47 +223,46 @@ format="SVG" scale="60"/>
       <para>Limited Access users must meet the following criteria:
           <itemizedlist spacing="compact">
           <listitem>
-            <para> A Rackspace Cloud account.</para>
+            <para> A Rackspace Cloud account</para>
           </listitem>
           <listitem>
-            <para>Prior knowledge of Hadoop or a 3rd party tool that
-              works with Hadoop.</para>
+            <para>Prior knowledge of Hadoop or a third-party tool that
+              works with Hadoop</para>
           </listitem>
           <listitem>
-            <para>Ability to work with the Hortonworks Data
-              Platform.</para>
+            <para>Ability to work with the Hortonworks Data Platform
+              (HDP)</para>
           </listitem>
           <listitem>
             <para>Prior knowledge of HTTP/1.1 conventions</para>
           </listitem>
           <listitem>
-            <para>Basic familiarity with Cloud and RESTful
-              APIs.</para>
+            <para>Basic familiarity with Cloud and RESTful APIs</para>
           </listitem>
           <listitem>
-            <para>A willingness to provide feedback to Rackspace’s
-              Product and Product Marketing functions.</para>
+            <para>A willingness to provide feedback to the Rackspace
+              Product and Product Marketing functions</para>
           </listitem>
         </itemizedlist>
       </para>
-      <para>The following is supported during the Limited Access
-        Program: <itemizedlist spacing="compact">
+      <para>The following OS and Hadoop Distribution are supported
+        during the Limited Access program: <itemizedlist
+          spacing="compact">
           <listitem>
-            <para> Operating System – CentOS 6.3. </para>
+            <para>CentOS 6.3 </para>
           </listitem>
           <listitem>
-            <para> Hadoop Distribution – Hortonworks Data Platform
-              (HDP) version 1.1. </para>
+            <para>HDP version 1.1 </para>
           </listitem>
         </itemizedlist>
       </para>
-      <para>By using the &PRODNAME; API, you agree and understand
-          that:<itemizedlist spacing="compact">
+      <para>By using the &PRODNAME; API, you understand and agree to
+        the following limitations and conditions:<itemizedlist
+          spacing="compact">
           <listitem>
             <para>&PRODNAME; includes a Swift integration feature
               wherein Hadoop, MapReduce, or Apache Pig jobs can
-              directly reference Cloud Files containers. Currently, it
-              is only possible to reference containers in DFW.</para>
+              directly reference Cloud Files containers. </para>
           </listitem>
           <listitem>
             <para>If you participate in this Limited Access Program,
@@ -281,10 +280,10 @@ format="SVG" scale="60"/>
             <para>Up to 10 virtual CPUs</para>
           </listitem>
           <listitem>
-            <para>Up to 40 GBs of RAM</para>
+            <para>Up to 40 GB of RAM</para>
           </listitem>
           <listitem>
-            <para>Up to 5 terabytes of disk space</para>
+            <para>Up to 5 TB of disk space</para>
           </listitem>
         </itemizedlist>
       </para>
@@ -292,9 +291,8 @@ format="SVG" scale="60"/>
     <section xml:id="API_Contract_Changes-d1e122">
       <title>API Contract Changes</title>
       <para>The API contract is not locked and might change during the
-        Limited Access program.</para>
-      <para>Rackspace will notify customers in Release Notes when and
-        if the contract does change.</para>
+        Limited Access program. If the contract changes, Rackspace
+        will notify customers in release notes.</para>
     </section>
     <section xml:id="Pricing_SLA-d1e1362">
       <title>Pricing and Service Level</title>
@@ -311,12 +309,8 @@ format="SVG" scale="60"/>
            
             <para>The Service Level Agreements (SLAs) for Cloud
                 Big Data and Cloud Servers are available at <link
-                    xlink:href="http://www.rackspace.com/cloud/legal/sla/#cloud_bigdata"
-                    >http://www.rackspace.com/cloud/legal/sla/#cloud_bigdata</link>
-                and <link
                     xlink:href="http://www.rackspace.com/cloud/legal/sla"
-                    >http://www.rackspace.com/cloud/legal/sla</link>
-                respectively.</para>
+                    >http://www.rackspace.com/cloud/legal/sla</link>.</para>
 
     </section>
     <section xml:id="Additional_Resources-d1e532">
@@ -328,32 +322,30 @@ format="SVG" scale="60"/>
           >docs.rackspace.com/api/</link>. 
       </para>
 
-      <para>For information about Rackspace Cloud products, refer to
+      <para>For information about Rackspace Cloud products, go to
           <link xlink:href="http://www.rackspace.com/cloud/">
           www.rackspace.com/cloud</link>. This site also offers links
-        to Rackspace's official support channels, including knowledge
+        to official  Rackspace support channels, including knowledge
         base articles, forums, phone, chat, and email. </para>
-      <para>Email all support questions to:
+      <para>Email all support questions to
           <email>cbdteam@rackspace.com</email>. </para>
       <para>For information about getting started using Cloud Big
         Data, refer to <citetitle>Getting Started with Rackspace Cloud
           Big Data</citetitle>.</para>
       <para>You can follow Rackspace updates and announcements via
-        twitter at: <link
-          xlink:href="http://www.twitter.com/rackspace"
+        Twitter at <link xlink:href="http://www.twitter.com/rackspace"
           >www.twitter.com/rackspace</link>. </para>
       <para>This API uses standard HTTP 1.1 response codes as
-        documented at: <link
+        documented at <link
           xlink:href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"
-          >www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>.
-      </para>
+          >www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>. </para>
     </section>
   </chapter>
   <chapter xml:id="Concepts-d1e563">
     <title>Concepts</title>
     <?dbhtml stop-chunking?>
     <para>To use the Cloud Big Data API effectively, you should
-      understand the terminology found in the <xref
+      understand the terminology defined in the <xref
         linkend="glossary_1"/> at the end of the book.</para>
   </chapter>
   <chapter xml:id="General_API_Information-d1e633"
@@ -362,13 +354,10 @@ format="SVG" scale="60"/>
     xmlns:html="http://www.w3.org/1999/xhtml">
     <title>General API Information</title>
     <para>The &PRODNAME; API is implemented using a RESTful web
-      service interface. Like other products in the Rackspace Cloud
-      suite, &PRODNAME; shares a common token-based authentication
-      system that allows seamless access between products and
-      services. </para>
-    <para>Like other products in the Rackspace Cloud suite, &PRODNAME;
-      shares a common token-based authentication system that allows
-      seamless access between products and services. </para>
+      service interface. &PRODNAME; shares a common token-based
+      authentication system with other products in the Rackspace Cloud
+      suite. This system enables seamless access between Rackspace
+      products and services. </para>
     <note>
       <para> All requests to authenticate against and operate the
         service are performed using SSL over HTTP (HTTPS) on TCP port
@@ -376,102 +365,94 @@ format="SVG" scale="60"/>
     </note>
     <section xml:id="Authentication-d1e647">
       <title>Authentication</title>
-      <para>Every REST request against the &PRODNAME; Service requires
-        the inclusion of a specific authorization token, supplied by
+      <para>Each REST request against the &PRODNAME; service requires
+        the inclusion of a specific authorization token, supplied in
         the <code>X-Auth-Token</code> HTTP header. Customers obtain
-        this token by first using the Rackspace Cloud Authentication
-        Service and supplying a valid username and API access key. </para>
-      <para>To authenticate, submit a <code>POST/v2.0/tokens</code>
-        request, presenting valid Rackspace customer credentials in
-        the message body to a Rackspace authentication endpoint. </para>
+        this token by first using the Rackspace Cloud Identity service
+        and supplying a valid user name and API access key. </para>
+      <para>To authenticate, you submit a
+          <code>POST/v2.0/tokens</code> request, presenting valid
+        Rackspace customer credentials in the message body to a
+        Rackspace authentication endpoint. </para>
       <note>
-        <para>If you cannot access the &PRODNAME; Management API,
-          please email the &PRODNAME; team at
+        <para>If you cannot access the &PRODNAME; API, send an email
+          to the &PRODNAME; team at
             <email>cbdteam@rackspace.com</email> to request access.
           Access will be granted on an as-needed basis until access to
-          the Management API is integrated with Global Auth.</para>
+          the &PRODNAME; API is integrated with Cloud Identity
+          service.</para>
       </note>
-      <para><emphasis role="bold">GET YOUR CREDENTIALS</emphasis>
+      <para><emphasis role="bold">1. GET YOUR CREDENTIALS</emphasis>
       </para>
-      <para> You can use either of two sets of credentials: <itemizedlist>
+      <para> You can use either of the following sets of credentials: <itemizedlist>
           <listitem>
-            <para>your <code>username</code> and
-              <code>password</code></para>
+            <para>Your user name and password</para>
           </listitem>
           <listitem>
-            <para>your <code>username</code> and <code>API
-              key</code></para>
+            <para>Your user name and API key</para>
           </listitem>
         </itemizedlist>
       </para>
-      <para>Your <code>username</code> and <code>password</code> are
-        the ones you use to login to the Rackspace control panel. Once
-        you are logged in, you can use the Rackspace control panel to
-        obtain your <code>API key</code>. </para>
+      <para>Your user name and password are the ones that you use to
+        log in to the Rackspace Cloud Control Panel. After you are
+        logged in, you can use the Rackspace Cloud Control Panel to
+        obtain your API key. </para>
+      <para> US and UK based accounts use the Cloud Control Panel at
+          <link xlink:href="https://mycloud.rackspacecloud.com/"
+          >https://mycloud.rackspace.com/</link>. </para>
       <para>
-        <itemizedlist spacing="compact">
-          <listitem>
-            <para> US and UK based accounts use the control panel at
-                <link xlink:href="https://manage.rackspacecloud.com/"
-                >https://mycloud.rackspace.com/</link>. </para>
-          </listitem>
-        </itemizedlist>
+        <emphasis role="bold">2. CHOOSE YOUR AUTHENTICATION
+          ENDPOINT</emphasis>
       </para>
-      <para>
-        <emphasis role="bold">CHOOSE YOUR AUTHENTICATION </emphasis>
-      </para>
-      <para> Use the authentication endpoint for the region in which
-        your account is based: <itemizedlist>
-          <listitem>
-            <para>All accounts authenticate through <link
-                xlink:href="https://identity.api.rackspacecloud.com/v2.0/tokens"
-                >
-              identity.api.rackspacecloud.com/v2.0/tokens</link>.</para>
-          </listitem>
-        </itemizedlist>
-      </para>
-      <para><emphasis role="bold">SEND YOUR CREDENTIALS TO YOUR
+      <para>Use the authentication endpoint for the region in which
+        your account is based. All accounts authenticate through <link
+          xlink:href="https://identity.api.rackspacecloud.com/v2.0/tokens"
+          >https://identity.api.rackspacecloud.com/v2.0/tokens</link>.</para>
+      <para> </para>
+      <para><emphasis role="bold">3. SEND YOUR CREDENTIALS TO YOUR
           AUTHENTICATION ENDPOINT</emphasis>
       </para>
       <para>If you know your credentials and your authentication
         endpoint, and you can issue a <code>POST /v2.0/tokens</code>
-        request in an API call, you have all the basic information you
-        need to use the Rackspace Cloud Identity Service. </para>
+        request in an API call, you have all the basic information
+        that you need to use the Rackspace Cloud Identity service. </para>
       <para> You can use <link xlink:href="http://curl.haxx.se/"
-          >cURL</link> to try the authentication process in two steps:
-        get a token; send the token to a service.<orderedlist>
+          >cURL</link> to perform the authentication process in two
+        steps: get a token, and send the token to a service.<orderedlist>
           <listitem>
-            <para>Get an authentication token by providing your
-              username and either your API key or your password. Here
+            <para>Get an authentication token by providing your user
+              name and either your API key or your password. Following
               are examples of both approaches:</para>
-            <para><emphasis>You can request a token by providing your
-                username and your API key.</emphasis></para>
-            <para>
-              <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d 
-'{ "auth":{ "RAX-KSKEY:apiKeyCredentials":{ "username":"theUserName", "apiKey":"00a00000a000a0000000a000a00aaa0a" } } }' -H "Content-type: application/json"</literallayout>
-            </para>
-            <para><emphasis>You can request a token by providing your
-                username and your password.</emphasis></para>
-            <para>
+            <example>
+              <title>User Name and API Key</title><literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d 
+'{ "auth":{ "RAX-KSKEY:apiKeyCredentials":{ "username":"yourUserName", "apiKey":"yourApiKey" } } }' -H "Content-type: application/json"</literallayout>
+             
+            </example>
+            <example>
+              <title>User Name and Password</title>
               <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d
-'{"auth":{"passwordCredentials":{"username":"theUserName","password":"thePassword"}}}' -H "Content-type: application/json"</literallayout>
-            </para>
-            <para>Successful authentication returns a token which you
+'{"auth":{"passwordCredentials":{"username":"yourUserName","password":"yourPassword"}}}' -H "Content-type: application/json"</literallayout> </example>
+            <para>Successful authentication returns a token that you
               can use as evidence that your identity has already been
               authenticated. To use the token, pass it to other
               services as an <code>X-Auth-Token</code> header. </para>
-            <para>Authentication also returns a service catalog,
-              listing the endpoints you can use for Cloud services. </para>
+            <para>Authentication also returns a service catalog, which
+              lists the endpoints that you can use for Rackspace Cloud
+              services. </para>
           </listitem>
           <listitem>
-            <para>Use the authentication token to send a GET to a
-              service you would like to use. Here is an example of
-              passing an authentication token to the Cloud Files
-              service, using the Cloud Files service catalog endpoint
+            <para>Use the authentication token to send a GET request
+              to a service that you want to use. The following example
+              shows passing an authentication token to the &PRODNAME;
+              service by using the &PRODNAME; service catalog endpoint
               that was returned along with the token.</para>
-            <para><emphasis>You can use a token and a service endpoint
-                to tell a service that your credentials are
-                valid.</emphasis></para>
+            <example>
+              <title>cURL Get Profile Request: JSON</title>
+              <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/profile -d  \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
+-H "Accept: application/json"\
+-H "Content-type: application/json"</programlisting>
+            </example>
           </listitem>
         </orderedlist>
       </para>
@@ -481,18 +462,18 @@ format="SVG" scale="60"/>
         endpoint. </para>
       <important>
         <para>If you are programmatically parsing an authentication
-          response, please be aware that service names are stable for
-          the life of the particular service and can be used as keys.
-          You should also be aware that a user's service catalog can
-          include multiple uniquely-named services which perform
-          similar functions. In Auth 2.0, the service type attribute
-          can be used as a key by which to recognize similar services;
-          see the tip below. </para>
+          response, be aware that service names are stable for the
+          life of the particular service and can be used as keys. You
+          should also be aware that a user's service catalog can
+          include multiple uniquely named services that perform
+          similar functions. In Cloud Identity 2.0, the service type
+          attribute can be used as a key by which to recognize similar
+          services. </para>
       </important>
     </section>
     <section xml:id="Service_Access_Endpoints-d1e753">
       <title>Service Access Endpoints</title>
-      <para>The &PRODNAME; Service is a regionalized service. The user
+      <para>The &PRODNAME; service is a regionalized service. The user
         of the service is therefore responsible for appropriate
         replication, caching, and overall maintenance of &PRODNAME;
         data across regional boundaries to other Cloud Servers.</para>
@@ -511,47 +492,38 @@ format="SVG" scale="60"/>
             <tr align="left">
               <td colspan="2">Chicago (ORD)</td>
               <td colspan="5"
-                  ><code>https://ord.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
-              </td>
+                  ><code>https://ord.bigdata.api.rackspacecloud.com/v1.0/</code><parameter><replaceable>yourAccountID</replaceable></parameter>/ </td>
             </tr>
             <tr align="left">
               <td colspan="2">Dallas/Ft. Worth (DFW)</td>
               <td colspan="5"
-                  ><code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
-              </td>
+                  ><code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/</code><parameter><replaceable>yourAccountID</replaceable></parameter>/ </td>
             </tr>
             <tr align="left">
               <td colspan="2">London (LON)</td>
               <td colspan="5"
-                  ><code>https://lon.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
-              </td>
+                  ><code>https://lon.bigdata.api.rackspacecloud.com/v1.0/</code><parameter><replaceable>yourAccountID</replaceable></parameter>/ </td>
             </tr>
           </tbody>
         </table>
       </para>
-      <para>Replace the sample account ID number,
-          <parameter>1234</parameter>, with your actual account
-        number, which is returned as part of the authentication
-        service response. </para>
+      <para>Replace the
+          <code><replaceable>yourAccountID</replaceable></code>
+        placeholder with your actual account number, , which is
+        returned as part of the authentication service response, after
+        the final '/' in the <code>publicURL</code> field. </para>
       <?rax-fo keep-with-next?>
-      <para>You will find the actual account number after the final
-        '/' in the <code>publicURL</code> field returned by the
-        authentication response. In the following example from that
-        response, you can see from the <code>publicURL</code> field
-        for <code>cloudServers</code>,
-          <code>publicURL="https://dfw.servers.api.rackspacecloud.com/v2/110011"</code>,
-        that the account number is 110011.</para>
     </section>
     <section xml:id="Request_Response_Types-d1e903">
-      <title>Request/Response Types</title>
+      <title>Request and Response Types</title>
       <para>The &PRODNAME; API supports JSON data serialization
-        formats. The request format is specified using the
-          <code>Content-Type</code> header and is required for calls
-        that have a request body. The response format can be specified
-        in requests either by using the <code>Accept</code> header or
-        by adding <code>.json</code> extension to the request URI.
-        Note that JSON is the default format for data
-        serialization.</para>
+        formats. The request format is specified by using the
+          <code>Content-Type</code> header and is required for
+        operations that have a request body. The response format can
+        be specified in requests either by using the
+          <code>Accept</code> header or by adding <code>.json</code>
+        extension to the request URI. Note that JSON is the default
+        format for data serialization.</para>
       <table rules="all">
         <caption>Response Formats</caption>
         <?dbfo keep-together="always"?>
@@ -575,8 +547,8 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="volume_status">
       <title>Faults</title>
-      <para>When an error occurs, the &PRODNAME; Service returns a
-        fault object containing an HTTP error response code that
+      <para>When an error occurs, the &PRODNAME; service returns a
+        fault object that contains an HTTP error response code that
         denotes the type of error. In the body of the response, the
         system will return additional information about the
         fault.</para>
@@ -594,14 +566,14 @@ format="SVG" scale="60"/>
           <tr>
             <td colspan="2"><code>badRequest</code></td>
             <td colspan="1">400</td>
-            <td colspan="3">There is an error in the user-provided
-              request.</td>
+            <td colspan="3">The user-provided request contained an
+              error.</td>
           </tr>
           <tr>
             <td colspan="2"><code>unauthorized</code></td>
             <td colspan="1">401</td>
             <td colspan="3">The supplied token is not authorized to
-              access the resources. Either the token is expired or
+              access the resources. The token is either expired or
               invalid.</td>
           </tr>
           <tr>
@@ -644,31 +616,31 @@ format="SVG" scale="60"/>
       <title>Limits</title>
       <para>All accounts, by default, have a preconfigured set of
         thresholds (or limits) to manage capacity and prevent abuse of
-        the system. The system recognizes two kinds of limits:
-          <firstterm>rate limits</firstterm> and <firstterm>absolute
+        the system. The system recognizes <firstterm>rate
+          limits</firstterm> and <firstterm>absolute
           limits</firstterm>. Rate limits are thresholds that are
         reset after a certain amount of time passes. Absolute limits
         are fixed. </para>
       <section xml:id="Rate_Limits-d1e1222">
         <title>Rate Limits</title>
-        <para>Rate limits are specified in terms of both a
-          human-readable wildcard URI and a machine-processable
-          regular expression. The regular expression boundary matcher
-          '^' takes effect after the root URI path. For example, the
-          regular expression ^/v1.0/clusters would match the bold
-          portion of the following URI:
+        <para>Rate limits are specified in both a human-readable
+          wildcard URI and a machine-processable regular expression.
+          The regular expression boundary matcher '<code>^</code>'
+          takes effect after the root URI path. For example, the
+          regular expression <code>^/v1.0/clusters</code> would match
+          the bold portion of the following URI:
             https://dfw.bigdata.api.rackspacecloud.com<emphasis
             role="bold">/v1.0/clusters</emphasis>. </para>
         <para>The following table specifies the default rate limits
-          for all API operations for all &GET;, &POST;, &PUT;, and
-          &DELETE; calls for clusters: </para>
+          for all &GET;, &POST;, &PUT;, and &DELETE; API operations
+          for clusters.</para>
         <table rules="all">
           <caption>Default Rate Limits</caption>
           <thead>
             <tr align="center">
               <td colspan="1">Verb</td>
               <td colspan="2">URI</td>
-              <td colspan="2">RegEx</td>
+              <td colspan="2">Regular Expression</td>
               <td colspan="1">Default</td>
             </tr>
           </thead>
@@ -677,52 +649,53 @@ format="SVG" scale="60"/>
               <td colspan="1">&GET; changes-since</td>
               <td colspan="2">*/clusters/*</td>
               <td colspan="2">^/vd+.d+/clusters.*</td>
-              <td colspan="1">3/minute</td>
+              <td colspan="1">3 per minute</td>
             </tr>
             <tr>
               <td colspan="1">&POST;</td>
               <td colspan="2">*/clusters/*</td>
               <td colspan="2">^/vd+.d+/clusters.*</td>
-              <td colspan="1">2/minute</td>
+              <td colspan="1">2 per minute</td>
             </tr>
             <tr>
               <td colspan="1">&POST; clusters</td>
               <td colspan="2">*/clusters/*</td>
               <td colspan="2">^/vd+.d+/clusters.*</td>
-              <td colspan="1">50/day</td>
+              <td colspan="1">50 per day</td>
             </tr>
             <tr>
               <td colspan="1">&PUT;</td>
               <td colspan="2">*/clusters/*</td>
               <td colspan="2">^/vd+.d+/clusters.*</td>
-              <td colspan="1">2/minute</td>
+              <td colspan="1">2 per minute</td>
             </tr>
             <tr>
               <td colspan="1">&DELETE;</td>
               <td colspan="2">*/clusters/*</td>
               <td colspan="2">^/vd+.d+/clusters.*</td>
-              <td colspan="1">5/minute</td>
+              <td colspan="1">5 per minute</td>
             </tr>
           </tbody>
         </table>
         <para>Rate limits are applied in order relative to the verb,
           going from least to most specific. For example, although the
-          threshold for &POST; to /v1.0/* is 2 per minute, one cannot
-          &POST; to /v1.0/* more than 50 times within a single day. </para>
+          threshold for issuing a &POST; request to
+            <code>/v1.0/*</code> is 2 per minute, you cannot issue a
+          &POST; request to <code>/v1.0/*</code> more than 50 times
+          within a single day. </para>
         <para>If you exceed the thresholds established for your
           account, a <errorcode>413 (OverLimit)</errorcode> HTTP
-          response will be returned with a <code>Retry-After</code>
-          header to notify the client when it can attempt to try
-          again. </para>
+          response is returned with a <code>Retry-After</code> header
+          to notify the client when it can attempt to try again. </para>
       </section>
       <section xml:id="Absolute_Limits-d1e1397">
         <title>Absolute Limits</title>
-        <para>Refer to the following table for the absolute limits
-          that are set.</para>
+        <para>The following table describes the absolute limits that
+          are set.</para>
         <table rules="all">
           <caption>Absolute Limits</caption>
           <thead>
-            <tr>
+            <tr align="center" >
               <td colspan="1">Name</td>
               <td colspan="3">Description</td>
               <td colspan="1">Limit</td>
@@ -730,7 +703,7 @@ format="SVG" scale="60"/>
           </thead>
           <tbody>
             <tr>
-              <td colspan="1">Node Count</td>
+              <td colspan="1">Node count</td>
               <td colspan="3">Maximum number of allowed data
                 nodes</td>
               <td colspan="1">5</td>
@@ -738,18 +711,19 @@ format="SVG" scale="60"/>
             <tr>
               <td colspan="1">Disk</td>
               <td colspan="3">Maximum disk capacity across all data
-                nodes in gigabytes (GB) </td>
+                nodes, in gigabytes (GB) </td>
               <td colspan="1">5120</td>
             </tr>
             <tr>
               <td colspan="1">RAM</td>
-              <td>Maximum RAM across all data nodes in gigabytes
+              <td colspan="3">Maximum RAM across all data nodes, in gigabytes
                 (GB)</td>
-              <td colspan="3">40960</td>
+              <td colspan="1">40960</td>
             </tr>
             <tr>
               <td colspan="1">VCPUs</td>
-              <td colspan="3">Maximum VCPUs across all data nodes</td>
+              <td colspan="3">Maximum virtual CPUs across all data
+                nodes</td>
               <td colspan="1">10</td>
             </tr>
           </tbody>
@@ -757,21 +731,23 @@ format="SVG" scale="60"/>
       </section>
     </section>
     <section xml:id="datetimeformat">
-      <title>Date/Time Format</title>
-      <para>The &PRODNAME; Service uses an ISO-8601 compliant
-        date format for the display and consumption of
-        date/time values. </para>
-      <para>The system timezone is in UTC. </para>
+      <title>Date and Time Format</title>
+      <para>For the display and consumption of date and time values,
+        the &PRODNAME; service uses a date format that complies with
+        ISO 8601. </para>
+      <para>The system time is expressed as UTC.</para>
       <example>
         <title>&PRODNAME; Service Date/Time Format</title>
         <programlisting>yyyy-MM-dd'T'HH:mm:ss.SSSZ</programlisting>
-        <para>See the table below for a description of the date/time format codes.</para>
-        <para>May 19th, 2013 at 8:07:08 AM, GMT-5 would
-          have the following format:</para>
-        <programlisting>2013-05-19T08:07:08-05:00</programlisting>
+        <para>For example, May 19, 2013 at 8:07:08 a.m., UTC-5 would
+          have the following format: </para>
+        <para><code>2013-05-19T08:07:08 -0500</code>
+        </para>
+        <para>The following table describes the date and time format
+          codes. </para>
       </example>
       <table rules="all">
-        <caption>Explanation of Date/Time Format Codes</caption>
+        <caption>Explanation of Date and Time Format Codes</caption>
         <thead>
           <tr>
             <td>Code</td>
@@ -781,39 +757,39 @@ format="SVG" scale="60"/>
         <tbody>
           <tr>
             <td>yyyy</td>
-            <td>Four digit year</td>
+            <td>Four-digit year</td>
           </tr>
           <tr>
             <td>MM</td>
-            <td>Two digit month</td>
+            <td>Two-digit month</td>
           </tr>
           <tr>
             <td>dd</td>
-            <td>Two digit day of month</td>
+            <td>Two-digit day of the month</td>
           </tr>
           <tr>
             <td>T</td>
-            <td>Separator for date/time</td>
+            <td>Separator of the date and time</td>
           </tr>
           <tr>
             <td>HH</td>
-            <td>Two digit hour of day (00-23)</td>
+            <td>Two-digit hour of the day (00-23)</td>
           </tr>
           <tr>
             <td>mm</td>
-            <td>Two digit minutes of hour</td>
+            <td>Two-digit minutes of the hour</td>
           </tr>
           <tr>
             <td>ss</td>
-            <td>Two digit seconds of the minute</td>
+            <td>Two-digit seconds of the minute</td>
           </tr>
           <tr>
             <td>SSS</td>
-            <td>Three digit milliseconds of the second</td>
+            <td>Three-digit milliseconds of the second</td>
           </tr>
           <tr>
             <td>Z</td>
-            <td>RFC-822 timezone</td>
+            <td>RFC 822 time zone</td>
           </tr>
         </tbody>
       </table>
@@ -821,9 +797,9 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="cluster_status" >
       <title>Cluster Status</title>
-      <para><?rax-fo keep-with-next?>When making an API call to
+      <para><?rax-fo keep-with-next?>When you send an API request to
         create, list, or delete a cluster or clusters, the following
-        cluster status values are possible:</para>
+        cluster status values are might be returned:</para>
       <itemizedlist spacing="compact">
         <listitem>
           <para>BUILDING &ndash; The cluster is being
@@ -842,7 +818,8 @@ format="SVG" scale="60"/>
         </listitem>
         <listitem>
           <para>UPDATING &ndash; The cluster is being updated, either
-            being resized or another update operation.</para>
+            through a resize operation or another update
+            operation.</para>
         </listitem>
         <listitem>
           <para>ERROR &ndash; The cluster failed to start  up.</para>
@@ -895,7 +872,7 @@ format="SVG" scale="60"/>
     <section xml:id="nodeOperations">
       <title>Nodes</title>
       <para>This section describes operations that are supported for
-        nodes.</para>
+        the servers (nodes) that are part of a cluster.</para>
 
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <wadl:resource href="../../src/wadl/cbd-devguide.wadl#nodes"/>
@@ -916,7 +893,7 @@ format="SVG" scale="60"/>
     <section xml:id="typeOperations">
       <title>Types</title>
       <para>This section describes the operations that are supported
-        for types.</para>
+        for cluster types.</para>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <wadl:resource href="../../src/wadl/cbd-devguide.wadl#typeVersion"/>  
         <wadl:resource href="../../src/wadl/cbd-devguide.wadl#types"/> 
@@ -939,22 +916,15 @@ format="SVG" scale="60"/>
     <glossentry>
       <glossterm>Cluster</glossterm>
       <glossdef>
-        <para> A group of servers (nodes). In &PRODABBV;, the servers
-          are virtual.</para>
-      </glossdef>
-    </glossentry>
-    <glossentry xml:id="message-d1e016">
-      <glossterm>Data Transfer</glossterm>
-      <glossdef>
-        <para>A method by to move data from a non-Cloud machine by FTP
-          or by SSH from your Cloud Files account.</para>
+        <para> A group of servers (nodes). In Cloud Big Data, the
+          servers are virtual.</para>
       </glossdef>
     </glossentry>
     <glossentry xml:id="producer-d1e020">
       <glossterm>HDFS</glossterm>
       <glossdef>
-        <para>The Hadoop Distributed Files System. This is the default
-          file system used in &PRODNAME;.</para>
+        <para>The Apache Hadoop Distributed File System. This is the
+          default file system used in &PRODNAME;.</para>
       </glossdef>
     </glossentry>
     <glossentry xml:id="queue-d1e019">
@@ -962,21 +932,24 @@ format="SVG" scale="60"/>
       <glossdef>
         <para>A framework for performing calculations on the data in
           the distributed file system. Map tasks run in parallel with
-          each other; Reduce tasks also run in parallel with each
+          each other. Reduce tasks also run in parallel with each
           other. </para>
       </glossdef>
     </glossentry>
     <glossentry xml:id="subscriber-d1e018">
       <glossterm>Node</glossterm>
       <glossdef>
-        <para>A subscriber (or observer) watches messages like an RSS
-          feed, but does not claim any messages.</para>
+        <para>In a network, a node is a connection point, either a
+          redistribution point or an end point for data transmissions.
+          In general, a node has programmed or engineered capability
+          to recognize and process or forward transmissions to other
+          nodes.</para>
       </glossdef>
     </glossentry>
     <glossentry xml:id="worker-d1e018">
       <glossterm>SCP Server Proxy</glossterm>
       <glossdef>
-        <para>An SCP service that runs on your Hadoop cluster which
+        <para>An SCP service that runs on your Hadoop cluster and
           distributes your files across the cluster. </para>
       </glossdef>
     </glossentry>
@@ -988,12 +961,12 @@ format="SVG" scale="60"/>
       </glossdef>
     </glossentry>
     <glossentry>
-      <glossterm>Tenant ID</glossterm>
+      <glossterm>Tenant</glossterm>
       <glossdef>
-        <para>A tenant is a container used to group or isolate
-          resources and/or identity objects. Depending on the service
-          operator, a tenant may map to a customer, account,
-          organization, or project. </para>
+        <para>A container used to group or isolate resources or
+          identity objects. Depending on the service operator, a
+          tenant could map to a customer, account, organization, or
+          project. </para>
       </glossdef>
     </glossentry>
   </glossary>

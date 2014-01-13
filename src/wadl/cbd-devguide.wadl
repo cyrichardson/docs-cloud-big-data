@@ -149,8 +149,8 @@
 	
 	<method name="GET" id="getProfile">
 		<wadl:doc xml:lang="EN" title="View Profile Information" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Returns detailed information for the current user profile.</para> 
-			<para>This operation returns detailed information for the current user profile.</para>	
+			<para role="shortdesc">Returns detailed profile information for the current user.</para> 
+			<para>This operation returns detailed profile information for the current user.</para>	
 		</wadl:doc>
         <response status="200">		
 			<representation mediaType="application/json" >
@@ -174,11 +174,11 @@
 			<wadl:doc xml:lang="EN" title="Create Cluster" xmlns="http://docbook.org/ns/docbook">
 				<para role="shortdesc">Creates a new cluster.</para> 				
 				<para>The 400 error code might indicate any of the following issues:</para>
-				<itemizedlist spacing="compact"><listitem><para>invalid response body</para></listitem><listitem><para>you need to create a user profile</para></listitem><listitem><para>invalid node count</para></listitem><listitem><para>invalid flavor</para></listitem><listitem><para>malformed data</para></listitem></itemizedlist>
-				<para>The 413 error code might indicate that the quota is exceeded.</para>
-				<para>This operation creates a new cluster.</para>	
+				<itemizedlist spacing="compact"><listitem><para>The response boady is invalid.</para></listitem><listitem><para>You need to create a user profile.</para></listitem><listitem><para>The node count is invalid.</para></listitem><listitem><para>The flavor is invalid.</para></listitem><listitem><para>The data is malformed.</para></listitem></itemizedlist>
+				<para>The 413 error code might indicate that the resource limit is exceeded.</para>
+				<para>This operation creates a new cluster. </para>	
 				<note><para>You must create your profile before you create a cluster.</para></note>
-				<para>The <parameter>postInitScript</parameter> input parameter specifies a URL that downloads a script that runs after the cluster is created. The status of the run is shown in the response by the <parameter>postInitScriptStatus</parameter> output parameter.</para>
+				<para>The postInitScript input parameter specifies a URL that downloads a script that runs after the cluster is created. The status of the run is shown in the response by the postInitScriptStatus output parameter.</para>
 			</wadl:doc>
 			<request>
 				<representation mediaType="application/json" element="clusters:cluster" >
@@ -203,8 +203,8 @@
 
 	<method name="GET" id="getClusters" >
 		<wadl:doc xml:lang="EN" title="List All Clusters" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all clusters for your account.</para> 
-			<para>This operation lists all clusters for your account.</para>	
+			<para role="shortdesc">Lists all the clusters for your account.</para> 
+			<para>This operation lists all the clusters for your account.</para>	
 		</wadl:doc>
 		<response status="200">		
 			<representation mediaType="application/json" >
@@ -221,8 +221,8 @@
 	
 	<method name="GET" id="getClusterDetails">
 		<wadl:doc xml:lang="EN" title="Get Cluster Details" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Returns details for a specified cluster.</para> 
-			<para>This operation returns details for a specified cluster that is identified by clusterId.</para>	
+			<para role="shortdesc">Returns details for the specified cluster.</para> 
+			<para>This operation returns details for the cluster that is identified by <code>clusterId</code>.</para>	
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json" element="clusters:cluster" >
@@ -247,10 +247,10 @@
 	
 	<method name="DELETE" id="deleteCluster">
 		<wadl:doc xml:lang="EN" title="Delete Cluster" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Deletes a specified cluster.</para> 
+			<para role="shortdesc">Deletes the specified cluster.</para> 
 			<para>The 400 error code might indicate missing or invalid parameters.</para> 
 			<para>The 409 error code might indicate an invalid state.</para>
-			<para>This operation deletes a cluster that is specified by clusterId.</para>
+			<para>This operation deletes the cluster that is specified by <code>clusterId</code>.</para>
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json" element="clusters:cluster" >
@@ -277,10 +277,10 @@
 	
 	<method name="POST" id="postClusterAction">
 		<wadl:doc xml:lang="EN" title="Resize Cluster" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Resizes a specified cluster. </para>  
-			<para>The 400 error code might indicate that there are unacceptable parameters or malformed data.</para>
+			<para role="shortdesc">Resizes the specified cluster. </para>  
+			<para>The 400 error code might indicate the presence of unacceptable parameters or malformed data.</para>
 			<para>The 409 error code might indicate an invalid state.</para>
-			<para>This operation resizes the cluster specified by clusterId.  </para>
+			<para>This operation resizes the cluster specified by <code>clusterId</code>.  </para>
 		</wadl:doc>
 		<request>		
 			<representation mediaType="application/json" >
@@ -311,8 +311,8 @@
 	
 	<method name="GET" id="getClusterNodes">
 		<wadl:doc xml:lang="EN" title="List Cluster Nodes" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all nodes for a specified cluster. </para>  
-			<para>This operation lists all nodes for a cluster specified by clusterId. </para>
+			<para role="shortdesc">Lists all nodes for the specified cluster. </para>  
+			<para>This operation lists all nodes for the cluster specified by <code>clusterId</code>clusterId. </para>
 		</wadl:doc>
 		<request>		
 			<representation mediaType="application/json" >
@@ -337,9 +337,9 @@
 	
 	<method name="GET" id="getNodeDetails">
 		<wadl:doc xml:lang="EN" title="Get Node Details" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Returns details for a specified node in a specified cluster. </para>  
-			<para>This operation returns details for a node, that is specified by nodeId, in a cluster, that is specified by clusterId. </para>
-		</wadl:doc>
+			<para role="shortdesc">Returns details for the specified node in the specified cluster. </para>  
+			<para>This operation returns details for the node specified by <code>nodeId</code> in the cluster specified by <code>clusterId</code>.</para>
+		</wadl:doc>							
 		<request>
 			<representation mediaType="application/json" element="clusters:Cluster" >
 				<doc>
@@ -385,8 +385,8 @@
 	
 	<method name="GET" id="getFlavorDetails">
 		<wadl:doc xml:lang="EN" title="List Flavor Details" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists the details for a specified flavor. </para>  
-			<para>This operation list the details for a flavor that is specified by flavorId. </para>
+			<para role="shortdesc">Lists the details for the specified flavor. </para>  
+			<para>This operation lists the details for the flavor that is specified by flavorId. </para>
 		</wadl:doc>
 		<response status="200">
 			<representation mediaType="application/json" >
@@ -404,8 +404,8 @@
 	
 	<method name="GET" id="getSupportedClusterTypesByFlavor">
 		<wadl:doc xml:lang="EN" title="List Supported Cluster Types for a Flavor" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists the supported cluster types for a specified flavor. </para>  
-			<para>This operation list the supported cluster types for a flavor that is specified by flavorId.  </para>
+			<para role="shortdesc">Lists the supported cluster types for the specified flavor. </para>  
+			<para>This operation lists the supported cluster types for the flavor that is specified by flavorId.  </para>
 		</wadl:doc>
 		<response status="200">
 			<representation mediaType="application/json" >
@@ -445,8 +445,8 @@
 	
 	<method name="GET" id="getClusterTypeDetails">
 		<wadl:doc xml:lang="EN" title="List Cluster Type Details" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Returns details for a specified cluster type. </para>  
-			<para>This operation returns details for a specified cluster type that is specified by typeId. </para>
+			<para role="shortdesc">Returns details for the specified cluster type. </para>  
+			<para>This operation returns details for the cluster type that is specified by typeId. </para>
 		</wadl:doc>
 		<response status="200">		
 			<representation mediaType="application/json" >
@@ -464,8 +464,8 @@
 	
 	<method name="GET" id="getSupportedFlavorsForType">
 		<wadl:doc xml:lang="EN" title="List Supported Flavors for a Type" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists the supported flavors for a specified cluster type. </para>  
-			<para>This operation lists the supported flavors for a cluster type that is specified by typeId. </para>
+			<para role="shortdesc">Lists the supported flavors for the specified cluster type. </para>  
+			<para>This operation lists the supported flavors for the cluster type that is specified by typeId. </para>
 		</wadl:doc>
 		<response status="200">		
 			<representation mediaType="application/json" >
@@ -488,7 +488,7 @@
 	<method name="GET" id="viewResourceLimits">
 		<wadl:doc xml:lang="EN" title="View Resource Limits" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Displays the resource limits for the user. </para>  
-			<para>This operation displays the resource limits, such as remaining node count, available RAM, and remaining disk space, for the user. </para>
+			<para>This operation displays the absolute resource limits, such as remaining node count, available RAM, and remaining disk space, for the user. </para>
 		</wadl:doc>
 		<response status="200">		
 			<representation mediaType="application/json" >

@@ -119,10 +119,11 @@
     </info>
     <chapter xml:id="overview">
         <title>Overview</title>
-        <para>Rackspace Cloud Big Data is an on-demand Hadoop service
-            on the Rackspace open cloud. It alleviates the pain
-            associated with deploying, managing and scaling Hadoop
-            clusters, allowing you to focus on your core business. </para>
+        <para>Rackspace Cloud Big Data is an on-demand Apache Hadoop
+            service on the Rackspace open cloud. It alleviates the
+            pain associated with deploying, managing and scaling
+            Hadoop clusters, allowing you to focus on your core
+            business. </para>
         <para>Interactions with Cloud Big Data occur programmatically
             via the Cloud Big Data API as described in this
                 <citetitle>Cloud Big Data Developer Guide for Service
@@ -227,7 +228,8 @@
                 Big Data concepts and is familiar with: </para>
             <itemizedlist spacing="compact">
                 <listitem>
-                    <para>Hadoop, HDFS, and MapReduce</para>
+                    <para>Hadoop, Apache Hadoop Distributed File
+                        System (HDFS), and MapReduce</para>
                 </listitem>
                 <listitem>
                     <para>RESTful web services</para>
@@ -313,10 +315,11 @@
                     that:<itemizedlist spacing="compact">
                     <listitem>
                         <para>&PRODABBV; includes a Swift integration
-                            feature wherein Hadoop, MapReduce, or Pig
-                            jobs can directly reference Cloud Files
-                            containers. Currently, it is only possible
-                            to reference containers in DFW.</para>
+                            feature wherein Hadoop, MapReduce, or
+                            Apache Pig jobs can directly reference
+                            Cloud Files containers. Currently, it is
+                            only possible to reference containers in
+                            DFW.</para>
                     </listitem>
                     <listitem>
                         <para>If you participate in this Limited
@@ -339,7 +342,7 @@
                         <para>Up to 25 GBs of RAM</para>
                     </listitem>
                     <listitem>
-                        <para>Up to 2 Terabytes of disk space</para>
+                        <para>Up to 2 TBs of disk space</para>
                     </listitem>
                 </itemizedlist>
             </para>
@@ -369,12 +372,8 @@
                     >http://www.rackspace.com/cloud/public/servers/pricing</link>.</para>
             <para>The Service Level Agreements (SLAs) for Cloud Big
                 Data and Cloud Servers are available at <link
-                    xlink:href="http://www.rackspace.com/cloud/legal/sla/#cloud_bigdata"
-                    >http://www.rackspace.com/cloud/legal/sla/#cloud_bigdata</link>
-                and <link
                     xlink:href="http://www.rackspace.com/cloud/legal/sla"
-                    >http://www.rackspace.com/cloud/legal/sla</link>
-                respectively.</para>
+                    >http://www.rackspace.com/cloud/legal/sla</link>.</para>
         </section>
         <section xml:id="Additional_Resources-d1e532">
             <title>Additional Resources</title>
@@ -448,156 +447,134 @@
                 the service are performed using SSL over HTTP (HTTPS)
                 on TCP port 443. </para>
         </note>
-        <section xml:id="Authentication-d1e647">
+        <section xml:id="Authentication-d1e647"
+            xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <title>Authentication</title>
-            <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Every
-                REST request against the &PRODNAME; Service requires
-                the inclusion of a specific authorization token,
-                supplied by the <code>X-Auth-Token</code> HTTP header.
-                Customers obtain this token by first using the
-                Rackspace Cloud Authentication Service and supplying a
-                valid username and API access key. </para>
-            <para xmlns:wadl="http://wadl.dev.java.net/2009/02">To
-                authenticate, submit a <code>POST/v2.0/tokens</code>
-                request, presenting valid Rackspace customer
-                credentials in the message body to a Rackspace
-                authentication endpoint. </para>
+            <para>Each REST request against the &PRODNAME; service
+                requires the inclusion of a specific authorization
+                token, supplied in the <code>X-Auth-Token</code> HTTP
+                header. Customers obtain this token by first using the
+                Rackspace Cloud Identity service and supplying a valid
+                user name and API access key. </para>
+            <para>To authenticate, you submit a
+                    <code>POST/v2.0/tokens</code> request, presenting
+                valid Rackspace customer credentials in the message
+                body to a Rackspace authentication endpoint. </para>
             <note>
-                <para>If you cannot access the &PRODNAME; Management
-                    API, please email the &PRODNAME; team at
+                <para>If you cannot access the &PRODNAME; API, send an
+                    email to the &PRODNAME; team at
                         <email>cbdteam@rackspace.com</email> to
                     request access. Access will be granted on an
-                    as-needed basis until access to the Management API
-                    is integrated with Global Auth.</para>
+                    as-needed basis until access to the &PRODNAME; API
+                    is integrated with Cloud Identity service.</para>
             </note>
-            <para>
-                <emphasis role="bold">GET YOUR CREDENTIALS</emphasis>
+            <para><emphasis role="bold">1. GET YOUR
+                    CREDENTIALS</emphasis>
             </para>
-            <para> You can use either of two sets of credentials: <itemizedlist>
-                <listitem>
-                    <para>your <code>username</code> and
-                        <code>password</code></para>
-                </listitem>
-                <listitem>
-                    <para>your <code>username</code> and <code>API
-                        key</code></para>
-                </listitem>
-            </itemizedlist>
-            </para>
-            <para>Your <code>username</code> and <code>password</code>
-                are the ones you use to login to the Rackspace control
-                panel. Once you are logged in, you can use the
-                Rackspace control panel to obtain your <code>API
-                    key</code>. </para>
-            <para>Use the control panel for the region in which your
-                account is based: <itemizedlist spacing="compact">
+            <para> You can use either of the following sets of
+                credentials: <itemizedlist>
                     <listitem>
-                        <para> US-based accounts use the control panel
-                            at <link
-                                xlink:href="https://manage.rackspacecloud.com/"
-                                >https://manage.rackspacecloud.com/</link>.
-                        </para>
+                        <para>Your user name and password</para>
                     </listitem>
                     <listitem>
-                        <para> UK-based accounts use the control panel
-                            at <link
-                                xlink:href="https://lon.manage.rackspacecloud.com/"
-                                >
-                                https://lon.manage.rackspacecloud.com/</link>.
-                        </para>
+                        <para>Your user name and API key</para>
                     </listitem>
                 </itemizedlist>
             </para>
-            <?hard-pagebreak?>     
-            <para> <emphasis role="bold">CHOOSE YOUR AUTHENTICATION </emphasis>
-            </para>
+            <para>Your user name and password are the ones that you
+                use to log in to the Rackspace Cloud Control Panel.
+                After you are logged in, you can use the Rackspace
+                Cloud Control Panel to obtain your API key. </para>
+            <para> US and UK based accounts use the Cloud Control
+                Panel at <link
+                    xlink:href="https://mycloud.rackspacecloud.com/"
+                    >https://mycloud.rackspace.com/</link>. </para>
             <para>
-                Use the authentication endpoint for the region in which your account is based:
-                <itemizedlist>
-                    <listitem>
-                        <para>All accounts authenticate through
-                            <link xlink:href="https://identity.api.rackspacecloud.com/v2.0/tokens">
-                                identity.api.rackspacecloud.com/v2.0/tokens</link>.</para>
-                    </listitem>
-                </itemizedlist>
+                <emphasis role="bold">2. CHOOSE YOUR AUTHENTICATION
+                    ENDPOINT</emphasis>
             </para>
-            <para><emphasis role="bold">SEND YOUR CREDENTIALS TO YOUR
-                    AUTHENTICATION ENDPOINT</emphasis>
+            <para>Use the authentication endpoint for the region in
+                which your account is based. All accounts authenticate
+                through <link
+                    xlink:href="https://identity.api.rackspacecloud.com/v2.0/tokens"
+                    >https://identity.api.rackspacecloud.com/v2.0/tokens</link>.</para>
+            <para> </para>
+            <para><emphasis role="bold">3. SEND YOUR CREDENTIALS TO
+                    YOUR AUTHENTICATION ENDPOINT</emphasis>
             </para>
             <para>If you know your credentials and your authentication
                 endpoint, and you can issue a <code>POST
                     /v2.0/tokens</code> request in an API call, you
-                have all the basic information you need to use the
-                Rackspace Cloud Identity Service. </para>
-            <para>You can use <link xlink:href="http://curl.haxx.se/"
-                    >cURL</link> to try the authentication process in
-                two steps: get a token; send the token to a service.<orderedlist>
+                have all the basic information that you need to use
+                the Rackspace Cloud Identity service. </para>
+            <para> You can use <link xlink:href="http://curl.haxx.se/"
+                    >cURL</link> to perform the authentication process
+                in two steps: get a token, and send the token to a service.<orderedlist>
                     <listitem>
                         <para>Get an authentication token by providing
-                            your username and either your API key or
-                            your password. Here are examples of both
-                            approaches:</para>
-                        <para><emphasis>You can request a token by
-                                providing your username and your API
-                                key.</emphasis></para>
-                        <para>
+                            your user name and either your API key or
+                            your password. Following are examples of
+                            both approaches:</para>
+                        <example>
+                            <title>User Name and API Key</title>
                             <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d 
-'{ "auth":{ "RAX-KSKEY:apiKeyCredentials":{ "username":"theUserName", "apiKey":"00a00000a000a0000000a000a00aaa0a" } } }' -H "Content-type: application/json"</literallayout>
-                        </para>
-                        <para><emphasis>You can request a token by
-                                providing your username and your
-                                password.</emphasis></para>
-                        <para>
+'{ "auth":{ "RAX-KSKEY:apiKeyCredentials":{ "username":"yourUserName", "apiKey":"yourApiKey" } } }' -H "Content-type: application/json"</literallayout>
+                        </example>
+                        <example>
+                            <title>User Name and Password</title>
                             <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d
-'{"auth":{"passwordCredentials":{"username":"theUserName","password":"thePassword"}}}' -H "Content-type: application/json"</literallayout>
-                        </para>
-                        <para> Successful authentication returns a
-                            token which you can use as evidence that
+'{"auth":{"passwordCredentials":{"username":"yourUserName","password":"yourPassword"}}}' -H "Content-type: application/json"</literallayout>
+                        </example>
+                        <para>Successful authentication returns a
+                            token that you can use as evidence that
                             your identity has already been
                             authenticated. To use the token, pass it
                             to other services as an
                                 <code>X-Auth-Token</code> header. </para>
-                        <para> Authentication also returns a service
-                            catalog, listing the endpoints you can use
-                            for Cloud services. </para>
+                        <para>Authentication also returns a service
+                            catalog, which lists the endpoints that
+                            you can use for Rackspace Cloud services.
+                        </para>
                     </listitem>
                     <listitem>
                         <para>Use the authentication token to send a
-                            GET to a service you would like to use.
-                            Here is an example of passing an
-                            authentication token to the Cloud Files
-                            service, using the Cloud Files service
+                            GET request to a service that you want to
+                            use. The following example shows passing
+                            an authentication token to the &PRODNAME;
+                            service by using the &PRODNAME; service
                             catalog endpoint that was returned along
                             with the token.</para>
-                        <para><emphasis>You can use a token and a
-                                service endpoint to tell a service
-                                that your credentials are
-                                valid.</emphasis></para>
+                        <example>
+                            <title>cURL Get Profile Request:
+                                JSON</title>
+                            <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/profile -d  \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
+-H "Accept: application/json"\
+-H "Content-type: application/json"</programlisting>
+                        </example>
                     </listitem>
                 </orderedlist>
             </para>
-            
-            
-            <para>Authentication tokens are typically valid for 24 hours.
-                Applications should be designed to re-authenticate after
-                receiving a 401 (Unauthorized) response from a service
-                endpoint. </para>
+            <para>Authentication tokens are typically valid for 24
+                hours. Applications should be designed to
+                re-authenticate after receiving a 401 (Unauthorized)
+                response from a service endpoint. </para>
             <important>
-                <para>If you are programmatically parsing an authentication
-                    response, please be aware that service names are stable
-                    for the life of the particular service and can be used as
-                    keys. You should also be aware that a user's service
-                    catalog can include multiple uniquely-named services which
-                    perform similar functions. In Auth 2.0,
-                    the service type attribute can be used as a key by which
-                    to recognize similar services; see the tip below.
-                </para>
-            </important>    
+                <para>If you are programmatically parsing an
+                    authentication response, be aware that service
+                    names are stable for the life of the particular
+                    service and can be used as keys. You should also
+                    be aware that a user's service catalog can include
+                    multiple uniquely named services that perform
+                    similar functions. In Cloud Identity 2.0, the
+                    service type attribute can be used as a key by
+                    which to recognize similar services. </para>
+            </important>
         </section>
         <section xml:id="Service_Access_Endpoints-d1e753"
             xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <title>Service Access Endpoints</title>
-            <para>The &PRODNAME; Service is a regionalized service.
+            <para>The &PRODNAME; service is a regionalized service.
                 The user of the service is therefore responsible for
                 appropriate replication, caching, and overall
                 maintenance of &PRODNAME; data across regional
@@ -617,42 +594,36 @@
                         <tr align="left">
                             <td colspan="2">Chicago (ORD)</td>
                             <td colspan="5"
-                                   ><code>https://ord.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
+                                   ><code>https://ord.bigdata.api.rackspacecloud.com/v1.0/</code><parameter><replaceable>yourAccountID</replaceable></parameter>/
                             </td>
                         </tr>
                         <tr align="left">
                             <td colspan="2">Dallas/Ft. Worth
                                 (DFW)</td>
                             <td colspan="5"
-                                   ><code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
+                                   ><code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/</code><parameter><replaceable>yourAccountID</replaceable></parameter>/
                             </td>
                         </tr>
                         <tr align="left">
                             <td colspan="2">London (LON)</td>
                             <td colspan="5"
-                                   ><code>https://lon.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
+                                   ><code>https://lon.bigdata.api.rackspacecloud.com/v1.0/</code><parameter><replaceable>yourAccountID</replaceable></parameter>/
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </para>
-            <para>Replace the sample account ID number,
-                    <parameter>1234</parameter>, with your actual
-                account number, which is returned as part of the
-                authentication service response. </para>
+            <para>Replace the
+                        <code><replaceable>yourAccountID</replaceable></code>
+                placeholder with your actual account number, , which
+                is returned as part of the authentication service
+                response, after the final '/' in the
+                    <code>publicURL</code> field. </para>
             <?rax-fo keep-with-next?>
-            <para>You will find the actual account number after the
-                final '/' in the <code>publicURL</code> field returned
-                by the authentication response. In the following
-                example from that response, you can see from the
-                    <code>publicURL</code> field for
-                    <code>cloudServers</code>,
-                    <code>publicURL="https://dfw.servers.api.rackspacecloud.com/v2/110011"</code>,
-                that the account number is 110011.</para>
         </section>
         <section xml:id="Request_Response_Types-d1e903"
             xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            <title>Request/Response Types</title>
+            <title>Request and Response Types</title>
             <para>The &PRODNAME; API supports JSON data serialization
                 formats. The request format is specified using the
                     <code>Content-Type</code> header and is required
@@ -801,9 +772,11 @@
                 </table>
                 <para>Rate limits are applied in order relative to the
                     verb, going from least to most specific. For
-                    example, although the threshold for &POST; to
-                    /v1.0/* is 2 per minute, one cannot &POST; to
-                    /v1.0/* more than 50 times within a single day. </para>
+                    example, although the threshold for issuing a
+                    &POST; request to <code>/v1.0/*</code> is 2 per
+                    minute, you cannot issue a &POST; request to
+                        <code>/v1.0/*</code> more than 50 times within
+                    a single day. </para>
                 <para>If you exceed the thresholds established for
                     your account, a <errorcode>413
                         (OverLimit)</errorcode> HTTP response will be
@@ -834,15 +807,15 @@
                         <tr>
                             <td colspan="1">Disk</td>
                             <td colspan="3">Maximum disk capacity
-                                across all data nodes in gigabytes
+                                across all data nodes, in gigabytes
                                 (GB) </td>
                             <td colspan="1">5120</td>
                         </tr>
                         <tr>
                             <td colspan="1">RAM</td>
-                            <td>Maximum RAM across all data nodes in
+                            <td colspan="3">Maximum RAM across all data nodes, in
                                 gigabytes (GB)</td>
-                            <td colspan="3">40960</td>
+                            <td colspan="1">40960</td>
                         </tr>
                         <tr>
                             <td colspan="1">VCPUs</td>
@@ -854,30 +827,27 @@
                 </table>
             </section>
         </section>
-        <?hard-pagebreak?>         
-        <section xml:id="datetimeformat">
-            <title>Date/Time Format</title>
-            <para>The &PRODNAME; Service uses an ISO-8601 compliant
-                date format for the display and consumption of
-                date/time values. </para>
-            <remark>Reviewer:  Do I need to keep the following
-                paragraph for &PRODNAME;? It is from Cloud
-                Databases.</remark>
-            <para>The system timezone is in UTC. MySQL converts
-                TIMESTAMP values from the current time zone to UTC for
-                storage, and back from UTC to the current time zone
-                for retrieval. This does not occur for other types,
-                such as DATETIME. </para>
-                <example>
-                    <title>&PRODNAME; Service Date/Time Format</title>
-                    <programlisting>yyyy-MM-dd'T'HH:mm:ss.SSSZ</programlisting>
-                <para>See the table below for a description of the date/time format codes.</para>
-                    <para>May 19th, 2013 at 8:07:08 AM, GMT-5 would
-                    have the following format:</para>
-                    <programlisting>2013-05-19T08:07:08-05:00</programlisting>
-                </example>
+        <?hard-pagebreak?>
+        <section xml:id="datetimeformat"
+            xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <title>Date and Time Format</title>
+            <para>For the display and consumption of date and time
+                values, the &PRODNAME; service uses a date format that
+                complies with ISO 8601. </para>
+            <para>The system time is expressed as UTC.</para>
+            <example>
+                <title>&PRODNAME; Service Date/Time Format</title>
+                <programlisting>yyyy-MM-dd'T'HH:mm:ss.SSSZ</programlisting>
+                <para>For example, May 19, 2013 at 8:07:08 a.m., UTC-5
+                    would have the following format: </para>
+                <para><code>2013-05-19T08:07:08 -0500</code>
+                </para>
+                <para>The following table describes the date and time
+                    format codes. </para>
+            </example>
             <table rules="all">
-                <caption>Explanation of Date/Time Format Codes</caption>
+                <caption>Explanation of Date and Time Format
+                    Codes</caption>
                 <thead>
                     <tr>
                         <td>Code</td>
@@ -887,43 +857,43 @@
                 <tbody>
                     <tr>
                         <td>yyyy</td>
-                        <td>Four digit year</td>
+                        <td>Four-digit year</td>
                     </tr>
                     <tr>
                         <td>MM</td>
-                        <td>Two digit month</td>
+                        <td>Two-digit month</td>
                     </tr>
                     <tr>
                         <td>dd</td>
-                        <td>Two digit day of month</td>
+                        <td>Two-digit day of the month</td>
                     </tr>
                     <tr>
                         <td>T</td>
-                        <td>Separator for date/time</td>
+                        <td>Separator of the date and time</td>
                     </tr>
                     <tr>
                         <td>HH</td>
-                        <td>Two digit hour of day (00-23)</td>
+                        <td>Two-digit hour of the day (00-23)</td>
                     </tr>
                     <tr>
                         <td>mm</td>
-                        <td>Two digit minutes of hour</td>
+                        <td>Two-digit minutes of the hour</td>
                     </tr>
                     <tr>
                         <td>ss</td>
-                        <td>Two digit seconds of the minute</td>
+                        <td>Two-digit seconds of the minute</td>
                     </tr>
                     <tr>
                         <td>SSS</td>
-                        <td>Three digit milliseconds of the second</td>
+                        <td>Three-digit milliseconds of the
+                            second</td>
                     </tr>
                     <tr>
                         <td>Z</td>
-                        <td>RFC-822 timezone</td>
+                        <td>RFC 822 time zone</td>
                     </tr>
                 </tbody>
             </table>
-            
         </section>
         <section xml:id="cluster_status"
             xmlns:wadl="http://wadl.dev.java.net/2009/02">

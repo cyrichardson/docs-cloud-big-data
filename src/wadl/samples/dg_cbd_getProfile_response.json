@@ -1,9 +1,17 @@
-   
-    {"cluster":
-      { "name": "slice",
-        "clusterType": "HADOOP_HDP1_1",
-        "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
-        "nodeCount": 5,
-        "postInitScript" :  "http://example.com/configure_cluster.sh"
-      }
-    }        
+
+ {"profile":
+            { "username": "john.doe",
+              "user_id" : "12346",
+              "tenant_id" : "123456",
+              "sshkeys": [{"name": "t@test"}],
+              "cloudCredentials": {},
+              "links": [
+                { "rel": "self",
+                  "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/profile"
+                },
+                { "rel": "bookmark",
+                  "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/profile"
+                }
+              ],
+            }
+        }

@@ -131,7 +131,7 @@
     </info>
     <chapter xml:id="DB_Doc_Change_History">
         <title>Document Change History</title>            
-        <para>This version of the document replaces and obsoletes all
+        <para>This version of the guide replaces and obsoletes all
             earlier versions. The most recent changes are described in
             the following table:</para>
         <?rax revhistory?>
@@ -186,8 +186,8 @@
                         and pay only for what you use.</para>
                 </listitem>
                 <listitem>
-                    <para>Access Hortonworks Data Platform (HDP), an
-                        enterprise-ready distribution that is 100
+                    <para>Access the Hortonworks Data Platform (HDP),
+                        an enterprise-ready distribution that is 100
                         percent Apache open source.</para>
                 </listitem>
                 <listitem>
@@ -238,12 +238,13 @@
                         <para>A Rackspace Cloud account</para>
                     </listitem>
                     <listitem>
-                        <para>Prior knowledge of Hadoop or a 3rd party
-                            tool that works with Hadoop.</para>
+                        <para>Prior knowledge of Hadoop or a
+                            third-party tool that works with
+                            Hadoop</para>
                     </listitem>
                     <listitem>
                         <para>Ability to work with the Hortonworks
-                            Data Platform.</para>
+                            Data Platform (HDP)</para>
                     </listitem>
                     <listitem>
                         <para>Prior knowledge of HTTP/1.1
@@ -260,8 +261,9 @@
                     </listitem>
                 </itemizedlist>
             </para>
-            <para>By using the &PRODNAME; API, you agree to and
-                understand the following conditions:</para>
+            <para>By using the &PRODNAME; API, you understand and
+                agree to the following limitations and
+                conditions:</para>
             <itemizedlist>
                 <listitem>
                     <para>If you participate in this Limited Access
@@ -291,12 +293,8 @@
          
             <para>The Service Level Agreements (SLAs) for Cloud
                 Big Data and Cloud Servers are available at <link
-                    xlink:href="http://www.rackspace.com/cloud/legal/sla/#cloud_bigdata"
-                    >http://www.rackspace.com/cloud/legal/sla/#cloud_bigdata</link>
-                and <link
                     xlink:href="http://www.rackspace.com/cloud/legal/sla"
-                    >http://www.rackspace.com/cloud/legal/sla</link>
-                respectively.</para>
+                    >http://www.rackspace.com/cloud/legal/sla</link>.</para>
                
         </section> 
         <section xml:id="Prerequisites_Examples">
@@ -316,9 +314,16 @@
     </chapter>
     <chapter xml:id="Service_Access_Endpoints-d1e753">
         <title>Service Access Endpoints</title>
-        <para>The endpoints to use for your Cloud Big Data API calls
-            are summarized in the table below.</para>
-        <para>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
+            &PRODNAME; service is a regionalized service. The user of
+            the service is therefore responsible for appropriate
+            replication, caching, and overall maintenance of
+            &PRODNAME; data across regional boundaries to other Cloud
+            Servers.</para>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
+            endpoints to use for your Cloud Big Data API calls are
+            summarized in the table below.</para>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <table rules="all">
                 <caption>Regionalized Service Endpoints</caption>
                 <thead>
@@ -331,41 +336,39 @@
                     <tr align="left">
                         <td colspan="2">Chicago (ORD)</td>
                         <td colspan="5"
-                                ><code>https://ord.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
+                                ><code>https://ord.bigdata.api.rackspacecloud.com/v1.0/</code><parameter><replaceable>yourAccountID</replaceable></parameter>/
                         </td>
                     </tr>
                     <tr align="left">
                         <td colspan="2">Dallas/Ft. Worth (DFW)</td>
                         <td colspan="5"
-                                ><code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
+                                ><code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/</code><parameter><replaceable>yourAccountID</replaceable></parameter>/
                         </td>
                     </tr>
                     <tr align="left">
                         <td colspan="2">London (LON)</td>
                         <td colspan="5"
-                                ><code>https://lon.bigdata.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
+                                ><code>https://lon.bigdata.api.rackspacecloud.com/v1.0/</code><parameter><replaceable>yourAccountID</replaceable></parameter>/
                         </td>
                     </tr>
                 </tbody>
             </table>
         </para>
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Replace
+            the <code><replaceable>yourAccountID</replaceable></code>
+            placeholder with your actual account number, , which is
+            returned as part of the authentication service response,
+            after the final '/' in the <code>publicURL</code> field. </para>
         <note>
             <para>All examples in this guide assume that you are
                 operating against the DFW data center. If you are
                 using a different data center, be sure to use the
                 associated endpoint from the table above.</para>
         </note>
-        <para>Replace the sample account ID number,
-                <parameter>1234</parameter>, with your actual account
-            number, which is returned as part of the authentication
-            response. Use your actual account number wherever you see
-            the field <emphasis role="bold">your_acct_id</emphasis>
-            specified in this guide. Refer to <xref
-                linkend="Generating_Auth_Token"/>.</para>
         <para>When you perform a Cloud Big Data API operation, place
             the endpoint at the beginning of the request URL. For
             example:
-                <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/yourAcctId/</code>.</para>
+                <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/yourAccountID/</code>.</para>
     </chapter>
     <chapter xml:id="Using_the_API_Directly">
         <title>Using the API Directly</title>
@@ -502,8 +505,8 @@
  &lt;auth&gt;   
     &lt;apiKeyCredentials     
         xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0"     
-        username="<emphasis role="bold">your_username</emphasis>"     
-        apiKey="<emphasis role="bold">your_api_key</emphasis>"/&gt;   
+        username="<emphasis role="bold">yourUserName</emphasis>"     
+        apiKey="<emphasis role="bold">yourApiKey</emphasis>"/&gt;   
  &lt;/auth&gt;<option>'</option> \
 <uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri></screen>
                         </example>
@@ -530,8 +533,8 @@
  &lt;auth&gt;   
     &lt;apiKeyCredentials     
         xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0"     
-        username="<emphasis role="bold">your_username</emphasis>"     
-        apiKey="<emphasis role="bold">your_api_key</emphasis>"/&gt;   
+        username="<emphasis role="bold">yourUserName</emphasis>"     
+        apiKey="<emphasis role="bold">yourApiKey</emphasis>"/&gt;   
  &lt;/auth&gt;<option>'</option> \
 </screen>
                         <para>The final line of the XML message is
@@ -579,20 +582,20 @@
                     information:<itemizedlist spacing="compact">
                     <listitem>
                         <para><emphasis role="bold"
-                                >your_username</emphasis> &mdash;Your
+                                >yourUserName</emphasis> &mdash;Your
                             common Rackspace Cloud user name, as
                             supplied during registration.</para>
                     </listitem>
                     <listitem>
                         <para><emphasis role="bold"
-                                >your_api_key</emphasis> &mdash; Your
+                                >yourApiKey</emphasis> &mdash; Your
                             API access key. You can obtain the key
                             from the <link
                                 xlink:href="http://mycloud.rackspace.com/"
                                 >Rackspace Cloud Control Panel</link>
-                            in the <guimenu>&lt;Your
-                                Account></guimenu> / <guimenuitem>API
-                                Keys</guimenuitem> section.</para>
+                            in the <guimenu>Your Account</guimenu> /
+                                <guimenuitem>API Keys</guimenuitem>
+                            section.</para>
                     </listitem>
                 </itemizedlist></para>
         <para> You can use either of the following endpoints to access
@@ -650,8 +653,8 @@
 &lt;auth>
    &lt;apiKeyCredentials
       xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0"
-         username="<emphasis role="bold">your_username</emphasis>"
-         apiKey="<emphasis role="bold">your_api_key</emphasis>"/>
+         username="<emphasis role="bold">yourUserName</emphasis>"
+         apiKey="<emphasis role="bold">yourApiKey</emphasis>"/>
 &lt;/auth>' \
 <option>-H 'Content-Type: application/xml'</option> \
 <option>-H 'Accept: application/xml'</option> \
@@ -666,20 +669,20 @@
     {
        "RAX-KSKEY:apiKeyCredentials":
        {
-          "username": "<emphasis role="bold">your_username</emphasis>",
-          "apiKey": "<emphasis role="bold">your_api_key</emphasis>"}
+          "username": "<emphasis role="bold">yourUserName</emphasis>",
+          "apiKey": "<emphasis role="bold">yourApiKey</emphasis>"}
     }
 }' \
 <option>-H 'Content-Type: application/json'</option> \
 <uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri></screen>
         </example>
-            <para>In the authentication response (examples follow), the
-                authentication <code>token id</code> is returned with
-                an <code>expires</code> attribute that specifies when
-                the token expires. Remember to supply your
+            <para>In the authentication response (examples follow),
+                the authentication <code>token id</code> is returned
+                with an <code>expires</code> attribute that specifies
+                when the token expires. Remember to supply your
                 authentication token wherever you see the placeholder
-                    <emphasis role="bold">your_auth_token</emphasis>
-                in the examples in this guide.</para>
+                    <emphasis role="bold">yourAuthToken</emphasis> in
+                the examples in this guide.</para>
             <note>
                 <title>Notes</title>
                 <itemizedlist spacing="compact">
@@ -728,7 +731,7 @@
                 must specify <emphasis role="italic">your</emphasis>
                 account number on most of the &PRODNAME; API
                 operations, wherever you see the placeholder <emphasis
-                    role="bold">your_acct_id</emphasis> specified in
+                    role="bold">yourAccountID</emphasis> specified in
                 the examples in this guide.</para>
             <para>After authentication, you can use cURL to perform
                 GET, DELETE, and POST requests for the &PRODNAME;
@@ -790,9 +793,9 @@
             please provide appropriate cURL request and response. </remark>
         <example>
             <title>cURL  Create Profile Request: JSON</title>
-            <programlisting language="bash">curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/profile \
+            <programlisting language="bash">curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/profile \
 -H "Accept: application/json" \
--H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Content-Type: application/json" -d\
 '{
     "profile": {
@@ -818,7 +821,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             <itemizedlist>
                 <listitem>
                     <para><emphasis role="bold"
-                            >your_auth_token</emphasis> &mdash; Your
+                            >yourAuthToken</emphasis> &mdash; Your
                         authentication token, which is returned in
                         your authentication response (see the response
                         examples in <xref
@@ -826,7 +829,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 </listitem>
                 <listitem>
                     <para><emphasis role="bold"
-                            >your_acct_id</emphasis> &mdash; Your
+                            >yourAccountID</emphasis> &mdash; Your
                         account ID, which is returned in your
                         authentication response (must be replaced in
                         the request URL)</para>
@@ -893,8 +896,8 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             the response given in this example.</remark>
         <example>
             <title>cURL  Get Profile Request: JSON</title>
-            <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/profile -d  \
--H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
+            <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/profile -d  \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json"\
 -H "Content-type: application/json"</programlisting>
         </example>
@@ -953,8 +956,8 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             the response given in this example.</remark>
         <example>
             <title>cURL View Resource Limits Request: JSON</title>
-            <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/limits -d \
--H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
+            <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/limits -d \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json" </programlisting>
         </example>
@@ -1041,7 +1044,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                     available configurations for your cluster, and
                     then you decide which size you need for your
                     cluster. You perform this operation to get a list
-                    of flavors from wh ich to choose when you create a
+                    of flavors from which to choose when you create a
                     cluster. </para>
                 <informaltable rules="all">
                     <thead>
@@ -1070,8 +1073,8 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                     example.</remark>
                 <example>
                     <title>cURL List Flavors Request: JSON</title>
-                    <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/flavors -d \
--H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
+                    <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/flavors -d \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json"</programlisting>
                 </example>
@@ -1171,8 +1174,8 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 <example>
                     <title>cURL List Cluster Types Request:
                         JSON</title>
-                    <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/types -d \
--H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
+                    <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/types -d \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json"</programlisting>
                 </example>
@@ -1237,7 +1240,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 produce the response given in this example.</remark>
             <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <title>cURL Create Cluster Request: JSON</title>
-                <programlisting>curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/clusters -d \
+                <programlisting>curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters -d \
 '{"cluster":
       { "name": "slice",
         "clusterType": "HADOOP_HDP1_1",
@@ -1245,7 +1248,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
         "nodeCount": 5
       }
     }' \          
--H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json"                 </programlisting>
               
@@ -1302,8 +1305,8 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                     operation. </para>
                 <example>
                     <title>cURL List Clusters Request: JSON</title>
-                    <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/clusters -d \
--H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
+                    <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters -d \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json"</programlisting>
                 </example>
@@ -1396,8 +1399,8 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 produce the response given in this example.</remark>
             <example>
                 <title>cURL List Cluster Nodes Request: JSON</title>
-                <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_acct_id</emphasis>/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes -d \
--H "X-Auth-Token: <emphasis role="bold">your_auth_token</emphasis>" \
+                <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes -d \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-Type: application/json"</programlisting>
             </example>
@@ -1551,10 +1554,10 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                     corresponding response to resize a cluster.</para>
             <example>
                 <title>cURL Resize Cluster Request: JSON</title>
-                <programlisting>curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_account_ID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis>/action -d \
+                <programlisting>curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis>/action -d \
 '{"resize":{ "nodeCount": 10 }} ' \
 -H "Accept: application/json" \
--H "X-Auth-Token:<emphasis role="bold">your_auth_token</emphasis>" \
+-H "X-Auth-Token:<emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Content-Type: application/json"  
 </programlisting>
             </example>
@@ -1612,9 +1615,9 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                     produce the response given in this example. </remark>
             <example>
                 <title>cURL Delete Cluster Request: JSON</title>
-                <programlisting>curl -i -X DELETE https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">your_account_ID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis> -d \
+                <programlisting>curl -i -X DELETE https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis> -d \
 -H "Accept: application/json" \
--H "X-Auth-Token:<emphasis role="bold">your_auth_token</emphasis>" \
+-H "X-Auth-Token:<emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Content-Type: application/json"</programlisting>
             </example>
             <example>
