@@ -896,7 +896,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             the response given in this example.</remark>
         <example>
             <title>cURL  Get Profile Request: JSON</title>
-            <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/profile -d  \
+            <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/profile -d  \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json"\
 -H "Content-type: application/json"</programlisting>
@@ -956,7 +956,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             the response given in this example.</remark>
         <example>
             <title>cURL View Resource Limits Request: JSON</title>
-            <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/limits -d \
+            <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/limits -d \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json" </programlisting>
@@ -993,7 +993,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             ]
           }
         }</programlisting> -->
-                <programlisting>{
+                <programlisting language="json">{
     "limits": {
         "links": [
             {
@@ -1073,14 +1073,14 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                     example.</remark>
                 <example>
                     <title>cURL List Flavors Request: JSON</title>
-                    <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/flavors -d \
+                    <programlisting language="bash" >curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/flavors -d \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json"</programlisting>
                 </example>
                 <example>
                     <title>List Flavors Response: JSON</title>
-                    <programlisting>        { "flavors": [
+                    <programlisting language="json">        { "flavors": [
           {
             "disk": 256,
             "id": "4fba3bca-7c76-11e2-b737-beeffa00040e",
@@ -1174,14 +1174,14 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 <example>
                     <title>cURL List Cluster Types Request:
                         JSON</title>
-                    <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/types -d \
+                    <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/types -d \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json"</programlisting>
                 </example>
                 <example>
                     <title>List Cluster Types Response: JSON</title>
-                    <programlisting>
+                    <programlisting language="json" >
  
         { "types":
           [
@@ -1240,7 +1240,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 produce the response given in this example.</remark>
             <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <title>cURL Create Cluster Request: JSON</title>
-                <programlisting>curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters -d \
+                <programlisting language="bash">curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters -d \
 '{"cluster":
       { "name": "slice",
         "clusterType": "HADOOP_HDP1_1",
@@ -1255,7 +1255,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             </example>
             <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <title>Create Cluster Response: JSON</title>
-                <programlisting>    {"cluster":
+                <programlisting language="json" >    {"cluster":
       { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
         "created": "2012-12-27T10:10:10Z",
         "updated": "",
@@ -1305,14 +1305,14 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                     operation. </para>
                 <example>
                     <title>cURL List Clusters Request: JSON</title>
-                    <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters -d \
+                    <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters -d \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json"</programlisting>
                 </example>
                 <example>
                     <title>List Clusters Response: JSON</title>
-                    <programlisting>
+                    <programlisting language="json">
         {"clusters":
           [
             { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
@@ -1399,14 +1399,14 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 produce the response given in this example.</remark>
             <example>
                 <title>cURL List Cluster Nodes Request: JSON</title>
-                <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes -d \
+                <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes -d \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-Type: application/json"</programlisting>
             </example>
             <example>
                 <title>List Cluster Nodes Response: JSON</title>
-                <programlisting>        {"nodes":
+                <programlisting language="json">        {"nodes":
           [ 
             { "id": "000",
               "created": "2012-12-27T10:10:10Z", 
@@ -1554,7 +1554,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                     corresponding response to resize a cluster.</para>
             <example>
                 <title>cURL Resize Cluster Request: JSON</title>
-                <programlisting>curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis>/action -d \
+                <programlisting language="bash">curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis>/action -d \
 '{"resize":{ "nodeCount": 10 }} ' \
 -H "Accept: application/json" \
 -H "X-Auth-Token:<emphasis role="bold">yourAuthToken</emphasis>" \
@@ -1563,7 +1563,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             </example>
             <example>
                 <title>Resize Cluster Response: JSON</title>
-                <programlisting>        {"cluster":
+                <programlisting language="json" >        {"cluster":
           { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
             "created": "2012-12-27T10:10:10Z",
             "updated": "2012-12-27T16:20:10Z",
@@ -1615,14 +1615,14 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                     produce the response given in this example. </remark>
             <example>
                 <title>cURL Delete Cluster Request: JSON</title>
-                <programlisting>curl -i -X DELETE https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis> -d \
+                <programlisting language="bash">curl -i -X DELETE https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis> -d \
 -H "Accept: application/json" \
 -H "X-Auth-Token:<emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Content-Type: application/json"</programlisting>
             </example>
             <example>
                 <title>Delete Cluster Response: JSON</title>
-                <programlisting>Status: 202 Accepted
+                <programlisting language="json">Status: 202 Accepted
         Date: Mon, 06 Aug 2012 21:54:21 GMT
         Content-Type: application/json
         {"cluster":

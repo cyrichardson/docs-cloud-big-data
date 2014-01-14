@@ -70,6 +70,7 @@
         </executions>
         
         <configuration>
+          <socialIcons>1</socialIcons>
           <branding>rackspace</branding>      
           <showXslMessages>true</showXslMessages>
           <enableDisqus>intranet</enableDisqus>
