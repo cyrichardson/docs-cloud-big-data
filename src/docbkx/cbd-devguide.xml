@@ -11,7 +11,6 @@
 <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
 <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
 <!ENTITY PRODNAME "Cloud Big Data">
-<!ENTITY PRODABBV "CBD">
 
 <!-- changing authentication endpoints; define entities for US & UK rather than maintaining in text -->
 <!ENTITY ENDPOINT-US "https://auth.api.rackspacecloud.com/v2.0/">
@@ -212,18 +211,11 @@ format="SVG" scale="60"/>
         to test an early version of the product and provide feedback
         on the product and capabilities. Customers are screened as
         part of the on-boarding process to ensure correct
-        product/customer fit. </para>
-<!--      
-      <para>The &PRODABBV; Limited Access program is a pre-production
-        service offering covered by the Beta Services terms (<link
-          xlink:href="http://www.rackspace.com/information/legal/testterms/"
-          > rackspace.com/information/legal/testterms/</link>) in our
-        Rackspace Cloud Terms of Service.</para>
--->        
+        product/customer fit. </para>        
       <para>Limited Access users must meet the following criteria:
           <itemizedlist spacing="compact">
           <listitem>
-            <para> A Rackspace Cloud account</para>
+            <para>A Rackspace Cloud account</para>
           </listitem>
           <listitem>
             <para>Prior knowledge of Hadoop or a third-party tool that
@@ -265,7 +257,7 @@ format="SVG" scale="60"/>
               directly reference Cloud Files containers. </para>
           </listitem>
           <listitem>
-            <para>If you participate in this Limited Access Program,
+            <para>If you participate in this Limited Access program,
               you will receive a notification prior to general
               availability. </para>
           </listitem>
@@ -471,6 +463,186 @@ format="SVG" scale="60"/>
           services. </para>
       </important>
     </section>
+<!--    
+    <section xml:id="RBAC">
+      <title>Role Based Access Control</title>
+      <para>Role Based Access Control (RBAC) restricts access to the
+        capabilities of Rackspace Cloud services, including the Cloud
+        Big Data API, to authorized users only. RBAC enables Rackspace
+        Cloud customers to specify which account users of their Cloud
+        account have access to which Cloud Big Data API service
+        capabilities, based on roles defined by Rackspace (see <xref
+          linkend="RBAC_product_roles_table"/>). The permissions to
+        perform certain operations in Cloud Big Data API – create,
+        read, update, delete – are assigned to specific roles, and
+        these roles can be assigned by the Cloud account admin user to
+        account users of the account. </para>
+      <section xml:id="Assigning-Roles-d1e001">
+        <title>Assigning Roles to Account Users</title>
+        <para>The account owner (identity:user-admin) can create
+          account users on the account and then assign roles to those
+          users. The roles grant the account users specific
+          permissions for accessing the capabilities of the Cloud Big
+          Data service. Each account has only one account owner, and
+          that role is assigned by default to any Rackspace Cloud
+          account when the account is created.</para>
+        <para>See the <citetitle>Cloud Identity Client Developer
+            Guide</citetitle> for information about how to perform the
+          following tasks:</para>
+        <itemizedlist>
+          <listitem>
+            <para><link
+                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html"
+                > Create account users</link></para>
+          </listitem>
+          <listitem>
+            <para><link
+                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__Role_Calls.html"
+                > Assign roles to account users</link></para>
+          </listitem>
+          <listitem>
+            <para><link
+                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__Role_Calls.html"
+                > Delete roles from account users</link></para>
+          </listitem>
+        </itemizedlist>
+        <note>
+          <para>The account admin user (identity:user-admin) role
+            cannot hold any additional roles because it already has
+            full access to all capabilities by default.</para>
+        </note>
+      </section>
+      <section xml:id="RBAC_product_roles">
+        <title>Roles Available for Cloud Big Data </title>
+        <para>Three roles (admin, creator, and observer) can be used
+          to access the Cloud Big Data API specifically. The following
+          table describes these roles and their permissions.</para>
+        <table xml:id="RBAC_product_roles_table" rules="all">
+          <caption>Cloud Big Data Product Roles and
+            Capabilities</caption>
+          <col width="50%"/>
+          <col width="50%"/>
+          <thead>
+            <tr>
+              <th>Role Name</th>
+              <th>Role Permissions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>cbd:admin</td>
+              <td>This role provides Create, Read, Update, and Delete
+                permissions in Cloud Big Data, where access is
+                granted.</td>
+            </tr>
+            <tr>
+              <td>cbd:creator</td>
+              <td>This role provides Create, Read and Update
+                permissions in Cloud Big Data, where access is
+                granted.</td>
+            </tr>
+            <tr>
+              <td>cbd:observer</td>
+              <td>This role provides Read permission in Cloud Big
+                Data, where access is granted.</td>
+            </tr>
+          </tbody>
+        </table>
+        <para>Additionally, two multiproduct roles apply to all
+          products. Users with multiproduct roles inherit access to
+          future products when those products become RBAC-enabled. The
+          following table describes these roles and their
+          permissions.</para>
+        <table rules="all">
+          <caption> Multiproduct (Global) Roles and
+            Permissions</caption>
+          <col width="50%"/>
+          <col width="50%"/>
+          <thead>
+            <tr>
+              <th>Role Name</th>
+              <th>Role Permissions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>admin</td>
+              <td>This role provides Create, Read, Update, and Delete
+                permissions in all products, where access is
+                granted.</td>
+            </tr>
+            <tr>
+              <td>observer</td>
+              <td>This role provides Read permission in all products,
+                where access is granted.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section xml:id="RBAC-Resolving-Conflicts-d1e001" version="5.0">
+        <title>Resolving Conflicts Between RBAC Multiproduct vs.
+          Custom (Product-specific) Roles</title>
+        <para>The account owner can set roles for both multiproduct
+          and Cloud Big Data scope, and it is important to understand
+          how any potential conflicts among these roles are resolved.
+          When two roles appear to conflict, the role that provides
+          the more extensive permissions takes precedence. Therefore,
+          admin roles take precedence over observer and creator roles,
+          because admin roles provide more permissions. </para>
+        <para>The following table shows two examples of how potential
+          conflicts between user roles in the Control Panel are
+          resolved: </para>
+        <para>
+          <informaltable rules="all">
+            <thead>
+              <tr align="center">
+                <td>Permission Configuration</td>
+                <td>View of Permission in the Control Panel </td>
+                <td>Can the User Perform Product Admin Functions in
+                  the Control Panel?</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>User is assigned the following roles: multiproduct
+                    <emphasis role="bold">observer</emphasis> and
+                  Cloud Big Data <emphasis role="bold"
+                    >admin</emphasis></td>
+                <td>Appears that the user has only the multiproduct
+                    <emphasis role="bold">observer</emphasis>
+                  role</td>
+                <td>Yes, for Cloud Big Data only. The user has the
+                    <emphasis role="bold">observer</emphasis> role for
+                  the rest of the products.</td>
+              </tr>
+              <tr>
+                <td>User is assigned the following roles: multiproduct
+                    <emphasis role="bold">admin</emphasis> and Cloud
+                  Big Data <emphasis role="bold"
+                  >observer</emphasis></td>
+                <td>Appears that the user has only the multiproduct
+                    <emphasis role="bold">admin</emphasis> role</td>
+                <td>Yes, for all of the products. The Cloud Big Data
+                    <emphasis role="bold">observer</emphasis> role is
+                  ignored.</td>
+              </tr>
+            </tbody>
+          </informaltable>
+        </para>
+      </section>
+      <section xml:id="RBAC-Permissions-Cross-Ref-d1e001"
+        version="5.0">
+        <title>RBAC Permissions Cross-reference to Cloud Big Data API
+          Operations</title>
+        <para>API operations for Cloud Big Data may or may not be
+          available to all roles. To see which operations are
+          permitted to invoke which calls, please review <link
+            xlink:href="http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-role-based-access-control-rbac"
+            >the Knowledge Center article</link>.</para>
+      </section>
+    </section>
+-->
+    
     <section xml:id="Service_Access_Endpoints-d1e753">
       <title>Service Access Endpoints</title>
       <para>The &PRODNAME; service is a regionalized service. The user
@@ -737,7 +909,7 @@ format="SVG" scale="60"/>
         ISO 8601. </para>
       <para>The system time is expressed as UTC.</para>
       <example>
-        <title>&PRODNAME; Service Date/Time Format</title>
+        <title>&PRODNAME; Service Date and Time Format</title>
         <programlisting>yyyy-MM-dd'T'HH:mm:ss.SSSZ</programlisting>
         <para>For example, May 19, 2013 at 8:07:08 a.m., UTC-5 would
           have the following format: </para>
@@ -799,7 +971,7 @@ format="SVG" scale="60"/>
       <title>Cluster Status</title>
       <para><?rax-fo keep-with-next?>When you send an API request to
         create, list, or delete a cluster or clusters, the following
-        cluster status values are might be returned:</para>
+        cluster status values might be returned:</para>
       <itemizedlist spacing="compact">
         <listitem>
           <para>BUILDING &ndash; The cluster is being

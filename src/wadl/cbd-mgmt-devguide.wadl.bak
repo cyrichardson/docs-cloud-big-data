@@ -41,10 +41,10 @@
 		
 		<resource id="limits" path="limits">
 			<method href="#listLimits" />	
-			<method href="#postLimits" />
 				<resource id="limit" path="{tenantId}">
 					<param name="tenantId" style="template" type="xsd:string">
 						<doc>Specifies the tenant ID.</doc></param>
+					<method href="#postLimits" />
 					<method href="#getTenantLimits"/>
 				</resource>
 		</resource>
@@ -67,7 +67,8 @@
 					   	</resource>	
 			 	       	<resource id="nodes" path="nodes">
 			 	       		<resource id="nodeId" path="{nodeId}">
-			 	       		
+			 	       			<param name="nodeId" style="template" type="xsd:string">
+			 	       				<doc>Specifies the node ID.</doc></param>
 			 	       	     	<resource id="nodeAction" path="action">
 			 	       	      	       	
 					                 <method href="#postClusterNodeAction" />
@@ -132,8 +133,8 @@
 
 	<method name="POST" id="postLimits" >
 		<wadl:doc xml:lang="EN" title="Post Limits" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Updates resource limits for a specific tenant.</para> 
-			<para>This operation sets resource limits for a specific tenant.</para>	
+			<para role="shortdesc">Updates resource limits for the specified tenant.</para> 
+			<para>This operation sets resource limits for the specified tenant.</para>	
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json" element="clusters:Cluster" >
@@ -159,8 +160,8 @@
 	
 	<method name="GET" id="getTenantLimits">
 		<wadl:doc xml:lang="EN" title="Get Tenant Limits" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Returns the resource limits for a specific tenant.</para> 
-			<para>This operation returns the resource limits for a specific tenant.</para>	
+			<para role="shortdesc">Returns the resource limits for the specified tenant.</para> 
+			<para>This operation returns the resource limits for the specified tenant.</para>	
 		</wadl:doc>
 		<response status="200">		
 			<representation mediaType="application/json" >
@@ -182,8 +183,8 @@
 	
 	<method name="GET" id="getClusters">
 		<wadl:doc xml:lang="EN" title="Get Clusters" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all clusters for all tenants (paginated). </para> 
-			<para>This operation lists all clusters for all tenants (paginated).</para>	
+			<para role="shortdesc">Lists all clusters for all tenants. You can paginate the list. </para> 
+			<para>This operation lists all clusters for all tenants. You can paginate the list.</para>	
 		</wadl:doc>
 		<response status="200">		
 			<representation mediaType="application/json" >
@@ -200,8 +201,8 @@
 	
 	<method name="DELETE" id="deleteCluster">
 		<wadl:doc xml:lang="EN" title="Delete Cluster" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Delete a specified cluster. </para> 
-			<para>This operation deletes a specified cluster, which is defined by clusterId.</para>	
+			<para role="shortdesc">Delete the specified cluster. </para> 
+			<para>This operation deletes the specified cluster.</para>	
 		</wadl:doc>
 		<response status="202">		
 			<representation mediaType="application/json" >
@@ -219,8 +220,8 @@
 	
 	<method name="GET" id="getCluster">
 		<wadl:doc xml:lang="EN" title="Get Specific Cluster" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Returns details about a specified cluster. </para>  
-			<para>This operation returns details about a specified cluster. </para>
+			<para role="shortdesc">Returns details about the specified cluster. </para>  
+			<para>This operation returns details about the specified cluster. </para>
 		</wadl:doc>
 		<response status="200">		
 			<representation mediaType="application/json" >
@@ -237,10 +238,15 @@
 	
 	<method name="GET" id="getClusterLogs">
 		<wadl:doc xml:lang="EN" title="Get Cluster Logs" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Returns the provisioning logs for a cluster. </para>  
-			<para>This operation returns the provisioning logs for a cluster. </para>
+			<para role="shortdesc">Returns the provisioning logs for the specified cluster. </para>  
+			<para>This operation returns the provisioning logs for the specified cluster. </para>
 		</wadl:doc>
-		<response status="200">		
+		<response status="200">				
+			<representation mediaType="application/json" >
+			<doc>
+				<xsdxt:code href="../wadl/samples/cbd_getClusterLogs_response.json"/>
+			</doc>
+		</representation>	
 		</response>
 	</method>
 
@@ -250,8 +256,8 @@
 	
 	<method name="POST" id="postClusterAction">
 		<wadl:doc xml:lang="EN" title="Post Cluster Action" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Performs an action, such as set status, on a cluster. </para>  
-			<para>This operation performs an action, such as set status, on a cluster. </para>
+			<para role="shortdesc">Performs an action, such as set status, on the specified cluster. </para>  
+			<para>This operation performs an action, such as set status, on the specified cluster. </para>
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json" element="clusters:Cluster" >
@@ -275,11 +281,16 @@
 	
 	<method name="GET" id="getClusterStatus">
 		<wadl:doc xml:lang="EN" title="Get Cluster Status" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Gets a status report on the cluster (in order to make sure all servers are accessible over the network, services are running, check HDFS doesn't exceed a threshold, and so on) 
+			<para role="shortdesc">Gets a status report about the specified cluster, to ensure that all servers are accessible over the network, services are running, check HDFS does not exceed a threshold. This operation is long running.
 			-	long running </para>  
-			<para>This operation gets a status report on the cluster. </para>
+			<para>This operation gets a status report about the specified cluster. </para>
 		</wadl:doc>
-		<response status="200">		
+		<response status="200">	
+			<representation mediaType="application/json" >
+				<doc>
+					<xsdxt:code href="../wadl/samples/cbd_getClusterStatus_response.json"/>
+				</doc>
+			</representation>	
 		</response>
 	</method>
 
@@ -289,8 +300,8 @@
 	
 	<method name="POST" id="postClusterNodeAction">
 		<wadl:doc xml:lang="EN" title="Post Cluster Node Action" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Performs an action on a node (such as replace, reboot, etc.). </para>  
-			<para>This operation performs an action on a node (such as replace, reboot, etc.). </para>
+			<para role="shortdesc">Performs an action, such as replace or restart, on the specified node (server) in the specified cluster. </para>  
+			<para>This operation performs an action, such as replace or restart, on the specified node (server) in the specified cluster. </para>
 		</wadl:doc>
 		<response status="200">		
 		</response>
@@ -306,8 +317,8 @@
 	
 	<method name="GET" id="getTenants">
 		<wadl:doc xml:lang="EN" title="Get Tenants" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Returns a list of tenants with profiles. </para>  
-			<para>This operation returns a list of tenants with profiles. </para>
+			<para role="shortdesc">Returns a list of tenants who have profiles. </para>  
+			<para>This operation returns a list of tenants who have profiles. </para>
 		</wadl:doc>
 		<response status="200">		
 			<representation mediaType="application/json" >
@@ -324,8 +335,8 @@
 	
 	<method name="GET" id="getTenant">
 		<wadl:doc xml:lang="EN" title="Get Specific Tenant" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Returns details about a specific tenant. </para>  
-			<para>This operation returns details about a specific tenant. </para>
+			<para role="shortdesc">Returns details about the specified tenant. </para>  
+			<para>This operation returns details about the specified tenant. </para>
 		</wadl:doc>
 		<response status="200">		
 			<representation mediaType="application/json" >
@@ -342,7 +353,7 @@
 	
 	<method name="GET" id="getTenantClusters">
 		<wadl:doc xml:lang="EN" title="Get Tenant Clusters" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Returns a list of clusters for a tenant. </para>  
+			<para role="shortdesc">Returns a list of clusters for the specified tenant. </para>  
 
 		</wadl:doc>
 		<response status="200">		
