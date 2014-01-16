@@ -530,19 +530,19 @@ format="SVG" scale="60"/>
           </thead>
           <tbody>
             <tr>
-              <td>cbd:admin</td>
+              <td>bigdata:admin</td>
               <td>This role provides Create, Read, Update, and Delete
                 permissions in Cloud Big Data, where access is
                 granted.</td>
             </tr>
             <tr>
-              <td>cbd:creator</td>
+              <td>bigdata:creator</td>
               <td>This role provides Create, Read and Update
                 permissions in Cloud Big Data, where access is
                 granted.</td>
             </tr>
             <tr>
-              <td>cbd:observer</td>
+              <td>bigdata:observer</td>
               <td>This role provides Read permission in Cloud Big
                 Data, where access is granted.</td>
             </tr>
