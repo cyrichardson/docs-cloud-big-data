@@ -2379,7 +2379,7 @@ store final2 into 'result2';</programlisting>
         <title>Additional Resources</title>
         <para>If you have any questions or concerns about using any of
             the steps in this guide, send an email to
-            cbdbeta@rackspace.com.</para>
+            cbdteam@rackspace.com.</para>
         <para>For information about all Cloud Big Data API operations,
             see the <citetitle>Cloud Big Data Developer
                 Guide</citetitle> at <link
@@ -2388,13 +2388,13 @@ store final2 into 'result2';</programlisting>
             need to get started with Cloud Big Data is this getting
             started guide and the developer guide. </para>
         <para>For more details about Rackspace &PRODNAME;, go to <link
-                xlink:href="http://www.rackspace.com/cloud/cloud_hosting_products/databases/"
-                >http://www.rackspace.com/cloud/cloud_hosting_products/databases/</link>.
+            xlink:href="http://www.rackspace.com/cloud/big-data/"
+            >http://www.rackspace.com/cloud/big-data/</link>.
             This site also offers links to official Rackspace support
             channels, including knowledge center articles, forums,
             phone, chat, and email. </para>
         <para>Visit the <link
-                xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+                xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/"
                 >Product Feedback Forum</link> and tell us what you
             think about &PRODNAME;.</para>
         <para>This API uses standard HTTP 1.1 response codes as
