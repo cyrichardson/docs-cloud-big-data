@@ -71,7 +71,7 @@
         </copyright>
         <releaseinfo>API v1.0 Limited Access</releaseinfo>
         <productname>Rackspace Cloud Big Data</productname>
-        <pubdate>2014-01-14</pubdate>
+        <pubdate>2014-02-03</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the doc build process.</remark>
@@ -87,25 +87,22 @@
         
         <revhistory>
             <revision>
+                <date>2014-02-03</date>
+                <revdescription>
+                    <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Added Role Based Access
+                        Control (RBAC). For more information, see <xref linkend="RBAC"/>. </para>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2014-01-14</date>
                 <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Initial Limted Access (LA)
-                                release</para>
-                        </listitem>
-                    </itemizedlist>
+                    <para>Initial Limted Access (LA) release.</para>
                 </revdescription>
             </revision>
             <revision>
                 <date>2013-09-16</date>
                 <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Initial Early Access (EA)
-                                release</para>
-                        </listitem>
-                    </itemizedlist>
+                    <para>Initial Early Access (EA) release.</para>
                 </revdescription>
             </revision>
         </revhistory>        
@@ -564,7 +561,7 @@
                     which to recognize similar services. </para>
             </important>
         </section>
-<!--        
+        
         <section xml:id="RBAC"
             xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <title>Role Based Access Control</title>
@@ -766,7 +763,7 @@
                         >the Knowledge Center article</link>.</para>
             </section>
         </section>
--->        
+       
         <section xml:id="Service_Access_Endpoints-d1e753"
             xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <title>Service Access Endpoints</title>

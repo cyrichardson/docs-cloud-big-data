@@ -70,7 +70,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0 Limited Access</releaseinfo>
     <productname>Rackspace &PRODNAME;</productname>
-    <pubdate>2014-01-14</pubdate>
+    <pubdate>2014-02-03</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the doc build
@@ -87,22 +87,29 @@ format="SVG" scale="60"/>
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
       <revision>
+        <date>2014-02-03</date>
+        <revdescription>
+          <para>Added Role Based Access Control (RBAC). For more information, see <xref
+              linkend="RBAC"/>. </para>
+        </revdescription>
+      </revision>
+      <revision>
         <date>2014-01-14</date>
         <revdescription>
-          <para>Limited Access (LA) release</para>
+          <para>Limited Access (LA) release.</para>
         </revdescription>
       </revision>
       <revision>
         <date>2013-10-29</date>
         <revdescription>
-          <para>Corrected the URI for the Get Node Details operation
-            in <xref linkend="nodeOperations"/></para>
+          <para>Corrected the URI for the Get Node Details operation in <xref
+              linkend="nodeOperations"/>.</para>
         </revdescription>
       </revision>
       <revision>
         <date>2013-09-16</date>
         <revdescription>
-          <para>Initial Early Access (EA) release</para>
+          <para>Initial Early Access (EA) release.</para>
         </revdescription>
       </revision>
     </revhistory>
@@ -463,7 +470,7 @@ format="SVG" scale="60"/>
           services. </para>
       </important>
     </section>
-<!--    
+    
     <section xml:id="RBAC">
       <title>Role Based Access Control</title>
       <para>Role Based Access Control (RBAC) restricts access to the
@@ -641,7 +648,7 @@ format="SVG" scale="60"/>
             >the Knowledge Center article</link>.</para>
       </section>
     </section>
--->
+
     
     <section xml:id="Service_Access_Endpoints-d1e753">
       <title>Service Access Endpoints</title>

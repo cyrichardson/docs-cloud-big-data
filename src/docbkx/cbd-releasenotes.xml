@@ -25,7 +25,7 @@
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace Cloud Big Data</productname>
-    <pubdate>2014-01-17</pubdate>
+    <pubdate>2014-02-03</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the template.</remark>
@@ -39,23 +39,23 @@
     </abstract>
     <revhistory>
       <revision>
+        <date>2013-02-03</date>
+        <revdescription>
+          <para xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+            xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+            >Added Role Based Access Control (RBAC). </para>
+        </revdescription>
+      </revision>
+      <revision>
         <date>2014-01-14</date>
         <revdescription>
-          <itemizedlist>
-            <listitem>
-              <para>Initial Limited Availability (LA) release.</para>
-            </listitem>
-          </itemizedlist>
+          <para>Initial Limited Availability (LA) release.</para>
         </revdescription>
       </revision>
       <revision>
         <date>2013-09-16</date>
         <revdescription>
-          <itemizedlist>
-            <listitem>
-              <para>Initial Early Access (EA) release. </para>
-            </listitem>
-          </itemizedlist>
+          <para>Initial Early Access (EA) release. </para>
         </revdescription>
       </revision>
     </revhistory>
@@ -102,6 +102,19 @@
       earlier versions. The most recent changes are described in the
       following table:</para>
     <?rax revhistory?>
+  </chapter>
+  <chapter xml:id="feb03">
+    <title>February 3, 2014</title>
+    <para>This release of the Cloud Big Data API includes Role Based Access Control (RBAC). </para>
+    <para>Role Based Access Control (RBAC) restricts access to the capabilities of Rackspace Cloud
+      services, including the Cloud Big Data API, to authorized users only. RBAC enables Rackspace
+      Cloud customers to specify which account users of their Cloud account have access to which
+      Cloud Big Data API service capabilities, based on roles defined by Rackspace. The permissions
+      to perform certain operations in Cloud Big Data API – create, read, update, delete – are
+      assigned to specific roles, and these roles can be assigned by the Cloud account admin user to
+      account users of the account.</para>
+    <para>For more information, see the section on RBAC in the <citetitle>Cloud Big Data Developer
+        Guide</citetitle>.</para>
   </chapter>  
   <chapter xml:id="jan14">
     <?dbhtml stop-chunking?>
