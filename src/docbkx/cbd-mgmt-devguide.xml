@@ -71,7 +71,7 @@
         </copyright>
         <releaseinfo>API v1.0 Limited Access</releaseinfo>
         <productname>Rackspace Cloud Big Data</productname>
-        <pubdate>2014-02-03</pubdate>
+        <pubdate>2014-02-05</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the doc build process.</remark>
@@ -86,6 +86,38 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2014-02-05</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Corrected endpoints to be admin
+                                endpoints and not public ones in <xref
+                                   linkend="Service_Access_Endpoints-d1e753"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>As a correction, removed
+                                   <code>{version}</code> from all API
+                                operation endpoints in <xref
+                                   linkend="API_Operations-d1e2264"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added Get Endpoint Info operation in
+                                   <xref
+                                   linkend="Endpoint_Management-001"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added Get Endpoint Capacity
+                                operation in <xref
+                                   linkend="Endpoint_Capacity_Management-001"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-02-03</date>
                 <revdescription>
