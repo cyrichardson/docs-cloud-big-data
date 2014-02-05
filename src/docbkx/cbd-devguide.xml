@@ -993,7 +993,7 @@ format="SVG" scale="60"/>
             for use.</para>
         </listitem>
         <listitem>
-          <para>UPDATING &ndash; The cluster is being updated, either
+          <para>RESIZING &ndash; The cluster is being updated, either
             through a resize operation or another update
             operation.</para>
         </listitem>
