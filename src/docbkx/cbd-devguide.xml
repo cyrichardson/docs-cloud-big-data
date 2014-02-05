@@ -993,9 +993,6 @@ format="SVG" scale="60"/>
             for use.</para>
         </listitem>
         <listitem>
-          <para>DELETING &ndash; The cluster is being deleted.</para>
-        </listitem>
-        <listitem>
           <para>UPDATING &ndash; The cluster is being updated, either
             through a resize operation or another update
             operation.</para>
@@ -1003,7 +1000,24 @@ format="SVG" scale="60"/>
         <listitem>
           <para>ERROR &ndash; The cluster failed to start  up.</para>
         </listitem>
+        <listitem>
+          <para>DELETING &ndash; The cluster is being deleted.</para>
+        </listitem>
+        <listitem>
+          <para>DELETED &ndash; The cluster is deleted.</para>
+        </listitem>
       </itemizedlist>
+      
+      <para>The following figure shows the cluster states and the operations that are valid for each one. <figure>
+          <title>Cluster States with Valid Operations</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="svg" align="center" scale="50"
+                fileref="figures/cluster-states.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+      </para>
     </section>       
   </chapter>
   <chapter xml:id="API_Operations_dle2000"

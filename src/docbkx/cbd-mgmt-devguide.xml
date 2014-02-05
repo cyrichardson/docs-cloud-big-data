@@ -772,11 +772,11 @@
                 appropriate replication, caching, and overall
                 maintenance of &PRODNAME; data across regional
                 boundaries to other Cloud Servers.</para>
-            <para>The endpoints to use for your Cloud Big Data API
-                calls are summarized in the table below.</para>
+            <para>The  admin endpoints to use for your Cloud Big Data
+                API calls are summarized in the table below.</para>
             <para>
                 <table rules="all">
-                    <caption>Regionalized Service Endpoints</caption>
+                    <caption>Admin Service Endpoints</caption>
                     <thead>
                         <tr align="center">
                             <td colspan="2">Region</td>
@@ -787,31 +787,23 @@
                         <tr align="left">
                             <td colspan="2">Chicago (ORD)</td>
                             <td colspan="5"
-                                   ><code>https://ord.bigdata.api.rackspacecloud.com/v1.0/</code><parameter><replaceable>yourAccountID</replaceable></parameter>/
-                            </td>
+                                   ><code>http://api-admin.dfw.cbd.rackspace.com:8443/v1.0/0/</code></td>
                         </tr>
                         <tr align="left">
                             <td colspan="2">Dallas/Ft. Worth
                                 (DFW)</td>
                             <td colspan="5"
-                                   ><code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/</code><parameter><replaceable>yourAccountID</replaceable></parameter>/
-                            </td>
+                                   ><code>http://api-admin.ord.cbd.rackspace.com:8443/v1.0/0/</code></td>
                         </tr>
                         <tr align="left">
                             <td colspan="2">London (LON)</td>
                             <td colspan="5"
-                                   ><code>https://lon.bigdata.api.rackspacecloud.com/v1.0/</code><parameter><replaceable>yourAccountID</replaceable></parameter>/
-                            </td>
+                                   ><code>http://api-admin.lon.cbd.rackspace.com:8443/v1.0/0/
+                                </code></td>
                         </tr>
                     </tbody>
                 </table>
             </para>
-            <para>Replace the
-                        <code><replaceable>yourAccountID</replaceable></code>
-                placeholder with your actual account number, , which
-                is returned as part of the authentication service
-                response, after the final '/' in the
-                    <code>publicURL</code> field. </para>
             <?rax-fo keep-with-next?>
         </section>
         <section xml:id="Request_Response_Types-d1e903"
@@ -1259,7 +1251,31 @@
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#servers"/>             
             </wadl:resources>   
-        </section>          
+        </section>
+        <section xml:id="Endpoint_Management-001">
+            <title>Endpoint Information Management</title>
+            <para>This section describes the operations that are
+                supported for getting information about
+                endpoints.</para>
+            <wadl:resources
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource
+                    href="../../src/wadl/cbd-mgmt-devguide.wadl#endpoints"
+                />
+            </wadl:resources>
+        </section>
+        <section xml:id="Endpoint_Capacity_Management-001">
+            <title>Endpoint Capacity Management</title>
+            <para>This section describes the operations that are
+                supported for getting information about
+                endpoint capacity.</para>
+            <wadl:resources
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource
+                    href="../../src/wadl/cbd-mgmt-devguide.wadl#endpointCap"
+                />
+            </wadl:resources>
+        </section>
     </chapter>
     <glossary xml:id="glossary_1" >
         <title>Glossary</title>

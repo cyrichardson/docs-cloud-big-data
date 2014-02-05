@@ -9,7 +9,7 @@
         "nodeCount": 5,
         "postInitScriptStatus": "PENDING",
         "progress": 0.0,
-        "status": "BUILD",
+        "status": "BUILDING",
         "links": [
           { "rel": "self",
             "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"

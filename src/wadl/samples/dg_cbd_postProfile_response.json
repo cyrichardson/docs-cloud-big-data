@@ -1,8 +1,8 @@
 
         {"profile":
           { "username": "john.doe",
-            "user_id" : "12346",
-            "tenant_id" : "123456",
+            "userId" : "12346",
+            "tenantId" : "123456",
             "sshkeys": [{"name": "t@test", "publicKey" : "ssh-rsa ....."}],
             "cloudCredentials": {"username": "jdoe"},
             "links": [

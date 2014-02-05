@@ -37,7 +37,7 @@
 <!--*******************************************************-->	
 	
 <resources base="https://dfw.bigdata.api.rackspacecloud.com/">
-	<resource id="version" path="{version}">
+	<resource id="version" path="/">
 		
 		<resource id="limits" path="limits">
 			<method href="#listLimits" />	
@@ -98,11 +98,19 @@
 			<method href="#getServers" />
 		</resource>
 		
+		<resource id="endpoints" path="info">
+			<method href="#getEndpointInfo" />
+		</resource>
+		
+		<resource id="endpointCap" path="capacity">
+			<method href="#getEndpointCap" />
+		</resource>
+		
 	</resource>			
 </resources>
 	
 <!--*******************************************************-->
-<!-- ALL METHODS                                           -->
+<!-- ALL METHODS                                            -->
 <!--*******************************************************-->
 
 <!--*******************************************************-->
@@ -405,6 +413,50 @@
 				</doc>
 			</representation>
 		</response>
-	</method>		
-
+	</method>
+	
+	<!--*******************************************************-->	
+	<!-- ENDPOINT INFO METHODS                                        -->
+	<!--*******************************************************-->		
+	
+	<!--*******************************************************-->						
+	<!-- Get Endpoint Info: getEndpointInfo                               -->
+	<!--*******************************************************-->
+	
+	<method name="GET" id="getEndpointInfo">
+		<wadl:doc xml:lang="EN" title="Get Endpoint Information" xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Returns information for the endpoint.</para>
+			<para>This operation returns the information about the endpoint, such as the version of the API that is running.</para>
+		</wadl:doc>
+		<response status="200">		
+			<representation mediaType="application/json" >
+				<doc>
+					<xsdxt:code href="../wadl/samples/cbd_getEndpointInfo_response.json"/>
+				</doc>
+			</representation>
+		</response>
+	</method>
+	
+	<!--*******************************************************-->	
+	<!-- 	ENDPOINT CAPACITY METHODS                                   -->
+	<!--*******************************************************-->		
+	
+	<!--*******************************************************-->						
+	<!-- Get Endpoint Capacity: getEndpointCap                               -->
+	<!--*******************************************************-->
+	
+	<method name="GET" id="getEndpointCap">
+		<wadl:doc xml:lang="EN" title="Get Endpoint Information" xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Returns the total and remaining capacity for each flavor supported by that endpoint.</para>
+			<para>This operation returns total and remaining capacity information for the flavors supported by the endpoint.</para>
+		</wadl:doc>
+		<response status="200">		
+			<representation mediaType="application/json" >
+				<doc>
+					<xsdxt:code href="../wadl/samples/cbd_getCapacity_response.json"/>
+				</doc>
+			</representation>
+		</response>
+	</method>
+	
 </application>
