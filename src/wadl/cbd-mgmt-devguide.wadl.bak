@@ -447,7 +447,7 @@
 	
 	<method name="GET" id="getEndpointCap">
 		<wadl:doc xml:lang="EN" title="Get Endpoint Information" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Returns the total and remaining capacity for each flavor supported by that endpoint.</para>
+			<para role="shortdesc">Returns the total and remaining capacity for each flavor supported by the endpoint.</para>
 			<para>This operation returns total and remaining capacity information for the flavors supported by the endpoint.</para>
 		</wadl:doc>
 		<response status="200">		
