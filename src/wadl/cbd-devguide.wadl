@@ -326,6 +326,8 @@
 		<wadl:doc xml:lang="EN" title="List Cluster Nodes" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Lists all nodes for the specified cluster. </para>  
 			<para>This operation lists all nodes for the cluster specified by <code>clusterId</code>clusterId. </para>
+			<para>Valid values for the request body parameter <code>postInitScriptStatus</code> are <code>FAILED</code>, <code>PENDING</code>, <code>DELIVERED</code>, <code>RUNNING</code>, <code>SUCCEEDED</code>, and <code>None</code>.</para>
+			<para>Valid values for the node status are in <xref linkend="node_status"/>.</para>
 		</wadl:doc>
 		<request>		
 			<representation mediaType="application/json" >
@@ -352,6 +354,8 @@
 		<wadl:doc xml:lang="EN" title="Get Node Details" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Returns details for the specified node in the specified cluster. </para>  
 			<para>This operation returns details for the node specified by <code>nodeId</code> in the cluster specified by <code>clusterId</code>.</para>
+			<para>Valid values for the request body parameter <code>postInitScriptStatus</code> are <code>FAILED</code>, <code>PENDING</code>, <code>DELIVERED</code>, <code>RUNNING</code>, <code>SUCCEEDED</code>, and <code>None</code>.</para>
+			<para>Valid values for the node status are in <xref linkend="node_status"/>.</para>
 		</wadl:doc>							
 		<request>
 			<representation mediaType="application/json" element="clusters:Cluster" >

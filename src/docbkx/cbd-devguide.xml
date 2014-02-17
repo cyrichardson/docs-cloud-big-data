@@ -1033,6 +1033,42 @@ format="SVG" scale="60"/>
           </mediaobject>
         </figure>
       </para>
+    </section>
+    <section xml:id="node_status">
+      <title>Node Status</title>
+      <para><?rax-fo keep-with-next?>When you send an API request to
+        list or get details about a node or nodes, the following node
+        status values might be returned:</para>
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>BUILDING &ndash; Cloud Big Data is waiting for a nova
+            resource to become available.</para>
+        </listitem>
+        <listitem>
+          <para>CONFIGURING &ndash; The server resource was acquired
+            from nova and is being configured for cluster.</para>
+        </listitem>
+        <listitem>
+          <para>ACTIVE &ndash; The node is provisioned and part of a
+            cluster.</para>
+        </listitem>
+        <listitem>
+          <para>ERROR &ndash; The provisioning failed for the
+            node.</para>
+        </listitem>
+        <listitem>
+          <para>DELETING &ndash; A delete was requested but is not yet
+            completed.</para>
+        </listitem>
+        <listitem>
+          <para>DELETED &ndash; The node has been deleted, and the
+            nova resource has been freed.</para>
+        </listitem>
+        <listitem>
+          <para>DEACTIVATING &ndash; The node is preparing to be
+            removed from the cluster.</para>
+        </listitem>
+      </itemizedlist>
     </section>       
   </chapter>
   <chapter xml:id="API_Operations_dle2000"

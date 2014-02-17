@@ -36,7 +36,7 @@
 <!-- ALL RESOURCES                                         -->
 <!--*******************************************************-->	
 	
-<resources base="https://dfw.bigdata.api.rackspacecloud.com/" xml:id="bigdata-v1">
+<resources base="https://dfw.bigdata.api.rackspacecloud.com/">
 	<resource id="version" path="/">
 		
 		<resource id="limits" path="limits">
