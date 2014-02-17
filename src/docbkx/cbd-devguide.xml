@@ -91,12 +91,21 @@ format="SVG" scale="60"/>
         <revdescription>
           <itemizedlist>
             <listitem>
+              <para>Added  <xref linkend="node_status"/>.</para>
+            </listitem>
+            <listitem>
               <para>Updated the Create or Update Profile operation
                 description in the API Operations chapter. </para>
             </listitem>
             <listitem>
               <para>Updated the Create Cluster operation description
                 in the API Operations chapter. </para>
+            </listitem>
+            <listitem>
+              <para>Updated the Nodes methods in the API Operations
+                chapter to include a cross-reference to  <xref
+                  linkend="node_status"/> and to include valid values
+                for <code>postInitScriptStatus</code>. </para>
             </listitem>
           </itemizedlist>
         </revdescription>
