@@ -1,6 +1,5 @@
-
-        {"resize":
-            { "nodeCount": 10
-            }
-        } 
-        
+{
+   "resize":{
+      "nodeCount":10
+   }
+}      
