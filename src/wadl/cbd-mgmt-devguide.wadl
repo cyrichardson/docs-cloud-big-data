@@ -215,7 +215,7 @@
 		<response status="202">		
 			<representation mediaType="application/json" >
 				<doc>
-					<xsdxt:code href="../wadl/samples/cbd_deleteCluster_response.json"/>
+					<xsdxt:code href="../wadl/samples/cbd_deleteCluster_response-json-http.txt"/>
 				</doc>
 			</representation>
 		</response>
