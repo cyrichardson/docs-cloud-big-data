@@ -322,8 +322,8 @@ format="SVG" scale="60"/>
       <para>&PRODNAME; is part of the Rackspace Cloud and your use
         through the API will be billed as per the pricing schedule at
           <link
-          xlink:href="http://www.rackspace.com/cloud/public/bigdata/pricing"
-          >http://www.rackspace.com/cloud/public/bigdata/pricing</link>.
+            xlink:href="http://www.rackspace.com/cloud/big-data/pricing/"
+            >http://www.rackspace.com/cloud/big-data/pricing/</link>.
         Cloud Servers is also part of the Rackspace Cloud and your use
         through the Cloud Control Panel will be billed as per the
         pricing schedule at <link
