@@ -78,10 +78,8 @@ format="SVG" scale="60"/>
       </annotation>
     </legalnotice>
     <abstract>
-      <para >This document is intended for software
-        developers interested in developing applications using the
-        Rackspace &PRODNAME; Application Programming Interface
-          (<abbrev>API</abbrev>). </para>
+      <para>This guide is intended for software developers interested in developing applications
+        using the Rackspace &PRODNAME; Application Programming Interface (<abbrev>API</abbrev>). </para>
     </abstract>
     <revhistory xmlns:svg="http://www.w3.org/2000/svg"
       xmlns:m="http://www.w3.org/1998/Math/MathML"
