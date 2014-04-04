@@ -916,7 +916,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 { "rel": "bookmark",
                   "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/profile"
                 }
-              ],
+              ]
             }
         }</programlisting>
         </example>
@@ -1255,7 +1255,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             </example>
             <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <title>Create Cluster Response: JSON</title>
-                <programlisting language="json" >    {"cluster":
+                <programlisting language="json">    {"cluster":
       { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
         "created": "2012-12-27T10:10:10Z",
         "updated": "",
@@ -1271,7 +1271,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
           { "rel": "bookmark",
             "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
           }
-        ],
+        ]
       }
     }</programlisting>
  
@@ -1332,7 +1332,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 { "rel": "bookmark",
                   "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
                 }
-              ],
+              ]
             },
             { "id": "ac111111-2d86-4597-8010-cbe787bbbc41",
               "name": "real",
@@ -1351,8 +1351,8 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 { "rel": "bookmark",
                   "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/ac111111-2d86-4597-8010-cbe787bbbc41"
                 }
-              ],
-            },
+              ]
+            }
           ]
         }
         
@@ -1431,7 +1431,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 { "rel": "bookmark",
                   "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
                 }
-              ],
+              ]
             },
             { "id": "aaa",
               "role": "GATEWAY",
@@ -1461,7 +1461,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 { "rel": "bookmark",
                   "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/aaa"
                 }
-              ],
+              ]
             },
             { "id": "bbb",
               "role": "DATANODE",
@@ -1485,7 +1485,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 { "rel": "bookmark",
                   "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/bbb"
                 }
-              ],
+              ]
             },
             { "id": "ccc",
               "role": "DATANODE",
@@ -1509,7 +1509,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 { "rel": "bookmark",
                   "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/ccc"
                 }
-              ],
+              ]
             } 
           ]
         }</programlisting>
@@ -1563,7 +1563,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             </example>
             <example>
                 <title>Resize Cluster Response: JSON</title>
-                <programlisting language="json" >        {"cluster":
+                <programlisting language="json">        {"cluster":
           { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
             "created": "2012-12-27T10:10:10Z",
             "updated": "2012-12-27T16:20:10Z",
@@ -1579,7 +1579,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
               { "rel": "bookmark",
                 "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
               }
-            ],
+            ]
           }
         } </programlisting>
      
