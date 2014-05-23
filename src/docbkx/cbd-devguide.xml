@@ -43,7 +43,7 @@ format="SVG" scale="60"/>
     title.font.size="30px" 
     subtitle.font.size="20px"         
     canonical.url.base="http://docs-internal.rackspace.com/cbd/api/v1/cbd-devguide/content"
-    status.bar.text="Limited Access"?>
+    status.bar.text=""?>
   <title>Rackspace &PRODNAME; Developer Guide</title>
   <titleabbrev>&PRODNAME; Developer Guide</titleabbrev>
 -->
@@ -68,9 +68,9 @@ format="SVG" scale="60"/>
       <year>2014</year>
       <holder>Rackspace US, Inc.</holder>
     </copyright>
-    <releaseinfo>API v1.0 Limited Access</releaseinfo>
+    <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace &PRODNAME;</productname>
-    <pubdate>2014-04-09</pubdate>
+    <pubdate>2014-06-02</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the doc build
@@ -84,6 +84,12 @@ format="SVG" scale="60"/>
     <revhistory xmlns:svg="http://www.w3.org/2000/svg"
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
+      <revision>
+        <date>2014-06-02</date>
+        <revdescription>
+          <para>Initial Unlimited Availability (UA) release.</para>
+        </revdescription>
+      </revision>
       <revision>
         <date>2014-04-09</date>
         <revdescription>
@@ -125,7 +131,7 @@ format="SVG" scale="60"/>
       <revision>
         <date>2014-01-14</date>
         <revdescription>
-          <para>Limited Access (LA) release.</para>
+          <para>Limited Availability (LA) release.</para>
         </revdescription>
       </revision>
       <revision>
@@ -224,6 +230,9 @@ format="SVG" scale="60"/>
             and MapReduce</para>
         </listitem>
         <listitem>
+          <para>Hortonworks Data Platform (HDP)</para>
+        </listitem>
+        <listitem>
           <para>RESTful web services</para>
         </listitem>
         <listitem>
@@ -242,45 +251,23 @@ format="SVG" scale="60"/>
       <?rax revhistory?>
     </section>
     <section xml:id="Early_Access-d1e122">
-      <title>Limited Access</title>
-      <para>The Limited Access program enables customers and Rackers
-        to test an early version of the product and provide feedback
-        on the product and capabilities. Customers are screened as
-        part of the on-boarding process to ensure correct
-        product/customer fit. </para>        
-      <para>Limited Access users must meet the following criteria:
-          <itemizedlist spacing="compact">
+      <title>Prerequisites</title>
+      <para>To work with the Cloud Big Data API, you must have the following
+          prerequisites:<itemizedlist spacing="compact">
           <listitem>
             <para>A Rackspace Cloud account</para>
           </listitem>
           <listitem>
-            <para>Prior knowledge of Hadoop or a third-party tool that
-              works with Hadoop</para>
+            <para>A Rackspace Cloud username and password, as specified during registration</para>
           </listitem>
-          <listitem>
-            <para>Ability to work with the Hortonworks Data Platform
-              (HDP)</para>
-          </listitem>
-          <listitem>
-            <para>Prior knowledge of HTTP/1.1 conventions</para>
-          </listitem>
-          <listitem>
-            <para>Basic familiarity with Cloud and RESTful APIs</para>
-          </listitem>
-          <listitem>
-            <para>A willingness to provide feedback to the Rackspace
-              Product and Product Marketing functions</para>
-          </listitem>
-        </itemizedlist>
-      </para>
-      <para>The following OS and Hadoop Distribution are supported
-        during the Limited Access program: <itemizedlist
-          spacing="compact">
+        </itemizedlist></para>
+      <para>The following OS and Hadoop Distribution are supported: <itemizedlist spacing="compact">
           <listitem>
             <para>CentOS 6.3 </para>
           </listitem>
           <listitem>
-            <para>HDP version 1.1 </para>
+            <para>HDP version 1.3 and version 2.<emphasis role="italic">x</emphasis>
+            </para>
           </listitem>
         </itemizedlist>
       </para>
@@ -292,15 +279,9 @@ format="SVG" scale="60"/>
               wherein Hadoop, MapReduce, or Apache Pig jobs can
               directly reference Cloud Files containers. </para>
           </listitem>
-          <listitem>
-            <para>If you participate in this Limited Access program,
-              you will receive a notification prior to general
-              availability. </para>
-          </listitem>
         </itemizedlist>
       </para>
-      <para>The following resource limits apply during the Limited
-        Access program: <itemizedlist spacing="compact">
+      <para>The following resource limits apply: <itemizedlist spacing="compact">
           <listitem>
             <para>Up to 5 data nodes</para>
           </listitem>
@@ -318,9 +299,8 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="API_Contract_Changes-d1e122">
       <title>API Contract Changes</title>
-      <para>The API contract is not locked and might change during the
-        Limited Access program. If the contract changes, Rackspace
-        will notify customers in release notes.</para>
+      <para>The API contract is not locked and might change. If the contract changes, Rackspace will
+        notify customers in release notes.</para>
     </section>
     <section xml:id="Pricing_SLA-d1e1362">
       <title>Pricing and Service Level</title>

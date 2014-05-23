@@ -52,7 +52,7 @@
     <?rax title.font.size="35px" subtitle.font.size="20px"?>
     <title>Rackspace Cloud Big Data Getting Started Guide</title>
     <?rax status.bar.text.font.size="40px"
-          status.bar.text="Limited Access"?>   
+          status.bar.text=""?>   
     <titleabbrev>Rackspace Cloud Big Data Getting Started
         Guide</titleabbrev>
      
@@ -63,9 +63,9 @@
             <year>2014</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
-        <releaseinfo>API v1.0 Limited Access</releaseinfo>
+        <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Big Data</productname>
-        <pubdate>2014-01-14</pubdate>
+        <pubdate>2014-06-02</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the doc build process.</remark>
@@ -80,12 +80,21 @@
         </abstract>
         <revhistory>
             <revision>
+                <date>2014-06-02</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Initial Unlimited Availability (UA) release.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2014-01-14</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Initial Limited Access (LA)
-                                release.</para>
+                            <para>Initial Limited Availability (LA) release.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -224,59 +233,31 @@
         <para>Follow the steps described in this guide to start using
             the Rackspace &PRODNAME; API.</para>
         <section xml:id="core_concepts">
-            <title>Limited Access Program</title>
-            <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
-                Limited Access program enables customers and Rackers
-                to test an early version of the product and provide
-                feedback on the product and its capabilities.
-                Customers are screened as part of the on-boarding
-                process to ensure correct product/customer fit. </para>
-            <para xmlns:wadl="http://wadl.dev.java.net/2009/02"
-                >Limited Access users must meet the following
-                criteria: <itemizedlist spacing="compact">
+            <title>Prerequisites for Running Examples</title>
+            <para xmlns:wadl="http://wadl.dev.java.net/2009/02">In order to run the examples in this
+                guide, you must have the following prerequisites:<itemizedlist spacing="compact">
                     <listitem>
                         <para>A Rackspace Cloud account</para>
                     </listitem>
                     <listitem>
-                        <para>Prior knowledge of Hadoop or a
-                            third-party tool that works with
+                        <para>A Rackspace Cloud username and password, as specified during
+                            registration</para>
+                    </listitem>
+                    <listitem>
+                        <para>Prior knowledge of HTTP/1.1 conventions</para>
+                    </listitem>
+                    <listitem>
+                        <para>Basic familiarity with Cloud and RESTful APIs</para>
+                    </listitem>
+                    <listitem>
+                        <para>Prior knowledge of Hadoop or a third-party tool that works with
                             Hadoop</para>
                     </listitem>
                     <listitem>
-                        <para>Ability to work with the Hortonworks
-                            Data Platform (HDP)</para>
-                    </listitem>
-                    <listitem>
-                        <para>Prior knowledge of HTTP/1.1
-                            conventions</para>
-                    </listitem>
-                    <listitem>
-                        <para>Basic familiarity with Cloud and RESTful
-                            APIs</para>
-                    </listitem>
-                    <listitem>
-                        <para>A willingness to provide feedback to the
-                            Rackspace Product and Product Marketing
-                            functions</para>
+                        <para>Ability to work with the Hortonworks Data Platform (HDP)</para>
                     </listitem>
                 </itemizedlist>
             </para>
-            <para>By using the &PRODNAME; API, you understand and
-                agree to the following limitations and
-                conditions:</para>
-            <itemizedlist>
-                <listitem>
-                    <para>If you participate in this Limited Access
-                        program, you will receive a notification prior
-                        to general availability.</para>
-                </listitem>
-                <listitem>
-                    <para>The API contract is not locked and might
-                        change during the Limited Access program. If
-                        the contract changes, Rackspace will notify
-                        customers in release notes. </para>
-                </listitem>
-            </itemizedlist>
         </section>
       <section xml:id="Pricing_SLA-d1e1362">
             <title>Pricing and Service Level</title>
@@ -296,20 +277,6 @@
                     xlink:href="http://www.rackspace.com/cloud/legal/sla"
                     >http://www.rackspace.com/cloud/legal/sla</link>.</para>
                
-        </section> 
-        <section xml:id="Prerequisites_Examples">
-            <title>Prerequisites for Running Examples</title>
-            <para>To run the examples in this guide, you must have the
-                following prerequisites: <itemizedlist
-                    spacing="compact">
-                    <listitem>
-                        <para>Rackspace Cloud account</para>
-                    </listitem>
-                    <listitem>
-                        <para>Rackspace Cloud user name and password,
-                            as specified during registration</para>
-                    </listitem>
-                </itemizedlist></para>
         </section>
     </chapter>
     <chapter xml:id="Service_Access_Endpoints-d1e753">
@@ -354,10 +321,9 @@
                 </tbody>
             </table>
         </para>
-        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Replace
-            the <code><replaceable>yourAccountID</replaceable></code>
-            placeholder with your actual account number, , which is
-            returned as part of the authentication service response,
+        <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Replace the
+                    <code><replaceable>yourAccountID</replaceable></code> placeholder with your
+            actual account number, which is returned as part of the authentication service response,
             after the final '/' in the <code>publicURL</code> field. </para>
         <note>
             <para>All examples in this guide assume that you are
@@ -598,8 +564,7 @@
                             section.</para>
                     </listitem>
                 </itemizedlist></para>
-        <para> You can use either of the following endpoints to access
-                the Cloud Authentication service: </para>
+        <para>You can use either of the following endpoints to access the Cloud Identity service: </para>
         <itemizedlist spacing="compact">
             <listitem>
                 <para><link xlink:href="&ENDPOINT-US-20;"
@@ -611,9 +576,8 @@
                         >&ENDPOINT-UK-20;</link></para>
             </listitem>
         </itemizedlist>
-        <para> Your account might be based in either the US or the UK.
-                The location of your account is not determined by your
-                physical location but by the location of the Rackspace
+        <para>Your account might be based in either the US or the UK. The location of your account
+                is not determined by your physical location but by the location of the Rackspace
                 retail site that was used to create your account: </para>
         <itemizedlist spacing="compact">
             <listitem>
@@ -629,17 +593,14 @@
                     UK-based account. </para>
             </listitem>
         </itemizedlist>
-        <para> If you are unsure how your account was created, use the
-            Rackspace contact information at either site to ask for
-            help. </para>  
-        <para>Notice that you authenticate by using a special URL for
-                the Cloud Authentication services. For example, for
-                US-based accounts, you use
-                    <code>https://identity.api.rackspacecloud.com/v2.0/tokens</code>,
-                as shown in the following Authenticate Request
-                examples. Note that the <code>v2.0</code> component in
-                the URL indicates that you are using version 2.0 of
-                the Cloud Authentication API.</para>
+        <para>If you are unsure how your account was created, use the Rackspace contact information
+                at either site to ask for help. </para>  
+        <para>Notice that you authenticate by using a special URL for the Cloud Identity services.
+                For example, for US-based accounts, you use
+                    <code>https://identity.api.rackspacecloud.com/v2.0/tokens</code>, as shown in
+                the following authenticate request examples. Note that the <code>v2.0</code>
+                component in the URL indicates that you are using version 2.0 of the Cloud Identity
+                API.</para>
             <note>
                 <para>For UK-based accounts, you can use
                         <code>'https://lon.identity.api.rackspacecloud.com/v2.0/tokens'</code>
