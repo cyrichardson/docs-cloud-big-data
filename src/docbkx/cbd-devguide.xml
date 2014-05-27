@@ -87,7 +87,7 @@ format="SVG" scale="60"/>
       <revision>
         <date>2014-06-02</date>
         <revdescription>
-          <para>Initial Unlimited Availability (UA) release.</para>
+          <para>Initial General Availability (GA) release.</para>
         </revdescription>
       </revision>
       <revision>
@@ -263,11 +263,10 @@ format="SVG" scale="60"/>
         </itemizedlist></para>
       <para>The following OS and Hadoop Distribution are supported: <itemizedlist spacing="compact">
           <listitem>
-            <para>CentOS 6.3 </para>
+            <para>CentOS 6.5 </para>
           </listitem>
           <listitem>
-            <para>HDP version 1.3 and version 2.<emphasis role="italic">x</emphasis>
-            </para>
+            <para>HDP version 2.1 and 1.3 </para>
           </listitem>
         </itemizedlist>
       </para>
@@ -283,16 +282,16 @@ format="SVG" scale="60"/>
       </para>
       <para>The following resource limits apply: <itemizedlist spacing="compact">
           <listitem>
-            <para>Up to 5 data nodes</para>
+            <para>Up to 3 data nodes</para>
           </listitem>
           <listitem>
-            <para>Up to 10 virtual CPUs</para>
+            <para>Up to 6 virtual CPUs</para>
           </listitem>
           <listitem>
-            <para>Up to 40 GB of RAM</para>
+            <para>Up to 23040 GB of RAM</para>
           </listitem>
           <listitem>
-            <para>Up to 5 TB of disk space</para>
+            <para>Up to 4500 GB of disk space</para>
           </listitem>
         </itemizedlist>
       </para>
@@ -382,14 +381,6 @@ format="SVG" scale="60"/>
           <code>POST/v2.0/tokens</code> request, presenting valid
         Rackspace customer credentials in the message body to a
         Rackspace authentication endpoint. </para>
-      <note>
-        <para>If you cannot access the &PRODNAME; API, send an email
-          to the &PRODNAME; team at
-            <email>cbdteam@rackspace.com</email> to request access.
-          Access will be granted on an as-needed basis until access to
-          the &PRODNAME; API is integrated with Cloud Identity
-          service.</para>
-      </note>
       <para><emphasis role="bold">1. GET YOUR CREDENTIALS</emphasis>
       </para>
       <para> You can use either of the following sets of credentials: <itemizedlist>
@@ -1001,7 +992,7 @@ format="SVG" scale="60"/>
             for use.</para>
         </listitem>
         <listitem>
-          <para>RESIZING &ndash; The cluster is being updated, either
+          <para>UPDATING &ndash; The cluster is being updated, either
             through a resize operation or another update
             operation.</para>
         </listitem>

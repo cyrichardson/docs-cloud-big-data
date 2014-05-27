@@ -119,9 +119,9 @@
   </chapter>
   <chapter xml:id="Jun02">
     <title>June 2, 2014</title>
-    <para>This release is the initial Unlimited Availability (UA) release of the Cloud Big Data
+    <para>This release is the initial General Availability (GA) release of the Cloud Big Data
       API.</para>
-    <para>Rackspace is pleased to announce the Unlimited Availability release of Rackspace Cloud Big
+    <para>Rackspace is pleased to announce the General Availability release of Rackspace Cloud Big
       Data. The Service Level Agreement (SLA) for Cloud Big Data is available at <link
         xlink:href="http://www.rackspace.com/cloud/legal/sla" xmlns:svg="http://www.w3.org/2000/svg"
         xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"

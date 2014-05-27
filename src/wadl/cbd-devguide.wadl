@@ -82,9 +82,7 @@
 						</resource>
 					</resource>
 				</resource>
-			</resource>
 
-			<resource id="flavorsVersion" path="/">
 				<resource id="flavors" path="flavors">
 					<method href="#getFlavors"/>
 					<resource id="flavor" path="{flavorId}">
@@ -103,9 +101,7 @@
 						</resource>
 					</resource>
 				</resource>
-			</resource>
 
-			<resource id="typeVersion" path="/">
 				<resource id="types" path="types">
 					<method href="#getClusterTypes"/>
 					<resource id="type" path="{typeId}">
@@ -122,9 +118,7 @@
 						</resource>
 					</resource>
 				</resource>
-			</resource>
 
-			<resource id="limitVersion" path="/">
 				<resource id="limits" path="limits">
 					<method href="#viewResourceLimits"/>
 				</resource>

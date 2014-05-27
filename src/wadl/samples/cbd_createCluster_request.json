@@ -1,7 +1,7 @@
     {"cluster":
       { "name": "slice",
-        "clusterType": "HADOOP_HDP1_1",
-        "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
+        "clusterType": "HADOOP_HDP2_1",
+        "flavorId": "hadoop1-7",
         "nodeCount": 5
       }
     }

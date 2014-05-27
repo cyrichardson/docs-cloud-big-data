@@ -1,18 +1,35 @@
 {
-   "types":[
-      {
-         "id":"HADOOP_HDP1_1",
-         "links":[
-            {
-               "href":"http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/types/HADOOP_HDP1_1",
-               "rel":"self"
-            },
-            {
-               "href":"http://dfw.bigdata.api.rackspacecloud.com/1234/types/HADOOP_HDP1_1",
-               "rel":"bookmark"
-            }
-         ],
-         "name":"Hadoop (HDP 1.1)"
-      }
-   ]
-}    
+    "types": [
+        {
+            "id": "HADOOP_HDP1_3",
+            "links": [
+                {
+                    "href": "http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/types/HADOOP_HDP1_3",
+                    "rel": "self"
+                },
+                {
+                    "href": "http://dfw.bigdata.api.rackspacecloud.com/1234/types/HADOOP_HDP1_3",
+                    "rel": "bookmark"
+                }
+            ],
+            "name": "Hadoop (HDP 1.3)",
+            "version": "1.3"
+        },
+        {
+            "id": "HADOOP_HDP2_1",
+            "links": [
+                {
+                    "href": "http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/types/HADOOP_HDP2_1",
+                    "rel": "self"
+                },
+                {
+                    "href": "http://dfw.bigdata.api.rackspacecloud.com/1234/types/HADOOP_HDP2_1",
+                    "rel": "bookmark"
+                }
+            ],
+            "name": "Hadoop (HDP 2.1)",
+            "version": "2.1"
+        }
+    ]
+}
+    

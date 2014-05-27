@@ -5,8 +5,8 @@
               "name": "slice",
               "created": "2012-12-27T10:10:10Z",
               "updated": "2012-12-27T10:15:10Z", 
-              "clusterType": "HADOOP_HDP1_1",
-              "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
+              "clusterType": "HADOOP_HDP2_1",
+              "flavorId": "hadoop1-7",
               "nodeCount": 5,
               "status": "ACTIVE",
               "links": [
@@ -22,8 +22,8 @@
               "name": "real",
               "created": "2012-12-27T10:10:10Z",
               "updated": "2012-12-27T10:15:10Z", 
-              "clusterType": "HBASE_HDP1_1",
-              "flavorId": "518400b2-7c76-11e2-b737-beeffa00040e",
+              "clusterType": "HBASE_HDP2_1",
+              "flavorId": "hadoop1-7",
               "nodeCount": 20,
               "status": "ACTIVE",
               "links": [

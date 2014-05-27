@@ -84,7 +84,7 @@
                 <revdescription>
                     <itemizedlist>
                         <listitem>
-                            <para>Initial Unlimited Availability (UA) release.</para>
+                            <para>Initial General Availability (GA) release.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -439,7 +439,7 @@
                         the following actions:</para>
                     <step>
                         <para>Copy each example from the HTML version
-                            of this guide an paste it into an ASCII
+                            of this guide and paste it into an ASCII
                             text editor (for example, vi or TextEdit).
                         </para>
                     </step>
@@ -958,11 +958,11 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
     "limits": {
         "links": [
             {
-                "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/681390/limits",
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/limits",
                 "rel": "self"
             },
             {
-                "href": "https://dfw.bigdata.api.rackspacecloud.com/681390/limits",
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/limits",
                 "rel": "bookmark"
             }
         ],
@@ -1041,68 +1041,44 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 </example>
                 <example>
                     <title>List Flavors Response: JSON</title>
-                    <programlisting language="json">        { "flavors": [
-          {
-            "disk": 256,
-            "id": "4fba3bca-7c76-11e2-b737-beeffa00040e",
+                    <programlisting language="json">{
+    "flavors": [
+        {
+            "disk": 10000,
+            "id": "hadoop1-60",
             "links": [
-              { "href": "http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/flavors/4fba3bca-7c76-11e2-b737-beeffa00040e", 
-                "rel": "self"
-              },
-              { "href": "http://dfw.bigdata.api.rackspacecloud.com/1234/flavors/4fba3bca-7c76-11e2-b737-beeffa00040e", 
-                "rel": "bookmark"
-              }
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/flavors/hadoop1-60",
+                    "rel": "self"
+                },
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/flavors/hadoop1-60",
+                    "rel": "bookmark"
+                }
             ],
-            "name": "Tiny Hadoop Instance",
-            "ram": 5120,
-            "vcpus": 1
-          },
-          {
-            "disk": 512,
-            "id": "518400b2-7c76-11e2-b737-beeffa00040e",
+            "name": "XLarge Hadoop Instance",
+            "ram": 61440,
+            "vcpus": 16
+        },
+        {
+            "disk": 1250,
+            "id": "hadoop1-7",
             "links": [
-              { "href": "http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/flavors/518400b2-7c76-11e2-b737-beeffa00040e", 
-                "rel": "self"
-              },
-              { "href": "http://dfw.bigdata.api.rackspacecloud.com/1234/flavors/518400b2-7c76-11e2-b737-beeffa00040e", 
-                "rel": "bookmark"
-              }
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/flavors/hadoop1-7",
+                    "rel": "self"
+                },
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/flavors/hadoop1-7",
+                    "rel": "bookmark"
+                }
             ],
             "name": "Small Hadoop Instance",
             "ram": 8192,
             "vcpus": 2
-          },
-          {
-            "disk": 1024,
-            "id": "5413894c-7c76-11e2-b737-beeffa00040e",
-            "links": [
-              { "href": "http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/flavors/5413894c-7c76-11e2-b737-beeffa00040e", 
-                "rel": "self"
-              },
-              { "href": "http://dfw.bigdata.api.rackspacecloud.com/1234/flavors/5413894c-7c76-11e2-b737-beeffa00040e", 
-                "rel": "bookmark"
-              }
-            ],
-            "name": "Medium Hadoop Instance",
-            "ram": 15360,
-            "vcpus": 4
-          },
-          {
-            "disk": 2000,
-            "id": "559dd2b8-7c76-11e2-b737-beeffa00040e",
-            "links": [
-              { "href": "http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/flavors/559dd2b8-7c76-11e2-b737-beeffa00040e", 
-                "rel": "self"
-              },
-              { "href": "http://dfw.bigdata.api.rackspacecloud.com/1234/flavors/559dd2b8-7c76-11e2-b737-beeffa00040e", 
-                "rel": "bookmark"
-              }
-            ],
-            "name": "Large Hadoop Instance",
-            "ram": 27648,
-            "vcpus": 8
-          }
-        ] }</programlisting>
+        }
+    ]
+}</programlisting>
                 </example>
             </section>
             <section xml:id="List-Cluster-Types-d1e002">
@@ -1142,27 +1118,40 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 </example>
                 <example>
                     <title>List Cluster Types Response: JSON</title>
-                    <programlisting language="json" >
- 
-        { "types":
-          [
-            {
-              "id": "HADOOP_HDP1_1",
-              "links": [
-                { "href": "http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/types/HADOOP_HDP1_1",
-                  "rel": "self"
+                    <programlisting language="json" >{
+    "types": [
+        {
+            "id": "HADOOP_HDP1_3",
+            "links": [
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/types/HADOOP_HDP1_3",
+                    "rel": "self"
                 },
-                { "href": "http://dfw.bigdata.api.rackspacecloud.com/1234/types/HADOOP_HDP1_1",
-                  "rel": "bookmark"
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/types/HADOOP_HDP1_3",
+                    "rel": "bookmark"
                 }
-              ],
-              "name": "Hadoop (HDP 1.1)"
-            }
-          ]
+            ],
+            "name": "Hadoop (HDP 1.3)",
+            "version": "1.3"
+        },
+        {
+            "id": "HADOOP_HDP2_1",
+            "links": [
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/types/HADOOP_HDP2_1",
+                    "rel": "self"
+                },
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/types/HADOOP_HDP2_1",
+                    "rel": "bookmark"
+                }
+            ],
+            "name": "Hadoop (HDP 2.1)",
+            "version": "2.1"
         }
-        
-        
-</programlisting>
+    ]
+}</programlisting>
                 </example>
             </section>
         <section xml:id="createCluster">
@@ -1190,7 +1179,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             </informaltable><para>The following example creates a 5-data-node Hadoop cluster with
                     the name <code>slice</code>.</para>
             <para>The value of the <code>clusterType</code> attribute
-                    must be HADOOP_HDP1_1. The <code>flavorID</code>
+                    must be one of the supported cluster types. The <code>flavorID</code>
                     attribute specifies the RAM, virtual CPUs, and
                     disk storage associated with each data node in
                     your Hadoop cluster. </para>
@@ -1204,8 +1193,8 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 <programlisting language="bash">curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters -d \
 '{"cluster":
       { "name": "slice",
-        "clusterType": "HADOOP_HDP1_1",
-        "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
+        "clusterType": "HADOOP_HDP2_1",
+        "flavorId": "hadoop1-7",
         "nodeCount": 5
       }
     }' \          
@@ -1221,8 +1210,8 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
         "created": "2012-12-27T10:10:10Z",
         "updated": "",
         "name": "slice",
-        "clusterType": "HADOOP_HDP1_1",
-        "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
+        "clusterType": "HADOOP_HDP2_1",
+        "flavorId": "hadoop1-7",
         "nodeCount": 5,
         "status": "BUILD",
         "links": [
@@ -1280,8 +1269,8 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
               "name": "slice",
               "created": "2012-12-27T10:10:10Z",
               "updated": "2012-12-27T10:15:10Z", 
-              "clusterType": "HADOOP_HDP1_1",
-              "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
+              "clusterType": "HADOOP_HDP2_1",
+              "flavorId": "hadoop1-7",
               "nodeCount": 5,
               "postInitScriptStatus": "SUCCEEDED",
               "progress": 1.0,
@@ -1299,8 +1288,8 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
               "name": "real",
               "created": "2012-12-27T10:10:10Z",
               "updated": "2012-12-27T10:15:10Z", 
-              "clusterType": "HBASE_HDP1_1",
-              "flavorId": "518400b2-7c76-11e2-b737-beeffa00040e",
+              "clusterType": "HBASE_HDP2_1",
+              "flavorId": "hadoop1-60",
               "nodeCount": 20,
               "postInitScriptStatus": null,
               "progress": 1.0,
@@ -1479,9 +1468,8 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
         </section>
         <section xml:id="resizeClusters">
             <title>Resizing Clusters</title>
-            <para>You can increase the size of an existing cluster by
-                    using the <code>resize</code> command. Downsizing
-                    clusters is not currently supported. </para>
+            <para>You can increase or decrease the size of an existing cluster by
+                    using the <code>resize</code> command.</para>
             <informaltable rules="all">
                 <thead>
                     <tr align="center">
@@ -1503,7 +1491,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                     data nodes. When you use the <code>resize</code>
                     command, you specify the total number of data
                     nodes that you want the cluster to have, not just
-                    the number of nodes to add. In the example, 10 is
+                    the number of nodes to add or remove. In the example, 10 is
                     the total number of nodes that the cluster will
                     have after the command is run. After you initiate
                     the <code>resize</code> operation, you can use the
@@ -1529,10 +1517,10 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             "created": "2012-12-27T10:10:10Z",
             "updated": "2012-12-27T16:20:10Z",
             "name": "slice",
-            "clusterType": "HADOOP_HDP1_1",
-            "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
+            "clusterType": "HADOOP_HDP2_1",
+            "flavorId": "hadoop1-7",
             "nodeCount": 10,
-            "status": "RESIZING",
+            "status": "UPDATING",
             "links": [
               { "rel": "self",
                 "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
@@ -1591,8 +1579,8 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             "created": "2012-12-27T10:10:10Z",
             "updated": "2012-12-27T20:14:10Z",
             "name": "slice",
-            "clusterType": "HADOOP_HDP1_1",
-            "flavorId": "4fba3bca-7c76-11e2-b737-beeffa00040e",
+            "clusterType": "HADOOP_HDP2_1",
+            "flavorId": "hadoop1-7",
             "nodeCount": 5,
             "status": "DELETING",
             "links": [
@@ -1818,7 +1806,7 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
                 <example>
                     <title>Provision a Cluster by Using the boot
                         Command </title>
-                    <programlisting>$ lava boot --type=HADOOP_HDP1_1 --flavor=4fba3bca-7c76-11e2-b737-beeffa00040e --count=3 foo
+                    <programlisting>$ lava boot --type=HADOOP_HDP2_1 --flavor=hadoop1-7 --count=3 foo
 +----------+--------------------------------------+
 | Property | Value |
 +----------+--------------------------------------+
@@ -1826,12 +1814,12 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
 | Name | foo |
 | Status | BUILD |
 | Nodes | 3 |
-| Type | HADOOP_HDP1_1 |
-| Flavor | 4fba3bca-7c76-11e2-b737-beeffa00040e |
+| Type | HADOOP_HDP2_1 |
+| Flavor | hadoop1-7 |
 +----------+--------------------------------------+</programlisting>
                 </example>
                 <para>The <code>type</code> argument must specify
-                    HADOOP_HDP1_1. The <code>flavor</code> argument
+                    a supported cluster type. The <code>flavor</code> argument
                     specifies the RAM, virtual CPUs, and disk storage
                     associated with each data node in your Hadoop
                     cluster. You can enumerate the flavors and
@@ -1842,14 +1830,12 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
                     <title>List Flavors and Associated Resources by
                         Using the flavor-list Command </title>
                     <programlisting>$ lava flavor-list
-+--------------------------------------+------------------------+-------+------+------+
++------------+-------------------------+-------+------+------+
 | Id | Name | Mem | Disk | CPUs |
-+--------------------------------------+------------------------+-------+------+------+
-| 4fba3bca-7c76-11e2-b737-beeffa00040e | Tiny Hadoop Instance | 5120 | 256 | 1 |
-| 518400b2-7c76-11e2-b737-beeffa00040e | Small Hadoop Instance | 8192 | 512 | 2 |
-| 5413894c-7c76-11e2-b737-beeffa00040e | Medium Hadoop Instance | 15360 | 1024 | 4 |
-| 559dd2b8-7c76-11e2-b737-beeffa00040e | Large Hadoop Instance | 27648 | 2048 | 8 |
-+--------------------------------------+------------------------+-------+------+------+</programlisting>
++------------+-------------------------+-------+------+------+
+| hadoop1-60 | XLarge Hadoop Instance | 61440 | 10000 | 16 |
+| hadoop1-7  | Small Hadoop Instance  | 8192  | 1250  | 2  |
++------------+-------------------------+-------+------+------+</programlisting>
                 </example>
                 <para>After you run the <code>boot</code> command, it
                     takes a few minutes for the service to build and
@@ -1863,7 +1849,7 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
 +--------------------------------------+------+--------+-------+---------------+
 | Id | Name | Status | Nodes | Type |
 +--------------------------------------+------+--------+-------+---------------+
-| 4820deb2-6212-44f9-b92f-979fe723ffb8 | foo | ACTIVE | 3 | HADOOP_HDP1_1 |
+| 4820deb2-6212-44f9-b92f-979fe723ffb8 | foo | ACTIVE | 3 | HADOOP_HDP2_1 |
 +--------------------------------------+------+--------+-------+---------------+</programlisting>
                 </example>
                 <para>When your cluster is ready, the value of
@@ -1886,18 +1872,18 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
 | Name | foo |
 | Status | ACTIVE |
 | Nodes | 3 |
-| Type | HADOOP_HDP1_1 |
-| Flavor | 4fba3bca-7c76-11e2-b737-beeffa00040e |
+| Type | HADOOP_HDP2_1 |
+| Flavor | hadoop1-7 |
 +----------+--------------------------------------+
 $ lava nodes foo
 +--------------------------------------+--------------+----------+--------+----------------+----------------+
 | Id | Name | Role | Status | Public IP | Private IP |
 +--------------------------------------+--------------+----------+--------+----------------+----------------+
-| f530a9f1-79a8-4378-bf2a-b7f7e0c2bdd3 | NAMENODE-88 | NAMENODE | ACTIVE | 166.78.132.85 | 10.190.240.88 |
-| 87a1bf57-daa6-4dd5-b711-f428cc44fe74 | DATANODE-182 | DATANODE | ACTIVE | 166.78.132.228 | 10.190.240.228 |
-| 82136cd0-2c98-4c76-9224-54aef9942de3 | DATANODE-183 | DATANODE | ACTIVE | 166.78.132.84 | 10.190.240.84 |
-| 8a9929ed-9ba3-4a22-b5a7-8a36a81179a6 | DATANODE-184 | DATANODE | ACTIVE | 166.78.132.88 | 10.190.240.85 |
-| 55ed5001-fdc3-44f1-a82c-97532007f3b3 | GATEWAY-89 | GATEWAY | ACTIVE | 166.78.132.227 | 10.190.240.227 |
+| f530a9f1-79a8-4378-bf2a-b7f7e0c2bdd3 | NAMENODE-1 | NAMENODE | ACTIVE | 166.78.132.85  | 10.190.240.88  |
+| 87a1bf57-daa6-4dd5-b711-f428cc44fe74 | DATANODE-2 | DATANODE | ACTIVE | 166.78.132.228 | 10.190.240.228 |
+| 82136cd0-2c98-4c76-9224-54aef9942de3 | DATANODE-3 | DATANODE | ACTIVE | 166.78.132.84  | 10.190.240.84  |
+| 8a9929ed-9ba3-4a22-b5a7-8a36a81179a6 | DATANODE-1 | DATANODE | ACTIVE | 166.78.132.88  | 10.190.240.85  |
+| 55ed5001-fdc3-44f1-a82c-97532007f3b3 | GATEWAY-1  | GATEWAY  | ACTIVE | 166.78.132.227 | 10.190.240.227 |
 +--------------------------------------+--------------+----------+--------+----------------+----------------+
 </programlisting>
                 </example>
@@ -1934,9 +1920,8 @@ $ lava nodes foo
             </section>
             <section xml:id="resize_Cluster">
                 <title>Resizing Clusters</title>
-                <para>You can increase the size of an existing cluster
+                <para>You can increase or decrease the size of an existing cluster
                     by using the <code>resize</code> command.
-                    Downsizing clusters is not currently supported.
                     The following example resizes the previously
                     created cluster <code>foo</code> to include 5 data nodes.<example>
                         <title>Increase Cluster Size by Using the
@@ -1947,7 +1932,7 @@ $ lava nodes foo
                 <para>When you use the <code>resize</code> command,
                     you specify the total number of data nodes that
                     you want the cluster to have, not just the number
-                    of nodes to add. In the example, 5 is the total
+                    of nodes to add or remove. In the example, 5 is the total
                     number of nodes that the cluster will have after
                     the command is run.  After you initiate the
                         <code>resize</code> operation, use the

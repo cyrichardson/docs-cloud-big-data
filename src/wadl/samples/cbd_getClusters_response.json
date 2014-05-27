@@ -3,42 +3,42 @@
                   {
                    "status": "ACTIVE", 
                    "updated": "2013-06-25T00:20:54", 
-                   "name": "nmap_cluster Tue Jun 25 00:17:57 2013", 
+                   "name": "slice", 
                    "links": [
                               {
-                                "href": "https://lab.lava.rackspace.com:8446/v1.0/maya6380/clusters/0dfb3", 
+                                "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41", 
                                 "rel": "self"
                               },
                               {
-                                "href": "https://lab.lava.rackspace.com:8446/v1.0/maya6380/clusters/0dfb3", 
+                                "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41", 
                                 "rel": "bookmark"
                               }
                             ], 
                    "created": "2013-06-25T00:19:23", 
                    "nodeCount": 2, 
-                   "flavorId": "2", 
-                   "id": "0dfb3", 
-                   "clusterType": "HADOOP_HDP1_3"
+                   "flavorId": "hadoop1-7", 
+                   "id": "db478fc1-2d86-4597-8010-cbe787bbbc41", 
+                   "clusterType": "HADOOP_HDP2_1"
                  }, 
                  { 
                    "status": "ERROR", 
                    "updated": "2013-07-01T15:56:40", 
-                   "name": "lava_test_1372694041", 
+                   "name": "test", 
                    "links": [
                              {
-                               "href": "https://lab.lava.rackspace.com:8446/v1.0/maya6380/clusters/5d94b", 
+                               "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/aa478fc1-2d86-4597-8010-cbe787bbbc41", 
                                "rel": "self"
                              }, 
                              {
-                               "href": "https://lab.lava.rackspace.com:8446/maya6380/clusters/5d94b", 
+                               "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/aa478fc1-2d86-4597-8010-cbe787bbbc41", 
                                "rel": "bookmark"
                              }
                             ], 
                    "created": "2013-07-01T15:55:42", 
                    "nodeCount": 2, 
-                   "flavorId": "2", 
-                   "id": "5d94b", 
-                   "clusterType": "HADOOP_HDP1_1"
+                   "flavorId": "hadoop1-7", 
+                   "id": "aa478fc1-2d86-4597-8010-cbe787bbbc41", 
+                   "clusterType": "HADOOP_HDP1_3"
                   } 
      ]
 }
