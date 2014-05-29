@@ -41,7 +41,7 @@
       <revision>
         <date>2014-06-02</date>
         <revdescription>
-          <para>Initial Unlimited Availability (UA) release.</para>
+          <para>Initial General Availability (GA) release.</para>
         </revdescription>
       </revision>
       <revision xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
@@ -107,8 +107,7 @@
     <para>You can also provide feedback by using the <link
         xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback"
         >Product Feedback forum</link>.</para>
-    <para>Rackspace welcomes your comments, feedback, and bug reports
-      .</para>
+    <para>Rackspace welcomes your comments, feedback, and bug reports.</para>
   </preface>
   <chapter xml:id="doc_change_history">
     <title>Document Change History</title>
@@ -131,7 +130,7 @@
   <chapter xml:id="Apr09">
     <title>April 9, 2014</title>
     <para>This release of the Cloud Big Data API updates the default values for the absolute limits
-      in the<citetitle>Cloud Big Data Developer Guide</citetitle> as shown in the following table. </para>
+      in the <citetitle>Cloud Big Data Developer Guide</citetitle> as shown in the following table. </para>
     <table rules="all" xmlns:svg="http://www.w3.org/2000/svg"
       xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
       xmlns:wadl="http://wadl.dev.java.net/2009/02">

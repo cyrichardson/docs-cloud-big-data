@@ -973,6 +973,170 @@ format="SVG" scale="60"/>
       </table>
       
     </section>
+    <section xml:id="pagination">
+      <title>Pagination</title>
+      <para>Pagination provides the ability to limit the size of the returned data in the response
+        body as well as retrieve a specified subset of a large data set. Pagination has two key
+        concepts: <emphasis>limit</emphasis> and <emphasis>marker</emphasis>. </para>
+      <para>
+        <itemizedlist>
+          <listitem>
+            <para>Limit is the restriction on the maximum
+              number of items for that type that can be
+              returned. </para>
+          </listitem>
+          <listitem>
+            <para>Marker is the ID of the last item in the
+              previous list returned. </para>
+            <para>The ID is the respective ID for the last cluster, node, or flavor. For example, a query could request the next 10 nodes after the node “xyz” as follows:
+<code>?limit=10&amp;marker=xyz</code>. Items displayed are sorted by ID. </para>
+          </listitem>
+        </itemizedlist>
+      </para>
+      <para>Pagination applies only to the calls listed in the
+        following table: </para>
+      <informaltable rules="all">
+        <thead>
+          <tr align="center">
+            <td colspan="1">Verb</td>
+            <td colspan="2">URI</td>
+            <td colspan="3">Description</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="1">&GET;</td>
+            <td colspan="2">/v1.0/{tenant_id}/clusters </td>
+            <td colspan="3">Lists all clusters for your account.</td>
+          </tr>
+          <tr>
+            <td colspan="1">&GET;</td>
+            <td colspan="2">/v1.0/{tenant_id}/clusters/{clusterId}/nodes </td>
+            <td colspan="3">Lists all nodes for the specified cluster.</td>
+          </tr>
+          <tr>
+            <td colspan="1">&GET;</td>
+            <td colspan="2">/v1.0/{tenant_id}/flavors</td>
+            <td colspan="3">Lists all available flavors, inclduing the drive size and the amount of
+              RAM.</td>
+          </tr>
+        </tbody>
+      </informaltable>
+      <para>The default paging limit for all calls is 25 with a maximum of 200. Requests for more than 200 result in a 400 error.</para>
+      <para>See the example of the paged List Nodes operation that follows.</para>
+      <example>
+        <title>List Nodes Paged Request: JSON</title>
+        
+        <programlisting language="json">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/yourAccountID/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes?limit=2 -d \
+-H "X-Auth-Token: yourAuthToken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" <!--        <xi:include href="../samples/cbd_listNodes_pagination_request.json" parse="text"/>        --></programlisting>
+      </example>
+      <para>Notice that the paged request example above sets the limit to 2 (<code>?limit=2</code>),
+        so the response that follows shows 2 nodes:</para>
+      <example>
+        <title>List Nodes Paged Response: JSON</title>
+               
+        <programlisting language="json">
+{
+    "nodes": [
+              {
+              "id": "000",
+              "created": "2012-12-27T10:10:10Z",
+              "role": "NAMENODE",
+              "name": "NAMENODE-1",
+              "status": "ACTIVE",
+              "addresses": {
+              "public": [
+                         {
+                         "addr": "168.x.x.3",
+                         "version": 4
+                         }
+                         ],
+              "private": [
+                          {
+                          "addr": "10.x.x.3",
+                          "version": 4
+                          }
+                          ]
+              },
+              "services": [
+                           {
+                           "name": "namenode"
+                           },
+                           {
+                           "name": "jobtracker"
+                           },
+                           {
+                           "name": "ssh",
+                           "uri": "ssh://user@168.x.x.3"
+                           }
+                           ],
+              "links": [
+                        {
+                        "rel": "self",
+                        "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
+                        },
+                        {
+                        "rel": "bookmark",
+                        "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
+                        }
+                        ]
+              },
+              {
+              "id": "aaa",
+              "role": "GATEWAY",
+              "name": "GATEWAY-1",
+              "status": "ACTIVE",
+              "addresses": {
+              "public": [
+                         {
+                         "addr": "168.x.x.4",
+                         "version": 4
+                         }
+                         ],
+              "private": [
+                          {
+                          "addr": "10.x.x.4",
+                          "version": 4
+                          }
+                          ]
+              },
+              "services": [
+                           {
+                           "name": "pig"
+                           },
+                           {
+                           "name": "hive"
+                           },
+                           {
+                           "name": "ssh",
+                           "uri": "ssh://user@168.x.x.4"
+                           },
+                           {
+                           "name": "status",
+                           "uri": "http://10.x.x.4"
+                           },
+                           {
+                           "name": "hdfs-scp",
+                           "uri": "scp://user@168.x.x.4:9022"
+                           }
+                           ],
+              "links": [
+                        {
+                        "rel": "self",
+                        "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/aaa"
+                        },
+                        {
+                        "rel": "bookmark",
+                        "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/aaa"
+                }
+            ]
+        }
+    ]
+} <!--        <xi:include href="../samples/cbd_listNodes_pagination_response.json" parse="text"/>  --></programlisting>
+      </example>
+    </section>
     <section xml:id="cluster_status" >
       <title>Cluster Status</title>
       <para><?rax-fo keep-with-next?>When you send an API request to
@@ -1112,7 +1276,6 @@ format="SVG" scale="60"/>
       <para>This section describes operations that are supported for
         flavors.</para>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-        <wadl:resource href="../../src/wadl/cbd-devguide.wadl#flavorsVersion"/>   
         <wadl:resource href="../../src/wadl/cbd-devguide.wadl#flavors"/> 
         <wadl:resource href="../../src/wadl/cbd-devguide.wadl#flavor"/> 
         <wadl:resource href="../../src/wadl/cbd-devguide.wadl#flavorsSupportedType"/> 
@@ -1123,7 +1286,6 @@ format="SVG" scale="60"/>
       <para>This section describes the operations that are supported
         for cluster types.</para>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-        <wadl:resource href="../../src/wadl/cbd-devguide.wadl#typeVersion"/>  
         <wadl:resource href="../../src/wadl/cbd-devguide.wadl#types"/> 
         <wadl:resource href="../../src/wadl/cbd-devguide.wadl#type"/> 
         <wadl:resource href="../../src/wadl/cbd-devguide.wadl#flavorsType"/> 
@@ -1133,8 +1295,7 @@ format="SVG" scale="60"/>
       <title>Resource Limits</title>
       <para>This section describes the operation that is supported for
         resource limits.</para>
-      <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-        <wadl:resource href="../../src/wadl/cbd-devguide.wadl#limitVersion"/>    
+      <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">   
         <wadl:resource href="../../src/wadl/cbd-devguide.wadl#limits"/> 
       </wadl:resources>
     </section>
