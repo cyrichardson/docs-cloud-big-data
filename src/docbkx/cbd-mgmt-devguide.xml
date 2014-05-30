@@ -351,18 +351,11 @@
         <section xml:id="Pricing_SLA-d1e1362"
             xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <title>Pricing and Service Level</title>
-            <para>&PRODNAME; is part of the Rackspace Cloud and your
-                use through the API will be billed as per the pricing
-                schedule at <link
+            <para>&PRODNAME; is part of the Rackspace Cloud and your use through the API will be
+                billed according to  the pricing schedule at <link
                     xlink:href="http://www.rackspace.com/cloud/big-data/pricing/"
-                    >http://www.rackspace.com/cloud/big-data/pricing/</link>.
-                Cloud Servers is also part of the Rackspace Cloud and
-                your use through the Cloud Control Panel will be
-                billed as per the pricing schedule at <link
-                    xlink:href="http://www.rackspace.com/cloud/public/servers/pricing"
-                    >http://www.rackspace.com/cloud/public/servers/pricing</link>.</para>
-            <para>The Service Level Agreements (SLAs) for Cloud Big
-                Data and Cloud Servers are available at <link
+                    >http://www.rackspace.com/cloud/big-data/pricing/</link>. </para>
+            <para>The Service Level Agreement (SLA) for Cloud Big Data is available at <link
                     xlink:href="http://www.rackspace.com/cloud/legal/sla"
                     >http://www.rackspace.com/cloud/legal/sla</link>.</para>
         </section>
@@ -1148,35 +1141,26 @@
        
         <section xml:id="pagination">
             <title>Pagination</title>
-            <remark>Reviewer: Please review and give me your updates
-                for this section. Dev needs to determine which API
-                calls support pagination and then supply examples.
-                I</remark>
-            <para>To reduce load on the service, some list operations
-                return a maximum of 100 items at a time. This is
-                referred to as <emphasis>pagination</emphasis>.</para>
-            <para>Pagination is the ability to limit the size of the
-                returned data as well as retrieve a specified subset
-                of a large data set. Pagination has two key concepts:
-                limit and offset. <emphasis>Limit</emphasis> is the
-                restriction on the maximum number of items for that
-                type that can be returned. <emphasis>Offset</emphasis>
-                is the starting point for the return data. For
-                example, an offset of 50 specifies that the items that
-                are returned should start with item number 51 (since
-                the numbering is one-based) in the collection. </para>
-            <para>It is important to note that offset
-                    <emphasis>must</emphasis> be a multiple of the
-                limit (or zero), otherwise a Bad Request Exception
-                will be thrown. Both limit and offset are specified
-                via request parameters on the URI. The parameters are
-                named <code>limit</code> and <code>offset</code>
-                respectively, and both apply only to &GET; calls. If
-                unspecified, they default to <code>limit=100</code>
-                and <code>offset=0</code>. </para>
-            <para>Pagination applies only to the calls listed in the following table: </para>
-            <remark>Reviewer: need to update the table of paginated API
-                calls below:</remark>
+            <para>Pagination provides the ability to limit the size of the returned data in the response
+                body as well as retrieve a specified subset of a large data set. Pagination has two key
+                concepts: <emphasis>limit</emphasis> and <emphasis>marker</emphasis>. </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Limit is the restriction on the maximum
+                            number of items for that type that can be
+                            returned. </para>
+                    </listitem>
+                    <listitem>
+                        <para>Marker is the ID of the last item in the
+                            previous list returned. </para>
+                        <para>The ID is the respective ID for the last cluster, node, or flavor. For example, a query could request the next 10 nodes after the node “xyz” as follows:
+                            <code>?limit=10&amp;marker=xyz</code>. Items displayed are sorted by ID. </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>Pagination applies only to the calls listed in the
+                following table: </para>
             <informaltable rules="all">
                 <thead>
                     <tr align="center">
@@ -1188,16 +1172,137 @@
                 <tbody>
                     <tr>
                         <td colspan="1">&GET;</td>
-                        <td colspan="2">{versions}/clusters</td>
-                        <td colspan="3">List all clusters for all
-                            tenants. </td>
+                        <td colspan="2">/v1.0/{tenant_id}/clusters </td>
+                        <td colspan="3">Lists all clusters for your account.</td>
                     </tr>
-                
-                    
-                    
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2">/v1.0/{tenant_id}/clusters/{clusterId}/nodes </td>
+                        <td colspan="3">Lists all nodes for the specified cluster.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2">/v1.0/{tenant_id}/flavors</td>
+                        <td colspan="3">Lists all available flavors, inclduing the drive size and the amount of
+                            RAM.</td>
+                    </tr>
                 </tbody>
             </informaltable>
-       </section>
+            <para>The default paging limit for all calls is 25 with a maximum of 200. Requests for more than 200 result in a 400 error.</para>
+            <para>See the example of the paged List Nodes operation that follows.</para>
+            <example>
+                <title>List Nodes Paged Request: JSON</title>
+                
+                <programlisting language="json">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/yourAccountID/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes?limit=2 -d \
+-H "X-Auth-Token: yourAuthToken" \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" <!--        <xi:include href="../samples/cbd_listNodes_pagination_request.json" parse="text"/>        --></programlisting>
+            </example>
+            <para>Notice that the paged request example above sets the limit to 2 (<code>?limit=2</code>),
+                so the response that follows shows 2 nodes:</para>
+            <example>
+                <title>List Nodes Paged Response: JSON</title>
+                
+                <programlisting language="json">
+{
+    "nodes": [
+              {
+              "id": "000",
+              "created": "2012-12-27T10:10:10Z",
+              "role": "NAMENODE",
+              "name": "NAMENODE-1",
+              "status": "ACTIVE",
+              "addresses": {
+              "public": [
+                         {
+                         "addr": "168.x.x.3",
+                         "version": 4
+                         }
+                         ],
+              "private": [
+                          {
+                          "addr": "10.x.x.3",
+                          "version": 4
+                          }
+                          ]
+              },
+              "services": [
+                           {
+                           "name": "namenode"
+                           },
+                           {
+                           "name": "jobtracker"
+                           },
+                           {
+                           "name": "ssh",
+                           "uri": "ssh://user@168.x.x.3"
+                           }
+                           ],
+              "links": [
+                        {
+                        "rel": "self",
+                        "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
+                        },
+                        {
+                        "rel": "bookmark",
+                        "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
+                        }
+                        ]
+              },
+              {
+              "id": "aaa",
+              "role": "GATEWAY",
+              "name": "GATEWAY-1",
+              "status": "ACTIVE",
+              "addresses": {
+              "public": [
+                         {
+                         "addr": "168.x.x.4",
+                         "version": 4
+                         }
+                         ],
+              "private": [
+                          {
+                          "addr": "10.x.x.4",
+                          "version": 4
+                          }
+                          ]
+              },
+              "services": [
+                           {
+                           "name": "pig"
+                           },
+                           {
+                           "name": "hive"
+                           },
+                           {
+                           "name": "ssh",
+                           "uri": "ssh://user@168.x.x.4"
+                           },
+                           {
+                           "name": "status",
+                           "uri": "http://10.x.x.4"
+                           },
+                           {
+                           "name": "hdfs-scp",
+                           "uri": "scp://user@168.x.x.4:9022"
+                           }
+                           ],
+              "links": [
+                        {
+                        "rel": "self",
+                        "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/aaa"
+                        },
+                        {
+                        "rel": "bookmark",
+                        "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/aaa"
+                }
+            ]
+        }
+    ]
+} <!--        <xi:include href="../samples/cbd_listNodes_pagination_response.json" parse="text"/>  --></programlisting>
+            </example>
+        </section>
 
     </chapter>
     

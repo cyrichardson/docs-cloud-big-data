@@ -125,7 +125,10 @@
         xlink:href="http://www.rackspace.com/cloud/legal/sla" xmlns:svg="http://www.w3.org/2000/svg"
         xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
         xmlns:wadl="http://wadl.dev.java.net/2009/02"
-        >http://www.rackspace.com/cloud/legal/sla</link>.</para>
+        >http://www.rackspace.com/cloud/legal/sla</link>. Your use through the API will be
+      billed according to the pricing schedule at <link
+        xlink:href="http://www.rackspace.com/cloud/big-data/pricing"
+        >http://www.rackspace.com/cloud/big-data/pricing</link>. </para>
   </chapter>
   <chapter xml:id="Apr09">
     <title>April 9, 2014</title>
@@ -185,10 +188,10 @@
     <para>This release is the initial Limited Availability (LA)
       release of the Cloud Big Data API.</para>
     <para>Rackspace is pleased to announce the Limited Availability release of Rackspace Cloud Big
-      Data. The Limited Access program enables customers and Rackers to test an early version of the
-      product and provide feedback on the product and capabilities. Customers are screened as part
-      of the on-boarding process to ensure correct product/customer fit. The Service Level Agreement
-      (SLA) for Cloud Big Data is available at <link
+      Data. The Limited Availability program enables customers and Rackers to test an early version
+      of the product and provide feedback on the product and capabilities. Customers are screened as
+      part of the on-boarding process to ensure correct product/customer fit. The Service Level
+      Agreement (SLA) for Cloud Big Data is available at <link
         xlink:href="http://www.rackspace.com/cloud/legal/sla" xmlns:svg="http://www.w3.org/2000/svg"
         xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
         xmlns:wadl="http://wadl.dev.java.net/2009/02"

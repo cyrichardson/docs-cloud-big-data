@@ -261,19 +261,12 @@
         </section>
       <section xml:id="Pricing_SLA-d1e1362">
             <title>Pricing and Service Level</title>
-            <para>&PRODNAME; is part of the Rackspace Cloud and your
-                use through the API will be billed as per the pricing
-                schedule at <link
-                    xlink:href="http://www.rackspace.com/cloud/public/bigdata/pricing"
-                    >http://www.rackspace.com/cloud/public/bigdata/pricing</link>.
-                Cloud Servers is also part of the Rackspace Cloud and
-                your use through the Cloud Control Panel will be
-                billed as per the pricing schedule at <link
-                    xlink:href="http://www.rackspace.com/cloud/public/servers/pricing"
-                    >http://www.rackspace.com/cloud/public/servers/pricing</link>.</para>
+            <para>&PRODNAME; is part of the Rackspace Cloud and your use through the API will be
+                billed according to the pricing schedule at <link
+                    xlink:href="http://www.rackspace.com/cloud/big-data/pricing"
+                    >http://www.rackspace.com/cloud/big-data/pricing</link>. </para>
          
-            <para>The Service Level Agreements (SLAs) for Cloud
-                Big Data and Cloud Servers are available at <link
+            <para>The Service Level Agreement (SLA) for Cloud Big Data is available at <link
                     xlink:href="http://www.rackspace.com/cloud/legal/sla"
                     >http://www.rackspace.com/cloud/legal/sla</link>.</para>
                
