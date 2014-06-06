@@ -1,0 +1,88 @@
+{
+    "cluster": {
+        "created": "2014-06-14T10:10:10Z",
+        "id": "aaa-bbbb-cccc",
+        "name": "test",
+        "status": "ACTIVE",
+        "stack": {
+            "id": "HDP2.1_Hadoop",
+            "node_groups": [
+            {
+                "components": [
+                    {
+                        "name": "Namenode"
+                    },
+                    {
+                        "name": "ResourceManager"
+                    },
+                    {
+                        "name": "YarnTimelineServer"
+                    },
+                    {
+                        "name": "JobHistoryServer"
+                    }
+                ],
+                "count": 1,
+                "flavor": "hadoop1-7",
+                "id": "master"
+            },
+            {
+                "components": [
+                    {
+                        "name": "Namenode"
+                    }
+                ],
+                "count": 1,
+                "flavor": "hadoop1-7",
+                "id": "standby-namenode"
+            },
+            {
+                "components": [
+                    {
+                        "name": "JournalNode"
+                    }
+                ],
+                "count": 3,
+                "flavor": "hadoop1-1",
+                "id": "journalnodes"
+            },
+            {
+                "components": [
+                    {
+                        "name": "Datanode"
+                    },
+                    {
+                        "name": "NodeManager"
+                    }
+                ],
+                "count": 10,
+                "flavor": "hadoop1-7",
+                "id": "slave",
+            },
+            {
+                "components": [
+                    {
+                        "name": "HiveServer2"
+                    },
+                    {
+                        "name": "HiveMetastore"
+                    },
+                    {
+                        "name": "HiveClient"
+                    },
+                    {
+                        "name": "HiveAPI"
+                    },
+                    {
+                        "name": "PigClient"
+                    }
+                ],
+                "count": 1,
+                "flavor": "hadoop1-2",
+                "id": "gateway"
+            }
+        ]
+        },
+        "updated": ""
+    }
+}

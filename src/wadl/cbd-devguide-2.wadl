@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- (C) 2012-2014 OpenStack Foundation, All Rights Reserved  -->
+
+<!DOCTYPE application [
+    <!ENTITY % common  SYSTEM "../common/common.ent">
+    %common;
+]>
+
+<application xmlns="http://wadl.dev.java.net/2009/02"
+	xmlns:wadl="http://wadl.dev.java.net/2009/02"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0"
+	xmlns:raxapi="http://docs.rackspace.com/volume/api/v1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:cbd="http://docs.openstack.org/database/api/v1.0"
+	xmlns:clusters="http://docs.openstack.org/database/api/v1.0">
+
+
+	<!--*******************************************************-->
+	<!-- GRAMMARS                                              -->
+	<!--*******************************************************-->
+
+	<!-- What do I need here for Cloud Big Data Dev Guide? 
+	<grammars>
+		<include href="../common/xsd/api.xsd"/> (identity grammars)
+		<include href="../common/xsd/api-common.xsd"/> (identity grammars)
+		<include href="dbaas.xsd" /> (databases grammars)
+	</grammars>
+-->
+
+	<!--*******************************************************-->
+	<!-- ALL RESOURCES                                         -->
+	<!--*******************************************************-->
+
+	<resources base="https://dfw.bigdata.api.rackspacecloud.com/">
+		<resource id="version" path="v2/">
+			<resource id="tenant_id" path="{tenant_id}">
+				<param name="tenant_id" style="template"
+					type="xsd:string">
+					<wadl:doc xmlns="http://docbook.org/ns/docbook"
+						xml:lang="EN"><para>The tenant ID in a
+							multi-tenancy cloud.</para>
+					</wadl:doc>
+				</param>
+
+				<resource id="distros" path="distros">
+					<method href="#listDistros"/>
+					<resource id="distro" path="{distro_id}">
+						<param name="distro_id" style="template"
+							type="xsd:string">
+							<wadl:doc xml:lang="EN"
+								xmlns="http://docbook.org/ns/docbook"
+								>A specific distribution id.</wadl:doc>
+						</param>
+						<method href="#getDistroDetails"/>
+					</resource>
+				</resource>
+
+				<resource id="stacks" path="stacks">
+					<method href="#createStack"/>
+					<method href="#listStacks"/>
+					<resource id="stack" path="{stackId}">
+						<param name="stackId" style="template"
+							type="xsd:string">
+							<wadl:doc xml:lang="EN"
+								xmlns="http://docbook.org/ns/docbook"
+								>Specifies the stack ID.</wadl:doc>
+						</param>
+						<method href="#getStackDetails"/>
+						<method href="#deleteStack"/>
+					</resource>
+				</resource>
+
+				<resource id="clusters" path="clusters">
+					<method href="#createCluster"/>
+					<method href="#listClusters"/>
+
+					<resource id="cluster" path="{clusterId}">
+						<param name="clusterId" style="template"
+							type="xsd:string">
+							<wadl:doc xml:lang="EN"
+								xmlns="http://docbook.org/ns/docbook"
+								>Specifies the cluster ID.</wadl:doc>
+						</param>
+						<method href="#getClusterDetails"/>
+						<method href="#deleteCluster"/>
+
+						<resource id="action" path="action">
+							<method href="#postClusterAction"/>
+						</resource>
+						<resource id="nodes" path="nodes">
+							<method href="#listClusterNodes"/>
+
+							<resource id="node" path="{nodeId}">
+								<param name="nodeId" style="template"
+								type="xsd:string">
+								<wadl:doc xml:lang="EN"
+								xmlns="http://docbook.org/ns/docbook"
+								>Specifies the node ID.</wadl:doc>
+								</param>
+								<method href="#getNodeDetails"/>
+							</resource>
+						</resource>
+					</resource>
+				</resource>
+
+				<resource id="flavors" path="flavors">
+					<method href="#listFlavors"/>
+					<resource id="flavor" path="{flavorId}">
+						<param name="flavorId" style="template"
+							type="xsd:string">
+							<wadl:doc xml:lang="EN"
+								xmlns="http://docbook.org/ns/docbook"
+								>Specifies the flavor ID.</wadl:doc>
+						</param>
+						<method href="#getFlavorDetails"/>
+					</resource>
+				</resource>
+
+				<resource id="limits" path="limits">
+					<method href="#getLimits"/>
+				</resource>
+			</resource>
+		</resource>
+	</resources>
+
+
+	<!--*******************************************************-->
+	<!-- ALL METHODS                                           -->
+	<!--*******************************************************-->
+
+	<!--*******************************************************-->
+	<!-- DISTROS METHODS                                       -->
+	<!--*******************************************************-->
+
+	<!--*******************************************************-->
+	<!-- List Available distors: getDistros                    -->
+	<!--*******************************************************-->
+
+	<method name="GET" id="listDistros">
+		<wadl:doc xml:lang="EN" title="List Available Distros"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Lists all available Distros.</para>
+		</wadl:doc>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code
+						href="../wadl/samples/lava2/list_distros_response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+
+	<!--*******************************************************-->
+	<!-- List Distro Details: getDistroDetails                 -->
+	<!--*******************************************************-->
+
+	<method name="GET" id="getDistroDetails">
+		<wadl:doc xml:lang="EN" title="Show Distro Details"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Provides a detailed list of all the supported services, their corresponding components and modes of operation for a given distribution.</para>
+		</wadl:doc>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+			<table rules="all">
+            <caption>Attributes for Distro Details</caption>
+            <thead>
+                <tr>
+                    <td colspan="1">Keys</td>
+                    <td colspan="1">Attributes</td>
+                    <td colspan="3">Description</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="1" rowspan="4">distro</td>
+                    <td colspan="1">id</td>
+                    <td colspan="3"><para>Identifier for a particular distribution. Ex: HDP2.1</para></td>
+                </tr>
+                <tr>
+                    <td colspan="1">name</td>
+                    <td colspan="3">Descriptive name for a distribution. Ex: Hortonworks Data Platform</td>
+                </tr>
+                <tr>
+                    <td colspan="1">version</td>
+                    <td colspan="3">Version of the distribution. Ex: 2.1</td>
+                </tr>
+                <tr>
+                    <td colspan="1">services</td>
+                    <td colspan="3">A list of services that are supported for a particular distribution. Ex: HDFS, Yarn etc.</td>
+                </tr>
+                <tr>
+                    <td colspan="1" rowspan="4">services</td>
+                    <td colspan="1">name</td>
+                    <td colspan="3">Specifies the name of a praticular service. Ex: HDFS</td>
+                </tr>
+                <tr>
+                    <td colspan="1">version</td>
+                    <td colspan="3">Version of the service. Ex: 2.4.</td>
+                </tr>
+                <tr>
+                    <td colspan="1">components</td>
+                    <td colspan="3">Components are a subset of services and relates to individual processes. Ex: Namenode, Datanode
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1">modes</td>
+                    <td colspan="3">Certain services can operate in different modes. This details the list of supported modes.
+                    	Ex: HA, Secondary Namenode, Federated HDFS.
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1" rowspan="2">components</td>
+                    <td colspan="1">name</td>
+                    <td colspan="3">Specifies the component name. Ex: Namenode</td>
+                </tr>
+                <tr>
+                    <td colspan="1">mode</td>
+                    <td colspan="3">Specifies that a particular component is only applicable for a certain mode of operation of the service. Ex: Journal Node only applies for a HA Namenode.</td>
+                </tr>
+            </tbody>
+        	</table>
+					<xsdxt:code
+						href="../wadl/samples/lava2/get_distro_details_response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response> &fourofour;</method>
+
+	<!--*******************************************************-->
+	<!-- STACK METHODS                                         -->
+	<!--*******************************************************-->
+
+	<!--*******************************************************-->
+	<!-- Create Stack: createStack                             -->
+	<!--*******************************************************-->
+
+	<method name="POST" id="createStack">
+		<wadl:doc xml:lang="EN" title="Create Stack"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Create a new Stack.</para>
+			<note><para>You can create a new stack and start from scratch or 
+				use one of our preconfigured global stacks.</para></note>
+			<para>The 400 error code might indicate any of the
+				following issues:</para>
+			<itemizedlist spacing="compact">
+				<listitem><para>The response body is invalid.</para>
+				</listitem>
+				<listitem><para>A Stack with the name already existss</para>
+				</listitem>
+			</itemizedlist>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json"
+				element="stacks:stack">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<table rules="all">
+            		<caption>Required Attributes for Create Stack</caption>
+		            <thead>
+		                <tr>
+		                    <td colspan="1">Keys</td>
+		                    <td colspan="1">Attributes</td>
+		                    <td colspan="3">Description</td>
+		                    <td colspan="1">Required</td>
+		                </tr>
+		            </thead>
+		            <tbody>
+		                <tr>
+		                    <td colspan="1" rowspan="4">stack</td>
+		                    <td colspan="1">distro</td>
+		                    <td colspan="3"><para>Identifier for a particular distribution. Ex: HDP2.1</para></td>
+		                    <td colspan="1">Yes</td>
+		                </tr>
+		                <tr>
+		                    <td colspan="1">name</td>
+		                    <td colspan="3">Descriptive name for the stack. Ex: HDP_Core</td>
+		                    <td colspan="1">Yes</td>
+		                </tr>
+		                <tr>
+		                    <td colspan="1">services</td>
+		                    <td colspan="3">A list of services and corresponding components</td>
+		                    <td colspan="1">Yes</td>
+		                </tr>
+		                <tr>
+		                    <td colspan="1">node_groups</td>
+		                    <td colspan="3">Defines the layout of services into grouped cluster nodes.</td>
+		                    <td colspan="1">No</td>
+		                </tr>
+		                <tr>
+		                    <td colspan="1" rowspan="2">services</td>
+		                    <td colspan="1">name</td>
+		                    <td colspan="3">Specifies the name of a praticular service. Ex: HDFS</td>
+		                    <td colspan="1">Yes</td>
+		                </tr>
+		                <tr>
+		                    <td colspan="1">modes</td>
+		                    <td colspan="3">Certain services can operate in different modes. This specifies the list of modes to create for a particular service.
+		                    </td>
+		                    <td colspan="1">No</td>
+		                </tr>
+		                <tr>
+		                    <td colspan="1" rowspan="4">node_groups</td>
+		                    <td colspan="1">id</td>
+		                    <td colspan="3">Specifies a node_group id or name.</td>
+		                    <td colspan="1">Yes</td>
+		                </tr>
+		                <tr>
+		                    <td colspan="1">components</td>
+		                    <td colspan="3">List of components to run within the node group.</td>
+		                    <td colspan="1">Yes</td>
+		                </tr>
+		                <tr>
+		                    <td colspan="1">count</td>
+		                    <td colspan="3">No. of instances of that node group.
+		                    </td>
+		                    <td colspan="1">No</td>
+		                </tr>
+		                <tr>
+		                    <td colspan="1">flavor</td>
+		                    <td colspan="3">The flavor id for the node group.</td>
+		                    <td colspan="1">No</td>
+		                </tr>
+		                <tr>
+		                    <td colspan="1" rowspan="1">components</td>
+		                    <td colspan="1">name</td>
+		                    <td colspan="3">Name of components.</td>
+		                    <td colspan="1">Yes</td>
+		                </tr>
+		            </tbody>
+		        	</table>
+					<xsdxt:code
+						href="../wadl/samples/lava2/create_stack_request1.json"
+					/>
+					<xsdxt:code
+						href="../wadl/samples/lava2/create_stack_request2.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code
+						href="../wadl/samples/lava2/create_stack_response1.json"
+					/>
+					<xsdxt:code
+						href="../wadl/samples/lava2/create_stack_response2.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response> &fourhundred; &fourthirteen; </method>
+
+	<!--*******************************************************-->
+	<!-- List All Stacks: listStacks                           -->
+	<!--*******************************************************-->
+
+	<method name="GET" id="listStacks">
+		<wadl:doc xml:lang="EN" title="List All Stacks"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Lists all stacks. Provides a list of global stacks and user created stacks.</para>
+		</wadl:doc>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code
+						href="../wadl/samples/lava2/list_stacks_response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+
+	<!--*******************************************************-->
+	<!-- Get Stack Details: getStackDetails                    -->
+	<!--*******************************************************-->
+
+	<method name="GET" id="getStackDetails">
+		<wadl:doc xml:lang="EN" title="Show Stack Details"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Shows details for a specific
+				stack.</para>
+		</wadl:doc>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code
+						href="../wadl/samples/lava2/get_stack_details_response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response> &fourofour; </method>
+
+	<!--*******************************************************-->
+	<!-- Delete Stack: deleteStack                             -->
+	<!--*******************************************************-->
+
+	<method name="DELETE" id="deleteStack">
+		<wadl:doc xml:lang="EN" title="Delete Stack"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Deletes a specified stack.</para>
+			<para>Only user created stacks can be deleted, global stacks are read only and cannot be deleted.</para>
+			<para>The 400 error code might indicate missing or invalid
+				parameters.</para>
+			<para>The 409 error code might indicate an invalid
+				state.</para>
+		</wadl:doc>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code
+						href="../wadl/samples/lava2/delete_stack_response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response> &fourhundred; &fourofour; &fouronine; </method>
+
+
+	<!--*******************************************************-->
+	<!-- CLUSTER METHODS                                       -->
+	<!--*******************************************************-->
+
+	<!--*******************************************************-->
+	<!-- Create Cluster: createCluster                         -->
+	<!--*******************************************************-->
+
+	<method name="POST" id="createCluster">
+		<wadl:doc xml:lang="EN" title="Create Cluster"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Creates a cluster.</para>
+			<note><para>You must create your profile before you create
+					a cluster.</para></note>
+			<para>The <code>postInitScript</code> request parameter
+				specifies a URL that downloads a script that runs
+				after the cluster is created. The status of the run is
+				shown in the <code>postInitScriptStatus</code>
+				response parameter.</para>
+			<para>Possible values for
+					<code>postInitScriptStatus</code> are
+					<code>FAILED</code>, <code>PENDING</code>,
+					<code>DELIVERED</code>, <code>RUNNING</code>,
+					<code>SUCCEEDED</code>, and
+				<code>None</code>.</para>
+			<para>The <code>progress</code> response parameter is
+				calculated based on the number of nodes in the cluster
+				and their progress through configuration. Currently,
+				the calculation is as follows but is subject to
+				change:</para>
+			<itemizedlist spacing="compact">
+				<listitem><para>BUILDING: progress = 0.5 *
+						configuring_count /
+					len(self.nodes)</para></listitem>
+				<listitem><para>CONFIGURING/RESIZING: progress = 0.5 +
+						(0.5 * active_count /
+					len(self.nodes))</para></listitem>
+				<listitem><para>ACTIVE: progress =
+					1.0</para></listitem>
+			</itemizedlist>
+			<para>The 400 error code might indicate any of the
+				following issues:</para>
+			<itemizedlist spacing="compact"><listitem><para>The
+						response body is
+						invalid.</para></listitem><listitem><para>You
+						need to create a user
+					profile.</para></listitem><listitem><para>The node
+						count is
+						invalid.</para></listitem><listitem><para>The
+						flavor is
+						invalid.</para></listitem><listitem><para>The
+						data is
+				malformed.</para></listitem></itemizedlist>
+			<para>The 413 error code might indicate that the resource
+				limit is exceeded.</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json"
+				element="clusters:cluster">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<table rules="all">
+            		<caption>Required Attributes for Create Cluster</caption>
+		            <thead>
+		                <tr>
+		                    <td colspan="1">Keys</td>
+		                    <td colspan="1">Attributes</td>
+		                    <td colspan="3">Description</td>
+		                    <td colspan="1">Required</td>
+		                </tr>
+		            </thead>
+		            <tbody>
+		                <tr>
+		                    <td colspan="1" rowspan="2">cluster</td>
+		                    <td colspan="1">name</td>
+		                    <td colspan="3"><para>Name for the cluster</para></td>
+		                    <td colspan="1">Yes</td>
+		                </tr>
+		                <tr>
+		                    <td colspan="1">stack</td>
+		                    <td colspan="3">Stack details to use for the cluster.</td>
+		                    <td colspan="1">Yes</td>
+		                </tr>
+		                <tr>
+		                    <td colspan="1" rowspan="2">stack</td>
+		                    <td colspan="1">id</td>
+		                    <td colspan="3">Specifies a stack id.</td>
+		                    <td colspan="1">Yes</td>
+		                </tr>
+		                <tr>
+		                    <td colspan="1">node_groups</td>
+		                    <td colspan="3">List of node groups where various components reside.</td>
+		                    <td colspan="1">No</td>
+		                </tr>
+		                <tr>
+		                    <td colspan="1" rowspan="3">node_groups</td>
+		                    <td colspan="1">id</td>
+		                    <td colspan="3">Specifies a node_group id or name.</td>
+		                    <td colspan="1">Yes</td>
+		                </tr>
+		                <tr>
+		                    <td colspan="1">count</td>
+		                    <td colspan="3">No. of instances of that node group.
+		                    </td>
+		                    <td colspan="1">No</td>
+		                </tr>
+		                <tr>
+		                    <td colspan="1">flavor</td>
+		                    <td colspan="3">The flavor id for the node group.</td>
+		                    <td colspan="1">No</td>
+		                </tr>
+		            </tbody>
+		        	</table>
+					<xsdxt:code
+						href="../wadl/samples/lava2/create_cluster_request.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code
+						href="../wadl/samples/lava2/create_cluster_response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response> &fourhundred; &fourthirteen; </method>
+
+	<!--*******************************************************-->
+	<!-- List All Clusters: listClusters                       -->
+	<!--*******************************************************-->
+
+	<method name="GET" id="listClusters">
+		<wadl:doc xml:lang="EN" title="List All Clusters"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Lists all clusters for your
+				account.</para>
+		</wadl:doc>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code
+						href="../wadl/samples/lava2/list_clusters_response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+
+	<!--*******************************************************-->
+	<!-- Get Cluster Details: getClusterDetails                -->
+	<!--*******************************************************-->
+
+	<method name="GET" id="getClusterDetails">
+		<wadl:doc xml:lang="EN" title="Show Cluster Details"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Shows details for a specified
+				cluster.</para>
+		</wadl:doc>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code
+						href="../wadl/samples/lava2/get_cluster_details_response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response> &fourofour; </method>
+
+	<!--*******************************************************-->
+	<!-- Delete Cluster: deleteCluster                         -->
+	<!--*******************************************************-->
+
+	<method name="DELETE" id="deleteCluster">
+		<wadl:doc xml:lang="EN" title="Delete Cluster"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Deletes a specified cluster.</para>
+			<para>The 400 error code might indicate missing or invalid
+				parameters.</para>
+			<para>The 409 error code might indicate an invalid
+				state.</para>
+			<para>This operation deletes the cluster that is specified
+				by <code>clusterId</code>.</para>
+		</wadl:doc>
+		<response status="204">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code
+						href="../wadl/samples/lava2/delete_cluster_response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response> &fourhundred; &fourofour; &fouronine; </method>
+
+	<!--*******************************************************-->
+	<!-- Resize Cluster: postClusterAction                      -->
+	<!--*******************************************************-->
+
+	<method name="POST" id="postClusterAction">
+		<wadl:doc xml:lang="EN" title="Resize Cluster"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Resizes a specified cluster.</para>
+			<para>The 400 error code might indicate the presence of
+				unacceptable parameters or malformed data.</para>
+			<para>The 409 error code might indicate an invalid
+				state.</para>
+			<para>This operation resizes the cluster specified by
+					<code>clusterId</code>.</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code
+						href="../wadl/samples/lava2/resize_cluster_request.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</request>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code
+						href="../wadl/samples/lava2/resize_cluster_response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response> &fourhundred; &fourofour; &fouronine; </method>
+
+	<!--*******************************************************-->
+	<!-- NODE METHODS                                          -->
+	<!--*******************************************************-->
+
+	<!--*******************************************************-->
+	<!-- List Cluster Nodes: listClusterNodes                  -->
+	<!--*******************************************************-->
+
+	<method name="GET" id="listClusterNodes">
+		<wadl:doc xml:lang="EN" title="List Cluster Nodes"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Lists all nodes for a specified
+				cluster.</para>
+			<para>Valid values for the request body parameter
+					<code>postInitScriptStatus</code> are
+					<code>FAILED</code>, <code>PENDING</code>,
+					<code>DELIVERED</code>, <code>RUNNING</code>,
+					<code>SUCCEEDED</code>, and
+				<code>None</code>.</para>
+			<para>Valid values for the node status are in <xref
+					linkend="node_status"/>.</para>
+		</wadl:doc>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code
+						href="../wadl/samples/lava2/list_cluster_nodes_response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response> &fourofour; </method>
+
+	<!--*******************************************************-->
+	<!-- Get Node Details: getNodeDetails                      -->
+	<!--*******************************************************-->
+
+	<method name="GET" id="getNodeDetails">
+		<wadl:doc xml:lang="EN" title="Show Node Details"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Shows details for a specified node
+				in a specified cluster.</para>
+			<para>Valid values for the request body parameter
+					<code>postInitScriptStatus</code> are
+					<code>FAILED</code>, <code>PENDING</code>,
+					<code>DELIVERED</code>, <code>RUNNING</code>,
+					<code>SUCCEEDED</code>, and
+				<code>None</code>.</para>
+			<para>Valid values for the node status are in <xref
+					linkend="node_status"/>.</para>
+		</wadl:doc>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code
+						href="../wadl/samples/lava2/get_node_details_response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response> &fourofour; </method>
+
+	<!--*******************************************************-->
+	<!-- FLAVORS METHODS                                       -->
+	<!--*******************************************************-->
+
+	<!--*******************************************************-->
+	<!-- List Available Flavors: listFlavors                   -->
+	<!--*******************************************************-->
+
+	<method name="GET" id="listFlavors">
+		<wadl:doc xml:lang="EN" title="List Available Flavors"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Lists all available flavors,
+				including the drive size and amount of RAM.</para>
+		</wadl:doc>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code
+						href="../wadl/samples/lava2/list_flavors_response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+
+	<!--*******************************************************-->
+	<!-- List Flavor Details: getFlavorDetails                 -->
+	<!--*******************************************************-->
+
+	<method name="GET" id="getFlavorDetails">
+		<wadl:doc xml:lang="EN" title="Show Flavor Details"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Shows details for a specified
+				flavor.</para>
+		</wadl:doc>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code
+						href="../wadl/samples/lava2/get_flavor_details_response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response> &fourofour; </method>
+
+
+	<!--*******************************************************-->
+	<!-- LIMITS METHODS                                        -->
+	<!--*******************************************************-->
+
+	<!--*******************************************************-->
+	<!-- View Resource Limits: getLimits                       -->
+	<!--*******************************************************-->
+
+	<method name="GET" id="getLimits">
+		<wadl:doc xml:lang="EN" title="Show Resource Limits"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Shows the absolute resource limits,
+				such as remaining node count, available RAM, and
+				remaining disk space, for the user.</para>
+		</wadl:doc>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code
+						href="../wadl/samples/lava2/get_limits_response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+</application>

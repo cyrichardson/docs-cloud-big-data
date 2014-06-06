@@ -1,0 +1,94 @@
+{
+    "distro": {
+        "id": "HDP2.1",
+        "name": "Hortonworks Data Platform",
+        "services": [
+            {
+                "components": [
+                    {
+                        "name": "Namenode"
+                    },
+                    {
+                        "mode": "Secondary",
+                        "name": "SecondaryNamenode"
+                    },
+                    {
+                        "name": "Datanode"
+                    },
+                    {
+                        "mode": "HA",
+                        "name": "JournalNode"
+                    }
+                ],
+                "modes": [
+                    {
+                        "name": "HA"
+                    },
+                    {
+                        "name": "Kerberos"
+                    },
+                    {
+                        "name": "Secondary"
+                    }
+                ],
+                "name": "HDFS",
+                "version": "2.4"
+            },
+            {
+                "components": [
+                    {
+                        "name": "ResourceManager"
+                    },
+                    {
+                        "name": "NodeManager"
+                    },
+                    {
+                        "name": "YarnTimelineServer"
+                    }
+                ],
+                "name": "Yarn",
+                "version": "2.4"
+            },
+            {
+                "components": [
+                    {
+                        "name": "JobHistoryServer"
+                    },
+                    {
+                        "name": "MRClient"
+                    }
+                ],
+                "name": "MapReduce",
+                "version": "2.4"
+            },
+            {
+                "components": [
+                    {
+                        "name": "HiveServer2"
+                    },
+                    {
+                        "name": "HiveMetastore"
+                    },
+                    {
+                        "name": "HiveAPI"
+                    },
+                    {
+                        "name": "HiveClient"
+                    }
+                ],
+                "name": "Hive",
+                "version": "0.13"
+            },
+            {
+                "components": [
+                    {
+                        "name": "PigClient"
+                    }
+                ],
+                "name": "Pig",
+                "version": "0.12"
+            }
+        ],
+        "version": "2.1"
+    }
+}

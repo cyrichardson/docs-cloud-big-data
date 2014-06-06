@@ -1,0 +1,151 @@
+{
+    "stack": {
+        "id": "aaa-bbb-ccc",
+        "created": "2014-06-14T10:10:10Z",
+        "distro": "HDP2.1",
+        "name": "HDP2.1_Hadoop",
+        "services": [
+            {
+                "components": [
+                    {
+                        "name": "Namenode"
+                    },
+                    {
+                        "name": "Datanode"
+                    },
+                    {
+                        "name": "JournalNode"
+                    }
+                ],
+                "modes": ["HA"],
+                "name": "HDFS",
+                "version": "2.4"
+            },
+            {
+                "components": [
+                    {
+                        "name": "ResourceManager"
+                    },
+                    {
+                        "name": "NodeManager"
+                    }
+                ],
+                "name": "Yarn",
+                "version": "2.4"
+            },
+            {
+                "components": [
+                    {
+                        "name": "JobHistoryServer"
+                    },
+                    {
+                        "name": "MRClient"
+                    }
+                ],
+                "name": "MapReduce",
+                "version": "2.4"
+            },
+            {
+                "components": [
+                    {
+                        "name": "HiveServer2"
+                    },
+                    {
+                        "name": "HiveMetastore"
+                    },
+                    {
+                        "name": "HiveAPI"
+                    },
+                    {
+                        "name": "HiveClient"
+                    }
+                ],
+                "name": "Hive",
+                "version": "0.13"
+            },
+            {
+                "components": [
+                    {
+                        "name": "PigClient"
+                    }
+                ],
+                "name": "Pig",
+                "version": "0.12"
+            }
+        ],
+        "node_groups": [
+            {
+                "components": [
+                    {
+                        "name": "Namenode"
+                    },
+                    {
+                        "name": "ResourceManager"
+                    },
+                    {
+                        "name": "YarnTimelineServer"
+                    },
+                    {
+                        "name": "JobHistoryServer"
+                    }
+                ],
+                "count": 1,
+                "flavor": "hadoop1-7",
+                "id": "master"
+            },
+            {
+                "components": [
+                    {
+                        "name": "Namenode"
+                    }
+                ],
+                "count": 1,
+                "flavor": "hadoop1-7",
+                "id": "standby-namenode"
+            },
+            {
+                "components": [
+                    {
+                        "name": "JournalNode"
+                    }
+                ],
+                "count": 3,
+                "flavor": "hadoop1-1",
+                "id": "journalnodes"
+            },
+            {
+                "components": [
+                    {
+                        "name": "Datanode"
+                    },
+                    {
+                        "name": "NodeManager"
+                    }
+                ],
+                "id": "slave"
+            },
+            {
+                "components": [
+                    {
+                        "name": "HiveServer2"
+                    },
+                    {
+                        "name": "HiveMetastore"
+                    },
+                    {
+                        "name": "HiveClient"
+                    },
+                    {
+                        "name": "HiveAPI"
+                    },
+                    {
+                        "name": "PigClient"
+                    }
+                ],
+                "count": 1,
+                "flavor": "hadoop1-2",
+                "id": "gateway"
+            }
+        ]
+    }
+}

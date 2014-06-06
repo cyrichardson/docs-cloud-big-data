@@ -1,0 +1,81 @@
+{
+    "stack": {
+        "distro": "HDP2.1",
+        "name": "HDP2.1_Hadoop",
+        "services": [
+            {
+                "name": "HDFS"
+            },
+            {
+                "name": "Yarn"
+            },
+            {
+                "name": "MapReduce"
+            },
+            {
+                "name": "Hive"
+            },
+            {
+                "name": "Pig"
+            }
+        ],
+        "node_groups": [
+            {
+                "components": [
+                    {
+                        "name": "Namenode"
+                    }
+                ],
+                "count": 1,
+                "flavor": "hadoop1-7",
+                "id": "master1"
+            },
+            {
+                "components": [
+                    {
+                        "name": "ResourceManager"
+                    },
+                    {
+                        "name": "YarnTimelineServer"
+                    },
+                    {
+                        "name": "JobHistoryServer"
+                    }
+                ],
+                "count": 1,
+                "flavor": "hadoop1-4",
+                "id": "master2"
+            },
+            {
+                "components": [
+                    {
+                        "name": "Datanode"
+                    },
+                    {
+                        "name": "NodeManager"
+                    }
+                ],
+                "id": "slave"
+            },
+            {
+                "components": [
+                    {
+                        "name": "HiveServer2"
+                    },
+                    {
+                        "name": "HiveMetastore"
+                    },
+                    {
+                        "name": "HiveClient"
+                    },
+                    {
+                        "name": "PigClient"
+                    }
+                ],
+                "count": 1,
+                "flavor": "hadoop1-4",
+                "id": "hive"
+            }
+        ]
+    }
+}

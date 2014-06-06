@@ -1,0 +1,14 @@
+{
+    "clusters": [
+        {
+            "created": "2014-06-14T10:10:10Z",
+            "id": "aaa-bbbb-cccc",
+            "name": "test",
+            "status": "ACTIVE",
+            "stack": {
+                "id": "HDP2.1_Hadoop",
+            },
+            "updated": ""
+        }
+    ]
+}

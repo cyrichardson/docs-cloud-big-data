@@ -1,0 +1,53 @@
+{
+    "stacks": [
+        {
+            "distro": "HDP2.1",
+            "id": "HDP2.1_Hadoop",
+            "name": "Core Hadoop",
+            "services": [
+                {
+                    "modes": ["HA"],
+                    "name": "HDFS"
+                },
+                {
+                    "name": "Yarn"
+                },
+                {
+                    "name": "MapReduce"
+                },
+                {
+                    "name": "Hive"
+                },
+                {
+                    "name": "Pig"
+                }
+            ]
+        },
+        {
+            "distro": "HDP2.1",
+            "id": "HDP2.1_HBase",
+            "name": "HBase",
+            "services": [
+                {
+                    "modes": ["HA"],
+                    "name": "HDFS"
+                },
+                {
+                    "name": "Yarn"
+                },
+                {
+                    "name": "HBase"
+                },
+                {
+                    "name": "MapReduce"
+                },
+                {
+                    "name": "Hive"
+                },
+                {
+                    "name": "Pig"
+                }
+            ]
+        }
+    ]
+}

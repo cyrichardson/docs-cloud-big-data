@@ -1,0 +1,24 @@
+{
+    "stack": {
+        "distro": "HDP2.1",
+        "name": "HDP2.1_Hadoop",
+        "services": [
+            {
+                "name": "HDFS",
+                "modes": ["HA"]
+            },
+            {
+                "name": "Yarn"
+            },
+            {
+                "name": "MapReduce"
+            },
+            {
+                "name": "Hive"
+            },
+            {
+                "name": "Pig"
+            }
+        ]
+    }
+}
