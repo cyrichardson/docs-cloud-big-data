@@ -48,7 +48,7 @@
         xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <date>2014-04-09</date>
         <revdescription>
-          <para>Updated the "Absolute Limits" section in the <citetitle>Cloud Big Data Developer
+          <para>Updated the "Absolute limits" section in the <citetitle>Cloud Big Data Developer
               Guide</citetitle> to show the current default values. </para>
         </revdescription>
       </revision>
@@ -110,7 +110,7 @@
     <para>Rackspace welcomes your comments, feedback, and bug reports.</para>
   </preface>
   <chapter xml:id="doc_change_history">
-    <title>Document Change History</title>
+    <title>Document change history</title>
     <para>This version of the release notes replaces and obsoletes all
       earlier versions. The most recent changes are described in the
       following table:</para>
@@ -137,12 +137,12 @@
     <table rules="all" xmlns:svg="http://www.w3.org/2000/svg"
       xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
       xmlns:wadl="http://wadl.dev.java.net/2009/02">
-      <caption>Absolute Limits</caption>
+      <caption>Absolute limits</caption>
       <thead>
         <tr align="center">
           <td colspan="1">Name</td>
           <td colspan="3">Description</td>
-          <td colspan="1">Limit - Default Values</td>
+          <td colspan="1">Limit - default values</td>
         </tr>
       </thead>
       <tbody>

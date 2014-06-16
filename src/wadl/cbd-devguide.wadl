@@ -140,7 +140,7 @@
 	<!--*******************************************************-->
 
 	<method name="POST" id="postProfile">
-		<wadl:doc xml:lang="EN" title="Create or Update Profile"
+		<wadl:doc xml:lang="EN" title="Create or update profile"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Creates a profile or updates the
 				information in an existing profile.</para>
@@ -149,8 +149,8 @@
 					<code>password</code> that are part of the
 				profile. You can ssh into the nodes with those
 				credentials. These credentials are required in the
-				request (as shown in the example "Create or Update
-				Profile Request:JSON").</para>
+				request (as shown in the example "Create or update
+				profile request:JSON").</para>
 			<para>The <code>cloudCredentials.username</code> and
 					<code>cloudCredentials.apikey</code> are stored in
 				the cluster configuration so that Hadoop can read or
@@ -190,7 +190,7 @@
 	<!--*******************************************************-->
 
 	<method name="GET" id="getProfile">
-		<wadl:doc xml:lang="EN" title="View Profile Information"
+		<wadl:doc xml:lang="EN" title="View profile information"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Returns profile details for the
 				current user.</para>
@@ -217,7 +217,7 @@
 	<!--*******************************************************-->
 
 	<method name="POST" id="createCluster">
-		<wadl:doc xml:lang="EN" title="Create Cluster"
+		<wadl:doc xml:lang="EN" title="Create cluster"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Creates a cluster.</para>
 			<note><para>You must create your profile before you create
@@ -291,7 +291,7 @@
 	<!--*******************************************************-->
 
 	<method name="GET" id="getClusters">
-		<wadl:doc xml:lang="EN" title="List All Clusters"
+		<wadl:doc xml:lang="EN" title="List all clusters"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Lists all clusters for your
 				account.</para>
@@ -313,7 +313,7 @@
 	<!--*******************************************************-->
 
 	<method name="GET" id="getClusterDetails">
-		<wadl:doc xml:lang="EN" title="Show Cluster Details"
+		<wadl:doc xml:lang="EN" title="Show cluster details"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Shows details for a specified
 				cluster.</para>
@@ -347,7 +347,7 @@
 	<!--*******************************************************-->
 
 	<method name="DELETE" id="deleteCluster">
-		<wadl:doc xml:lang="EN" title="Delete Cluster"
+		<wadl:doc xml:lang="EN" title="Delete cluster"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Deletes a specified cluster.</para>
 			<para>The 400 error code might indicate missing or invalid
@@ -386,7 +386,7 @@
 	<!--*******************************************************-->
 
 	<method name="POST" id="postClusterAction">
-		<wadl:doc xml:lang="EN" title="Resize Cluster"
+		<wadl:doc xml:lang="EN" title="Resize cluster"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Resizes a specified cluster.</para>
 			<para>The 400 error code might indicate the presence of
@@ -426,7 +426,7 @@
 	<!--*******************************************************-->
 
 	<method name="GET" id="getClusterNodes">
-		<wadl:doc xml:lang="EN" title="List Cluster Nodes"
+		<wadl:doc xml:lang="EN" title="List cluster nodes"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Lists all nodes for a specified
 				cluster.</para>
@@ -465,7 +465,7 @@
 	<!--*******************************************************-->
 
 	<method name="GET" id="getNodeDetails">
-		<wadl:doc xml:lang="EN" title="Show Node Details"
+		<wadl:doc xml:lang="EN" title="Show node details"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Shows details for a specified node
 				in a specified cluster.</para>
@@ -509,7 +509,7 @@
 	<!--*******************************************************-->
 
 	<method name="GET" id="getFlavors">
-		<wadl:doc xml:lang="EN" title="List Available Flavors"
+		<wadl:doc xml:lang="EN" title="List available flavors"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Lists all available flavors,
 				including the drive size and amount of RAM.</para>
@@ -531,7 +531,7 @@
 	<!--*******************************************************-->
 
 	<method name="GET" id="getFlavorDetails">
-		<wadl:doc xml:lang="EN" title="Show Flavor Details"
+		<wadl:doc xml:lang="EN" title="Show flavor details"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Shows details for a specified
 				flavor.</para>
@@ -553,7 +553,7 @@
 
 	<method name="GET" id="getSupportedClusterTypesByFlavor">
 		<wadl:doc xml:lang="EN"
-			title="List Supported Cluster Types for a Flavor"
+			title="List supported cluster types for a flavor"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Lists the supported cluster types
 				for a specified flavor.</para>
@@ -578,7 +578,7 @@
 	<!--*******************************************************-->
 
 	<method name="GET" id="getClusterTypes">
-		<wadl:doc xml:lang="EN" title="List Cluster Types"
+		<wadl:doc xml:lang="EN" title="List cluster types"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Lists cluster types.</para>
 		</wadl:doc>
@@ -599,7 +599,7 @@
 	<!--*******************************************************-->
 
 	<method name="GET" id="getClusterTypeDetails">
-		<wadl:doc xml:lang="EN" title="Show Cluster Type Details"
+		<wadl:doc xml:lang="EN" title="Show cluster type details"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Shows details for a specified
 				cluster type.</para>
@@ -621,7 +621,7 @@
 
 	<method name="GET" id="getSupportedFlavorsForType">
 		<wadl:doc xml:lang="EN"
-			title="List Supported Flavors for a Type"
+			title="List supported flavors for a type"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Lists the supported flavors for a
 				specified cluster type.</para>
@@ -646,7 +646,7 @@
 	<!--*******************************************************-->
 
 	<method name="GET" id="viewResourceLimits">
-		<wadl:doc xml:lang="EN" title="Show Resource Limits"
+		<wadl:doc xml:lang="EN" title="Show resource limits"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Shows the absolute resource limits,
 				such as remaining node count, available RAM, and

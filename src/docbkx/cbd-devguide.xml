@@ -103,18 +103,17 @@ format="SVG" scale="60"/>
               <para>Added  <xref linkend="node_status"/>.</para>
             </listitem>
             <listitem>
-              <para>Updated the Create or Update Profile operation
-                description in the API Operations chapter. </para>
+              <para>In the API operations chapter, updated the description for the operation to
+                create or update a profile  in the API Operations chapter. </para>
             </listitem>
             <listitem>
-              <para>Updated the Create Cluster operation description
-                in the API Operations chapter. </para>
+              <para>In the API operations chapter, updated the description of the operation to
+                create a cluster. </para>
             </listitem>
             <listitem>
-              <para>Updated the Nodes methods in the API Operations
-                chapter to include a cross-reference to  <xref
-                  linkend="node_status"/> and to include valid values
-                for <code>postInitScriptStatus</code>. </para>
+              <para>In the API operations chapter, updated the nodes operations to include a
+                cross-reference to <xref linkend="node_status"/> and to include valid values for
+                  <code>postInitScriptStatus</code>. </para>
             </listitem>
           </itemizedlist>
         </revdescription>
@@ -135,7 +134,7 @@ format="SVG" scale="60"/>
       <revision>
         <date>2013-10-29</date>
         <revdescription>
-          <para>Corrected the URI for the Get Node Details operation in <xref
+          <para>Corrected the URI for the operation to get node details in <xref
               linkend="nodeOperations"/>.</para>
         </revdescription>
       </revision>
@@ -171,10 +170,9 @@ format="SVG" scale="60"/>
     <remark>Reviewers: If you have an architecture diagram for Cloud
       Big Data that you want included here, please send it to
       me.</remark>
-<!-- Coming after EA. David Dobbins is working with marketing to create.    
+<!--The CBD team is working with marketing to create.    
     <para>The following figure shows an overview of Cloud Big Data: </para>
-    <para>&lt;&lt;&lt;&lt;&lt;&lt; Figure coming by 9/12/2013 from
-      David Dobbins>>>>>>></para>
+    <para>Figure coming</para>
 -->      
     <para>The primary use cases for &PRODNAME; are as follows: </para>
     <itemizedlist>
@@ -217,7 +215,7 @@ format="SVG" scale="60"/>
       </itemizedlist>
     </para>
     <section xml:id="Intended_Audience-d1e122">
-      <title>Intended Audience</title>
+      <title>Intended audience</title>
       <para>This guide is intended to assist software developers who
         want to develop applications by using the &PRODNAME; API. It
         assumes the reader has a general understanding of Big Data
@@ -242,7 +240,7 @@ format="SVG" scale="60"/>
       </itemizedlist>
     </section>
     <section xml:id="Document_Change_History-d1e166">
-      <title>Document Change History</title>
+      <title>Document change history</title>
       <para>This version of the guide replaces and obsoletes all
         earlier versions. The most recent changes are described in the
         following table:</para>
@@ -259,7 +257,7 @@ format="SVG" scale="60"/>
             <para>A Rackspace Cloud username and password, as specified during registration</para>
           </listitem>
         </itemizedlist></para>
-      <para>The following OS and Hadoop Distribution are supported: <itemizedlist spacing="compact">
+      <para>The following OS and Hadoop distribution are supported: <itemizedlist spacing="compact">
           <listitem>
             <para>CentOS 6.5 </para>
           </listitem>
@@ -295,12 +293,12 @@ format="SVG" scale="60"/>
       </para>
     </section>
     <section xml:id="API_Contract_Changes-d1e122">
-      <title>API Contract Changes</title>
+      <title>API contract changes</title>
       <para>The API contract is not locked and might change. If the contract changes, Rackspace will
         notify customers in release notes.</para>
     </section>
     <section xml:id="Pricing_SLA-d1e1362">
-      <title>Pricing and Service Level</title>
+      <title>Pricing and service level</title>
       <para>&PRODNAME; is part of the Rackspace Cloud and your use through the API will be billed
         according to the pricing schedule at <link
           xlink:href="http://www.rackspace.com/cloud/big-data/pricing/"
@@ -312,12 +310,12 @@ format="SVG" scale="60"/>
 
     </section>
     <section xml:id="Additional_Resources-d1e532">
-      <title>Additional Resources</title>
+      <title>Additional resources</title>
 
       <para>You can download the most current versions of the
         API-related documents from <link
           xlink:href="http://docs.rackspace.com/api/"
-          >docs.rackspace.com/api/</link>. 
+          >docs.rackspace.com</link>. 
       </para>
 
       <para>For information about Rackspace Cloud products, go to
@@ -327,9 +325,10 @@ format="SVG" scale="60"/>
         base articles, forums, phone, chat, and email. </para>
       <para>Email all support questions to
           <email>cbdteam@rackspace.com</email>. </para>
-      <para>For information about getting started using Cloud Big
-        Data, refer to <citetitle>Getting Started with Rackspace Cloud
-          Big Data</citetitle>.</para>
+      <para>For information about getting started using Cloud Big Data, refer to <citetitle>Getting
+        Started with Rackspace Cloud Big Data</citetitle> at <link
+          xlink:href="http://docs.rackspace.com/api/"
+          >docs.rackspace.com</link>.</para>
       <para>You can follow Rackspace updates and announcements via
         Twitter at <link xlink:href="http://www.twitter.com/rackspace"
           >www.twitter.com/rackspace</link>. </para>
@@ -350,7 +349,7 @@ format="SVG" scale="60"/>
     xmlns:svg="http://www.w3.org/2000/svg"
     xmlns:m="http://www.w3.org/1998/Math/MathML"
     xmlns:html="http://www.w3.org/1999/xhtml">
-    <title>General API Information</title>
+    <title>General API information</title>
     <para>The &PRODNAME; API is implemented using a RESTful web
       service interface. &PRODNAME; shares a common token-based
       authentication system with other products in the Rackspace Cloud
@@ -414,12 +413,12 @@ format="SVG" scale="60"/>
               name and either your API key or your password. Following
               are examples of both approaches:</para>
             <example>
-              <title>User Name and API Key</title><literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d 
+              <title>User name and API key</title><literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d 
 '{ "auth":{ "RAX-KSKEY:apiKeyCredentials":{ "username":"yourUserName", "apiKey":"yourApiKey" } } }' -H "Content-type: application/json"</literallayout>
              
             </example>
             <example>
-              <title>User Name and Password</title>
+              <title>User name and password</title>
               <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d
 '{"auth":{"passwordCredentials":{"username":"yourUserName","password":"yourPassword"}}}' -H "Content-type: application/json"</literallayout> </example>
             <para>Successful authentication returns a token that you
@@ -431,13 +430,12 @@ format="SVG" scale="60"/>
               services. </para>
           </listitem>
           <listitem>
-            <para>Use the authentication token to send a GET request
-              to a service that you want to use. The following example
-              shows passing an authentication token to the &PRODNAME;
-              service by using the &PRODNAME; service catalog endpoint
-              that was returned along with the token.</para>
+            <para>Use the authentication token to send a <command>GET</command> request to a service
+              that you want to use. The following example shows passing an authentication token to
+              the &PRODNAME; service by using the &PRODNAME; service catalog endpoint that was
+              returned along with the token.</para>
             <example>
-              <title>cURL Get Profile Request: JSON</title>
+              <title>cURL get profile request: JSON</title>
               <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/profile -d  \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json"\
@@ -476,7 +474,7 @@ format="SVG" scale="60"/>
         these roles can be assigned by the Cloud account admin user to
         account users of the account. </para>
       <section xml:id="Assigning-Roles-d1e001">
-        <title>Assigning Roles to Account Users</title>
+        <title>Assigning roles to account users</title>
         <para>The account owner (identity:user-admin) can create
           account users on the account and then assign roles to those
           users. The roles grant the account users specific
@@ -491,17 +489,17 @@ format="SVG" scale="60"/>
           <listitem>
             <para><link
                 xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html"
-                > Create account users</link></para>
+                >Create account users</link></para>
           </listitem>
           <listitem>
             <para><link
                 xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__Role_Calls.html"
-                > Assign roles to account users</link></para>
+                >Assign roles to account users</link></para>
           </listitem>
           <listitem>
             <para><link
                 xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__Role_Calls.html"
-                > Delete roles from account users</link></para>
+                >Delete roles from account users</link></para>
           </listitem>
         </itemizedlist>
         <note>
@@ -511,19 +509,18 @@ format="SVG" scale="60"/>
         </note>
       </section>
       <section xml:id="RBAC_product_roles">
-        <title>Roles Available for Cloud Big Data </title>
+        <title>Roles available for Cloud Big Data </title>
         <para>Three roles (admin, creator, and observer) can be used
           to access the Cloud Big Data API specifically. The following
           table describes these roles and their permissions.</para>
         <table xml:id="RBAC_product_roles_table" rules="all">
-          <caption>Cloud Big Data Product Roles and
-            Capabilities</caption>
+          <caption>Cloud Big Data product roles and capabilities</caption>
           <col width="50%"/>
           <col width="50%"/>
           <thead>
             <tr>
-              <th>Role Name</th>
-              <th>Role Permissions</th>
+              <th>Role name</th>
+              <th>Role permissions</th>
             </tr>
           </thead>
           <tbody>
@@ -552,14 +549,13 @@ format="SVG" scale="60"/>
           following table describes these roles and their
           permissions.</para>
         <table rules="all">
-          <caption> Multiproduct (Global) Roles and
-            Permissions</caption>
+          <caption> Multiproduct (global) roles and permissions</caption>
           <col width="50%"/>
           <col width="50%"/>
           <thead>
             <tr>
-              <th>Role Name</th>
-              <th>Role Permissions</th>
+              <th>Role name</th>
+              <th>Role permissions</th>
             </tr>
           </thead>
           <tbody>
@@ -578,8 +574,8 @@ format="SVG" scale="60"/>
         </table>
       </section>
       <section xml:id="RBAC-Resolving-Conflicts-d1e001" version="5.0">
-        <title>Resolving Conflicts Between RBAC Multiproduct vs.
-          Custom (Product-specific) Roles</title>
+        <title>Resolving conflicts between RBAC multiproduct vs. custom (product-specific)
+          roles</title>
         <para>The account owner can set roles for both multiproduct
           and Cloud Big Data scope, and it is important to understand
           how any potential conflicts among these roles are resolved.
@@ -594,10 +590,9 @@ format="SVG" scale="60"/>
           <informaltable rules="all">
             <thead>
               <tr align="center">
-                <td>Permission Configuration</td>
-                <td>View of Permission in the Control Panel </td>
-                <td>Can the User Perform Product Admin Functions in
-                  the Control Panel?</td>
+                <td>Permission configuration</td>
+                <td>View of permission in the Control Panel </td>
+                <td>Can the user perform product admin functions in the Control Panel?</td>
               </tr>
             </thead>
             <tbody>
@@ -630,8 +625,7 @@ format="SVG" scale="60"/>
       </section>
       <section xml:id="RBAC-Permissions-Cross-Ref-d1e001"
         version="5.0">
-        <title>RBAC Permissions Cross-reference to Cloud Big Data API
-          Operations</title>
+        <title>RBAC permissions cross-reference to Cloud Big Data API operations</title>
         <para>API operations for Cloud Big Data may or may not be
           available to all roles. To see which operations are
           permitted to invoke which calls, please review <link
@@ -642,7 +636,7 @@ format="SVG" scale="60"/>
 
     
     <section xml:id="Service_Access_Endpoints-d1e753">
-      <title>Service Access Endpoints</title>
+      <title>Service access endpoints</title>
       <para>The &PRODNAME; service is a regionalized service. The user
         of the service is therefore responsible for appropriate
         replication, caching, and overall maintenance of &PRODNAME;
@@ -651,7 +645,7 @@ format="SVG" scale="60"/>
         summarized in the table below.</para>
       <para>
         <table rules="all">
-          <caption>Regionalized Service Endpoints</caption>
+          <caption>Regionalized service endpoints</caption>
           <thead>
             <tr align="center">
               <td colspan="2">Region</td>
@@ -685,7 +679,7 @@ format="SVG" scale="60"/>
       <?rax-fo keep-with-next?>
     </section>
     <section xml:id="Request_Response_Types-d1e903">
-      <title>Request and Response Types</title>
+      <title>Request and response types</title>
       <para>The &PRODNAME; API supports JSON data serialization
         formats. The request format is specified by using the
           <code>Content-Type</code> header and is required for
@@ -695,13 +689,13 @@ format="SVG" scale="60"/>
         extension to the request URI. Note that JSON is the default
         format for data serialization.</para>
       <table rules="all">
-        <caption>Response Formats</caption>
+        <caption>Response formats</caption>
         <?dbfo keep-together="always"?>
         <thead>
           <tr align="center">
             <td>Format</td>
-            <td>Accept Header</td>
-            <td>Query Extension</td>
+            <td>Accept header</td>
+            <td>Query extension</td>
             <td>Default</td>
           </tr>
         </thead>
@@ -727,8 +721,8 @@ format="SVG" scale="60"/>
       <informaltable rules="all">
         <thead>
           <tr align="center">
-            <td colspan="2">Fault Type</td>
-            <td colspan="1">Associated Error Code</td>
+            <td colspan="2">Fault type</td>
+            <td colspan="1">Associated error code</td>
             <td colspan="3">Description</td>
           </tr>
         </thead>
@@ -792,7 +786,7 @@ format="SVG" scale="60"/>
         reset after a certain amount of time passes. Absolute limits
         are fixed. </para>
       <section xml:id="Rate_Limits-d1e1222">
-        <title>Rate Limits</title>
+        <title>Rate limits</title>
         <para>Rate limits are specified in both a human-readable
           wildcard URI and a machine-processable regular expression.
           The regular expression boundary matcher '<code>^</code>'
@@ -805,7 +799,7 @@ format="SVG" scale="60"/>
           for all &GET;, &POST;, &PUT;, and &DELETE; API operations
           for clusters.</para>
         <table rules="all">
-          <caption>Default Rate Limits</caption>
+          <caption>Default rate limits</caption>
           <thead>
             <tr align="center">
               <td colspan="1">Verb</td>
@@ -859,7 +853,7 @@ format="SVG" scale="60"/>
           to notify the client when it can attempt to try again. </para>
       </section>
       <section xml:id="Absolute_Limits-d1e1397">
-        <title>Absolute Limits</title>
+        <title>Absolute limits</title>
         <para>The following table provides the default values for the absolute limits.</para>
         <table rules="all">
           <caption>Absolute Limits</caption>
@@ -867,7 +861,7 @@ format="SVG" scale="60"/>
             <tr align="center" >
               <td colspan="1">Name</td>
               <td colspan="3">Description</td>
-              <td colspan="1">Limit - Default Values</td>
+              <td colspan="1">Limit - default values</td>
             </tr>
           </thead>
           <tbody>
@@ -900,13 +894,13 @@ format="SVG" scale="60"/>
       </section>
     </section>
     <section xml:id="datetimeformat">
-      <title>Date and Time Format</title>
+      <title>Date and time format</title>
       <para>For the display and consumption of date and time values,
         the &PRODNAME; service uses a date format that complies with
         ISO 8601. </para>
       <para>The system time is expressed as UTC.</para>
       <example>
-        <title>&PRODNAME; Service Date and Time Format</title>
+        <title>&PRODNAME; service date and time format</title>
         <programlisting>yyyy-MM-dd'T'HH:mm:ss.SSSZ</programlisting>
         <para>For example, May 19, 2013 at 8:07:08 a.m., UTC-5 would
           have the following format: </para>
@@ -916,7 +910,7 @@ format="SVG" scale="60"/>
           codes. </para>
       </example>
       <table rules="all">
-        <caption>Explanation of Date and Time Format Codes</caption>
+        <caption>Explanation of date and time format codes</caption>
         <thead>
           <tr>
             <td>Code</td>
@@ -972,20 +966,17 @@ format="SVG" scale="60"/>
       <para>
         <itemizedlist>
           <listitem>
-            <para>Limit is the restriction on the maximum
-              number of items for that type that can be
-              returned. </para>
+            <para><code>limit</code> is the restriction on the maximum number of items for that type
+              that can be returned. </para>
           </listitem>
           <listitem>
-            <para>Marker is the ID of the last item in the
-              previous list returned. </para>
+            <para><code>marker</code> is the ID of the last item in the previous list returned. </para>
             <para>The ID is the respective ID for the last cluster, node, or flavor. For example, a query could request the next 10 nodes after the node “xyz” as follows:
 <code>?limit=10&amp;marker=xyz</code>. Items displayed are sorted by ID. </para>
           </listitem>
         </itemizedlist>
       </para>
-      <para>Pagination applies only to the calls listed in the
-        following table: </para>
+      <para>Pagination applies only to the operations listed in the following table: </para>
       <informaltable rules="all">
         <thead>
           <tr align="center">
@@ -1014,9 +1005,9 @@ format="SVG" scale="60"/>
         </tbody>
       </informaltable>
       <para>The default paging limit for all calls is 25 with a maximum of 200. Requests for more than 200 result in a 400 error.</para>
-      <para>See the example of the paged List Nodes operation that follows.</para>
+      <para>See the following example of the operation to list paged nodes.</para>
       <example>
-        <title>List Nodes Paged Request: JSON</title>
+        <title>List nodes paged request: JSON</title>
         
         <programlisting language="json">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/yourAccountID/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes?limit=2 -d \
 -H "X-Auth-Token: yourAuthToken" \
@@ -1026,7 +1017,7 @@ format="SVG" scale="60"/>
       <para>Notice that the paged request example above sets the limit to 2 (<code>?limit=2</code>),
         so the response that follows shows 2 nodes:</para>
       <example>
-        <title>List Nodes Paged Response: JSON</title>
+        <title>List nodes paged response: JSON</title>
                
         <programlisting language="json">
 {
@@ -1129,7 +1120,7 @@ format="SVG" scale="60"/>
       </example>
     </section>
     <section xml:id="cluster_status" >
-      <title>Cluster Status</title>
+      <title>Cluster status</title>
       <para><?rax-fo keep-with-next?>When you send an API request to
         create, list, or delete a cluster or clusters, the following
         cluster status values might be returned:</para>
@@ -1163,7 +1154,7 @@ format="SVG" scale="60"/>
       </itemizedlist>
       
       <para>The following figure shows the cluster states and the operations that are valid for each one. <figure>
-          <title>Cluster States with Valid Operations</title>
+          <title>Cluster states with valid operations</title>
           <mediaobject>
             <imageobject>
               <imagedata format="svg" align="center" scale="50"
@@ -1174,7 +1165,7 @@ format="SVG" scale="60"/>
       </para>
     </section>
     <section xml:id="node_status">
-      <title>Node Status</title>
+      <title>Node status</title>
       <para><?rax-fo keep-with-next?>When you send an API request to
         list or get details about a node or nodes, the following node
         status values might be returned:</para>
@@ -1213,7 +1204,7 @@ format="SVG" scale="60"/>
   <chapter xml:id="API_Operations_dle2000"
     xmlns="http://docbook.org/ns/docbook"
     role="api-reference">
-    <title>API Operations</title>  
+    <title>API operations</title>  
     <para>The chapter describes each of the API operations provided by
       the Cloud Big Data service. </para>
     <section xml:id="profileOperations">
@@ -1283,7 +1274,7 @@ format="SVG" scale="60"/>
       </wadl:resources>
     </section>
     <section xml:id="limitsOperations">
-      <title>Resource Limits</title>
+      <title>Resource limits</title>
       <para>This section describes the operation that is supported for
         resource limits.</para>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">   
@@ -1327,14 +1318,14 @@ format="SVG" scale="60"/>
       </glossdef>
     </glossentry>
     <glossentry xml:id="worker-d1e018">
-      <glossterm>SCP Server Proxy</glossterm>
+      <glossterm>SCP server proxy</glossterm>
       <glossdef>
-        <para>An SCP service that runs on your Hadoop cluster and
-          distributes your files across the cluster. </para>
+        <para>An SCP service that runs on your Hadoop cluster and distributes your files across the
+          cluster. </para>
       </glossdef>
     </glossentry>
     <glossentry>
-      <glossterm>Service Catalog</glossterm>
+      <glossterm>Service catalog</glossterm>
       <glossdef>
         <para>Your service catalog is the list of services available to you, as returned along with
           your authentication token and an expiration date for that token. All the services in your

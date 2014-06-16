@@ -139,7 +139,7 @@
     </raxm:metadata>
     </info>
     <chapter xml:id="DB_Doc_Change_History">
-        <title>Document Change History</title>            
+        <title>Document change history</title>            
         <para>This version of the guide replaces and obsoletes all
             earlier versions. The most recent changes are described in
             the following table:</para>
@@ -167,12 +167,11 @@
             >Reviewers: If you have an architecture diagram for Cloud
             Big Data that you want included here, please send it to
             me.</remark>
-<!-- Coming after EA release - David Dobbins is working with marketing to create this.          
+<!--CBD team is working with marketing to create this.          
         <para 
             xmlns:wadl="http://wadl.dev.java.net/2009/02">The
             following figure shows an overview of Cloud Big Data: </para>
-          <para>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;Figure
-            Coming by 9/12/2013>>>>>>>>>></para>
+          <para>Figure coming from CBD team</para>
 -->            
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
             primary use cases for &PRODNAME; are as follows: </para>
@@ -233,7 +232,7 @@
         <para>Follow the steps described in this guide to start using
             the Rackspace &PRODNAME; API.</para>
         <section xml:id="core_concepts">
-            <title>Prerequisites for Running Examples</title>
+            <title>Prerequisites for running examples</title>
             <para xmlns:wadl="http://wadl.dev.java.net/2009/02">In order to run the examples in this
                 guide, you must have the following prerequisites:<itemizedlist spacing="compact">
                     <listitem>
@@ -260,7 +259,7 @@
             </para>
         </section>
       <section xml:id="Pricing_SLA-d1e1362">
-            <title>Pricing and Service Level</title>
+            <title>Pricing and service level</title>
             <para>&PRODNAME; is part of the Rackspace Cloud and your use through the API will be
                 billed according to the pricing schedule at <link
                     xlink:href="http://www.rackspace.com/cloud/big-data/pricing"
@@ -273,7 +272,7 @@
         </section>
     </chapter>
     <chapter xml:id="Service_Access_Endpoints-d1e753">
-        <title>Service Access Endpoints</title>
+        <title>Service access endpoints</title>
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
             &PRODNAME; service is a regionalized service. The user of
             the service is therefore responsible for appropriate
@@ -285,7 +284,7 @@
             summarized in the table below.</para>
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <table rules="all">
-                <caption>Regionalized Service Endpoints</caption>
+                <caption>Regionalized service endpoints</caption>
                 <thead>
                     <tr align="center">
                         <td colspan="2">Region</td>
@@ -324,18 +323,17 @@
                 using a different data center, be sure to use the
                 associated endpoint from the table above.</para>
         </note>
-        <para>When you perform a Cloud Big Data API operation, place
-            the endpoint at the beginning of the request URL. For
-            example:
-                <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/yourAccountID/</code>.</para>
+        <para>When you perform a Cloud Big Data API operation, place the endpoint at the beginning
+            of the request URL. For example:
+                    <code>https://dfw.bigdata.api.rackspacecloud.com/v1.0/<replaceable>yourAccountID</replaceable>/</code>.</para>
     </chapter>
     <chapter xml:id="Using_the_API_Directly">
-        <title>Using the API Directly</title>
+        <title>Using the API directly</title>
         <para>This chapter describes how to use Cloud Big Data by
             using the API directly.</para>
       
     <section xml:id="DB_Sending_API_Requests">
-        <title>Sending Requests to the API</title>
+        <title>Sending requests to the API</title>
         <para>You have several options for sending requests through an
             API: </para>
         <itemizedlist>
@@ -364,7 +362,7 @@
             </listitem>
         </itemizedlist>
         <section xml:id="DB_using-curl-cli">
-            <title>Sending API Requests by Using cURL</title>
+            <title>Sending API requests by using cURL</title>
             <para>cURL is a command-line tool that is available in
                     most UNIX system-based environments and Apple Mac
                     OS X systems, and can be downloaded for Microsoft
@@ -380,7 +378,7 @@
             <para>The following cURL command-line options are used in
                     this guide to run the examples:</para>
                 <table rules="all">
-                    <caption>cURL Command-Line Options</caption>
+                    <caption>cURL command-line options</caption>
                     <col width="25%"/>
                     <col width="75%"/>
                     <thead>
@@ -450,14 +448,10 @@
                                 inside the XML or JSON message within
                                 the command.</para>
                         </note>
-                        <para>Consider the following cURL
-                            Authentication Request: XML example, which
-                            is described in detail in <xref
-                                linkend="Generating_Auth_Token"
-                            />.</para>
+                        <para>Consider the following cURL authentication request example, which is
+                            described in detail in <xref linkend="Generating_Auth_Token"/>.</para>
                         <example>
-                            <title>cURL Authenticate Request:
-                                XML</title>
+                            <title>cURL authenticate request: XML</title>
                             <?dbfo keep-together="always"?>
                             <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
 '&lt;?xml version="1.0" encoding="UTF-8"?>
@@ -525,7 +519,7 @@
         </section>
     </section>
     <section xml:id="Generating_Auth_Token">
-        <title>Generating an Authentication Token</title>
+        <title>Generating an authentication token</title>
             <para>Whether you use cURL or a REST client to interact
                 with the Cloud Big Data API, you must generate an
                 authentication token. You provide this token in the
@@ -600,7 +594,7 @@
                     instead.</para>
             </note>
         <example xml:id="XML-Auth-Request-d1003">
-            <title>cURL Authenticate Request: XML</title>
+            <title>cURL authenticate request: XML</title>
             <?dbfo keep-together="always"?>
             <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
 '&lt;?xml version="1.0" encoding="UTF-8"?>
@@ -615,7 +609,7 @@
 <uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri></screen>
         </example>
         <example xml:id="JSON-Auth-Request-d1003">
-            <title>cURL Authenticate Request: JSON</title>
+            <title>cURL authenticate request: JSON</title>
             <?dbfo keep-together="always"?>
             <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
 '{
@@ -687,29 +681,23 @@
                 operations, wherever you see the placeholder <emphasis
                     role="bold">yourAccountID</emphasis> specified in
                 the examples in this guide.</para>
-            <para>After authentication, you can use cURL to perform
-                GET, DELETE, and POST requests for the &PRODNAME;
-                API.</para>
+            <para>After authentication, you can use cURL to perform <command>GET</command>,
+                    <command>DELETE</command>, and <command>POST</command> requests for the
+                &PRODNAME; API.</para>
         <example>
-            <title>Authenticate Response: XML</title>
+            <title>Authenticate response: XML</title>
             <programlisting language="xml"><xi:include href="../../src/resources/samples/auth-20.xml" parse="text"/></programlisting>
         </example>
 
         <example>
-            <title>Authenticate Response: JSON</title>
+            <title>Authenticate response: JSON</title>
             <programlisting language="json"><xi:include href="../../src/resources/samples/auth-20.json" parse="text"/></programlisting>
         </example>
     </section>
 
 
     <section xml:id="profileSetupView">
-        <title>Setting Up and Viewing a Profile</title>
-        <remark>Reviewer: Is there an API call to set up a Profile?
-                I'm working from the Walk-thrus on the wiki and it
-                includes this. But I see no corresponding API call in
-                the current API specifications. 9/6/2013 Received
-                example POST  request and response from David Dobbins
-                for setting up a profile. Added it here on 9/9/2013. </remark>
+        <title>Setting up and viewing a profile</title>
         <para>Before you can create Hadoop clusters, you must create a
                 profile, which consists of a user name and password. </para>
             <note>
@@ -743,30 +731,27 @@
                 characters.</para>
         <para>The following example shows the cURL request to set up a
                 profile.</para>
-        <remark>Reviewer: If there is a Create Profile operation,
-            please provide appropriate cURL request and response. </remark>
         <example>
-            <title>cURL  Create Profile Request: JSON</title>
+            <title>cURL create profile request: JSON</title>
             <programlisting language="bash">curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/profile \
 -H "Accept: application/json" \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Content-Type: application/json" -d\
 '{
-    "profile": {
-        "username": "myuser",
-        "password": "T0pS3cret!",
-        "sshkeys": [
-            {
-                "publicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDV9lu1CPeRmnTrDigLOU2lM60igHW4LXEgei9ajMcuUnJXy
-UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmapHCz9d3IGezuuKh/DJRVl8Q7pICcsRIhQxHijcyfcPsPnTfDQ89LKg6k4uyxZZobQozXH/vwtAcsGAW6hX6hsxlvBIqndPPMw2FXkGt56W+YuNNNQC+P+qTyBQ8mWhy1OQJwvn9N/d0wdUAqogLfTasUXeTRjr+Q7ASC/QZ6ewqgrBzLbbM7SqobhNcD6O2suUGr2uvGzKY4a3oaGO68ur2Z testuser@rackspace.com",
-                "name": "mykey"
-            }
-        ],
-        "cloudCredentials": {
-            "username": "myuser",
-            "apikey": "e96406df8e9a82565deb57f3555054b8"
-        }
+  "profile": {
+    "username": "john.doe",
+    "password": "j0Hnd03",
+    "sshkeys": [
+      {
+        "name": "t@test",
+        "publicKey": "ssh-rsa ....."
+      }
+    ],
+    "cloudCredentials": {
+      "username": "jdoe",
+      "apikey": "df23gkh34h52gkdgfakgf"
     }
+  }
 }' </programlisting>
         </example>
             <para>Remember to replace the placeholders in the example
@@ -792,39 +777,12 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
         <para>The following example shows the response for the profile
                 request.</para>
         <example>
-            <title> Create Profile Response: JSON</title>
-            <programlisting language="json">{
-    "profile": {
-        "username": "myuser",
-        "links": [
-            {
-                "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/681390/profile",
-                "rel": "self"
-            },
-            {
-                "href": "https://dfw.bigdata.api.rackspacecloud.com/681390/profile",
-                "rel": "bookmark"
-            }
-        ],
-        "cloudCredentials": {
-            "username": "myuser"
-        },
-        "userId": "194683",
-        "sshkeys": [
-            {
-                "publicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDV9lu1CPeRmnTrDigLOU2lM60igHW4LXEgei9ajMcuUnJXy
-UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmapHCz9d3IGezuuKh/DJRVl8Q7pICcsRIhQxHijcyfcPsPnTfDQ89LKg6k4uyxZZobQozXH/vwtAcsGAW6hX6hsxlvBIqndPPMw2FXkGt56W+YuNNNQC+P+qTyBQ8mWhy1OQJwvn9N/d0wdUAqogLfTasUXeTRjr+Q7ASC/QZ6ewqgrBzLbbM7SqobhNcD6O2suUGr2uvGzKY4a3oaGO68ur2Z testuser@rackspace.com",
-                "name": "mykey"
-            }
-        ],
-        "tenantId": "681390"
-    }
-}</programlisting>
+            <title> Create profile response: JSON</title>
+            <programlisting language="json"><xi:include href="../../src/wadl/samples/dg_cbd_postProfile_response.json" parse="text"/></programlisting>
         </example>
-        <para>Anytime after you create your profile, you can view its
-                details by using the Get Profile operation. The
-                response displays your profile details, including your
-                user name, user ID, and tenant ID. </para>
+        <para>Anytime after you create your profile, you can view its details by using the operation
+                to show the profile. The response displays your profile details, including your user
+                name, user ID, and tenant ID. </para>
         <informaltable rules="all"
             xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <thead>
@@ -846,45 +804,26 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
         <para>This operation does not require a request body.</para>
         <para>The following examples show the cURL request and
                 corresponding response for viewing a profile.</para>
-        <remark>Reviewer: Please provide appropriate cURL to produce
-            the response given in this example.</remark>
         <example>
-            <title>cURL  Get Profile Request: JSON</title>
+            <title>cURL get profile request: JSON</title>
             <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/profile -d  \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json"\
 -H "Content-type: application/json"</programlisting>
         </example>
+
         <example>
-            <title> Get Profile Response: JSON</title>
-            <programlisting language="json"> {"profile":
-            { "username": "john.doe",
-              "user_id" : "12346",
-              "tenant_id" : "123456",
-              "sshkeys": [{"name": "t@test"}],
-              "cloudCredentials": {},
-              "links": [
-                { "rel": "self",
-                  "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/profile"
-                },
-                { "rel": "bookmark",
-                  "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/profile"
-                }
-              ]
-            }
-        }</programlisting>
+            <title>Get profile response: JSON</title>
+            <programlisting language="json"><xi:include href="../../src/wadl/samples/dg_cbd_getProfile_response.json" parse="text"/></programlisting>
         </example>
     </section>
     
-    <section xml:id="Create_DB_Instance">
-            <title>Viewing Resource Limits</title>
-            <para>The use of the Rackspace Cloud Big Data API is
-                subject to resource limits. You can view the limits
-                associated with your account by using the View
-                Resource Limits operation. This operation displays
-                resource limits such as remaining node count,
-                available RAM, and remaining disk space, for the
-                user.</para>
+    <section xml:id="View_resource_limits">
+            <title>Viewing resource limits</title>
+            <para>The use of the Rackspace Cloud Big Data API is subject to resource limits. You can
+                view the limits associated with your account by using the operation to view the
+                resource limits, which displays limits such as remaining node count, available RAM,
+                and remaining disk space for the user.</para>
         <informaltable rules="all"
             xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <thead>
@@ -904,89 +843,27 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             </tbody>
         </informaltable>
         <para>This operation does not require a request body.</para>
-        <para>The following show the cURL request and corresponding
-                response for viewing resource limits.</para>
-        <remark>Reviewer: Please provide appropriate cURL to produce
-            the response given in this example.</remark>
+        <para>The following examples show the cURL request and corresponding response for viewing
+                resource limits.</para>
         <example>
-            <title>cURL View Resource Limits Request: JSON</title>
+            <title>cURL view resource limits request: JSON</title>
             <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/limits -d \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json" </programlisting>
         </example>
         <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            <title>View Resource Limits Response: JSON</title>
-<!--  cyr's          <programlisting>        { "limits":
-          { "absolute":
-            {
-              "disk": {
-                "limit": 2000,
-                "remaining": 2000
-              },
-              "nodeCount": {
-                "limit": 5,
-                "remaining": 5
-              },
-              "ram": {
-                "limit": 25600,
-                "remaining": 25600
-              },
-              "vcpus": {
-                "limit": 5,
-                "remaining": 5
-              }
-            },
-            "links": [
-              { "href": "http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/limits",
-                "rel": "self"
-              },
-              { "href": "http://dfw.bigdata.api.rackspacecloud.com/1234/limits",
-                "rel": "bookmark"
-              }
-            ]
-          }
-        }</programlisting> -->
-                <programlisting language="json">{
-    "limits": {
-        "links": [
-            {
-                "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/limits",
-                "rel": "self"
-            },
-            {
-                "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/limits",
-                "rel": "bookmark"
-            }
-        ],
-        "absolute": {
-            "nodeCount": {
-                "limit": 5,
-                "remaining": 5
-            },
-            "vcpus": {
-                "limit": 10,
-                "remaining": 10
-            },
-            "ram": {
-                "limit": 40960,
-                "remaining": 40960
-            },
-            "disk": {
-                "limit": 2048,
-                "remaining": 2048
-            }
-        }
-    }
-}</programlisting>
+            <title>View resource limits response: JSON</title>
+                <programlisting language="json"><xi:include href="../../src/wadl/samples/dg_cbd_viewResourceLimits_response.json" parse="text"/>
+</programlisting> 
         </example>
         </section>
     <section xml:id="Create_Manage_Clusters-d1e001">
-        <title>Creating and Managing Hadoop Clusters</title>
+        <title>Creating and managing Hadoop clusters</title>
         <para>Now you are ready to create and manage Hadoop clusters
                 by using the Rackspace Cloud Big Data API. </para>
             <section xml:id="Listing-Flavors-d1003">
-                <title>Listing Flavors</title>
+                <title>Listing flavors</title>
                 <para>A flavor is an available hardware configuration
                     for a cluster. Each flavor has a unique
                     combination of memory capacity and priority for
@@ -994,12 +871,9 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                     larger the amount of RAM and the higher the
                     priority for CPU time your cluster
                     receives.</para>
-                <para>You use the List Flavors operation to find the
-                    available configurations for your cluster, and
-                    then you decide which size you need for your
-                    cluster. You perform this operation to get a list
-                    of flavors from which to choose when you create a
-                    cluster. </para>
+                <para>You use the operation to list flavors to find the available configurations for
+                    your cluster, and then you decide which size you need for your cluster. You
+                    perform this operation when you create a cluster. </para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -1019,67 +893,24 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 </informaltable>
                 <para>This operation does not require a request
                     body.</para>
-                <para>The following examples show the cURL request and
-                    the corresponding response for the List Flavors
-                    operation. </para>
-                <remark>Reviewer: Please provide appropriate cURL to
-                    produce the response given in this
-                    example.</remark>
+                <para>The following examples show the cURL request and the corresponding response
+                    for listing flavors. </para>
                 <example>
-                    <title>cURL List Flavors Request: JSON</title>
+                    <title>cURL list flavors request: JSON</title>
                     <programlisting language="bash" >curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/flavors -d \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json"</programlisting>
                 </example>
                 <example>
-                    <title>List Flavors Response: JSON</title>
-                    <programlisting language="json">{
-    "flavors": [
-        {
-            "disk": 10000,
-            "id": "hadoop1-60",
-            "links": [
-                {
-                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/flavors/hadoop1-60",
-                    "rel": "self"
-                },
-                {
-                    "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/flavors/hadoop1-60",
-                    "rel": "bookmark"
-                }
-            ],
-            "name": "XLarge Hadoop Instance",
-            "ram": 61440,
-            "vcpus": 16
-        },
-        {
-            "disk": 1250,
-            "id": "hadoop1-7",
-            "links": [
-                {
-                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/flavors/hadoop1-7",
-                    "rel": "self"
-                },
-                {
-                    "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/flavors/hadoop1-7",
-                    "rel": "bookmark"
-                }
-            ],
-            "name": "Small Hadoop Instance",
-            "ram": 8192,
-            "vcpus": 2
-        }
-    ]
-}</programlisting>
+                    <title>List flavors response: JSON</title>
+                    <programlisting language="json"><xi:include href="../../src/wadl/samples/dg_cbd_getFlavors_response.json" parse="text"/></programlisting>                   
                 </example>
             </section>
             <section xml:id="List-Cluster-Types-d1e002">
-                <title>Listing Cluster Types</title>
-                <para>You use the List Cluster Types operation to find
-                    the cluster types that are available. You perform
-                    this operation to get a cluster type to use when
-                    you create a cluster.</para>
+                <title>Listing cluster types</title>
+                <para>To get a cluster type to use when you create a cluster, you use the operation
+                    to list the cluster types to find the cluster types that are available. </para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -1098,61 +929,24 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 </informaltable>
                 <para>This operation does not require a request
                     body.</para>
-                <para>The following examples show the cURL request and
-                    the corresponding response for the List Flavors
-                    operation. </para>
+                <para>The following examples show the cURL request and the corresponding response
+                    for listing cluster types. </para>
                 <example>
-                    <title>cURL List Cluster Types Request:
-                        JSON</title>
+                    <title>cURL list cluster types request: JSON</title>
                     <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/types -d \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json"</programlisting>
                 </example>
                 <example>
-                    <title>List Cluster Types Response: JSON</title>
-                    <programlisting language="json" >{
-    "types": [
-        {
-            "id": "HADOOP_HDP1_3",
-            "links": [
-                {
-                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/types/HADOOP_HDP1_3",
-                    "rel": "self"
-                },
-                {
-                    "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/types/HADOOP_HDP1_3",
-                    "rel": "bookmark"
-                }
-            ],
-            "name": "Hadoop (HDP 1.3)",
-            "version": "1.3"
-        },
-        {
-            "id": "HADOOP_HDP2_1",
-            "links": [
-                {
-                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/types/HADOOP_HDP2_1",
-                    "rel": "self"
-                },
-                {
-                    "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/types/HADOOP_HDP2_1",
-                    "rel": "bookmark"
-                }
-            ],
-            "name": "Hadoop (HDP 2.1)",
-            "version": "2.1"
-        }
-    ]
-}</programlisting>
+                    <title>List cluster types response: JSON</title>
+                    <programlisting language="json"><xi:include href="../../src/wadl/samples/dg_cbd_getClusterTypes_response.json" parse="text"/></programlisting>                    
                 </example>
             </section>
         <section xml:id="createCluster">
-            <title>Creating a Cluster  </title><para xmlns:wadl="http://wadl.dev.java.net/2009/02">The Create Cluster
-                    operation creates a new Hadoop cluster. After you
-                    submit the operation, it takes a few minutes for
-                    the service to build and configure your
-                    cluster.</para>
+            <title>Creating a Cluster  </title><para xmlns:wadl="http://wadl.dev.java.net/2009/02">The operation to create a cluster creates a new
+                    Hadoop cluster. After you submit the operation, it takes a few minutes for the
+                    service to build and configure your cluster.</para>
             <informaltable rules="all"
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <thead>
@@ -1176,19 +970,17 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                     attribute specifies the RAM, virtual CPUs, and
                     disk storage associated with each data node in
                     your Hadoop cluster. </para>
-            <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The
-                    following examples show the cURL request and
-                    corresponding response for Create Cluster.</para>
-            <remark>Reviewer: Please provide appropriate cURL to
-                produce the response given in this example.</remark>
+            <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The following examples show the cURL
+                    request and corresponding response for creating a cluster.</para>
             <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <title>cURL Create Cluster Request: JSON</title>
+                <title>cURL create cluster request: JSON</title>
                 <programlisting language="bash">curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters -d \
 '{"cluster":
       { "name": "slice",
         "clusterType": "HADOOP_HDP2_1",
         "flavorId": "hadoop1-7",
         "nodeCount": 5
+        "postInitScript":"http://example.com/configure_cluster.sh"
       }
     }' \          
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
@@ -1197,33 +989,14 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
               
             </example>
             <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <title>Create Cluster Response: JSON</title>
-                <programlisting language="json">    {"cluster":
-      { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
-        "created": "2012-12-27T10:10:10Z",
-        "updated": "",
-        "name": "slice",
-        "clusterType": "HADOOP_HDP2_1",
-        "flavorId": "hadoop1-7",
-        "nodeCount": 5,
-        "status": "BUILD",
-        "links": [
-          { "rel": "self",
-            "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
-          },
-          { "rel": "bookmark",
-            "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
-          }
-        ]
-      }
-    }</programlisting>
- 
+                <title>Create cluster response: JSON</title>
+                <programlisting language="json"><xi:include href="../../src/wadl/samples/dg_cbd_createCluster_response.json" parse="text"/></programlisting>                
             </example>   
         </section>
             <section xml:id="List-Clusters-d1e004">
-                <title>Listing Clusters</title>
-                <para>You use the List Clusters operation to find the
-                    available clusters for your account.</para>
+                <title>Listing clusters</title>
+                <para>You use the operation to list clusters to find the available clusters for your
+                    account.</para>
                 <informaltable rules="all">
                     <thead>
                         <tr align="center">
@@ -1243,69 +1016,24 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 </informaltable>
                 <para>This operation does not require a request
                     body.</para>
-                <para>The following examples show the cURL request and
-                    the corresponding response for the List Flavors
-                    operation. </para>
+                <para>The following examples show the cURL request and the corresponding response
+                    for listing clusters. </para>
                 <example>
-                    <title>cURL List Clusters Request: JSON</title>
+                    <title>cURL list clusters request: JSON</title>
                     <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters -d \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json"</programlisting>
                 </example>
                 <example>
-                    <title>List Clusters Response: JSON</title>
-                    <programlisting language="json">
-        {"clusters":
-          [
-            { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
-              "name": "slice",
-              "created": "2012-12-27T10:10:10Z",
-              "updated": "2012-12-27T10:15:10Z", 
-              "clusterType": "HADOOP_HDP2_1",
-              "flavorId": "hadoop1-7",
-              "nodeCount": 5,
-              "postInitScriptStatus": "SUCCEEDED",
-              "progress": 1.0,
-              "status": "ACTIVE",
-              "links": [
-                { "rel": "self",
-                  "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
-                },
-                { "rel": "bookmark",
-                  "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
-                }
-              ]
-            },
-            { "id": "ac111111-2d86-4597-8010-cbe787bbbc41",
-              "name": "real",
-              "created": "2012-12-27T10:10:10Z",
-              "updated": "2012-12-27T10:15:10Z", 
-              "clusterType": "HBASE_HDP2_1",
-              "flavorId": "hadoop1-60",
-              "nodeCount": 20,
-              "postInitScriptStatus": null,
-              "progress": 1.0,
-              "status": "ACTIVE",
-              "links": [
-                { "rel": "self",
-                  "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/ac111111-2d86-4597-8010-cbe787bbbc41"
-                },
-                { "rel": "bookmark",
-                  "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/ac111111-2d86-4597-8010-cbe787bbbc41"
-                }
-              ]
-            }
-          ]
-        }
-        
-</programlisting>
+                    <title>List clusters response: JSON</title>
+                    <programlisting language="json"><xi:include href="../../src/wadl/samples/dg_cbd_listClusters_response.json" parse="text"/></programlisting>
                 </example>
             </section>
         <section xml:id="viewDetails">
-            <title>Viewing Details</title>
-            <para>The Get Node Details operation lists all server
-                    nodes for the specified cluster.</para>
+            <title>Viewing details</title>
+            <para>The operation to get node details lists all server nodes for the specified
+                    cluster.</para>
             <informaltable rules="all">
                 <thead>
                     <tr align="center">
@@ -1338,131 +1066,22 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             <para>The following examples show the cURL request and
                     corresponding response for listing all nodes for a
                     cluster.</para>
-            <remark>Reviewer: Please provide appropriate cURL to
-                produce the response given in this example.</remark>
             <example>
-                <title>cURL List Cluster Nodes Request: JSON</title>
+                <title>cURL list cluster nodes request: JSON</title>
                 <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes -d \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-Type: application/json"</programlisting>
             </example>
             <example>
-                <title>List Cluster Nodes Response: JSON</title>
-                <programlisting language="json">        {"nodes":
-          [ 
-            { "id": "000",
-              "created": "2012-12-27T10:10:10Z", 
-              "role": "NAMENODE",
-              "name": "NAMENODE-1", 
-              "status": "ACTIVE",
-              "addresses": {
-                "public": [{ "addr": "168.x.x.3", "version": 4 }],
-                "private": [{ "addr": "10.x.x.3", "version": 4}]
-              },
-              "services": [
-                { "name": "namenode" },
-                { "name": "jobtracker" },
-                { "name": "ssh",
-                  "uri": "ssh://user@168.x.x.3"
-                }
-              ],
-              "links": [
-                { "rel": "self",
-                  "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
-                },
-                { "rel": "bookmark",
-                  "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
-                }
-              ]
-            },
-            { "id": "aaa",
-              "role": "GATEWAY",
-              "name": "GATEWAY-1", 
-              "status": "ACTIVE",
-              "addresses": {
-                "public": [{ "addr": "168.x.x.4", "version": 4 }],
-                "private": [{ "addr": "10.x.x.4", "version": 4}]
-              },
-              "services": [
-                { "name": "pig" },
-                { "name": "hive" },
-                { "name": "ssh",
-                  "uri": "ssh://user@168.x.x.4"
-                },
-                { "name": "status",
-                  "uri": "http://10.x.x.4"
-                },
-                { "name": "hdfs-scp",
-                  "uri": "scp://user@168.x.x.4:9022"
-                }
-              ],
-              "links": [
-                { "rel": "self",
-                  "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/aaa"
-                },
-                { "rel": "bookmark",
-                  "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/aaa"
-                }
-              ]
-            },
-            { "id": "bbb",
-              "role": "DATANODE",
-              "name": "DATANODE-1",  
-              "status": "ACTIVE",
-              "addresses": {
-                "public": [{ "addr": "168.x.x.5", "version": 4 }],
-                "private": [{ "addr": "10.x.x.5", "version": 4}]
-              },
-              "services": [
-                { "name": "datanode" },
-                { "name": "tasktracker" },
-                { "name": "ssh",
-                  "uri": "ssh://user@168.x.x.5"
-                }
-              ],
-              "links": [
-                { "rel": "self",
-                  "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/bbb"
-                },
-                { "rel": "bookmark",
-                  "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/bbb"
-                }
-              ]
-            },
-            { "id": "ccc",
-              "role": "DATANODE",
-              "name": "DATANODE-2",  
-              "status": "ACTIVE",
-              "addresses": {
-                "public": [{ "addr": "168.x.x.6", "version": 4 }],
-                "private": [{ "addr": "10.x.x.6", "version": 4}]
-              },
-              "services": [
-                { "name": "datanode" },
-                { "name": "tasktracker" },
-                { "name": "ssh",
-                  "uri": "ssh://user@168.x.x.6"
-                }
-              ],
-              "links": [
-                { "rel": "self",
-                  "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/ccc"
-                },
-                { "rel": "bookmark",
-                  "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/ccc"
-                }
-              ]
-            } 
-          ]
-        }</programlisting>
- 
+                <title>List cluster nodes response: JSON</title>
+                <programlisting language="json"><xi:include href="../../src/wadl/samples/dg_cbd_getClusterNodes_response.json" parse="text"/></programlisting> 
             </example> <para/>
         </section>
         <section xml:id="resizeClusters">
-            <title>Resizing Clusters</title>
-            <para>You can increase or decrease the size of an existing cluster by
-                    using the <code>resize</code> command.</para>
+            <title>Resizing clusters</title>
+            <para>You can increase or decrease the size of an existing cluster by using the
+                        <code>resize</code> action.</para>
             <informaltable rules="all">
                 <thead>
                     <tr align="center">
@@ -1479,23 +1098,18 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                     </tr>
                 </tbody>
             </informaltable>
-            <para>The following example resizes the previously created
-                    cluster, named <code>slice</code>, to include 10
-                    data nodes. When you use the <code>resize</code>
-                    command, you specify the total number of data
-                    nodes that you want the cluster to have, not just
-                    the number of nodes to add or remove. In the example, 10 is
-                    the total number of nodes that the cluster will
-                    have after the command is run. After you initiate
-                    the <code>resize</code> operation, you can use the
-                    List Cluster Nodes operation to confirm that your
-                    cluster has been resized.</para>
-            <remark>Reviewer: Please provide appropriate cURL to
-                produce the response given in this example.</remark>
+            <para>The following example resizes the previously created cluster, named
+                        <code>slice</code>, to include 10 data nodes. When you use the
+                        <code>resize</code> action, you specify the total number of data nodes that
+                    you want the cluster to have, not just the number of nodes to add or remove. In
+                    the example, 10 is the total number of nodes that the cluster will have after
+                    the command is run. After you initiate the <code>resize</code> action, you can
+                    use the operation to list the cluster nodes to confirm that your cluster has
+                    been resized.</para>
             <para>The following examples show the cURL request and
                     corresponding response to resize a cluster.</para>
             <example>
-                <title>cURL Resize Cluster Request: JSON</title>
+                <title>cURL resize cluster request: JSON</title>
                 <programlisting language="bash">curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis>/action -d \
 '{"resize":{ "nodeCount": 10 }} ' \
 -H "Accept: application/json" \
@@ -1504,35 +1118,15 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
 </programlisting>
             </example>
             <example>
-                <title>Resize Cluster Response: JSON</title>
-                <programlisting language="json">        {"cluster":
-          { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
-            "created": "2012-12-27T10:10:10Z",
-            "updated": "2012-12-27T16:20:10Z",
-            "name": "slice",
-            "clusterType": "HADOOP_HDP2_1",
-            "flavorId": "hadoop1-7",
-            "nodeCount": 10,
-            "status": "UPDATING",
-            "links": [
-              { "rel": "self",
-                "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
-              },
-              { "rel": "bookmark",
-                "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
-              }
-            ]
-          }
-        } </programlisting>
-     
+                <title>Resize cluster response: JSON</title>
+                <programlisting language="json"><xi:include href="../../src/wadl/samples/dg_cbd_resizeCluster_response.json" parse="text"/></programlisting>                
             </example>
         </section>
         <section xml:id="deleteCluster">
-            <title>Deleting Clusters</title>
-            <para>Use the Delete Cluster operation to remove unused
-                    Hadoop clusters. This operation deletes any
-                    servers associated with the cluster and any data
-                    stored in the cluster.</para>
+            <title>Deleting clusters</title>
+            <para>Use the operation to delete clusters to remove unused Hadoop clusters. This
+                    operation deletes any servers associated with the cluster and any data stored in
+                    the cluster.</para>
             <para>You cannot delete clusters that are in the process
                     of being created or resized.</para>
             <informaltable rules="all">
@@ -1553,54 +1147,30 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
             </informaltable>
             <para>The following examples show the cURL request and
                     corresponding response to delete a cluster.</para>
-            <remark>Reviewer: Please provide appropriate cURL to
-                    produce the response given in this example. </remark>
             <example>
-                <title>cURL Delete Cluster Request: JSON</title>
+                <title>cURL delete cluster request: JSON</title>
                 <programlisting language="bash">curl -i -X DELETE https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis> -d \
 -H "Accept: application/json" \
 -H "X-Auth-Token:<emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Content-Type: application/json"</programlisting>
             </example>
+            
             <example>
-                <title>Delete Cluster Response: JSON</title>
-                <programlisting language="json">Status: 202 Accepted
-        Date: Mon, 06 Aug 2012 21:54:21 GMT
-        Content-Type: application/json
-        {"cluster":
-          { "id": "db478fc1-2d86-4597-8010-cbe787bbbc41",
-            "created": "2012-12-27T10:10:10Z",
-            "updated": "2012-12-27T20:14:10Z",
-            "name": "slice",
-            "clusterType": "HADOOP_HDP2_1",
-            "flavorId": "hadoop1-7",
-            "nodeCount": 5,
-            "status": "DELETING",
-            "links": [
-              { "rel": "self",
-                "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
-              },REST
-              { "rel": "bookmark",
-                "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
-              }
-            ]
-          }
-        }
-</programlisting>
-             
+                <title>Delete cluster response: JSON</title>
+                <programlisting language="json"><xi:include href="../../src/wadl/samples/dg_cbd_deleteCluster_response-json-http.txt" parse="text"/><xi:include href="../../src/wadl/samples/dg_cbd_deleteCluster_response.json" parse="text"/></programlisting>
             </example>
         </section>
     </section>
 
     </chapter>
     <chapter xml:id="Using_Python_lavaclient">
-        <title>Using the Python Lava Client</title>
+        <title>Using the Python Lava client</title>
         <para>This chapter explains how to start using the Python Lava
             client (python-lavaclient), which is a convenient Python
             binding and command-line client that uses the RESTful
             API.</para>
         <section xml:id="setting_Up">
-            <title>Setting Up</title>
+            <title>Setting up</title>
             <para>This section describes prerequisites, installation,
                 and setup for the python-lavaclient.</para>
             <section xml:id="Prerequisites">
@@ -1622,7 +1192,7 @@ UoTthHRlXpWG+D3H1Az/AT1yPqYEubwBWZOJN3r3hvoqYaJYEKAE36vHceEJ89yLuu2PIMheRyhBgmap
                 </itemizedlist>
             </section>
             <section xml:id="installing_Client">
-                <title>Installing the Client</title>
+                <title>Installing the client</title>
                 <para>Perform the following steps to install the
                     client. </para>
                 <orderedlist>
@@ -1654,7 +1224,7 @@ $ sudo python setup.py install</programlisting>
                 </orderedlist>
             </section>
             <section xml:id="authenticate_Against_API">
-                <title>Authenticating Your Session</title>
+                <title>Authenticating your session</title>
                 <para>Before you can start using Rackspace Cloud Big
                     Data, you need to authenticate your session. To
                     complete this step, you need your Cloud user name
@@ -1672,8 +1242,7 @@ API Key: &lt;enter your API Key></programlisting>
                             are displayed, as shown in the following
                             example.</para>
                         <example>
-                            <title>Authentication Response Using CLI
-                                Utility</title>
+                            <title>Authentication response using CLI utility</title>
                             <programlisting>AUTH_TOKEN=692c2a14-39ad-4ee0-991d-06cd7331f3ca
 LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</programlisting>
                         </example>
@@ -1683,8 +1252,7 @@ LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</programlisti
                             environment variables as shown in the
                             following example.</para>
                         <example>
-                            <title>Export Environment
-                                Variables</title>
+                            <title>Export environment variables</title>
                             <programlisting>$ export AUTH_TOKEN=692c2a14-39ad-4ee0-991d-06cd7331f3ca
 $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</programlisting>
                         </example>
@@ -1707,7 +1275,7 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
                 </orderedlist>
             </section>
             <section xml:id="setting_Up_Profile">
-                <title>Setting Up a Profile</title>
+                <title>Setting up a profile</title>
                 <para>Before you can create Hadoop clusters, you must
                     create a profile that consists of a user name and
                     password. To create a profile, use the
@@ -1739,7 +1307,7 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
                     user name <code>joe</code> and the password
                         <code>Fool1234!</code>. </para>
                 <example>
-                    <title>Creating a Profile</title>
+                    <title>Creating a profile</title>
                     <programlisting>$ lava create-profile joe Foo1234!</programlisting>
                 </example>
                 <para>A password must be at least eight characters,
@@ -1755,8 +1323,7 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
                     created, run the <code>get-profile</code>
                     command.</para>
                 <example>
-                    <title>Retrieve a Profile by Using the get-profile
-                        Command</title>
+                    <title>Retrieve a profile by using the get-profile command</title>
                     <programlisting>$ lava get-profile
 +-------------+-----------+-------------+
 | Username | User ID | Tenant ID |
@@ -1766,14 +1333,13 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
                 </example>
             </section>
             <section xml:id="view_Resource_Limits">
-                <title>Viewing Resource Limits</title>
+                <title>Viewing resource limits</title>
                 <para>The use of Rackspace Cloud Big Data is subject
                     to resource limits. You can view the limits
                     associated with your account by using the
                         <code>quotas</code> command. </para>
                 <example>
-                    <title>View Resource Limits by Using the quotas
-                        Command</title>
+                    <title>View resource limits by using the quotas command</title>
                     <programlisting>$ lava quotas
 +-------------+-----------------+-------------+-----------------+-----------+---------------+------------+----------------+
 | Nodes Limit | Nodes Remaining | VCPUs Limit | VCPUs Remaining | RAM Limit | Ram Remaining | Disk Limit | Disk Remaining |
@@ -1784,21 +1350,20 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
             </section>
         </section>
         <section xml:id="create_Manage_Clusters">
-            <title>Creating and Managing Hadoop Clusters</title>
+            <title>Creating and managing Hadoop clusters</title>
             <para>This section explains how to create and manage
                 Hadoop clusters by using Rackspace Cloud Big Data
                 through the python-lavaclient. After you complete this
                 section, you will have a working Apache Hadoop
                 cluster.</para>
             <section xml:id="boot_Hadoop_Cluster">
-                <title>Provisioning a Hadoop Cluster</title>
+                <title>Provisioning a Hadoop cluster</title>
                 <para>Use the <code>boot</code> command to provision a
                     Hadoop cluster. The following example creates a
                     3-data-node Hadoop cluster with the name
                         <code>foo</code>.</para>
                 <example>
-                    <title>Provision a Cluster by Using the boot
-                        Command </title>
+                    <title>Provision a cluster by using the boot command </title>
                     <programlisting>$ lava boot --type=HADOOP_HDP2_1 --flavor=hadoop1-7 --count=3 foo
 +----------+--------------------------------------+
 | Property | Value |
@@ -1820,8 +1385,7 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
                         <code>flavor-list</code> command, as shown in
                     the following example.</para>
                 <example>
-                    <title>List Flavors and Associated Resources by
-                        Using the flavor-list Command </title>
+                    <title>List flavors and associated resources by using the flavor-list command </title>
                     <programlisting>$ lava flavor-list
 +------------+-------------------------+-------+------+------+
 | Id | Name | Mem | Disk | CPUs |
@@ -1836,8 +1400,7 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
                     command to query the build status of your
                     cluster.</para>
                 <example>
-                    <title>Query the Status of a Cluster by Using the
-                        list Command</title>
+                    <title>Query the status of a cluster by using the list command</title>
                     <programlisting>$ lava list
 +--------------------------------------+------+--------+-------+---------------+
 | Id | Name | Status | Nodes | Type |
@@ -1850,13 +1413,13 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</pro
                     <code>ACTIVE</code>.</para>
             </section>
             <section xml:id="viewing_Details">
-                <title>Viewing Details</title>
+                <title>Viewing details</title>
                 <para>Use the <code>show</code> and <code>nodes</code>
                     commands to query your cluster, as shown in the
                     following example.</para>
                 <example>
-                    <title>Query the Details of a Cluster by Using the
-                        show and nodes Commands</title>
+                    <title>Query the details of a cluster by using the show and nodes
+                        commands</title>
                     <programlisting>$ lava show foo
 +----------+--------------------------------------+
 | Property | Value |
@@ -1912,13 +1475,12 @@ $ lava nodes foo
                     create your profile during setup.</para>
             </section>
             <section xml:id="resize_Cluster">
-                <title>Resizing Clusters</title>
+                <title>Resizing clusters</title>
                 <para>You can increase or decrease the size of an existing cluster
                     by using the <code>resize</code> command.
                     The following example resizes the previously
                     created cluster <code>foo</code> to include 5 data nodes.<example>
-                        <title>Increase Cluster Size by Using the
-                            resize Command</title>
+                        <title>Increase cluster size by using the resize command</title>
                         <programlisting>$ lava resize --count=5 foo
 </programlisting>
                     </example></para>
@@ -1934,14 +1496,13 @@ $ lava nodes foo
                     resized. </para>
             </section>
             <section xml:id="delete_Cluster">
-                <title>Deleting Clusters</title>
+                <title>Deleting clusters</title>
                 <para>Use the <code>delete</code> command to remove
                     unused Hadoop clusters. This command deletes any
                     servers associated with the cluster and any data
                     stored in the cluster.</para>
                 <example>
-                    <title>Remove Clusters by Using the delete
-                        Command</title>
+                    <title>Remove clusters by using the delete command</title>
                     <programlisting>$ lava delete foo
 </programlisting>
                 </example>
@@ -1951,371 +1512,9 @@ $ lava nodes foo
                 </note>
             </section>
         </section>
-        
-
-<!-- Possible additions from CBD wiki getting started  
-            
-        <section xml:id="word_Count_Application">
-            <title>Running a Sample Word Count Application</title>
-            <para>This section explains how to run WordCount, which is
-                a sample MapReduce application that ships with the
-                Apache Hadoop distribution. The application simply
-                counts the occurrence of every word in the provided
-                text. </para>
-            <para>Prior to working through this section, be sure you
-                have worked through the sections <xref
-                    linkend="setting_Up"/> and <xref
-                    linkend="create_Manage_Clusters"/> to set up a
-                3-node cluster.</para>
-            <section xml:id="copy_Input_Data">
-                <title>Copying Input Data</title>
-                <para>The sample application requires some input text
-                    data to work against. A real application normally
-                    runs against an input folder containing many large
-                    files. For this exercise, let's assume that you
-                    have downloaded <citetitle>The Complete Works of
-                        William Shakespeare</citetitle> (a single
-                    file) onto your computer or laptop. </para>
-                <para>You can use several different techniques to
-                    transfer data into Hadoop. For convenience,
-                    Rackspace provides a secure copy protocol (SCP)
-                    service that you can use to upload and access data
-                    in Hadoop. The SCP service runs on the gateway
-                    node that is automatically provisioned by
-                    Rackspace Cloud Big Data. The SCP service reads
-                    and writes directly into the Hadoop File System,
-                    not the local disk on the gateway node. </para>
-                <para>Use the nodes command to determine the IP
-                    address of the gateway node. In the example below,
-                    the gateway node has the public IP address
-                    166.78.132.227.</para>
-                <example>
-                    <title>Nodes Command to Determine IP
-                        Address</title>
-                    <programlisting>$ lava nodes foo
-+_______________________________________+______________+___________+__________+___________+_________________+
-| Id | Name | Role | Status | Public IP | Private IP |
-+_______________________________________+______________+___________+__________+___________+_________________+
-| f530a9f1-79a8-4378-bf2a-b7f7e0c2bdd3 | NAMENODE-88 | NAMENODE | ACTIVE | 166.78.132.85 | 10.190.240.88 |
-| 87a1bf57-daa6-4dd5-b711-f428cc44fe74 | DATANODE-182 | DATANODE | ACTIVE | 166.78.132.228 | 10.190.240.228 |
-| 82136cd0-2c98-4c76-9224-54aef9942de3 | DATANODE-183 | DATANODE | ACTIVE | 166.78.132.84 | 10.190.240.84 |
-| 8a9929ed-9ba3-4a22-b5a7-8a36a81179a6 | DATANODE-184 | DATANODE | ACTIVE | 166.78.132.88 | 10.190.240.85 |
-| 55ed5001-fdc3-44f1-a82c-97532007f3b3 | GATEWAY-89 | GATEWAY | ACTIVE | 166.78.132.227 | 10.190.240.227 |
-+_______________________________________+______________+___________+__________+___________+_________________+
-</programlisting>
-                </example>
-                <para>Run the following commands to create a folder on
-                    the Hadoop file system (called
-                        <parameter>input</parameter>) and upload your
-                    input text data into it.</para>
-                <programlisting>$ ssh joe@166.78.132.227 mkdir input</programlisting>
-                <programlisting>$ scp -P 9022 input.txt joe@166.78.132.227:input</programlisting>
-                <para>Your Hadoop cluster now has some input data on
-                    it in order for you to work with.</para>
-                <note>
-                    <para>The SCP service runs on port 9022. Using the
-                        default port (22)  ends up copying data to the
-                        local disk on the gateway server (not the
-                        Hadoop file system).</para>
-                </note>
-            </section>
-            <section xml:id="run_WordCount">
-                <title>Running WordCount</title>
-                <para>To run the sample application, you need to SSH
-                    into the gateway in your cluster. After you are
-                    logged in, run the following command to check out
-                    the sample applications that ship with Apache
-                    Hadoop.</para>
-                <programlisting>$ hadoop jar /usr/lib/hadoop/hadoop-examples.jar</programlisting>
-                <para>The resulting output should look like the
-                    following example. </para>
-                <screenshot>
-                    <title>Example of Sample Applications with Apache
-                        Hadoop</title>
-                    <mediaobject>
-                        <imageobject>
-                            <imagedata format="svg" align="center" scale="50"
-                                fileref="../resources/samples/GSG_CLI_Screen2.png "/>
-                        </imageobject>
-                    </mediaobject>
-                </screenshot>
-                <para>In particular, the WordCount application
-                    requires an input folder (already created) and an
-                    output folder. Launch the application using the
-                    command line shown below.</para>
-                <programlisting>$ hadoop jar /usr/lib/hadoop/hadoop-examples.jar wordcount input output</programlisting>
-                <para/>
-                <para>The resulting output should look like the
-                    following example.<figure>
-                        <title>Output from Creation of folders</title>
-                        <mediaobject>
-                            <imageobject>
-                                <imagedata format="svg" align="center" scale="50"
-                                   fileref="../resources/samples/GSG_CLI_Screen1.png"/>
-                            </imageobject>
-                        </mediaobject>
-                    </figure></para>
-                <para>After the command completes successfully, the
-                    results are written to a folder called
-                        <parameter>output</parameter> on the Hadoop
-                    file system. You can view the output folder using
-                    your FTP client, or by running the following
-                    command.</para>
-                <programlisting>$ hadoop fs –ls output</programlisting>
-                <para>At this point, you have used the hadoop script
-                    to launch the sample application. This is a
-                    general-purpose utility for running a variety of
-                    Hadoop-related commands. Look at <citetitle>Hadoop
-                        Commands Guide</citetitle> for a more detailed
-                    explanation. </para>
-                <para>Going back to our command line, the
-                        <command>jar</command> subcommand is used to
-                    launch a MapReduce bundled in a jar file: </para>
-                <programlisting>hadoop jar /usr/lib/hadoop/hadoop-examples.jar wordcount input output</programlisting>
-                <para> The argument following the
-                        <command>jar</command> subcommand is the full
-                    path for the Java package that contains all the
-                    sample applications. The path is followed by the
-                    application to run, namely
-                        <parameter>wordcount</parameter>. The input
-                    and output parameters are specific to the
-                    WordCount application, and specify the input and
-                    output folders respectively.</para>
-            </section>
-        </section>
-        <section xml:id="python_Hadoop_Application">
-            <title>Building a Python Hadoop Application</title>
-            <para>This section explains how to use process data in
-                Hadoop using the Python programming language. Since
-                Hadoop's core components are Java-based, it natively
-                only supports MapReduce applications written in Java.
-                This presents a problem for developers who wish to
-                build data processing applications using an
-                alternative programming language (such as Python or
-                Ruby). Luckily, Hadoop includes a streaming utility,
-                which allows any executable to serve as a mapper or
-                reducer. You can find more details about the tool in
-               <link
-                    xlink:href="http://wiki.apache.org/hadoop/HadoopStreaming/"
-                    >Hadoop Streaming Wiki/</link>.
-                The simple Python MapReduce application in this
-                section relies on streaming. </para>
-            <para>Prior to working through this section, be sure to
-                read <xref linkend="setting_Up"/> and <xref
-                    linkend="create_Manage_Clusters"/> to set up a
-                3-node cluster. Also, take a look at <xref
-                    linkend="run_WordCount"/> in order to learn how to
-                copy data into Hadoop and run the packaged (Java)
-                WordCount application.</para>
-            <section xml:id="code_Python_App">
-                <title>Coding the Python application</title>
-                <para>SSH into your gateway node and use the following
-                    code snippets to create your Python mapper and
-                    reducer. </para>
-                <para>The code for the mapper function is below. Use
-                    your favorite editor to save it as mapper.py on
-                    the gateway node. </para>
-                <note>
-                    <para>Python cares about indentation, so be sure
-                        to maintain it when you copy and paste the
-                        code using your editor.</para>
-                </note>
-                <programlisting>#!/usr/bin/env python
-
-import sys
-
-# input comes from STDIN (standard input)
-for line in sys.stdin:
-
-      # remove leading and trailing whitespace
-      line = line.strip()
-
-      # split the line into words
-      words = line.split()
-
-           # increase counters
-           for word in words:
-           # write the results to STDOUT (standard output);
-           # what we output here will be the input for the
-           # Reduce step, i.e. the input for reducer.py
-           #
-           # tab-delimited; the trivial word count is 1
-           print '%s\t%s' % (word, 1)</programlisting>
-                <para>Similarly, save the following code as <emphasis
-                        role="bold">reducer.py</emphasis> on your
-                    gateway node.</para>
-                <programlisting>#!/usr/bin/env python
-
-from operator import itemgetter
-import sys
-
-current_word = None
-current_count = 0
-word = None
-
-# input comes from STDIN
-for line in sys.stdin:
-
-      # remove leading and trailing whitespace
-      line = line.strip()
-
-      # parse the input we got from mapper.py
-      word, count = line.split('\t', 1)
-
-      # convert count (currently a string) to int
-      try:
-
-          count = int(count)
-
-      except ValueError:
-
-          # count was not a number, so silently
-          # ignore/discard this line
-          continue
-
-      # this IF-switch only works because Hadoop sorts map output
-      # by key (here: word) before it is passed to the reducer
-      if current_word == word:
-
-            current_count += count
-
-      else:
-
-           if current_word:
-
-                 # write result to STDOUT
-                 print '%s\t%s' % (current_word, current_count)
-
-           current_count = count
-           current_word = word
-
-# do not forget to output the last word if needed!
-if current_word == word:
-
-      print '%s\t%s' % (current_word, current_count)</programlisting>
-            </section>
-            <section xml:id="run_Python_App">
-                <title>Running the Python application</title>
-                <para>Use the same input folder for this application
-                    that you created for <xref linkend="run_WordCount"
-                    />. Be sure to follow the steps to copy the data,
-                    if you have not already. To launch the job, run
-                    the following command line from the gateway
-                    node.</para>
-                <programlisting>hadoop jar /usr/lib/hadoop/contrib/streaming/hadoop-streaming-0.20.2-cdh3u2.jar  -input input -output OUTPUT1 -mapper mapper.py -reducer reducer.py -file mapper.py  -file reducer.py</programlisting>
-                <para>When the job completes, the results is in an
-                    HDFS folder called <emphasis role="bold"
-                        >OUTPUT1</emphasis>. The results might be
-                    spread across several files in this folder due to
-                    the fact that Hadoop might utilize several
-                    reducers in parallel. Merge and copy the result
-                    set into a single file on your local (gateway
-                    node) file system using the following
-                    command.</para>
-                <programlisting>$ hadoop fs -getmerge OUTPUT1 result.txt </programlisting>
-                <para>When this command succeeds successfully, the
-                    results will be stored in the <emphasis
-                        role="bold">result.txt</emphasis> file on the
-                    gateway node's local file system.</para>
-                <para>If you are familiar with Python, try to modify
-                    the above application to ignore words that contain
-                    special characters. Also, look at <xref
-                        linkend="MLB_Game_Logs"/> to learn how to use
-                    the Pig tool that ships with Hadoop.</para>
-            </section>
-        </section>
-        <section xml:id="MLB_Game_Logs">
-            <title>Analyzing MLB Game Logs Using Pig</title>
-            <para>Writing MapReduce jobs for Hadoop using Java or
-                Python can grow cumbersome. Luckily, Hadoop includes
-                two query engines called Pig and Hive, which provide a
-                higher level of abstraction for you to work with. This
-                secation shows how you can process some Major League
-                Baseball (MLB) data on Hadoop using Pig. </para>
-            <para>Prior to working through this article, be sure to
-                read <xref linkend="setting_Up"/> and <xref
-                    linkend="create_Manage_Clusters"/> to set up a
-                3-node cluster. Also, take a look at <xref
-                    linkend="run_WordCount"/> in order to learn how to
-                copy data into Hadoop and run the packaged (Java)
-                WordCount application.</para>
-            <section xml:id="code_Pig_App">
-                <title>Coding the Pig Application</title>
-                <para>This application computes the average attendance
-                    for every MLB ballpark for the year 2011. To
-                    accomplish this, you need MLB game logs for 2011,
-                    which you can download from
-                    <link xlink:href=" http://www.retrosheet.org/gamelogs/index.html"
-                        > http://www.retrosheet.org/gamelogs/index.html</link>. </para>
-                <para>The game log information is processed using the
-                    following Pig script:</para>
-                <programlisting>__ See http://www.retrosheet.org/gamelogs/glfields.txt
-
-raw = load 'input' using PigStorage(',') as (date:bytearray, 
-numgames:bytearray,
-dayofweek:bytearray,
-vteam:bytearray,
-vleague:bytearray,
-vteamno:bytearray,
-hteam:bytearray,
-hleage:bytearray,
-hteamno:bytearray,
-vscore:int,
-hscore:int,
-outs:int,
-dayindicator:bytearray,
-completion:bytearray,
-forfeit:bytearray,
-protest:bytearray,
-parkid:bytearray,
-attendance:int
-);
-
-__ Strip quotes from team using tokenize
-final = foreach raw generate FLATTEN(TOKENIZE(hteam)) as team:chararray, attendance;
-final2 = foreach (group final by team) generate group, AVG(final.attendance);
-
-store final2 into 'result2';</programlisting>
-                <para>SSH into the gateway node. Then cut and paste
-                    the above snippet into a text file called
-                        <emphasis role="bold"
-                        >attendance.pig</emphasis>.</para>
-            </section>
-            <section xml:id="run_Pig_App">
-                <title>Running the Pig Application</title>
-                <para>Download the 2011 MLB game logs (a single file)
-                    on to your development machine or laptop. Launch a
-                    command prompt and run the following commands from
-                    to create a folder on the Hadoop file system
-                    (called <emphasis role="bold">input</emphasis>)
-                    and upload the log data to it.</para>
-                <programlisting>$ ssh joe@166.78.132.227 sudo -u hdfs mkdir input</programlisting>
-                <programlisting>$ scp -P 9022 GL2011.txt joe@166.78.132.227:input</programlisting>
-                <para>To launch the Pig script, SSH into the gateway
-                    node and run the following command:</para>
-                <programlisting>$ pig attendance.pig</programlisting>
-                <para>When the script completes, run the following
-                    command to merge and pull the resulting output
-                    from HDFS onto the gateway node's local
-                    disk:</para>
-                <programlisting>$ hadoop fs -getmerge result RESULT.TXT</programlisting>
-                <para>The <emphasis role="bold">RESULT.TXT</emphasis>
-                    file should contain the average attendance for
-                    every ballpark for 2011. You can view the results
-                    using the following command:</para>
-                <programlisting>$ less RESULT.TXT</programlisting>
-                <para>Pig is a very powerful querying tool and can
-                    accomplish many tasks. Take a look at <link
-                        xlink:href="http://pig.apache.org/docs/r0.7.0/piglatin_ref1.html"
-                        >Pig Latin Reference Manual</link> to learn
-                    more about Pig's capabilities.</para>
-            </section>
-
-        </section>
--->
     </chapter>
     <chapter xml:id="Additional_Resources">
-        <title>Additional Resources</title>
+        <title>Additional resources</title>
         <para>If you have any questions or concerns about using any of
             the steps in this guide, send an email to
             cbdteam@rackspace.com.</para>

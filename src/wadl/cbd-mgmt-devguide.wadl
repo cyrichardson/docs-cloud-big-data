@@ -4,9 +4,7 @@
 
 <!DOCTYPE application [
     <!ENTITY % common  SYSTEM "../common/common.ent">
-    %common;
-    
-    
+    %common;        
 ]>
 
 
@@ -122,7 +120,7 @@
 <!--*******************************************************-->
 	
 		<method name="GET" id="listLimits">
-			<wadl:doc xml:lang="EN" title="List Limits" xmlns="http://docbook.org/ns/docbook">
+			<wadl:doc xml:lang="EN" title="List limits" xmlns="http://docbook.org/ns/docbook">
 				<para role="shortdesc">Returns a list of resource limits for all tenants.</para> 
 				<para>This operation returns a list of resource limits for all tenants.</para>	
 			</wadl:doc>
@@ -140,7 +138,7 @@
 <!--*******************************************************-->	
 
 	<method name="POST" id="postLimits" >
-		<wadl:doc xml:lang="EN" title="Post Limits" xmlns="http://docbook.org/ns/docbook">
+		<wadl:doc xml:lang="EN" title="Post limits" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Updates resource limits for the specified tenant.</para> 
 			<para>This operation sets resource limits for the specified tenant.</para>	
 		</wadl:doc>
@@ -167,7 +165,7 @@
 <!--*******************************************************-->
 	
 	<method name="GET" id="getTenantLimits">
-		<wadl:doc xml:lang="EN" title="Get Tenant Limits" xmlns="http://docbook.org/ns/docbook">
+		<wadl:doc xml:lang="EN" title="Get tenant limits" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Returns the resource limits for the specified tenant.</para> 
 			<para>This operation returns the resource limits for the specified tenant.</para>	
 		</wadl:doc>
@@ -190,7 +188,7 @@
 <!--*******************************************************-->
 	
 	<method name="GET" id="getClusters">
-		<wadl:doc xml:lang="EN" title="Get Clusters" xmlns="http://docbook.org/ns/docbook">
+		<wadl:doc xml:lang="EN" title="Get clusters" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Lists all clusters for all tenants. You can paginate the list. </para> 
 			<para>This operation lists all clusters for all tenants. You can paginate the list.</para>	
 		</wadl:doc>
@@ -208,7 +206,7 @@
 	<!--*******************************************************-->
 	
 	<method name="DELETE" id="deleteCluster">
-		<wadl:doc xml:lang="EN" title="Delete Cluster" xmlns="http://docbook.org/ns/docbook">
+		<wadl:doc xml:lang="EN" title="Delete cluster" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Delete the specified cluster. </para> 
 			<para>This operation deletes the specified cluster.</para>	
 		</wadl:doc>
@@ -227,7 +225,7 @@
 <!--*******************************************************-->
 	
 	<method name="GET" id="getCluster">
-		<wadl:doc xml:lang="EN" title="Get Specific Cluster" xmlns="http://docbook.org/ns/docbook">
+		<wadl:doc xml:lang="EN" title="Get specific cluster" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Returns details about the specified cluster. </para>  
 			<para>This operation returns details about the specified cluster. </para>
 		</wadl:doc>
@@ -245,7 +243,7 @@
 <!--*******************************************************-->
 	
 	<method name="GET" id="getClusterLogs">
-		<wadl:doc xml:lang="EN" title="Get Cluster Logs" xmlns="http://docbook.org/ns/docbook">
+		<wadl:doc xml:lang="EN" title="Get cluster logs" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Returns the provisioning logs for the specified cluster. </para>  
 			<para>This operation returns the provisioning logs for the specified cluster. </para>
 		</wadl:doc>
@@ -263,7 +261,7 @@
 <!--*******************************************************-->
 	
 	<method name="POST" id="postClusterAction">
-		<wadl:doc xml:lang="EN" title="Post Cluster Action" xmlns="http://docbook.org/ns/docbook">
+		<wadl:doc xml:lang="EN" title="Post cluster action" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Performs an action, such as set status, on the specified cluster. </para>  
 			<para>This operation performs an action, such as set status, on the specified cluster. </para>
 		</wadl:doc>
@@ -288,7 +286,7 @@
 <!--*******************************************************-->
 	
 	<method name="GET" id="getClusterStatus">
-		<wadl:doc xml:lang="EN" title="Get Cluster Status" xmlns="http://docbook.org/ns/docbook">
+		<wadl:doc xml:lang="EN" title="Get cluster status" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Gets a status report about the specified cluster, to ensure that all servers are accessible over the network, services are running, check HDFS does not exceed a threshold. This operation is long running.
 			-	long running </para>  
 			<para>This operation gets a status report about the specified cluster. </para>
@@ -307,7 +305,7 @@
 <!--*******************************************************-->		
 	
 	<method name="POST" id="postClusterNodeAction">
-		<wadl:doc xml:lang="EN" title="Post Cluster Node Action" xmlns="http://docbook.org/ns/docbook">
+		<wadl:doc xml:lang="EN" title="Post cluster node action" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Performs an action, such as replace or restart, on the specified node (server) in the specified cluster. </para>  
 			<para>This operation performs an action, such as replace or restart, on the specified node (server) in the specified cluster. </para>
 		</wadl:doc>
@@ -324,7 +322,7 @@
 <!--*******************************************************-->
 	
 	<method name="GET" id="getTenants">
-		<wadl:doc xml:lang="EN" title="Get Tenants" xmlns="http://docbook.org/ns/docbook">
+		<wadl:doc xml:lang="EN" title="Get tenants" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Returns a list of tenants who have profiles. </para>  
 			<para>This operation returns a list of tenants who have profiles. </para>
 		</wadl:doc>
@@ -342,7 +340,7 @@
 <!--*******************************************************-->
 	
 	<method name="GET" id="getTenant">
-		<wadl:doc xml:lang="EN" title="Get Specific Tenant" xmlns="http://docbook.org/ns/docbook">
+		<wadl:doc xml:lang="EN" title="Get specific tenant" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Returns details about the specified tenant. </para>  
 			<para>This operation returns details about the specified tenant. </para>
 		</wadl:doc>
@@ -360,7 +358,7 @@
 <!--*******************************************************-->
 	
 	<method name="GET" id="getTenantClusters">
-		<wadl:doc xml:lang="EN" title="Get Tenant Clusters" xmlns="http://docbook.org/ns/docbook">
+		<wadl:doc xml:lang="EN" title="Get tenant clusters" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Returns a list of clusters for the specified tenant. </para>  
 
 		</wadl:doc>
@@ -382,7 +380,7 @@
 <!--*******************************************************-->
 	
 	<method name="GET" id="getHosts">
-		<wadl:doc xml:lang="EN" title="Get Hosts" xmlns="http://docbook.org/ns/docbook">
+		<wadl:doc xml:lang="EN" title="Get hosts" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Returns all hosts in the system. </para>  
 		</wadl:doc>
 		<response status="200">		
@@ -403,8 +401,8 @@
 <!--*******************************************************-->
 	
 	<method name="GET" id="getServers">
-		<wadl:doc xml:lang="EN" title="Get Servers" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Returns all servers in the system.</para>  
+		<wadl:doc xml:lang="EN" title="Get servers" xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Returns all the servers in the system.</para>  
 		</wadl:doc>
 		<response status="200">		
 			<representation mediaType="application/json" >
@@ -424,7 +422,7 @@
 	<!--*******************************************************-->
 	
 	<method name="GET" id="getEndpointInfo">
-		<wadl:doc xml:lang="EN" title="Get Endpoint Information" xmlns="http://docbook.org/ns/docbook">
+		<wadl:doc xml:lang="EN" title="Get endpoint information" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Returns information for the endpoint.</para>
 			<para>This operation returns the information about the endpoint, such as the version of the API that is running.</para>
 		</wadl:doc>
@@ -446,7 +444,7 @@
 	<!--*******************************************************-->
 	
 	<method name="GET" id="getEndpointCap">
-		<wadl:doc xml:lang="EN" title="Get Endpoint Information" xmlns="http://docbook.org/ns/docbook">
+		<wadl:doc xml:lang="EN" title="Get endpoint capacity" xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Returns the total and remaining capacity for each flavor supported by the endpoint.</para>
 			<para>This operation returns total and remaining capacity information for the flavors supported by the endpoint.</para>
 		</wadl:doc>

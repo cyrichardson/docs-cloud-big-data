@@ -110,16 +110,12 @@
                                 />.</para>
                         </listitem>
                         <listitem>
-                            <para>Added Get Endpoint Info operation in
-                                   <xref
-                                   linkend="Endpoint_Management-001"
-                                />.</para>
+                            <para>Added an operation to get endpoint information in <xref
+                                    linkend="Endpoint_Management-001"/>.</para>
                         </listitem>
                         <listitem>
-                            <para>Added Get Endpoint Capacity
-                                operation in <xref
-                                   linkend="Endpoint_Capacity_Management-001"
-                                />.</para>
+                            <para>Added an operation to get endpoint capacity in <xref
+                                    linkend="Endpoint_Capacity_Management-001"/>.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -156,11 +152,18 @@
             service on the Rackspace open cloud. The service supports
             a RESTful API and alleviates the pain associated with
             deploying, managing, and scaling Hadoop clusters. </para>
-        <para>Interactions with Cloud Big Data occur programmatically
-            via the Cloud Big Data API as described in this
-                <citetitle>Cloud Big Data Developer Guide for Service
-                Management</citetitle> and in the <citetitle>Cloud Big Data
-            Developer Guide</citetitle>.</para>
+        <para>Interactions with Cloud Big Data occur programmatically via the Cloud Big Data API as
+            described in this <citetitle>Cloud Big Data Developer Guide for Service
+                Management</citetitle> and in the following guides that are available on <link
+                    xlink:href="http://docs.rackspace.com/"
+                    >docs.rackspace.com</link>:<itemizedlist>
+                <listitem>
+                    <para><citetitle>Cloud Big Data Getting Started Guide</citetitle></para>
+                </listitem>
+                <listitem>
+                    <para><citetitle>Cloud Big Data Developer Guide</citetitle></para>
+                </listitem>
+            </itemizedlist></para>
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Cloud Big
             Data is just as flexible and feature-rich as Hadoop. With
             Cloud Big Data, you benefit from on-demand servers,
@@ -175,7 +178,7 @@
         <remark>Reviewers: If you have an architecture diagram for
             Cloud Big Data that you want included here, please send it
             to me.</remark>
-<!-- Coming after EA from David Dobbins who is working with marketing on this
+<!-- Coming the CBD team is working with marketing on this
         <para security="reviewers">The following figure shows an overview of Cloud Big
             Data: <<informalfigure>
                 <mediaobject>
@@ -233,34 +236,28 @@
             </itemizedlist>
         </para>
         <section xml:id="Intended_Audience-d1e122">
-            <title>Intended Audience</title>
+            <title>Intended audience</title>
             <para>The following APIs provide access to Rackspace Cloud
                 Big Data: </para>
             <itemizedlist spacing="compact">
                 <listitem>
-                    <para>The <emphasis>management</emphasis> API,
-                        available only to developers, Support
-                        personnel, and Operations administrators
-                        within Rackspace, depending on the granted
-                        LDAP roles and permissions, is the subject of
-                        this document.</para>
+                    <para>The <emphasis>management</emphasis> API, which is available only to
+                        developers, support personnel, and operations administrators within
+                        Rackspace, depending on the granted LDAP roles and permissions, is the
+                        subject of this document.</para>
                 </listitem>
                 <listitem>
-                    <para>The <emphasis>public</emphasis> API,
-                        available to developers within Rackspace and
-                        Rackspace customers, is the subject of a
-                        companion document, the <citetitle>Rackspace
-                            Cloud Big Data Developer
-                        Guide</citetitle>.</para>
+                    <para>The <emphasis>public</emphasis> API, which is available to developers
+                        within Rackspace and Rackspace customers, is the subject of a companion
+                        document, the <citetitle>Rackspace Cloud Big Data Developer
+                            Guide</citetitle>.</para>
                 </listitem>
             </itemizedlist>  
             <?hard-pagebreak?>
-            <para xmlns:wadl="http://wadl.dev.java.net/2009/02">These
-                guides are intended to assist software developers who
-                want to develop applications by using the &PRODNAME;
-                API. It assumes the reader has a general understanding
-                of Big Data concepts and is familiar with the
-                following technology: </para>
+            <para xmlns:wadl="http://wadl.dev.java.net/2009/02">These guides are intended to assist
+                software developers who want to develop applications by using the &PRODNAME; API.
+                They assume the reader has a general understanding of Big Data concepts and is
+                familiar with the following technology: </para>
             <itemizedlist spacing="compact">
                 <listitem>
                     <para>Hadoop, Apache Hadoop Distributed File
@@ -282,7 +279,7 @@
         </section>
         <?hard-pagebreak?>
         <section xml:id="Document_Change_History-d1e166">
-            <title>Document Change History</title>
+            <title>Document change history</title>
             <para>This version of the developer guide for service
                 management replaces and obsoletes all earlier
                 versions. The most recent changes are described in the
@@ -303,7 +300,7 @@
                     </listitem>
                 </itemizedlist></para>
             <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The following OS and Hadoop
-                Distribution are supported: <itemizedlist spacing="compact">
+                distribution are supported: <itemizedlist spacing="compact">
                     <listitem>
                         <para>CentOS 6.5 </para>
                     </listitem>
@@ -343,16 +340,16 @@
         </section>
         <?hard-pagebreak?>
         <section xml:id="API_Contract_Changes-d1e122">
-            <title>API Contract Changes</title>
+            <title>API contract changes</title>
             <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The API contract is not locked and
                 may change. If the contract changes, Rackspace will notify customers in release
                 notes.</para>
         </section>
         <section xml:id="Pricing_SLA-d1e1362"
             xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            <title>Pricing and Service Level</title>
-            <para>&PRODNAME; is part of the Rackspace Cloud and your use through the API will be
-                billed according to  the pricing schedule at <link
+            <title>Pricing and service level</title>
+            <para>&PRODNAME; is part of the Rackspace Cloud and your use through the API is billed
+                according to the pricing schedule at <link
                     xlink:href="http://www.rackspace.com/cloud/big-data/pricing/"
                     >http://www.rackspace.com/cloud/big-data/pricing/</link>. </para>
             <para>The Service Level Agreement (SLA) for Cloud Big Data is available at <link
@@ -360,24 +357,14 @@
                     >http://www.rackspace.com/cloud/legal/sla</link>.</para>
         </section>
         <section xml:id="Additional_Resources-d1e532">
-            <title>Additional Resources</title>
+            <title>Additional resources</title>
             <!--
             <para>Descriptive information about Cloud Big Data is also
                 published in its Web Application Description Language
-                (WADL) and XML Schema Definition (XSD). You are
-                welcome to read this information here:</para>
-            <itemizedlist>
-                <listitem>
-                    <para>The WADL is <link
-                            xlink:href="http://docs-internal.rackspace.com/cbd/api/v1.0/cbd-management.wadl"
-                        />.</para>
-                </listitem>
-                <listitem>
-                    <para>The XSD is <link
-                        xlink:href="http://docs-internal.rackspace.com/cbd/api/v1.0/xsd/cbd-management.xsd"/>. </para>
-                </listitem>
-            </itemizedlist>
-            -->
+                (WADL). You are
+                welcome to read this information at <link
+                            xlink:href="http://docs-internal.rackspace.com/cbd/api/v1.0/cbd-management.wadl"/>.</para>
+-->
             <para xmlns:wadl="http://wadl.dev.java.net/2009/02">You
                 can download the most current versions of the
                 API-related documents from <link
@@ -393,9 +380,6 @@
             <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Email
                 all support questions to
                     <email>cbdteam@rackspace.com</email>. </para>
-            <para>For information about getting started using Cloud
-                Big Data, refer to <citetitle>Getting Started with
-                    Rackspace Cloud Big Data</citetitle>.</para>
             <para security="writeronly">Please visit our <link
                     xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
                     >Product Feedback Forum</link> to find out what
@@ -419,7 +403,7 @@
                 linkend="glossary_1"/> at the end of the book. </para>
     </chapter>
     <chapter xml:id="General_API_Information-d1e633">
-        <title>General API Information</title>
+        <title>General API information</title>
         <para>The &PRODNAME; API is implemented using a RESTful web
             service interface.  &PRODNAME; shares a common token-based
             authentication system with other products in the Rackspace
@@ -449,12 +433,8 @@
                 valid Rackspace customer credentials in the message
                 body to a Rackspace authentication endpoint. </para>
             <note>
-                <para>If you cannot access the &PRODNAME; API, send an
-                    email to the &PRODNAME; team at
-                        <email>cbdteam@rackspace.com</email> to
-                    request access. Access will be granted on an
-                    as-needed basis until access to the &PRODNAME; API
-                    is integrated with Cloud Identity service.</para>
+                <para>If you cannot access the &PRODNAME; API, send an email to the &PRODNAME; team
+                    at <email>cbdteam@rackspace.com</email> to request access. </para>
             </note>
             <para><emphasis role="bold">1. GET YOUR
                     CREDENTIALS</emphasis>
@@ -504,12 +484,12 @@
                             your password. Following are examples of
                             both approaches:</para>
                         <example>
-                            <title>User Name and API Key</title>
+                            <title>User name and API key</title>
                             <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d 
 '{ "auth":{ "RAX-KSKEY:apiKeyCredentials":{ "username":"yourUserName", "apiKey":"yourApiKey" } } }' -H "Content-type: application/json"</literallayout>
                         </example>
                         <example>
-                            <title>User Name and Password</title>
+                            <title>User name and password</title>
                             <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d
 '{"auth":{"passwordCredentials":{"username":"yourUserName","password":"yourPassword"}}}' -H "Content-type: application/json"</literallayout>
                         </example>
@@ -525,16 +505,13 @@
                         </para>
                     </listitem>
                     <listitem>
-                        <para>Use the authentication token to send a
-                            GET request to a service that you want to
-                            use. The following example shows passing
-                            an authentication token to the &PRODNAME;
-                            service by using the &PRODNAME; service
-                            catalog endpoint that was returned along
-                            with the token.</para>
+                        <para>Use the authentication token to send a <command>GET</command> request
+                            to a service that you want to use. The following example shows passing
+                            an authentication token to the &PRODNAME; service by using the
+                            &PRODNAME; service catalog endpoint that was returned along with the
+                            token.</para>
                         <example>
-                            <title>cURL Get Profile Request:
-                                JSON</title>
+                            <title>cURL get profile request: JSON</title>
                             <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/profile -d  \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json"\
@@ -577,7 +554,7 @@
                 the Cloud account admin user to account users of the
                 account. </para>
             <section xml:id="Assigning-Roles-d1e001">
-                <title>Assigning Roles to Account Users</title>
+                <title>Assigning roles to account users</title>
                 <para>The account owner (identity:user-admin) can
                     create account users on the account and then
                     assign roles to those users. The roles grant the
@@ -593,18 +570,18 @@
                     <listitem>
                         <para><link
                                 xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html"
-                                > Create account users</link></para>
+                                >Create account users</link></para>
                     </listitem>
                     <listitem>
                         <para><link
                                 xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__Role_Calls.html"
-                                > Assign roles to account
+                                >Assign roles to account
                             users</link></para>
                     </listitem>
                     <listitem>
                         <para><link
                                 xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__Role_Calls.html"
-                                > Delete roles from account
+                                >Delete roles from account
                                 users</link></para>
                     </listitem>
                 </itemizedlist>
@@ -616,20 +593,19 @@
                 </note>
             </section>
             <section xml:id="RBAC_product_roles">
-                <title>Roles Available for Cloud Big Data </title>
+                <title>Roles available for Cloud Big Data </title>
                 <para>Three roles (admin, creator, and observer) can
                     be used to access the Cloud Big Data API
                     specifically. The following table describes these
                     roles and their permissions.</para>
                 <table xml:id="RBAC_product_roles_table" rules="all">
-                    <caption>Cloud  Big Data Product Roles and
-                        Capabilities</caption>
+                    <caption>Cloud Big Data product roles and capabilities</caption>
                     <col width="50%"/>
                     <col width="50%"/>
                     <thead>
                         <tr>
-                            <th>Role Name</th>
-                            <th>Role Permissions</th>
+                            <th>Role name</th>
+                            <th>Role permissions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -661,14 +637,13 @@
                     describes these roles and their
                     permissions.</para>
                 <table rules="all">
-                    <caption> Multiproduct (Global) Roles and
-                        Permissions</caption>
+                    <caption> Multiproduct (global) roles and permissions</caption>
                     <col width="50%"/>
                     <col width="50%"/>
                     <thead>
                         <tr>
-                            <th>Role Name</th>
-                            <th>Role Permissions</th>
+                            <th>Role name</th>
+                            <th>Role permissions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -690,8 +665,8 @@
             </section>
             <section xml:id="RBAC-Resolving-Conflicts-d1e001"
                 version="5.0">
-                <title>Resolving Conflicts Between RBAC Multiproduct
-                    vs. Custom (Product-specific) Roles</title>
+                <title>Resolving conflicts between RBAC multiproduct vs. custom (product-specific)
+                    roles</title>
                 <para>The account owner can set roles for both
                     multiproduct and Cloud Big Data scope, and it is
                     important to understand how any potential
@@ -708,12 +683,10 @@
                     <informaltable rules="all">
                         <thead>
                             <tr align="center">
-                                <td>Permission Configuration</td>
-                                <td>View of Permission in the Control
-                                   Panel </td>
-                                <td>Can the User Perform Product Admin
-                                   Functions in the Control
-                                   Panel?</td>
+                                <td>Permission configuration</td>
+                                <td>View of permission in the Control Panel </td>
+                                <td>Can the user perform product admin functions in the Control
+                                    Panel?</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -751,8 +724,7 @@
             </section>
             <section xml:id="RBAC-Permissions-Cross-Ref-d1e001"
                 version="5.0">
-                <title>RBAC Permissions Cross-reference to Cloud Big
-                    Data API Operations</title>
+                <title>RBAC permissions cross-reference to Cloud Big Data API operations</title>
                 <para>API operations for Cloud Big Data may or may not
                     be available to all roles. To see which operations
                     are permitted to invoke which calls, please review
@@ -764,7 +736,7 @@
        
         <section xml:id="Service_Access_Endpoints-d1e753"
             xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            <title>Service Access Endpoints</title>
+            <title>Service access endpoints</title>
             <para>The &PRODNAME; service is a regionalized service.
                 The user of the service is therefore responsible for
                 appropriate replication, caching, and overall
@@ -774,7 +746,7 @@
                 API calls are summarized in the table below.</para>
             <para>
                 <table rules="all">
-                    <caption>Admin Service Endpoints</caption>
+                    <caption>Admin service access endpoints</caption>
                     <thead>
                         <tr align="center">
                             <td colspan="2">Region</td>
@@ -806,7 +778,7 @@
         </section>
         <section xml:id="Request_Response_Types-d1e903"
             xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            <title>Request and Response Types</title>
+            <title>Request and response types</title>
             <para>The &PRODNAME; API supports JSON data serialization
                 formats. The request format is specified using the
                     <code>Content-Type</code> header and is required
@@ -817,13 +789,13 @@
                 Note that JSON is the default format for data
                 serialization.</para>
             <table rules="all">
-                <caption>Response Formats</caption>
+                <caption>Response formats</caption>
                 <?dbfo keep-together="always"?>
                 <thead>
                     <tr align="center">
                         <td>Format</td>
-                        <td>Accept Header</td>
-                        <td>Query Extension</td>
+                        <td>Accept header</td>
+                        <td>Query extension</td>
                         <td>Default</td>
                     </tr>
                 </thead>
@@ -840,18 +812,16 @@
         <section xml:id="volume_status"
             xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <title>Faults</title>
-            <para>When an error occurs, the &PRODNAME; service returns
-                a fault object that contains an HTTP error response
-                code that denotes the type of error. In the body of
-                the response, the system will return additional
-                information about the fault.</para>
+            <para>When an error occurs, the &PRODNAME; service returns a fault object that contains
+                an HTTP error response code that denotes the type of error. In the body of the
+                response, the system returns additional information about the fault.</para>
             <para>The following table lists possible fault types with
                 their associated error codes and descriptions.</para>
             <informaltable rules="all">
                 <thead>
                     <tr align="center">
-                        <td colspan="2">Fault Type</td>
-                        <td colspan="1">Associated Error Code</td>
+                        <td colspan="2">Fault type</td>
+                        <td colspan="1">Associated error code</td>
                         <td colspan="3">Description</td>
                     </tr>
                 </thead>
@@ -922,22 +892,18 @@
                 limits are thresholds that are reset after a certain
                 amount of time passes. Absolute limits are fixed. </para>
             <section xml:id="Rate_Limits-d1e1222">
-                <title>Rate Limits</title>
-                <para>Rate limits are specified in terms of both a
-                    human-readable wildcard URI and a
-                    machine-processable regular expression. The
-                    regular expression boundary matcher
-                        '<code>^</code>' takes effect after the root
-                    URI path. For example, the regular expression
-                        <code>^/v1.0/clusters</code> would match the
-                    bold portion of the following URI:
-                        https://dfw.bigdata.api.rackspacecloud.com<emphasis
+                <title>Rate limits</title>
+                <para>Rate limits are specified in terms of both a human-readable wildcard URI and a
+                    machine-processable regular expression. The regular expression boundary matcher
+                        <code>^</code> takes effect after the root URI path. For example, the
+                    regular expression <code>^/v1.0/clusters</code> would match the bold portion of
+                    the following URI: https://dfw.bigdata.api.rackspacecloud.com<emphasis
                         role="bold">/v1.0/clusters</emphasis>. </para>
                 <para>The following table specifies the default rate
                     limits for all &GET;, &POST;, &PUT;, and &DELETE;
                     API operations for clusters.</para>
                 <table rules="all">
-                    <caption>Default Rate Limits</caption>
+                    <caption>Default rate limits</caption>
                     <thead>
                         <tr align="center">
                             <td colspan="1">Verb</td>
@@ -994,11 +960,10 @@
                     again. </para>
             </section>
             <section xml:id="Absolute_Limits-d1e1397">
-                <title>Absolute Limits</title>
-                <para>Refer to the following table for the absolute
-                    limits that are set.</para>
+                <title>Absolute limits</title>
+                <para>The following table describes the absolute limits that are set.</para>
                 <table rules="all">
-                    <caption>Absolute Limits</caption>
+                    <caption>Absolute limits</caption>
                     <thead>
                         <tr align="center" >
                             <td colspan="1">Name</td>
@@ -1039,13 +1004,13 @@
         <?hard-pagebreak?>
         <section xml:id="datetimeformat"
             xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            <title>Date and Time Format</title>
+            <title>Date and time format</title>
             <para>For the display and consumption of date and time
                 values, the &PRODNAME; service uses a date format that
                 complies with ISO 8601. </para>
             <para>The system time is expressed as UTC.</para>
             <example>
-                <title>&PRODNAME; Service Date and Time Format</title>
+                <title>&PRODNAME; service date and time format</title>
                 <programlisting>yyyy-MM-dd'T'HH:mm:ss.SSSZ</programlisting>
                 <para>For example, May 19, 2013 at 8:07:08 a.m., UTC-5
                     would have the following format: </para>
@@ -1055,8 +1020,7 @@
                     format codes. </para>
             </example>
             <table rules="all">
-                <caption>Explanation of Date and Time Format
-                    Codes</caption>
+                <caption>Explanation of date and time format codes</caption>
                 <thead>
                     <tr>
                         <td>Code</td>
@@ -1106,10 +1070,9 @@
         </section>
         <section xml:id="cluster_status"
             xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            <title>Cluster Status</title>
-            <para><?rax-fo keep-with-next?>When you send an API call
-                to create, list, or delete a cluster or clusters, the
-                following cluster status values might be returned: </para>
+            <title>Cluster status</title>
+            <para><?rax-fo keep-with-next?>When you send an API operation to create, list, or delete
+                a cluster or clusters, the following cluster status values might be returned: </para>
             <itemizedlist spacing="compact">
                 <listitem>
                     <para>BUILDING &ndash; The cluster is being
@@ -1147,13 +1110,12 @@
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>Limit is the restriction on the maximum
-                            number of items for that type that can be
-                            returned. </para>
+                        <para><code>limit</code> is the restriction on the maximum number of items
+                            for that type that can be returned. </para>
                     </listitem>
                     <listitem>
-                        <para>Marker is the ID of the last item in the
-                            previous list returned. </para>
+                        <para><code>marker</code> is the ID of the last item in the previous list
+                            returned. </para>
                         <para>The ID is the respective ID for the last cluster, node, or flavor. For example, a query could request the next 10 nodes after the node “xyz” as follows:
                             <code>?limit=10&amp;marker=xyz</code>. Items displayed are sorted by ID. </para>
                     </listitem>
@@ -1183,15 +1145,15 @@
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/v1.0/{tenant_id}/flavors</td>
-                        <td colspan="3">Lists all available flavors, inclduing the drive size and the amount of
-                            RAM.</td>
+                        <td colspan="3">Lists all available flavors, including the drive size and
+                            the amount of RAM.</td>
                     </tr>
                 </tbody>
             </informaltable>
             <para>The default paging limit for all calls is 25 with a maximum of 200. Requests for more than 200 result in a 400 error.</para>
-            <para>See the example of the paged List Nodes operation that follows.</para>
+            <para>See the following example of the operation for listing paged nodes.</para>
             <example>
-                <title>List Nodes Paged Request: JSON</title>
+                <title>List nodes paged request: JSON</title>
                 
                 <programlisting language="json">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/yourAccountID/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes?limit=2 -d \
 -H "X-Auth-Token: yourAuthToken" \
@@ -1201,7 +1163,7 @@
             <para>Notice that the paged request example above sets the limit to 2 (<code>?limit=2</code>),
                 so the response that follows shows 2 nodes:</para>
             <example>
-                <title>List Nodes Paged Response: JSON</title>
+                <title>List nodes paged response: JSON</title>
                 
                 <programlisting language="json">
 {
@@ -1309,12 +1271,12 @@
     <chapter xml:id="API_Operations-d1e2264"
         xmlns="http://docbook.org/ns/docbook"
         role="api-reference">
-        <title>API Operations</title>
+        <title>API operations</title>
         <para>This chapter describes each of the &PRODNAME; service
             management operations.</para> 
 
         <section xml:id="Limits_Management-001">
-            <title>Limits Management</title>
+            <title>Limits management</title>
             <para>This section describes the operations that are supported for limits.</para>
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#limits"/> 
@@ -1323,7 +1285,7 @@
         </section>
    
         <section xml:id="Clusters_Management-001">
-            <title>Clusters Management</title>
+            <title>Clusters management</title>
             <para>This section describes the operations that are supported for clusters.</para>
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">          
                 <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#clusters"/>
@@ -1338,7 +1300,7 @@
         </section>
 
         <section xml:id="Tenant_Management-001">
-            <title>Tenant Management</title>
+            <title>Tenant management</title>
             <para>This section describes the operations that are supported for tenants.</para>
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#tenants"/> 
@@ -1348,7 +1310,7 @@
         </section>
 
         <section xml:id="Hosts_Management-001">
-            <title>Host Management</title>
+            <title>Host management</title>
             <para>This section describes the operations that are supported for getting information about hosts.</para>
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">   
                 <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#hosts"/>        
@@ -1356,14 +1318,14 @@
         </section>
    
         <section xml:id="Servers_Management-001">
-            <title>Server Management</title>
+            <title>Server management</title>
             <para>This section describes the operations that are supported for getting information about servers.</para>
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource href="../../src/wadl/cbd-mgmt-devguide.wadl#servers"/>             
             </wadl:resources>   
         </section>
         <section xml:id="Endpoint_Management-001">
-            <title>Endpoint Information Management</title>
+            <title>Endpoint information management</title>
             <para>This section describes the operations that are
                 supported for getting information about
                 endpoints.</para>
@@ -1375,7 +1337,7 @@
             </wadl:resources>
         </section>
         <section xml:id="Endpoint_Capacity_Management-001">
-            <title>Endpoint Capacity Management</title>
+            <title>Endpoint capacity management</title>
             <para>This section describes the operations that are
                 supported for getting information about
                 endpoint capacity.</para>
@@ -1425,15 +1387,14 @@
             </glossdef>
         </glossentry>
         <glossentry xml:id="glosSCPServerProxy">
-            <glossterm>SCP Server Proxy</glossterm>
+            <glossterm>SCP server proxy</glossterm>
             <glossdef>
-                <para>An SCP service that runs on your Hadoop cluster
-                    which distributes your files across the cluster.
-                </para>
+                <para>An SCP service that runs on your Hadoop cluster which distributes your files
+                    across the cluster. </para>
             </glossdef>
         </glossentry>
         <glossentry xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            <glossterm>Service Catalog</glossterm>
+            <glossterm>Service catalog</glossterm>
             <glossdef>
                 <para>Your service catalog is the list of services available to you, as returned
                     along with your authentication token and an expiration date for that token. All
