@@ -453,7 +453,7 @@
                         <example>
                             <title>cURL authenticate request: XML</title>
                             <?dbfo keep-together="always"?>
-                            <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
+                            <screen language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
 '&lt;?xml version="1.0" encoding="UTF-8"?>
  &lt;auth&gt;   
     &lt;apiKeyCredentials     
@@ -467,7 +467,7 @@
                             command syntax have been escaped with a
                             backslash (\) to indicate that the command
                             continues on the next line:</para>
-                        <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
+                        <screen language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
   
    
 (... lines within the XML portion of the message are not shown in this example)
@@ -596,7 +596,7 @@
         <example xml:id="XML-Auth-Request-d1003">
             <title>cURL authenticate request: XML</title>
             <?dbfo keep-together="always"?>
-            <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
+            <screen language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
 '&lt;?xml version="1.0" encoding="UTF-8"?>
 &lt;auth>
    &lt;apiKeyCredentials
@@ -611,7 +611,7 @@
         <example xml:id="JSON-Auth-Request-d1003">
             <title>cURL authenticate request: JSON</title>
             <?dbfo keep-together="always"?>
-            <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
+            <screen language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
 '{
     "auth":
     {
