@@ -68,7 +68,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace &PRODNAME;</productname>
-    <pubdate>2014-06-02</pubdate>
+    <pubdate>2014-07-22</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the doc build
@@ -82,6 +82,13 @@ format="SVG" scale="60"/>
     <revhistory xmlns:svg="http://www.w3.org/2000/svg"
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
+      <revision xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
+        <date>2014-07-22</date>
+        <revdescription>
+          <para>Added a link to guidance on choosing a regionalized endpoint in <xref
+              linkend="Service_Access_Endpoints-d1e753"/>.</para>
+        </revdescription>
+      </revision>
       <revision>
         <date>2014-06-02</date>
         <revdescription>
@@ -643,6 +650,19 @@ format="SVG" scale="60"/>
         data across regional boundaries to other Cloud Servers.</para>
       <para>The endpoints to use for your Cloud Big Data API calls are
         summarized in the table below.</para>
+      <tip>
+        <para>To help you decide which regionalized endpoint to use, read about special
+          considerations for choosing a data center at <link
+            xlink:href="http://www.rackspace.com/knowledge_center/article/what-is-ord-and-dfw"
+            >http://www.rackspace.com/knowledge_center/article/what-is-ord-and-dfw</link>.
+          <!--
+2014-07-21 rose.coste
+David Hendler confirms this is the right KC article:
+at the same location, it has a new page title, "Where are the Rackspace data centers (DFW, LON, HKG, etc.)?"
+<link xlink:href="http://www.rackspace.com/knowledge_center/article/what-is-ord-and-dfw">http://www.rackspace.com/knowledge_center/article/what-is-ord-and-dfw</link>.
+-->
+        </para>
+      </tip>
       <para>
         <table rules="all">
           <caption>Regionalized service endpoints</caption>
