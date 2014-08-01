@@ -61,24 +61,8 @@
               <canonicalUrlBase>http://docs.rackspace.com/cbd/api/v1.0/cbd-devguide/content</canonicalUrlBase>
               <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
             </configuration>
-          </execution>
-
-          <execution>
-            <id>cbd-devguide-2</id>
-            <goals>
-              <goal>generate-webhelp</goal>
-            </goals>
-            <phase>generate-sources</phase>
-            <configuration>
-              <enableDisqus>1</enableDisqus>
-              <includes>
-                cbd-devguide-2.xml
-              </includes>
-              <canonicalUrlBase>http://docs.rackspace.com/cbd/api/v2.0/cbd-devguide-2/content</canonicalUrlBase>
-              <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
-            </configuration>
           </execution> 
-
+          
           <execution>
             <id>cbd-getting-started</id>
             <goals>
@@ -118,7 +102,7 @@
           <branding>rackspace</branding>      
           <showXslMessages>true</showXslMessages>
           <enableDisqus>intranet</enableDisqus>
-          <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
+	        <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
 	        <highlightSource>false</highlightSource>
         </configuration>
       </plugin>
