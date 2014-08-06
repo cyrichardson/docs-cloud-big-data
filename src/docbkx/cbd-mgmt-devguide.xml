@@ -534,17 +534,11 @@
                 hours. Applications should be designed to
                 re-authenticate after receiving a 401 (Unauthorized)
                 response from a service endpoint. </para>
-            <important>
-                <para>If you are programmatically parsing an
-                    authentication response, be aware that service
-                    names are stable for the life of the particular
-                    service and can be used as keys. You should also
-                    be aware that a user's service catalog can include
-                    multiple uniquely named services that perform
-                    similar functions. In Cloud Identity 2.0, the
-                    service type attribute can be used as a key by
-                    which to recognize similar services. </para>
-            </important>
+            <para>If you are programmatically parsing an authentication response, be aware that
+                service names are stable for the life of the particular service and can be used as
+                keys. You should also be aware that a user's service catalog can include multiple
+                uniquely named services that perform similar functions. In Cloud Identity 2.0, the
+                service type attribute can be used as a key by which to recognize similar services. </para>
         </section>
         
         <section xml:id="RBAC"
