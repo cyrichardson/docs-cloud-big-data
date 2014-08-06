@@ -528,6 +528,8 @@
                     </listitem>
                 </orderedlist>
             </para>
+            <para>In this service management guide, <emphasis role="bold">yourAccountID</emphasis>
+                is the SSO of the user in the lnx-cloud-cbd-engineer group.</para>
             <para>Authentication tokens are typically valid for 24
                 hours. Applications should be designed to
                 re-authenticate after receiving a 401 (Unauthorized)
