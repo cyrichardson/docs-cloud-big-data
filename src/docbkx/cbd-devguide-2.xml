@@ -48,7 +48,7 @@ format="SVG" scale="60"/>
   <titleabbrev>&PRODNAME; Developer Guide</titleabbrev>
 -->
   <?rax title.font.size="30px" subtitle.font.size="20px"
-  canonical.url.base="http://docs-internal.rackspace.com/cbd/api/v2/cbd-devguide-2/content"
+  canonical.url.base="http://docs-internal.rackspace.com/cbd/api/v1/cbd-devguide-2/content"
   status.bar.text="draft"?>
   <title>Rackspace Cloud Big Data Developer Guide - Version 2</title> 
   <titleabbrev>Cloud Big Data Developer Guide - Version 2</titleabbrev>
@@ -91,7 +91,7 @@ format="SVG" scale="60"/>
     </revhistory>
     <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
       <raxm:displayname>API Developer Guide - Version 2</raxm:displayname>
-      <raxm:product version="v2">cbd</raxm:product>
+      <raxm:product version="v1.0">cbd</raxm:product>
       <raxm:priority>15</raxm:priority>
     </raxm:metadata>
   </info>
