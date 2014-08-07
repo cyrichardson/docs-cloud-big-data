@@ -66,7 +66,7 @@ format="SVG" scale="60"/>
       <year>2014</year>
       <holder>Rackspace US, Inc.</holder>
     </copyright>
-    <releaseinfo>API v2.0</releaseinfo>
+    <releaseinfo>API v2</releaseinfo>
     <productname>Rackspace &PRODNAME;</productname>
     <pubdate/>
     <legalnotice role="rs-api">
@@ -91,8 +91,8 @@ format="SVG" scale="60"/>
     </revhistory>
     <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
       <raxm:displayname>API Developer Guide - Version 2</raxm:displayname>
-      <raxm:product version="v2.0">cbd</raxm:product>
-      <raxm:priority>20</raxm:priority>
+      <raxm:product version="v2">cbd</raxm:product>
+      <raxm:priority>15</raxm:priority>
     </raxm:metadata>
   </info>
   <chapter xml:id="overview">
