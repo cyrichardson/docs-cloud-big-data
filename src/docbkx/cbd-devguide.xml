@@ -177,10 +177,7 @@ format="SVG" scale="60"/>
     <remark>Reviewers: If you have an architecture diagram for Cloud
       Big Data that you want included here, please send it to
       me.</remark>
-<!--The CBD team is working with marketing to create.    
-    <para>The following figure shows an overview of Cloud Big Data: </para>
-    <para>Figure coming</para>
--->      
+     
     <para>The primary use cases for &PRODNAME; are as follows: </para>
     <itemizedlist>
       <listitem>
@@ -870,7 +867,7 @@ format="SVG" scale="60"/>
         <title>Absolute limits</title>
         <para>The following table provides the default values for the absolute limits.</para>
         <table rules="all">
-          <caption>Absolute Limits</caption>
+          <caption>Absolute limits</caption>
           <thead>
             <tr align="center" >
               <td colspan="1">Name</td>
@@ -1305,14 +1302,14 @@ format="SVG" scale="60"/>
           servers are virtual.</para>
       </glossdef>
     </glossentry>
-    <glossentry xml:id="producer-d1e020">
+    <glossentry xml:id="HDFS-d1e020">
       <glossterm>HDFS</glossterm>
       <glossdef>
         <para>The Apache Hadoop Distributed File System. This is the
           default file system used in &PRODNAME;.</para>
       </glossdef>
     </glossentry>
-    <glossentry xml:id="queue-d1e019">
+    <glossentry xml:id="MapReduce-d1e019">
       <glossterm>MapReduce</glossterm>
       <glossdef>
         <para>A framework for performing calculations on the data in
@@ -1321,7 +1318,7 @@ format="SVG" scale="60"/>
           other. </para>
       </glossdef>
     </glossentry>
-    <glossentry xml:id="subscriber-d1e018">
+    <glossentry xml:id="node-d1e018">
       <glossterm>Node</glossterm>
       <glossdef>
         <para>In a network, a node is a connection point, either a
@@ -1331,14 +1328,14 @@ format="SVG" scale="60"/>
           nodes.</para>
       </glossdef>
     </glossentry>
-    <glossentry xml:id="worker-d1e018">
+    <glossentry xml:id="SCPServerProxy-d1e018">
       <glossterm>SCP server proxy</glossterm>
       <glossdef>
         <para>An SCP service that runs on your Hadoop cluster and distributes your files across the
           cluster. </para>
       </glossdef>
     </glossentry>
-    <glossentry>
+    <glossentry xml:id="ServiceCatalog-d1e018">
       <glossterm>Service catalog</glossterm>
       <glossdef>
         <para>Your service catalog is the list of services available to you, as returned along with
@@ -1349,7 +1346,7 @@ format="SVG" scale="60"/>
           relevant to your access to this service.</para>
       </glossdef>
     </glossentry>
-    <glossentry>
+    <glossentry xml:id="tenant">
       <glossterm>Tenant</glossterm>
       <glossdef>
         <para>A container used to group or isolate resources or

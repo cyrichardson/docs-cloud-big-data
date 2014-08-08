@@ -47,8 +47,8 @@ format="SVG" scale="60"/>
   <title>Rackspace &PRODNAME; Developer Guide</title>
   <titleabbrev>&PRODNAME; Developer Guide</titleabbrev>
 -->
-  <?rax title.font.size="30px" subtitle.font.size="20px"
-  status.bar.text="draft"?>
+  <?rax title.font.size="35px" subtitle.font.size="20px"
+  status.bar.text="DRAFT"?>
   <title>Rackspace Cloud Big Data Developer Guide - Version 2</title> 
   <titleabbrev>Cloud Big Data Developer Guide - Version 2</titleabbrev>
   <info>
@@ -426,17 +426,17 @@ format="SVG" scale="60"/>
           <listitem>
             <para><link
                 xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html"
-                > Create account users</link></para>
+                >Create account users</link></para>
           </listitem>
           <listitem>
             <para><link
                 xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__Role_Calls.html"
-                > Assign roles to account users</link></para>
+                >Assign roles to account users</link></para>
           </listitem>
           <listitem>
             <para><link
                 xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__Role_Calls.html"
-                > Delete roles from account users</link></para>
+                >Delete roles from account users</link></para>
           </listitem>
         </itemizedlist>
         <note>
@@ -451,8 +451,7 @@ format="SVG" scale="60"/>
           to access the Cloud Big Data API specifically. The following
           table describes these roles and their permissions.</para>
         <table xml:id="RBAC_product_roles_table" rules="all">
-          <caption>Cloud Big Data product roles and
-            capabilities</caption>
+          <caption>Cloud Big Data product roles and capabilities</caption>
           <col width="50%"/>
           <col width="50%"/>
           <thead>
@@ -487,8 +486,7 @@ format="SVG" scale="60"/>
           following table describes these roles and their
           permissions.</para>
         <table rules="all">
-          <caption> Multiproduct (global) roles and
-            permissions</caption>
+          <caption> Multiproduct (global) roles and permissions</caption>
           <col width="50%"/>
           <col width="50%"/>
           <thead>
@@ -513,8 +511,7 @@ format="SVG" scale="60"/>
         </table>
       </section>
       <section xml:id="RBAC-Resolving-Conflicts-d1e001" version="5.0">
-        <title>Resolving conflicts between RBAC multiproduct vs.
-          custom (product-specific) roles</title>
+        <title>Resolving conflicts between RBAC multiproduct vs. custom (product-specific) roles</title>
         <para>The account owner can set roles for both multiproduct
           and Cloud Big Data scope, and it is important to understand
           how any potential conflicts among these roles are resolved.
@@ -531,8 +528,7 @@ format="SVG" scale="60"/>
               <tr align="center">
                 <td>Permission configuration</td>
                 <td>View of permission in the Control Panel </td>
-                <td>Can the user perform product admin functions in
-                  the Control Panel?</td>
+                <td>Can the user perform product admin functions in the Control Panel?</td>
               </tr>
             </thead>
             <tbody>
@@ -565,8 +561,7 @@ format="SVG" scale="60"/>
       </section>
       <section xml:id="RBAC-Permissions-Cross-Ref-d1e001"
         version="5.0">
-        <title>RBAC Permissions cross-reference to Cloud Big Data API
-          operations</title>
+        <title>RBAC Permissions cross-reference to Cloud Big Data API operations</title>
         <para>API operations for Cloud Big Data may or may not be
           available to all roles. To see which operations are
           permitted to invoke which calls, please review <link
@@ -584,6 +579,13 @@ format="SVG" scale="60"/>
         data across regional boundaries to other Cloud Servers.</para>
       <para>The endpoints to use for your Cloud Big Data API calls are
         summarized in the table below.</para>
+      <tip>
+        <para>To help you decide which regionalized endpoint to use, read about special
+          considerations for choosing a data center at <link
+            xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions"
+            >http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions</link>.
+        </para>
+      </tip> 
       <para>
         <table rules="all">
           <caption>Regionalized service endpoints</caption>
@@ -841,7 +843,7 @@ format="SVG" scale="60"/>
         ISO 8601. </para>
       <para>The system time is expressed as UTC.</para>
       <example>
-        <title>&PRODNAME; Service date and time format</title>
+        <title>&PRODNAME; service date and time format</title>
         <programlisting>yyyy-MM-dd'T'HH:mm:ss.SSSZ</programlisting>
         <para>For example, May 19, 2013 at 8:07:08 a.m., UTC-5 would
           have the following format: </para>
@@ -917,8 +919,7 @@ format="SVG" scale="60"/>
           </listitem>
         </itemizedlist>
       </para>
-      <para>Pagination applies only to the operations listed in the
-        following table: </para>
+      <para>Pagination applies only to the operations listed in the following table: </para>
       <informaltable rules="all">
         <thead>
           <tr align="center">
@@ -1259,7 +1260,7 @@ format="SVG" scale="60"/>
           relevant to your access to this service.</para>
       </glossdef>
     </glossentry>
-    <glossentry xml:id="tenant" >
+    <glossentry xml:id="tenant">
       <glossterm>Tenant</glossterm>
       <glossdef>
         <para>A container used to group or isolate resources or
