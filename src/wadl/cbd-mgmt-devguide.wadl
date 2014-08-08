@@ -323,8 +323,9 @@
 	
 	<method name="GET" id="getTenants">
 		<wadl:doc xml:lang="EN" title="Get tenants" xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Returns a list of tenants who have profiles. </para>  
-			<para>This operation returns a list of tenants who have profiles. </para>
+			<para role="shortdesc">Returns a list of tenants that have profiles. </para>  
+			<para>This operation returns a list of tenants that have profiles.</para>
+			<para>This operation uses pagination, with a default limit of 25 results returned.</para>
 		</wadl:doc>
 		<response status="200">		
 			<representation mediaType="application/json" >

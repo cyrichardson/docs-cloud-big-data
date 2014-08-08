@@ -1,12 +1,20 @@
 {
-  "tenants": [
-    {
-      "tenantId": 1234
-    },
-
-    {
-      "tenantId": 3456
-    }
-
-  ]
-}   
+    "tenants": [
+        {
+            "userId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "deletedNodeCount": 2,
+            "clusterCount": 0,
+            "nodeCount": 0,
+            "tenantId": "12345678",
+            "deletedClusterCount": 1
+        },
+        {
+            "userId": "xx",
+            "deletedNodeCount": 0,
+            "clusterCount": 1,
+            "nodeCount": 2,
+            "tenantId": "123456",
+            "deletedClusterCount": 0
+        }
+    ]
+}

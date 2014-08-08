@@ -474,6 +474,15 @@
                 through <link
                     xlink:href="https://identity.api.rackspacecloud.com/v2.0/tokens"
                     >https://identity.api.rackspacecloud.com/v2.0/tokens</link>.</para>
+            <note>
+                <para>Users of the Cloud Big Data service management API documented in this guide
+                    (see endpoints at <xref linkend="Service_Access_Endpoints-d1e753"/>) need to use
+                    the internal Identity system at <link
+                        xlink:href="https://identity-internal.api.rackspacecloud.com:443/v2.0/"
+                        >https://identity-internal.api.rackspacecloud.com:443/v2.0/</link> for
+                    authentication tokens, as should anyone logging in using a Rackspace single
+                    sign-on (SSO).</para>
+            </note>
             <para> </para>
             <para><emphasis role="bold">3. SEND YOUR CREDENTIALS TO
                     YOUR AUTHENTICATION ENDPOINT</emphasis>
@@ -1143,6 +1152,11 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2">/v1.0/tenants</td>
+                        <td colspan="3">Returns a list of tenants that have profiles.</td>
+                    </tr>
                     <tr>
                         <td colspan="1">&GET;</td>
                         <td colspan="2">/v1.0/{tenant_id}/clusters </td>

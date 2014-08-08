@@ -578,8 +578,7 @@ format="SVG" scale="60"/>
         </table>
       </section>
       <section xml:id="RBAC-Resolving-Conflicts-d1e001" version="5.0">
-        <title>Resolving conflicts between RBAC multiproduct vs. custom (product-specific)
-          roles</title>
+        <title>Resolving conflicts between RBAC multiproduct vs. custom (product-specific) roles</title>
         <para>The account owner can set roles for both multiproduct
           and Cloud Big Data scope, and it is important to understand
           how any potential conflicts among these roles are resolved.
