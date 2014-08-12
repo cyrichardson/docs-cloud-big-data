@@ -1,0 +1,4 @@
+GET /v2/yourAccountID/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes?limit=2
+X-Auth-Token: yourAuthToken
+Accept: application/json
+Content-Type: application/json
