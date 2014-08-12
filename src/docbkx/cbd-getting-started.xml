@@ -1547,7 +1547,7 @@ $ lava nodes foo
             channels, including knowledge center articles, forums,
             phone, chat, and email. </para>
         <para>Visit the <link
-                xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/"
+            xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback"
                 >Product Feedback Forum</link> and tell us what you
             think about &PRODNAME;.</para>
         <para>This API uses standard HTTP 1.1 response codes as
