@@ -22,7 +22,7 @@
 	<!-- GRAMMARS                                              -->
 	<!--*******************************************************-->
 
-	<!-- What do I need here for Cloud Big Data Dev Guide? 
+	<!-- What do I need here for Cloud Big Data Dev Guide, if anything? 
 	<grammars>
 		<include href="../common/xsd/api.xsd"/> (identity grammars)
 		<include href="../common/xsd/api-common.xsd"/> (identity grammars)
@@ -136,13 +136,13 @@
 	<!--*******************************************************-->
 
 	<!--*******************************************************-->
-	<!-- List Available distors: getDistros                    -->
+	<!-- List available distros: getDistros                    -->
 	<!--*******************************************************-->
 
 	<method name="GET" id="listDistros">
-		<wadl:doc xml:lang="EN" title="List Available Distros"
+		<wadl:doc xml:lang="EN" title="List available distros"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all available Distros.</para>
+			<para role="shortdesc">Lists all available distros.</para>
 		</wadl:doc>
 		<response status="200">
 			<representation mediaType="application/json">
@@ -157,11 +157,11 @@
 	</method>
 
 	<!--*******************************************************-->
-	<!-- List Distro Details: getDistroDetails                 -->
+	<!-- List distro details: getDistroDetails                 -->
 	<!--*******************************************************-->
 
 	<method name="GET" id="getDistroDetails">
-		<wadl:doc xml:lang="EN" title="Show Distro Details"
+		<wadl:doc xml:lang="EN" title="Show distro details"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Provides a detailed list of all the supported services, their corresponding components and modes of operation for a given distribution.</para>
 		</wadl:doc>
@@ -239,11 +239,11 @@
 	<!--*******************************************************-->
 
 	<!--*******************************************************-->
-	<!-- Create Stack: createStack                             -->
+	<!-- Create stack: createStack                             -->
 	<!--*******************************************************-->
 
 	<method name="POST" id="createStack">
-		<wadl:doc xml:lang="EN" title="Create Stack"
+		<wadl:doc xml:lang="EN" title="Create stack"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Create a new Stack.</para>
 			<note><para>You can create a new stack and start from scratch or 
@@ -258,8 +258,7 @@
 			</itemizedlist>
 		</wadl:doc>
 		<request>
-			<representation mediaType="application/json"
-				element="stacks:stack">
+			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
 					<table rules="all">
@@ -360,11 +359,11 @@
 		</response> &fourhundred; &fourthirteen; </method>
 
 	<!--*******************************************************-->
-	<!-- List All Stacks: listStacks                           -->
+	<!-- List all stacks: listStacks                           -->
 	<!--*******************************************************-->
 
 	<method name="GET" id="listStacks">
-		<wadl:doc xml:lang="EN" title="List All Stacks"
+		<wadl:doc xml:lang="EN" title="List all stacks"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Lists all stacks. Provides a list of global stacks and user created stacks.</para>
 		</wadl:doc>
@@ -381,11 +380,11 @@
 	</method>
 
 	<!--*******************************************************-->
-	<!-- Get Stack Details: getStackDetails                    -->
+	<!-- Get stack details: getStackDetails                    -->
 	<!--*******************************************************-->
 
 	<method name="GET" id="getStackDetails">
-		<wadl:doc xml:lang="EN" title="Show Stack Details"
+		<wadl:doc xml:lang="EN" title="Show stack details"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Shows details for a specific
 				stack.</para>
@@ -402,14 +401,14 @@
 		</response> &fourofour; </method>
 
 	<!--*******************************************************-->
-	<!-- Delete Stack: deleteStack                             -->
+	<!-- Delete stack: deleteStack                             -->
 	<!--*******************************************************-->
 
 	<method name="DELETE" id="deleteStack">
-		<wadl:doc xml:lang="EN" title="Delete Stack"
+		<wadl:doc xml:lang="EN" title="Delete stack"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Deletes a specified stack.</para>
-			<para>Only user created stacks can be deleted, global stacks are read only and cannot be deleted.</para>
+			<para>You can delete only user-created stacks. Global stacks are read-only, and you cannot delete them.</para>
 			<para>The 400 error code might indicate missing or invalid
 				parameters.</para>
 			<para>The 409 error code might indicate an invalid
@@ -417,12 +416,13 @@
 		</wadl:doc>
 		<response status="200">
 			<representation mediaType="application/json">
-				<wadl:doc xml:lang="EN"
+			<!--<remark>The file for the following example is currently empty.</remark> -->	
+			<!--	<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
 					<xsdxt:code
 						href="../wadl/samples/lava2/delete_stack_response.json"
 					/>
-				</wadl:doc>
+				</wadl:doc> -->
 			</representation>
 		</response> &fourhundred; &fourofour; &fouronine; </method>
 
@@ -432,11 +432,11 @@
 	<!--*******************************************************-->
 
 	<!--*******************************************************-->
-	<!-- Create Cluster: createCluster                         -->
+	<!-- Create cluster: createCluster                         -->
 	<!--*******************************************************-->
 
 	<method name="POST" id="createCluster">
-		<wadl:doc xml:lang="EN" title="Create Cluster"
+		<wadl:doc xml:lang="EN" title="Create cluster"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Creates a cluster.</para>
 			<note><para>You must create your profile before you create
@@ -558,11 +558,11 @@
 		</response> &fourhundred; &fourthirteen; </method>
 
 	<!--*******************************************************-->
-	<!-- List All Clusters: listClusters                       -->
+	<!-- List all clusters: listClusters                       -->
 	<!--*******************************************************-->
 
 	<method name="GET" id="listClusters">
-		<wadl:doc xml:lang="EN" title="List All Clusters"
+		<wadl:doc xml:lang="EN" title="List all clusters"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Lists all clusters for your
 				account.</para>
@@ -580,11 +580,11 @@
 	</method>
 
 	<!--*******************************************************-->
-	<!-- Get Cluster Details: getClusterDetails                -->
+	<!-- Get cluster details: getClusterDetails                -->
 	<!--*******************************************************-->
 
 	<method name="GET" id="getClusterDetails">
-		<wadl:doc xml:lang="EN" title="Show Cluster Details"
+		<wadl:doc xml:lang="EN" title="Show cluster details"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Shows details for a specified
 				cluster.</para>
@@ -601,11 +601,11 @@
 		</response> &fourofour; </method>
 
 	<!--*******************************************************-->
-	<!-- Delete Cluster: deleteCluster                         -->
+	<!-- Delete cluster: deleteCluster                         -->
 	<!--*******************************************************-->
 
 	<method name="DELETE" id="deleteCluster">
-		<wadl:doc xml:lang="EN" title="Delete Cluster"
+		<wadl:doc xml:lang="EN" title="Delete cluster"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Deletes a specified cluster.</para>
 			<para>The 400 error code might indicate missing or invalid
@@ -617,21 +617,22 @@
 		</wadl:doc>
 		<response status="204">
 			<representation mediaType="application/json">
-				<wadl:doc xml:lang="EN"
+		    <!--<remark>The file for the following example is currently empty.</remark> -->		
+			<!--	<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
 					<xsdxt:code
 						href="../wadl/samples/lava2/delete_cluster_response.json"
 					/>
-				</wadl:doc>
+				</wadl:doc> -->
 			</representation>
 		</response> &fourhundred; &fourofour; &fouronine; </method>
 
 	<!--*******************************************************-->
-	<!-- Resize Cluster: postClusterAction                      -->
+	<!-- Resize cluster: postClusterAction                      -->
 	<!--*******************************************************-->
 
 	<method name="POST" id="postClusterAction">
-		<wadl:doc xml:lang="EN" title="Resize Cluster"
+		<wadl:doc xml:lang="EN" title="Resize cluster"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Resizes a specified cluster.</para>
 			<para>The 400 error code might indicate the presence of
@@ -643,22 +644,24 @@
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json">
-				<wadl:doc xml:lang="EN"
+		    <!--<remark>The file for the following example is currently empty.</remark> -->		
+			<!--	<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
 					<xsdxt:code
 						href="../wadl/samples/lava2/resize_cluster_request.json"
 					/>
-				</wadl:doc>
+				</wadl:doc> -->
 			</representation>
 		</request>
 		<response status="200">
 			<representation mediaType="application/json">
-				<wadl:doc xml:lang="EN"
+		    <!--<remark>The file for the following example is currently empty.</remark> -->		
+			<!--	<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
 					<xsdxt:code
 						href="../wadl/samples/lava2/resize_cluster_response.json"
 					/>
-				</wadl:doc>
+				</wadl:doc> -->
 			</representation>
 		</response> &fourhundred; &fourofour; &fouronine; </method>
 
@@ -667,11 +670,11 @@
 	<!--*******************************************************-->
 
 	<!--*******************************************************-->
-	<!-- List Cluster Nodes: listClusterNodes                  -->
+	<!-- List cluster nodes: listClusterNodes                  -->
 	<!--*******************************************************-->
 
 	<method name="GET" id="listClusterNodes">
-		<wadl:doc xml:lang="EN" title="List Cluster Nodes"
+		<wadl:doc xml:lang="EN" title="List cluster nodes"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Lists all nodes for a specified
 				cluster.</para>
@@ -696,11 +699,11 @@
 		</response> &fourofour; </method>
 
 	<!--*******************************************************-->
-	<!-- Get Node Details: getNodeDetails                      -->
+	<!-- Get node details: getNodeDetails                      -->
 	<!--*******************************************************-->
 
 	<method name="GET" id="getNodeDetails">
-		<wadl:doc xml:lang="EN" title="Show Node Details"
+		<wadl:doc xml:lang="EN" title="Show node details"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Shows details for a specified node
 				in a specified cluster.</para>
@@ -729,11 +732,11 @@
 	<!--*******************************************************-->
 
 	<!--*******************************************************-->
-	<!-- List Available Flavors: listFlavors                   -->
+	<!-- List available flavors: listFlavors                   -->
 	<!--*******************************************************-->
 
 	<method name="GET" id="listFlavors">
-		<wadl:doc xml:lang="EN" title="List Available Flavors"
+		<wadl:doc xml:lang="EN" title="List available flavors"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Lists all available flavors,
 				including the drive size and amount of RAM.</para>
@@ -751,11 +754,11 @@
 	</method>
 
 	<!--*******************************************************-->
-	<!-- List Flavor Details: getFlavorDetails                 -->
+	<!-- List flavor details: getFlavorDetails                 -->
 	<!--*******************************************************-->
 
 	<method name="GET" id="getFlavorDetails">
-		<wadl:doc xml:lang="EN" title="Show Flavor Details"
+		<wadl:doc xml:lang="EN" title="Show flavor details"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Shows details for a specified
 				flavor.</para>
@@ -777,11 +780,11 @@
 	<!--*******************************************************-->
 
 	<!--*******************************************************-->
-	<!-- View Resource Limits: getLimits                       -->
+	<!-- Show resource limits: getLimits                       -->
 	<!--*******************************************************-->
 
 	<method name="GET" id="getLimits">
-		<wadl:doc xml:lang="EN" title="Show Resource Limits"
+		<wadl:doc xml:lang="EN" title="Show resource limits"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Shows the absolute resource limits,
 				such as remaining node count, available RAM, and

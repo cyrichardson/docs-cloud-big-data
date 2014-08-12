@@ -49,8 +49,8 @@ format="SVG" scale="60"/>
 -->
   <?rax title.font.size="35px" subtitle.font.size="20px"
   status.bar.text="DRAFT"?>
-  <title>Rackspace Cloud Big Data Developer Guide - Version 2</title> 
-  <titleabbrev>Cloud Big Data Developer Guide - Version 2</titleabbrev>
+  <title>Rackspace Cloud Big Data Developer Guide, v2</title> 
+  <titleabbrev>Cloud Big Data Developer Guide, v2</titleabbrev>
   <info>
     <author>
       <personname>
@@ -89,7 +89,7 @@ format="SVG" scale="60"/>
       </revision>
     </revhistory>
     <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
-      <raxm:displayname>API Developer Guide - Version 2</raxm:displayname>
+      <raxm:displayname>API Developer Guide, v2</raxm:displayname>
       <raxm:product version="v1.0">cbd</raxm:product>
       <raxm:priority>15</raxm:priority>
     </raxm:metadata>
@@ -561,7 +561,7 @@ format="SVG" scale="60"/>
       </section>
       <section xml:id="RBAC-Permissions-Cross-Ref-d1e001"
         version="5.0">
-        <title>RBAC Permissions cross-reference to Cloud Big Data API operations</title>
+        <title>RBAC permissions cross-reference to Cloud Big Data API operations</title>
         <para>API operations for Cloud Big Data may or may not be
           available to all roles. To see which operations are
           permitted to invoke which calls, please review <link
@@ -614,11 +614,9 @@ format="SVG" scale="60"/>
           </tbody>
         </table>
       </para>
-      <para>Replace the
-          <code><replaceable>yourAccountID</replaceable></code>
-        placeholder with your actual account number, , which is
-        returned as part of the authentication service response, after
-        the final '/' in the <code>publicURL</code> field. </para>
+      <para>Replace the <code><replaceable>yourAccountID</replaceable></code> placeholder with your
+        actual account number, which is returned as part of the authentication service response,
+        after the final '/' in the <code>publicURL</code> field. </para>
       <?rax-fo keep-with-next?>
     </section>
     <section xml:id="Request_Response_Types-d1e903">
@@ -950,116 +948,14 @@ format="SVG" scale="60"/>
       <para>The default paging limit for all calls is 25 with a maximum of 200. Requests for more than 200 result in a 400 error.</para>
       <para>See the following example of the operation to list paged nodes.</para>
       <example>
-        <title>List nodes paged request: JSON</title>
-        
-        <programlisting language="json">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/yourAccountID/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes?limit=2 -d \
--H "X-Auth-Token: yourAuthToken" \
--H "Accept: application/json" \
--H "Content-Type: application/json" <!--        <xi:include href="../samples/cbd_listNodes_pagination_request.json" parse="text"/>        --></programlisting>
+        <title>List nodes paged request: JSON</title>       
+        <programlisting language="json"><xi:include href="../resources/samples/cbd_listNodes_pagination_request-v2.json" parse="text"/></programlisting>
       </example>
       <para>Notice that the paged request example above sets the limit to 2 (<code>?limit=2</code>),
         so the response that follows shows 2 nodes:</para>
       <example>
-        <title>List nodes paged response: JSON</title>
-               
-        <programlisting language="json">
-{
-    "nodes": [
-              {
-              "id": "000",
-              "created": "2012-12-27T10:10:10Z",
-              "role": "NAMENODE",
-              "name": "NAMENODE-1",
-              "status": "ACTIVE",
-              "addresses": {
-              "public": [
-                         {
-                         "addr": "168.x.x.3",
-                         "version": 4
-                         }
-                         ],
-              "private": [
-                          {
-                          "addr": "10.x.x.3",
-                          "version": 4
-                          }
-                          ]
-              },
-              "services": [
-                           {
-                           "name": "namenode"
-                           },
-                           {
-                           "name": "jobtracker"
-                           },
-                           {
-                           "name": "ssh",
-                           "uri": "ssh://user@168.x.x.3"
-                           }
-                           ],
-              "links": [
-                        {
-                        "rel": "self",
-                        "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
-                        },
-                        {
-                        "rel": "bookmark",
-                        "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
-                        }
-                        ]
-              },
-              {
-              "id": "aaa",
-              "role": "GATEWAY",
-              "name": "GATEWAY-1",
-              "status": "ACTIVE",
-              "addresses": {
-              "public": [
-                         {
-                         "addr": "168.x.x.4",
-                         "version": 4
-                         }
-                         ],
-              "private": [
-                          {
-                          "addr": "10.x.x.4",
-                          "version": 4
-                          }
-                          ]
-              },
-              "services": [
-                           {
-                           "name": "pig"
-                           },
-                           {
-                           "name": "hive"
-                           },
-                           {
-                           "name": "ssh",
-                           "uri": "ssh://user@168.x.x.4"
-                           },
-                           {
-                           "name": "status",
-                           "uri": "http://10.x.x.4"
-                           },
-                           {
-                           "name": "hdfs-scp",
-                           "uri": "scp://user@168.x.x.4:9022"
-                           }
-                           ],
-              "links": [
-                        {
-                        "rel": "self",
-                        "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/aaa"
-                        },
-                        {
-                        "rel": "bookmark",
-                        "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/aaa"
-                }
-            ]
-        }
-    ]
-} <!--        <xi:include href="../samples/cbd_listNodes_pagination_response.json" parse="text"/>  --></programlisting>
+        <title>List nodes paged response: JSON</title>               
+        <programlisting language="json"><xi:include href="../resources/samples/cbd_listNodes_pagination_response-v2.json" parse="text"/> </programlisting>
       </example>
     </section>
     <section xml:id="cluster_status" >
@@ -1154,6 +1050,8 @@ format="SVG" scale="60"/>
       <title>Distros</title>
       <para>Distros provide a list of supported distributions and their corresponding versions and a
         list of supported services and components per distribution.</para>
+      <para>The following table shows the Cloud Big Data API operations that are available for distros. This section describes these operations.</para>
+      <para></para>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#distros"/> 
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#distro"/> 
@@ -1163,6 +1061,8 @@ format="SVG" scale="60"/>
     <section xml:id="stackOperations">
       <title>Stacks</title>
       <para>Stacks are high level building blocks of software to compose a BigData Architecture. Stacks are comprised of services which in turn are composed of components. A Stack is specific to a distribution due to the differences in services that are supported across distributions.</para>
+      <para>The following table shows the Cloud Big Data API operations that are available for stacks. This section describes these operations.</para>
+      <para></para>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#stacks"/>
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#stack"/>
@@ -1171,8 +1071,9 @@ format="SVG" scale="60"/>
 
     <section xml:id="clusterOperations">
       <title>Clusters</title>
-      <para>This section describes the operations that are supported
-        for clusters.</para>
+      <para>Clusters are a group of servers (nodes). In Cloud Big Data, the servers are virtual.</para>
+      <para>The following table shows the Cloud Big Data API operations that are available for clusters. This section describes these operations.</para>
+      <para></para>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#clusters"/> 
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#cluster"/> 
@@ -1181,9 +1082,9 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="nodeOperations">
       <title>Nodes</title>
-      <para>This section describes operations that are supported for
-        the servers (nodes) that are part of a cluster.</para>
-
+      <para>In a network, a node (or server) is a connection point, either a redistribution point or an end point for data transmissions. In general, a node has programmed or engineered capability to recognize and process or forward transmissions to other nodes. Nodes are a member of a cluster.</para>
+      <para>The following table shows the Cloud Big Data API operations that are available for nodes. This section describes these operations.</para>
+      <para></para>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#nodes"/>
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#node"/> 
@@ -1191,8 +1092,9 @@ format="SVG" scale="60"/>
     </section> 
     <section xml:id="flavorOperations">
       <title>Flavors</title>
-      <para>This section describes operations that are supported for
-        flavors.</para>
+      <para>A flavor is an available configuration for Cloud Big Data. Each flavor has a unique combination of memory capacity and priority for CPU time.</para>
+      <para>The following table shows the Cloud Big Data API operations that are available for flavors. This section describes these operations.</para>
+      <para></para> 
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#flavors"/> 
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#flavor"/> 
@@ -1200,8 +1102,9 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="limitsOperations">
       <title>Resource limits</title>
-      <para>This section describes the operation that is supported for
-        resource limits.</para>
+      <para>Resource limits include items such as remaining node count, available RAM, and remaining disk space for the user.</para>
+      <para>The following table shows the Cloud Big Data API operation that is available for resource limits. This section describes these operations.</para>
+      <para></para> 
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">   
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#limits"/> 
       </wadl:resources>
@@ -1250,7 +1153,7 @@ format="SVG" scale="60"/>
       </glossdef>
     </glossentry >
     <glossentry xml:id="ServiceCatalog-d1e018">
-      <glossterm>Service Catalog</glossterm>
+      <glossterm>Service catalog</glossterm>
       <glossdef>
         <para>Your service catalog is the list of services available to you, as returned along with
           your authentication token and an expiration date for that token. All the services in your
