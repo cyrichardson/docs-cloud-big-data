@@ -4,16 +4,16 @@
       "id":"hadoop1-7",
       "links":[
          {
-            "href":"http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/flavors/hadoop1-7",
+            "href":"https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/flavors/hadoop1-7",
             "rel":"self"
          },
          {
-            "href":"http://dfw.bigdata.api.rackspacecloud.com/1234/flavors/hadoop1-7",
+            "href":"https://dfw.bigdata.api.rackspacecloud.com/1234/flavors/hadoop1-7",
             "rel":"bookmark"
          }
       ],
       "name":"Small Hadoop Instance",
-      "ram":8192,
+      "ram":7680,
       "vcpus":2
    }
 }
