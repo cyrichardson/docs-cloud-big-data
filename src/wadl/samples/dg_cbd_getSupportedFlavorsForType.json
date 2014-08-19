@@ -1,6 +1,40 @@
 {
     "flavors": [
         {
+            "disk": 2500,
+            "id": "hadoop1-15",
+            "links": [
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/flavors/hadoop1-15",
+                    "rel": "self"
+                },
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/flavors/hadoop1-15",
+                    "rel": "bookmark"
+                }
+            ],
+            "name": "Medium Hadoop Instance",
+            "ram": 15360,
+            "vcpus": 4
+        },
+        {
+            "disk": 5000,
+            "id": "hadoop1-30",
+            "links": [
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/flavors/hadoop1-30",
+                    "rel": "self"
+                },
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/flavors/hadoop1-30",
+                    "rel": "bookmark"
+                }
+            ],
+            "name": "Large Hadoop Instance",
+            "ram": 30720,
+            "vcpus": 8
+        },
+        {
             "disk": 10000,
             "id": "hadoop1-60",
             "links": [
@@ -31,7 +65,7 @@
                 }
             ],
             "name": "Small Hadoop Instance",
-            "ram": 8192,
+            "ram": 7680,
             "vcpus": 2
         }
     ]
