@@ -68,7 +68,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace &PRODNAME;</productname>
-    <pubdate>2014-07-22</pubdate>
+    <pubdate>2014-08-19</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the doc build
@@ -82,6 +82,13 @@ format="SVG" scale="60"/>
     <revhistory xmlns:svg="http://www.w3.org/2000/svg"
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
+      <revision>
+        <date>2014-08-19</date>
+        <revdescription>
+          <para>Added the Medium Hadoop Instance and Large Hadoop Instance flavors to example
+            responses in <xref linkend="flavorOperations"/>.   </para>
+        </revdescription>
+      </revision>
       <revision xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
         <date>2014-07-22</date>
         <revdescription>
