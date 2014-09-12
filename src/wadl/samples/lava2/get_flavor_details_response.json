@@ -4,7 +4,7 @@
         "id": "hadoop1-7",
         "links": [
             {
-                "href": "http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/flavors/hadoop1-7",
+                "href": "http://dfw.bigdata.api.rackspacecloud.com/v2/1234/flavors/hadoop1-7",
                 "rel": "self"
             },
             {

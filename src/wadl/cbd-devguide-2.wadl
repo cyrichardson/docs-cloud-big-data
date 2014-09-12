@@ -439,7 +439,7 @@
 		<wadl:doc xml:lang="EN" title="Create cluster"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Creates a cluster.</para>
-			<note><para>You must create your profile before you create
+			<note><para>You must create a stack before you create
 					a cluster.</para></note>
 			<para>The <code>postInitScript</code> request parameter
 				specifies a URL that downloads a script that runs
@@ -469,17 +469,13 @@
 			</itemizedlist>
 			<para>The 400 error code might indicate any of the
 				following issues:</para>
-			<itemizedlist spacing="compact"><listitem><para>The
-						response body is
-						invalid.</para></listitem><listitem><para>You
-						need to create a user
-					profile.</para></listitem><listitem><para>The node
-						count is
-						invalid.</para></listitem><listitem><para>The
-						flavor is
-						invalid.</para></listitem><listitem><para>The
-						data is
-				malformed.</para></listitem></itemizedlist>
+			<itemizedlist spacing="compact">
+				<listitem><para>The response body is invalid.</para></listitem>
+				<listitem><para>You need to create a stack.</para></listitem>
+				<listitem><para>The node count is invalid.</para></listitem>
+				<listitem><para>The flavor is invalid.</para></listitem>
+				<listitem><para>The data is malformed.</para></listitem>
+			</itemizedlist>
 			<para>The 413 error code might indicate that the resource
 				limit is exceeded.</para>
 		</wadl:doc>

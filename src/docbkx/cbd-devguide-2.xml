@@ -303,12 +303,12 @@ format="SVG" scale="60"/>
               your password. Following are examples of both approaches:</para>
             <example>
               <title>User name and API key</title>
-              <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d 
+              <literallayout class="monospaced" language="bash">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d 
 '{ "auth":{ "RAX-KSKEY:apiKeyCredentials":{ "username":"yourUserName", "apiKey":"yourApiKey" } } }' -H "Content-type: application/json"</literallayout>
             </example>
             <example>
               <title>User name and password</title>
-              <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d
+              <literallayout class="monospaced" language="bash">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d
 '{"auth":{"passwordCredentials":{"username":"yourUserName","password":"yourPassword"}}}' -H "Content-type: application/json"</literallayout>
             </example>
             <para>Successful authentication returns a token that you can use as evidence that your
@@ -323,8 +323,8 @@ format="SVG" scale="60"/>
               the &PRODNAME; service by using the &PRODNAME; service catalog endpoint that was
               returned along with the token.</para>
             <example>
-              <title>cURL get profile request: JSON</title>
-              <programlisting>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/<emphasis role="bold">yourAccountID</emphasis>/profile -d  \
+              <title>cURL get distros request: JSON</title>
+              <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/distros -d  \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json"\
 -H "Content-type: application/json"</programlisting>
@@ -639,11 +639,10 @@ format="SVG" scale="60"/>
         <para>Rate limits are specified in both a human-readable wildcard URI and a
           machine-processable regular expression. The regular expression boundary matcher
             '<code>^</code>' takes effect after the root URI path. For example, the regular
-          expression <code>^/v1.0/clusters</code> would match the bold portion of the following URI:
-            https://dfw.bigdata.api.rackspacecloud.com<emphasis role="bold"
-            >/v1.0/clusters</emphasis>. </para>
-        <para>The following table specifies the default rate limits for all &GET;, &POST;, &PUT;,
-          and &DELETE; API operations for clusters.</para>
+          expression <code>^/v2/clusters</code> would match the bold portion of the following URI:
+            https://dfw.bigdata.api.rackspacecloud.com<emphasis role="bold">/v2/clusters</emphasis>. </para>
+        <para>The following table specifies the default rate limits for all &GET;, , &PUT;, and
+          &DELETE; &POST;API operations for clusters.</para>
         <table rules="all">
           <caption>Default rate limits</caption>
           <thead>
@@ -689,8 +688,8 @@ format="SVG" scale="60"/>
         </table>
         <para>Rate limits are applied in order relative to the verb, going from least to most
           specific. For example, although the threshold for issuing a &POST; request to
-            <code>/v1.0/*</code> is 2 per minute, you cannot issue a &POST; request to
-            <code>/v1.0/*</code> more than 50 times within a single day. </para>
+            <code>/v2/*</code> is 2 per minute, you cannot issue a &POST; request to
+            <code>/v2/*</code> more than 50 times within a single day. </para>
         <para>If you exceed the thresholds established for your account, a <errorcode>413
             (OverLimit)</errorcode> HTTP response is returned with a <code>Retry-After</code> header
           to notify the client when it can attempt to try again. </para>
@@ -825,17 +824,17 @@ format="SVG" scale="60"/>
         <tbody>
           <tr>
             <td colspan="1">&GET;</td>
-            <td colspan="2">/v1.0/{tenant_id}/clusters </td>
+            <td colspan="2">/v2/{tenant_id}/clusters </td>
             <td colspan="3">Lists all clusters for your account.</td>
           </tr>
           <tr>
             <td colspan="1">&GET;</td>
-            <td colspan="2">/v1.0/{tenant_id}/clusters/{clusterId}/nodes </td>
+            <td colspan="2">/v2/{tenant_id}/clusters/{clusterId}/nodes </td>
             <td colspan="3">Lists all nodes for the specified cluster.</td>
           </tr>
           <tr>
             <td colspan="1">&GET;</td>
-            <td colspan="2">/v1.0/{tenant_id}/flavors</td>
+            <td colspan="2">/v2/{tenant_id}/flavors</td>
             <td colspan="3">Lists all available flavors, inclduing the drive size and the amount of
               RAM.</td>
           </tr>
@@ -846,7 +845,7 @@ format="SVG" scale="60"/>
       <para>See the following example of the operation to list paged nodes.</para>
       <example>
         <title>List nodes paged request: JSON</title>
-        <programlisting language="json"><xi:include href="../resources/samples/cbd_listNodes_pagination_request-v2.json" parse="text"/></programlisting>
+        <programlisting language="bash"><xi:include href="../resources/samples/cbd_listNodes_pagination_request-v2.json" parse="text"/></programlisting>
       </example>
       <para>Notice that the paged request example above sets the limit to 2 (<code>?limit=2</code>),
         so the response that follows shows 2 nodes:</para>

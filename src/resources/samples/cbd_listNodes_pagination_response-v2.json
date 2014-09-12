@@ -29,17 +29,17 @@
                            },
                            {
                            "name": "ssh",
-                           "uri": "ssh:\/\/user@168.x.x.3"
+                           "uri": "ssh://user@168.x.x.3"
                            }
                            ],
               "links": [
                         {
                         "rel": "self",
-                        "href": "https:\/\/dfw.bigdata.api.rackspacecloud.com\/v1.0\/1234\/clusters\/db478fc1-2d86-4597-8010-cbe787bbbc41\/nodes\/000"
+                        "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
                         },
                         {
                         "rel": "bookmark",
-                        "href": "https:\/\/dfw.bigdata.api.rackspacecloud.com\/1234\/clusters\/db478fc1-2d86-4597-8010-cbe787bbbc41\/nodes\/000"
+                        "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
                         }
                         ]
               },
@@ -71,25 +71,25 @@
                            },
                            {
                            "name": "ssh",
-                           "uri": "ssh:\/\/user@168.x.x.4"
+                           "uri": "ssh://user@168.x.x.4"
                            },
                            {
                            "name": "status",
-                           "uri": "http:\/\/10.x.x.4"
+                           "uri": "http://10.x.x.4"
                            },
                            {
                            "name": "hdfs-scp",
-                           "uri": "scp:\/\/user@168.x.x.4:9022"
+                           "uri": "scp://user@168.x.x.4:9022"
                            }
                            ],
               "links": [
                         {
                         "rel": "self",
-                        "href": "https:\/\/dfw.bigdata.api.rackspacecloud.com\/v1.0\/1234\/clusters\/db478fc1-2d86-4597-8010-cbe787bbbc41\/nodes\/aaa"
+                        "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/aaa"
                         },
                         {
                         "rel": "bookmark",
-                        "href": "https:\/\/dfw.bigdata.api.rackspacecloud.com\/1234\/clusters\/db478fc1-2d86-4597-8010-cbe787bbbc41\/nodes\/aaa"
+                        "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/aaa"
                 }
             ]
         }
