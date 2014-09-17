@@ -1016,7 +1016,7 @@ format="SVG" scale="60"/>
           <tr>
             <td colspan="1">&GET;</td>
             <td colspan="2">/v1.0/{tenant_id}/flavors</td>
-            <td colspan="3">Lists all available flavors, inclduing the drive size and the amount of
+            <td colspan="3">Lists all available flavors, including the drive size and the amount of
               RAM.</td>
           </tr>
         </tbody>
@@ -1174,7 +1174,7 @@ format="SVG" scale="60"/>
           </tr>
           <tr>
             <td>hadoop1-60</td>
-            <td>XLarge Hadooop Instance</td>
+            <td>XLarge Hadoop Instance</td>
             <td>16</td>
             <td>60 GB</td>
             <td>10 TB</td>

@@ -835,7 +835,7 @@ format="SVG" scale="60"/>
           <tr>
             <td colspan="1">&GET;</td>
             <td colspan="2">/v2/{tenant_id}/flavors</td>
-            <td colspan="3">Lists all available flavors, inclduing the drive size and the amount of
+            <td colspan="3">Lists all available flavors, including the drive size and the amount of
               RAM.</td>
           </tr>
         </tbody>
@@ -892,7 +892,7 @@ format="SVG" scale="60"/>
           </tr>
           <tr>
             <td>hadoop1-60</td>
-            <td>XLarge Hadooop Instance</td>
+            <td>XLarge Hadoop Instance</td>
             <td>16</td>
             <td>60 GB</td>
             <td>10 TB</td>
@@ -982,8 +982,8 @@ format="SVG" scale="60"/>
     <para>The chapter describes each of the API operations provided by the Cloud Big Data service. </para>
     <section xml:id="distroOperations">
       <title>Distros</title>
-      <para>Distros provide a list of supported distributions and their corresponding versions and a
-        list of supported services and components per distribution.</para>
+      <para>Distros provide a list of supported distributions and their corresponding versions as
+        well as a list of supported services and components per distribution.</para>
       <para>The following table shows the Cloud Big Data API operations that are available for
         distros. This section describes these operations.</para>
       <para/>
@@ -994,8 +994,8 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="stackOperations">
       <title>Stacks</title>
-      <para>Stacks are high level building blocks of software to compose a BigData Architecture.
-        Stacks are comprised of services which in turn are composed of components. A Stack is
+      <para>Stacks are high-level building blocks of software to compose a Big Data architecture.
+        Stacks are comprised of services which in turn are comprised of components. A stack is
         specific to a distribution due to the differences in services that are supported across
         distributions.</para>
       <para>The following table shows the Cloud Big Data API operations that are available for
@@ -1065,6 +1065,20 @@ format="SVG" scale="60"/>
         <para> A group of servers (nodes). In Cloud Big Data, the servers are virtual.</para>
       </glossdef>
     </glossentry>
+    <glossentry>
+      <glossterm>Distro</glossterm>
+      <glossdef>
+        <para>Distros provide a list of supported distributions and their corresponding versions as
+          well as a list of supported services and components per distribution.</para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>Flavor</glossterm>
+      <glossdef>
+        <para>A flavor is an available configuration for Cloud Big Data. Each flavor has a unique
+          combination of memory capacity and priority for CPU time.</para>
+      </glossdef>
+    </glossentry>
     <glossentry xml:id="HDFS-d1e020">
       <glossterm>HDFS</glossterm>
       <glossdef>
@@ -1088,6 +1102,13 @@ format="SVG" scale="60"/>
           to recognize and process or forward transmissions to other nodes.</para>
       </glossdef>
     </glossentry>
+    <glossentry>
+      <glossterm>Resource limits</glossterm>
+      <glossdef>
+        <para>Resource limits include items such as remaining node count, available RAM, and
+          remaining disk space for the user.</para>
+      </glossdef>
+    </glossentry>
     <glossentry xml:id="SCPServerProxy-d1e018">
       <glossterm>SCP server proxy</glossterm>
       <glossdef>
@@ -1104,6 +1125,15 @@ format="SVG" scale="60"/>
         <para>The catalog listing for each service provides at least one endpoint URL for that
           service. Other information, such as regions and versions and tenants, is provided if it is
           relevant to your access to this service.</para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>Stack</glossterm>
+      <glossdef>
+        <para>Stacks are high-level building blocks of software to compose a Big Data architecture.
+          Stacks are comprised of services which in turn are comprised of components. A stack is
+          specific to a distribution due to the differences in services that are supported across
+          distributions.</para>
       </glossdef>
     </glossentry>
     <glossentry xml:id="tenant">

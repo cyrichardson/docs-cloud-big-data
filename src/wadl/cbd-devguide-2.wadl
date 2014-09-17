@@ -169,8 +169,8 @@
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
-			<table rules="all">
-            <caption>Attributes for Distro Details</caption>
+<!--			<table rules="all">
+            <caption>Attributes for distro details</caption>
             <thead>
                 <tr>
                     <td colspan="1">Keys</td>
@@ -226,11 +226,64 @@
                     <td colspan="3">Specifies that a particular component is only applicable for a certain mode of operation of the service. Ex: Journal Node only applies for a HA Namenode.</td>
                 </tr>
             </tbody>
-        	</table>
+        	</table> -->
 					<xsdxt:code
 						href="../wadl/samples/lava2/get_distro_details_response.json"
 					/>
 				</wadl:doc>
+	
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="id" style="plain" path="$.distro.id">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Identifier for a particular distribution. For example: HDP2.1
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="name" style="plain" path="$.distro.name">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Descriptive name for a distribution. For example: Hortonworks Data Platform
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="version" style="plain" path="$.distro.version">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Version of the distribution. For example: 2.1
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="services" style="plain" path="$.distro.services">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of services that are supported for a particular distribution. For example: HDFS, Yarn, and so on. 
+					</p></doc>
+				</param>
+
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="name" style="plain" path="$.services.name">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name of a particular service. For example: HDFS
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="version" style="plain" path="$.services.version">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Version of the service. For example: 2.4
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="components" style="plain" path="$.services.components">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Subset of services that relate to individual processes. For example: Namenode, Datanode
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="modes" style="plain" path="$.services.modes">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Certain services can operate in different modes. This details the list of supported modes. For example: HA, Secondary Namenode, Federated HDFS.
+					</p></doc>
+				</param>
+
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="name" style="plain" path="$.components.name">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Component name. For example: Namenode
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="mode" style="plain" path="$.components.mode">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Specifies that a particular component is only applicable for a certain mode of operation of the service. For example: Journal Node only applies for a HA Namenode.
+					</p></doc>
+				</param>
 			</representation>
 		</response> &fourofour;</method>
 
@@ -245,7 +298,7 @@
 	<method name="POST" id="createStack">
 		<wadl:doc xml:lang="EN" title="Create stack"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Create a new Stack.</para>
+			<para role="shortdesc">Create a new stack.</para>
 			<note><para>You can create a new stack and start from scratch or 
 				use one of our preconfigured global stacks.</para></note>
 			<para>The 400 error code might indicate any of the
@@ -253,16 +306,15 @@
 			<itemizedlist spacing="compact">
 				<listitem><para>The response body is invalid.</para>
 				</listitem>
-				<listitem><para>A Stack with the name already existss</para>
+				<listitem><para>A stack with the name already exists.</para>
 				</listitem>
 			</itemizedlist>
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json">
-				<wadl:doc xml:lang="EN"
-					xmlns="http://docbook.org/ns/docbook">
-					<table rules="all">
-            		<caption>Required Attributes for Create Stack</caption>
+				
+<!--					<table rules="all">
+            		<caption>Required attributes for create stack</caption>
 		            <thead>
 		                <tr>
 		                    <td colspan="1">Keys</td>
@@ -334,27 +386,94 @@
 		                    <td colspan="1">Yes</td>
 		                </tr>
 		            </tbody>
-		        	</table>
+		        	</table> -->
+					<doc title="Create a stack - first example: JSON request">
 					<xsdxt:code
 						href="../wadl/samples/lava2/create_stack_request1.json"
 					/>
+					</doc>
+					<doc title="Create a stack - second example: JSON request">
 					<xsdxt:code
 						href="../wadl/samples/lava2/create_stack_request2.json"
 					/>
-				</wadl:doc>
+					</doc>
+				
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="distro" style="plain" path="$.stack.distro" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Identifier for a particular distribution. For example: HDP2.1
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="name" style="plain" path="$.stack.name" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Descriptive name for the stack. For example: HDP_Core
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="services" style="plain" path="$.stack.services" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of services and corresponding components
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="node_groups" style="plain" path="$.stack.node_groups" required="false">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Definition of the layout of services into grouped cluster nodes.
+					</p></doc>
+				</param>
+				
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="name" style="plain" path="$.services.name" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name of a particular service. For example: HDFS
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="modes" style="plain" path="$.services.modes" required="false">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of modes to create for a particular service. (Certain services can operate in different modes.)
+					</p></doc>
+				</param>
+				
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="id" style="plain" path="$.node_groups.id" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">A node group id or name.
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="components" style="plain" path="$.node_groups.components" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of components to run within the node group. 
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="count" style="plain" path="$.node_groups.count" required="false" >
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Number of instances of the node group.
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="flavor" style="plain" path="$.node_groups.flavor" required="false">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Flavor id for the node group.
+					</p></doc>
+				</param>
+				
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="name" style="plain" path="$.components.name" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Component name. For example: Namenode
+					</p></doc>
+				</param>
+
 			</representation>
 		</request>
 		<response status="200">
 			<representation mediaType="application/json">
-				<wadl:doc xml:lang="EN"
-					xmlns="http://docbook.org/ns/docbook">
+				
+				
+					<doc title="Create a stack - first example: JSON request">
 					<xsdxt:code
 						href="../wadl/samples/lava2/create_stack_response1.json"
 					/>
+					</doc>
+					<doc title="Create a stack - second example: JSON request">
 					<xsdxt:code
 						href="../wadl/samples/lava2/create_stack_response2.json"
 					/>
-				</wadl:doc>
+					</doc>
+			
 			</representation>
 		</response> &fourhundred; &fourthirteen; </method>
 
@@ -484,8 +603,8 @@
 				element="clusters:cluster">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
-					<table rules="all">
-            		<caption>Required Attributes for Create Cluster</caption>
+<!--					<table rules="all">
+            		<caption>Required attributes for create cluster</caption>
 		            <thead>
 		                <tr>
 		                    <td colspan="1">Keys</td>
@@ -535,11 +654,48 @@
 		                    <td colspan="1">No</td>
 		                </tr>
 		            </tbody>
-		        	</table>
+		        	</table> -->
 					<xsdxt:code
 						href="../wadl/samples/lava2/create_cluster_request.json"
 					/>
 				</wadl:doc>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="name" style="plain" path="$.cluster.name" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name for the cluster.
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="stack" style="plain" path="$.cluster.stack" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Stack details to use for the cluster.
+					</p></doc>
+				</param>
+				
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="id" style="plain" path="$.stack.id" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Stack id.
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="node_groups" style="plain" path="$.stack.node_groups" required="false">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of node groups where various components reside.
+					</p></doc>
+				</param>
+				
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="id" style="plain" path="$.node_groups.id" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">A node_group id or name.
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="count" style="plain" path="$.node_groups.count" required="false">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Number of instances of the node group.
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="flavor" style="plain" path="$.node_groups.flavor" required="false">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Flavor id for the node group.
+					</p></doc>
+				</param>
 			</representation>
 		</request>
 		<response status="200">
@@ -604,12 +760,12 @@
 		<wadl:doc xml:lang="EN" title="Delete cluster"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Deletes a specified cluster.</para>
+			<para>This operation deletes the cluster that is specified
+				by <code>clusterId</code>.</para>
 			<para>The 400 error code might indicate missing or invalid
 				parameters.</para>
 			<para>The 409 error code might indicate an invalid
-				state.</para>
-			<para>This operation deletes the cluster that is specified
-				by <code>clusterId</code>.</para>
+				state.</para>			
 		</wadl:doc>
 		<response status="204">
 			<representation mediaType="application/json">
@@ -631,12 +787,12 @@
 		<wadl:doc xml:lang="EN" title="Resize cluster"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Resizes a specified cluster.</para>
+			<para>This operation resizes the cluster specified by
+				<code>clusterId</code>.</para>
 			<para>The 400 error code might indicate the presence of
 				unacceptable parameters or malformed data.</para>
 			<para>The 409 error code might indicate an invalid
-				state.</para>
-			<para>This operation resizes the cluster specified by
-					<code>clusterId</code>.</para>
+				state.</para>			
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json">
