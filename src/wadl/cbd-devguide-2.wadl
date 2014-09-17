@@ -52,7 +52,7 @@
 							type="xsd:string">
 							<wadl:doc xml:lang="EN"
 								xmlns="http://docbook.org/ns/docbook"
-								>A specific distribution id.</wadl:doc>
+								>A specific distribution ID.</wadl:doc>
 						</param>
 						<method href="#getDistroDetails"/>
 					</resource>
@@ -66,7 +66,7 @@
 							type="xsd:string">
 							<wadl:doc xml:lang="EN"
 								xmlns="http://docbook.org/ns/docbook"
-								>Specifies the stack ID.</wadl:doc>
+								>The stack ID.</wadl:doc>
 						</param>
 						<method href="#getStackDetails"/>
 						<method href="#deleteStack"/>
@@ -82,7 +82,7 @@
 							type="xsd:string">
 							<wadl:doc xml:lang="EN"
 								xmlns="http://docbook.org/ns/docbook"
-								>Specifies the cluster ID.</wadl:doc>
+								>The cluster ID.</wadl:doc>
 						</param>
 						<method href="#getClusterDetails"/>
 						<method href="#deleteCluster"/>
@@ -98,7 +98,7 @@
 								type="xsd:string">
 								<wadl:doc xml:lang="EN"
 								xmlns="http://docbook.org/ns/docbook"
-								>Specifies the node ID.</wadl:doc>
+								>The node ID.</wadl:doc>
 								</param>
 								<method href="#getNodeDetails"/>
 							</resource>
@@ -113,7 +113,7 @@
 							type="xsd:string">
 							<wadl:doc xml:lang="EN"
 								xmlns="http://docbook.org/ns/docbook"
-								>Specifies the flavor ID.</wadl:doc>
+								>The flavor ID.</wadl:doc>
 						</param>
 						<method href="#getFlavorDetails"/>
 					</resource>
@@ -311,8 +311,71 @@
 			</itemizedlist>
 		</wadl:doc>
 		<request>
-			<representation mediaType="application/json">
+			<representation mediaType="application/json">				
+				<doc title="Create a stack - first example: JSON request">
+					<xsdxt:code href="../wadl/samples/lava2/create_stack_request1.json"/>
+				</doc>
+				<doc title="Create a stack - second example: JSON request">
+					<xsdxt:code href="../wadl/samples/lava2/create_stack_request2.json"/>
+				</doc>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="distro" style="plain" path="$.stack.distro" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Identifier for a particular distribution. For example: HDP2.1
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="name" style="plain" path="$.stack.name" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Descriptive name for the stack. For example: HDP_Core
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="services" style="plain" path="$.stack.services" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of services and corresponding components
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="node_groups" style="plain" path="$.stack.node_groups" required="false">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Definition of the layout of services into grouped cluster nodes.
+					</p></doc>
+				</param>
 				
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="name" style="plain" path="$.services.name" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name of a particular service. For example: HDFS
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="modes" style="plain" path="$.services.modes" required="false">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of modes to create for a particular service. (Certain services can operate in different modes.)
+					</p></doc>
+				</param>
+				
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="id" style="plain" path="$.node_groups.id" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">A node group ID or name.
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="components" style="plain" path="$.node_groups.components" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of components to run within the node group. 
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="count" style="plain" path="$.node_groups.count" required="false" >
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Number of instances of the node group.
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="flavor" style="plain" path="$.node_groups.flavor" required="false">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Flavor ID for the node group.
+					</p></doc>
+				</param>
+				
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="name" style="plain" path="$.components.name" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Component name. For example: Namenode
+					</p></doc>
+				</param>	
 <!--					<table rules="all">
             		<caption>Required attributes for create stack</caption>
 		            <thead>
@@ -387,93 +450,17 @@
 		                </tr>
 		            </tbody>
 		        	</table> -->
-					<doc title="Create a stack - first example: JSON request">
-					<xsdxt:code
-						href="../wadl/samples/lava2/create_stack_request1.json"
-					/>
-					</doc>
-					<doc title="Create a stack - second example: JSON request">
-					<xsdxt:code
-						href="../wadl/samples/lava2/create_stack_request2.json"
-					/>
-					</doc>
-				
-				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="distro" style="plain" path="$.stack.distro" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Identifier for a particular distribution. For example: HDP2.1
-					</p></doc>
-				</param>
-				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="name" style="plain" path="$.stack.name" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Descriptive name for the stack. For example: HDP_Core
-					</p></doc>
-				</param>
-				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="services" style="plain" path="$.stack.services" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of services and corresponding components
-					</p></doc>
-				</param>
-				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="node_groups" style="plain" path="$.stack.node_groups" required="false">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Definition of the layout of services into grouped cluster nodes.
-					</p></doc>
-				</param>
-				
-				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="name" style="plain" path="$.services.name" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name of a particular service. For example: HDFS
-					</p></doc>
-				</param>
-				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="modes" style="plain" path="$.services.modes" required="false">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of modes to create for a particular service. (Certain services can operate in different modes.)
-					</p></doc>
-				</param>
-				
-				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="id" style="plain" path="$.node_groups.id" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">A node group id or name.
-					</p></doc>
-				</param>
-				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="components" style="plain" path="$.node_groups.components" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of components to run within the node group. 
-					</p></doc>
-				</param>
-				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="count" style="plain" path="$.node_groups.count" required="false" >
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Number of instances of the node group.
-					</p></doc>
-				</param>
-				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="flavor" style="plain" path="$.node_groups.flavor" required="false">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Flavor id for the node group.
-					</p></doc>
-				</param>
-				
-				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="name" style="plain" path="$.components.name" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Component name. For example: Namenode
-					</p></doc>
-				</param>
-
+					
 			</representation>
 		</request>
 		<response status="200">
-			<representation mediaType="application/json">
-				
-				
-					<doc title="Create a stack - first example: JSON request">
-					<xsdxt:code
-						href="../wadl/samples/lava2/create_stack_response1.json"
-					/>
-					</doc>
-					<doc title="Create a stack - second example: JSON request">
-					<xsdxt:code
-						href="../wadl/samples/lava2/create_stack_response2.json"
-					/>
-					</doc>
-			
+			<representation mediaType="application/json">			
+				<doc title="Create a stack - first example: JSON request">
+					<xsdxt:code href="../wadl/samples/lava2/create_stack_response1.json"/>
+				</doc>
+				<doc title="Create a stack - second example: JSON request">
+					<xsdxt:code href="../wadl/samples/lava2/create_stack_response2.json"/>
+				</doc>			
 			</representation>
 		</response> &fourhundred; &fourthirteen; </method>
 
@@ -672,7 +659,7 @@
 				
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="id" style="plain" path="$.stack.id" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Stack id.
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Stack ID.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
@@ -683,7 +670,7 @@
 				
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="id" style="plain" path="$.node_groups.id" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">A node_group id or name.
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">A node group ID or name.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
@@ -693,7 +680,7 @@
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="flavor" style="plain" path="$.node_groups.flavor" required="false">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Flavor id for the node group.
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Flavor ID for the node group.
 					</p></doc>
 				</param>
 			</representation>
