@@ -981,10 +981,10 @@ format="SVG" scale="60"/>
     <para>The chapter describes each of the API operations provided by the Cloud Big Data service. </para>
     <section xml:id="distroOperations">
       <title>Distros</title>
-      <para>Distros provide a list of supported distributions and their corresponding versions as
+      <para>Distros provide a list of supported distributions and their corresponding versions, as
         well as a list of supported services and components per distribution.</para>
       <para>The following table shows the Cloud Big Data API operations that are available for
-        distros. This section describes these operations.</para>
+        distros. These operations are described in this section.</para>
       <para/>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#distros"/>
@@ -993,12 +993,12 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="stackOperations">
       <title>Stacks</title>
-      <para>Stacks are high-level building blocks of software to compose a Big Data architecture.
-        Stacks are comprised of services which in turn are comprised of components. A stack is
+      <para>Stacks are high-level building blocks of software that compose a Big Data architecture.
+        Stacks are comprised of services, which in turn are comprised of components. A stack is
         specific to a distribution due to the differences in services that are supported across
         distributions.</para>
       <para>The following table shows the Cloud Big Data API operations that are available for
-        stacks. This section describes these operations.</para>
+        stacks. These operations are described in this section.</para>
       <para/>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#stacks"/>
@@ -1010,7 +1010,7 @@ format="SVG" scale="60"/>
       <para>Clusters are a group of servers (nodes). In Cloud Big Data, the servers are
         virtual.</para>
       <para>The following table shows the Cloud Big Data API operations that are available for
-        clusters. This section describes these operations.</para>
+        clusters. These operations are described in this section.</para>
       <para/>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#clusters"/>
@@ -1020,12 +1020,12 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="nodeOperations">
       <title>Nodes</title>
-      <para>In a network, a node (or server) is a connection point, either a redistribution point or
-        an end point for data transmissions. In general, a node has programmed or engineered
-        capability to recognize and process or forward transmissions to other nodes. Nodes are a
+      <para>In a network, a node (or server) is a connection point - either a redistribution point
+        or an end point for data transmissions. In general, a node has programmed or engineered
+        capability to recognize and process or forward transmissions to other nodes. A node is a
         member of a cluster.</para>
       <para>The following table shows the Cloud Big Data API operations that are available for
-        nodes. This section describes these operations.</para>
+        nodes. These operations are described in this section.</para>
       <para/>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#nodes"/>
@@ -1037,7 +1037,7 @@ format="SVG" scale="60"/>
       <para>A flavor is an available configuration for Cloud Big Data. Each flavor has a unique
         combination of memory capacity and priority for CPU time.</para>
       <para>The following table shows the Cloud Big Data API operations that are available for
-        flavors. This section describes these operations.</para>
+        flavors. These operations are described in this section.</para>
       <para/>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#flavors"/>
@@ -1049,7 +1049,7 @@ format="SVG" scale="60"/>
       <para>Resource limits include items such as remaining node count, available RAM, and remaining
         disk space for the user.</para>
       <para>The following table shows the Cloud Big Data API operation that is available for
-        resource limits. This section describes these operations.</para>
+        resource limits. This operation is described in this section.</para>
       <para/>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#limits"/>
@@ -1061,13 +1061,14 @@ format="SVG" scale="60"/>
     <glossentry>
       <glossterm>Cluster</glossterm>
       <glossdef>
-        <para> A group of servers (nodes). In Cloud Big Data, the servers are virtual.</para>
+        <para> A cluster is a group of servers (nodes). In Cloud Big Data, the servers are
+          virtual.</para>
       </glossdef>
     </glossentry>
     <glossentry>
       <glossterm>Distro</glossterm>
       <glossdef>
-        <para>Distros provide a list of supported distributions and their corresponding versions as
+        <para>Distros provide a list of supported distributions and their corresponding versions, as
           well as a list of supported services and components per distribution.</para>
       </glossdef>
     </glossentry>
@@ -1096,9 +1097,10 @@ format="SVG" scale="60"/>
     <glossentry xml:id="node-d1e018">
       <glossterm>Node</glossterm>
       <glossdef>
-        <para>In a network, a node is a connection point, either a redistribution point or an end
-          point for data transmissions. In general, a node has programmed or engineered capability
-          to recognize and process or forward transmissions to other nodes.</para>
+        <para>In a network, a node (or server) is a connection point, either a redistribution point
+          or an end point for data transmissions. In general, a node has programmed or engineered
+          capability to recognize and process or forward transmissions to other nodes. A node is a
+          member of a cluster.</para>
       </glossdef>
     </glossentry>
     <glossentry>
@@ -1129,10 +1131,10 @@ format="SVG" scale="60"/>
     <glossentry>
       <glossterm>Stack</glossterm>
       <glossdef>
-        <para>Stacks are high-level building blocks of software to compose a Big Data architecture.
-          Stacks are comprised of services which in turn are comprised of components. A stack is
-          specific to a distribution due to the differences in services that are supported across
-          distributions.</para>
+        <para>Stacks are high-level building blocks of software that compose a Big Data
+          architecture. Stacks are comprised of services, which in turn are comprised of components.
+          A stack is specific to a distribution due to the differences in services that are
+          supported across distributions.</para>
       </glossdef>
     </glossentry>
     <glossentry xml:id="tenant">

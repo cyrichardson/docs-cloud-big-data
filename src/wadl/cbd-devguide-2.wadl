@@ -163,7 +163,7 @@
 	<method name="GET" id="getDistroDetails">
 		<wadl:doc xml:lang="EN" title="Show distro details"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Provides a detailed list of all the supported services, their corresponding components and modes of operation for a given distribution.</para>
+			<para role="shortdesc">For a specified distro, provides a detailed list of all the supported services and their corresponding components and modes of operation.</para>
 		</wadl:doc>
 		<response status="200">
 			<representation mediaType="application/json">
@@ -298,9 +298,9 @@
 	<method name="POST" id="createStack">
 		<wadl:doc xml:lang="EN" title="Create stack"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Create a new stack.</para>
+			<para role="shortdesc">Creates a stack.</para>
 			<note><para>You can create a new stack and start from scratch or 
-				use one of our preconfigured global stacks.</para></note>
+				use one of the preconfigured global stacks.</para></note>
 			<para>The 400 error code might indicate any of the
 				following issues:</para>
 			<itemizedlist spacing="compact">
@@ -484,7 +484,7 @@
 	<method name="GET" id="listStacks">
 		<wadl:doc xml:lang="EN" title="List all stacks"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all stacks. Provides a list of global stacks and user created stacks.</para>
+			<para role="shortdesc">Lists all stacks - global stacks and user-created stacks.</para>
 		</wadl:doc>
 		<response status="200">
 			<representation mediaType="application/json">
@@ -505,7 +505,7 @@
 	<method name="GET" id="getStackDetails">
 		<wadl:doc xml:lang="EN" title="Show stack details"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Shows details for a specific
+			<para role="shortdesc">Shows details for a specified
 				stack.</para>
 		</wadl:doc>
 		<response status="200">
@@ -938,9 +938,9 @@
 	<method name="GET" id="getLimits">
 		<wadl:doc xml:lang="EN" title="Show resource limits"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Shows the absolute resource limits,
-				such as remaining node count, available RAM, and
-				remaining disk space, for the user.</para>
+			<para role="shortdesc">Shows the absolute resource limits for the user,
+				including the remaining node count, available RAM, and
+				remaining disk space.</para>
 		</wadl:doc>
 		<response status="200">
 			<representation mediaType="application/json">
