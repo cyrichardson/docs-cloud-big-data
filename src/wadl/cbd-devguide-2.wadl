@@ -254,33 +254,33 @@
 				</param>
 
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="name" style="plain" path="$.services.name">
+					name="name" style="plain" path="$.distro.services.name">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name of a particular service. For example: HDFS
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="version" style="plain" path="$.services.version">
+					name="version" style="plain" path="$.distro.services.version">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Version of the service. For example: 2.4
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="components" style="plain" path="$.services.components">
+					name="components" style="plain" path="$.distro.services.components">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Subset of services that relate to individual processes. For example: Namenode, Datanode
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="modes" style="plain" path="$.services.modes">
+					name="modes" style="plain" path="$.distro.services.modes">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Certain services can operate in different modes. This details the list of supported modes. For example: HA, Secondary Namenode, Federated HDFS.
 					</p></doc>
 				</param>
 
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="name" style="plain" path="$.components.name">
+					name="name" style="plain" path="$.distro.services.components.name">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Component name. For example: Namenode
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="mode" style="plain" path="$.components.mode">
+					name="mode" style="plain" path="$.distro.services.components.mode">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Specifies that a particular component is only applicable for a certain mode of operation of the service. For example: Journal Node only applies for a HA Namenode.
 					</p></doc>
 				</param>
@@ -340,39 +340,39 @@
 				</param>
 				
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="name" style="plain" path="$.services.name" required="true">
+					name="name" style="plain" path="$.stack.services.name" required="true">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name of a particular service. For example: HDFS
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="modes" style="plain" path="$.services.modes" required="false">
+					name="modes" style="plain" path="$.stack.services.modes" required="false">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of modes to create for a particular service. (Certain services can operate in different modes.)
 					</p></doc>
 				</param>
 				
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="id" style="plain" path="$.node_groups.id" required="true">
+					name="id" style="plain" path="$.stack.node_groups.id" required="true">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">A node group ID or name.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="components" style="plain" path="$.node_groups.components" required="true">
+					name="components" style="plain" path="$.stack.node_groups.components" required="true">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of components to run within the node group. 
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="count" style="plain" path="$.node_groups.count" required="false" >
+					name="count" style="plain" path="$.stack.node_groups.count" required="false" >
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Number of instances of the node group.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="flavor" style="plain" path="$.node_groups.flavor" required="false">
+					name="flavor" style="plain" path="$.stack.node_groups.flavor" required="false">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Flavor ID for the node group.
 					</p></doc>
 				</param>
 				
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="name" style="plain" path="$.components.name" required="true">
+					name="name" style="plain" path="$.stack.node_groups.components.name" required="true">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Component name. For example: Namenode
 					</p></doc>
 				</param>	
@@ -658,28 +658,28 @@
 				</param>
 				
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="id" style="plain" path="$.stack.id" required="true">
+					name="id" style="plain" path="$.cluster.stack.id" required="true">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Stack ID.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="node_groups" style="plain" path="$.stack.node_groups" required="false">
+					name="node_groups" style="plain" path="$.cluster.stack.node_groups" required="false">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of node groups where various components reside.
 					</p></doc>
 				</param>
 				
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="id" style="plain" path="$.node_groups.id" required="true">
+					name="id" style="plain" path="$.cluster.stack.node_groups.id" required="true">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">A node group ID or name.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="count" style="plain" path="$.node_groups.count" required="false">
+					name="count" style="plain" path="$.cluster.stack.node_groups.count" required="false">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Number of instances of the node group.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="flavor" style="plain" path="$.node_groups.flavor" required="false">
+					name="flavor" style="plain" path="$.cluster.stack.node_groups.flavor" required="false">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Flavor ID for the node group.
 					</p></doc>
 				</param>
