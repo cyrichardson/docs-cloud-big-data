@@ -52,7 +52,7 @@ format="SVG" scale="60"/>
     <author>
       <personname>
         <firstname/>
-        <surname/>id </personname>
+        <surname> </surname></personname>
       <affiliation>
         <orgname>Rackspace Cloud</orgname>
       </affiliation>
