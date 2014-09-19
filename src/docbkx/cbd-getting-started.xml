@@ -293,8 +293,8 @@
         <tip>
             <para>To help you decide which regionalized endpoint to use, read about special
                 considerations for choosing a data center at <link
-                    xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions"
-                    >http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions</link>.
+                    xlink:href="http://www.rackspace.com/knowledge_center/article/about-regions"
+                    >About Regions</link> in the Knowledge Center.
             </para>
         </tip> 
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -1547,7 +1547,7 @@ $ lava nodes foo
             channels, including knowledge center articles, forums,
             phone, chat, and email. </para>
         <para>Visit the <link
-            xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback"
+            xlink:href="https://feedback.rackspace.com"
                 >Product Feedback Forum</link> and tell us what you
             think about &PRODNAME;.</para>
         <para>This API uses standard HTTP 1.1 response codes as

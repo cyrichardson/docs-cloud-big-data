@@ -39,7 +39,7 @@ format="SVG" scale="60"/>
   <!-- <?rax 
     title.font.size="30px" 
     subtitle.font.size="20px"         
-    canonical.url.base="http://docs-internal.rackspace.com/cbd/api/v1/cbd-devguide/content"
+    canonical.url.base="http://docs-internal.rackspace.com/cbd/api/v1.0/cbd-devguide-2/content"
     status.bar.text=""?>
   <title>Rackspace &PRODNAME; Developer Guide</title>
   <titleabbrev>&PRODNAME; Developer Guide</titleabbrev>
@@ -493,13 +493,13 @@ format="SVG" scale="60"/>
       <para>The &PRODNAME; service is a regionalized service. The user of the service is therefore
         responsible for appropriate replication, caching, and overall maintenance of &PRODNAME; data
         across regional boundaries to other Cloud Servers.</para>
-      <para>The endpoints to use for your Cloud Big Data API calls are summarized in the table
-        below.</para>
+      <para>The endpoints to use for your Cloud Big Data API calls are summarized in the following
+        table.</para>
       <tip>
         <para>To help you decide which regionalized endpoint to use, read about special
           considerations for choosing a data center at <link
-            xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions"
-            >http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions</link>. </para>
+            xlink:href="http://www.rackspace.com/knowledge_center/article/about-regions"
+            >About Regions</link> in the Knowledge Center.</para>
       </tip>
       <para>
         <table rules="all">
@@ -845,8 +845,8 @@ format="SVG" scale="60"/>
         <title>List nodes paged request: JSON</title>
         <programlisting language="bash"><xi:include href="../resources/samples/cbd_listNodes_pagination_request-v2.json" parse="text"/></programlisting>
       </example>
-      <para>Notice that the paged request example above sets the limit to 2 (<code>?limit=2</code>),
-        so the response that follows shows 2 nodes:</para>
+      <para>Notice that the preceding paged request example sets the limit to 2
+          (<code>?limit=2</code>), so the response that follows shows 2 nodes:</para>
       <example>
         <title>List nodes paged response: JSON</title>
         <programlisting language="json"><xi:include href="../resources/samples/cbd_listNodes_pagination_response-v2.json" parse="text"/> </programlisting>
