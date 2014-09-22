@@ -176,9 +176,9 @@
           xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns:svg="http://www.w3.org/2000/svg"
           xmlns:m="http://www.w3.org/the key 1998/Math/MathML">In the "Service access endpoints"
           sections in the <citetitle>Cloud Big Data Getting Started Guide</citetitle> and in the
-          <citetitle>Cloud Big Data Developer Guide</citetitle>, a link to <link
+          <citetitle>Cloud Big Data Developer Guide</citetitle>, a link to the Knowledge Center article <link
             xlink:href="http://www.rackspace.com/knowledge_center/article/about-regions"
-            >About Regions</link> in the Knowledge Center was added
+            >About Regions</link> was added
           to provide guidance on choosing a regionalized endpoint.</para>
       </listitem>
     </itemizedlist>
