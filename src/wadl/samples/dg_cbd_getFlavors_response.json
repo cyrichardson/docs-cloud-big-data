@@ -68,5 +68,22 @@
             "ram": 7680,
             "vcpus": 2
         }
+        {
+            "disk": 3200,
+            "id": "onmetal-io1",
+            "links": [
+                {
+                    "href": "https://iad.bigdata.api.rackspacecloud.com/v1.0/1234/flavors/onmetal-io1",
+                    "rel": "self"
+                },
+                {
+                    "href": "https://iad.bigdata.api.rackspacecloud.com/1234/flavors/onmetal-io1",
+                    "rel": "bookmark"
+                }
+            ],
+            "name": "OnMetal IO v1",
+            "ram": 131072,
+            "vcpus": 40
+        }
     ]
 }
