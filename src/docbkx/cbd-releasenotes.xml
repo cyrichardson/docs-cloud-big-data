@@ -25,7 +25,7 @@
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace Cloud Big Data</productname>
-    <pubdate>2014-09-29</pubdate>
+    <pubdate>2014-10-15</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the template.</remark>
@@ -38,6 +38,38 @@
           (<abbrev>API</abbrev>). </para>
     </abstract>
     <revhistory>
+      <revision>
+        <date>2014-10-15</date>
+        <revdescription>
+          <itemizedlist xmlns:svg="http://www.w3.org/2000/svg"
+            xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
+            xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <listitem>
+              <para>Added the IAD region to <olink targetdoc="cbd-devguide"
+                  targetptr="Service_Access_Endpoints-d1e753">“Service access
+                endpoints”</olink>.</para>
+            </listitem>
+            <listitem>
+              <para>Added the test terms for the Preview release of Spark to <olink
+                  targetdoc="cbd-devguide" targetptr="Pricing_SLA-d1e1362">“Pricing and service
+                  level”</olink>.</para>
+            </listitem>
+            <listitem>
+              <para>Added the Spark cluster type to the list cluster types example response in
+                  <olink targetdoc="cbd-devguide" targetptr="typeOperations">“Types”</olink>.</para>
+            </listitem>
+            <listitem>
+              <para>Added the onmetal-io flavor to the table in <olink targetdoc="cbd-devguide"
+                  targetptr="dataNodeInstances-d1e01">“Data node instances”</olink>.</para>
+            </listitem>
+            <listitem>
+              <para>Added the onmetal-io flavor to the list available flavors example response in
+                  <olink targetdoc="cbd-devguide" targetptr="flavorOperations"
+                >“Flavors”</olink>.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
       <revision>
         <date>2014-09-29</date>
         <revdescription>
@@ -154,6 +186,54 @@
       earlier versions. The most recent changes are described in the
       following table:</para>
     <?rax revhistory?>
+  </chapter>
+  <chapter xml:id="Oct15">
+    <title>October 15, 2014</title>
+    <para>This release includes the following changes for the Cloud Big Data API.</para>
+    <itemizedlist>
+      <title>Product enhancements</title>
+      <listitem xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+        xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02">
+        <para>Added the IAD region to the service access endpoints.</para>
+      </listitem>
+      <listitem xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+        xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02">
+        <para>Added the Spark cluster type to the list available flavors operation.</para>
+      </listitem>
+      <listitem xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+        xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02">
+        <para>Added the onmetal-io flavor to the list cluster types operation.</para>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist>
+      <title>Documentation</title>
+      <listitem xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+        xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02">
+        <para>Added the IAD region to <olink targetdoc="cbd-devguide"
+            targetptr="Service_Access_Endpoints-d1e753">“Service access endpoints”</olink>.</para>
+      </listitem>
+      <listitem xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+        xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02">
+        <para>Added the test terms for the Preview release of Spark to <olink
+            targetdoc="cbd-devguide" targetptr="Pricing_SLA-d1e1362">“Pricing and service
+            level”</olink>.</para>
+      </listitem>
+      <listitem xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+        xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02">
+        <para>Added the Spark cluster type to the list cluster types example response in <olink
+            targetdoc="cbd-devguide" targetptr="typeOperations">“Types”</olink>.</para>
+      </listitem>
+      <listitem xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+        xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02">
+        <para>Added the onmetal-io flavor to the table in <olink targetdoc="cbd-devguide"
+            targetptr="dataNodeInstances-d1e01">“Data node instances”</olink>.</para>
+      </listitem>
+      <listitem xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+        xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02">
+        <para>Added the onmetal-io flavor to the list available flavors example response in <olink
+            targetdoc="cbd-devguide" targetptr="flavorOperations">“Flavors”</olink>.</para>
+      </listitem>
+    </itemizedlist>
   </chapter>
   <chapter xml:id="Sep29">
     <title>September 29, 2014</title>

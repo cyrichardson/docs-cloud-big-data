@@ -68,7 +68,7 @@ format="SVG" scale="60"/>
     </copyright>
     <releaseinfo>API v1.0</releaseinfo>
     <productname>Rackspace &PRODNAME;</productname>
-    <pubdate>2014-08-19</pubdate>
+    <pubdate>2014-10-15</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the doc build
@@ -82,6 +82,33 @@ format="SVG" scale="60"/>
     <revhistory xmlns:svg="http://www.w3.org/2000/svg"
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
+      <revision>
+        <date>2014-10-15</date>
+        <revdescription>
+          <itemizedlist>
+            <listitem>
+              <para>Added the IAD region to <xref linkend="Service_Access_Endpoints-d1e753"
+                />.</para>
+            </listitem>
+            <listitem>
+              <para>Added the test terms for the Preview release of Spark to <xref
+                  linkend="Pricing_SLA-d1e1362"/>. </para>
+            </listitem>
+            <listitem>
+              <para>Added the Spark cluster type to the list cluster types example response in <xref
+                  linkend="typeOperations"/>.</para>
+            </listitem>
+            <listitem>
+              <para>Added the onmetal-io flavor to the table in <xref
+                  linkend="dataNodeInstances-d1e01"/>.</para>
+            </listitem>
+            <listitem>
+              <para>Added the onmetal-io flavor to the list cluster types example response in <xref
+                  linkend="flavorOperations"/>.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
       <revision>
         <date>2014-08-19</date>
         <revdescription>
@@ -318,6 +345,11 @@ format="SVG" scale="60"/>
             <para>The Service Level Agreement (SLA) for Cloud Big Data is available at <link
           xlink:href="http://www.rackspace.com/cloud/legal/sla"
           >http://www.rackspace.com/cloud/legal/sla</link>.</para>
+      <para>The Preview release of the Spark cluster type, which is included in Cloud Big Data, is
+        subject to the Rackspace test terms at <link
+          xlink:href="http://www.rackspace.com/information/legal/testterms">Legal Information - Test
+          Terms</link>.</para>
+      <para>.</para>
 
     </section>
     <section xml:id="Additional_Resources-d1e532">
