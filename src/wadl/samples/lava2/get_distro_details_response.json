@@ -1,7 +1,17 @@
 {
     "distro": {
         "id": "HDP2.1",
-        "name": "Hortonworks Data Platform",
+        "name": "HortonWorks Data Platform",
+        "links": [
+            {
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/distros/HDP2.1",
+                "rel": "self"
+            },
+            {
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/distros/HDP2.1",
+                "rel": "bookmark"
+            }
+        ],
         "services": [
             {
                 "components": [
@@ -14,25 +24,16 @@
                     },
                     {
                         "name": "Datanode"
-                    },
-                    {
-                        "mode": "HA",
-                        "name": "JournalNode"
                     }
                 ],
+                "description": "Hadoop Distributed File System (HDFS) is a scalable, fault-tolerant, distributed file system that provides scalable and reliable data storage designed to span large clusters of commodity servers. ",
                 "modes": [
-                    {
-                        "name": "HA"
-                    },
-                    {
-                        "name": "Kerberos"
-                    },
                     {
                         "name": "Secondary"
                     }
                 ],
                 "name": "HDFS",
-                "version": "2.4"
+                "version": "2.4",
             },
             {
                 "components": [
@@ -43,21 +44,23 @@
                         "name": "NodeManager"
                     },
                     {
-                        "name": "YarnTimelineServer"
+                        "name": "TimelineHistoryServer"
                     }
                 ],
+                "description": "YARN (Yet Another Resource Negotiator) is a core component of Hadoop, managing access to all resources in a cluster. YARN brokers access to cluster compute resources on behalf of multiple applications, using selectable criteria such as fairness or capacity, allowing for a more general-purpose resource management.",
                 "name": "Yarn",
                 "version": "2.4"
             },
             {
                 "components": [
                     {
-                        "name": "JobHistoryServer"
+                        "name": "MRHistoryServer"
                     },
                     {
                         "name": "MRClient"
                     }
                 ],
+                "description": "Hadoop MapReduce is a software framework for easily writing applications which process vast amounts of data (multi-terabyte data-sets) in-parallel on large clusters (thousands of nodes) of commodity hardware in a reliable, fault-tolerant manner.",
                 "name": "MapReduce",
                 "version": "2.4"
             },
@@ -76,6 +79,7 @@
                         "name": "HiveClient"
                     }
                 ],
+                "description": "Apache Hive is a data warehouse infrastructure built on top of Hadoop for providing data summarization, query, and analysis. Hive provides a mechanism to project structure onto this data and query the data using a SQL-like language called HiveQL.",
                 "name": "Hive",
                 "version": "0.13"
             },
@@ -85,6 +89,7 @@
                         "name": "PigClient"
                     }
                 ],
+                "description": "Apache Pig is a platform for analyzing large data sets that consists of a high-level language (Pig Latin) for expressing data analysis programs, coupled with infrastructure for evaluating these programs. Pig Latin abstracts the programming from the Java MapReduce idiom into a notation similar to that of SQL for RDBMS systems.",
                 "name": "Pig",
                 "version": "0.12"
             }

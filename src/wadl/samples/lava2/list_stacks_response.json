@@ -21,7 +21,17 @@
                 {
                     "name": "Pig"
                 }
-            ]
+            ],
+            "links": [
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/stacks/HDP2.1_Hadoop",
+                    "rel": "self"
+                },
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/stacks/HDP2.1_Hadoop",
+                    "rel": "bookmark"
+                }
+            ],
         },
         {
             "distro": "HDP2.1",
@@ -47,7 +57,17 @@
                 {
                     "name": "Pig"
                 }
-            ]
+            ],
+            "links": [
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/stacks/HBase",
+                    "rel": "self"
+                },
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/stacks/HBase",
+                    "rel": "bookmark"
+                }
+            ],
         }
     ]
 }

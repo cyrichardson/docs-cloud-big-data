@@ -5,10 +5,18 @@
             "id": "aaa-bbbb-cccc",
             "name": "test",
             "status": "ACTIVE",
-            "stack": {
-                "id": "HDP2.1_Hadoop",
-            },
-            "updated": ""
+            "stack_id": "HDP2.1_Hadoop",
+            "updated": "",
+            "links": [
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/clusters/aaa-bbbb-cccc",
+                    "rel": "self"
+                },
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/aaa-bbbb-cccc",
+                    "rel": "bookmark"
+                }
+            ],
         }
     ]
 }
