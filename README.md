@@ -48,6 +48,6 @@ The files that are most likely to be of interest to you are as follows:
 * [src/docbkx/cbd-mgmt-devguide.xml](src/docbkx/cbd-mgmt-devguide.xml)
 * [src/wadl/cbd-mgmt-devguide.wadl](src/wadl/cbd-mgmt-devguide.wadl)
 
-If you want to make changes to the example files referenced in the WADL file, you can find the example files at  [src/wadl/samples](src/wadl/samples)
+If you want to make changes to the example files referenced in the WADL file, you can find the example files at [src/wadl/samples](src/wadl/samples).
 
 The status codes referenced by the WADL files are at [src/common/common.ent](src/common/common.ent).
