@@ -315,9 +315,9 @@
 				<doc title="Create a stack - first example: JSON request">
 					<xsdxt:code href="../wadl/samples/lava2/create_stack_request1.json"/>
 				</doc>
-				<doc title="Create a stack - second example: JSON request">
+				<!--			<doc title="Create a stack - second example: JSON request">
 					<xsdxt:code href="../wadl/samples/lava2/create_stack_request2.json"/>
-				</doc>
+				</doc> -->
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="distro" style="plain" path="$.stack.distro" required="true">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Identifier for a particular distribution. For example: HDP2.1
@@ -451,6 +451,12 @@
 		            </tbody>
 		        	</table> -->
 					
+			</representation>
+			
+			<representation mediaType="application/json">
+			<doc title="Create a stack - second example: JSON request">
+				<xsdxt:code href="../wadl/samples/lava2/create_stack_request2.json"/>
+			</doc>
 			</representation>
 		</request>
 		<response status="200">
