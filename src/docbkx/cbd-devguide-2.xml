@@ -76,6 +76,32 @@ format="SVG" scale="60"/>
     <revhistory xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
       <revision>
+        <date>2014-12-18</date>
+        <revdescription>
+          <para>The following changes were made:</para>
+          <itemizedlist>
+            <listitem>
+              <para>Updated distro calls with more details.</para>
+            </listitem>
+            <listitem>
+              <para>Made changes to the cluster request and response - added
+                  <code>keypair_name</code> and   made <code>stack_id</code> and
+                  <code>node_groups</code> top level.</para>
+            </listitem>
+            <listitem>
+              <para>Changed <code>flavor</code> to <code>flavor_id</code> where it is referenced in
+                stacks and clusters.</para>
+            </listitem>
+            <listitem>
+              <para>Added links to all resources.</para>
+            </listitem>
+            <listitem>
+              <para>Removed node details.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
+      <revision>
         <date>2014-06-10</date>
         <revdescription>
           <para>Initial Release of the LAVA 2 API.</para>
