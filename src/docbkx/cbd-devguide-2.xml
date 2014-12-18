@@ -1028,7 +1028,6 @@ format="SVG" scale="60"/>
       <para/>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#nodes"/>
-        <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#node"/>
       </wadl:resources>
     </section>
     <section xml:id="flavorOperations">

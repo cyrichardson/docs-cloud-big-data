@@ -1,15 +1,14 @@
 {
     "cluster": {
         "name": "test",
-        "stack": {
-            "id": "HDP2.1_Hadoop",
-            "node_groups": [
-                {
-                    "count": 10,
-                    "flavor": "hadoop1-7",
-                    "id": "slave"
-                }
-            ]
-        }
+        "keypair_name": "cbdkey",
+        "stack_id": "HDP2.1_Hadoop",
+        "node_groups": [
+            {
+                "count": 10,
+                "flavor_id": "hadoop1-7",
+                "id": "slave"
+            }
+        ]
     }
 }

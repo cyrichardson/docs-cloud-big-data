@@ -4,6 +4,16 @@
         "created": "2014-06-14T10:10:10Z",
         "distro": "HDP2.1",
         "name": "HDP2.1_Hadoop",
+        "links": [
+            {
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/stacks/HDP2.1_Hadoop",
+                "rel": "self"
+            },
+            {
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/stacks/HDP2.1_Hadoop",
+                "rel": "bookmark"
+            }
+        ],
         "services": [
             {
                 "components": [
@@ -74,7 +84,7 @@
                     }
                 ],
                 "count": 1,
-                "flavor": "hadoop1-7",
+                "flavor_id": "hadoop1-7",
                 "id": "master1"
             },
             {
@@ -90,7 +100,7 @@
                     }
                 ],
                 "count": 1,
-                "flavor": "hadoop1-4",
+                "flavor_id": "hadoop1-4",
                 "id": "master2"
             },
             {
@@ -120,7 +130,7 @@
                     }
                 ],
                 "count": 1,
-                "flavor": "hadoop1-4",
+                "flavor_id": "hadoop1-4",
                 "id": "hive"
             }
         ]

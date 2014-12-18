@@ -27,7 +27,7 @@
                     }
                 ],
                 "count": 1,
-                "flavor": "hadoop1-7",
+                "flavor_id": "hadoop1-7",
                 "id": "master1"
             },
             {
@@ -43,7 +43,7 @@
                     }
                 ],
                 "count": 1,
-                "flavor": "hadoop1-4",
+                "flavor_id": "hadoop1-4",
                 "id": "master2"
             },
             {
@@ -73,7 +73,7 @@
                     }
                 ],
                 "count": 1,
-                "flavor": "hadoop1-4",
+                "flavor_id": "hadoop1-4",
                 "id": "hive"
             }
         ]

@@ -92,16 +92,6 @@
 						</resource>
 						<resource id="nodes" path="nodes">
 							<method href="#listClusterNodes"/>
-
-							<resource id="node" path="{nodeId}">
-								<param name="nodeId" style="template"
-								type="xsd:string">
-								<wadl:doc xml:lang="EN"
-								xmlns="http://docbook.org/ns/docbook"
-								>The node ID.</wadl:doc>
-								</param>
-								<method href="#getNodeDetails"/>
-							</resource>
 						</resource>
 					</resource>
 				</resource>
@@ -273,6 +263,11 @@
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Certain services can operate in different modes. This details the list of supported modes. For example: HA, Secondary Namenode, Federated HDFS.
 					</p></doc>
 				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="modes" style="plain" path="$.distro.services.description">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Short description of the service.
+					</p></doc>
+				</param>
 
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="name" style="plain" path="$.distro.services.components.name">
@@ -366,7 +361,7 @@
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="flavor" style="plain" path="$.stack.node_groups.flavor" required="false">
+					name="flavor_id" style="plain" path="$.stack.node_groups.flavor_id" required="false">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Flavor ID for the node group.
 					</p></doc>
 				</param>
@@ -658,34 +653,33 @@
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="stack" style="plain" path="$.cluster.stack" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Stack details to use for the cluster.
-					</p></doc>
-				</param>
-				
-				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="id" style="plain" path="$.cluster.stack.id" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Stack ID.
+					name="name" style="plain" path="$.cluster.keypair_name" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name for SSH Key Pair stored in Cloud Servers.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="node_groups" style="plain" path="$.cluster.stack.node_groups" required="false">
+					name="stack" style="plain" path="$.cluster.stack_id" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Stack ID to use for the cluster.
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="node_groups" style="plain" path="$.cluster.node_groups" required="false">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of node groups where various components reside.
+						Note: This overrides any values already defined as part of the Stack's node groups.
 					</p></doc>
 				</param>
-				
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="id" style="plain" path="$.cluster.stack.node_groups.id" required="true">
+					name="id" style="plain" path="$.cluster.node_groups.id" required="true">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">A node group ID or name.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="count" style="plain" path="$.cluster.stack.node_groups.count" required="false">
+					name="count" style="plain" path="$.cluster.node_groups.count" required="false">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Number of instances of the node group.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="flavor" style="plain" path="$.cluster.stack.node_groups.flavor" required="false">
+					name="flavor_id" style="plain" path="$.cluster.node_groups.flavor_id" required="false">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Flavor ID for the node group.
 					</p></doc>
 				</param>
@@ -838,35 +832,6 @@
 					xmlns="http://docbook.org/ns/docbook">
 					<xsdxt:code
 						href="../wadl/samples/lava2/list_cluster_nodes_response.json"
-					/>
-				</wadl:doc>
-			</representation>
-		</response> &fourofour; </method>
-
-	<!--*******************************************************-->
-	<!-- Get node details: getNodeDetails                      -->
-	<!--*******************************************************-->
-
-	<method name="GET" id="getNodeDetails">
-		<wadl:doc xml:lang="EN" title="Show node details"
-			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Shows details for a specified node
-				in a specified cluster.</para>
-			<para>Valid values for the request body parameter
-					<code>postInitScriptStatus</code> are
-					<code>FAILED</code>, <code>PENDING</code>,
-					<code>DELIVERED</code>, <code>RUNNING</code>,
-					<code>SUCCEEDED</code>, and
-				<code>None</code>.</para>
-			<para>Valid values for the node status are in <xref
-					linkend="node_status"/>.</para>
-		</wadl:doc>
-		<response status="200">
-			<representation mediaType="application/json">
-				<wadl:doc xml:lang="EN"
-					xmlns="http://docbook.org/ns/docbook">
-					<xsdxt:code
-						href="../wadl/samples/lava2/get_node_details_response.json"
 					/>
 				</wadl:doc>
 			</representation>
