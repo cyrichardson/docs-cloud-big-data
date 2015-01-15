@@ -61,11 +61,12 @@
         <copyright>
             <year>2013</year>
             <year>2014</year>
+            <year>2015</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Big Data</productname>
-        <pubdate>2014-09-29</pubdate>
+        <pubdate>2015-01-15</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the doc build process.</remark>
@@ -79,6 +80,14 @@
                     (<abbrev>API</abbrev>). </para>
         </abstract>
         <revhistory>
+            <revision>
+                <date>2015-01-15</date>
+                <revdescription>
+                    <para>Added a note that includes a link to additional authentication methods,
+                        including multi-factor authentication, in <xref
+                            linkend="Generating_Auth_Token"/>.</para>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-09-29</date>
                 <revdescription>
@@ -552,27 +561,27 @@
                 authentication token as well as your account number.
                 You must provide both when making subsequent Cloud Big
                 Data API requests.</para>
-        <para>Remember to replace the placeholders in the following
-                authentication request examples with your
-                    information:<itemizedlist spacing="compact">
+        <para>Remember to replace the placeholders in the following authentication request examples
+                with your information:<itemizedlist spacing="compact">
                     <listitem>
-                        <para><emphasis role="bold"
-                                >yourUserName</emphasis> &mdash;Your
-                            common Rackspace Cloud user name, as
-                            supplied during registration.</para>
+                        <para><emphasis role="bold">yourUserName</emphasis> &mdash;Your common
+                            Rackspace Cloud user name, as supplied during registration.</para>
                     </listitem>
                     <listitem>
-                        <para><emphasis role="bold"
-                                >yourApiKey</emphasis> &mdash; Your
-                            API access key. You can obtain the key
-                            from the <link
-                                xlink:href="http://mycloud.rackspace.com/"
-                                >Rackspace Cloud Control Panel</link>
-                            in the <guimenu>Your Account</guimenu> /
-                                <guimenuitem>API Keys</guimenuitem>
-                            section.</para>
+                        <para><emphasis role="bold">yourApiKey</emphasis> &mdash; Your API access
+                            key. You can obtain the key from the <link
+                                xlink:href="http://mycloud.rackspace.com/">Rackspace Cloud Control
+                                Panel</link> in the <guimenu>Your Account</guimenu> /
+                                <guimenuitem>API Keys</guimenuitem> section.</para>
                     </listitem>
-                </itemizedlist></para>
+                </itemizedlist><note>
+                    <para>This guide uses <emphasis role="bold">yourUserName</emphasis> and
+                            <emphasis role="bold">yourApiKey</emphasis> for authentication. For
+                        information about other supported authentication methods, see <link
+                            xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Token_Calls.html"
+                            >Authentication tokens</link> in the <citetitle>Cloud Identity Client
+                            Developer Guide</citetitle>.</para>
+                </note></para>
         <para>You can use either of the following endpoints to access the Cloud Identity service: </para>
         <itemizedlist spacing="compact">
             <listitem>
