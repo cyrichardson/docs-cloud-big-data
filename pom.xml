@@ -90,6 +90,7 @@
                 cbd-getting-started.xml
               </includes>
               <canonicalUrlBase>http://docs.rackspace.com/cbd/api/v1.0/cbd-getting-started/content</canonicalUrlBase>
+              <webhelpDefaultTopic>CBD_Overview.html</webhelpDefaultTopic>
               <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
             </configuration>
           </execution> 
