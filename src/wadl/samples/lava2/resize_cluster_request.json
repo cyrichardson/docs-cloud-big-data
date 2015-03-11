@@ -1,0 +1,11 @@
+{
+    "action": "resize",
+    "cluster": {
+        "node_groups": [
+            {
+                "count": 15,
+                "id": "slave"
+            }
+        ]
+    }
+}

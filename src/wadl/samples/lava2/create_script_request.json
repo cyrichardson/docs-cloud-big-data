@@ -1,0 +1,7 @@
+{
+    "script": {
+        "name": "iPython Notebooks",
+        "type": "POST_INIT",
+        "url": "https://example.com/ipynb_install.sh"
+    }
+}

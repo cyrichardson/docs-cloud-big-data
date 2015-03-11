@@ -69,5 +69,11 @@
                 }
             ],
         }
+    ],
+    "links": [
+        {
+            "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/stacks?limit=2&marker=HDP2.1_HBase",
+            "rel": "next"
+        },
     ]
 }

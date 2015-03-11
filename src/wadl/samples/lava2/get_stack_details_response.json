@@ -101,7 +101,12 @@
                 ],
                 "count": 1,
                 "flavor_id": "hadoop1-7",
-                "id": "master"
+                "id": "master",
+                "resource_limits": {
+                    "min_count": 1,
+                    "max_count": 1,
+                    "min_ram": 6144
+                }
             },
             {
                 "components": [
@@ -111,7 +116,12 @@
                 ],
                 "count": 1,
                 "flavor_id": "hadoop1-7",
-                "id": "standby-namenode"
+                "id": "standby-namenode",
+                "resource_limits": {
+                    "min_count": 1,
+                    "max_count": 1,
+                    "min_ram": 2048
+                }
             },
             {
                 "components": [
@@ -121,7 +131,12 @@
                 ],
                 "count": 3,
                 "flavor_id": "hadoop1-1",
-                "id": "journalnodes"
+                "id": "journalnodes",
+                "resource_limits": {
+                    "min_count": 3,
+                    "max_count": 99,
+                    "min_ram": 1024
+                }
             },
             {
                 "components": [
@@ -132,7 +147,12 @@
                         "name": "NodeManager"
                     }
                 ],
-                "id": "slave"
+                "id": "slave",
+                "resource_limits": {
+                    "min_count": 1,
+                    "max_count": 9999,
+                    "min_ram": 6144
+                }
             },
             {
                 "components": [
@@ -154,7 +174,12 @@
                 ],
                 "count": 1,
                 "flavor_id": "hadoop1-2",
-                "id": "gateway"
+                "id": "gateway",
+                "resource_limits": {
+                    "min_count": 1,
+                    "max_count": 1,
+                    "min_ram": 2048
+                }
             }
         ]
     }

@@ -2,21 +2,21 @@
     "limits": {
         "absolute": {
             "disk": {
-                "remaining": 28882,
-                "value": 100000
+                "limit": 100000,
+                "remaining": 28882
             },
             "node_count": {
-                "remaining": 50,
-                "value": 100
+                "limit": 100,
+                "remaining": 50
             },
             "ram": {
-                "remaining": 34567,
-                "value": 50000
+                "limit": 50000,
+                "remaining": 34567
             },
             "vcpus": {
-                "remaining": 25,
-                "value": 50
+                "limit": 50,
+                "remaining": 25
             }
-        }
+        },
     }
 }

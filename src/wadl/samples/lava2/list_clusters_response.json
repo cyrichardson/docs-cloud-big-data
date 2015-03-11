@@ -18,5 +18,11 @@
                 }
             ],
         }
+    ],
+    "links": [
+        {
+            "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters&limit=1&marker=aaa-bbbb-cccc",
+            "rel": "next"
+        }
     ]
 }
