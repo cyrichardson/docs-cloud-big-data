@@ -93,6 +93,23 @@
               <webhelpDefaultTopic>CBD_Overview.html</webhelpDefaultTopic>
               <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
             </configuration>
+          </execution>
+          
+          <execution>
+            <id>cbd-getting-started-2</id>
+            <goals>
+              <goal>generate-webhelp</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <enableDisqus>1</enableDisqus> 
+              <includes>
+                cbd-getting-started-2.xml
+              </includes>
+              <canonicalUrlBase>http://docs.rackspace.com/cbd/api/v2.0/cbd-getting-started-2/content</canonicalUrlBase>
+              <webhelpDefaultTopic>CBD_Overview.html</webhelpDefaultTopic>
+              <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
+            </configuration>
           </execution> 
         
           <execution>

@@ -59,6 +59,7 @@ format="SVG" scale="60"/>
     </author>
     <copyright>
       <year>2014</year>
+      <year>2015</year>
       <holder>Rackspace US, Inc.</holder>
     </copyright>
     <releaseinfo>API v2.0</releaseinfo>
@@ -104,7 +105,7 @@ format="SVG" scale="60"/>
       <revision>
         <date>2014-06-10</date>
         <revdescription>
-          <para>Initial Release of the LAVA 2 API.</para>
+          <para>Initial release of the LAVA 2 API.</para>
         </revdescription>
       </revision>
     </revhistory>
@@ -269,8 +270,38 @@ format="SVG" scale="60"/>
   <chapter xml:id="Concepts-d1e563">
     <title>Concepts</title>
     <?dbhtml stop-chunking?>
-    <para>To use the Cloud Big Data API effectively, you should understand the terminology defined
-      in the <xref linkend="glossary_1"/> at the end of the book.</para>
+    <para>To use the Cloud Big Data API effectively, you should understand the following terminology:<itemizedlist>
+        <listitem>
+          <para><glossterm>Distros</glossterm>: Distros provide a list of supported distributions
+            and their corresponding versions, as well as a list of supported services and components
+            per distribution.</para>
+        </listitem>
+        <listitem>
+          <para><glossterm>Stacks</glossterm>: Stacks are high-level building blocks of software
+            that compose a Big Data architecture. Stacks are comprised of services, which in turn
+            are comprised of components. A stack is specific to a distribution due to the
+            differences in services that are supported across distributions.</para>
+        </listitem>
+        <listitem>
+          <para><glossterm>Clusters</glossterm>: Clusters are a group of servers (nodes). In Cloud
+            Big Data, the servers are virtual.</para>
+        </listitem>
+        <listitem>
+          <para><glossterm>Nodes</glossterm>: In a network, a node (or server) is a connection point
+            - either a redistribution point or an end point for data transmissions. In general, a
+            node has programmed or engineered capability to recognize and process or forward
+            transmissions to other nodes. A node is a member of a cluster.</para>
+        </listitem>
+        <listitem>
+          <para><glossterm>Flavor</glossterm>: A flavor is an available configuration for Cloud Big
+            Data. Each flavor has a unique combination of memory capacity and priority for CPU time.
+          </para>
+        </listitem>
+        <listitem>
+          <para><glossterm>Resource limits</glossterm>: Resource limits include items such as
+            remaining node count, available RAM, and remaining disk space for the user.</para>
+        </listitem>
+      </itemizedlist></para>
   </chapter>
   <chapter xml:id="General_API_Information-d1e633" xmlns:svg="http://www.w3.org/2000/svg"
     xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">
@@ -304,7 +335,7 @@ format="SVG" scale="60"/>
       <para>Your user name and password are the ones that you use to log in to the Rackspace Cloud
         Control Panel. After you are logged in, you can use the Rackspace Cloud Control Panel to
         obtain your API key. </para>
-      <para> US and UK based accounts use the Cloud Control Panel at <link
+      <para>US and UK based accounts use the Cloud Control Panel at <link
           xlink:href="https://mycloud.rackspacecloud.com/">https://mycloud.rackspace.com/</link>. </para>
       <note>
         <para> If you authenticate with username and password credentials, you can use multi-factor
@@ -317,7 +348,7 @@ format="SVG" scale="60"/>
       <para>
         <emphasis role="bold">2. CHOOSE YOUR AUTHENTICATION ENDPOINT</emphasis>
       </para>
-      <para>Use the following endpoint for authentication using the Cloud Identity service: <itemizedlist>
+      <para>Use the following global endpoint for authentication using the Cloud Identity service: <itemizedlist>
           <listitem>
             <para><link xlink:href="https://identity.api.rackspacecloud.com/v2.0/tokens"
                 >https://identity.api.rackspacecloud.com/v2.0/tokens</link></para>
@@ -604,7 +635,7 @@ format="SVG" scale="60"/>
       </para>
       <para>Replace the <code><replaceable>yourAccountID</replaceable></code> placeholder with your
         actual account number, which is returned as part of the authentication service response,
-        after the final '/' in the <code>publicURL</code> field. </para>
+        after the final <emphasis role="bold">/</emphasis> in the <code>publicURL</code> field. </para>
       <?rax-fo keep-with-next?>
     </section>
     <section xml:id="Request_Response_Types-d1e903">
@@ -1129,8 +1160,17 @@ format="SVG" scale="60"/>
     <glossentry>
       <glossterm>Cluster</glossterm>
       <glossdef>
-        <para> A cluster is a group of servers (nodes). In Cloud Big Data, the servers are
-          virtual.</para>
+        <para>A cluster consists of a group of servers running a distributed system coordinating and
+          functioning as one. A cluster consists of a single stack. Examples are a Hadoop cluster or
+          a HBase cluster. </para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>Component</glossterm>
+      <glossdef>
+        <para>A service can have one or more components. A component can be a specific configuration
+          for a service or additional modes of operation. Examples are HDFS Secondary Namenode or
+          HDFS HA.</para>
       </glossdef>
     </glossentry>
     <glossentry>
@@ -1165,10 +1205,11 @@ format="SVG" scale="60"/>
     <glossentry xml:id="node-d1e018">
       <glossterm>Node</glossterm>
       <glossdef>
-        <para>In a network, a node (or server) is a connection point, either a redistribution point
-          or an end point for data transmissions. In general, a node has programmed or engineered
-          capability to recognize and process or forward transmissions to other nodes. A node is a
-          member of a cluster.</para>
+        <para>A node is a single instance within a cluster running one or more services. In a
+          network, a node (or server) is a connection point, either a redistribution point or an end
+          point for data transmissions. In general, a node has programmed or engineered capability
+          to recognize and process or forward transmissions to other nodes. A node is a member of a
+          cluster.</para>
       </glossdef>
     </glossentry>
     <glossentry>
@@ -1183,6 +1224,13 @@ format="SVG" scale="60"/>
       <glossdef>
         <para>An SCP service that runs on your Hadoop cluster and distributes your files across the
           cluster. </para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>Service</glossterm>
+      <glossdef>
+        <para>A service is any individual software component that can function on its own or depend
+          on other services to provide added functionality. Examples are HDFS, Pig, and Hive.</para>
       </glossdef>
     </glossentry>
     <glossentry xml:id="ServiceCatalog-d1e018">
