@@ -44,8 +44,8 @@
         xmlns:html="http://www.w3.org/1999/xhtml">
         <date>2015-03-04</date>
         <revdescription>
-          <para>Removed the London endpoint for authentication, since Rackspace now has one global
-            endpoint for authentication using the Rackspace Cloud Identity service.</para>
+          <para>Removed the London endpoint for the Rackspace Cloud Identity service. Rackspace now
+            has one global endpoint for authentication.</para>
         </revdescription>
       </revision>
       <revision>
@@ -221,9 +221,8 @@
     <itemizedlist>
       <title>Documentation</title>
       <listitem>
-        <para>Removed the London endpoint for authentication, since Rackspace now has one global
-          endpoint for authentication using the Rackspace Cloud Identity service. See the following
-          documents: <itemizedlist>
+        <para>Removed the London endpoint for the Rackspace Cloud Identity service. Rackspace now
+          has one global endpoint for authentication. See the following documents: <itemizedlist>
             <listitem>
               <para><olink targetdoc="cbd-getting-started" targetptr="Generating_Auth_Token"
                   >“Generating an authentication token”</olink></para>

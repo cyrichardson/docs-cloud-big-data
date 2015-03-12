@@ -481,13 +481,11 @@
                     xlink:href="https://mycloud.rackspacecloud.com/"
                     >https://mycloud.rackspace.com/</link>. </para>
             <para>
-                <emphasis role="bold">2. CHOOSE YOUR AUTHENTICATION
-                    ENDPOINT</emphasis>
+                <emphasis role="bold">2. USE THE GLOBAL AUTHENTICATION ENDPOINT</emphasis>
             </para>
             <para>Use the following endpoint for authentication using the Cloud Identity service: <itemizedlist>
                     <listitem>
-                        <para><link xlink:href="https://identity.api.rackspacecloud.com/v2.0/tokens"
-                                >https://identity.api.rackspacecloud.com/v2.0/tokens</link></para>
+                        <para><code>https://identity.api.rackspacecloud.com/v2.0/</code></para>
                     </listitem>
                 </itemizedlist>
             </para>

@@ -86,7 +86,7 @@
             <raxm:priority>10</raxm:priority>
         </raxm:metadata>
     </info>
-    <chapter xml:id="DB_Doc_Change_History">
+    <chapter xml:id="CBD_Doc_Change_History">
         <title>Document change history</title>            
         <para>This version of the guide replaces and obsoletes all
             earlier versions. The most recent changes are described in
@@ -165,20 +165,20 @@
                 </listitem>
             </itemizedlist>
         </para>
-        <para>This guide provides the following ways to use the Cloud
-            Big Data API:</para>
+        <para>This guide provides examples for the following ways to use the Cloud Big Data
+            API:</para>
         <itemizedlist>
             <listitem>
-                <para>Using the API directly (<xref
-                        linkend="Using_the_API_Directly"/>)</para>
+                <para>Using the API directly with cURL</para>
             </listitem>
             <listitem>
-                <para>Using a Python Lava command-line client  (<xref
-                        linkend="Using_Python_lavaclient"/>)</para>
+                <para>Using a Python Lava command-line client </para>
             </listitem>
         </itemizedlist>
-        <para>Follow the steps described in this guide to start using
-            the Rackspace &PRODNAME; API.</para>
+        <para>Examples for both ways to make request to Cloud Big Data are provided for
+            authentication (<xref linkend="CBD_Generating_Auth_Token"/> and <xref
+                linkend="CBD_authClient"/>and for creating and managing clusters (<xref
+                linkend="CBD_createManageClusters"/>. </para>
         <section xml:id="CBD_concepts">
             <title>Cloud Big Data concepts</title>
             <para xmlns:wadl="http://wadl.dev.java.net/2009/02">To use the Cloud Big Data API
@@ -218,8 +218,8 @@
                     </listitem>
                 </itemizedlist></para>
             <para xmlns:wadl="http://wadl.dev.java.net/2009/02">For the definitions of additional
-                terminology,  see the <xref linkend="glossary_1"/> at the end of the
-                document.</para>
+                terminology related to Cloud Big Data, see the <xref linkend="glossary_1"/> at the
+                end of the document.</para>
         </section>
         <section xml:id="use_cases">
             <title>Use cases</title>
@@ -369,23 +369,19 @@
             of the request URL. For example:
                     <code>https://dfw.bigdata.api.rackspacecloud.com/v2/<replaceable>yourAccountID</replaceable>/</code>.</para>
     </chapter>
-    <chapter xml:id="Using_the_API_Directly">
-        <title>Using the API directly</title>
-        <para>This chapter describes how to use Cloud Big Data by
-            using the API directly.</para>
+    
       
-    <section xml:id="DB_Sending_API_Requests">
-        <title>Sending requests to the API</title>
-        <para>You have several options for sending requests through an
-            API: </para>
+    <chapter xml:id="CBD_sendingAPI_Requests">
+        <title>Sending requests to Cloud Big Data</title>
+        <para>You have several options for sending requests to Cloud Big Data: </para>
         <itemizedlist>
             <listitem>
-                <para>Developers and testers might prefer to use cURL,
-                        the command-line tool from <link
-                            xlink:href="http://curl.haxx.se/"
-                            >http://curl.haxx.se/</link>. With cURL,
-                        you can send HTTP requests and receive
-                        responses back from the command line. </para>
+                <para>You can use cURL, the command-line tool from <link
+                        xlink:href="http://curl.haxx.se/">http://curl.haxx.se/</link>. With cURL,
+                    you can send HTTP requests and receive responses back from the command line. </para>
+            </listitem>
+            <listitem>
+                <para>You can use the Python Lava2 CLI.</para>
             </listitem>
             <listitem>
                 <para>If you like to use a more graphical interface,
@@ -403,26 +399,24 @@
                             >http://code.google.com/p/rest-client/</link>. </para>
             </listitem>
         </itemizedlist>
-        <section xml:id="DB_using-curl-cli">
-            <title>Sending API requests by using cURL</title>
-            <para>cURL is a command-line tool that is available in
-                    most UNIX system-based environments and Apple Mac
-                    OS X systems, and can be downloaded for Microsoft
-                    Windows to interact with REST interfaces. For more
-                    information about cURL, visit <link
-                        xlink:href="http://curl.haxx.se/"
-                        >http://curl.haxx.se/</link>. </para>
-            <para>cURL enables you to transmit and receive HTTP
-                    requests and responses from the command line or
-                    from within a shell script. As a result, you can
-                    work with the REST API directly without using one
-                    of the client APIs.</para>
-            <para>The following cURL command-line options are used in
-                    this guide to run the examples:</para>
-                <table rules="all">
+        <section xml:id="CBD_usingCurl">
+            <title>Using cURL</title>
+            <para>You can use cURL, the command-line tool from <link
+                    xlink:href="http://curl.haxx.se/">http://curl.haxx.se/</link>. With cURL, you
+                can send HTTP requests and receive responses back from the command line. </para>
+            <section xml:id="CBD_using-curl-cli">
+                <title>Sending API requests by using cURL</title>
+                <para>cURL is a command-line tool that is available in most UNIX system-based
+                    environments and Apple Mac OS X systems, and can be downloaded for Microsoft
+                    Windows to interact with REST interfaces. For more information about cURL, visit
+                        <link xlink:href="http://curl.haxx.se/">http://curl.haxx.se/</link>. </para>
+                <para>cURL enables you to transmit and receive HTTP requests and responses from the
+                    command line or from within a shell script. As a result, you can work with the
+                    REST API directly without using one of the client APIs.</para>
+                <para>The following cURL command-line options are used in this guide to run the
+                    examples:</para>
+                <table xml:id="curl_options" rules="all" width="75%">
                     <caption>cURL command-line options</caption>
-                    <col width="25%"/>
-                    <col width="75%"/>
                     <thead>
                         <tr>
                             <th>Option</th>
@@ -431,152 +425,254 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><option>-d</option></td>
-                            <td>Sends the specified data in a POST
-                                request to the HTTP server</td>
+                            <td>
+                                <option>-d</option>
+                            </td>
+                            <td>
+                                <para>Sends the specified data in a &POST; request to the HTTP
+                                    server. Use this option to send a JSON request body to the
+                                    server.</para>
+                            </td>
                         </tr>
                         <tr>
-                            <td><option>-i</option></td>
-                            <td>Includes the HTTP header in the
-                                output</td>
+                            <td>
+                                <option>-H</option>
+                            </td>
+                            <td>
+                                <para>Specifies an extra HTTP header in the request. You can specify
+                                    any number of extra headers. Precede each header with the
+                                        <option>-H</option> option. </para>
+                                <para>Common headers in Rackspace API requests are as follows:<itemizedlist>
+                                        <listitem>
+                                            <para><literal>Content-Type</literal>. Required for
+                                                operations with a request body. </para>
+                                            <para>Specifies the format of the request body. The
+                                                syntax for the <literal>Content-Type</literal>
+                                                header is as follows:</para>
+                                            <screen><computeroutput>Content-Type: application/<parameter>format</parameter></computeroutput></screen>
+                                            <para><parameter>format</parameter> is
+                                                  <literal>json</literal>.</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para><literal>X-Auth-Project-Id</literal>. Optional.
+                                                Specifies the project ID, which can be your account
+                                                number or another value.</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para><literal>Accept</literal>. Optional. </para>
+                                            <para>Specifies the format of the response body. The
+                                                syntax for the <literal>Accept</literal> header is
+                                                as follows:</para>
+                                            <screen><computeroutput>Accept: application/<parameter>format</parameter></computeroutput></screen>
+                                            <para><parameter>format</parameter> is
+                                                  <literal>json</literal>. The default is
+                                                  <code>json</code>.</para>
+                                        </listitem>
+                                        <listitem>
+                                            <para><literal>X-Auth-Token</literal>. Required.
+                                                Specifies the authentication token.</para>
+                                        </listitem>
+                                    </itemizedlist></para>
+                            </td>
                         </tr>
                         <tr>
-                            <td><option>-H HEADER</option></td>
-                            <td>Specifies an HTTP header in the
-                                request</td>
+                            <td>
+                                <option>-i</option>
+                            </td>
+                            <td>
+                                <para>Includes the HTTP header in the output. </para>
+                            </td>
                         </tr>
                         <tr>
-                            <td><option>-X</option></td>
-                            <td>Specifies the request operation to use
-                                when communicating with the HTTP
-                                server. The specified request is used
-                                instead of the default operation,
-                                which is GET. For example, <option>-X
-                                   PUT</option> specifies to use the
-                                PUT request operation.</td>
+                            <td>
+                                <option>-s</option>
+                            </td>
+                            <td>
+                                <para>Silent or quiet mode. Does not show progress or error
+                                    messages. Makes cURL mute. </para>
+                                <para><emphasis role="bold">Note: </emphasis>If your cURL command is
+                                    not generating any output, try replacing the <code>-s</code>
+                                    option with <code>-i</code>.</para>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <option>-T</option>
+                            </td>
+                            <td>
+                                <para>Transfers the specified local file to the remote URL.</para>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <option>-X</option>
+                            </td>
+                            <td>
+                                <para>Specifies the request method to use when communicating with
+                                    the HTTP server. The specified request is used instead of the
+                                    default method, which is &GET;. </para>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
-            <note>
-                <para>If you have the tools, you can run the cURL JSON
-                        request examples with the following options to
-                        format the output from cURL:
-                            <?sbr?><command>&lt;curl JSON request
-                            example> | python
-                        -mjson.tool</command>.</para>
-            </note>
-                <procedure>
-                    <title>To run the cURL request examples</title>
-                    <para>To run the cURL request examples shown in
-                        this guide on Linux or Mac systems, perform
-                        the following actions:</para>
-                    <step>
-                        <para>Copy each example from the HTML version
-                            of this guide and paste it into an ASCII
-                            text editor (for example, vi or TextEdit).
-                        </para>
-                    </step>
-                    <step>
-                        <para>Modify each example with your required
-                            account information and other information,
+                <note xml:id="json_tool">
+                    <title>About json.tool</title>
+                    <para>For commands that return a response, you can append the following code to
+                        the command to call json.tool to pretty-print output: </para>
+                    <programlisting language="bash" role="gutter: false">| python -m json.tool</programlisting>
+                    <para>To use json.tool, import the json module. For information about json.tool,
+                        see <link xlink:href="http://docs.python.org/2/library/json.html">json —
+                            JSON encoder and decoder</link>. </para>
+                    <para>If you do not want to pretty-print JSON output, omit this code. </para>
+                </note>
+            </section>
+            <section xml:id="Copying-and_Pasting-cURL-d1e003">
+                <title>Copying and pasting cURL request examples into a terminal window</title>
+                <para>To run the cURL request examples shown in this guide on Linux or Mac systems,
+                    perform the following actions:</para>
+                <orderedlist>
+                    <listitem>
+                        <para>Copy and paste each example from the HTML version of this guide into
+                            an ASCII text editor (for example, vi or TextEdit). You can click on the
+                            small document icon to the right of each request example to select
+                            it.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Modify each example with your required account information and so on,
                             as detailed in this guide.</para>
-                        <note>
-                            <para>The carriage returns in the cURL
-                                request examples that are part of the
-                                cURL syntax are escaped with a
-                                backslash (\) to avoid prematurely
-                                terminating the command. However, you
-                                should not escape carriage returns
-                                inside the XML or JSON message within
-                                the command.</para>
-                        </note>
-                        <para>Consider the following cURL authentication request example, which is
-                            described in detail in <xref linkend="Generating_Auth_Token"/>.</para>
-                        <example>
-                            <title>cURL authenticate request: XML</title>
-                            <?dbfo keep-together="always"?>
-                            <screen language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
-'&lt;?xml version="1.0" encoding="UTF-8"?>
- &lt;auth&gt;   
-    &lt;apiKeyCredentials     
-        xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v2.0"     
-        username="<emphasis role="bold">yourUserName</emphasis>"     
-        apiKey="<emphasis role="bold">yourApiKey</emphasis>"/&gt;   
- &lt;/auth&gt;<option>'</option> \
+                    </listitem>
+                    <listitem>
+                        <para>After you are finished modifying the text for the cURL request example
+                            with your information (for example, your username and your API key),
+                            paste the command into your terminal window. </para>
+                    </listitem>
+                    <listitem>
+                        <para>Press <guilabel>Enter</guilabel> to run the cURL command.</para>
+                    </listitem>
+                </orderedlist>
+                <note>
+                    <para>The carriage returns in the cURL request examples that are part of the
+                        cURL syntax are escaped with a backslash (\) to avoid prematurely
+                        terminating the command. However, you should not escape carriage returns
+                        inside the JSON message within the command.</para>
+                </note>
+                <para>Consider the following cURL authentication request: JSON example, which is
+                    described in detail in <xref linkend="CBD_Generating_Auth_Token"/>.</para>
+                <para>
+                    <example>
+                        <title>cURL authenticate request: JSON</title>
+                        <?dbfo keep-together="always"?>
+                        <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
+'{
+    "auth":
+    {
+       "RAX-KSKEY:apiKeyCredentials":
+       {
+          "username": "<emphasis role="bold">yourUserName</emphasis>",
+          "apiKey": "<emphasis role="bold">yourApiKey</emphasis>"}
+    }
+}' \
+<option>-H 'Content-Type: application/json'</option> \
 <uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri></screen>
-                        </example>
-                        <para>The lines that are part of the cURL
-                            command syntax have been escaped with a
-                            backslash (\) to indicate that the command
-                            continues on the next line:</para>
-                        <screen language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
+                    </example>
+                </para>
+                <para>Notice that the lines that are part of the cURL command syntax have been
+                    escaped with a backslash (\) to indicate that the command continues on the next
+                    line.</para>
+                <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
   
    
-(... lines within the XML portion of the message are not shown in this example)
-(... the example shows only lines that are part of cURL syntax)     
+(... lines within the JSON portion of the message are not shown in this example)
+(... the example only shows lines that are part of cURL syntax)     
      
 
    
- &lt;/auth&gt;<option>'</option> \
+<option>-H 'Content-Type: application/json'</option> \
 <uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri></screen>
-                        <para>However, the lines <emphasis
-                                role="italic">within</emphasis> the
-                            XML portion of the message are not escaped
-                            with a backslash, to avoid issues with XML
-                            processing. </para>
-                        <screen language="bash">'&lt;?xml version="1.0" encoding="UTF-8"?>
- &lt;auth&gt;   
-    &lt;apiKeyCredentials     
-        xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v2.0"     
-        username="<emphasis role="bold">yourUserName</emphasis>"     
-        apiKey="<emphasis role="bold">yourApiKey</emphasis>"/&gt;   
- &lt;/auth&gt;<option>'</option> \
+                <para>However, the lines within the JSON portion of the message are not escaped with
+                    a backslash to avoid issues with the JSON processing.</para>
+                <screen language="bash">'{
+    "auth":
+    {
+       "RAX-KSKEY:apiKeyCredentials":
+       {
+          "username": "<emphasis role="bold">yourUserName</emphasis>",
+          "apiKey": "<emphasis role="bold">yourApiKey</emphasis>"}
+    }
+}' \
 </screen>
-                        <para>The final line of the XML message is
-                            escaped, but the backslash lies outside
-                            the XML message and continues the cURL
-                            command to the next line. </para>
-                    </step>
-                    <step>
-                        <para>After you are finished modifying the
-                            text for the cURL request example with
-                            your information (for example, user name
-                            and API key), copy and paste the text into
-                            your terminal window. </para>
-                        <tip>
-                            <para>If you have trouble copying and
-                                pasting the examples as described, try
-                                typing the entire example on one long
-                                line, removing all the backslash
-                                line-continuation characters.</para>
-                        </tip>
-                    </step>
-                    <step>
-                        <para>Press <keycombo>
-                                <keycap>Enter</keycap>
-                            </keycombo> to run the cURL
-                            command.</para>
-                    </step>
-                </procedure>
+                <para>The final line of the JSON message is escaped because the backslash lies
+                    outside the JSON message and continues the cURL command to the next line.</para>
+                <tip>
+                    <para>If you have trouble copying and pasting the examples as described, try
+                        typing the entire example on one long line, removing all the backslash line
+                        continuation characters.</para>
+                </tip>
+            </section>
         </section>
-    </section>
-    <section xml:id="Generating_Auth_Token">
-        <title>Generating an authentication token</title>
-            <para>Whether you use cURL or a REST client to interact
-                with the Cloud Big Data API, you must generate an
-                authentication token. You provide this token in the
-                X-Auth-Token header in each Cloud Big Data API
-                request. <xref linkend="XML-Auth-Request-d1003"/> and
-                    <xref linkend="JSON-Auth-Request-d1003"/>
-                demonstrate how to use cURL to obtain the
-                authentication token as well as your account number.
-                You must provide both when making subsequent Cloud Big
-                Data API requests.</para>
+        <section xml:id="CBD_useClient">
+            <title>Setting up the Python Lava2 client</title>
+            <para>Another way you can send requests to Cloud Big Data is to use the Python Lava2
+                client. This section provides the prerequisits for use of the client and
+                installation instructions.</para>
+            <section xml:id="clientPrereqs">
+                <title>Prerequisites</title>
+                <para>Following are the requirements for using python-lavaclient:</para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Computer running Linux or Mac OS X</para>
+                    </listitem>
+                    <listitem>
+                        <para>Python 2.7.2 or later</para>
+                    </listitem>
+                    <listitem>
+                        <para>Rackspace Cloud account and access to Rackspace Cloud Big Data</para>
+                    </listitem>
+                </itemizedlist>
+            </section>
+            <section xml:id="CBD_clientInstall">
+                <title>Installing the client</title>
+                <para>Perform the following steps to install the client. </para>
+                <orderedlist>
+                    <listitem>
+                        <para>Download python-lavaclient to your computer from <link
+                                xlink:href="http://bit.ly/cbdclient"
+                            >http://bit.ly/cbdclient</link>.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Extract the archive by using the following command: </para>
+                        <programlisting>$ tar xvzf python-lava-0.8.6.tgz</programlisting>
+                        <para>A python-lavaclient folder is created. </para>
+                    </listitem>
+                    <listitem>
+                        <para>Open the folder and install the client by using the following
+                            commands:</para>
+                        <programlisting>$ cd python-lavaclient 
+$ sudo python setup.py install</programlisting>
+                    </listitem>
+                    <listitem>
+                        <para>Run the help command to ensure that the client has been installed
+                            correctly and note the usage information: </para>
+                        <programlisting>$ lava help</programlisting>
+                    </listitem>
+                </orderedlist>
+            </section>
+        </section>
+    </chapter>
+    
+    <chapter xml:id="CBD_Generating_Auth_Token">
+        <title>Generating an authentication token using cURL</title>
+            <para>Whether you use cURL or a REST client to interact with the Cloud Big Data API, you
+                must generate an authentication token. You provide this token in the X-Auth-Token
+                header in each Cloud Big Data API request. <xref linkend="JSON-Auth-Request-d1003"/>
+                demonstrates how to use cURL to obtain the authentication token as well as your
+                account number. You must provide both when making subsequent Cloud Big Data API
+                requests.</para>
         <para>Remember to replace the placeholders in the following authentication request examples
                 with your information:<itemizedlist spacing="compact">
                     <listitem>
-                        <para><emphasis role="bold">yourUserName</emphasis> &mdash;Your common
-                            Rackspace Cloud user name, as supplied during registration.</para>
+                        <para><emphasis role="bold">yourUserName</emphasis> &mdash;Your common Cloud
+                            Big Data user name, as supplied during registration.</para>
                     </listitem>
                     <listitem>
                         <para><emphasis role="bold">yourApiKey</emphasis> &mdash; Your API access
@@ -623,25 +719,10 @@
         <para>If you are unsure how your account was created, use the Rackspace contact information
                 at either site to ask for help. </para> 
 -->                
-        <para>Notice that you authenticate by using the URL
+        <para>You authenticate by using the URL
                     <code>https://identity.api.rackspacecloud.com/v2.0/tokens</code> for the Cloud
                 Identity services. Note that the <code>v2.0</code> component in the URL indicates
                 that you are using version 2.0 of the Cloud Identity API.</para>
-        <example xml:id="XML-Auth-Request-d1003">
-            <title>cURL authenticate request: XML</title>
-            <?dbfo keep-together="always"?>
-            <screen language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
-'&lt;?xml version="1.0" encoding="UTF-8"?>
-&lt;auth>
-   &lt;apiKeyCredentials
-      xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v2.0"
-         username="<emphasis role="bold">yourUserName</emphasis>"
-         apiKey="<emphasis role="bold">yourApiKey</emphasis>"/>
-&lt;/auth>' \
-<option>-H 'Content-Type: application/xml'</option> \
-<option>-H 'Accept: application/xml'</option> \
-<uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri></screen>
-        </example>
         <example xml:id="JSON-Auth-Request-d1003">
             <title>cURL authenticate request: JSON</title>
             <?dbfo keep-together="always"?>
@@ -658,13 +739,11 @@
 <option>-H 'Content-Type: application/json'</option> \
 <uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri></screen>
         </example>
-            <para>In the authentication response (examples follow),
-                the authentication <code>token id</code> is returned
-                with an <code>expires</code> attribute that specifies
-                when the token expires. Remember to supply your
-                authentication token wherever you see the placeholder
-                    <emphasis role="bold">yourAuthToken</emphasis> in
-                the examples in this guide.</para>
+            <para>In the authentication response (example follows), the authentication <code>token
+                    id</code> is returned with an <code>expires</code> attribute that specifies when
+                the token expires. Remember to supply your authentication token wherever you see the
+                placeholder <emphasis role="bold">yourAuthToken</emphasis> in the examples in this
+                guide.</para>
             <note>
                 <title>Notes</title>
                 <itemizedlist spacing="compact">
@@ -673,15 +752,6 @@
                             responses vary from the examples shown in
                             this document because they are specific to
                             your account.</para>
-                    </listitem>
-                    <listitem>
-                        <para>The information shown in the
-                            authentication response examples is for
-                            US-based accounts. If you authenticate
-                            against the UK-endpoint for the
-                            Authentication service, you see the
-                            service catalog information for UK-based
-                            accounts.</para>
                     </listitem>
                     <listitem>
                         <para> The <code>expires</code> attribute
@@ -717,17 +787,56 @@
             <para>After authentication, you can use cURL to perform <command>GET</command>,
                     <command>DELETE</command>, and <command>POST</command> requests for the
                 &PRODNAME; API.</para>
-        <example>
-            <title>Authenticate response: XML</title>
-            <programlisting language="xml"><xi:include href="../../src/resources/samples/auth-20-v2.xml" parse="text"/></programlisting>
-        </example>
 
         <example>
             <title>Authenticate response: JSON</title>
             <programlisting language="json"><xi:include href="../../src/resources/samples/auth-20-v2.json" parse="text"/></programlisting>
         </example>
-    </section>
+    </chapter>
     
+    <chapter xml:id="CBD_authClient"><title>Generating an authentication token using the client</title>
+        <para>To authenticate your session by using the client, follow these steps. You need your
+            Cloud user name and API key.</para>
+        <orderedlist>
+            <listitem>
+                <para>Run the <code>auth</code> command. When prompted, enter your user name and API
+                    key. </para>
+                <programlisting>$ lava auth
+Username: <emphasis role="bold">yourUserName</emphasis>
+API Key: <emphasis role="bold">yourApiKey</emphasis></programlisting>
+                <para>If the command runs successfully, your authentication token and access
+                    endpoint are displayed, as shown in the following example.</para>
+                <example>
+                    <title>Authentication response using CLI utility</title>
+                    <programlisting>AUTH_TOKEN=692c2a14-39ad-4ee0-991d-06cd7331f3ca
+LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v2/1100111</programlisting>
+                </example>
+            </listitem>
+            <listitem>
+                <para>Export the AUTH_TOKEN and LAVA_API_URL environment variables as shown in the
+                    following example.</para>
+                <example>
+                    <title>Export environment variables</title>
+                    <programlisting>$ export AUTH_TOKEN=692c2a14-39ad-4ee0-991d-06cd7331f3ca
+$ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</programlisting>
+                </example>
+                <note>
+                    <para>The <code>export</code> commands are valid only for the current session.
+                        You need to rerun the <code>export</code> commands if, for example, you
+                        create a new console window.</para>
+                </note>
+            </listitem>
+            <listitem>
+                <para>To confirm that the client is running, run the list command. The first time
+                    that you run this command, it does not return any output. </para>
+                <programlisting>$ lava list</programlisting>
+            </listitem>
+        </orderedlist></chapter>
+    <chapter xml:id="CBD_createManageClusters"><title>Creating and managing Hadoop clusters</title><para>Now you are ready to create and manage Hadoop clusters by using the Rackspace Cloud Big Data
+            API. This chapter provides examples, using cURL and the client, for some of the common
+            operations that you might make to Cloud Big Data.  For information about all of the
+            operations available in Cloud Big Data, see the <citetitle>Cloud Big Data Developer
+                Guide, v2</citetitle>. </para>
     <section xml:id="View_resource_limits">
             <title>Viewing resource limits</title>
             <para>The use of the Rackspace Cloud Big Data API is subject to resource limits. You can
@@ -752,6 +861,10 @@
                 </tr>
             </tbody>
         </informaltable>
+            <section xml:id="cURLResourceLimits">
+                <title>cURL example</title>
+                <para>cURL example</para>
+            
         <para>This operation does not accept a request body.</para>
         <para>The following examples show the cURL request and corresponding response for viewing
                 resource limits.</para>
@@ -766,58 +879,81 @@
             <title>View resource limits response: JSON</title>
                 <programlisting language="json"><xi:include href="../../src/wadl/samples/lava2/get_limits_response.json" parse="text"/>
 </programlisting> 
-        </example>
-        </section>
-    <section xml:id="Create_Manage_Clusters-d1e001">
-        <title>Creating and managing Hadoop clusters</title>
-        <para>Now you are ready to create and manage Hadoop clusters
-                by using the Rackspace Cloud Big Data API. </para>
-            <section xml:id="Listing-Flavors-d1003">
-                <title>Listing flavors</title>
-                <para>A flavor is an available hardware configuration
-                    for a cluster. Each flavor has a unique
-                    combination of memory capacity and priority for
-                    CPU time. The larger the flavor size you use, the
-                    larger the amount of RAM and the higher the
-                    priority for CPU time your cluster
-                    receives.</para>
-                <para>You use the operation to list flavors to find the available configurations for
-                    your cluster, and then you decide which size you need for your cluster. You
-                    perform this operation when you create a cluster. </para>
-                <informaltable rules="all">
-                    <thead>
-                        <tr align="center">
-                            <td colspan="1">Verb</td>
-                            <td colspan="2">URI</td>
-                            <td colspan="3">Description</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="1">&GET;</td>
-                            <td colspan="2">/flavors</td>
-                            <td colspan="3">Lists all available
-                                flavors.</td>
-                        </tr>
-                    </tbody>
-                </informaltable>
-                <para>This operation does not require a request
-                    body.</para>
-                <para>The following examples show the cURL request and the corresponding response
-                    for listing flavors. </para>
+        </example></section>
+        <section xml:id="clientResourceLimits">
+                <title>Client example</title>
+                <para>Using the client, view the limits associated with your account by using the
+                        <code>quotas</code> command. </para>
                 <example>
-                    <title>cURL list flavors request: JSON</title>
-                    <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/flavors -d \
+                    <title>View resource limits by using the quotas command</title>
+                    <programlisting>$ lava quotas
++-------------+-----------------+-------------+-----------------+-----------+---------------+------------+----------------+
+| Nodes Limit | Nodes Remaining | VCPUs Limit | VCPUs Remaining | RAM Limit | Ram Remaining | Disk Limit | Disk Remaining |
++-------------+-----------------+-------------+-----------------+-----------+---------------+------------+----------------+
+| 5 | 5 | 5 | 5 | 25600 | 25600 | 2048 | 2048 |
++-------------+-----------------+-------------+-----------------+-----------+---------------+------------+----------------+</programlisting>
+                </example>
+            </section>
+        </section>
+    <section xml:id="CBD_listFlavors">
+            <title>Listing flavors</title>
+            <para>A flavor is an available hardware configuration for a cluster. Each flavor has a
+                unique combination of memory capacity and priority for CPU time. The larger the
+                flavor size you use, the larger the amount of RAM and the higher the priority for
+                CPU time your cluster receives.</para>
+            <para>You use the operation to list flavors to find the available configurations for
+                your cluster, and then you decide which size you need for your cluster. You perform
+                this operation when you create a cluster. </para>
+            <informaltable rules="all">
+                <thead>
+                    <tr align="center">
+                        <td colspan="1">Verb</td>
+                        <td colspan="2">URI</td>
+                        <td colspan="3">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">&GET;</td>
+                        <td colspan="2">/flavors</td>
+                        <td colspan="3">Lists all available flavors.</td>
+                    </tr>
+                </tbody>
+            </informaltable>
+            <section xml:id="curl_listFlavor">
+                <title>cURL example</title>
+            
+            <para>This operation does not require a request body.</para>
+            <para>The following examples show the cURL request and the corresponding response for
+                listing flavors. </para>
+            <example>
+                <title>cURL list flavors request: JSON</title>
+                <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/flavors -d \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json"</programlisting>
-                </example>
+            </example>
+            <example>
+                <title>List flavors response: JSON</title>
+                <programlisting language="json"><xi:include href="../../src/wadl/samples/lava2/list_flavors_response.json" parse="text"/></programlisting>
+            </example></section>
+        <section xml:id="client_listFlavor">
+                <title>Client example</title>
+                <para>You can enumerate the flavors and associated resources by using the
+                        <code>flavor-list</code> command, as shown in the following example.</para>
                 <example>
-                    <title>List flavors response: JSON</title>
-                    <programlisting language="json"><xi:include href="../../src/wadl/samples/lava2/list_flavors_response.json" parse="text"/></programlisting>                   
+                    <title>List flavors and associated resources by using the flavor-list command </title>
+                    <programlisting>$ lava flavor-list
++------------+-------------------------+-------+------+------+
+| Id | Name | Mem | Disk | CPUs |
++------------+-------------------------+-------+------+------+
+| hadoop1-60 | XLarge Hadoop Instance | 61440 | 10000 | 16 |
+| hadoop1-7  | Small Hadoop Instance  | 8192  | 1250  | 2  |
++------------+-------------------------+-------+------+------+</programlisting>
                 </example>
             </section>
-            <section xml:id="List-Cluster-Types-d1e002">
+    </section>
+            <section xml:id="CBD_listDistros">
                 <title>Listing available distros</title>
                 <para>Distros provide a list of supported distributions and their corresponding
                     versions, as well as a list of supported services and components per
@@ -839,6 +975,9 @@
                         </tr>
                     </tbody>
                 </informaltable>
+            <section xml:id="curl_listDistros">
+                <title>cURL example</title>
+            
                 <para>This operation does not accept a request body.</para>
                 <para>The following examples show the cURL request and the corresponding response
                     for listing cluster types. </para>
@@ -851,54 +990,66 @@
                 </example>
                 <example>
                     <title>List available distros response: JSON</title>
-                    <programlisting language="json"><xi:include href="../../src/wadl/samples/lava2/list_distros_response.json" parse="text"/></programlisting>                    
+                    <programlisting language="json"><xi:include href="../../src/wadl/samples/lava2/list_distros_response.json" parse="text"/></programlisting>
                 </example>
             </section>
-        <section xml:id="createCluster">
-            <title>Listing available stacks </title><para xmlns:wadl="http://wadl.dev.java.net/2009/02">Stacks are high-level building blocks of
-                    software that compose a Big Data architecture. Stacks are comprised of services,
-                    which in turn are comprised of components. A stack is specific to a distribution
-                    due to the differences in services that are supported across
+            <section xml:id="client_listDistros">
+                <title>Client example</title> 
+                <para>&lt;&lt;&lt;Insert any info and example for client list distros
+                    here.>>></para>
+            </section>
+            </section>            
+            <section xml:id="CDB_listStacks">
+                <title>Listing available stacks </title>
+                <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Stacks are high-level building
+                    blocks of software that compose a Big Data architecture. Stacks are comprised of
+                    services, which in turn are comprised of components. A stack is specific to a
+                    distribution due to the differences in services that are supported across
                     distributions.</para>
                 <para xmlns:wadl="http://wadl.dev.java.net/2009/02">You can create a stack or use
                     one of the preconfigured stacks. </para>
                 <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The operation to create a
                     cluster creates a new Hadoop cluster. After you submit the operation, it takes a
                     few minutes for the service to build and configure your cluster.</para>
-            <informaltable rules="all"
-                xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <thead>
-                    <tr align="center">
-                        <td colspan="1">Verb</td>
-                        <td colspan="2">URI</td>
-                        <td colspan="3">Description</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="1">&GET;</td>
-                        <td colspan="2">/stacks</td>
-                        <td colspan="3">Lists available stacks.</td>
-                    </tr>
-                </tbody>
-            </informaltable>
-            <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The following examples show the cURL
-                    request and corresponding response for listing all stacks. This operation does
-                    not accept a request body.</para>
-            <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <title>cURL list all stacks request: JSON</title>
-                <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/stacks -d \         
+                <informaltable rules="all" xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/stacks</td>
+                            <td colspan="3">Lists available stacks.</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+            <section xml:id="curl_listStacks">
+                <title>cURL example</title>           
+                <para xmlns:wadl="http://wadl.dev.java.net/2009/02">The following examples show the
+                    cURL request and corresponding response for listing all stacks. This operation
+                    does not accept a request body.</para>
+                <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                    <title>cURL list all stacks request: JSON</title>
+                    <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/stacks -d \         
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json"                 </programlisting>
-              
-            </example>
-            <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <title>List all stacks response: JSON</title>
-                <programlisting language="json"><xi:include href="../../src/wadl/samples/lava2/list_stacks_response.json" parse="text"/></programlisting>                
-            </example>   
-        </section>
-            <section xml:id="List-Clusters-d1e004">
+                </example>
+                <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                    <title>List all stacks response: JSON</title>
+                    <programlisting language="json"><xi:include href="../../src/wadl/samples/lava2/list_stacks_response.json" parse="text"/></programlisting>
+                </example>
+            </section>
+                <section xml:id="client_listStacks"><title>Client example</title>
+                    <para>&lt;&lt;&lt;Insert any info and example for client list stacks
+                    here.>>></para> 
+                </section> 
+            </section>
+            <section xml:id="CDB_listClusters-d1e004">
                 <title>Listing clusters</title>
                 <para>You use the operation to list clusters to find the available clusters for your
                     account.</para>
@@ -914,13 +1065,13 @@
                         <tr>
                             <td colspan="1">&GET;</td>
                             <td colspan="2">/clusters</td>
-                            <td colspan="3">Lists all clusters for
-                                your account.</td>
+                            <td colspan="3">Lists all clusters for your account.</td>
                         </tr>
                     </tbody>
                 </informaltable>
-                <para>This operation does not require a request
-                    body.</para>
+                <section xml:id="curl_listClusters">
+                    <title>cURL example</title>
+                <para>This operation does not require a request body.</para>
                 <para>The following examples show the cURL request and the corresponding response
                     for listing clusters. </para>
                 <example>
@@ -934,394 +1085,59 @@
                     <title>List clusters response: JSON</title>
                     <programlisting language="json"><xi:include href="../../src/wadl/samples/lava2/list_clusters_response.json" parse="text"/></programlisting>
                 </example>
+                </section>
+                <section xml:id="client_listClusters"><title>Client example</title>
+                    <para>&lt;&lt;&lt;Insert any info and example for client list
+                    clusters.>>></para> 
+                </section>
             </section>
-        <section xml:id="viewDetails">
-            <title>Viewing details</title>
-            <para>The operation to get node details lists all server nodes for the specified
+            <section xml:id="CDB_viewDetails">
+                <title>Viewing details</title>
+                <para>The operation to get node details lists all server nodes for the specified
                     cluster.</para>
-            <informaltable rules="all">
-                <thead>
-                    <tr align="center">
-                        <td colspan="1">Verb</td>
-                        <td colspan="2">URI</td>
-                        <td colspan="3">Description</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="1">&GET;</td>
-                        <td colspan="2">/clusters/{id}/nodes</td>
-                        <td colspan="3">Lists all nodes for a
-                                cluster.</td>
-                    </tr>
-                </tbody>
-            </informaltable>
-            <para>In the following example, the cluster has a name
-                    node, a gateway node, and two data nodes. Each
-                    node has a private IP address, which is used for
-                    backend (Hadoop) data transfer, and a public IP
-                    address, which enables you to access it over the
-                    public Internet. Use the gateway node to do your
-                    work, including using tools such as Apache Pig and
-                    Apache Hive. In the example, you can remotely SSH
-                    into the gateway node over the IP address by using
-                    the user name and password that you added to your
-                    profile during setup.</para>
-            <para>This operation does not have a request body.</para>
-            <para>The following examples show the cURL request and
-                    corresponding response for listing all nodes for a
-                    cluster.</para>
-            <example>
-                <title>cURL list cluster nodes request: JSON</title>
-                <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes -d \
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2">/clusters/{id}/nodes</td>
+                            <td colspan="3">Lists all nodes for a cluster.</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <section xml:id="curl_viewDetails">
+                    <title>cURL example</title>
+                <para>In the following example, the cluster has a name node, a gateway node, and two
+                    data nodes. Each node has a private IP address, which is used for backend
+                    (Hadoop) data transfer, and a public IP address, which enables you to access it
+                    over the public Internet. Use the gateway node to do your work, including using
+                    tools such as Apache Pig and Apache Hive. In the example, you can remotely SSH
+                    into the gateway node over the IP address by using the user name and password
+                    that you added to your profile during setup.</para>
+                <para>This operation does not have a request body.</para>
+                <para>The following examples show the cURL request and corresponding response for
+                    listing all nodes for a cluster.</para>
+                <example>
+                    <title>cURL list cluster nodes request: JSON</title>
+                    <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes -d \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-Type: application/json"</programlisting>
-            </example>
-            <example>
-                <title>List cluster nodes response: JSON</title>
-                <programlisting language="json"><xi:include href="../../src/wadl/samples/lava2/list_cluster_nodes_response.json" parse="text"/></programlisting> 
-            </example> <para/>
-        </section>
-        <section xml:id="resizeClusters">
-            <title>Resizing clusters</title>
-            <para>You can increase or decrease the size of an existing cluster by using the
-                        <code>resize</code> action.</para>
-            <informaltable rules="all">
-                <thead>
-                    <tr align="center">
-                        <td colspan="1">Verb</td>
-                        <td colspan="2">URI</td>
-                        <td colspan="3">Description</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="1">&POST;</td>
-                        <td colspan="2">/clusters/{clusterId}/action</td>
-                        <td colspan="3">Resizes a cluster.</td>
-                    </tr>
-                </tbody>
-            </informaltable>
-            <para>The following example resizes the previously created cluster, named
-                        <code>slice</code>, to include 10 data nodes. When you use the
-                        <code>resize</code> action, you specify the total number of data nodes that
-                    you want the cluster to have, not just the number of nodes to add or remove. In
-                    the example, 10 is the total number of nodes that the cluster will have after
-                    the command is run. After you initiate the <code>resize</code> action, you can
-                    use the operation to list the cluster nodes to confirm that your cluster has
-                    been resized.</para>
-            <para>The following examples show the cURL request and
-                    corresponding response to resize a cluster.</para>
-            <example>
-                <title>cURL resize cluster request: JSON</title>
-                <programlisting language="bash">curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis>/action -d \
-'{"resize":{ "nodeCount": 10 }} ' \
--H "Accept: application/json" \
--H "X-Auth-Token:<emphasis role="bold">yourAuthToken</emphasis>" \
--H "Content-Type: application/json"  
-</programlisting>
-            </example>
-            <example>
-                <title>Resize cluster response: JSON</title>
-                <programlisting language="json"><xi:include href="../../src/wadl/samples/dg_cbd_resizeCluster_response.json" parse="text"/></programlisting>                
-            </example>
-        </section>
-        <section xml:id="deleteCluster">
-            <title>Deleting clusters</title>
-            <para>Use the operation to delete clusters to remove unused Hadoop clusters. This
-                    operation deletes any servers associated with the cluster and any data stored in
-                    the cluster.</para>
-            <para>You cannot delete clusters that are in the process
-                    of being created or resized.</para>
-            <informaltable rules="all">
-                <thead>
-                    <tr align="center">
-                        <td colspan="1">Verb</td>
-                        <td colspan="2">URI</td>
-                        <td colspan="3">Description</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="1">&DELETE;</td>
-                        <td colspan="2">/clusters/{id}</td>
-                        <td colspan="3">Deletes a cluster.</td>
-                    </tr>
-                </tbody>
-            </informaltable>
-            <para>The following examples show the cURL request and
-                    corresponding response to delete a cluster.</para>
-            <example>
-                <title>cURL delete cluster request: JSON</title>
-                <programlisting language="bash">curl -i -X DELETE https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis> -d \
--H "Accept: application/json" \
--H "X-Auth-Token:<emphasis role="bold">yourAuthToken</emphasis>" \
--H "Content-Type: application/json"</programlisting>
-            </example>
-            
-            <example>
-                <title>Delete cluster response: JSON</title>
-                <programlisting language="json"><xi:include href="../../src/wadl/samples/dg_cbd_deleteCluster_response-json-http.txt" parse="text"/><xi:include href="../../src/wadl/samples/dg_cbd_deleteCluster_response.json" parse="text"/></programlisting>
-            </example>
-        </section>
-    </section>
-
-    </chapter>
-    <chapter xml:id="Using_Python_lavaclient">
-        <title>Using the Python Lava client</title>
-        <para>This chapter explains how to start using the Python Lava
-            client (python-lavaclient), which is a convenient Python
-            binding and command-line client that uses the RESTful
-            API.</para>
-        <section xml:id="setting_Up">
-            <title>Setting up</title>
-            <para>This section describes prerequisites, installation,
-                and setup for the python-lavaclient.</para>
-            <section xml:id="Prerequisites">
-                <title>Prerequisites</title>
-                <para>Following are the requirements for using
-                    python-lavaclient:</para>
-                <itemizedlist>
-                    <listitem>
-                        <para>Computer running Linux or Mac OS
-                            X</para>
-                    </listitem>
-                    <listitem>
-                        <para>Python 2.7.2 or later</para>
-                    </listitem>
-                    <listitem>
-                        <para>Rackspace Cloud account and access to
-                            Rackspace Cloud Big Data</para>
-                    </listitem>
-                </itemizedlist>
-            </section>
-            <section xml:id="installing_Client">
-                <title>Installing the client</title>
-                <para>Perform the following steps to install the
-                    client. </para>
-                <orderedlist>
-                    <listitem>
-                        <para>Download python-lavaclient to your
-                            computer from <link
-                                xlink:href="http://bit.ly/cbdclient"
-                                >http://bit.ly/cbdclient</link>.</para>
-                    </listitem>
-                    <listitem>
-                        <para>Extract the archive by using the
-                            following command: </para>
-                        <programlisting>$ tar xvzf python-lava-0.8.6.tgz</programlisting>
-                        <para>A python-lavaclient folder is created.
-                        </para>
-                    </listitem>
-                    <listitem>
-                        <para>Open the folder and install the client
-                            by using the following commands:</para>
-                        <programlisting>$ cd python-lavaclient 
-$ sudo python setup.py install</programlisting>
-                    </listitem>
-                    <listitem>
-                        <para>Run the help command to ensure that the
-                            client has been installed correctly and
-                            note the usage information: </para>
-                        <programlisting>$ lava help</programlisting>
-                    </listitem>
-                </orderedlist>
-            </section>
-            <section xml:id="authenticate_Against_API">
-                <title>Authenticating your session</title>
-                <para>Before you can start using Rackspace Cloud Big
-                    Data, you need to authenticate your session. To
-                    complete this step, you need your Cloud user name
-                    and API key.</para>
-                <orderedlist>
-                    <listitem>
-                        <para>Run the <code>auth</code> command. When
-                            prompted, enter your user name and API
-                            key. </para>
-                        <programlisting>$ lava auth
-Username: &lt;enter your Cloud username>
-API Key: &lt;enter your API Key></programlisting>
-                        <para>If the command runs successfully, your
-                            authentication token and access endpoint
-                            are displayed, as shown in the following
-                            example.</para>
-                        <example>
-                            <title>Authentication response using CLI utility</title>
-                            <programlisting>AUTH_TOKEN=692c2a14-39ad-4ee0-991d-06cd7331f3ca
-LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</programlisting>
-                        </example>
-                    </listitem>
-                    <listitem>
-                        <para>Export the AUTH_TOKEN and LAVA_API_URL
-                            environment variables as shown in the
-                            following example.</para>
-                        <example>
-                            <title>Export environment variables</title>
-                            <programlisting>$ export AUTH_TOKEN=692c2a14-39ad-4ee0-991d-06cd7331f3ca
-$ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/12345</programlisting>
-                        </example>
-                        <note>
-                            <para>The <code>export</code> commands are
-                                valid only for the current session.
-                                You need to rerun the
-                                   <code>export</code> commands if,
-                                for example, you create a new console
-                                window.</para>
-                        </note>
-                    </listitem>
-                    <listitem>
-                        <para>To confirm that the client is running,
-                            run the list command. The first time that
-                            you run this command, it does not return
-                            any output. </para>
-                        <programlisting>$ lava list</programlisting>
-                    </listitem>
-                </orderedlist>
-            </section>
-            <section xml:id="setting_Up_Profile">
-                <title>Setting up a profile</title>
-                <para>Before you can create Hadoop clusters, you must
-                    create a profile that consists of a user name and
-                    password. To create a profile, use the
-                        <code>create-profile</code> command as shown
-                    in the following example.  <note
-                        xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                        <para>Your Cloud Big Data profile is different
-                            from your cloud account. Your profile has
-                            the following characteristics and
-                            requirements:</para>
-                        <itemizedlist>
-                            <listitem>
-                                <para>A profile is the configuration
-                                   for the administration and login
-                                   account for the cluster.</para>
-                            </listitem>
-                            <listitem>
-                                <para>Only one profile is allowed for
-                                   each user or account.</para>
-                            </listitem>
-                            <listitem>
-                                <para>Any updates or additions
-                                   override the existing profile.
-                                </para>
-                            </listitem>
-                        </itemizedlist>
-                    </note></para>
-                <para>In this example, a profile is created with the
-                    user name <code>joe</code> and the password
-                        <code>Fool1234!</code>. </para>
-                <example>
-                    <title>Creating a profile</title>
-                    <programlisting>$ lava create-profile joe Foo1234!</programlisting>
                 </example>
-                <para>A password must be at least eight characters,
-                    with a mixture of uppercase, lowercase, numeric,
-                    and special characters.</para>
-                <para>After you create your profile, every Hadoop
-                    server that you provision by using the API will
-                    have a local user account with the specified name
-                    and password. This allows you to remotely SSH into
-                    a server to transfer data, run or troubleshoot
-                    jobs, and so on.</para>
-                <para>To confirm that your profile was successfully
-                    created, run the <code>get-profile</code>
-                    command.</para>
                 <example>
-                    <title>Retrieve a profile by using the get-profile command</title>
-                    <programlisting>$ lava get-profile
-+-------------+-----------+-------------+
-| Username | User ID | Tenant ID |
-+-------------+---------+---------------+
-| joe | 118091 | 12345 |
-+-------------+-----------+-------------+</programlisting>
+                    <title>List cluster nodes response: JSON</title>
+                    <programlisting language="json"><xi:include href="../../src/wadl/samples/lava2/list_cluster_nodes_response.json" parse="text"/></programlisting>
                 </example>
-            </section>
-            <section xml:id="view_Resource_Limits">
-                <title>Viewing resource limits</title>
-                <para>The use of Rackspace Cloud Big Data is subject
-                    to resource limits. You can view the limits
-                    associated with your account by using the
-                        <code>quotas</code> command. </para>
-                <example>
-                    <title>View resource limits by using the quotas command</title>
-                    <programlisting>$ lava quotas
-+-------------+-----------------+-------------+-----------------+-----------+---------------+------------+----------------+
-| Nodes Limit | Nodes Remaining | VCPUs Limit | VCPUs Remaining | RAM Limit | Ram Remaining | Disk Limit | Disk Remaining |
-+-------------+-----------------+-------------+-----------------+-----------+---------------+------------+----------------+
-| 5 | 5 | 5 | 5 | 25600 | 25600 | 2048 | 2048 |
-+-------------+-----------------+-------------+-----------------+-----------+---------------+------------+----------------+</programlisting>
-                </example>
-            </section>
-        </section>
-        <section xml:id="create_Manage_Clusters">
-            <title>Creating and managing Hadoop clusters</title>
-            <para>This section explains how to create and manage
-                Hadoop clusters by using Rackspace Cloud Big Data
-                through the python-lavaclient. After you complete this
-                section, you will have a working Apache Hadoop
-                cluster.</para>
-            <section xml:id="boot_Hadoop_Cluster">
-                <title>Provisioning a Hadoop cluster</title>
-                <para>Use the <code>boot</code> command to provision a
-                    Hadoop cluster. The following example creates a
-                    3-data-node Hadoop cluster with the name
-                        <code>foo</code>.</para>
-                <example>
-                    <title>Provision a cluster by using the boot command </title>
-                    <programlisting>$ lava boot --type=HADOOP_HDP2_1 --flavor=hadoop1-7 --count=3 foo
-+----------+--------------------------------------+
-| Property | Value |
-+----------+--------------------------------------+
-| Id | 4820deb2-6212-44f9-b92f-979fe723ffb8 |
-| Name | foo |
-| Status | BUILD |
-| Nodes | 3 |
-| Type | HADOOP_HDP2_1 |
-| Flavor | hadoop1-7 |
-+----------+--------------------------------------+</programlisting>
-                </example>
-                <para>The <code>type</code> argument must specify
-                    a supported cluster type. The <code>flavor</code> argument
-                    specifies the RAM, virtual CPUs, and disk storage
-                    associated with each data node in your Hadoop
-                    cluster. You can enumerate the flavors and
-                    associated resources by using the
-                        <code>flavor-list</code> command, as shown in
-                    the following example.</para>
-                <example>
-                    <title>List flavors and associated resources by using the flavor-list command </title>
-                    <programlisting>$ lava flavor-list
-+------------+-------------------------+-------+------+------+
-| Id | Name | Mem | Disk | CPUs |
-+------------+-------------------------+-------+------+------+
-| hadoop1-60 | XLarge Hadoop Instance | 61440 | 10000 | 16 |
-| hadoop1-7  | Small Hadoop Instance  | 8192  | 1250  | 2  |
-+------------+-------------------------+-------+------+------+</programlisting>
-                </example>
-                <para>After you run the <code>boot</code> command, it
-                    takes a few minutes for the service to build and
-                    configure your cluster. Use the <code>list</code>
-                    command to query the build status of your
-                    cluster.</para>
-                <example>
-                    <title>Query the status of a cluster by using the list command</title>
-                    <programlisting>$ lava list
-+--------------------------------------+------+--------+-------+---------------+
-| Id | Name | Status | Nodes | Type |
-+--------------------------------------+------+--------+-------+---------------+
-| 4820deb2-6212-44f9-b92f-979fe723ffb8 | foo | ACTIVE | 3 | HADOOP_HDP2_1 |
-+--------------------------------------+------+--------+-------+---------------+</programlisting>
-                </example>
-                <para>When your cluster is ready, the value of
-                        <code>Status</code> is
-                    <code>ACTIVE</code>.</para>
-            </section>
-            <section xml:id="viewing_Details">
-                <title>Viewing details</title>
-                <para>Use the <code>show</code> and <code>nodes</code>
-                    commands to query your cluster, as shown in the
-                    following example.</para>
+                </section>
+                <section xml:id="client_viewDetails"><title>Client example</title>
+                <para>Use the <code>show</code> and <code>nodes</code> commands to query your
+                    cluster, as shown in the following example.</para>
                 <example>
                     <title>Query the details of a cluster by using the show and nodes
                         commands</title>
@@ -1348,8 +1164,7 @@ $ lava nodes foo
 +--------------------------------------+--------------+----------+--------+----------------+----------------+
 </programlisting>
                 </example>
-                <para>The example shows that the cluster has the
-                    following nodes:</para>
+                <para>The example shows that the cluster has the following nodes:</para>
                 <itemizedlist>
                     <listitem>
                         <para>One name node</para>
@@ -1363,61 +1178,141 @@ $ lava nodes foo
                 </itemizedlist>
                 <para>Each server node has the following IP addresses:<itemizedlist>
                         <listitem>
-                            <para>A private IP address that is used
-                                for backend (Hadoop) data
+                            <para>A private IP address that is used for backend (Hadoop) data
                                 transfers</para>
                         </listitem>
                         <listitem>
-                            <para>A public IP address that allows you
-                                to access the server over the public
-                                Internet</para>
+                            <para>A public IP address that allows you to access the server over the
+                                public Internet</para>
                         </listitem>
-                    </itemizedlist>Use the gateway node to do your
-                    work, including using tools such as Pig and Hive.
-                    In the example, you can remotely SSH into the
-                    gateway node over IP address 166.78.132.227 by
-                    using the user name and password that you used to
-                    create your profile during setup.</para>
+                    </itemizedlist>Use the gateway node to do your work, including using tools such
+                    as Pig and Hive. In the example, you can remotely SSH into the gateway node over
+                    IP address 166.78.132.227 by using the user name and password that you used to
+                    create your profile during setup.</para> 
+                </section>
             </section>
-            <section xml:id="resize_Cluster">
+            <section xml:id="CBD_resizeClusters">
                 <title>Resizing clusters</title>
-                <para>You can increase or decrease the size of an existing cluster
-                    by using the <code>resize</code> command.
-                    The following example resizes the previously
+                <para>You can increase or decrease the size of an existing cluster by using the
+                        <code>resize</code> action.</para>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&POST;</td>
+                            <td colspan="2">/clusters/{clusterId}/action</td>
+                            <td colspan="3">Resizes a cluster.</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <section xml:id="curl_resizeClusters">
+                    <title>cURL example</title>
+                <para>The following example resizes the previously created cluster, named
+                        <code>slice</code>, to include 10 data nodes. When you use the
+                        <code>resize</code> action, you specify the total number of data nodes that
+                    you want the cluster to have, not just the number of nodes to add or remove. In
+                    the example, 10 is the total number of nodes that the cluster will have after
+                    the command is run. After you initiate the <code>resize</code> action, you can
+                    use the operation to list the cluster nodes to confirm that your cluster has
+                    been resized.</para>
+                <para>The following examples show the cURL request and corresponding response to
+                    resize a cluster.</para>
+                <example>
+                    <title>cURL resize cluster request: JSON</title>
+                    <programlisting language="bash">curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis>/action -d \
+'{"resize":{ "nodeCount": 10 }} ' \
+-H "Accept: application/json" \
+-H "X-Auth-Token:<emphasis role="bold">yourAuthToken</emphasis>" \
+-H "Content-Type: application/json"  
+</programlisting>
+                </example>
+                <example>
+                    <title>Resize cluster response: JSON</title>
+                    <programlisting language="json"><xi:include href="../../src/wadl/samples/dg_cbd_resizeCluster_response.json" parse="text"/></programlisting>
+                </example>
+                </section>
+                <section xml:id="client_resizeClusters"><title>Client example</title>
+                <para>In the client, you can or decrease the size of an existing cluster by using
+                    the <code>resize</code> command. The following example resizes a previously
                     created cluster <code>foo</code> to include 5 data nodes.<example>
                         <title>Increase cluster size by using the resize command</title>
                         <programlisting>$ lava resize --count=5 foo
 </programlisting>
                     </example></para>
-                <para>When you use the <code>resize</code> command,
-                    you specify the total number of data nodes that
-                    you want the cluster to have, not just the number
-                    of nodes to add or remove. In the example, 5 is the total
-                    number of nodes that the cluster will have after
-                    the command is run.  After you initiate the
-                        <code>resize</code> operation, use the
-                        <code>show</code> or <code>list</code>
-                    commands to confirm that your cluster has been
-                    resized. </para>
+                <para>When you use the <code>resize</code> command, you specify the total number of
+                    data nodes that you want the cluster to have, not just the number of nodes to
+                    add or remove. In the example, 5 is the total number of nodes that the cluster
+                    will have after the command is run. After you initiate the <code>resize</code>
+                    operation, use the <code>show</code> or <code>list</code> commands to confirm
+                    that your cluster has been resized. </para> 
+                </section>
             </section>
-            <section xml:id="delete_Cluster">
+            <section xml:id="CDB_deleteClusters">
                 <title>Deleting clusters</title>
-                <para>Use the <code>delete</code> command to remove
-                    unused Hadoop clusters. This command deletes any
-                    servers associated with the cluster and any data
-                    stored in the cluster.</para>
+                <para>Use the operation to delete clusters to remove unused Hadoop clusters. This
+                    operation deletes any servers associated with the cluster and any data stored in
+                    the cluster.</para>
+                <para>You cannot delete clusters that are in the process of being created or
+                    resized.</para>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&DELETE;</td>
+                            <td colspan="2">/clusters/{id}</td>
+                            <td colspan="3">Deletes a cluster.</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <section xml:id="curl_deleteClusters">
+                    <title>cURL example</title>
+                <para>The following examples show the cURL request and corresponding response to
+                    delete a cluster.</para>
                 <example>
-                    <title>Remove clusters by using the delete command</title>
-                    <programlisting>$ lava delete foo
-</programlisting>
+                    <title>cURL delete cluster request: JSON</title>
+                    <programlisting language="bash">curl -i -X DELETE https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/clusters/<emphasis role="bold">your_cluster_ID</emphasis> -d \
+-H "Accept: application/json" \
+-H "X-Auth-Token:<emphasis role="bold">yourAuthToken</emphasis>" \
+-H "Content-Type: application/json"</programlisting>
                 </example>
-                <note>
-                    <para>You cannot delete clusters that are in the
-                        process of being created or resized. </para>
-                </note>
+                <example>
+                    <title>Delete cluster response: JSON</title>
+                    <programlisting language="json"><xi:include href="../../src/wadl/samples/dg_cbd_deleteCluster_response-json-http.txt" parse="text"/><xi:include href="../../src/wadl/samples/dg_cbd_deleteCluster_response.json" parse="text"/></programlisting>
+                </example>
+                </section>
+                <section xml:id="client_deleteClusters"><title>Client example</title>
+                    <para>Use the <code>delete</code> command to remove
+                        unused Hadoop clusters. This command deletes any
+                        servers associated with the cluster and any data
+                        stored in the cluster.</para>
+                    <example>
+                        <title>Remove clusters by using the delete command</title>
+                        <programlisting>$ lava delete foo
+</programlisting>
+                    </example>
+                    <note>
+                        <para>You cannot delete clusters that are in the
+                            process of being created or resized. </para>
+                    </note>
+                </section> 
             </section>
-        </section>
+
     </chapter>
+    
+
+    
     <chapter xml:id="Additional_Resources">
         <title>Additional resources</title>
         <para>If you have any questions or concerns about using any of the steps in this guide, send

@@ -86,9 +86,9 @@ format="SVG" scale="60"/>
       <revision>
         <date>2015-03-04</date>
         <revdescription>
-          <para>Removed the London endpoint for authentication, since Rackspace now has one global
-            endpoint for authentication using the Rackspace Cloud Identity service. See <xref
-              linkend="Authentication-d1e647"/>.</para>
+          <para>Removed the London endpoint for the Rackspace Cloud Identity service. Rackspace now
+            has one global endpoint for authentication. See <xref linkend="Authentication-d1e647"
+            />.</para>
         </revdescription>
       </revision>
 <revision>
@@ -461,13 +461,11 @@ format="SVG" scale="60"/>
             Guide</citetitle>. </para>
       </note>
       <para>
-        <emphasis role="bold">2. CHOOSE YOUR AUTHENTICATION
-          ENDPOINT</emphasis>
+        <emphasis role="bold">2. USE THE GLOBAL AUTHENTICATION ENDPOINT</emphasis>
       </para>
       <para>Use the following endpoint for authentication using the Cloud Identity service: <itemizedlist>
           <listitem>
-            <para><link xlink:href="https://identity.api.rackspacecloud.com/v2.0/tokens"
-                >https://identity.api.rackspacecloud.com/v2.0/tokens</link></para>
+            <para><code>https://identity.api.rackspacecloud.com/v2.0/</code></para>
           </listitem>
         </itemizedlist>
       </para>
@@ -486,14 +484,14 @@ format="SVG" scale="60"/>
               name and either your API key or your password. Following
               are examples of both approaches:</para>
             <example>
-              <title>User name and API key</title><literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d 
-'{ "auth":{ "RAX-KSKEY:apiKeyCredentials":{ "username":"yourUserName", "apiKey":"yourApiKey" } } }' -H "Content-type: application/json"</literallayout>
+              <title>User name and API key</title><programlisting language="bash">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d 
+'{ "auth":{ "RAX-KSKEY:apiKeyCredentials":{ "username":"yourUserName", "apiKey":"yourApiKey" } } }' -H "Content-type: application/json"</programlisting>
              
             </example>
             <example>
               <title>User name and password</title>
-              <literallayout class="monospaced">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d
-'{"auth":{"passwordCredentials":{"username":"yourUserName","password":"yourPassword"}}}' -H "Content-type: application/json"</literallayout> </example>
+              <programlisting language="bash">curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d
+'{"auth":{"passwordCredentials":{"username":"yourUserName","password":"yourPassword"}}}' -H "Content-type: application/json"</programlisting> </example>
           </listitem>
           <listitem>
             <para>Review the authentication response.

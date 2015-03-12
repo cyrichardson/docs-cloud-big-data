@@ -592,9 +592,8 @@
                 authentication: </para>
         <itemizedlist spacing="compact">
             <listitem>
-                <para><link xlink:href="&ENDPOINT-US-20;"
-                        >&ENDPOINT-US-20;</link>
-                </para>
+                <para><code>&ENDPOINT-US-20;</code>
+                    </para>
             </listitem>
         </itemizedlist>
 <!--        <para>Your account might be based in either the US or the UK. The location of your account
@@ -621,11 +620,6 @@
                 Identity services, as shown in the following authenticate request examples. Note
                 that the <code>v2.0</code> component in the URL indicates that you are using version
                 2.0 of the Cloud Identity API.</para>
-            <note>
-                <para>For UK-based accounts, you can use
-                        <code>'https://lon.identity.api.rackspacecloud.com/v2.0/tokens'</code>
-                    instead.</para>
-            </note>
         <example xml:id="XML-Auth-Request-d1003">
             <title>cURL authenticate request: XML</title>
             <?dbfo keep-together="always"?>
@@ -672,15 +666,6 @@
                             responses vary from the examples shown in
                             this document because they are specific to
                             your account.</para>
-                    </listitem>
-                    <listitem>
-                        <para>The information shown in the
-                            authentication response examples is for
-                            US-based accounts. If you authenticate
-                            against the UK-endpoint for the
-                            Authentication service, you see the
-                            service catalog information for UK-based
-                            accounts.</para>
                     </listitem>
                     <listitem>
                         <para> The <code>expires</code> attribute
