@@ -50,7 +50,7 @@
     <?rax title.font.size="35px" subtitle.font.size="20px"?>
     <title>Rackspace Cloud Big Data Getting Started Guide, v2</title>
     <?rax status.bar.text.font.size="40px"
-          status.bar.text=""?>   
+          status.bar.text="DRAFT"?>   
     <titleabbrev>Cloud Big Data Getting Started Guide, v2</titleabbrev>
      
     <info>
@@ -83,7 +83,7 @@
     <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
             <raxm:displayname>Getting Started Guide, v2</raxm:displayname>
             <raxm:product version="v1.0">cbd</raxm:product>
-            <raxm:priority>10</raxm:priority>
+            <raxm:priority>15</raxm:priority>
         </raxm:metadata>
     </info>
     <chapter xml:id="CBD_Doc_Change_History">

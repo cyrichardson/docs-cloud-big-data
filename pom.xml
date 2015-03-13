@@ -106,6 +106,7 @@
               <includes>
                 cbd-getting-started-2.xml
               </includes>
+              <security>internal</security>
               <canonicalUrlBase>http://docs.rackspace.com/cbd/api/v2.0/cbd-getting-started-2/content</canonicalUrlBase>
               <webhelpDefaultTopic>CBD_Overview.html</webhelpDefaultTopic>
               <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
