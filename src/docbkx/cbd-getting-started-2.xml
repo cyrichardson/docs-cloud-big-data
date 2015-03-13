@@ -86,13 +86,7 @@
             <raxm:priority>15</raxm:priority>
         </raxm:metadata>
     </info>
-    <chapter xml:id="CBD_Doc_Change_History">
-        <title>Document change history</title>            
-        <para>This version of the guide replaces and obsoletes all
-            earlier versions. The most recent changes are described in
-            the following table:</para>
-        <?rax revhistory?>
-    </chapter>
+   
       <chapter xml:id="CBD_Overview">
         <title>Overview</title>
         <para xmlns:wadl="http://wadl.dev.java.net/2009/02">Rackspace
@@ -1338,6 +1332,15 @@ $ lava nodes foo
                 xlink:href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"
                 >www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>. </para>
     </chapter>
+    
+    <chapter xml:id="CBD_Doc_Change_History">
+        <title>Document change history</title>            
+        <para>This version of the guide replaces and obsoletes all
+            earlier versions. The most recent changes are described in
+            the following table:</para>
+        <?rax revhistory?>
+    </chapter>   
+    
     <glossary xml:id="glossary_1" xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <title>Glossary</title>
         <glossentry>
