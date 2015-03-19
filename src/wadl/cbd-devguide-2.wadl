@@ -823,8 +823,9 @@
 					<code>DELIVERED</code>, <code>RUNNING</code>,
 					<code>SUCCEEDED</code>, and
 				<code>None</code>.</para>
-			<para>Valid values for the node status are in <xref
-					linkend="node_status"/>.</para>
+			<para>Valid values for the node status are in <link
+				xlink:href="http://docs-internal-staging.rackspace.com/cbd/api/v1.0/cbd-devguide-2/content/node_status.html"
+				>"Node status"</link>.</para>
 		</wadl:doc>
 		<response status="200">
 			<representation mediaType="application/json">
