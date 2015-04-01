@@ -77,6 +77,53 @@ format="SVG" scale="60"/>
     <revhistory xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
       <revision>
+        <date>2015-04-01</date>
+        <revdescription>
+          <itemizedlist>
+            <listitem>
+              <para>Added the <xref linkend="scriptOperations"/> operations.</para>
+            </listitem>
+            <listitem>
+              <para>Updated the response body for the "List all stacks" operation in <xref
+                  linkend="stackOperations"/>.</para>
+            </listitem>
+            <listitem>
+              <para>Updated the response body for the "Show stack details" operation in <xref
+                  linkend="stackOperations"/>.</para>
+            </listitem>
+            <listitem>
+              <para>Changed the response code to 204 for the "Delete stack" operation in <xref
+                  linkend="stackOperations"/>.</para>
+            </listitem>
+            <listitem>
+              <para>Updated the response body for the "List all clusters" operation in <xref
+                  linkend="clusterOperations"/>.</para>
+            </listitem>
+            <listitem>
+              <para>Changed <command>POST</command> to <command>PUT</command> in the request and
+                added a request and response body for the "Resize cluster" operation in <xref
+                  linkend="clusterOperations"/>.</para>
+            </listitem>
+            <listitem>
+              <para>Added a response body for "List cluster nodes" operation in <xref
+                  linkend="nodeOperations"/>. </para>
+            </listitem>
+            <listitem>
+              <para>Updated the response body for the "List available flavors" operation in <xref
+                  linkend="flavorOperations"/>.</para>
+            </listitem>
+            <listitem>
+              <para>Removed the "Show flavor details" operation description from <xref
+                  linkend="flavorOperations"/>.</para>
+            </listitem>
+            <listitem>
+              <para>Updated the response body for the "Show resource limits" operation in <xref
+                  linkend="limitsOperations"/>.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
+      <revision>
         <date>2014-12-18</date>
         <revdescription>
           <para>The following changes were made:</para>
@@ -1113,7 +1160,6 @@ format="SVG" scale="60"/>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#clusters"/>
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#cluster"/>
-        <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#action"/>
       </wadl:resources>
     </section>
     <section xml:id="nodeOperations">
