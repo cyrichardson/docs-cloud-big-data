@@ -86,27 +86,31 @@
 						</param>
 						<method href="#getClusterDetails"/>
 						<method href="#deleteCluster"/>
+						<method href="#resizeCluster"/>
 
-						<resource id="action" path="action">
-							<method href="#postClusterAction"/>
-						</resource>
 						<resource id="nodes" path="nodes">
 							<method href="#listClusterNodes"/>
 						</resource>
 					</resource>
 				</resource>
 
-				<resource id="flavors" path="flavors">
-					<method href="#listFlavors"/>
-					<resource id="flavor" path="{flavorId}">
-						<param name="flavorId" style="template"
+				<resource id="scripts" path="scripts">
+					<method href="#createScript"/>
+					<method href="#listScripts"/>
+					<resource id="script" path="{scriptId}">
+						<param name="scriptId" style="template"
 							type="xsd:string">
 							<wadl:doc xml:lang="EN"
 								xmlns="http://docbook.org/ns/docbook"
-								>The flavor ID.</wadl:doc>
+								>The script ID.</wadl:doc>
 						</param>
-						<method href="#getFlavorDetails"/>
+						<method href="#updateScript"/>
+						<method href="#deleteScript"/>
 					</resource>
+				</resource>
+
+				<resource id="flavors" path="flavors">
+					<method href="#listFlavors"/>
 				</resource>
 
 				<resource id="limits" path="limits">
@@ -456,10 +460,10 @@
 		</request>
 		<response status="200">
 			<representation mediaType="application/json">			
-				<doc title="Create a stack - first example: JSON request">
+				<doc title="Create a stack - first example: JSON response">
 					<xsdxt:code href="../wadl/samples/lava2/create_stack_response1.json"/>
 				</doc>
-				<doc title="Create a stack - second example: JSON request">
+				<doc title="Create a stack - second example: JSON response">
 					<xsdxt:code href="../wadl/samples/lava2/create_stack_response2.json"/>
 				</doc>			
 			</representation>
@@ -521,7 +525,7 @@
 			<para>The 409 error code might indicate an invalid
 				state.</para>
 		</wadl:doc>
-		<response status="200">
+		<response status="204">
 			<representation mediaType="application/json">
 			<!--<remark>The file for the following example is currently empty.</remark> -->	
 			<!--	<wadl:doc xml:lang="EN"
@@ -767,10 +771,10 @@
 		</response> &fourhundred; &fourofour; &fouronine; </method>
 
 	<!--*******************************************************-->
-	<!-- Resize cluster: postClusterAction                      -->
+	<!-- Resize cluster: resizeCluster                         -->
 	<!--*******************************************************-->
 
-	<method name="POST" id="postClusterAction">
+	<method name="PUT" id="resizeCluster">
 		<wadl:doc xml:lang="EN" title="Resize cluster"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Resizes a specified cluster.</para>
@@ -783,24 +787,22 @@
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json">
-		    <!--<remark>The file for the following example is currently empty.</remark> -->		
-			<!--	<wadl:doc xml:lang="EN"
+				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
 					<xsdxt:code
 						href="../wadl/samples/lava2/resize_cluster_request.json"
 					/>
-				</wadl:doc> -->
+				</wadl:doc> 
 			</representation>
 		</request>
 		<response status="200">
 			<representation mediaType="application/json">
-		    <!--<remark>The file for the following example is currently empty.</remark> -->		
-			<!--	<wadl:doc xml:lang="EN"
+				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
 					<xsdxt:code
 						href="../wadl/samples/lava2/resize_cluster_response.json"
 					/>
-				</wadl:doc> -->
+				</wadl:doc> 
 			</representation>
 		</response> &fourhundred; &fourofour; &fouronine; </method>
 
@@ -838,6 +840,145 @@
 			</representation>
 		</response> &fourofour; </method>
 
+
+	<!--*******************************************************-->
+	<!-- SCRIPT METHODS                                        -->
+	<!--*******************************************************-->
+
+	<!--*******************************************************-->
+	<!-- Create script: createScript                           -->
+	<!--*******************************************************-->
+
+	<method name="POST" id="createScript">
+		<wadl:doc xml:lang="EN" title="Create script"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Creates a script.</para>
+			<para>You can create a custom script that can be run during various phases of the 
+				clusters lifecycle. These scripts are invoked on all nodes of the cluster. The 
+			    currently supported script types are "POST_INIT" which gets run after the cluster
+			    has been completely setup. The requirements for the script are that it should be 
+			    executable, it's preferred to be a bash script, but could be a python script or a
+			    self contained executable that works with the base OS installed libraries.</para>
+			<para>By default there will be product provided scripts that have been tested and vetted by the product
+				team. These would contain the is_public flag and the user doesn't have the option to edit it.</para>
+			<note><para>A POST_INIT script runs on all new nodes, so runs first on all nodes when you create the cluster
+				and then on subsequent resize of the cluster will only run on new nodes that are added to the cluster.</para></note>
+			<itemizedlist spacing="compact">
+				<listitem><para>The response body is invalid.</para>
+				</listitem>
+				<listitem><para>A script with the name already exists.</para>
+				</listitem>
+			</itemizedlist>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<doc title="Create a script example: JSON request">
+					<xsdxt:code href="../wadl/samples/lava2/create_script_request.json"/>
+				</doc>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="name" style="plain" path="$.script.name" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Descriptive name for the script. For example: Setup iPython Notebooks
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="type" style="plain" path="$.script.type" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Indicates when a script gets run. Supported types are POST_INIT.
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="url" style="plain" path="$.script.url" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">URL where the script resides.
+					</p></doc>
+				</param>
+			</representation>
+		</request>
+		<response status="200">
+			<representation mediaType="application/json">
+				<doc title="Create a script example: JSON response">
+					<xsdxt:code href="../wadl/samples/lava2/create_script_response.json"/>
+				</doc>
+			</representation>
+		</response> &fourhundred; &fourthirteen; </method>
+
+	<!--*******************************************************-->
+	<!-- List all scripts: listScripts                         -->
+	<!--*******************************************************-->
+
+	<method name="GET" id="listScripts">
+		<wadl:doc xml:lang="EN" title="List all scripts"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Lists all scripts - global product provided scripts and user-created scripts.</para>
+		</wadl:doc>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code
+						href="../wadl/samples/lava2/list_scripts_response.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+
+	<!--*******************************************************-->
+	<!-- Update script: updateScript                           -->
+	<!--*******************************************************-->
+
+	<method name="PUT" id="updateScript">
+		<wadl:doc xml:lang="EN" title="Update script"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Updates a specified user script.</para>
+			<para>You can only update the url and name of the script to reflect either changes to script or script location.</para>
+			<para>The 400 error code might indicate missing or invalid
+				parameters.</para>
+			<para>The 409 error code might indicate an invalid
+				state.</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<doc title="Update a script example: JSON request">
+					<xsdxt:code href="../wadl/samples/lava2/update_script_request.json"/>
+				</doc>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="name" style="plain" path="$.script.name" required="false">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Descriptive name for the script. For example: Setup iPython Notebooks
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="url" style="plain" path="$.script.url" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">URL where the script resides.
+					</p></doc>
+				</param>
+			</representation>
+		</request>
+		<response status="200">
+			<representation mediaType="application/json">
+				<doc title="Create a script example: JSON response">
+					<xsdxt:code href="../wadl/samples/lava2/update_script_response.json"/>
+				</doc>
+			</representation>
+		</response> &fourhundred; &fourthirteen; </method>
+
+	<!--*******************************************************-->
+	<!-- Delete script: deleteScript                           -->
+	<!--*******************************************************-->
+
+	<method name="DELETE" id="deleteScript">
+		<wadl:doc xml:lang="EN" title="Delete script"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Deletes a specified user script.</para>
+			<para>You can delete only user-created scripts. Global scripts are read-only and you cannot delete them.</para>
+			<para>The 400 error code might indicate missing or invalid
+				parameters.</para>
+			<para>The 409 error code might indicate an invalid
+				state.</para>
+		</wadl:doc>
+		<response status="204">
+			<representation mediaType="application/json">
+			</representation>
+		</response> &fourhundred; &fourofour; &fouronine; </method>
+
 	<!--*******************************************************-->
 	<!-- FLAVORS METHODS                                       -->
 	<!--*******************************************************-->
@@ -863,27 +1004,6 @@
 			</representation>
 		</response>
 	</method>
-
-	<!--*******************************************************-->
-	<!-- List flavor details: getFlavorDetails                 -->
-	<!--*******************************************************-->
-
-	<method name="GET" id="getFlavorDetails">
-		<wadl:doc xml:lang="EN" title="Show flavor details"
-			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Shows details for a specified
-				flavor.</para>
-		</wadl:doc>
-		<response status="200">
-			<representation mediaType="application/json">
-				<wadl:doc xml:lang="EN"
-					xmlns="http://docbook.org/ns/docbook">
-					<xsdxt:code
-						href="../wadl/samples/lava2/get_flavor_details_response.json"
-					/>
-				</wadl:doc>
-			</representation>
-		</response> &fourofour; </method>
 
 
 	<!--*******************************************************-->

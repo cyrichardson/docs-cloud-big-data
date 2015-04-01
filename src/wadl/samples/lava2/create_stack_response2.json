@@ -85,7 +85,12 @@
                 ],
                 "count": 1,
                 "flavor_id": "hadoop1-7",
-                "id": "master1"
+                "id": "master1",
+                "resource_limits": {
+                    "min_count": 1,
+                    "max_count": 1,
+                    "min_ram": 2048
+                }
             },
             {
                 "components": [
@@ -101,7 +106,12 @@
                 ],
                 "count": 1,
                 "flavor_id": "hadoop1-4",
-                "id": "master2"
+                "id": "master2",
+                "resource_limits": {
+                    "min_count": 1,
+                    "max_count": 1,
+                    "min_ram": 4096
+                }
             },
             {
                 "components": [
@@ -112,7 +122,12 @@
                         "name": "NodeManager"
                     }
                 ],
-                "id": "slave"
+                "id": "slave",
+                "resource_limits": {
+                    "min_count": 1,
+                    "max_count": 9999,
+                    "min_ram": 6144
+                }
             },
             {
                 "components": [
@@ -131,7 +146,12 @@
                 ],
                 "count": 1,
                 "flavor_id": "hadoop1-4",
-                "id": "hive"
+                "id": "hive",
+                "resource_limits": {
+                    "min_count": 1,
+                    "max_count": 1,
+                    "min_ram": 2048
+                }
             }
         ]
     }

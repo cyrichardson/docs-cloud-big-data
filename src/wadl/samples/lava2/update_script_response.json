@@ -1,0 +1,21 @@
+{
+    "script": {
+        "name": "Jupyter Notebooks",
+        "created": "2014-06-14T10:10:10Z",
+        "updated": "2015-03-14T10:10:10Z",
+        "id": "1111-aaaa-bbbbb",
+        "type": "POST_INIT",
+        "url": "https://test.com/jupyter_install.sh",
+        "is_public": false,
+        "links": [
+            {
+                "rel":"self",
+                "href":"https://dfw.bigdata.api.rackspacecloud.com/v2/1234/scripts/1111-aaaa-bbbbb"
+            },
+            {
+               "rel":"bookmark",
+               "href":"https://dfw.bigdata.api.rackspacecloud.com/1234/scripts/1111-aaaa-bbbbb"
+            }
+        ]
+    }
+}

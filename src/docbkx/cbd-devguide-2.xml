@@ -1129,6 +1129,22 @@ format="SVG" scale="60"/>
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#nodes"/>
       </wadl:resources>
     </section>
+    <section xml:id="scriptOperations">
+      <title>Scripts</title>
+      <para>You can create a custom script that can be run during various phases of the 
+        clusters lifecycle. These scripts are invoked on all nodes of the cluster. The 
+          currently supported script types are "POST_INIT" which gets run after the cluster
+          has been completely setup. The requirements for the script are that it should be 
+          executable, it's preferred to be a bash script, but could be a python script or a
+          self contained executable that works with the base OS installed libraries.</para>
+      <para>The following table shows the Cloud Big Data API operations that are available for
+        scripts. These operations are described in this section.</para>
+      <para/>
+      <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+        <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#scripts"/>
+        <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#script"/>
+      </wadl:resources>
+    </section>
     <section xml:id="flavorOperations">
       <title>Flavors</title>
       <para>A flavor is an available configuration for Cloud Big Data. Each flavor has a unique
@@ -1138,7 +1154,6 @@ format="SVG" scale="60"/>
       <para/>
       <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#flavors"/>
-        <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#flavor"/>
       </wadl:resources>
     </section>
     <section xml:id="limitsOperations">
