@@ -297,7 +297,10 @@
 	<method name="POST" id="createStack">
 		<wadl:doc xml:lang="EN" title="Create stack"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Creates a stack. NOTE: This functionality is not yet implemented.</para>
+			<para role="shortdesc">Creates a stack. ***NOTE: This functionality is not yet implemented.***</para>
+			<note>
+				<para><emphasis
+					role="bold">This functionality is not yet implemented.</emphasis></para></note>
 			<note>
 				<para>You can create a new stack and start from scratch or 
 				use one of the preconfigured global stacks.</para></note>
@@ -519,7 +522,10 @@
 	<method name="DELETE" id="deleteStack">
 		<wadl:doc xml:lang="EN" title="Delete stack"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Deletes a specified stack. NOTE: This functionality is not yet implemented. </para>
+			<para role="shortdesc">Deletes a specified stack. ***NOTE: This functionality is not yet implemented.*** </para>
+			<note>
+				<para><emphasis
+					role="bold">This functionality is not yet implemented.</emphasis></para></note>
 			<para>You can delete only user-created stacks. Global stacks are read-only, and you cannot delete them.</para>
 			<para>The 400 error code might indicate missing or invalid
 				parameters.</para>
