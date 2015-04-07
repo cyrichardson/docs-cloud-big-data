@@ -84,6 +84,11 @@ format="SVG" scale="60"/>
               <para>Added script support for clusters in <xref
                   linkend="clusterOperations"/>.</para>
             </listitem>
+            <listitem>
+              <para>Updated the request and response bodies for the
+                "Create cluster" operation in <xref
+                  linkend="clusterOperations"/>.</para>
+            </listitem>
           </itemizedlist>
         </revdescription>
       </revision>
