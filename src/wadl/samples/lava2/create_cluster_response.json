@@ -92,6 +92,13 @@
                 "id": "gateway"
             }
         ],
-        "updated": ""
+        "updated": "",
+        "scripts": [
+            {
+                "id": "c5033423-97ff-4215-9552-19d425e1f9dd",
+                "name": "Mongo Connector",
+                "status": "PENDING"
+            }
+        ]
     }
 }

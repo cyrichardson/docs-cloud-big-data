@@ -694,6 +694,16 @@
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Flavor ID for the node group.
 					</p></doc>
 				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="scripts" style="plain" path="$.cluster.scripts" required="false">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of scripts to run post install of cluster.
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="id" style="plain" path="$.cluster.scripts.id" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">A script id.
+					</p></doc>
+				</param>
 			</representation>
 		</request>
 		<response status="200">
