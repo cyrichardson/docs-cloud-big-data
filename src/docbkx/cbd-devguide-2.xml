@@ -77,6 +77,17 @@ format="SVG" scale="60"/>
     <revhistory xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml">
       <revision>
+        <date>2015-04-07</date>
+        <revdescription>
+          <itemizedlist>
+            <listitem>
+              <para>Added script support for clusters in <xref
+                  linkend="clusterOperations"/>.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
+      <revision>
         <date>2015-04-01</date>
         <revdescription>
           <itemizedlist>
