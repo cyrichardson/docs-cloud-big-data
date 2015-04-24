@@ -9,6 +9,11 @@
                 "flavor_id": "hadoop1-7",
                 "id": "slave"
             }
+        ],
+        "scripts": [
+            {
+                "id": "c5033423-97ff-4215-9552-19d425e1f9dd"
+            }
         ]
     }
 }
