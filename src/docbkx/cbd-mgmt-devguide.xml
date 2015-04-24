@@ -70,7 +70,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Big Data</productname>
-        <pubdate>2015-03-04</pubdate>
+        <pubdate>2015-04-23</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the doc build process.</remark>
@@ -85,6 +85,18 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2015-04-23</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Corrected links in <link
+                                xlink:href="http://docs-internal.rackspace.com/cbd/api/v1.0/cbd-mgmt-devguide/content/Assigning-Roles-d1e001.html"
+                                >Assigning roles to account users</link>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <date>2015-03-04</date>
                 <revdescription>
@@ -623,20 +635,20 @@
                 <para>See the <citetitle>Cloud Identity Client
                         Developer Guide</citetitle> for information
                     about how to perform the following tasks:</para>
-                <itemizedlist spacing="compact">
+                <itemizedlist>
                     <listitem>
                         <para><link
-                            xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser__v2.0_users_User_Calls.html"
+                            xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html"
                             >Create account users</link></para>
                     </listitem>
                     <listitem>
                         <para><link
-                            xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html"
+                            xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles__roleid__Role_Calls.html"
                             >Assign roles to account users</link></para>
                     </listitem>
                     <listitem>
                         <para><link
-                            xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html"                            
+                            xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles__roleid__Role_Calls.html"                            
                             >Delete roles from account users</link></para>
                     </listitem>
                 </itemizedlist>
