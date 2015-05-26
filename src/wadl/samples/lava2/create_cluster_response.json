@@ -3,6 +3,8 @@
         "created": "2014-06-14T10:10:10Z",
         "id": "aaa-bbbb-cccc",
         "name": "test",
+        "username": "cbduser",
+        "ssh_keys": ["cbdkey"],
         "status": "BUILDING",
         "progress": "5",
         "links": [
@@ -93,6 +95,14 @@
             }
         ],
         "updated": "",
+        "connectors": [
+            {
+                "type": "cloud_files",
+                "credential": {
+                    "name": "cfuser"
+                }
+            }
+        ],
         "scripts": [
             {
                 "id": "c5033423-97ff-4215-9552-19d425e1f9dd",
