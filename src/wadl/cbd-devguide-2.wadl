@@ -45,6 +45,30 @@
 					</wadl:doc>
 				</param>
 
+				<resource id="credentials" path="credentials">
+					<method href="#listCredentials"/>
+					<resource id="credentialTypes" path="{type}">
+						<param name="type" style="template"
+							type="xsd:string">
+							<wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
+								Specify type of credential. Supported options are 'ssh_keys' and 'cloud_files.
+								The GET calls also support 'types' and 'connectors'.</wadl:doc>
+						</param>
+						<method href="#getCredentialTypes"/>
+						<method href="#createCredential"/>
+						<resource id="credential" path="{name}">
+							<param name="name" style="template"
+								type="xsd:string">
+								<wadl:doc xml:lang="EN"
+									xmlns="http://docbook.org/ns/docbook"
+									>Name or identifier for a credential.</wadl:doc>
+							</param>
+							<method href="#updateCredential"/>
+							<method href="#deleteCredential"/>
+						</resource>
+					</resource>
+				</resource>
+
 				<resource id="distros" path="distros">
 					<method href="#listDistros"/>
 					<resource id="distro" path="{distro_id}">
@@ -120,10 +144,195 @@
 		</resource>
 	</resources>
 
-
 	<!--*******************************************************-->
 	<!-- ALL METHODS                                           -->
 	<!--*******************************************************-->
+
+	<!--*******************************************************-->
+	<!-- CREDENTIAL METHODS                                    -->
+	<!--*******************************************************-->
+
+	<!--*******************************************************-->
+	<!-- List all credentials: listCredentials                 -->
+	<!--*******************************************************-->
+
+	<method name="GET" id="listCredentials">
+		<wadl:doc xml:lang="EN" title="List all credentials"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Lists all user credentials.</para>
+		</wadl:doc>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook">
+					<xsdxt:code
+						href="../wadl/samples/lava2/list_credentials.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response>
+	</method>
+
+	<!--*******************************************************-->
+	<!-- Get Credential types: getCredentialTypes              -->
+	<!--*******************************************************-->
+
+	<method name="GET" id="getCredentialTypes">
+		<wadl:doc xml:lang="EN" title="List Credential types"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Lists all user credentials of a specific type.</para>
+		</wadl:doc>
+		<response status="200">
+			<representation mediaType="application/json">
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook"
+					title="List credential - types example: JSON response">
+					<xsdxt:code
+						href="../wadl/samples/lava2/list_credential_types.json"
+					/>
+				</wadl:doc>
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook"
+					title="List credential - ssh_keys example: JSON response">
+					<xsdxt:code
+						href="../wadl/samples/lava2/list_ssh_credentials.json"
+					/>
+				</wadl:doc>
+				<wadl:doc xml:lang="EN"
+					xmlns="http://docbook.org/ns/docbook"
+					title="List credential - connectors example: JSON response">
+					<xsdxt:code
+						href="../wadl/samples/lava2/list_connector_credentials.json"
+					/>
+				</wadl:doc>
+			</representation>
+		</response> &fourofour;</method>
+
+	<!--*******************************************************-->
+	<!-- Create credential: createCredential                   -->
+	<!--*******************************************************-->
+
+	<method name="POST" id="createCredential">
+		<wadl:doc xml:lang="EN" title="Create credential"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Creates a credential for the specified type</para>
+			<note>
+				<para>Add new credentials for a specific type. Based on the chosen type the
+					request body varies. Follows a general pattern of a dict of the 'type' that
+					contains one or more credential related fields.</para></note>
+			<para>The 400 error code might indicate any of the
+				following issues:</para>
+			<itemizedlist spacing="compact">
+				<listitem><para>The response body is invalid.</para>
+				</listitem>
+				<listitem><para>The type specified in the request body and uri don't match.</para>
+				</listitem>
+				<listitem><para>An invalid credential type.</para>
+				</listitem>
+			</itemizedlist>
+			<para>The 409 error code might indicate any of the
+				following issues:</para>
+			<itemizedlist spacing="compact">
+				<listitem><para>Duplicate primary identifier for the create request. Ex: a duplicate key_name or username.</para>
+				</listitem>
+			</itemizedlist>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="ssh_keys" style="plain" path="$.ssh_keys.key_name" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name for the ssh key
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="public_key" style="plain" path="$.ssh_keys.public_key" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">SSH Public Key
+					</p></doc>
+				</param>
+				<doc title="Create a credential - ssh_keys example: JSON request">
+					<xsdxt:code href="../wadl/samples/lava2/create_ssh_credential_request.json"/>
+				</doc>
+			</representation>
+			<representation mediaType="application/json">
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="cloud_files" style="plain" path="$.cloud_files.username" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Cloud Files account username
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="cloud_files" style="plain" path="$.cloud_files.api_key" required="false">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">API Key for the Cloud Files account
+					</p></doc>
+				</param>
+				<doc title="Create a credential - cloud_files example: JSON request">
+					<xsdxt:code href="../wadl/samples/lava2/create_cf_credential_request.json"/>
+				</doc>
+			</representation>
+		</request>
+		<response status="200">
+			<representation mediaType="application/json">
+				<doc title="Create a credential - ssh_keys example: JSON response">
+					<xsdxt:code href="../wadl/samples/lava2/create_ssh_credential_response.json"/>
+				</doc>
+				<doc title="Create a credential - cloud_files example: JSON response">
+					<xsdxt:code href="../wadl/samples/lava2/create_cf_credential_response.json"/>
+				</doc>
+			</representation>
+		</response> &fourhundred; &fouronine;</method>
+
+
+
+	<!--*******************************************************-->
+	<!-- Update credential: updateCredential                   -->
+	<!--*******************************************************-->
+
+	<method name="PUT" id="updateCredential">
+		<wadl:doc xml:lang="EN" title="Update credential"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Updates a specified user credential.</para>
+			<para>The update marks clusters that already use the credential as out of sync.</para>
+			<para>The 400 error code might indicate missing or invalid
+				parameters.</para>
+		</wadl:doc>
+		<request>
+			<representation mediaType="application/json">
+				<doc title="Update a credential example: JSON request">
+					<xsdxt:code href="../wadl/samples/lava2/update_credential_request.json"/>
+				</doc>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="ssh_keys" style="plain" path="$.ssh_keys.key_name" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name for the ssh key
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="public_key" style="plain" path="$.ssh_keys.public_key" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">SSH Public Key
+					</p></doc>
+				</param>
+			</representation>
+		</request>
+		<response status="200">
+			<representation mediaType="application/json">
+				<doc title="Update a credential example: JSON response">
+					<xsdxt:code href="../wadl/samples/lava2/update_credential_response.json"/>
+				</doc>
+			</representation>
+		</response> &fourhundred; </method>
+
+	<!--*******************************************************-->
+	<!-- Delete credential: deleteCredential                   -->
+	<!--*******************************************************-->
+
+	<method name="DELETE" id="deleteCredential">
+		<wadl:doc xml:lang="EN" title="Delete credential"
+			xmlns="http://docbook.org/ns/docbook">
+			<para role="shortdesc">Deletes a specified credential.</para>
+			<para>You can only delete credentials that are not used by any active clusters.</para>
+			<para>The 409 error code might indicate an invalid
+				state.</para>
+		</wadl:doc>
+		<response status="204">
+		</response> &fourofour; &fouronine; </method>
 
 	<!--*******************************************************-->
 	<!-- DISTROS METHODS                                       -->
@@ -664,8 +873,13 @@
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="name" style="plain" path="$.cluster.keypair_name" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name for SSH Key Pair stored in Cloud Servers.
+					name="username" style="plain" path="$.cluster.username" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Cluster SSH login username.
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="ssh_keys" style="plain" path="$.cluster.ssh_keys" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of ssh credential key_names.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
@@ -692,6 +906,21 @@
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="flavor_id" style="plain" path="$.cluster.node_groups.flavor_id" required="false">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Flavor ID for the node group.
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="connectors" style="plain" path="$.cluster.connectors" required="false">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of connector credentials. Note: This also enables the connector for use with the cluster.
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="id" style="plain" path="$.cluster.connectors.type" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Type of connector. Ex: cloud_files
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="id" style="plain" path="$.cluster.connectors.credential.name" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name of credential for specific type of connector
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"

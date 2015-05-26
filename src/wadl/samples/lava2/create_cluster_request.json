@@ -1,13 +1,22 @@
 {
     "cluster": {
         "name": "test",
-        "keypair_name": "cbdkey",
+        "username": "cbduser",
+        "ssh_keys": ["cbdkey"],
         "stack_id": "HDP2.1_Hadoop",
         "node_groups": [
             {
                 "count": 10,
                 "flavor_id": "hadoop1-7",
                 "id": "slave"
+            }
+        ],
+        "connectors": [
+            {
+                "type": "cloud_files",
+                "credential": {
+                    "name": "cfuser"
+                }
             }
         ],
         "scripts": [

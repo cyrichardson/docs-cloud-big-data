@@ -1157,6 +1157,18 @@ format="SVG" scale="60"/>
     role="api-reference">
     <title>API operations</title>
     <para>The chapter describes each of the API operations provided by the Cloud Big Data service. </para>
+    <section xml:id="credentialOperations">
+      <title>Credentials</title>
+      <para>Credentials allows you to setup ssh keys and other connector credentials for use with clusters.</para>
+      <para>The following table shows the Cloud Big Data API operations that are available for
+        credentials. These operations are described in this section.</para>
+      <para/>
+      <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+        <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#credentials"/>
+        <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#credentialTypes"/>
+        <wadl:resource href="../../src/wadl/cbd-devguide-2.wadl#credential"/>
+      </wadl:resources>
+    </section>
     <section xml:id="distroOperations">
       <title>Distros</title>
       <para>Distros provide a list of supported distributions and their corresponding versions, as
