@@ -815,8 +815,8 @@ format="SVG" scale="60"/>
         <title>Rate limits</title>
         <para>Rate limits are specified in both a human-readable wildcard URI and a
           machine-processable regular expression. The regular expression boundary matcher
-            '<code>^</code>' takes effect after the root URI path. For example, the regular
-          expression <code>^/v2/clusters</code> would match the bold portion of the following URI:
+            <code>^</code> takes effect after the root URI path. For example, the regular expression
+            <code>^/v2/clusters</code> would match the bold portion of the following URI:
             https://dfw.bigdata.api.rackspacecloud.com<emphasis role="bold">/v2/clusters</emphasis>. </para>
         <para>The following table specifies the default rate limits for all &GET;, , &PUT;, and
           &DELETE; &POST;API operations for clusters.</para>
@@ -1222,12 +1222,12 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="scriptOperations">
       <title>Scripts</title>
-      <para>You can create a custom script that can be run during various phases of the 
-        clusters lifecycle. These scripts are invoked on all nodes of the cluster. The 
-          currently supported script types are "POST_INIT" which gets run after the cluster
-          has been completely setup. The requirements for the script are that it should be 
-          executable, it's preferred to be a bash script, but could be a python script or a
-          self contained executable that works with the base OS installed libraries.</para>
+      <para>You can create a custom script that can be run during various phases of the clusters
+        lifecycle. These scripts are invoked on all nodes of the cluster. The currently supported
+        script types are "POST_INIT" which gets run after the cluster has been completely setup. The
+        requirements for the script are that it should be executable. It is preferred that the
+        script be a bash script, but could be a python script or a self contained executable that
+        works with the base OS-installed libraries.</para>
       <para>The following table shows the Cloud Big Data API operations that are available for
         scripts. These operations are described in this section.</para>
       <para/>

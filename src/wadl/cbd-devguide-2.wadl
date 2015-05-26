@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- (C) 2012-2014 OpenStack Foundation, All Rights Reserved  -->
 
 <!DOCTYPE application [
     <!ENTITY % common  SYSTEM "../common/common.ent">
@@ -51,8 +50,8 @@
 						<param name="type" style="template"
 							type="xsd:string">
 							<wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
-								Specify type of credential. Supported options are 'ssh_keys' and 'cloud_files.
-								The GET calls also support 'types' and 'connectors'.</wadl:doc>
+								Specify type of credential. Supported options are <code>ssh_keys</code> and <code>cloud_files</code>.
+								The GET calls also support <code>types</code> and <code>connectors</code>.</wadl:doc>
 						</param>
 						<method href="#getCredentialTypes"/>
 						<method href="#createCredential"/>
@@ -178,7 +177,7 @@
 	<!--*******************************************************-->
 
 	<method name="GET" id="getCredentialTypes">
-		<wadl:doc xml:lang="EN" title="List Credential types"
+		<wadl:doc xml:lang="EN" title="List credential types"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Lists all user credentials of a specific type.</para>
 		</wadl:doc>
@@ -213,60 +212,58 @@
 	<!--*******************************************************-->
 
 	<method name="POST" id="createCredential">
-		<wadl:doc xml:lang="EN" title="Create credential"
+		<wadl:doc xml:lang="EN" title="Create a credential"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Creates a credential for the specified type</para>
-			<note>
-				<para>Add new credentials for a specific type. Based on the chosen type the
-					request body varies. Follows a general pattern of a dict of the 'type' that
-					contains one or more credential related fields.</para></note>
+			<para role="shortdesc">Creates a credential for the specified type.</para>
+			
+				<para>This operation adds new credentials for a specific type. Based on the chosen type, the
+					request body varies. A general pattern is followed of a dict of the <code>type</code> that
+					contains one or more credential related fields.</para>
 			<para>The 400 error code might indicate any of the
 				following issues:</para>
 			<itemizedlist spacing="compact">
 				<listitem><para>The response body is invalid.</para>
 				</listitem>
-				<listitem><para>The type specified in the request body and uri don't match.</para>
+				<listitem><para>The type specified in the request body and URI do not match.</para>
 				</listitem>
-				<listitem><para>An invalid credential type.</para>
-				</listitem>
-			</itemizedlist>
-			<para>The 409 error code might indicate any of the
-				following issues:</para>
-			<itemizedlist spacing="compact">
-				<listitem><para>Duplicate primary identifier for the create request. Ex: a duplicate key_name or username.</para>
+				<listitem><para>The credential type is invalid.</para>
 				</listitem>
 			</itemizedlist>
+			<para>The 409 error code might indicate that there is a duplicate primary identifier for the create request, for example, a duplicate key name or user name.</para>
+				
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json">
+				<doc title="Create a credential - ssh_keys example: JSON request">
+					<xsdxt:code href="../wadl/samples/lava2/create_ssh_credential_request.json"/>
+				</doc>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="ssh_keys" style="plain" path="$.ssh_keys.key_name" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name for the ssh key
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name for the ssh key.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="public_key" style="plain" path="$.ssh_keys.public_key" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">SSH Public Key
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">SSH public key.
 					</p></doc>
 				</param>
-				<doc title="Create a credential - ssh_keys example: JSON request">
-					<xsdxt:code href="../wadl/samples/lava2/create_ssh_credential_request.json"/>
-				</doc>
+				
 			</representation>
 			<representation mediaType="application/json">
+				<doc title="Create a credential - cloud_files example: JSON request">
+					<xsdxt:code href="../wadl/samples/lava2/create_cf_credential_request.json"/>
+				</doc>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="cloud_files" style="plain" path="$.cloud_files.username" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Cloud Files account username
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Cloud Files account user name.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="cloud_files" style="plain" path="$.cloud_files.api_key" required="false">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">API Key for the Cloud Files account
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">API key for the Cloud Files account.
 					</p></doc>
 				</param>
-				<doc title="Create a credential - cloud_files example: JSON request">
-					<xsdxt:code href="../wadl/samples/lava2/create_cf_credential_request.json"/>
-				</doc>
+				
 			</representation>
 		</request>
 		<response status="200">
@@ -287,7 +284,7 @@
 	<!--*******************************************************-->
 
 	<method name="PUT" id="updateCredential">
-		<wadl:doc xml:lang="EN" title="Update credential"
+		<wadl:doc xml:lang="EN" title="Update a credential"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Updates a specified user credential.</para>
 			<para>The update marks clusters that already use the credential as out of sync.</para>
@@ -324,7 +321,7 @@
 	<!--*******************************************************-->
 
 	<method name="DELETE" id="deleteCredential">
-		<wadl:doc xml:lang="EN" title="Delete credential"
+		<wadl:doc xml:lang="EN" title="Delete a credential"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Deletes a specified credential.</para>
 			<para>You can only delete credentials that are not used by any active clusters.</para>
@@ -879,7 +876,7 @@
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="ssh_keys" style="plain" path="$.cluster.ssh_keys" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of ssh credential key_names.
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of ssh credential key names.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
@@ -890,7 +887,7 @@
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="node_groups" style="plain" path="$.cluster.node_groups" required="false">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of node groups where various components reside.
-						Note: This overrides any values already defined as part of the Stack's node groups.
+						Note: This overrides any values already defined as part of the stack's node groups.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
@@ -1103,10 +1100,10 @@
 				clusters lifecycle. These scripts are invoked on all nodes of the cluster. The 
 			    currently supported script types are "POST_INIT" which gets run after the cluster
 			    has been completely setup. The requirements for the script are that it should be 
-			    executable, it's preferred to be a bash script, but could be a python script or a
+			    executable, it is preferred to be a bash script, but could be a python script or a
 			    self contained executable that works with the base OS installed libraries.</para>
 			<para>By default there will be product provided scripts that have been tested and vetted by the product
-				team. These would contain the is_public flag and the user doesn't have the option to edit it.</para>
+				team. These would contain the is_public flag and the user does not have the option to edit it.</para>
 			<note><para>A POST_INIT script runs on all new nodes, so runs first on all nodes when you create the cluster
 				and then on subsequent resize of the cluster will only run on new nodes that are added to the cluster.</para></note>
 			<itemizedlist spacing="compact">
