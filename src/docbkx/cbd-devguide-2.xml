@@ -352,6 +352,10 @@ format="SVG" scale="60"/>
     <?dbhtml stop-chunking?>
     <para>To use the Cloud Big Data API effectively, you should understand the following terminology:<itemizedlist>
         <listitem>
+          <para><glossterm>Credentials</glossterm>: Credentials allow you to setup ssh keys and
+            other connector credentials for use with clusters.</para>
+        </listitem>
+        <listitem>
           <para><glossterm>Distros</glossterm>: Distros provide a list of supported distributions
             and their corresponding versions, as well as a list of supported services and components
             per distribution.</para>
@@ -371,6 +375,14 @@ format="SVG" scale="60"/>
             - either a redistribution point or an end point for data transmissions. In general, a
             node has programmed or engineered capability to recognize and process or forward
             transmissions to other nodes. A node is a member of a cluster.</para>
+        </listitem>
+        <listitem>
+          <para><glossterm>Scripts</glossterm>: You can create a custom script that runs during
+            various phases of the cluster's lifecycle. The script is invoked on all nodes of the
+            cluster. The script types currently supported are "POST_INIT", which run after the
+            cluster is completely set up. The script must be executable. Preferably, the script
+            should be a bash script, but it could be a python script, or a self-contained executable
+            that works with the base OS-installed libraries.</para>
         </listitem>
         <listitem>
           <para><glossterm>Flavor</glossterm>: A flavor is an available configuration for Cloud Big
@@ -1159,7 +1171,8 @@ format="SVG" scale="60"/>
     <para>The chapter describes each of the API operations provided by the Cloud Big Data service. </para>
     <section xml:id="credentialOperations">
       <title>Credentials</title>
-      <para>Credentials allows you to setup ssh keys and other connector credentials for use with clusters.</para>
+      <para>Credentials allow you to setup ssh keys and other connector credentials for use with
+        clusters.</para>
       <para>The following table shows the Cloud Big Data API operations that are available for
         credentials. These operations are described in this section.</para>
       <para/>
@@ -1222,12 +1235,12 @@ format="SVG" scale="60"/>
     </section>
     <section xml:id="scriptOperations">
       <title>Scripts</title>
-      <para>You can create a custom script that can be run during various phases of the clusters
-        lifecycle. These scripts are invoked on all nodes of the cluster. The currently supported
-        script types are "POST_INIT" which gets run after the cluster has been completely setup. The
-        requirements for the script are that it should be executable. It is preferred that the
-        script be a bash script, but could be a python script or a self contained executable that
-        works with the base OS-installed libraries.</para>
+      <para>You can create a custom script that runs during various phases of the cluster's
+        lifecycle. The script is invoked on all nodes of the cluster. The script types currently
+        supported are "POST_INIT", which run after the cluster is completely set up. The script must
+        be executable. Preferably, the script should be a bash script, but it could be a python
+        script, or a self-contained executable that works with the base OS-installed
+        libraries.</para>
       <para>The following table shows the Cloud Big Data API operations that are available for
         scripts. These operations are described in this section.</para>
       <para/>
@@ -1275,6 +1288,13 @@ format="SVG" scale="60"/>
         <para>A service can have one or more components. A component can be a specific configuration
           for a service or additional modes of operation. Examples are HDFS Secondary Namenode or
           HDFS HA.</para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>Credentials</glossterm>
+      <glossdef>
+        <para>Credentials allow you to setup ssh keys and other connector credentials for use with
+          clusters.</para>
       </glossdef>
     </glossentry>
     <glossentry>
@@ -1328,6 +1348,17 @@ format="SVG" scale="60"/>
       <glossdef>
         <para>An SCP service that runs on your Hadoop cluster and distributes your files across the
           cluster. </para>
+      </glossdef>
+    </glossentry>
+    <glossentry>
+      <glossterm>Scripts</glossterm>
+      <glossdef>
+        <para>You can create a custom script that runs during various phases of the cluster's
+          lifecycle. The script is invoked on all nodes of the cluster. The script types currently
+          supported are "POST_INIT", which run after the cluster is completely set up. The script
+          must be executable. Preferably, the script should be a bash script, but it could be a
+          python script, or a self-contained executable that works with the base OS-installed
+          libraries.</para>
       </glossdef>
     </glossentry>
     <glossentry>
