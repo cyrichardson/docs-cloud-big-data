@@ -840,16 +840,31 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
                 <programlisting>$ lava list</programlisting>
             </listitem>
         </orderedlist></chapter>
-    <chapter xml:id="CBD_createManageClusters"><title>Creating and managing Hadoop clusters</title><para>Now you are ready to create and manage Hadoop clusters by using the Rackspace Cloud Big Data
-            API. This chapter provides examples, using cURL and the client, for some of the common
-            operations that you might make to Cloud Big Data.  For information about all of the
-            operations available in Cloud Big Data, see the <citetitle>Cloud Big Data Developer
-                Guide, v2</citetitle>. </para>
-        <section xml:id="workingWithCredentials">
-            <title>Working with credentials</title>
-            <para>Credentials allow you to setup ssh keys and other connector credentials for use
-                with clusters.</para>
-            <section xml:id="creatingCredentials">
+    <chapter xml:id="createManageCredentials">
+        <title>Creating and managing credentials</title>
+        <para>Before you can create Hadoop clusters, you must create credentials. Credentials allow
+            you to setup ssh keys and other connector credentials for use with clusters.</para>
+        <note>
+            <para>Your Cloud Big Data credentials are different from your cloud account. Your
+                credentials have the following characteristics and requirements:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>A credential is the configuration for the administration and login account
+                        for the cluster.</para>
+                </listitem>
+                <listitem>
+                    <para>Only one credential is allowed for each user or account.</para>
+                </listitem>
+                <listitem>
+                    <para>Any updates or additions override the existing credential. </para>
+                </listitem>
+            </itemizedlist>
+        </note>
+        <para>After you create a credential, every Hadoop server that you provision by using the API
+            will have a local user account with the specified credentials. This allows you to
+            remotely SSH into a server to transfer data, run or troubleshoot jobs, and so on.</para>
+        
+            <section xml:id="createCredential">
                 <title>Creating a credential</title>
                 <informaltable rules="all">
                     <thead>
@@ -871,29 +886,27 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
                     type, <code>ssh_keys</code> or <code>cloud_files</code>, the request body
                     varies. A general pattern is followed of a dict of the type that contains one or
                     more credential related fields.</para>
-                <section xml:id="curlCreateCredentials">
+                <section xml:id="curlCreateCredential">
                     <title>cURL example</title>
-                    
-                        <para>The following examples show the cURL request and corresponding
-                        response for creating a credential.</para>
-                        <example>
-                            <title>cURL create a credential - ssh_keys request</title>
-                            <programlisting language="bash">curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/credentials/ssh_keys -d \
+                    <para>The following examples show the cURL request and corresponding response
+                        for creating a credential.</para>
+                    <example>
+                        <title>cURL create a credential - ssh_keys request</title>
+                        <programlisting language="bash">curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/credentials/ssh_keys -d \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json" 
  </programlisting>
-                        </example>
-                    
+                    </example>
                     <example>
                         <title>Create a credential - ssh_keys request: JSON body</title>
                         <programlisting language="json"><xi:include href="../wadl/samples/lava2/create_ssh_credential_request.json" parse="text"/></programlisting>
                     </example>
-                        <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                            <title>Create a credential - ssh_keys response: JSON</title>
-                            <programlisting language="json"><xi:include href="../wadl/samples/lava2/create_ssh_credential_response.json" parse="text"/>
+                    <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                        <title>Create a credential - ssh_keys response: JSON</title>
+                        <programlisting language="json"><xi:include href="../wadl/samples/lava2/create_ssh_credential_response.json" parse="text"/>
 </programlisting>
-                        </example>
+                    </example>
                     <example>
                         <title>cURL create a credential - cloud_files request</title>
                         <programlisting language="bash">curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/credentials/cloud_files -d \
@@ -902,7 +915,6 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
 -H "Content-type: application/json" 
  </programlisting>
                     </example>
-                    
                     <example>
                         <title>Create a credential - cloud_files request: JSON body</title>
                         <programlisting language="json"><xi:include href="../wadl/samples/lava2/create_cf_credential_request.json" parse="text"/></programlisting>
@@ -911,20 +923,15 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
                         <title>Create a credential - cloud_files response: JSON</title>
                         <programlisting language="json"><xi:include href="../wadl/samples/lava2/create_cf_credential_response.json" parse="text"/>
 </programlisting>
-                    </example>                    
-                    
-                        
-                          
-                        
-                    
+                    </example>
                 </section>
-                <section xml:id="clientCreateCredentials">
+                <section xml:id="clientCreateCredential">
                     <title>Client example</title>
                     <para>Using the client, you create credentials as shown in the following
                         examples: </para>
                 </section>
             </section>
-            <section xml:id="listingCredentials">
+            <section xml:id="listCredentials">
                 <title>Listing all credentials</title>
                 <informaltable rules="all">
                     <thead>
@@ -937,17 +944,17 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
                     <tbody>
                         <tr>
                             <td colspan="1">&GET;</td>
-                            <td colspan="2">  /v2/{tenant_id}/credentials </td>
+                            <td colspan="2"> /v2/{tenant_id}/credentials </td>
                             <td colspan="3">Lists all user credentials.</td>
                         </tr>
                     </tbody>
                 </informaltable>
                 <para>This operation lists all user credentials. </para>
-                <section xml:id="curlListCredentials">
+                <section xml:id="curelListCredentials">
                     <title>cURL example</title>
-                    <para>This operation does not accept a request body.  </para>
-                    <para>The following examples show the cURL request and corresponding
-                        response for listing all user credentials.</para>
+                    <para>This operation does not accept a request body. </para>
+                    <para>The following examples show the cURL request and corresponding response
+                        for listing all user credentials.</para>
                     <example>
                         <title>cURL list all credentials request</title>
                         <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/credentials -d \
@@ -956,21 +963,19 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
 -H "Content-type: application/json" 
  </programlisting>
                     </example>
-                    
-                    
                     <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
                         <title>List all credentials response: JSON</title>
                         <programlisting language="json"><xi:include href="../wadl/samples/lava2/list_credentials.json" parse="text"/>
 </programlisting>
-                    </example>            
-                    
+                    </example>
                 </section>
                 <section xml:id="clientListCredentials">
                     <title>Client example</title>
-                    <para>Using the client, list all credentials as shown in the following examples: </para>
+                    <para>Using the client, list all credentials as shown in the following examples:
+                    </para>
                 </section>
             </section>
-            <section xml:id="updatingCredentials">
+            <section xml:id="updateCredentials">
                 <title>Updating credentials</title>
                 <informaltable rules="all">
                     <thead>
@@ -983,7 +988,7 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
                     <tbody>
                         <tr>
                             <td colspan="1">&PUT;</td>
-                            <td colspan="2"> /v2/{tenant_id}/credentials/{type}/{name}  </td>
+                            <td colspan="2"> /v2/{tenant_id}/credentials/{type}/{name} </td>
                             <td colspan="3">Updates the specified user credential.</td>
                         </tr>
                     </tbody>
@@ -992,8 +997,8 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
                     sync.</para>
                 <section xml:id="curlUpdateCredentials">
                     <title>cURL example</title>
-                    <para>The following examples show the cURL request and corresponding
-                        response for updating a credential.</para>
+                    <para>The following examples show the cURL request and corresponding response
+                        for updating a credential.</para>
                     <example>
                         <title>cURL update a credential request</title>
                         <programlisting language="bash">curl -i -X PUT https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/credentials/ssh_keys/cbdkey -d \
@@ -1002,7 +1007,6 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
 -H "Content-type: application/json" 
  </programlisting>
                     </example>
-                    
                     <example>
                         <title>Update a credential request: JSON body</title>
                         <programlisting language="json"><xi:include href="../wadl/samples/lava2/update_credential_request.json" parse="text"/></programlisting>
@@ -1012,14 +1016,14 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
                         <programlisting language="json"><xi:include href="../wadl/samples/lava2/update_credential_response.json" parse="text"/>
 </programlisting>
                     </example>
-                    
                 </section>
                 <section xml:id="clientUpdateCredentials">
                     <title>Client example</title>
-                    <para>Using the client, update a credential as shown in the following examples: </para>
+                    <para>Using the client, update a credential as shown in the following examples:
+                    </para>
                 </section>
             </section>
-            <section xml:id="deletingCredentials">
+            <section xml:id="deleteCredentials">
                 <title>Deleting credentials</title>
                 <informaltable rules="all">
                     <thead>
@@ -1051,32 +1055,31 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
 -H "Content-type: application/json" 
  </programlisting>
                     </example>
-                    
                     <example>
                         <title>Delete a credential request: JSON body</title>
                         <programlisting language="json"><xi:include href="../wadl/samples/lava2/update_credential_request.json" parse="text"/></programlisting>
                     </example>
-<!--                    <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                    <!--                    <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
                         <title>Delete a credential response: JSON</title>
                         <programlisting language="json"><xi:include href="../wadl/samples/lava2/update_credential_response.json" parse="text"/>
 </programlisting>
                     </example>
--->                    
+-->
                 </section>
-                <section xml:id="clientDeleteCredentials">
+                <section xml:id="clientDeleteCredential">
                     <title>Client example</title>
-                    <para>Using the client, delete a credential as shown in the following example: </para>
+                    <para>Using the client, delete a credential as shown in the following example:
+                    </para>             
                 </section>
             </section>
-        </section>
-    <section xml:id="View_resource_limits">
-            <title>Viewing resource limits</title>
-            <para>The use of the Rackspace Cloud Big Data API is subject to resource limits. You can
-                view the limits associated with your account by using the operation to view the
-                resource limits, which displays limits such as remaining node count, available RAM,
-                and remaining disk space for the user.</para>
-        <informaltable rules="all"
-            xmlns:wadl="http://wadl.dev.java.net/2009/02">
+    </chapter>
+    <chapter xml:id="viewResourceLimits">
+        <title>Viewing resource limits</title>
+        <para>The use of the Rackspace Cloud Big Data API is subject to resource limits. You can
+            view the limits associated with your account by using the operation to view the resource
+            limits, which displays limits such as remaining node count, available RAM, and remaining
+            disk space for the user.</para>
+        <informaltable rules="all" xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <thead>
                 <tr align="center">
                     <td colspan="1">Verb</td>
@@ -1088,44 +1091,48 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
                 <tr>
                     <td colspan="1">&GET;</td>
                     <td colspan="2">/limits</td>
-                    <td colspan="3">Displays the resource limits for
-                        the user.</td>
+                    <td colspan="3">Displays the resource limits for the user.</td>
                 </tr>
             </tbody>
         </informaltable>
-            <section xml:id="cURLResourceLimits">
-                <title>cURL example</title>
-            
-        <para>This operation does not accept a request body.</para>
-        <para>The following examples show the cURL request and corresponding response for viewing
-                resource limits.</para>
-        <example>
-            <title>cURL view resource limits request: JSON</title>
-            <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/limits -d \
+        <section xml:id="curlViewResourceLimits">
+            <title>cURL example</title>
+            <para>This operation does not accept a request body.</para>
+            <para>The following examples show the cURL request and corresponding response for
+                viewing resource limits.</para>
+            <example>
+                <title>cURL view resource limits request: JSON</title>
+                <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/limits -d \
 -H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
 -H "Accept: application/json" \
 -H "Content-type: application/json" </programlisting>
-        </example>
-        <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            <title>View resource limits response: JSON</title>
+            </example>
+            <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <title>View resource limits response: JSON</title>
                 <programlisting language="json"><xi:include href="../../src/wadl/samples/lava2/get_limits_response.json" parse="text"/>
-</programlisting> 
-        </example></section>
-        <section xml:id="clientResourceLimits">
-                <title>Client example</title>
-                <para>Using the client, view the limits associated with your account by using the
-                        <code>quotas</code> command. </para>
-                <example>
-                    <title>View resource limits by using the quotas command</title>
-                    <programlisting>$ lava quotas
+</programlisting>
+            </example>
+        </section>
+        <section xml:id="clientViewResourceLimits">
+            <title>Client example</title>
+            <para>Using the client, view the limits associated with your account by using the
+                    <code>quotas</code> command. </para>
+            <example>
+                <title>View resource limits by using the quotas command</title>
+                <programlisting>$ lava quotas
 +-------------+-----------------+-------------+-----------------+-----------+---------------+------------+----------------+
 | Nodes Limit | Nodes Remaining | VCPUs Limit | VCPUs Remaining | RAM Limit | Ram Remaining | Disk Limit | Disk Remaining |
 +-------------+-----------------+-------------+-----------------+-----------+---------------+------------+----------------+
 | 5 | 5 | 5 | 5 | 25600 | 25600 | 2048 | 2048 |
 +-------------+-----------------+-------------+-----------------+-----------+---------------+------------+----------------+</programlisting>
-                </example>
-            </section>
+            </example>
         </section>
+    </chapter>
+    <chapter xml:id="CBD_createManageClusters"><title>Creating and managing Hadoop clusters</title><para>Now you are ready to create and manage Hadoop clusters by using the Rackspace Cloud Big Data
+            API. This chapter provides examples, using cURL and the client, for some of the common
+            operations that you might make to Cloud Big Data.  For information about all of the
+            operations available in Cloud Big Data, see the <citetitle>Cloud Big Data Developer
+                Guide, v2</citetitle>. </para>
     <section xml:id="CBD_listFlavors">
             <title>Listing flavors</title>
             <para>A flavor is an available hardware configuration for a cluster. Each flavor has a
