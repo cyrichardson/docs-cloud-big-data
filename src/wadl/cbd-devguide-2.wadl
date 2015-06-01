@@ -1102,16 +1102,11 @@
 			    has been completely setup. The requirements for the script are that it should be 
 			    executable, it is preferred to be a bash script, but could be a python script or a
 			    self contained executable that works with the base OS installed libraries.</para>
-			<para>By default there will be product provided scripts that have been tested and vetted by the product
-				team. These would contain the is_public flag and the user does not have the option to edit it.</para>
-			<note><para>A POST_INIT script runs on all new nodes, so runs first on all nodes when you create the cluster
-				and then on subsequent resize of the cluster will only run on new nodes that are added to the cluster.</para></note>
-			<itemizedlist spacing="compact">
-				<listitem><para>The response body is invalid.</para>
-				</listitem>
-				<listitem><para>A script with the name already exists.</para>
-				</listitem>
-			</itemizedlist>
+			<para>By default, product-provided scripts that have a <code>is_public</code> flag run.You do not have the option to edit these scripts.</para>
+			<note><para>A POST_INIT script runs on all new nodes. This script runs first on all nodes when you create the cluster
+				and then runs on any subsequent resizing of the cluster. The script also runs when you add new nodes to the cluster.</para></note>
+			<para>You receive an error is a script with the specified name already exists.</para>
+			
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json">

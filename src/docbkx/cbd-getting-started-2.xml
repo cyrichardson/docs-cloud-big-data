@@ -208,10 +208,10 @@
                     <listitem>
                         <para><glossterm>Scripts</glossterm>: You can create a custom script that
                             runs during various phases of the cluster's life cycle. The script is
-                            invoked on all nodes of the cluster. The script types currently
-                            supported are "POST_INIT", which run after the cluster is completely set
-                            up. The script must be executable. Preferably, the script should be a
-                            bash script, but it could be a python script, or a self-contained
+                            invoked on all nodes of the cluster. The script type currently supported
+                            is <code>POST_INIT</code>, which runs after the cluster is completely
+                            set up. The script must be executable. Preferably, the script should be
+                            a bash script, but it could be a python script, or a self-contained
                             executable that works with the base OS-installed libraries.</para>
                     </listitem>
                     <listitem>
@@ -1564,6 +1564,107 @@ $ lava nodes foo
                     that your cluster has been resized. </para> 
                 </section>
             </section>
+        <section xml:id="createListScripts">
+            <title>Creating and listing scripts</title>
+            <para>You can create a custom script that runs during various phases of the cluster's
+                lifecycle. The script is invoked on all nodes of the cluster. The script type
+                currently supported is <code>POST_INIT</code>, which runs after the cluster is
+                completely set up. The script must be executable. Preferably, the script should be a
+                bash script, but it could be a python script, or a self-contained executable that
+                works with the base OS-installed libraries.</para>
+            <para>By default, product-provided scripts that have a <code>is_public</code> flag run.
+                You do not have the option to edit them. </para>
+            <section xml:id="createScript">
+                <title>Creating a script</title>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&POST;</td>
+                            <td colspan="2"> /v2/{tenant_id}/scripts</td>
+                            <td colspan="3">Creates a script.</td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <para>This operation creates a script.</para>
+                <section xml:id='curlCreateScript'>
+                    <title>cURL example</title>
+                    <para>The following examples show the cURL request and corresponding response
+                        for creating a credential.</para>
+                    <example>
+                        <title>cURL create a script </title>
+                        <programlisting language="bash">curl -i -X POST https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/script -d \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
+-H "Accept: application/json" \
+-H "Content-type: application/json" 
+ </programlisting>
+                    </example>
+                    <example>
+                        <title>Create a script request: JSON body</title>
+                        <programlisting language="json"><xi:include href="../wadl/samples/lava2/create_script_request.json" parse="text"/></programlisting>
+                    </example>
+                    <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                        <title>Create a script response: JSON</title>
+                        <programlisting language="json"><xi:include href="../wadl/samples/lava2/create_script_response.json" parse="text"/>
+</programlisting>
+                    </example>
+                </section>
+                <section xml:id="clientCreateScript">
+                    <title>Client example</title>
+                    <para>Using the client, you create a script as shown in the following examples: </para>
+                </section>
+            </section>
+            <section xml:id="listAllScripts">
+                <title>Listing all scripts</title>
+                <informaltable rules="all">
+                    <thead>
+                        <tr align="center">
+                            <td colspan="1">Verb</td>
+                            <td colspan="2">URI</td>
+                            <td colspan="3">Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1">&GET;</td>
+                            <td colspan="2"> /v2/{tenant_id}/scripts </td>
+                            <td colspan="3">Lists all scripts - global product provided scripts and
+                                user-created scripts. </td>
+                        </tr>
+                    </tbody>
+                </informaltable>
+                <para>This operation lists all scripts. </para>
+                <section xml:id="curlListAllScripts">
+                    <title>cURL example</title>
+                    <para>This operation does not accept a request body. </para>
+                    <para>The following examples show the cURL request and corresponding response
+                        for listing all scripts.</para>
+                    <example>
+                        <title>cURL list all scripts request</title>
+                        <programlisting language="bash">curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v2/<emphasis role="bold">yourAccountID</emphasis>/scripts -d \
+-H "X-Auth-Token: <emphasis role="bold">yourAuthToken</emphasis>" \
+-H "Accept: application/json" \
+-H "Content-type: application/json" 
+ </programlisting>
+                    </example>
+                    <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                        <title>List all scripts response: JSON</title>
+                        <programlisting language="json"><xi:include href="../wadl/samples/lava2/list_scripts_response.json" parse="text"/>
+</programlisting>
+                    </example>
+                </section>
+                <section xml:id="clientListAllScripts">
+                    <title>Client example</title>
+                    <para>Using the client, list all scripts as shown in the following examples: </para>
+                </section>
+            </section>
+        </section>
             <section xml:id="CDB_deleteClusters">
                 <title>Deleting clusters</title>
                 <para>Use the operation to delete clusters to remove unused Hadoop clusters. This
@@ -1742,10 +1843,11 @@ $ lava nodes foo
             <glossdef>
                 <para>You can create a custom script that runs during various phases of the
                     cluster's lifecycle. The script is invoked on all nodes of the cluster. The
-                    script types currently supported are "POST_INIT", which run after the cluster is
-                    completely set up. The script must be executable. Preferably, the script should
-                    be a bash script, but it could be a python script, or a self-contained
-                    executable that works with the base OS-installed libraries.</para>
+                    script type currently supported is <code>POST_INIT</code>, which runs after the
+                    cluster is completely set up. The script must be executable. Preferably, the
+                    script should be a bash script, but it could be a python script, or a
+                    self-contained executable that works with the base OS-installed
+                    libraries.</para>
             </glossdef>
         </glossentry>
         <glossentry>
