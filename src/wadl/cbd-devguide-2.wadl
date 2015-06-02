@@ -324,12 +324,15 @@
 		<wadl:doc xml:lang="EN" title="Delete a credential"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Deletes a specified credential.</para>
-			<para>You can only delete credentials that are not used by any active clusters.</para>
+			<para>You can delete only credentials that are not used by any active clusters.</para>
 			<para>The 409 error code might indicate an invalid
 				state.</para>
 		</wadl:doc>
+		
 		<response status="204">
-		</response> &fourofour; &fouronine; </method>
+			<representation mediaType="application/json">
+			</representation>
+		</response> &fourofour; &fouronine;</method>
 
 	<!--*******************************************************-->
 	<!-- DISTROS METHODS                                       -->
@@ -423,7 +426,7 @@
                 </tr>
                 <tr>
                     <td colspan="1">mode</td>
-                    <td colspan="3">Specifies that a particular component is only applicable for a certain mode of operation of the service. Ex: Journal Node only applies for a HA Namenode.</td>
+                    <td colspan="3">Specifies that a particular component is applicable only for a certain mode of operation of the service. Ex: Journal Node applies only for a HA Namenode.</td>
                 </tr>
             </tbody>
         	</table> -->
@@ -486,7 +489,7 @@
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="mode" style="plain" path="$.distro.services.components.mode">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Specifies that a particular component is only applicable for a certain mode of operation of the service. For example: Journal Node only applies for a HA Namenode.
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Specifies that a particular component is applicable only for a certain mode of operation of the service. For example: Journal Node applies only for a HA Namenode.
 					</p></doc>
 				</param>
 			</representation>
@@ -728,7 +731,7 @@
 	<method name="DELETE" id="deleteStack">
 		<wadl:doc xml:lang="EN" title="Delete stack"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Deletes a specified stack. ***NOTE: This functionality is not yet implemented.*** </para>
+			<para role="shortdesc">Deletes a specified stack.</para>
 			<note>
 				<para><emphasis
 					role="bold">This functionality is not yet implemented.</emphasis></para></note>
@@ -1097,11 +1100,10 @@
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Creates a script.</para>
 			<para>You can create a custom script that can be run during various phases of the 
-				clusters lifecycle. These scripts are invoked on all nodes of the cluster. The 
-			    currently supported script types are "POST_INIT" which gets run after the cluster
-			    has been completely setup. The requirements for the script are that it should be 
-			    executable, it is preferred to be a bash script, but could be a python script or a
-			    self contained executable that works with the base OS installed libraries.</para>
+				clusters lifecycle. These scripts are invoked on all nodes of the cluster. The script type that is currently supported is <code>POST_INIT</code>, which runs after the cluster
+			    has been completely set up. The script must be 
+			    executable. Preferably, the script should be a bash script, but it could be a python script, or a
+			    self-contained executable that works with the base OS installed libraries.</para>
 			<para>By default, product-provided scripts that have a <code>is_public</code> flag run.You do not have the option to edit these scripts.</para>
 			<note><para>A POST_INIT script runs on all new nodes. This script runs first on all nodes when you create the cluster
 				and then runs on any subsequent resizing of the cluster. The script also runs when you add new nodes to the cluster.</para></note>
@@ -1167,7 +1169,7 @@
 		<wadl:doc xml:lang="EN" title="Update script"
 			xmlns="http://docbook.org/ns/docbook">
 			<para role="shortdesc">Updates a specified user script.</para>
-			<para>You can only update the url and name of the script to reflect either changes to script or script location.</para>
+			<para>You can update only the URL and name of the script to reflect either changes to script or script location.</para>
 			<para>The 400 error code might indicate missing or invalid
 				parameters.</para>
 			<para>The 409 error code might indicate an invalid
