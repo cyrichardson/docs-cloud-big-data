@@ -177,9 +177,9 @@
 	<!--*******************************************************-->
 
 	<method name="GET" id="getCredentialTypes">
-		<wadl:doc xml:lang="EN" title="List credential types"
+		<wadl:doc xml:lang="EN" title="List credentials by type"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all user credentials of a specific type.</para>
+			<para role="shortdesc">Lists all user credentials of the specified type.</para>
 		</wadl:doc>
 		<response status="200">
 			<representation mediaType="application/json">
@@ -214,7 +214,7 @@
 	<method name="POST" id="createCredential">
 		<wadl:doc xml:lang="EN" title="Create a credential"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Creates a credential for the specified type.</para>
+			<para role="shortdesc">Creates a new credential for the specified type.</para>
 			
 				<para>This operation adds new credentials for a specific type. Based on the chosen type, the
 					request body varies. A general pattern is followed of a dict of the <code>type</code> that
@@ -286,7 +286,7 @@
 	<method name="PUT" id="updateCredential">
 		<wadl:doc xml:lang="EN" title="Update a credential"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Updates a specified user credential.</para>
+			<para role="shortdesc">Updates the specified user credential.</para>
 			<para>The update marks clusters that already use the credential as out of sync.</para>
 			<para>The 400 error code might indicate missing or invalid
 				parameters.</para>
@@ -323,7 +323,7 @@
 	<method name="DELETE" id="deleteCredential">
 		<wadl:doc xml:lang="EN" title="Delete a credential"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Deletes a specified credential.</para>
+			<para role="shortdesc">Deletes the specified credential.</para>
 			<para>You can delete only credentials that are not used by any active clusters.</para>
 			<para>The 409 error code might indicate an invalid
 				state.</para>
@@ -366,7 +366,7 @@
 	<method name="GET" id="getDistroDetails">
 		<wadl:doc xml:lang="EN" title="Show distro details"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">For a specified distro, provides a detailed list of all the supported services and their corresponding components and modes of operation.</para>
+			<para role="shortdesc">For the specified distro, provides a detailed list of all the supported services and their corresponding components and modes of operation.</para>
 		</wadl:doc>
 		<response status="200">
 			<representation mediaType="application/json">
@@ -504,9 +504,9 @@
 	<!--*******************************************************-->
 
 	<method name="POST" id="createStack">
-		<wadl:doc xml:lang="EN" title="Create stack"
+		<wadl:doc xml:lang="EN" title="Create a stack"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Creates a stack. ***NOTE: This functionality is not yet implemented.***</para>
+			<para role="shortdesc">Creates a new stack. ***NOTE: This functionality is not yet implemented.***</para>
 			<note>
 				<para><emphasis
 					role="bold">This functionality is not yet implemented.</emphasis></para></note>
@@ -689,7 +689,7 @@
 	<method name="GET" id="listStacks">
 		<wadl:doc xml:lang="EN" title="List all stacks"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all stacks - global stacks and user-created stacks.</para>
+			<para role="shortdesc">Lists all stacks, includingglobal stacks and user-created stacks.</para>
 		</wadl:doc>
 		<response status="200">
 			<representation mediaType="application/json">
@@ -710,7 +710,7 @@
 	<method name="GET" id="getStackDetails">
 		<wadl:doc xml:lang="EN" title="Show stack details"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Shows details for a specified
+			<para role="shortdesc">Shows details for the specified
 				stack.</para>
 		</wadl:doc>
 		<response status="200">
@@ -729,9 +729,9 @@
 	<!--*******************************************************-->
 
 	<method name="DELETE" id="deleteStack">
-		<wadl:doc xml:lang="EN" title="Delete stack"
+		<wadl:doc xml:lang="EN" title="Delete a stack"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Deletes a specified stack.</para>
+			<para role="shortdesc">Deletes the specified stack.</para>
 			<note>
 				<para><emphasis
 					role="bold">This functionality is not yet implemented.</emphasis></para></note>
@@ -763,9 +763,9 @@
 	<!--*******************************************************-->
 
 	<method name="POST" id="createCluster">
-		<wadl:doc xml:lang="EN" title="Create cluster"
+		<wadl:doc xml:lang="EN" title="Create a cluster"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Creates a cluster.</para>
+			<para role="shortdesc">Creates a new cluster.</para>
 			<note><para>You must create a stack before you create
 					a cluster.</para></note>
 			<para>The <code>postInitScript</code> request parameter
@@ -975,7 +975,7 @@
 	<method name="GET" id="getClusterDetails">
 		<wadl:doc xml:lang="EN" title="Show cluster details"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Shows details for a specified
+			<para role="shortdesc">Shows details for the specified
 				cluster.</para>
 		</wadl:doc>
 		<response status="200">
@@ -994,9 +994,9 @@
 	<!--*******************************************************-->
 
 	<method name="DELETE" id="deleteCluster">
-		<wadl:doc xml:lang="EN" title="Delete cluster"
+		<wadl:doc xml:lang="EN" title="Delete a cluster"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Deletes a specified cluster.</para>
+			<para role="shortdesc">Deletes the specified cluster.</para>
 			<para>This operation deletes the cluster that is specified
 				by <code>clusterId</code>.</para>
 			<para>The 400 error code might indicate missing or invalid
@@ -1021,9 +1021,9 @@
 	<!--*******************************************************-->
 
 	<method name="PUT" id="resizeCluster">
-		<wadl:doc xml:lang="EN" title="Resize cluster"
+		<wadl:doc xml:lang="EN" title="Resize a cluster"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Resizes a specified cluster.</para>
+			<para role="shortdesc">Resizes the specified cluster.</para>
 			<para>This operation resizes the cluster specified by
 				<code>clusterId</code>.</para>
 			<para>The 400 error code might indicate the presence of
@@ -1063,7 +1063,7 @@
 	<method name="GET" id="listClusterNodes">
 		<wadl:doc xml:lang="EN" title="List cluster nodes"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all nodes for a specified
+			<para role="shortdesc">Lists all nodes for the specified
 				cluster.</para>
 			<para>Valid values for the request body parameter
 					<code>postInitScriptStatus</code> are
@@ -1096,9 +1096,9 @@
 	<!--*******************************************************-->
 
 	<method name="POST" id="createScript">
-		<wadl:doc xml:lang="EN" title="Create script"
+		<wadl:doc xml:lang="EN" title="Create a script"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Creates a script.</para>
+			<para role="shortdesc">Creates a new script.</para>
 			<para>You can create a custom script that can be run during various phases of the 
 				clusters lifecycle. These scripts are invoked on all nodes of the cluster. The script type that is currently supported is <code>POST_INIT</code>, which runs after the cluster
 			    has been completely set up. The script must be 
@@ -1147,7 +1147,7 @@
 	<method name="GET" id="listScripts">
 		<wadl:doc xml:lang="EN" title="List all scripts"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all scripts - global product provided scripts and user-created scripts.</para>
+			<para role="shortdesc">Lists all scripts, including global, product-provided scripts and user-created scripts.</para>
 		</wadl:doc>
 		<response status="200">
 			<representation mediaType="application/json">
@@ -1166,9 +1166,9 @@
 	<!--*******************************************************-->
 
 	<method name="PUT" id="updateScript">
-		<wadl:doc xml:lang="EN" title="Update script"
+		<wadl:doc xml:lang="EN" title="Update a script"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Updates a specified user script.</para>
+			<para role="shortdesc">Updates the specified user script.</para>
 			<para>You can update only the URL and name of the script to reflect either changes to script or script location.</para>
 			<para>The 400 error code might indicate missing or invalid
 				parameters.</para>
@@ -1205,9 +1205,9 @@
 	<!--*******************************************************-->
 
 	<method name="DELETE" id="deleteScript">
-		<wadl:doc xml:lang="EN" title="Delete script"
+		<wadl:doc xml:lang="EN" title="Delete a script"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Deletes a specified user script.</para>
+			<para role="shortdesc">Deletes the specified user script.</para>
 			<para>You can delete only user-created scripts. Global scripts are read-only and you cannot delete them.</para>
 			<para>The 400 error code might indicate missing or invalid
 				parameters.</para>

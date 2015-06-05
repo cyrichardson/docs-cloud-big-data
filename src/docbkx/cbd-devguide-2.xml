@@ -352,7 +352,7 @@ format="SVG" scale="60"/>
     <?dbhtml stop-chunking?>
     <para>To use the Cloud Big Data API effectively, you should understand the following terminology:<itemizedlist>
         <listitem>
-          <para><glossterm>Credentials</glossterm>: Credentials allow you to setup ssh keys and
+          <para><glossterm>Credentials</glossterm>: Credentials allow you to set up SSH keys and
             other connector credentials for use with clusters.</para>
         </listitem>
         <listitem>
@@ -362,18 +362,18 @@ format="SVG" scale="60"/>
         </listitem>
         <listitem>
           <para><glossterm>Stacks</glossterm>: Stacks are high-level building blocks of software
-            that compose a Big Data architecture. Stacks are comprised of services, which in turn
-            are comprised of components. A stack is specific to a distribution due to the
-            differences in services that are supported across distributions.</para>
+            that compose a Big Data architecture. Stacks are composed of services, which in turn are
+            composed of components. A stack is specific to a distribution because of the differences
+            in services that are supported across distributions.</para>
         </listitem>
         <listitem>
-          <para><glossterm>Clusters</glossterm>: Clusters are a group of servers (nodes). In Cloud
+          <para><glossterm>Clusters</glossterm>: A cluster is a group of servers (nodes). In Cloud
             Big Data, the servers are virtual.</para>
         </listitem>
         <listitem>
-          <para><glossterm>Nodes</glossterm>: In a network, a node (or server) is a connection point
-            - either a redistribution point or an end point for data transmissions. In general, a
-            node has programmed or engineered capability to recognize and process or forward
+          <para><glossterm>Nodes</glossterm>: In a network, a node (or server) is a connection
+            point—either a redistribution point or an end point for data transmissions. In general,
+            a node has programmed or engineered capability to recognize and process or forward
             transmissions to other nodes. A node is a member of a cluster.</para>
         </listitem>
         <listitem>
@@ -381,8 +381,8 @@ format="SVG" scale="60"/>
             various phases of the cluster's lifecycle. The script is invoked on all nodes of the
             cluster. The script types currently supported are "POST_INIT", which run after the
             cluster is completely set up. The script must be executable. Preferably, the script
-            should be a bash script, but it could be a python script, or a self-contained executable
-            that works with the base OS-installed libraries.</para>
+            should be a bash script, but it could be a Python script or a self-contained executable
+            that works with the base libraries of the installed OS.</para>
         </listitem>
         <listitem>
           <para><glossterm>Flavor</glossterm>: A flavor is an available configuration for Cloud Big
