@@ -176,9 +176,9 @@
             </revision>
         </revhistory>        
     <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
-      <raxm:displayname>API Admin Developer Guide</raxm:displayname>
+      <raxm:displayname>API Admin Developer Guide, v1</raxm:displayname>
       <raxm:product version="v1.0">cbd</raxm:product>
-      <raxm:priority>30</raxm:priority>
+      <raxm:priority>60</raxm:priority>
     </raxm:metadata>
     </info>
     <chapter xml:id="overview">

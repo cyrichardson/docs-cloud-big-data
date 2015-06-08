@@ -176,7 +176,7 @@
     <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
       <raxm:displayname>Release Notes</raxm:displayname>
       <raxm:product version="v1.0">cbd</raxm:product>
-      <raxm:priority>40</raxm:priority>
+      <raxm:priority>50</raxm:priority>
     </raxm:metadata>
   </info>
   <preface version="5.0" xml:id="preface">

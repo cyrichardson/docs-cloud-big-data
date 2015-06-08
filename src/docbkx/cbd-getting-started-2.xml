@@ -84,7 +84,7 @@
     <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
             <raxm:displayname>Getting Started Guide, v2</raxm:displayname>
             <raxm:product version="v1.0">cbd</raxm:product>
-            <raxm:priority>15</raxm:priority>
+            <raxm:priority>10</raxm:priority>
         </raxm:metadata>
     </info>
    
