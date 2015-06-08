@@ -167,7 +167,7 @@
                 <para>Using the API directly with cURL</para>
             </listitem>
             <listitem>
-                <para>Using a Python Lava command-line client </para>
+                <para>Using the Python Lava2 command-line client (CLI) </para>
             </listitem>
         </itemizedlist>
         <para>Examples for both ways to make request to Cloud Big Data are provided for
@@ -620,13 +620,13 @@
             </section>
         </section>
         <section xml:id="CBD_useClient">
-            <title>Setting up the Python Lava2 client</title>
+            <title>Setting up the Python Lava2 CLI</title>
             <para>Another way you can send requests to Cloud Big Data is to use the Python Lava2
-                client. This section provides the prerequisites for use of the client and
-                installation instructions.</para>
+                CLI. This section provides the prerequisites for use of the client and installation
+                instructions.</para>
             <section xml:id="clientPrereqs">
                 <title>Prerequisites</title>
-                <para>Following are the requirements for using python-lavaclient:</para>
+                <para>Following are the requirements for using the Lava2 CLI:</para>
                 <itemizedlist>
                     <listitem>
                         <para>Computer running Linux or Mac OS X</para>
@@ -640,11 +640,11 @@
                 </itemizedlist>
             </section>
             <section xml:id="CBD_clientInstall">
-                <title>Installing the client</title>
-                <para>Perform the following steps to install the client. </para>
+                <title>Installing the CLI</title>
+                <para>Perform the following steps to install the CLI. </para>
                 <orderedlist>
                     <listitem>
-                        <para>Download python-lavaclient to your computer from <link
+                        <para>Download the CLI to your computer from <link
                                 xlink:href="http://bit.ly/cbdclient"
                             >http://bit.ly/cbdclient</link>.</para>
                     </listitem>
