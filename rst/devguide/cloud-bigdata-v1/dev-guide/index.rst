@@ -24,6 +24,7 @@ General API information
 .. toctree::
    :maxdepth: 2
 
+   general-api-info
    authentication
    role-based-access-control
    service-access-endpoints
