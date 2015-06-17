@@ -58,7 +58,7 @@ You can use `cURL`_ to perform the authentication process in two steps: get a to
 
 **Example: User name and password**
 
-    .. code::  
+.. code::  
 
     curl -X POST https://auth.api.rackspacecloud.com/v2.0/tokens -d
     '{"auth":{"passwordCredentials":{"username":"yourUserName","password":"yourPassword"}}}' -H "Content-type: application/json"
@@ -73,7 +73,7 @@ You can use `cURL`_ to perform the authentication process in two steps: get a to
 
     -  The passcode from the mobile phone associated with your user account.
 
-.. _multi-factor authentication: http://docs.rackspace.com/auth/api/v2.0/auth-admin-devguide/content/MFA_Ops.htmlmulti-factor%20authentication
+.. _multi-factor authentication2: http://docs.rackspace.com/auth/api/v2.0/auth-admin-devguide/content/MFA_Ops.htmlmulti-factor%20authentication
           
 **Example: Authentication request with multi-factor authentication credentials**
 
