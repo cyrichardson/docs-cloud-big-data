@@ -4,7 +4,7 @@
 Role Based Access Control
 =========================
 
-Role Based Access Control (RBAC) restricts access to the capabilities of Rackspace Cloud services, including the Cloud Big Data API, to authorized users only. RBAC enables Rackspace Cloud customers to specify which account users of their Cloud account have access to which Cloud Big Data API service capabilities, based on `roles defined by Rackspace <cbd-dgv2-rbac-roles>`_. 
+Role Based Access Control (RBAC) restricts access to the capabilities of Rackspace Cloud services, including the Cloud Big Data API, to authorized users only. RBAC enables Rackspace Cloud customers to specify which account users of their Cloud account have access to which Cloud Big Data API service capabilities, based on :ref:`roles defined by Rackspace <cbd-dgv2-rbac-available>`.
 
 The permissions to perform certain operations in Cloud Big Data API&mdash;create, read, update, delete&mdash;are assigned to specific roles, and these roles can be assigned by the Cloud account admin user to account users of the account.
 
@@ -28,9 +28,9 @@ See the *Cloud Identity Client Developer Guide* for information about how to per
 
 .. _Create account users: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html
 
-.. _Assign roles to account users: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles__roleid__Role_Calls.html
+.. _Assign roles to account users: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html
 
-.. _Delete roles from account users: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles__roleid__Role_Calls.html
+.. _Delete roles from account users: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html
 
 .. _cbd-dgv2-rbac-available: 
 
@@ -101,6 +101,6 @@ The following table shows two examples of how potential conflicts between user r
 RBAC permissions cross-reference to Cloud Big Data API operations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-API operations for Cloud Big Data may or may not be available to all roles. To see which operations are permitted to invoke which calls, please review `the Knowledge Center article`_.
+API operations for Cloud Big Data may or may not be available to all roles. To see which operations are permitted to invoke which calls, please review the `Permissions Matrix for Role-Based Access Control`_.
 
-.. _the Knowledge Center article: http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-role-based-access-control-rbac
+.. _Permissions Matrix for Role-Based Access Control: http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-role-based-access-control-rbac

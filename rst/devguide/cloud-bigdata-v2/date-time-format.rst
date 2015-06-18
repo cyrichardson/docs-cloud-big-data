@@ -16,7 +16,7 @@ The system time is expressed as UTC.
 
 For example, May 19, 2013 at 8:07:08 a.m., UTC-5 would have the following format:
 
-`2013-05-19T08:07:08 -0500`
+``2013-05-19T08:07:08 -0500``
 
 The following table describes the date and time format codes.
 
@@ -41,5 +41,6 @@ The following table describes the date and time format codes.
 +------+----------------------------------------+
 | SSS  | Three-digit milliseconds of the second |
 +------+----------------------------------------+
-| Z    | RFC-822 timezone                       |
+| Z    | RFC 822 timezone                       |
 +------+----------------------------------------+
+
