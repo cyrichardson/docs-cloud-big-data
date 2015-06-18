@@ -6,13 +6,13 @@ Pagination
 
 Pagination provides the ability to limit the size of the returned data in the response body as well as retrieve a specified subset of a large data set. Pagination has two key concepts: *limit* and *marker*.
 
--  `limit` is the restriction on the maximum number of items for that type that can be returned.
+-  ``limit`` is the restriction on the maximum number of items for that type that can be returned.
 
--  `marker` is the ID of the last item in the previous list returned.
+-  ``marker`` is the ID of the last item in the previous list returned.
 
    The ID is the respective ID for the last cluster, node, or flavor.
    For example, a query could request the next 10 nodes after the node
-   “xyz” as follows: `?limit=10&marker=xyz`. Items displayed are
+   “xyz” as follows: ``?limit=10&marker=xyz``. Items displayed are
    sorted by ID.
 
 Pagination applies only to the operations listed in the following table:
@@ -35,8 +35,7 @@ See the following example of the operation to list paged nodes.
 
 .. _cbd-dgv2-pagination-request:
 
-List nodes paged request: JSON
-------------------------------
+**Example: List nodes paged request: JSON**
 
 .. code::  
 
@@ -45,12 +44,11 @@ List nodes paged request: JSON
     Accept: application/json
     Content-Type: application/json
 
-Notice that the preceding paged request example sets the limit to 2 (`?limit=2`), so the response that follows shows 2 nodes:
+Notice that the preceding paged request example sets the limit to 2 (``?limit=2``), so the example response that follows shows 2 nodes.
 
 .. _cbd-dgv2-pagination-response:
 
-List nodes paged response: JSON
--------------------------------
+**Example: List nodes paged response: JSON**
 
 .. code::  
 

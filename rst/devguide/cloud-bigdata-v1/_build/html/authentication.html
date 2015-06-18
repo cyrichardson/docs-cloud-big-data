@@ -91,10 +91,10 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 
   <div class="section" id="authentication">
 <span id="cbd-dgv2-auth"></span><h1>Authentication<a class="headerlink" href="#authentication" title="Permalink to this headline">¶</a></h1>
-<p>Each REST request against the Cloud Big Data service requires the inclusion of a specific authorization token, supplied in the <cite>X-Auth-Token</cite> HTTP header. Customers obtain this token by first using the Rackspace Cloud Identity service and supplying a valid user name and API access key.</p>
-<p>To authenticate, you submit a <cite>POST/v2.0/tokens</cite> request, presenting valid Rackspace customer credentials in the message body to a Rackspace authentication endpoint.</p>
+<p>Each REST request against the Cloud Big Data service requires the inclusion of a specific authorization token, supplied in the <code class="docutils literal"><span class="pre">X-Auth-Token</span></code> HTTP header. Customers obtain this token by first using the Rackspace Cloud Identity service and supplying a valid user name and API access key.</p>
+<p>To authenticate, you submit a <code class="docutils literal"><span class="pre">POST/v2.0/tokens</span></code> request, presenting valid Rackspace customer credentials in the message body to a Rackspace authentication endpoint.</p>
 <div class="section" id="get-your-credentials">
-<span id="cbd-dgv2-auth-credentials"></span><h2>1. Get your credentials<a class="headerlink" href="#get-your-credentials" title="Permalink to this headline">¶</a></h2>
+<span id="cbd-dgv2-auth-credentials"></span><h2>Get your credentials<a class="headerlink" href="#get-your-credentials" title="Permalink to this headline">¶</a></h2>
 <p>You can use either of the following sets of credentials:</p>
 <ul class="simple">
 <li>Your user name and password</li>
@@ -102,22 +102,20 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 </ul>
 <p>Your user name and password are the ones that you use to log in to the Rackspace Cloud Control Panel. After you are logged in, you can use the Rackspace Cloud Control Panel to obtain your API key.</p>
 <p>US and UK based accounts use the Cloud Control Panel at
-<a class="reference external" href="https://mycloud.rackspacecloud.com/">https://mycloud.rackspace.com/</a>.</p>
+<a class="reference external" href="https://mycloud.rackspace.com/">https://mycloud.rackspace.com/</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">If you authenticate with username and password credentials, you can use multi-factor authentication to add an additional level of account security. This feature is not implemented for username and API credentials. For more information, see <a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html">Multi-factor authentication</a> in the <em>Cloud Identity Client Developer Guide</em>.</p>
 </div>
 </div>
 <div class="section" id="use-the-global-authentication-endpoint">
-<span id="cbd-dgv2-auth-global"></span><h2>2. Use the Global Authentication Endpoint<a class="headerlink" href="#use-the-global-authentication-endpoint" title="Permalink to this headline">¶</a></h2>
+<span id="cbd-dgv2-auth-global"></span><h2>Use the Global Authentication Endpoint<a class="headerlink" href="#use-the-global-authentication-endpoint" title="Permalink to this headline">¶</a></h2>
 <p>Use the following global endpoint for authentication using the Cloud Identity service:</p>
-<ul class="simple">
-<li><cite>https://identity.api.rackspacecloud.com/v2.0/</cite></li>
-</ul>
+<p><code class="docutils literal"><span class="pre">https://identity.api.rackspacecloud.com/v2.0/</span></code></p>
 </div>
 <div class="section" id="send-your-credentials-to-your-authentication-endpoint">
-<h2>3. Send your credentials to your authentication endpoint<a class="headerlink" href="#send-your-credentials-to-your-authentication-endpoint" title="Permalink to this headline">¶</a></h2>
-<p>If you know your credentials and your authentication endpoint, and you can issue a <cite>POST /v2.0/tokens</cite> request in an API call, you have all the basic information that you need to use the Rackspace Cloud Identity service.</p>
+<h2>Send your credentials to your authentication endpoint<a class="headerlink" href="#send-your-credentials-to-your-authentication-endpoint" title="Permalink to this headline">¶</a></h2>
+<p>If you know your credentials and your authentication endpoint, and you can issue a <code class="docutils literal"><span class="pre">POST</span> <span class="pre">/v2.0/tokens</span></code> request in an API call, you have all the basic information that you need to use the Rackspace Cloud Identity service.</p>
 <p>You can use <a class="reference external" href="http://curl.haxx.se/">cURL</a> to perform the authentication process in two steps: get a token, and send the token to a service.</p>
 <ol class="arabic simple">
 <li>Get an authentication token by providing your user name and either your API key or your password. Following are examples of both approaches:</li>
@@ -156,7 +154,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 <li>Use the authentication token to send a <strong>GET</strong> request to a service that you want to use.</li>
 </ol>
 <p>The following example shows passing an authentication token to the Cloud Big Data service by using the Cloud Big Data service catalog endpoint that was returned along with the token.</p>
-<p><strong>Example&nbsp;4: cURL get distros request: JSON</strong></p>
+<p><strong>Example: cURL get distros request: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v2/yourAccountID/distros -d  \
 -H &quot;X-Auth-Token: yourAuthToken&quot; \
 -H &quot;Accept: application/json&quot;\
@@ -207,9 +205,9 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="general-api-info.html">General API Information</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Authentication</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#get-your-credentials">1. Get your credentials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#use-the-global-authentication-endpoint">2. Use the Global Authentication Endpoint</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#send-your-credentials-to-your-authentication-endpoint">3. Send your credentials to your authentication endpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-your-credentials">Get your credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-the-global-authentication-endpoint">Use the Global Authentication Endpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#send-your-credentials-to-your-authentication-endpoint">Send your credentials to your authentication endpoint</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="role-based-access-control.html">Role Based Access Control</a></li>

@@ -32,5 +32,5 @@ The following table lists possible fault types with their associated error codes
 +--------------------+------------+-----------------------------------------+
 | lavaFault          | 500        | An unknown exception occurred.          |
 +--------------------+------------+-----------------------------------------+
-| serviceUnavailable | 503        | The service is currently unavailable.   |
-+--------------------+-----------------------+------------------------------+
+| serviceUnavailable | 503        | he service is currently unavailable.    |
++--------------------+------------+-----------------------------------------+

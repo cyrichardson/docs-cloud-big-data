@@ -4,7 +4,7 @@
 Role Based Access Control
 =========================
 
-Role Based Access Control (RBAC) restricts access to the capabilities of Rackspace Cloud services, including the Cloud Big Data API, to authorized users only. RBAC enables Rackspace Cloud customers to specify which account users of their Cloud account have access to which Cloud Big Data API service capabilities, based on `roles defined by Rackspace <cbd-dgv2-rbac-roles>`_. 
+Role Based Access Control (RBAC) restricts access to the capabilities of Rackspace Cloud services, including the Cloud Big Data API, to authorized users only. RBAC enables Rackspace Cloud customers to specify which account users of their Cloud account have access to which Cloud Big Data API service capabilities, based on :ref:`roles defined by Rackspace <cbd-dgv2-rbac-available>`.
 
 The permissions to perform certain operations in Cloud Big Data API&mdash;create, read, update, delete&mdash;are assigned to specific roles, and these roles can be assigned by the Cloud account admin user to account users of the account.
 
@@ -28,9 +28,9 @@ See the *Cloud Identity Client Developer Guide* for information about how to per
 
 .. _Create account users: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html
 
-.. _Assign roles to account users: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles__roleid__Role_Calls.html
+.. _Assign roles to account users: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html
 
-.. _Delete roles from account users: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles__roleid__Role_Calls.html
+.. _Delete roles from account users: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html
 
 .. _cbd-dgv2-rbac-available: 
 

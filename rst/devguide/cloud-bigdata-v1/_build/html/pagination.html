@@ -93,12 +93,12 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 <h1>Pagination<a class="headerlink" href="#pagination" title="Permalink to this headline">¶</a></h1>
 <p>Pagination provides the ability to limit the size of the returned data in the response body as well as retrieve a specified subset of a large data set. Pagination has two key concepts: <em>limit</em> and <em>marker</em>.</p>
 <ul>
-<li><p class="first"><cite>limit</cite> is the restriction on the maximum number of items for that type that can be returned.</p>
+<li><p class="first"><code class="docutils literal"><span class="pre">limit</span></code> is the restriction on the maximum number of items for that type that can be returned.</p>
 </li>
-<li><p class="first"><cite>marker</cite> is the ID of the last item in the previous list returned.</p>
+<li><p class="first"><code class="docutils literal"><span class="pre">marker</span></code> is the ID of the last item in the previous list returned.</p>
 <p>The ID is the respective ID for the last cluster, node, or flavor.
 For example, a query could request the next 10 nodes after the node
-“xyz” as follows: <cite>?limit=10&amp;marker=xyz</cite>. Items displayed are
+“xyz” as follows: <code class="docutils literal"><span class="pre">?limit=10&amp;marker=xyz</span></code>. Items displayed are
 sorted by ID.</p>
 </li>
 </ul>
@@ -134,18 +134,15 @@ the drive size and the amount of RAM.</td>
 <p>The default paging limit for all calls is 25 with a maximum of 200.
 Requests for more than 200 result in a 400 error.</p>
 <p>See the following example of the operation to list paged nodes.</p>
-<div class="section" id="list-nodes-paged-request-json">
-<span id="cbd-dgv2-pagination-request"></span><h2>List nodes paged request: JSON<a class="headerlink" href="#list-nodes-paged-request-json" title="Permalink to this headline">¶</a></h2>
+<p id="cbd-dgv2-pagination-request"><strong>Example: List nodes paged request: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>GET /v2/yourAccountID/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes?limit=2
 X-Auth-Token: yourAuthToken
 Accept: application/json
 Content-Type: application/json
 </pre></div>
 </div>
-<p>Notice that the preceding paged request example sets the limit to 2 (<cite>?limit=2</cite>), so the response that follows shows 2 nodes:</p>
-</div>
-<div class="section" id="list-nodes-paged-response-json">
-<span id="cbd-dgv2-pagination-response"></span><h2>List nodes paged response: JSON<a class="headerlink" href="#list-nodes-paged-response-json" title="Permalink to this headline">¶</a></h2>
+<p>Notice that the preceding paged request example sets the limit to 2 (<code class="docutils literal"><span class="pre">?limit=2</span></code>), so the example response that follows shows 2 nodes.</p>
+<p id="cbd-dgv2-pagination-response"><strong>Example: List nodes paged response: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
     <span class="s">&quot;nodes&quot;</span><span class="p">:</span> <span class="p">[</span>
               <span class="p">{</span>
@@ -246,7 +243,6 @@ Content-Type: application/json
 </pre></div>
 </div>
 </div>
-</div>
 
 
 </div>
@@ -290,11 +286,7 @@ Content-Type: application/json
 <li class="toctree-l1"><a class="reference internal" href="faults.html">Faults</a></li>
 <li class="toctree-l1"><a class="reference internal" href="limits.html">Limits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="date-time-format.html">Date and time format</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Pagination</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#list-nodes-paged-request-json">List nodes paged request: JSON</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#list-nodes-paged-response-json">List nodes paged response: JSON</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Pagination</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data-node-instances.html">Data node instances</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cluster-status.html">Cluster status</a></li>
 <li class="toctree-l1"><a class="reference internal" href="node-status.html">Node status</a></li>

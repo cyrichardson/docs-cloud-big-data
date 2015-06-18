@@ -61,6 +61,7 @@ The most recent changes are described in the following table:
 
 Revision Date
 Summary of Changes
+
 April 23, 2015
 
 -  Corrected links in `Assigning roles to account
@@ -96,27 +97,7 @@ April 1, 2015
 
 -  Updated the response body for the "Show resource limits" operation.
 
-December 18, 2014
-
-The following changes were made:
-
--  Updated distro calls with more details.
-
--  Made changes to the cluster request and response - added
-   `keypair_name` and made `stack_id` and `node_groups` top level.
-
--  Changed `flavor` to `flavor_id` where it is referenced in stacks
-   and clusters.
-
--  Added links to all resources.
-
--  Removed node details.
-
-June 10, 2014
-
-Initial release of the LAVA 2 API.
-
-.. _Assigning roles to account users: http://docs-internal.rackspace.com/cbd/api/v1.0/cbd-devguide-2/content/Assigning-Roles-d1e001.html/Assigning-Roles-d1e001.html
+.. _Assigning roles to account users: http://docs.rackspace.com/cbd/api/v1.0/cbd-devguide/content/Assigning-Roles-d1e001.html
 
 .. _cbd-dgv2-overview-prereqs:
 
@@ -167,7 +148,11 @@ Cloud Big Data is part of the Rackspace Cloud and your use through the API will 
 
 The Service Level Agreement (SLA) for Cloud Big Data is available at http://www.rackspace.com/cloud/legal/sla.
 
+The Preview release of the Spark cluster type, which is included in Cloud Big Data, is subject to the `Rackspace test terms`_.
+
 .. _pricing schedule: http://www.rackspace.com/cloud/big-data/pricing/
+
+.. _Rackspace test terms: http://www.rackspace.com/information/legal/testterms
 
 .. _cbd-dgv2-overview-additional:
 
@@ -190,7 +175,7 @@ This API uses `standard HTTP 1.1 response codes`_.
 
 .. _Rackspace Cloud site: http://www.rackspace.com/cloud/
 
-.. _Getting Started with Rackspace Cloud Big Data: http://docs.rackspace.com/api/
+.. _Getting Started with Rackspace Cloud Big Data: http://docs.rackspace.com/cbd/api/v1.0/cbd-getting-started/content/CBD_Overview.html
 
 .. _on Twitter: http://www.twitter.com/rackspace
 

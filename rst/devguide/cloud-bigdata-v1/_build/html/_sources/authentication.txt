@@ -4,14 +4,14 @@
 Authentication
 ==============
 
-Each REST request against the Cloud Big Data service requires the inclusion of a specific authorization token, supplied in the `X-Auth-Token` HTTP header. Customers obtain this token by first using the Rackspace Cloud Identity service and supplying a valid user name and API access key.
+Each REST request against the Cloud Big Data service requires the inclusion of a specific authorization token, supplied in the ``X-Auth-Token`` HTTP header. Customers obtain this token by first using the Rackspace Cloud Identity service and supplying a valid user name and API access key.
 
-To authenticate, you submit a `POST/v2.0/tokens` request, presenting valid Rackspace customer credentials in the message body to a Rackspace authentication endpoint.
+To authenticate, you submit a ``POST/v2.0/tokens`` request, presenting valid Rackspace customer credentials in the message body to a Rackspace authentication endpoint.
 
 .. _cbd-dgv2-auth-credentials:
 
-1. Get your credentials
-~~~~~~~~~~~~~~~~~~~~~~~
+Get your credentials
+~~~~~~~~~~~~~~~~~~~~
 
 You can use either of the following sets of credentials:
 
@@ -22,7 +22,7 @@ You can use either of the following sets of credentials:
 Your user name and password are the ones that you use to log in to the Rackspace Cloud Control Panel. After you are logged in, you can use the Rackspace Cloud Control Panel to obtain your API key.
 
 US and UK based accounts use the Cloud Control Panel at
-`https://mycloud.rackspace.com/ <https://mycloud.rackspacecloud.com/>`_.
+https://mycloud.rackspace.com/.
 
 ..  note:: 
     If you authenticate with username and password credentials, you can use multi-factor authentication to add an additional level of account security. This feature is not implemented for username and API credentials. For more information, see `Multi-factor authentication`_ in the *Cloud Identity Client Developer Guide*.
@@ -31,17 +31,17 @@ US and UK based accounts use the Cloud Control Panel at
 
 .. _cbd-dgv2-auth-global:
 
-2. Use the Global Authentication Endpoint
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Use the Global Authentication Endpoint
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the following global endpoint for authentication using the Cloud Identity service:
 
--  `https://identity.api.rackspacecloud.com/v2.0/`
+``https://identity.api.rackspacecloud.com/v2.0/``
 
-3. Send your credentials to your authentication endpoint
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Send your credentials to your authentication endpoint
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you know your credentials and your authentication endpoint, and you can issue a `POST /v2.0/tokens` request in an API call, you have all the basic information that you need to use the Rackspace Cloud Identity service.
+If you know your credentials and your authentication endpoint, and you can issue a ``POST /v2.0/tokens`` request in an API call, you have all the basic information that you need to use the Rackspace Cloud Identity service.
 
 You can use `cURL`_ to perform the authentication process in two steps: get a token, and send the token to a service.
 
@@ -87,7 +87,7 @@ You can use `cURL`_ to perform the authentication process in two steps: get a to
 
 The following example shows passing an authentication token to the Cloud Big Data service by using the Cloud Big Data service catalog endpoint that was returned along with the token.
 
-**Example 4: cURL get distros request: JSON**
+**Example: cURL get distros request: JSON**
 
 .. code::  
 

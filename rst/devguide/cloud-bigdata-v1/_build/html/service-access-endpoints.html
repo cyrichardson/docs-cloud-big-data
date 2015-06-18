@@ -93,20 +93,34 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 <span id="cbd-dgv2-service"></span><h1>Service access endpoints<a class="headerlink" href="#service-access-endpoints" title="Permalink to this headline">¶</a></h1>
 <p>The Cloud Big Data service is a regionalized service. The user of the service is therefore responsible for appropriate replication, caching, and overall maintenance of Cloud Big Data data across regional boundaries to other Cloud Servers.</p>
 <p>The endpoints to use for your Cloud Big Data API calls are summarized in the following table.</p>
-<p>To help you decide which regionalized endpoint to use, read the <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/about-regions">Knowledge Center article</a> about special considerations for choosing a data center.</p>
-<p><strong>Regionalized service endpoints</strong>
-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+
-|         Region          |                                Endpoint                            |
-+=========================+====================================================================+
-| Chicago (ORD)           | <cite>https://ord.bigdata.api.rackspacecloud.com/v2/</cite><cite>yourAccountID</cite>/ |
-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+
-| Dallas/Ft. Worth (DFW)  | <cite>https://dfw.bigdata.api.rackspacecloud.com/v2/</cite><cite>yourAccountID</cite>/ |
-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+
-| Northern Virginia (IAD) | <cite>https://iad.bigdata.api.rackspacecloud.com/v2/</cite><cite>yourAccountID</cite>/ |
-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+
-| London (LON)            | <cite>https://lon.bigdata.api.rackspacecloud.com/v2/</cite><cite>yourAccountID</cite>/ |
-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+</p>
-<p>Replace the <cite>yourAccountID</cite> placeholder with your actual account number, which is returned as part of the authentication service response, after the final <strong>/</strong> in the <cite>publicURL</cite> field.</p>
+<p>To help you decide which regionalized endpoint to use, read <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/about-regions">About regions</a> about special considerations for choosing a data center.</p>
+<p><strong>Regionalized service endpoints</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Region</th>
+<th class="head">Endpoint</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Chicago (ORD)</td>
+<td><code class="docutils literal"><span class="pre">https://ord.bigdata.api.rackspacecloud.com/v2/`\</span> <span class="pre">`yourAccountID/</span></code></td>
+</tr>
+<tr class="row-odd"><td>Dallas/Ft. Worth (DFW)</td>
+<td><code class="docutils literal"><span class="pre">https://dfw.bigdata.api.rackspacecloud.com/v2/`\</span> <span class="pre">`yourAccountID/</span></code></td>
+</tr>
+<tr class="row-even"><td>Northern Virginia (IAD)</td>
+<td><code class="docutils literal"><span class="pre">https://iad.bigdata.api.rackspacecloud.com/v2/`\</span> <span class="pre">`yourAccountID/</span></code></td>
+</tr>
+<tr class="row-odd"><td>London (LON)</td>
+<td><code class="docutils literal"><span class="pre">https://lon.bigdata.api.rackspacecloud.com/v2/`\</span> <span class="pre">`yourAccountID/</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Replace the <code class="docutils literal"><span class="pre">yourAccountID</span></code> placeholder with your actual account number, which is returned as part of the authentication service response, after the final <strong>/</strong> in the <code class="docutils literal"><span class="pre">publicURL</span></code> field.</p>
 </div>
 
 

@@ -91,13 +91,30 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 
   <div class="section" id="request-and-response-types">
 <span id="cbd-dgv2-request"></span><h1>Request and response types<a class="headerlink" href="#request-and-response-types" title="Permalink to this headline">¶</a></h1>
-<p>The Cloud Big Data API supports JSON data serialization formats. The request format is specified by using the <cite>Content-Type</cite> header and is required for operations that have a request body. The response format can be specified in requests either by using the <cite>Accept</cite> header or by adding <cite>.json</cite> extension to the request URI. Note that JSON is the default format for data serialization.</p>
-<p><strong>Response formats</strong>
-+&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;+
-| Format |  Accept header   | Query extension | Default |
-+========+==================+=================+=========+
-| JSON   | application/json | .json           | Yes     |
-+&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;+&#8212;&#8212;&#8212;+</p>
+<p>The Cloud Big Data API supports JSON data serialization formats. The request format is specified by using the <code class="docutils literal"><span class="pre">Content-Type</span></code> header and is required for operations that have a request body. The response format can be specified in requests either by using the <code class="docutils literal"><span class="pre">Accept</span></code> header or by adding <code class="docutils literal"><span class="pre">.json</span></code> extension to the request URI. Note that JSON is the default format for data serialization.</p>
+<p><strong>Response formats</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="35%" />
+<col width="33%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Format</th>
+<th class="head">Accept header</th>
+<th class="head">Query extension</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>JSON</td>
+<td>application/json</td>
+<td>.json</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
 </div>
 
 
