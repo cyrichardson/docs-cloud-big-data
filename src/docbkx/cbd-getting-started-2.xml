@@ -61,7 +61,7 @@
         </copyright>
         <releaseinfo>API v2.0</releaseinfo>
         <productname>Rackspace Cloud Big Data</productname>
-        <pubdate/>
+        <pubdate>2015-06-25</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the doc build process.</remark>
@@ -74,10 +74,10 @@
         </abstract>
         <revhistory>
             <revision xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                <date>2015-06-08</date>
+                <date>2015-06-25</date>
                 <revdescription>
-                    <para>Initial release of the <citetitle>Cloud Big Data Getting Started Guide,
-                            v2</citetitle>.</para>
+                    <para>Initial release of Cloud Big Data v2 and the <citetitle>Cloud Big Data
+                            Getting Started Guide, v2</citetitle>.</para>
                 </revdescription>
             </revision>
         </revhistory>
@@ -227,8 +227,7 @@
                     </listitem>
                 </itemizedlist></para>
             <para xmlns:wadl="http://wadl.dev.java.net/2009/02">For the definitions of additional
-                terminology related to Cloud Big Data, see the <xref linkend="glossary_1"/> at the
-                end of the document.</para>
+                terminology related to Cloud Big Data, see the <xref linkend="glossary_1"/>.</para>
         </section>
         <section xml:id="use_cases">
             <title>Use cases</title>
@@ -360,6 +359,12 @@
                         <td colspan="2">London (LON)</td>
                         <td colspan="5"
                                     ><code>https://lon.bigdata.api.rackspacecloud.com/v2/</code><parameter><replaceable>yourAccountID</replaceable></parameter>/ </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Northern Virginia (IAD)</td>
+                        <td colspan="5"
+                                    ><code>https://iad.bigdata.api.rackspacecloud.com/v2/</code><parameter><replaceable>yourAccountID</replaceable></parameter>/
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -928,8 +933,17 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
                 </section>
                 <section xml:id="clientCreateCredential">
                     <title>Client example</title>
-                    <para>Using the client, you create credentials as shown in the following
-                        examples: </para>
+                    <para>Using the client,  create credentials as shown in the following example. </para>
+                    <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                        <title>Create a credential using the CLI </title>
+                        <programlisting language="json">$ lava get-profile
++-------------+-----------+-------------+
+| Username | User ID | Tenant ID |
++-------------+---------+---------------+
+| joe | 118091 | 12345 |
++-------------+-----------+-------------+&lt;
+</programlisting>
+                    </example>
                 </section>
             </section>
             <section xml:id="listCredentials">
@@ -963,17 +977,21 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
 -H "Accept: application/json" \
 -H "Content-type: application/json" 
  </programlisting>
-                    </example>
-                    <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
-                        <title>List all credentials response: JSON</title>
-                        <programlisting language="json"><xi:include href="../wadl/samples/lava2/list_credentials.json" parse="text"/>
-</programlisting>
-                    </example>
+                    </example>                    
                 </section>
                 <section xml:id="clientListCredentials">
                     <title>Client example</title>
-                    <para>Using the client, list all credentials as shown in the following examples:
-                    </para>
+                    <para>Using the client, list all credentials as shown in the following example. </para>
+                <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                    <title>List all credentials using the CLI </title>
+                    <programlisting language="json">$ lava get-profile
++-------------+-----------+-------------+
+| Username | User ID | Tenant ID |
++-------------+---------+---------------+
+| joe | 118091 | 12345 |
++-------------+-----------+-------------+&lt;
+</programlisting>
+                </example>
                 </section>
             </section>
             <section xml:id="updateCredentials">
@@ -1020,8 +1038,17 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
                 </section>
                 <section xml:id="clientUpdateCredentials">
                     <title>Client example</title>
-                    <para>Using the client, update a credential as shown in the following examples:
-                    </para>
+                    <para>Using the client, update a credential as shown in the following example. </para>
+                <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                    <title>Update a credential using the CLI </title>
+                    <programlisting language="json">$ lava get-profile
++-------------+-----------+-------------+
+| Username | User ID | Tenant ID |
++-------------+---------+---------------+
+| joe | 118091 | 12345 |
++-------------+-----------+-------------+&lt;
+</programlisting>
+                </example>
                 </section>
             </section>
             <section xml:id="deleteCredentials">
@@ -1061,8 +1088,17 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
                 </section>
                 <section xml:id="clientDeleteCredential">
                     <title>Client example</title>
-                    <para>Using the client, delete a credential as shown in the following example:
-                    </para>             
+                    <para>Using the client, delete a credential as shown in the following example. </para>
+                <example xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                    <title>Delete a credential using the CLI </title>
+                    <programlisting language="json">$ lava get-profile
++-------------+-----------+-------------+
+| Username | User ID | Tenant ID |
++-------------+---------+---------------+
+| joe | 118091 | 12345 |
++-------------+-----------+-------------+&lt;
+</programlisting>
+                </example>             
                 </section>
             </section>
     </chapter>
@@ -1111,7 +1147,7 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
             <para>Using the client, view the limits associated with your account by using the
                     <code>quotas</code> command. </para>
             <example>
-                <title>View resource limits by using the quotas command</title>
+                <title>View resource limits by using the quotas command with the CLI</title>
                 <programlisting>$ lava quotas
 +-------------+-----------------+-------------+-----------------+-----------+---------------+------------+----------------+
 | Nodes Limit | Nodes Remaining | VCPUs Limit | VCPUs Remaining | RAM Limit | Ram Remaining | Disk Limit | Disk Remaining |
@@ -1173,7 +1209,8 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
                 <para>You can enumerate the flavors and associated resources by using the
                         <code>flavor-list</code> command, as shown in the following example.</para>
                 <example>
-                    <title>List flavors and associated resources by using the flavor-list command </title>
+                    <title>List flavors and associated resources by using the flavor-list command
+                        with the CLI </title>
                     <programlisting>$ lava flavor-list
 +------------+-------------------------+-------+------+------+
 | Id | Name | Mem | Disk | CPUs |
@@ -1226,7 +1263,18 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
             </section>
             <section xml:id="client_listDistros">
                 <title>Client example</title>
-                <para>Using the client, view available distros as shown in the following examples: </para>
+                <para>Using the client, view available distros as shown in the following
+                    example.</para>
+                <example>
+                    <title>View available distros with the CLI </title>
+                    <programlisting>$ lava flavor-list
++------------+-------------------------+-------+------+------+
+| Id | Name | Mem | Disk | CPUs |
++------------+-------------------------+-------+------+------+
+| hadoop1-60 | XLarge Hadoop Instance | 61440 | 10000 | 16 |
+| hadoop1-7  | Small Hadoop Instance  | 8192  | 1250  | 2  |
++------------+-------------------------+-------+------+------+</programlisting>
+                </example>
             </section>
             </section>            
             <section xml:id="CDB_listStacks">
@@ -1275,7 +1323,17 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
                 </example>
             </section>
                 <section xml:id="client_listStacks"><title>Client example</title>
-                <para>Using the client, view available stacks as shown in the following examples: </para> 
+                <para>Using the client, view available stacks as shown in the following example. </para>
+                <example>
+                    <title>View available stacks with the CLI </title>
+                    <programlisting>$ lava flavor-list
++------------+-------------------------+-------+------+------+
+| Id | Name | Mem | Disk | CPUs |
++------------+-------------------------+-------+------+------+
+| hadoop1-60 | XLarge Hadoop Instance | 61440 | 10000 | 16 |
+| hadoop1-7  | Small Hadoop Instance  | 8192  | 1250  | 2  |
++------------+-------------------------+-------+------+------+</programlisting>
+                </example> 
                 </section> 
             </section>
         <section xml:id="creatingClusters">
@@ -1349,7 +1407,17 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
             </section>
             <section xml:id="clientCreateCluster">
                 <title>Client example</title>
-                <para>Insert any info and example for client list clusters.</para>
+                <para>Using the client, create a cluster as shown in the following example.</para>
+                <example>
+                    <title>Create a cluster with the CLI </title>
+                    <programlisting>$ lava flavor-list
++------------+-------------------------+-------+------+------+
+| Id | Name | Mem | Disk | CPUs |
++------------+-------------------------+-------+------+------+
+| hadoop1-60 | XLarge Hadoop Instance | 61440 | 10000 | 16 |
+| hadoop1-7  | Small Hadoop Instance  | 8192  | 1250  | 2  |
++------------+-------------------------+-------+------+------+</programlisting>
+                </example>
             </section>
         </section>
             <section xml:id="CDB_listClusters-d1e004">
@@ -1391,8 +1459,17 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
                 </example>
                 </section>
                 <section xml:id="client_listClusters"><title>Client example</title>
-                    <para>&lt;&lt;&lt;Insert any info and example for client list
-                    clusters.>>></para> 
+                    <para>Using the client, list clusters as shown in the following example.</para>
+                <example>
+                    <title>List clusters with the CLI </title>
+                    <programlisting>$ lava flavor-list
++------------+-------------------------+-------+------+------+
+| Id | Name | Mem | Disk | CPUs |
++------------+-------------------------+-------+------+------+
+| hadoop1-60 | XLarge Hadoop Instance | 61440 | 10000 | 16 |
+| hadoop1-7  | Small Hadoop Instance  | 8192  | 1250  | 2  |
++------------+-------------------------+-------+------+------+</programlisting>
+                </example> 
                 </section>
             </section>
             <section xml:id="CDB_viewDetails">
@@ -1440,11 +1517,11 @@ $ export LAVA_API_URL=https://dfw.bigdata.api.rackspacecloud.com/v1.0/1100111</p
                 </example>
                 </section>
                 <section xml:id="client_viewDetails"><title>Client example</title>
-                <para>Use the <code>show</code> and <code>nodes</code> commands to query your
-                    cluster, as shown in the following example.</para>
+                <para>Using the client, use the <code>show</code> and <code>nodes</code> commands to
+                    query your cluster, as shown in the following example.</para>
                 <example>
-                    <title>Query the details of a cluster by using the show and nodes
-                        commands</title>
+                    <title>Query the details of a cluster by using the show and nodes commands with
+                        the CLI</title>
                     <programlisting>$ lava show foo
 +----------+--------------------------------------+
 | Property | Value |
@@ -1542,10 +1619,11 @@ $ lava nodes foo
                 </example>
                 </section>
                 <section xml:id="client_resizeClusters"><title>Client example</title>
-                <para>In the client, you can or decrease the size of an existing cluster by using
+                <para>Using the client, you can or decrease the size of an existing cluster by using
                     the <code>resize</code> command. The following example resizes a previously
                     created cluster <code>foo</code> to include 5 data nodes.<example>
-                        <title>Increase cluster size by using the resize command</title>
+                        <title>Increase cluster size by using the resize command with the
+                            CLI</title>
                         <programlisting>$ lava resize --count=5 foo
 </programlisting>
                     </example></para>
@@ -1608,8 +1686,17 @@ $ lava nodes foo
             </section>
             <section xml:id="clientCreateScript">
                 <title>Client example</title>
-                <para>Using the client, you create a script as shown in the following examples:
-                </para>
+                <para>Using the client, create a script as shown in the following example. </para>
+                <example>
+                    <title>Create a script with the CLI </title>
+                    <programlisting>$ lava flavor-list
++------------+-------------------------+-------+------+------+
+| Id | Name | Mem | Disk | CPUs |
++------------+-------------------------+-------+------+------+
+| hadoop1-60 | XLarge Hadoop Instance | 61440 | 10000 | 16 |
+| hadoop1-7  | Small Hadoop Instance  | 8192  | 1250  | 2  |
++------------+-------------------------+-------+------+------+</programlisting>
+                </example>
             </section>
         </section>
         <section xml:id='listAllScripts'>
@@ -1653,7 +1740,17 @@ $ lava nodes foo
             </section>
             <section xml:id="cleintListAllScripts">
                 <title>Client example</title>
-                <para>Using the client, list all scripts as shown in the following examples: </para>
+                <para>Using the client, list all scripts as shown in the following example. </para>
+                <example>
+                    <title>List available scripts with the CLI </title>
+                    <programlisting>$ lava flavor-list
++------------+-------------------------+-------+------+------+
+| Id | Name | Mem | Disk | CPUs |
++------------+-------------------------+-------+------+------+
+| hadoop1-60 | XLarge Hadoop Instance | 61440 | 10000 | 16 |
+| hadoop1-7  | Small Hadoop Instance  | 8192  | 1250  | 2  |
++------------+-------------------------+-------+------+------+</programlisting>
+                </example>
             </section>
         </section>
             <section xml:id="CDB_deleteClusters">
@@ -1694,10 +1791,9 @@ $ lava nodes foo
                 <para>This operation does not return a response body. </para>
                 </section>
                 <section xml:id="client_deleteClusters"><title>Client example</title>
-                    <para>Use the <code>delete</code> command to remove
-                        unused Hadoop clusters. This command deletes any
-                        servers associated with the cluster and any data
-                        stored in the cluster.</para>
+                    <para>Using the client, use the <code>delete</code> command to remove unused
+                    Hadoop clusters as shown in the following example. This command deletes any
+                    servers associated with the cluster and any data stored in the cluster.</para>
                     <example>
                         <title>Remove clusters by using the delete command</title>
                         <programlisting>$ lava delete foo
