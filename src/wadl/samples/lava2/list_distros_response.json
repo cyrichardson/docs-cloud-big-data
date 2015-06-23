@@ -16,16 +16,16 @@
             ],
         },
         {
-            "id": "HDP2.1",
+            "id": "HDP2.2",
             "name": "Hortonworks Data Platform",
-            "version": "2.1",
+            "version": "2.2",
             "links": [
                 {
-                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/distros/HDP2.1",
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/distros/HDP2.2",
                     "rel": "self"
                 },
                 {
-                    "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/distros/HDP2.1",
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/distros/HDP2.2",
                     "rel": "bookmark"
                 }
             ],

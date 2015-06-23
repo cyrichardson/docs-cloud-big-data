@@ -541,6 +541,11 @@
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="description" style="plain" path="$.stack.description" required="false">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Description for the stack
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="services" style="plain" path="$.stack.services" required="true">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of services and corresponding components
 					</p></doc>

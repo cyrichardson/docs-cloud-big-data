@@ -25,18 +25,22 @@
             "components": [
                 {
                     "name": "Namenode",
+                    "nice_name": "HDFS Namenode",
                     "uri": "http://master-1.local:50070"
                 },
                 {
                     "name": "ResourceManager",
+                    "nice_name": "YARN Resource Manager",
                     "uri": "http://master-1.local:8088"
                 },
                 {
                     "name": "YarnTimelineServer",
+                    "nice_name": "YARN Timeline History Server",
                     "uri": "http://master-1.local:8188"
                 },
                 {
                     "name": "JobHistoryServer",
+                    "nice_name": "MapReduce History Server",
                     "uri": "http://master-1.local:19888"
                 }
             ],
@@ -76,10 +80,12 @@
             "components": [
                 {
                     "name": "Datanode",
+                    "nice_name": "HDFS Datanode",
                     "uri": "http://slave-1.local:50075"
                 },
                 {
                     "name": "NodeManager",
+                    "nice_name": "YARN Node Manager",
                     "uri": "http://slave-1.local:8042"
                 },
             ],
@@ -119,10 +125,12 @@
             "components": [
                 {
                     "name": "Datanode",
+                    "nice_name": "HDFS Datanode",
                     "uri": "http://slave-2.local:50075"
                 },
                 {
                     "name": "NodeManager",
+                    "nice_name": "YARN Node Manager",
                     "uri": "http://slave-2.local:8042"
                 },
             ],

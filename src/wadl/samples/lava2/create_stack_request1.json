@@ -1,7 +1,8 @@
 {
     "stack": {
-        "distro": "HDP2.1",
-        "name": "HDP2.1_Hadoop",
+        "distro": "HDP2.2",
+        "name": "HDP2.2_Hadoop",
+        "description": "Core Hadoop Stack with Hive",
         "services": [
             {
                 "name": "HDFS",
