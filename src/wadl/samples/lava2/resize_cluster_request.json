@@ -1,5 +1,4 @@
 {
-    "action": "resize",
     "cluster": {
         "node_groups": [
             {

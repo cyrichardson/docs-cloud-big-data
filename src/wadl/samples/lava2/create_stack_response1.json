@@ -2,15 +2,16 @@
     "stack": {
         "id": "aaa-bbb-ccc",
         "created": "2014-06-14T10:10:10Z",
-        "distro": "HDP2.1",
-        "name": "HDP2.1_Hadoop",
+        "distro": "HDP2.2",
+        "name": "HDP2.2_Hadoop",
+        "description": "Core Hadoop Stack with Hive",
         "links": [
             {
-                "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/stacks/HDP2.1_Hadoop",
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/stacks/HDP2.2_Hadoop",
                 "rel": "self"
             },
             {
-                "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/stacks/HDP2.1_Hadoop",
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/stacks/HDP2.2_Hadoop",
                 "rel": "bookmark"
             }
         ],
@@ -29,7 +30,7 @@
                 ],
                 "modes": ["HA"],
                 "name": "HDFS",
-                "version": "2.4"
+                "version": "2.6"
             },
             {
                 "components": [
@@ -41,7 +42,7 @@
                     }
                 ],
                 "name": "Yarn",
-                "version": "2.4"
+                "version": "2.6"
             },
             {
                 "components": [
@@ -53,7 +54,7 @@
                     }
                 ],
                 "name": "MapReduce",
-                "version": "2.4"
+                "version": "2.6"
             },
             {
                 "components": [
@@ -71,7 +72,7 @@
                     }
                 ],
                 "name": "Hive",
-                "version": "0.13"
+                "version": "0.14"
             },
             {
                 "components": [
@@ -80,7 +81,7 @@
                     }
                 ],
                 "name": "Pig",
-                "version": "0.12"
+                "version": "0.14"
             }
         ],
         "node_groups": [

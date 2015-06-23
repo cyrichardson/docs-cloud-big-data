@@ -1,9 +1,10 @@
 {
     "stacks": [
         {
-            "distro": "HDP2.1",
-            "id": "HDP2.1_Hadoop",
+            "distro": "HDP2.2",
+            "id": "HDP2.2_Hadoop",
             "name": "Core Hadoop",
+            "description": "Core Hadoop Stack with Hive",
             "services": [
                 {
                     "modes": ["HA"],
@@ -24,19 +25,20 @@
             ],
             "links": [
                 {
-                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/stacks/HDP2.1_Hadoop",
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/stacks/HDP2.2_Hadoop",
                     "rel": "self"
                 },
                 {
-                    "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/stacks/HDP2.1_Hadoop",
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/stacks/HDP2.2_Hadoop",
                     "rel": "bookmark"
                 }
             ],
         },
         {
-            "distro": "HDP2.1",
-            "id": "HDP2.1_HBase",
+            "distro": "HDP2.2",
+            "id": "HDP2.2_HBase",
             "name": "HBase",
+            "description": "Core Hadoop Stack with HBase",
             "services": [
                 {
                     "modes": ["HA"],
@@ -60,11 +62,11 @@
             ],
             "links": [
                 {
-                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/stacks/HBase",
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/stacks/HDP2.2_HBase",
                     "rel": "self"
                 },
                 {
-                    "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/stacks/HBase",
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/stacks/HDP2.2_HBase",
                     "rel": "bookmark"
                 }
             ],
@@ -72,7 +74,7 @@
     ],
     "links": [
         {
-            "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/stacks?limit=2&marker=HDP2.1_HBase",
+            "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/stacks?limit=2&marker=HDP2.2_HBase",
             "rel": "next"
         },
     ]
