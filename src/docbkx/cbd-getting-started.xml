@@ -48,11 +48,11 @@
          xml:id="cbd-getting-started">
     
     <?rax title.font.size="35px" subtitle.font.size="20px"?>
-    <title>Rackspace Cloud Big Data Getting Started Guide</title>
+    <title>Rackspace Cloud Big Data Getting Started Guide, v1</title>
     <?rax status.bar.text.font.size="40px"
           status.bar.text=""?>   
     <titleabbrev>Rackspace Cloud Big Data Getting Started
-        Guide</titleabbrev>
+        Guide, v1</titleabbrev>
      
     <info>
         
@@ -81,32 +81,48 @@
             <revision xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <date>2015-03-04</date>
                 <revdescription>
-                    <para>Removed the London endpoint for the Rackspace Cloud Identity service.
-                        Rackspace now has one global endpoint for authentication. See <xref
-                            linkend="Generating_Auth_Token"/>.</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Removed the London endpoint for the Rackspace Cloud Identity
+                                service. Rackspace now has one global endpoint for authentication.
+                                See <xref linkend="Generating_Auth_Token"/>.</para>
+                        </listitem>
+                    </itemizedlist>
                 </revdescription>
             </revision>
             <revision>
                 <date>2015-01-15</date>
                 <revdescription>
-                    <para>Added a note that includes a link to additional authentication methods,
-                        including multi-factor authentication, in <xref
-                            linkend="Generating_Auth_Token"/>.</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Added a note that includes a link to additional authentication
+                                methods, including multi-factor authentication, in <xref
+                                    linkend="Generating_Auth_Token"/>.</para>
+                        </listitem>
+                    </itemizedlist>
                 </revdescription>
             </revision>
             <revision>
                 <date>2014-09-29</date>
                 <revdescription>
-                    <para linkend="installing_Client">Updated the link used to download the Python
-                        Lava client in <xref linkend="installing_Client"/>.</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para linkend="installing_Client">Updated the link used to download the
+                                Python Lava client in <xref linkend="installing_Client"/>.</para>
+                        </listitem>
+                    </itemizedlist>
                 </revdescription>
             </revision>
             <revision xmlns:wadl="http://wadl.dev.java.net/2009/02"
                 xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
                 <date>2014-07-22</date>
                 <revdescription>
-                    <para>Added a link to guidance on choosing a regionalized endpoint in <xref
-                            linkend="Service_Access_Endpoints-d1e753"/>.</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Added a link to guidance on choosing a regionalized endpoint in
+                                    <xref linkend="Service_Access_Endpoints-d1e753"/>.</para>
+                        </listitem>
+                    </itemizedlist>
                 </revdescription>
             </revision>
             <revision>
@@ -114,7 +130,7 @@
                 <revdescription>
                     <itemizedlist>
                         <listitem>
-                            <para>Initial General Availability (GA) release.</para>
+                            <para>Initial General Availability (GA) release, v1.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -124,7 +140,7 @@
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Initial Limited Availability (LA) release.</para>
+                            <para>Initial Limited Availability (LA) release, v1.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -155,8 +171,7 @@
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Initial Early Access (EA)
-                                release.</para>
+                            <para>Initial Early Access (EA) release, v1.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>

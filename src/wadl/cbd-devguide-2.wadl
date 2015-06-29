@@ -298,12 +298,12 @@
 				</doc>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="ssh_keys" style="plain" path="$.ssh_keys.key_name" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name for the ssh key
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name for the ssh key.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="public_key" style="plain" path="$.ssh_keys.public_key" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">SSH Public Key
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">SSH public key.
 					</p></doc>
 				</param>
 			</representation>
@@ -542,12 +542,12 @@
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="description" style="plain" path="$.stack.description" required="false">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Description for the stack
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Description for the stack.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="services" style="plain" path="$.stack.services" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of services and corresponding components
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">List of services and corresponding components.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
@@ -925,7 +925,7 @@
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="id" style="plain" path="$.cluster.connectors.credential.name" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name of credential for specific type of connector
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name of credential for specific type of connector.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
@@ -935,7 +935,7 @@
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="id" style="plain" path="$.cluster.scripts.id" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">A script id.
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">A script ID.
 					</p></doc>
 				</param>
 			</representation>
@@ -1222,7 +1222,8 @@
 		<response status="204">
 			<representation mediaType="application/json">
 			</representation>
-		</response> &fourhundred; &fourofour; &fouronine; </method>
+		</response> &fourhundred; &fourofour; &fouronine; 
+	</method>
 
 	<!--*******************************************************-->
 	<!-- FLAVORS METHODS                                       -->

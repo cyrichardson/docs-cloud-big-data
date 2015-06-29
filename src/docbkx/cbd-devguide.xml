@@ -48,9 +48,9 @@ format="SVG" scale="60"/>
   <titleabbrev>&PRODNAME; Developer Guide</titleabbrev>
 -->
   <?rax title.font.size="35px" subtitle.font.size="20px"?>
-  <title>Rackspace Cloud Big Data Developer Guide</title> 
+  <title>Rackspace Cloud Big Data Developer Guide, v1</title> 
   <titleabbrev>Rackspace Cloud Big Data Developer
-    Guide</titleabbrev>
+    Guide, v1</titleabbrev>
   <info>
     <author>
       <personname>
@@ -98,17 +98,25 @@ format="SVG" scale="60"/>
       <revision>
         <date>2015-03-04</date>
         <revdescription>
-          <para>Removed the London endpoint for the Rackspace Cloud Identity service. Rackspace now
-            has one global endpoint for authentication. See <xref linkend="Authentication-d1e647"
-            />.</para>
+          <itemizedlist>
+            <listitem>
+              <para>Removed the London endpoint for the Rackspace Cloud Identity service. Rackspace
+                now has one global endpoint for authentication. See <xref
+                  linkend="Authentication-d1e647"/>.</para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
 <revision>
         <date>2015-01-15</date>
         <revdescription>
-          <para>Updated <xref linkend="Authentication-d1e647"/> with information about using
-            multi-factor authentication for added security when a user authenticates with
-              <code>username</code> and <code>password</code> credentials.</para>
+          <itemizedlist>
+            <listitem>
+              <para>Updated <xref linkend="Authentication-d1e647"/> with information about using
+                multi-factor authentication for added security when a user authenticates with
+                  <code>username</code> and <code>password</code> credentials.</para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       
@@ -143,28 +151,44 @@ format="SVG" scale="60"/>
       <revision>
         <date>2014-08-19</date>
         <revdescription>
-          <para>Added the Medium Hadoop Instance and Large Hadoop Instance flavors to example
-            responses in <xref linkend="flavorOperations"/>.   </para>
+          <itemizedlist>
+            <listitem>
+              <para>Added the Medium Hadoop Instance and Large Hadoop Instance flavors to example
+                responses in <xref linkend="flavorOperations"/>. </para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
         <date>2014-07-22</date>
         <revdescription>
-          <para>Added a link to guidance on choosing a regionalized endpoint in <xref
-              linkend="Service_Access_Endpoints-d1e753"/>.</para>
+          <itemizedlist>
+            <listitem>
+              <para>Added a link to guidance on choosing a regionalized endpoint in <xref
+                  linkend="Service_Access_Endpoints-d1e753"/>.</para>
+            </listitem>
+          </itemizedlist>
        </revdescription>
       </revision>
       <revision>
         <date>2014-06-02</date>
         <revdescription>
-          <para>Initial General Availability (GA) release.</para>
+          <itemizedlist>
+            <listitem>
+              <para>Initial General Availability (GA) release, v1.</para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
         <date>2014-04-09</date>
         <revdescription>
-          <para>Updated <xref linkend="Absolute_Limits-d1e1397"/> to show the current default
-            values. </para>
+          <itemizedlist>
+            <listitem>
+              <para>Updated <xref linkend="Absolute_Limits-d1e1397"/> to show the current default
+                values. </para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
@@ -193,27 +217,43 @@ format="SVG" scale="60"/>
       <revision>
         <date>2014-02-03</date>
         <revdescription>
-          <para>Added Role Based Access Control (RBAC). For more information, see <xref
-              linkend="RBAC"/>. </para>
+          <itemizedlist>
+            <listitem>
+              <para>Added Role Based Access Control (RBAC). For more information, see <xref
+                  linkend="RBAC"/>. </para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
         <date>2014-01-14</date>
         <revdescription>
-          <para>Limited Availability (LA) release.</para>
+          <itemizedlist>
+            <listitem>
+              <para>Initial Limited Availability (LA) release, v1.</para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
         <date>2013-10-29</date>
         <revdescription>
-          <para>Corrected the URI for the operation to get node details in <xref
-              linkend="nodeOperations"/>.</para>
+          <itemizedlist>
+            <listitem>
+              <para>Corrected the URI for the operation to get node details in <xref
+                  linkend="nodeOperations"/>.</para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
         <date>2013-09-16</date>
         <revdescription>
-          <para>Initial Early Access (EA) release.</para>
+          <itemizedlist>
+            <listitem>
+              <para>Initial Early Access (EA) release, v1.</para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
     </revhistory>

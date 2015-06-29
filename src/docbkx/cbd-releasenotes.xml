@@ -24,9 +24,9 @@
       <year>2015</year>
       <holder> Rackspace US, Inc.</holder>
     </copyright>
-    <releaseinfo>API v1.0</releaseinfo>
+    <releaseinfo>API v1 and v2</releaseinfo>
     <productname>Rackspace Cloud Big Data</productname>
-    <pubdate>2015-03-04</pubdate>
+    <pubdate>2015-06-30</pubdate>
     <legalnotice role="rs-api">
       <annotation>
         <remark>Copyright details are filled in by the template.</remark>
@@ -42,28 +42,51 @@
       <revision xmlns:m="http://www.w3.org/1998/Math/MathML"
         xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns:svg="http://www.w3.org/2000/svg"
         xmlns:html="http://www.w3.org/1999/xhtml">
+        <date>2015-06-30</date>
+        <revdescription>
+          <itemizedlist xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
+            <listitem>
+              <para xmlns:m="http://www.w3.org/1998/Math/MathML">Initial General Availability (GA)
+                release of v2.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
+      <revision xmlns:m="http://www.w3.org/1998/Math/MathML"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns:svg="http://www.w3.org/2000/svg"
+        xmlns:html="http://www.w3.org/1999/xhtml">
         <date>2015-03-04</date>
         <revdescription>
-          <para>Removed the London endpoint for the Rackspace Cloud Identity service. Rackspace now
-            has one global endpoint for authentication.</para>
+          <itemizedlist xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
+            <listitem>
+              <para xmlns:m="http://www.w3.org/1998/Math/MathML">Removed the London endpoint for the
+                Rackspace Cloud Identity service. Rackspace now has one global endpoint for
+                authentication.</para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
         <date>2015-01-15</date>
         <revdescription>
-          <para xmlns:html="http://www.w3.org/1999/xhtml"
+          <itemizedlist xmlns:html="http://www.w3.org/1999/xhtml"
             xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns:svg="http://www.w3.org/2000/svg"
-            xmlns:m="http://www.w3.org/the key 1998/Math/MathML">Added information and links about
-            multi-factor authentication in the following documents:<itemizedlist>
-              <listitem>
-                <para><olink targetdoc="cbd-getting-started" targetptr="Generating_Auth_Token"
-                    >“Generating an authentication token”</olink></para>
-              </listitem>
-              <listitem>
-                <para><olink targetdoc="cbd-devguide" targetptr="Authentication-d1e647"
-                    >“Authentication”</olink></para>
-              </listitem>
-            </itemizedlist></para>
+            xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
+            <listitem>
+              <para>Added information and links about multi-factor authentication in the following
+                documents:</para>
+              <itemizedlist>
+                <listitem>
+                  <para><olink targetdoc="cbd-getting-started" targetptr="Generating_Auth_Token"
+                      >“Generating an authentication token”</olink></para>
+                </listitem>
+                <listitem>
+                  <para><olink targetdoc="cbd-devguide" targetptr="Authentication-d1e647"
+                      >“Authentication”</olink></para>
+                </listitem>
+              </itemizedlist>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
@@ -101,10 +124,14 @@
       <revision>
         <date>2014-09-29</date>
         <revdescription>
-          <para>Updated the link used to download the Python Lava client to <link
-              xlink:href="http://bit.ly/cbdclient">http://bit.ly/cbdclient</link> and updated the
-            information in <olink targetdoc="cbd-getting-started" targetptr="installing_Client"
-              >“Installing the client”</olink>.</para>
+          <itemizedlist>
+            <listitem>
+              <para>Updated the link used to download the Python Lava client to <link
+                  xlink:href="http://bit.ly/cbdclient">http://bit.ly/cbdclient</link> and updated
+                the information in <olink targetdoc="cbd-getting-started"
+                  targetptr="installing_Client">“Installing the client”</olink>.</para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
@@ -130,46 +157,78 @@
         xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
         <date>2014-07-22</date>
         <revdescription>
-          <para>In the "Service access endpoints" sections in the <citetitle>Cloud Big Data Getting
-              Started Guide</citetitle> and in the <citetitle>Cloud Big Data Developer
-                Guide</citetitle>, added a link to <link
-                  xlink:href="http://www.rackspace.com/knowledge_center/article/about-regions"
-                  >About Regions</link> in the Knowledge Center to
-            provide guidance on choosing a regionalized endpoint.</para>
+          <itemizedlist>
+            <listitem>
+              <para>In the "Service access endpoints" sections in the <citetitle>Cloud Big Data
+                  Getting Started Guide</citetitle> and in the <citetitle>Cloud Big Data Developer
+                  Guide</citetitle>, added a link to <link
+                  xlink:href="http://www.rackspace.com/knowledge_center/article/about-regions">About
+                  Regions</link> in the Knowledge Center to provide guidance on choosing a
+                regionalized endpoint.</para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
         <date>2014-06-02</date>
         <revdescription>
-          <para>Initial General Availability (GA) release.</para>
+          <itemizedlist xmlns:html="http://www.w3.org/1999/xhtml"
+            xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns:svg="http://www.w3.org/2000/svg"
+            xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
+            <listitem>
+              <para>Initial General Availability (GA) release of v1.</para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
         xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <date>2014-04-09</date>
         <revdescription>
-          <para>Updated the "Absolute limits" section in the <citetitle>Cloud Big Data Developer
-              Guide</citetitle> to show the current default values. </para>
+          <itemizedlist xmlns:m="http://www.w3.org/the key 1998/Math/MathML">
+            <listitem>
+              <para xmlns:m="http://www.w3.org/1998/Math/MathML">Updated the "Absolute limits"
+                section in the <citetitle>Cloud Big Data Developer Guide</citetitle> to show the
+                current default values. </para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
         <date>2013-02-03</date>
         <revdescription>
-          <para xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
-            xmlns:html="http://www.w3.org/1999/xhtml" xmlns:wadl="http://wadl.dev.java.net/2009/02"
-            >Added Role Based Access Control (RBAC). </para>
+          <itemizedlist xmlns:m="http://www.w3.org/the key 1998/Math/MathML"
+            xmlns:svg="http://www.w3.org/2000/svg" xmlns:html="http://www.w3.org/1999/xhtml"
+            xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <listitem>
+              <para xmlns:m="http://www.w3.org/1998/Math/MathML">Added Role Based Access Control
+                (RBAC). </para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
         <date>2014-01-14</date>
         <revdescription>
-          <para>Initial Limited Availability (LA) release.</para>
+          <itemizedlist xmlns:m="http://www.w3.org/the key 1998/Math/MathML"
+            xmlns:svg="http://www.w3.org/2000/svg" xmlns:html="http://www.w3.org/1999/xhtml"
+            xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <listitem>
+              <para>Initial Limited Availability (LA) release of v1.</para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
       <revision>
         <date>2013-09-16</date>
         <revdescription>
-          <para>Initial Early Access (EA) release. </para>
+          <itemizedlist xmlns:m="http://www.w3.org/the key 1998/Math/MathML"
+            xmlns:svg="http://www.w3.org/2000/svg" xmlns:html="http://www.w3.org/1999/xhtml"
+            xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <listitem>
+              <para>Initial Early Access (EA) release of v1. </para>
+            </listitem>
+          </itemizedlist>
         </revdescription>
       </revision>
     </revhistory>
@@ -214,6 +273,27 @@
       earlier versions. The most recent changes are described in the
       following table:</para>
     <?rax revhistory?>
+  </chapter>
+  <chapter xml:id="Jun30">
+    <title>June 30, 2015</title>
+    <para>Rackspace is pleased to announce the General Availability (GA) release of Rackspace Cloud
+      Big Data, v2.</para>
+    <para>New versions of the following API documentation are available:<itemizedlist>
+        <listitem>
+          <para><citetitle>Cloud Backup Getting Started Guide, v2</citetitle></para>
+        </listitem>
+        <listitem>
+          <para><citetitle>Cloud Backup Developer Guide, v2</citetitle></para>
+        </listitem>
+      </itemizedlist></para>
+    <para>The Service Level Agreement (SLA) for Cloud Big Data is available at <link
+        xlink:href="http://www.rackspace.com/cloud/legal/sla" xmlns:svg="http://www.w3.org/2000/svg"
+        xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns:wadl="http://wadl.dev.java.net/2009/02"
+        >http://www.rackspace.com/cloud/legal/sla</link>. Your use through the API will be billed
+      according to the pricing schedule at <link
+        xlink:href="http://www.rackspace.com/cloud/big-data/pricing"
+        >http://www.rackspace.com/cloud/big-data/pricing</link>. </para>
   </chapter>
   <chapter xml:id="Mar04">
     <title>March 04, 2015</title>
@@ -362,15 +442,15 @@
   </chapter>
   <chapter xml:id="Jun02">
     <title>June 2, 2014</title>
-    <para>This release is the initial General Availability (GA) release of the Cloud Big Data
-      API.</para>
+    <para>This release is the initial General Availability (GA) release of the Cloud Big Data API,
+      v1.</para>
     <para>Rackspace is pleased to announce the General Availability release of Rackspace Cloud Big
-      Data. The Service Level Agreement (SLA) for Cloud Big Data is available at <link
+      Data, v1. The Service Level Agreement (SLA) for Cloud Big Data is available at <link
         xlink:href="http://www.rackspace.com/cloud/legal/sla" xmlns:svg="http://www.w3.org/2000/svg"
         xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
         xmlns:wadl="http://wadl.dev.java.net/2009/02"
-        >http://www.rackspace.com/cloud/legal/sla</link>. Your use through the API will be
-      billed according to the pricing schedule at <link
+        >http://www.rackspace.com/cloud/legal/sla</link>. Your use through the API will be billed
+      according to the pricing schedule at <link
         xlink:href="http://www.rackspace.com/cloud/big-data/pricing"
         >http://www.rackspace.com/cloud/big-data/pricing</link>. </para>
   </chapter>
@@ -429,8 +509,8 @@
   <chapter xml:id="jan14">
     <?dbhtml stop-chunking?>
     <title>January 14, 2014</title>
-    <para>This release is the initial Limited Availability (LA)
-      release of the Cloud Big Data API.</para>
+    <para>This release is the initial Limited Availability (LA) release of the Cloud Big Data API,
+      v1.</para>
     <para>Rackspace is pleased to announce the Limited Availability release of Rackspace Cloud Big
       Data. The Limited Availability program enables customers and Rackers to test an early version
       of the product and provide feedback on the product and capabilities. Customers are screened as
@@ -444,8 +524,8 @@
   <chapter xml:id="sept16">
     <?dbhtml stop-chunking?>
     <title>September 16, 2013</title>
-    <para>This release is the initial Early Access (EA) release of the
-      Cloud Big Data API.</para>
+    <para>This release is the initial Early Access (EA) release of the Cloud Big Data API,
+      v1.</para>
     <para>Rackspace is pleased to announce the Early Access release of
       Rackspace Cloud Big Data. The Early Access program enables
       customers and Rackers, by invitation, to test an early version
