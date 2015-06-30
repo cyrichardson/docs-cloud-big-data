@@ -1012,7 +1012,7 @@ format="SVG" scale="60"/>
           <listitem>
             <para><code>marker</code> is the ID of the last item in the previous list returned. </para>
             <para>The ID is the respective ID for the last cluster, node, or flavor. For example, a
-              query could request the next 10 nodes after the node “xyz” as follows:
+              query could request the next 10 nodes after the node <code>xyz</code> as follows:
                 <code>?limit=10&amp;marker=xyz</code>. Items displayed are sorted by ID. </para>
           </listitem>
         </itemizedlist>
