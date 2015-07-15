@@ -1,0 +1,7 @@
+src/wadl/cbd-devguide.wadl:
+    title: Rackspace Cloud Big Data Developer Guide v1
+    output_directory: rst/api-operations/v1
+    
+src/wadl/cbd-devguide-2.wadl:
+    title: Rackspace Cloud Big Data Developer Guide v2
+    output_directory: rst/api-operations/v2   

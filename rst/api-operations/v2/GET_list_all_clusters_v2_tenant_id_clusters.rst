@@ -1,0 +1,89 @@
+=============================================================================
+List All Clusters -  Rackspace Cloud Big Data Developer Guide v2
+=============================================================================
+
+List All Clusters
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`Request <GET_list_all_clusters_v2_tenant_id_clusters.rst#request>`__
+`Response <GET_list_all_clusters_v2_tenant_id_clusters.rst#response>`__
+
+.. code-block:: javascript
+
+    GET /v2/{tenant_id}/clusters
+
+Lists all clusters for your account.
+
+
+
+This table shows the possible response codes for this operation:
+
+
++--------------------------+-------------------------+-------------------------+
+|Response Code             |Name                     |Description              |
++==========================+=========================+=========================+
+|200                       |                         |                         |
++--------------------------+-------------------------+-------------------------+
+
+
+Request
+^^^^^^^^^^^^^^^^^
+
+This table shows the URI parameters for the request:
+
++--------------------------+-------------------------+-------------------------+
+|Name                      |Type                     |Description              |
++==========================+=========================+=========================+
+|{tenant_id}               |xsd:string               |The tenant ID in a multi-|
+|                          |                         |tenancy cloud.           |
++--------------------------+-------------------------+-------------------------+
+
+
+
+
+
+
+
+
+Response
+^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+**Example List All Clusters: JSON request**
+
+
+.. code::
+
+    {
+        "clusters": [
+            {
+                "created": "2014-06-14T10:10:10Z",
+                "id": "aaa-bbbb-cccc",
+                "name": "test",
+                "status": "ACTIVE",
+                "stack_id": "HDP2.1_Hadoop",
+                "updated": "",
+                "links": [
+                    {
+                        "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/clusters/aaa-bbbb-cccc",
+                        "rel": "self"
+                    },
+                    {
+                        "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/aaa-bbbb-cccc",
+                        "rel": "bookmark"
+                    }
+                ],
+            }
+        ],
+        "links": [
+            {
+                "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/clusters&limit=1&marker=aaa-bbbb-cccc",
+                "rel": "next"
+            }
+        ]
+    }
+    
+

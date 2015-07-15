@@ -1,0 +1,123 @@
+=============================================================================
+Update A Script -  Rackspace Cloud Big Data Developer Guide v2
+=============================================================================
+
+Update A Script
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`Request <PUT_update_a_script_v2_tenant_id_scripts_scriptid_.rst#request>`__
+`Response <PUT_update_a_script_v2_tenant_id_scripts_scriptid_.rst#response>`__
+
+.. code-block:: javascript
+
+    PUT /v2/{tenant_id}/scripts/{scriptId}
+
+Updates the specified user script.
+
+You can update only the URL and name of the script to reflect either changes to script or script location.
+
+The 400 error code might indicate missing or invalid parameters.
+
+The 409 error code might indicate an invalid state.
+
+
+
+This table shows the possible response codes for this operation:
+
+
++--------------------------+-------------------------+-------------------------+
+|Response Code             |Name                     |Description              |
++==========================+=========================+=========================+
+|200                       |Create a script example: |                         |
+|                          |JSON response            |                         |
++--------------------------+-------------------------+-------------------------+
+|400                       |                         |                         |
++--------------------------+-------------------------+-------------------------+
+|413                       |                         |                         |
++--------------------------+-------------------------+-------------------------+
+
+
+Request
+^^^^^^^^^^^^^^^^^
+
+This table shows the URI parameters for the request:
+
++--------------------------+-------------------------+-------------------------+
+|Name                      |Type                     |Description              |
++==========================+=========================+=========================+
+|{tenant_id}               |xsd:string               |The tenant ID in a multi-|
+|                          |                         |tenancy cloud.           |
++--------------------------+-------------------------+-------------------------+
+|{scriptId}                |xsd:string               |The script ID.           |
++--------------------------+-------------------------+-------------------------+
+
+
+
+
+
+This table shows the body parameters for the request:
+
++--------------------------+-------------------------+-------------------------+
+|Name                      |Type                     |Description              |
++==========================+=========================+=========================+
+|name                      |*(Required)*             |Descriptive name for the |
+|                          |                         |script. For example:     |
+|                          |                         |Setup iPython Notebooks  |
++--------------------------+-------------------------+-------------------------+
+|url                       |*(Required)*             |URL where the script     |
+|                          |                         |resides.                 |
++--------------------------+-------------------------+-------------------------+
+
+
+
+
+
+**Example Update a script example: JSON request**
+
+
+.. code::
+
+    {
+        "script": {
+            "name": "Jupyter Notebooks",
+            "url": "https://test.com/jupyter_install.sh"
+        }
+    }
+    
+
+
+Response
+^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+**Example Create a script example: JSON response**
+
+
+.. code::
+
+    {
+        "script": {
+            "name": "Jupyter Notebooks",
+            "created": "2014-06-14T10:10:10Z",
+            "updated": "2015-03-14T10:10:10Z",
+            "id": "1111-aaaa-bbbbb",
+            "type": "POST_INIT",
+            "url": "https://test.com/jupyter_install.sh",
+            "is_public": false,
+            "links": [
+                {
+                    "rel":"self",
+                    "href":"https://dfw.bigdata.api.rackspacecloud.com/v2/1234/scripts/1111-aaaa-bbbbb"
+                },
+                {
+                   "rel":"bookmark",
+                   "href":"https://dfw.bigdata.api.rackspacecloud.com/1234/scripts/1111-aaaa-bbbbb"
+                }
+            ]
+        }
+    }
+    
+
