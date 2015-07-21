@@ -27,24 +27,24 @@
         <artifactId>rackspace-docs-maven-plugin</artifactId>
         
         <executions>
-      
+          
           <execution>
-            <id>cbd-mgmt-devguide</id>          
+            <id>cbd-release-notes</id>
             <goals>
-	             <goal>generate-webhelp</goal>
+              <goal>generate-webhelp</goal>
             </goals>
-            <phase>generate-sources</phase>          
+            <phase>generate-sources</phase>
             <configuration>
+              <enableDisqus>1</enableDisqus> 
               <includes>
-              cbd-mgmt-devguide.xml
-            </includes>            
-            <enableDisqus>intranet</enableDisqus>            
-            <security>internal</security>
-            <canonicalUrlBase>http://docs-internal.rackspace.com/cbd/api/v1.0/cbd-mgmt-devguide/content</canonicalUrlBase>
-            <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
+                cbd-releasenotes.xml
+              </includes>
+              <chapterAutolabel>0</chapterAutolabel>
+              <canonicalUrlBase>http://docs.rackspace.com/cbd/api/v1.0/cbd-releasenotes/content</canonicalUrlBase>
+              <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
             </configuration>
           </execution>
-
+      
           <execution>
             <id>cbd-devguide</id>
             <goals>
@@ -72,7 +72,6 @@
               <includes>
                 cbd-devguide-2.xml
               </includes>
-  <!--            <security>internal</security>  -->
               <canonicalUrlBase>http://docs.rackspace.com/cbd/api/v2.0/cbd-devguide-2/content</canonicalUrlBase>
               <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
             </configuration>
@@ -106,29 +105,28 @@
               <includes>
                 cbd-getting-started-2.xml
               </includes>
-<!--              <security>internal</security>   -->
               <canonicalUrlBase>http://docs.rackspace.com/cbd/api/v2.0/cbd-getting-started-2/content</canonicalUrlBase>
               <webhelpDefaultTopic>CBD_Overview.html</webhelpDefaultTopic>
               <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
             </configuration>
           </execution> 
-        
+          
           <execution>
-            <id>cbd-release-notes</id>
+            <id>cbd-mgmt-devguide</id>          
             <goals>
               <goal>generate-webhelp</goal>
             </goals>
-            <phase>generate-sources</phase>
+            <phase>generate-sources</phase>          
             <configuration>
-              <enableDisqus>1</enableDisqus> 
               <includes>
-                cbd-releasenotes.xml
-              </includes>
-              <chapterAutolabel>0</chapterAutolabel>
-              <canonicalUrlBase>http://docs.rackspace.com/cbd/api/v1.0/cbd-releasenotes/content</canonicalUrlBase>
+                cbd-mgmt-devguide.xml
+              </includes>            
+              <enableDisqus>intranet</enableDisqus>            
+              <security>internal</security>
+              <canonicalUrlBase>http://docs-internal.rackspace.com/cbd/api/v1.0/cbd-mgmt-devguide/content</canonicalUrlBase>
               <feedbackEmail>catherine.richardson@rackspace.com</feedbackEmail>
             </configuration>
-          </execution> 
+          </execution>
          
         </executions>
         
