@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Supported Cluster Types For A Flavor -  Rackspace Cloud Big Data Developer Guide v1
-=============================================================================
-
 List Supported Cluster Types For A Flavor
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-supported-cluster-types-for-a-flavor-v1.0-tenant-id-flavors-flavorid-types.html#request>`__
-`Response <get-list-supported-cluster-types-for-a-flavor-v1.0-tenant-id-flavors-flavorid-types.html#response>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -32,7 +25,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
@@ -49,12 +42,16 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
+
 
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body.
 
 
 

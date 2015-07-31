@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Delete A Stack -  Rackspace Cloud Big Data Developer Guide v2
-=============================================================================
-
 Delete A Stack
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <delete-delete-a-stack-v2-tenant-id-stacks-stackid.html#request>`__
-`Response <delete-delete-a-stack-v2-tenant-id-stacks-stackid.html#response>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -47,7 +40,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
@@ -64,12 +57,16 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
+
 
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body.
 
 
 

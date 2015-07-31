@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Available Distros -  Rackspace Cloud Big Data Developer Guide v2
-=============================================================================
-
 List Available Distros
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-available-distros-v2-tenant-id-distros.html#request>`__
-`Response <get-list-available-distros-v2-tenant-id-distros.html#response>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -30,7 +23,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
@@ -45,12 +38,16 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
+
 
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body.
 
 
 

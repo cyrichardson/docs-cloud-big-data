@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Create A Credential -  Rackspace Cloud Big Data Developer Guide v2
-=============================================================================
-
 Create A Credential
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <post-create-a-credential-v2-tenant-id-credentials-type.html#request>`__
-`Response <post-create-a-credential-v2-tenant-id-credentials-type.html#response>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -49,7 +42,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
@@ -115,8 +108,10 @@ This table shows the body parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body.
 
 
 

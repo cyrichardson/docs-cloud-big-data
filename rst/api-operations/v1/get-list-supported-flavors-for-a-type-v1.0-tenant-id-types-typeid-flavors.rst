@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Supported Flavors For A Type -  Rackspace Cloud Big Data Developer Guide v1
-=============================================================================
-
 List Supported Flavors For A Type
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-supported-flavors-for-a-type-v1.0-tenant-id-types-typeid-flavors.html#request>`__
-`Response <get-list-supported-flavors-for-a-type-v1.0-tenant-id-types-typeid-flavors.html#response>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -32,7 +25,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
@@ -49,12 +42,16 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
+
 
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body.
 
 
 

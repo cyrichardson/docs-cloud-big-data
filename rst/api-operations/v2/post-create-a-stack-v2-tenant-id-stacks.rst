@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Create A Stack -  Rackspace Cloud Big Data Developer Guide v2
-=============================================================================
-
 Create A Stack
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <post-create-a-stack-v2-tenant-id-stacks.html#request>`__
-`Response <post-create-a-stack-v2-tenant-id-stacks.html#response>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -53,7 +46,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
@@ -81,13 +74,13 @@ This table shows the body parameters for the request:
 |                          |                         |stack. For example:      |
 |                          |                         |HDP_Core                 |
 +--------------------------+-------------------------+-------------------------+
-|description               |*(Required)*             |Description for the      |
+|description               |*(Optional)*             |Description for the      |
 |                          |                         |stack.                   |
 +--------------------------+-------------------------+-------------------------+
 |services                  |*(Required)*             |List of services and     |
 |                          |                         |corresponding components.|
 +--------------------------+-------------------------+-------------------------+
-|node_groups               |*(Required)*             |Definition of the layout |
+|node_groups               |*(Optional)*             |Definition of the layout |
 |                          |                         |of services into grouped |
 |                          |                         |cluster nodes.           |
 +--------------------------+-------------------------+-------------------------+
@@ -95,7 +88,7 @@ This table shows the body parameters for the request:
 |                          |                         |service. For example:    |
 |                          |                         |HDFS                     |
 +--------------------------+-------------------------+-------------------------+
-|modes                     |*(Required)*             |List of modes to create  |
+|modes                     |*(Optional)*             |List of modes to create  |
 |                          |                         |for a particular         |
 |                          |                         |service. (Certain        |
 |                          |                         |services can operate in  |
@@ -107,10 +100,10 @@ This table shows the body parameters for the request:
 |                          |                         |run within the node      |
 |                          |                         |group.                   |
 +--------------------------+-------------------------+-------------------------+
-|count                     |*(Required)*             |Number of instances of   |
+|count                     |*(Optional)*             |Number of instances of   |
 |                          |                         |the node group.          |
 +--------------------------+-------------------------+-------------------------+
-|flavor_id                 |*(Required)*             |Flavor ID for the node   |
+|flavor_id                 |*(Optional)*             |Flavor ID for the node   |
 |                          |                         |group.                   |
 +--------------------------+-------------------------+-------------------------+
 |name                      |*(Required)*             |Component name. For      |
@@ -245,8 +238,10 @@ This table shows the body parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body.
 
 
 

@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Update A Credential -  Rackspace Cloud Big Data Developer Guide v2
-=============================================================================
-
 Update A Credential
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <put-update-a-credential-v2-tenant-id-credentials-type-name.html#request>`__
-`Response <put-update-a-credential-v2-tenant-id-credentials-type-name.html#response>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -37,7 +30,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
@@ -92,8 +85,10 @@ This table shows the body parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body.
 
 
 

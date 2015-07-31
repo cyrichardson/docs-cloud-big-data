@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Resize Cluster -  Rackspace Cloud Big Data Developer Guide v1
-=============================================================================
-
 Resize Cluster
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <post-resize-cluster-v1.0-tenant-id-clusters-clusterid-action.html#request>`__
-`Response <post-resize-cluster-v1.0-tenant-id-clusters-clusterid-action.html#response>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -42,7 +35,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
@@ -58,6 +51,8 @@ This table shows the URI parameters for the request:
 
 
 
+
+This operation does not accept a request body.
 
 
 
@@ -75,8 +70,10 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body.
 
 
 

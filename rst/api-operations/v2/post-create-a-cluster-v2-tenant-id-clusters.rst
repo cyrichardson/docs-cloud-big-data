@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Create A Cluster -  Rackspace Cloud Big Data Developer Guide v2
-=============================================================================
-
 Create A Cluster
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <post-create-a-cluster-v2-tenant-id-clusters.html#request>`__
-`Response <post-create-a-cluster-v2-tenant-id-clusters.html#response>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -65,7 +58,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
@@ -96,7 +89,7 @@ This table shows the body parameters for the request:
 |stack                     |*(Required)*             |Stack ID to use for the  |
 |                          |                         |cluster.                 |
 +--------------------------+-------------------------+-------------------------+
-|node_groups               |*(Required)*             |List of node groups      |
+|node_groups               |*(Optional)*             |List of node groups      |
 |                          |                         |where various components |
 |                          |                         |reside. Note: This       |
 |                          |                         |overrides any values     |
@@ -106,13 +99,13 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |id                        |*(Required)*             |A node group ID or name. |
 +--------------------------+-------------------------+-------------------------+
-|count                     |*(Required)*             |Number of instances of   |
+|count                     |*(Optional)*             |Number of instances of   |
 |                          |                         |the node group.          |
 +--------------------------+-------------------------+-------------------------+
-|flavor_id                 |*(Required)*             |Flavor ID for the node   |
+|flavor_id                 |*(Optional)*             |Flavor ID for the node   |
 |                          |                         |group.                   |
 +--------------------------+-------------------------+-------------------------+
-|connectors                |*(Required)*             |List of connector        |
+|connectors                |*(Optional)*             |List of connector        |
 |                          |                         |credentials. Note: This  |
 |                          |                         |also enables the         |
 |                          |                         |connector for use with   |
@@ -125,7 +118,7 @@ This table shows the body parameters for the request:
 |                          |                         |specific type of         |
 |                          |                         |connector.               |
 +--------------------------+-------------------------+-------------------------+
-|scripts                   |*(Required)*             |List of scripts to run   |
+|scripts                   |*(Optional)*             |List of scripts to run   |
 |                          |                         |post install of cluster. |
 +--------------------------+-------------------------+-------------------------+
 |id                        |*(Required)*             |A script ID.             |
@@ -172,8 +165,10 @@ This table shows the body parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body.
 
 
 

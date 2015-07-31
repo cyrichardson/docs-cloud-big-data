@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Update A Script -  Rackspace Cloud Big Data Developer Guide v2
-=============================================================================
-
 Update A Script
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <put-update-a-script-v2-tenant-id-scripts-scriptid.html#request>`__
-`Response <put-update-a-script-v2-tenant-id-scripts-scriptid.html#response>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -41,7 +34,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
@@ -63,7 +56,7 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|name                      |*(Required)*             |Descriptive name for the |
+|name                      |*(Optional)*             |Descriptive name for the |
 |                          |                         |script. For example:     |
 |                          |                         |Setup iPython Notebooks  |
 +--------------------------+-------------------------+-------------------------+
@@ -90,8 +83,10 @@ This table shows the body parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body.
 
 
 

@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Available Flavors -  Rackspace Cloud Big Data Developer Guide v1
-=============================================================================
-
 List Available Flavors
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-available-flavors-v1.0-tenant-id-flavors.html#request>`__
-`Response <get-list-available-flavors-v1.0-tenant-id-flavors.html#response>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -30,7 +23,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
@@ -45,12 +38,16 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
+
 
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body.
 
 
 

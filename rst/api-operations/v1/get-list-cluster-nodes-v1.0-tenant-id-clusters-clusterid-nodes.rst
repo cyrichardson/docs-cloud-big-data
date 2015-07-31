@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Cluster Nodes -  Rackspace Cloud Big Data Developer Guide v1
-=============================================================================
-
 List Cluster Nodes
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-cluster-nodes-v1.0-tenant-id-clusters-clusterid-nodes.html#request>`__
-`Response <get-list-cluster-nodes-v1.0-tenant-id-clusters-clusterid-nodes.html#response>`__
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -36,7 +29,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 This table shows the URI parameters for the request:
 
@@ -53,6 +46,8 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
+
 
 
 
@@ -68,8 +63,10 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
+
+This operation does not accept a response body.
 
 
 
