@@ -8,7 +8,7 @@ Show Resource Limits
 
     GET /v1.0/{tenant_id}/limits
 
-Shows the absolute resource limits, 				such as remaining node count, available RAM, and 				remaining disk space, for the user.
+This operation shows the absolute resource limits, 				such as remaining node count, available RAM, and 				remaining disk space, for the user.
 
 
 
@@ -18,7 +18,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-|200                       |                         |                         |
+|200                       |OK                       |Success.                 |
 +--------------------------+-------------------------+-------------------------+
 
 

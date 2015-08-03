@@ -8,7 +8,7 @@ Show Flavor Details
 
     GET /v1.0/{tenant_id}/flavors/{flavorId}
 
-Shows details for a specified 				flavor.
+This operation shows details for a specified 				flavor.
 
 
 
@@ -18,7 +18,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-|200                       |                         |                         |
+|200                       |OK                       |Success.                 |
 +--------------------------+-------------------------+-------------------------+
 |404                       |Not Found                |The back-end services    |
 |                          |                         |did not find anything    |

@@ -8,7 +8,7 @@ Create Cluster
 
     POST /v1.0/{tenant_id}/clusters
 
-Creates a cluster.
+This operations creates a cluster.
 
 .. note::
    You must create your profile before you create 					a cluster.
@@ -49,7 +49,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-|200                       |                         |                         |
+|200                       |OK                       |Success.                 |
 +--------------------------+-------------------------+-------------------------+
 |400                       |Bad Request              |The user-provided        |
 |                          |                         |request contained an     |

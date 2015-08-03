@@ -8,7 +8,7 @@ List Available Flavors
 
     GET /v1.0/{tenant_id}/flavors
 
-Lists all available flavors, 				including the drive size and amount of RAM.
+This operation lists all available flavors, 				including the drive size and amount of RAM.
 
 
 
@@ -18,7 +18,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-|200                       |                         |                         |
+|200                       |OK                       |Success.                 |
 +--------------------------+-------------------------+-------------------------+
 
 

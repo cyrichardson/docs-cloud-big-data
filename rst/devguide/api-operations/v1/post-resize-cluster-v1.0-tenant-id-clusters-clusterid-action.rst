@@ -8,13 +8,11 @@ Resize Cluster
 
     POST /v1.0/{tenant_id}/clusters/{clusterId}/action
 
-Resizes a specified cluster.
+This operation resizes the cluster specified by ``clusterId``.
 
 The 400 error code might indicate the presence of 				unacceptable parameters or malformed data.
 
 The 409 error code might indicate an invalid 				state.
-
-This operation resizes the cluster specified by ``clusterId``.
 
 
 
@@ -24,7 +22,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-|200                       |                         |                         |
+|200                       |OK                       |Success.                 |
 +--------------------------+-------------------------+-------------------------+
 |400                       |Bad Request              |The user-provided        |
 |                          |                         |request contained an     |

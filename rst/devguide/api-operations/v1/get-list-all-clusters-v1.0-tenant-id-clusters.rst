@@ -8,7 +8,7 @@ List All Clusters
 
     GET /v1.0/{tenant_id}/clusters
 
-Lists all clusters for your 				account.
+This operation lists all clusters for your 				account.
 
 
 
@@ -18,7 +18,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-|200                       |                         |                         |
+|200                       |OK                       |Success.                 |
 +--------------------------+-------------------------+-------------------------+
 
 

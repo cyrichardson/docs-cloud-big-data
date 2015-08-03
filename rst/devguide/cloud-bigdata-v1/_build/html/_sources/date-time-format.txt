@@ -41,6 +41,6 @@ The following table describes the date and time format codes.
 +------+----------------------------------------+
 | SSS  | Three-digit milliseconds of the second |
 +------+----------------------------------------+
-| Z    | RFC-822 timezone                       |
+| Z    | RFC 822 timezone                       |
 +------+----------------------------------------+
 

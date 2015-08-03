@@ -8,13 +8,11 @@ Delete Cluster
 
     DELETE /v1.0/{tenant_id}/clusters/{clusterId}
 
-Deletes a specified cluster.
+This operation deletes the cluster that is specified 				by ``clusterId``.
 
 The 400 error code might indicate missing or invalid 				parameters.
 
 The 409 error code might indicate an invalid 				state.
-
-This operation deletes the cluster that is specified 				by ``clusterId``.
 
 
 
@@ -24,7 +22,10 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-|204                       |                         |                         |
+|204                       |No Content               |The server has fulfilled |
+|                          |                         |the request and does not |
+|                          |                         |need to return a         |
+|                          |                         |response body.           |
 +--------------------------+-------------------------+-------------------------+
 |400                       |Bad Request              |The user-provided        |
 |                          |                         |request contained an     |

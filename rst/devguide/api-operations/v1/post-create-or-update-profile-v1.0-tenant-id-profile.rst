@@ -8,7 +8,7 @@ Create Or Update Profile
 
     POST /v1.0/{tenant_id}/profile
 
-Creates a profile or updates the 				information in an existing profile.
+This operation creates a profile or updates the 				information in an existing profile.
 
 Cloud Big Data provisions each server in the cluster 				with the ``username`` and ``password`` that are part of the 				profile. You can ssh into the nodes with those 				credentials. These credentials are required in the 				request (as shown in the example "Create or update 				profile request:JSON").
 
@@ -29,7 +29,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-|200                       |                         |                         |
+|200                       |OK                       |Success.                 |
 +--------------------------+-------------------------+-------------------------+
 |400                       |Bad Request              |The user-provided        |
 |                          |                         |request contained an     |

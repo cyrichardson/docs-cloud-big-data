@@ -94,7 +94,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 <p>All accounts, by default, have a preconfigured set of thresholds (or limits) to manage capacity and prevent abuse of the system. The system recognizes <em>rate limits</em> and <em>absolute limits</em>. Rate limits are thresholds that are reset after a certain amount of time passes. Absolute limits are fixed.</p>
 <div class="section" id="rate-limits">
 <span id="cbd-dgv2-limits-ratelimits"></span><h2>Rate limits<a class="headerlink" href="#rate-limits" title="Permalink to this headline">¶</a></h2>
-<p>Rate limits are specified in both a human-readable wildcard URI and a machine-processable regular expression. The regular expression boundary matcher <code class="docutils literal"><span class="pre">'^'</span></code> takes effect after the root URI path. For example, the regular expression <code class="docutils literal"><span class="pre">^/v2/clusters</span></code> would match the bold portion of the following URI: <code class="docutils literal"><span class="pre">https://dfw.bigdata.api.rackspacecloud.com**/v2/clusters</span></code>.</p>
+<p>Rate limits are specified in both a human-readable wildcard URI and a machine-processable regular expression. The regular expression boundary matcher <code class="docutils literal"><span class="pre">^</span></code> takes effect after the root URI path. For example, the regular expression <code class="docutils literal"><span class="pre">^/v1.0/clusters</span></code> would match the last portion of the following URI: <a class="reference external" href="https://dfw.bigdata.api.rackspacecloud.com/v1.0/clusters">https://dfw.bigdata.api.rackspacecloud.com/v1.0/clusters</a>.</p>
 <p>The following table specifies the default rate limits for all <strong>GET</strong>, <strong>PUT</strong>,  <strong>DELETE</strong>, and <strong>POST</strong> API operations for clusters.</p>
 <p><strong>Default rate limits</strong></p>
 <table border="1" class="docutils">
@@ -139,7 +139,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 </tr>
 </tbody>
 </table>
-<p>Rate limits are applied in order relative to the verb, going from least to most specific. For example, although the threshold for issuing a <strong>POST</strong> request to <code class="docutils literal"><span class="pre">/v2/*</span></code> is 2 per minute, you cannot issue a <strong>POST</strong> request to <code class="docutils literal"><span class="pre">/v2/*</span></code> more than 50 times within a single day.</p>
+<p>Rate limits are applied in order relative to the verb, going from least to most specific. For example, although the threshold for issuing a <strong>POST</strong> request to <code class="docutils literal"><span class="pre">/v1.0/*</span></code> is 2 per minute, you cannot issue a <strong>POST</strong> request to <code class="docutils literal"><span class="pre">/v1.0/*</span></code> more than 50 times within a single day.</p>
 <p>If you exceed the thresholds established for your account, a 413 (OverLimit) HTTP response is returned with a <code class="docutils literal"><span class="pre">Retry-After</span></code> header to notify the client when it can attempt to try again.</p>
 </div>
 <div class="section" id="absolute-limits">
@@ -230,6 +230,24 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 <li class="toctree-l1"><a class="reference internal" href="data-node-instances.html">Data node instances</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cluster-status.html">Cluster status</a></li>
 <li class="toctree-l1"><a class="reference internal" href="node-status.html">Node status</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/delete-delete-cluster-v1.0-tenant-id-clusters-clusterid.html">Delete Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-list-all-clusters-v1.0-tenant-id-clusters.html">List All Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-list-available-flavors-v1.0-tenant-id-flavors.html">List Available Flavors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-list-cluster-nodes-v1.0-tenant-id-clusters-clusterid-nodes.html">List Cluster Nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-list-cluster-types-v1.0-tenant-id-types.html">List Cluster Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-list-supported-cluster-types-for-a-flavor-v1.0-tenant-id-flavors-flavorid-types.html">List Supported Cluster Types For A Flavor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-list-supported-flavors-for-a-type-v1.0-tenant-id-types-typeid-flavors.html">List Supported Flavors For A Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-show-cluster-details-v1.0-tenant-id-clusters-clusterid.html">Show Cluster Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-show-cluster-type-details-v1.0-tenant-id-types-typeid.html">Show Cluster Type Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-show-flavor-details-v1.0-tenant-id-flavors-flavorid.html">Show Flavor Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-show-node-details-v1.0-tenant-id-clusters-clusterid-nodes-nodeid.html">Show Node Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-show-resource-limits-v1.0-tenant-id-limits.html">Show Resource Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-view-profile-information-v1.0-tenant-id-profile.html">View Profile Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/post-create-cluster-v1.0-tenant-id-clusters.html">Create Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/post-create-or-update-profile-v1.0-tenant-id-profile.html">Create Or Update Profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/post-resize-cluster-v1.0-tenant-id-clusters-clusterid-action.html">Resize Cluster</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>

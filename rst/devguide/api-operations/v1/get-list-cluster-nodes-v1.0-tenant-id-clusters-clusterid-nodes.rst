@@ -8,7 +8,7 @@ List Cluster Nodes
 
     GET /v1.0/{tenant_id}/clusters/{clusterId}/nodes
 
-Lists all nodes for a specified 				cluster.
+This operation lists all nodes for a specified 				cluster.
 
 Valid values for the request body parameter ``postInitScriptStatus`` are ``FAILED``, ``PENDING``, ``DELIVERED``, ``RUNNING``, ``SUCCEEDED``, and ``None``.
 
@@ -22,7 +22,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-|200                       |                         |                         |
+|200                       |OK                       |Success.                 |
 +--------------------------+-------------------------+-------------------------+
 |404                       |Not Found                |The back-end services    |
 |                          |                         |did not find anything    |

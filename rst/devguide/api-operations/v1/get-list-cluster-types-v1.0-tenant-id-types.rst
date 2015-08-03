@@ -8,7 +8,7 @@ List Cluster Types
 
     GET /v1.0/{tenant_id}/types
 
-Lists cluster types.
+THis operation lists cluster types.
 
 
 
@@ -18,7 +18,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-|200                       |                         |                         |
+|200                       |OK                       |Success.                 |
 +--------------------------+-------------------------+-------------------------+
 
 

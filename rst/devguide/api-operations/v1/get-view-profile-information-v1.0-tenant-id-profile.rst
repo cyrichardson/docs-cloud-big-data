@@ -8,7 +8,7 @@ View Profile Information
 
     GET /v1.0/{tenant_id}/profile
 
-Returns profile details for the 				current user.
+This operation returns profile details for the 				current user.
 
 
 
@@ -18,7 +18,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-|200                       |                         |                         |
+|200                       |OK                       |Success.                 |
 +--------------------------+-------------------------+-------------------------+
 
 

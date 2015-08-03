@@ -15,13 +15,13 @@ To help you decide which regionalized endpoint to use, read `About regions`_ abo
 +-------------------------+---------------------------------------------------------------------+
 |         Region          |                                Endpoint                             |
 +=========================+=====================================================================+
-| Chicago (ORD)           | ``https://ord.bigdata.api.rackspacecloud.com/v2/`\ `yourAccountID/``|
+| Chicago (ORD)           | ``https://ord.bigdata.api.rackspacecloud.com/v1.0/yourAccountID/``  |
 +-------------------------+---------------------------------------------------------------------+
-| Dallas/Ft. Worth (DFW)  | ``https://dfw.bigdata.api.rackspacecloud.com/v2/`\ `yourAccountID/``|
+| Dallas/Ft. Worth (DFW)  | ``https://dfw.bigdata.api.rackspacecloud.com/v1.0/yourAccountID/``  |
 +-------------------------+---------------------------------------------------------------------+
-| Northern Virginia (IAD) | ``https://iad.bigdata.api.rackspacecloud.com/v2/`\ `yourAccountID/``|
+| Northern Virginia (IAD) | ``https://iad.bigdata.api.rackspacecloud.com/v1.0/yourAccountID/``  |
 +-------------------------+---------------------------------------------------------------------+
-| London (LON)            | ``https://lon.bigdata.api.rackspacecloud.com/v2/`\ `yourAccountID/``|
+| London (LON)            | ``https://lon.bigdata.api.rackspacecloud.com/v1.0/yourAccountID/``  |
 +-------------------------+---------------------------------------------------------------------+
 
 Replace the ``yourAccountID`` placeholder with your actual account number, which is returned as part of the authentication service response, after the final **/** in the ``publicURL`` field.

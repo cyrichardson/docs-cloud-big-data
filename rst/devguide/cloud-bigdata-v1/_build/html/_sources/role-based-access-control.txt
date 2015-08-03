@@ -101,6 +101,6 @@ The following table shows two examples of how potential conflicts between user r
 RBAC permissions cross-reference to Cloud Big Data API operations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-API operations for Cloud Big Data may or may not be available to all roles. To see which operations are permitted to invoke which calls, please review `the Knowledge Center article`_.
+API operations for Cloud Big Data may or may not be available to all roles. To see which operations are permitted to invoke which calls, please review the `Permissions Matrix for Role-Based Access Control`_.
 
-.. _the Knowledge Center article: http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-role-based-access-control-rbac
+.. _Permissions Matrix for Role-Based Access Control: http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-role-based-access-control-rbac

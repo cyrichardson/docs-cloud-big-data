@@ -142,7 +142,7 @@
 	<method name="POST" id="postProfile">
 		<wadl:doc xml:lang="EN" title="Create or update profile"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Creates a profile or updates the
+			<para role="shortdesc">This operation creates a profile or updates the
 				information in an existing profile.</para>
 			<para>Cloud Big Data provisions each server in the cluster
 				with the <code>username</code> and
@@ -175,6 +175,7 @@
 			</representation>
 		</request>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -192,10 +193,11 @@
 	<method name="GET" id="getProfile">
 		<wadl:doc xml:lang="EN" title="View profile information"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Returns profile details for the
+			<para role="shortdesc">This operation returns profile details for the
 				current user.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -219,7 +221,7 @@
 	<method name="POST" id="createCluster">
 		<wadl:doc xml:lang="EN" title="Create cluster"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Creates a cluster.</para>
+			<para role="shortdesc">This operations creates a cluster.</para>
 			<note><para>You must create your profile before you create
 					a cluster.</para></note>
 			<para>The <code>postInitScript</code> request parameter
@@ -276,6 +278,7 @@
 			</representation>
 		</request>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -293,10 +296,11 @@
 	<method name="GET" id="getClusters">
 		<wadl:doc xml:lang="EN" title="List all clusters"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all clusters for your
+			<para role="shortdesc">This operation lists all clusters for your
 				account.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -315,7 +319,7 @@
 	<method name="GET" id="getClusterDetails">
 		<wadl:doc xml:lang="EN" title="Show cluster details"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Shows details for a specified
+			<para role="shortdesc">This oepration shows details for a specified
 				cluster.</para>
 		</wadl:doc>
 		<request>
@@ -330,6 +334,7 @@
 			</representation>
 		</request>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -349,13 +354,12 @@
 	<method name="DELETE" id="deleteCluster">
 		<wadl:doc xml:lang="EN" title="Delete cluster"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Deletes a specified cluster.</para>
+			<para role="shortdesc">This operation deletes the cluster that is specified
+				by <code>clusterId</code>.</para>
 			<para>The 400 error code might indicate missing or invalid
 				parameters.</para>
 			<para>The 409 error code might indicate an invalid
 				state.</para>
-			<para>This operation deletes the cluster that is specified
-				by <code>clusterId</code>.</para>
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json"
@@ -369,6 +373,7 @@
 			</representation>
 		</request>
 		<response status="204">
+			<doc title="No Content" xml:lang="EN">The server has fulfilled the request and does not need to return a response body.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -388,13 +393,12 @@
 	<method name="POST" id="postClusterAction">
 		<wadl:doc xml:lang="EN" title="Resize cluster"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Resizes a specified cluster.</para>
+			<para role="shortdesc">This operation resizes the cluster specified by
+				<code>clusterId</code>.</para>
 			<para>The 400 error code might indicate the presence of
 				unacceptable parameters or malformed data.</para>
 			<para>The 409 error code might indicate an invalid
 				state.</para>
-			<para>This operation resizes the cluster specified by
-					<code>clusterId</code>.</para>
 		</wadl:doc>
 		<request>
 			<representation mediaType="application/json">
@@ -407,6 +411,7 @@
 			</representation>
 		</request>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -428,7 +433,7 @@
 	<method name="GET" id="getClusterNodes">
 		<wadl:doc xml:lang="EN" title="List cluster nodes"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all nodes for a specified
+			<para role="shortdesc">This operation lists all nodes for a specified
 				cluster.</para>
 			<para>Valid values for the request body parameter
 					<code>postInitScriptStatus</code> are
@@ -450,6 +455,7 @@
 			</representation>
 		</request>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -467,7 +473,7 @@
 	<method name="GET" id="getNodeDetails">
 		<wadl:doc xml:lang="EN" title="Show node details"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Shows details for a specified node
+			<para role="shortdesc">This operation shows details for a specified node
 				in a specified cluster.</para>
 			<para>Valid values for the request body parameter
 					<code>postInitScriptStatus</code> are
@@ -490,6 +496,7 @@
 			</representation>
 		</request>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -511,10 +518,11 @@
 	<method name="GET" id="getFlavors">
 		<wadl:doc xml:lang="EN" title="List available flavors"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all available flavors,
+			<para role="shortdesc">This operation lists all available flavors,
 				including the drive size and amount of RAM.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -533,10 +541,11 @@
 	<method name="GET" id="getFlavorDetails">
 		<wadl:doc xml:lang="EN" title="Show flavor details"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Shows details for a specified
+			<para role="shortdesc">This operation shows details for a specified
 				flavor.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -555,10 +564,11 @@
 		<wadl:doc xml:lang="EN"
 			title="List supported cluster types for a flavor"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists the supported cluster types
+			<para role="shortdesc">This operation lists the supported cluster types
 				for a specified flavor.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -580,9 +590,10 @@
 	<method name="GET" id="getClusterTypes">
 		<wadl:doc xml:lang="EN" title="List cluster types"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists cluster types.</para>
+			<para role="shortdesc">THis operation lists cluster types.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -601,10 +612,11 @@
 	<method name="GET" id="getClusterTypeDetails">
 		<wadl:doc xml:lang="EN" title="Show cluster type details"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Shows details for a specified
+			<para role="shortdesc">This operation shows details for a specified
 				cluster type.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -623,10 +635,11 @@
 		<wadl:doc xml:lang="EN"
 			title="List supported flavors for a type"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists the supported flavors for a
+			<para role="shortdesc">This operation lists the supported flavors for a
 				specified cluster type.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -648,11 +661,12 @@
 	<method name="GET" id="viewResourceLimits">
 		<wadl:doc xml:lang="EN" title="Show resource limits"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Shows the absolute resource limits,
+			<para role="shortdesc">This operation shows the absolute resource limits,
 				such as remaining node count, available RAM, and
 				remaining disk space, for the user.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
