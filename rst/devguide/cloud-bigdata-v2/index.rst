@@ -36,7 +36,16 @@ General API information
    data-node-instances
    cluster-status
    node-status
+   
+API Operations
+-------------------
 
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    api-operations/*      
+   
 Glossary
 --------
 .. toctree::

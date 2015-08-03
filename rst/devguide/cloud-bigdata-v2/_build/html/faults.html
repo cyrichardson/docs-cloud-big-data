@@ -95,9 +95,9 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 <p>The following table lists possible fault types with their associated error codes and descriptions.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="27%" />
-<col width="16%" />
-<col width="56%" />
+<col width="33%" />
+<col width="15%" />
+<col width="52%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Fault type</th>
@@ -107,43 +107,43 @@ error code</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>badRequest</td>
+<tr class="row-even"><td>Bad Request</td>
 <td>400</td>
 <td>The user-provided request contained an
 error.</td>
 </tr>
-<tr class="row-odd"><td>unauthorized</td>
+<tr class="row-odd"><td>Unauthorized</td>
 <td>401</td>
 <td>The supplied token is not authorized to
 access the resources. The token is
 either expired or invalid.</td>
 </tr>
-<tr class="row-even"><td>forbidden</td>
+<tr class="row-even"><td>Forbidden</td>
 <td>403</td>
 <td>Access to the requested resource was
 denied.</td>
 </tr>
-<tr class="row-odd"><td>itemNotFound</td>
+<tr class="row-odd"><td>Not Found</td>
 <td>404</td>
 <td>The back-end services did not find
 anything matching the request URI.</td>
 </tr>
-<tr class="row-even"><td>conflictingRequest</td>
+<tr class="row-even"><td>Conflict</td>
 <td>409</td>
 <td>The requested resource cannot currently
 be operated on.</td>
 </tr>
-<tr class="row-odd"><td>overLimit</td>
+<tr class="row-odd"><td>Request Entity Too Large</td>
 <td>413</td>
 <td>The resource quota was exceeded.</td>
 </tr>
-<tr class="row-even"><td>lavaFault</td>
+<tr class="row-even"><td>Lava Fault</td>
 <td>500</td>
 <td>An unknown exception occurred.</td>
 </tr>
-<tr class="row-odd"><td>serviceUnavailable</td>
+<tr class="row-odd"><td>Service Unavailable</td>
 <td>503</td>
-<td>he service is currently unavailable.</td>
+<td>The service is currently unavailable.</td>
 </tr>
 </tbody>
 </table>
@@ -195,6 +195,31 @@ be operated on.</td>
 <li class="toctree-l1"><a class="reference internal" href="data-node-instances.html">Data node instances</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cluster-status.html">Cluster status</a></li>
 <li class="toctree-l1"><a class="reference internal" href="node-status.html">Node status</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/delete-delete-a-cluster-v2-tenant-id-clusters-clusterid.html">Delete A Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/delete-delete-a-credential-v2-tenant-id-credentials-type-name.html">Delete A Credential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/delete-delete-a-script-v2-tenant-id-scripts-scriptid.html">Delete A Script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/delete-delete-a-stack-v2-tenant-id-stacks-stackid.html">Delete A Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-list-all-clusters-v2-tenant-id-clusters.html">List All Clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-list-all-credentials-v2-tenant-id-credentials.html">List All Credentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-list-all-scripts-v2-tenant-id-scripts.html">List All Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-list-all-stacks-v2-tenant-id-stacks.html">List All Stacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-list-available-distros-v2-tenant-id-distros.html">List Available Distros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-list-available-flavors-v2-tenant-id-flavors.html">List Available Flavors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-list-cluster-nodes-v2-tenant-id-clusters-clusterid-nodes.html">List Cluster Nodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-list-credentials-by-type-v2-tenant-id-credentials-type.html">List Credentials By Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-show-cluster-details-v2-tenant-id-clusters-clusterid.html">Show Cluster Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-show-distro-details-v2-tenant-id-distros-distro-id.html">Show Distro Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-show-resource-limits-v2-tenant-id-limits.html">Show Resource Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/get-show-stack-details-v2-tenant-id-stacks-stackid.html">Show Stack Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/post-create-a-cluster-v2-tenant-id-clusters.html">Create A Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/post-create-a-credential-v2-tenant-id-credentials-type.html">Create A Credential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/post-create-a-script-v2-tenant-id-scripts.html">Create A Script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/post-create-a-stack-v2-tenant-id-stacks.html">Create A Stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/put-resize-a-cluster-v2-tenant-id-clusters-clusterid.html">Resize A Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/put-update-a-credential-v2-tenant-id-credentials-type-name.html">Update A Credential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-operations/put-update-a-script-v2-tenant-id-scripts-scriptid.html">Update A Script</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>

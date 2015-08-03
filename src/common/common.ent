@@ -13,6 +13,8 @@
         <response status="202" xmlns="http://wadl.dev.java.net/2009/02">
             <representation mediaType="application/xml" element="clusters:Accepted"/>
             <representation mediaType="application/json"/>
+            <doc title="Accepted" xml:lang="EN">The request has been accepted for processing, but the processing has not been completed.
+            </doc> 
         </response>
            '>  
            
@@ -21,6 +23,8 @@
         <response status="400" xmlns="http://wadl.dev.java.net/2009/02">
             <representation mediaType="application/xml" element="clusters:badRequest"/>
             <representation mediaType="application/json"/>
+            <doc title="Bad Request" xml:lang="EN">The user-provided request contained an error.
+            </doc>
         </response>
            '>      
                
@@ -29,6 +33,8 @@
         <response status="404" xmlns="http://wadl.dev.java.net/2009/02">
             <representation mediaType="application/xml" element="clusters:itemNotFound"/>
             <representation mediaType="application/json"/>
+            <doc title="Not Found" xml:lang="EN">The back-end services did not find anything matching the request URI. 
+            </doc>
         </response>
            '>
            
@@ -37,6 +43,8 @@
         <response status="409" xmlns="http://wadl.dev.java.net/2009/02">
             <representation mediaType="application/xml" element="clusters:conflict"/>
             <representation mediaType="application/json"/>
+            <doc title="Conflict" xml:lang="EN">The requested resource cannot currently be operated on. 
+            </doc>
         </response>
            '>        
  
@@ -45,6 +53,8 @@
         <response status="413" xmlns="http://wadl.dev.java.net/2009/02">
             <representation mediaType="application/xml" element="clusters:overLimit"/>
             <representation mediaType="application/json"/>
+             <doc title="Request Entity Too Large" xml:lang="EN">The resource quota was exceeded.
+            </doc>
         </response>
            '>
 

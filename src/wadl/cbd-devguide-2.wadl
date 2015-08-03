@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
+<!--
 <!DOCTYPE application [
     <!ENTITY % common  SYSTEM "../common/common.ent">
     %common;
 ]>
+-->
 
 <application xmlns="http://wadl.dev.java.net/2009/02"
 	xmlns:wadl="http://wadl.dev.java.net/2009/02"
@@ -158,9 +159,10 @@
 	<method name="GET" id="listCredentials">
 		<wadl:doc xml:lang="EN" title="List all credentials"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all user credentials.</para>
+			<para role="shortdesc">This operations lists all user credentials.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -179,9 +181,10 @@
 	<method name="GET" id="getCredentialTypes">
 		<wadl:doc xml:lang="EN" title="List credentials by type"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all user credentials of the specified type.</para>
+			<para role="shortdesc">This operation lists all user credentials of the specified type.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook"
@@ -205,7 +208,11 @@
 					/>
 				</wadl:doc>
 			</representation>
-		</response> &fourofour;</method>
+		</response>
+		<response status="404" xmlns="http://wadl.dev.java.net/2009/02">			
+			<doc title="Not Found" xml:lang="EN">The back-end services did not find anything matching the request URI.</doc>			
+		</response>
+        </method>
 
 	<!--*******************************************************-->
 	<!-- Create credential: createCredential                   -->
@@ -214,9 +221,9 @@
 	<method name="POST" id="createCredential">
 		<wadl:doc xml:lang="EN" title="Create a credential"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Creates a new credential for the specified type.</para>
+			<para role="shortdesc">This operations creates a new credential for the specified type.</para>
 			
-				<para>This operation adds new credentials for a specific type. Based on the chosen type, the
+				<para>Based on the chosen type, the
 					request body varies. A general pattern is followed of a dict of the <code>type</code> that
 					contains one or more credential related fields.</para>
 			<para>The 400 error code might indicate any of the
@@ -238,8 +245,13 @@
 					<xsdxt:code href="../wadl/samples/lava2/create_ssh_credential_request.json"/>
 				</doc>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="ssh_keys" style="plain" path="$.ssh_keys.key_name" required="true">
-					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name for the ssh key.
+					name="ssh_keys" style="plain" path="$.ssh_keys" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">SSH key information.
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="key_name" style="plain" path="$.ssh_keys.key_name" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name for the SSH key.
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
@@ -267,6 +279,7 @@
 			</representation>
 		</request>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<doc title="Create a credential - ssh_keys example: JSON response">
 					<xsdxt:code href="../wadl/samples/lava2/create_ssh_credential_response.json"/>
@@ -275,7 +288,16 @@
 					<xsdxt:code href="../wadl/samples/lava2/create_cf_credential_response.json"/>
 				</doc>
 			</representation>
-		</response> &fourhundred; &fouronine;</method>
+		</response> 
+		<response status="400" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="Bad Request" xml:lang="EN">The user-provided request contained an error.
+			</doc>
+		</response>
+		<response status="409" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="Conflict" xml:lang="EN">The requested resource cannot currently be operated on. 
+			</doc>
+		</response> 
+	</method>
 
 
 
@@ -286,7 +308,7 @@
 	<method name="PUT" id="updateCredential">
 		<wadl:doc xml:lang="EN" title="Update a credential"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Updates the specified user credential.</para>
+			<para role="shortdesc">This operation updates the specified user credential.</para>
 			<para>The update marks clusters that already use the credential as out of sync.</para>
 			<para>The 400 error code might indicate missing or invalid
 				parameters.</para>
@@ -297,7 +319,12 @@
 					<xsdxt:code href="../wadl/samples/lava2/update_credential_request.json"/>
 				</doc>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="ssh_keys" style="plain" path="$.ssh_keys.key_name" required="true">
+					name="ssh_keys" style="plain" path="$.ssh_keys" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">SSH key information.
+					</p></doc>
+				</param>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="key_name" style="plain" path="$.ssh_keys.key_name" required="true">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name for the ssh key.
 					</p></doc>
 				</param>
@@ -309,12 +336,18 @@
 			</representation>
 		</request>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<doc title="Update a credential example: JSON response">
 					<xsdxt:code href="../wadl/samples/lava2/update_credential_response.json"/>
 				</doc>
 			</representation>
-		</response> &fourhundred; </method>
+		</response> 
+		<response status="400" xmlns="http://wadl.dev.java.net/2009/02">			
+			<doc title="Bad Request" xml:lang="EN">The user-provided request contained an error.
+			</doc>
+		</response>
+	</method>
 
 	<!--*******************************************************-->
 	<!-- Delete credential: deleteCredential                   -->
@@ -323,16 +356,25 @@
 	<method name="DELETE" id="deleteCredential">
 		<wadl:doc xml:lang="EN" title="Delete a credential"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Deletes the specified credential.</para>
+			<para role="shortdesc">This operation deletes the specified credential.</para>
 			<para>You can delete only credentials that are not used by any active clusters.</para>
 			<para>The 409 error code might indicate an invalid
 				state.</para>
 		</wadl:doc>
 		
 		<response status="204">
+			<doc title="No Content" xml:lang="EN">The server has fulfilled the request and does not need to return a response body.</doc>
 			<representation mediaType="application/json">
 			</representation>
-		</response> &fourofour; &fouronine;</method>
+		</response>
+		<response status="404" xmlns="http://wadl.dev.java.net/2009/02">			
+			<doc title="Not Found" xml:lang="EN">The back-end services did not find anything matching the request URI.</doc>			
+		</response>
+		<response status="409" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="Conflict" xml:lang="EN">The requested resource cannot currently be operated on. 
+			</doc>
+		</response> 
+	</method>
 
 	<!--*******************************************************-->
 	<!-- DISTROS METHODS                                       -->
@@ -345,9 +387,10 @@
 	<method name="GET" id="listDistros">
 		<wadl:doc xml:lang="EN" title="List available distros"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all available distros.</para>
+			<para role="shortdesc">This operation lists all available distros.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -366,9 +409,10 @@
 	<method name="GET" id="getDistroDetails">
 		<wadl:doc xml:lang="EN" title="Show distro details"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">For the specified distro, provides a detailed list of all the supported services and their corresponding components and modes of operation.</para>
+			<para role="shortdesc">For the specified distro, the operation provides a detailed list of all the supported services and their corresponding components and modes of operation.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -493,7 +537,11 @@
 					</p></doc>
 				</param>
 			</representation>
-		</response> &fourofour;</method>
+		</response>
+		<response status="404" xmlns="http://wadl.dev.java.net/2009/02">			
+			<doc title="Not Found" xml:lang="EN">The back-end services did not find anything matching the request URI.</doc>			
+		</response>
+	</method>
 
 	<!--*******************************************************-->
 	<!-- STACK METHODS                                         -->
@@ -506,7 +554,7 @@
 	<method name="POST" id="createStack">
 		<wadl:doc xml:lang="EN" title="Create a stack"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Creates a new stack. ***NOTE: This functionality is not yet implemented.***</para>
+			<para role="shortdesc">This operation creates a new stack. </para>
 			<note>
 				<para><emphasis
 					role="bold">This functionality is not yet implemented.</emphasis></para></note>
@@ -530,6 +578,11 @@
 				<!--			<doc title="Create a stack - second example: JSON request">
 					<xsdxt:code href="../wadl/samples/lava2/create_stack_request2.json"/>
 				</doc> -->
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="stack" style="plain" path="$.stack" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Stack information.
+					</p></doc>
+				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="distro" style="plain" path="$.stack.distro" required="true">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Identifier for a particular distribution. For example: HDP2.1
@@ -677,6 +730,7 @@
 			</representation>
 		</request>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">			
 				<doc title="Create a stack - first example: JSON response">
 					<xsdxt:code href="../wadl/samples/lava2/create_stack_response1.json"/>
@@ -685,7 +739,16 @@
 					<xsdxt:code href="../wadl/samples/lava2/create_stack_response2.json"/>
 				</doc>			
 			</representation>
-		</response> &fourhundred; &fourthirteen; </method>
+		</response> 
+		<response status="400" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="Bad Request" xml:lang="EN">The user-provided request contained an error.
+			</doc>
+		</response>
+		<response status="413" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="Request Entity Too Large" xml:lang="EN">The resource quota was exceeded.
+			</doc>
+		</response>
+	</method>
 
 	<!--*******************************************************-->
 	<!-- List all stacks: listStacks                           -->
@@ -694,9 +757,10 @@
 	<method name="GET" id="listStacks">
 		<wadl:doc xml:lang="EN" title="List all stacks"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all stacks, includingglobal stacks and user-created stacks.</para>
+			<para role="shortdesc">This operation lists all stacks, includingglobal stacks and user-created stacks.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -715,10 +779,11 @@
 	<method name="GET" id="getStackDetails">
 		<wadl:doc xml:lang="EN" title="Show stack details"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Shows details for the specified
+			<para role="shortdesc">This operation shows details for the specified
 				stack.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -727,7 +792,11 @@
 					/>
 				</wadl:doc>
 			</representation>
-		</response> &fourofour; </method>
+		</response> 
+		<response status="404" xmlns="http://wadl.dev.java.net/2009/02">			
+			<doc title="Not Found" xml:lang="EN">The back-end services did not find anything matching the request URI.</doc>			
+		</response>
+	</method>
 
 	<!--*******************************************************-->
 	<!-- Delete stack: deleteStack                             -->
@@ -736,7 +805,7 @@
 	<method name="DELETE" id="deleteStack">
 		<wadl:doc xml:lang="EN" title="Delete a stack"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Deletes the specified stack.</para>
+			<para role="shortdesc">This operation deletes the specified stack.</para>
 			<note>
 				<para><emphasis
 					role="bold">This functionality is not yet implemented.</emphasis></para></note>
@@ -747,6 +816,8 @@
 				state.</para>
 		</wadl:doc>
 		<response status="204">
+			<doc title="No Content" xml:lang="EN">The server has fulfilled the request and does not need to return a response body.
+			</doc>
 			<representation mediaType="application/json">
 			<!--<remark>The file for the following example is currently empty.</remark> -->	
 			<!--	<wadl:doc xml:lang="EN"
@@ -756,7 +827,19 @@
 					/>
 				</wadl:doc> -->
 			</representation>
-		</response> &fourhundred; &fourofour; &fouronine; </method>
+		</response> 
+		<response status="400" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="Bad Request" xml:lang="EN">The user-provided request contained an error.
+			</doc>
+		</response>
+		<response status="404" xmlns="http://wadl.dev.java.net/2009/02">			
+			<doc title="Not Found" xml:lang="EN">The back-end services did not find anything matching the request URI.</doc>			
+		</response>
+		<response status="409" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="Conflict" xml:lang="EN">The requested resource cannot currently be operated on. 
+			</doc>
+		</response> 
+	</method>
 
 
 	<!--*******************************************************-->
@@ -770,7 +853,7 @@
 	<method name="POST" id="createCluster">
 		<wadl:doc xml:lang="EN" title="Create a cluster"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Creates a new cluster.</para>
+			<para role="shortdesc">This operation creates a new cluster.</para>
 			<note><para>You must create a stack before you create
 					a cluster.</para></note>
 			<para>The <code>postInitScript</code> request parameter
@@ -941,6 +1024,7 @@
 			</representation>
 		</request>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -949,7 +1033,16 @@
 					/>
 				</wadl:doc>
 			</representation>
-		</response> &fourhundred; &fourthirteen; </method>
+		</response> 
+		<response status="400" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="Bad Request" xml:lang="EN">The user-provided request contained an error.
+			</doc>
+		</response>
+		<response status="413" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="Request Entity Too Large" xml:lang="EN">The resource quota was exceeded.
+			</doc>
+		</response>
+	</method>
 
 	<!--*******************************************************-->
 	<!-- List all clusters: listClusters                       -->
@@ -958,10 +1051,11 @@
 	<method name="GET" id="listClusters">
 		<wadl:doc xml:lang="EN" title="List all clusters"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all clusters for your
+			<para role="shortdesc">This operation lists all clusters for your
 				account.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -980,10 +1074,11 @@
 	<method name="GET" id="getClusterDetails">
 		<wadl:doc xml:lang="EN" title="Show cluster details"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Shows details for the specified
+			<para role="shortdesc">This operation shows details for the specified
 				cluster.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -992,7 +1087,11 @@
 					/>
 				</wadl:doc>
 			</representation>
-		</response> &fourofour; </method>
+		</response>
+		<response status="404" xmlns="http://wadl.dev.java.net/2009/02">			
+			<doc title="Not Found" xml:lang="EN">The back-end services did not find anything matching the request URI.</doc>			
+		</response>
+	</method>
 
 	<!--*******************************************************-->
 	<!-- Delete cluster: deleteCluster                         -->
@@ -1001,15 +1100,14 @@
 	<method name="DELETE" id="deleteCluster">
 		<wadl:doc xml:lang="EN" title="Delete a cluster"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Deletes the specified cluster.</para>
-			<para>This operation deletes the cluster that is specified
-				by <code>clusterId</code>.</para>
+			<para role="shortdesc">This operation deletes the specified cluster.</para>
 			<para>The 400 error code might indicate missing or invalid
 				parameters.</para>
 			<para>The 409 error code might indicate an invalid
 				state.</para>			
 		</wadl:doc>
-		<response status="204">
+		<response status="204" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="No Content" xml:lang="EN">The server has fulfilled the request and does not need to return a request body.</doc>
 			<representation mediaType="application/json">
 		    <!--<remark>The file for the following example is currently empty.</remark> -->		
 			<!--	<wadl:doc xml:lang="EN"
@@ -1019,7 +1117,19 @@
 					/>
 				</wadl:doc> -->
 			</representation>
-		</response> &fourhundred; &fourofour; &fouronine; </method>
+		</response> 
+		<response status="400" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="Bad Request" xml:lang="EN">The user-provided request contained an error.
+			</doc>
+		</response>
+		<response status="404" xmlns="http://wadl.dev.java.net/2009/02">			
+			<doc title="Not Found" xml:lang="EN">The back-end services did not find anything matching the request URI.</doc>			
+		</response>
+		<response status="409" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="Conflict" xml:lang="EN">The requested resource cannot currently be operated on. 
+			</doc>
+		</response> 
+	</method>
 
 	<!--*******************************************************-->
 	<!-- Resize cluster: resizeCluster                         -->
@@ -1028,8 +1138,7 @@
 	<method name="PUT" id="resizeCluster">
 		<wadl:doc xml:lang="EN" title="Resize a cluster"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Resizes the specified cluster.</para>
-			<para>This operation resizes the cluster specified by
+			<para role="shortdesc">This operation resizes the cluster specified by
 				<code>clusterId</code>.</para>
 			<para>The 400 error code might indicate the presence of
 				unacceptable parameters or malformed data.</para>
@@ -1047,6 +1156,7 @@
 			</representation>
 		</request>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -1055,7 +1165,19 @@
 					/>
 				</wadl:doc> 
 			</representation>
-		</response> &fourhundred; &fourofour; &fouronine; </method>
+		</response> 
+		<response status="400" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="Bad Request" xml:lang="EN">The user-provided request contained an error.
+			</doc>
+		</response>
+		<response status="404" xmlns="http://wadl.dev.java.net/2009/02">			
+			<doc title="Not Found" xml:lang="EN">The back-end services did not find anything matching the request URI.</doc>			
+		</response>
+		<response status="409" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="Conflict" xml:lang="EN">The requested resource cannot currently be operated on. 
+			</doc>
+		</response> 
+	</method>
 
 	<!--*******************************************************-->
 	<!-- NODE METHODS                                          -->
@@ -1068,7 +1190,7 @@
 	<method name="GET" id="listClusterNodes">
 		<wadl:doc xml:lang="EN" title="List cluster nodes"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all nodes for the specified
+			<para role="shortdesc">This operation lists all nodes for the specified
 				cluster.</para>
 			<para>Valid values for the request body parameter
 					<code>postInitScriptStatus</code> are
@@ -1081,6 +1203,7 @@
 				>"Node status"</link>.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -1089,7 +1212,11 @@
 					/>
 				</wadl:doc>
 			</representation>
-		</response> &fourofour; </method>
+		</response>
+		<response status="404" xmlns="http://wadl.dev.java.net/2009/02">			
+			<doc title="Not Found" xml:lang="EN">The back-end services did not find anything matching the request URI.</doc>			
+		</response>
+		</method>
 
 
 	<!--*******************************************************-->
@@ -1103,7 +1230,7 @@
 	<method name="POST" id="createScript">
 		<wadl:doc xml:lang="EN" title="Create a script"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Creates a new script.</para>
+			<para role="shortdesc">This operation creates a new script.</para>
 			<para>You can create a custom script that can be run during various phases of the 
 				clusters lifecycle. These scripts are invoked on all nodes of the cluster. The script type that is currently supported is <code>POST_INIT</code>, which runs after the cluster
 			    has been completely set up. The script must be 
@@ -1120,6 +1247,11 @@
 				<doc title="Create a script example: JSON request">
 					<xsdxt:code href="../wadl/samples/lava2/create_script_request.json"/>
 				</doc>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="script" style="plain" path="$.script" required="true">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Script information.
+					</p></doc>
+				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="name" style="plain" path="$.script.name" required="true">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Descriptive name for the script. For example: Setup iPython Notebooks
@@ -1138,12 +1270,22 @@
 			</representation>
 		</request>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<doc title="Create a script example: JSON response">
 					<xsdxt:code href="../wadl/samples/lava2/create_script_response.json"/>
 				</doc>
 			</representation>
-		</response> &fourhundred; &fourthirteen; </method>
+		</response> 
+		<response status="400" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="Bad Request" xml:lang="EN">The user-provided request contained an error.
+			</doc>
+		</response>
+		<response status="413" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="Request Entity Too Large" xml:lang="EN">The resource quota was exceeded.
+			</doc>
+		</response>
+	</method>
 
 	<!--*******************************************************-->
 	<!-- List all scripts: listScripts                         -->
@@ -1152,9 +1294,10 @@
 	<method name="GET" id="listScripts">
 		<wadl:doc xml:lang="EN" title="List all scripts"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all scripts, including global, product-provided scripts and user-created scripts.</para>
+			<para role="shortdesc">This operation lists all scripts, including global, product-provided scripts and user-created scripts.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -1173,7 +1316,7 @@
 	<method name="PUT" id="updateScript">
 		<wadl:doc xml:lang="EN" title="Update a script"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Updates the specified user script.</para>
+			<para role="shortdesc">This operation updates the specified user script.</para>
 			<para>You can update only the URL and name of the script to reflect either changes to script or script location.</para>
 			<para>The 400 error code might indicate missing or invalid
 				parameters.</para>
@@ -1185,6 +1328,11 @@
 				<doc title="Update a script example: JSON request">
 					<xsdxt:code href="../wadl/samples/lava2/update_script_request.json"/>
 				</doc>
+				<param xmlns="http://wadl.dev.java.net/2009/02"
+					name="script" style="plain" path="$.script" required="false">
+					<doc><p xmlns="http://www.w3.org/1999/xhtml">Script information.
+					</p></doc>
+				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
 					name="name" style="plain" path="$.script.name" required="false">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Descriptive name for the script. For example: Setup iPython Notebooks
@@ -1198,12 +1346,22 @@
 			</representation>
 		</request>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<doc title="Create a script example: JSON response">
 					<xsdxt:code href="../wadl/samples/lava2/update_script_response.json"/>
 				</doc>
 			</representation>
-		</response> &fourhundred; &fourthirteen; </method>
+		</response> 
+		<response status="400" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="Bad Request" xml:lang="EN">The user-provided request contained an error.
+			</doc>
+		</response>
+		<response status="413" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="Request Entity Too Large" xml:lang="EN">The resource quota was exceeded.
+			</doc>
+		</response>
+	</method>
 
 	<!--*******************************************************-->
 	<!-- Delete script: deleteScript                           -->
@@ -1212,7 +1370,7 @@
 	<method name="DELETE" id="deleteScript">
 		<wadl:doc xml:lang="EN" title="Delete a script"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Deletes the specified user script.</para>
+			<para role="shortdesc">Thie operation deletes the specified user script.</para>
 			<para>You can delete only user-created scripts. Global scripts are read-only and you cannot delete them.</para>
 			<para>The 400 error code might indicate missing or invalid
 				parameters.</para>
@@ -1220,9 +1378,22 @@
 				state.</para>
 		</wadl:doc>
 		<response status="204">
+			<doc title="No Content" xml:lang="EN">The server has fulfilled the request and does not need to return a request body.
+			</doc>
 			<representation mediaType="application/json">
 			</representation>
-		</response> &fourhundred; &fourofour; &fouronine; 
+		</response> 
+		<response status="400" xmlns="http://wadl.dev.java.net/2009/02">			
+			<doc title="Bad Request" xml:lang="EN">The user-provided request contained an error.
+			</doc>
+		</response>
+		<response status="404" xmlns="http://wadl.dev.java.net/2009/02">			
+			<doc title="Not Found" xml:lang="EN">The back-end services did not find anything matching the request URI.</doc>			
+		</response>
+		<response status="409" xmlns="http://wadl.dev.java.net/2009/02">
+			<doc title="Conflict" xml:lang="EN">The requested resource cannot currently be operated on. 
+			</doc>
+		</response> 
 	</method>
 
 	<!--*******************************************************-->
@@ -1236,10 +1407,11 @@
 	<method name="GET" id="listFlavors">
 		<wadl:doc xml:lang="EN" title="List available flavors"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Lists all available flavors,
+			<para role="shortdesc">This operation lists all available flavors,
 				including the drive size and amount of RAM.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
@@ -1263,11 +1435,12 @@
 	<method name="GET" id="getLimits">
 		<wadl:doc xml:lang="EN" title="Show resource limits"
 			xmlns="http://docbook.org/ns/docbook">
-			<para role="shortdesc">Shows the absolute resource limits for the user,
+			<para role="shortdesc">This operation shows the absolute resource limits for the user,
 				including the remaining node count, available RAM, and
 				remaining disk space.</para>
 		</wadl:doc>
 		<response status="200">
+			<doc title="OK" xml:lang="EN">Success.</doc>
 			<representation mediaType="application/json">
 				<wadl:doc xml:lang="EN"
 					xmlns="http://docbook.org/ns/docbook">
