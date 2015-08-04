@@ -52,8 +52,6 @@ Response
 {% if response_table %}
 This table shows the body parameters for the response:
 {{response_table}}
-{% else %}
-This operation does not accept a response body.
 {% endif %}
 
 {% for item in response_examples %}
@@ -67,3 +65,6 @@ This operation does not accept a response body.
 
 {{item['code']}}
 {% endfor %}
+{% if not response_table and response_examples|length == 0 %}
+This operation does not return a response body.
+{% endif %}
