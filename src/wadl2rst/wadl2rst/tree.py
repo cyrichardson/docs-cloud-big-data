@@ -8,12 +8,13 @@ from wadl2rst.nodes.list import ListNode
 from wadl2rst.nodes.link import LinkNode
 from wadl2rst.nodes.list_item import ListItemNode
 from wadl2rst.nodes.method import MethodNode
-from wadl2rst.nodes.note import NoteNode
 from wadl2rst.nodes.para import ParaNode
 from wadl2rst.nodes.parameter import ParameterNode
 from wadl2rst.nodes.parameters import ParametersNode
 from wadl2rst.nodes.representation import RepresentationNode
-from wadl2rst.nodes.warning import WarningNode
+from wadl2rst.nodes.remark import RemarkNode
+from wadl2rst.nodes.table import TableNode
+from wadl2rst.nodes.admonition import ImportantNode, WarningNode, NoteNode
 
 
 class ParserState(object):
@@ -35,7 +36,11 @@ class ParserState(object):
         "parameter": CodeNode,
         "representation": RepresentationNode,
         "literal": CodeNode,
-        "warning": WarningNode
+        "warning": WarningNode,
+        "important": ImportantNode,
+        "remark": RemarkNode,
+        "title": ParaNode,
+        "table": TableNode
     }
 
     def __init__(self):
@@ -88,7 +93,7 @@ def xml_string_to_tree(input_xml):
         parser.Parse(input_xml, True)
     except Exception, e:
         lines = input_xml.split("\n")
-        lineno = e.lineno - 1 # ones based, instead of 0
+        lineno = e.lineno - 1  # ones based, instead of 0
         print "Error parsing WADL - {}\n".format(e)
         print lines[lineno] + "\n"
         raise e

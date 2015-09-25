@@ -1,7 +1,9 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-Show Flavor Details
+.. _get-show-flavor-details-v1.0-tenant-id-flavors-flavorid:
+
+Show flavor details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -29,15 +31,18 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
+
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |xsd:string               |The tenant ID in a multi-|
+|{tenant_id}               |String                   |The tenant ID in a multi-|
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{flavorId}                |xsd:string               |Specifies the flavor ID. |
+|{flavorId}                |String                   |Specifies the flavor ID. |
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -56,30 +61,37 @@ Response
 
 
 
-**Example Show Flavor Details: JSON response**
+
+
+
+
+
+**Example Show flavor details: JSON response**
 
 
 .. code::
 
-    {
-       "flavor":{
-          "disk":1250,
-          "id":"hadoop1-7",
-          "links":[
-             {
-                "href":"https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/flavors/hadoop1-7",
-                "rel":"self"
-             },
-             {
-                "href":"https://dfw.bigdata.api.rackspacecloud.com/1234/flavors/hadoop1-7",
-                "rel":"bookmark"
-             }
-          ],
-          "name":"Small Hadoop Instance",
-          "ram":7680,
-          "vcpus":2
-       }
-    }
-    
+   {
+      "flavor":{
+         "disk":1250,
+         "id":"hadoop1-7",
+         "links":[
+            {
+               "href":"https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/flavors/hadoop1-7",
+               "rel":"self"
+            },
+            {
+               "href":"https://dfw.bigdata.api.rackspacecloud.com/1234/flavors/hadoop1-7",
+               "rel":"bookmark"
+            }
+         ],
+         "name":"Small Hadoop Instance",
+         "ram":7680,
+         "vcpus":2
+      }
+   }
+   
+
+
 
 

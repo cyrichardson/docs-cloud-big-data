@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _{{refid}}:
+
 {{title}}
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -17,7 +19,12 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-{% if uri_table -%}
+{% if request_header_table %}
+This table shows the header parameters for the request:
+{{request_header_table}}
+{% endif %}
+
+{% if uri_table %}
 This table shows the URI parameters for the request:
 {{uri_table}}
 {%- endif %}
@@ -41,18 +48,26 @@ This operation does not accept a request body.
 **Example {{item['title']}}**
 {% endif %}
 
-.. code::
-
-{{item['code']}}
+{{item['rst']}}
 {% endfor %}
 
 Response
 """"""""""""""""
 
+{% if response_header_table %}
+This table shows the header parameters for the response:
+{{response_header_table}}
+{% endif %}
+
+
 {% if response_table %}
 This table shows the body parameters for the response:
 {{response_table}}
 {% endif %}
+{% if not has_response_body %}
+This operation does not return a response body.
+{% endif %}
+
 
 {% for item in response_examples %}
 {% if not item['title'] %}
@@ -61,10 +76,5 @@ This table shows the body parameters for the response:
 **Example {{item['title']}}**
 {% endif %}
 
-.. code::
-
-{{item['code']}}
+{{item['rst']}}
 {% endfor %}
-{% if not response_table and response_examples|length == 0 %}
-This operation does not return a response body.
-{% endif %}

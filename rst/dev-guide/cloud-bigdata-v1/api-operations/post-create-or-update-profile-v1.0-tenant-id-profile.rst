@@ -1,7 +1,9 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-Create Or Update Profile
+.. _post-create-or-update-profile-v1.0-tenant-id-profile:
+
+Create or update profile
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -40,12 +42,15 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
+
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |xsd:string               |The tenant ID in a multi-|
+|{tenant_id}               |String                   |The tenant ID in a multi-|
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
 
@@ -58,27 +63,30 @@ This operation does not accept a request body.
 
 
 
-**Example Create Or Update Profile: JSON request**
+**Example Create or update profile: JSON request**
 
 
 .. code::
 
-    {
-       "profile":{
-          "username":"john.doe",
-          "password":"j0Hnd03",
-          "sshkeys":[
-             {
-                "name":"t@test",
-                "publicKey":"ssh-rsa ....."
-             }
-          ],
-          "cloudCredentials":{
-             "username":"jdoe",
-             "apikey":"df23gkh34h52gkdgfakgf"
-          }
-       }
-    }
+   {
+      "profile":{
+         "username":"john.doe",
+         "password":"j0Hnd03",
+         "sshkeys":[
+            {
+               "name":"t@test",
+               "publicKey":"ssh-rsa ....."
+            }
+         ],
+         "cloudCredentials":{
+            "username":"jdoe",
+            "apikey":"df23gkh34h52gkdgfakgf"
+         }
+      }
+   }
+
+
+
 
 
 Response
@@ -88,36 +96,43 @@ Response
 
 
 
-**Example Create Or Update Profile: JSON response**
+
+
+
+
+
+**Example Create or update profile: JSON response**
 
 
 .. code::
 
-    {
-       "profile":{
-          "username":"john.doe",
-          "userId":"12346",
-          "tenantId":"123456",
-          "sshkeys":[
-             {
-                "name":"t@test",
-                "publicKey":"ssh-rsa ....."
-             }
-          ],
-          "cloudCredentials":{
-             "username":"jdoe"
-          },
-          "links":[
-             {
-                "rel":"self",
-                "href":"https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/profile"
-             },
-             {
-                "rel":"bookmark",
-                "href":"https://dfw.bigdata.api.rackspacecloud.com/123456/profile"
-             }
-          ]
-       }
-    }       
+   {
+      "profile":{
+         "username":"john.doe",
+         "userId":"12346",
+         "tenantId":"123456",
+         "sshkeys":[
+            {
+               "name":"t@test",
+               "publicKey":"ssh-rsa ....."
+            }
+         ],
+         "cloudCredentials":{
+            "username":"jdoe"
+         },
+         "links":[
+            {
+               "rel":"self",
+               "href":"https://dfw.bigdata.api.rackspacecloud.com/v1.0/123456/profile"
+            },
+            {
+               "rel":"bookmark",
+               "href":"https://dfw.bigdata.api.rackspacecloud.com/123456/profile"
+            }
+         ]
+      }
+   }       
+
+
 
 

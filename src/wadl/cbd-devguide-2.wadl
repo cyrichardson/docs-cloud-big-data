@@ -971,7 +971,7 @@
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="stack" style="plain" path="$.cluster.stack_id" required="true">
+					name="stack_id" style="plain" path="$.cluster.stack_id" required="true">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Stack ID to use for the cluster.
 					</p></doc>
 				</param>
@@ -1002,12 +1002,12 @@
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="id" style="plain" path="$.cluster.connectors.type" required="true">
+					name="type" style="plain" path="$.cluster.connectors.type" required="true">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Type of connector. Ex: cloud_files
 					</p></doc>
 				</param>
 				<param xmlns="http://wadl.dev.java.net/2009/02"
-					name="id" style="plain" path="$.cluster.connectors.credential.name" required="true">
+					name="name" style="plain" path="$.cluster.connectors.credential.name" required="true">
 					<doc><p xmlns="http://www.w3.org/1999/xhtml">Name of credential for specific type of connector.
 					</p></doc>
 				</param>

@@ -13,7 +13,7 @@ install_requires = [
 # setuptools tutorial.
 setup(
     name="wadl2rst",
-    version="0.2",
+    version="0.3",
 
     # packaging info
     package_data={'': ['*.jinja']},

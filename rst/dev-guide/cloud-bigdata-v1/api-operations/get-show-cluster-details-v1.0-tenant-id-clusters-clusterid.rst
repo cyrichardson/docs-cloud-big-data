@@ -1,7 +1,9 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-Show Cluster Details
+.. _get-show-cluster-details-v1.0-tenant-id-clusters-clusterid:
+
+Show cluster details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -29,15 +31,18 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
+
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |xsd:string               |The tenant ID in a multi-|
+|{tenant_id}               |String                   |The tenant ID in a multi-|
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{clusterId}               |xsd:string               |Specifies the cluster ID.|
+|{clusterId}               |String                   |Specifies the cluster ID.|
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -49,15 +54,18 @@ This operation does not accept a request body.
 
 
 
-**Example Show Cluster Details: JSON request**
+**Example Show cluster details: JSON request**
 
 
 .. code::
 
-    GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/7654321/clusters/ac111111-2d86-4597-8010-cbe787bbbc41
-    Accept: application/json 
-    X-Auth-Token:ea85e6ac-baff-4a6c-bf43-848020ea3812
-    Content-Type: application/json  
+   GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/7654321/clusters/ac111111-2d86-4597-8010-cbe787bbbc41
+   Accept: application/json 
+   X-Auth-Token:ea85e6ac-baff-4a6c-bf43-848020ea3812
+   Content-Type: application/json  
+
+
+
 
 
 Response
@@ -67,14 +75,49 @@ Response
 
 
 
-**Example Show Cluster Details: JSON response**
+
+
+
+
+
+**Example Show cluster details: JSON response**
 
 
 .. code::
 
-    Status: 200 OK
-    Date: Mon, 06 Aug 2012 21:54:21 GMT
-    Content-Type: application/json
-    Content-Length: 110
+   Status: 200 OK
+   Date: Mon, 06 Aug 2012 21:54:21 GMT
+   Content-Type: application/json
+   Content-Length: 110
+
+
+.. code::
+
+   {
+      "cluster":{
+         "id":"db478fc1-2d86-4597-8010-cbe787bbbc41",
+         "created":"2012-12-27T10:10:10Z",
+         "updated":"2012-12-27T10:20:10Z",
+         "name":"slice",
+         "clusterType":"HADOOP_HDP2_1",
+         "flavorId":"hadoop1-7",
+         "nodeCount":5,
+         "postInitScriptStatus":"SUCCEEDED",
+         "progress":1.0,
+         "status":"ACTIVE",
+         "links":[
+            {
+               "rel":"self",
+               "href":"https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
+            },
+            {
+               "rel":"bookmark",
+               "href":"https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
+            }
+         ]
+      }
+   }
+
+
 
 

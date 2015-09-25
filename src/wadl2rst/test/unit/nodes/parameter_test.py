@@ -15,7 +15,7 @@ class TestParameterNode(TestCase):
     def test_get_table_row(self):
         output = self.node.get_table_row()
         self.assertIn("test_name", output)
-        self.assertIn("test_type", output)
+        self.assertIn("Test_type", output)
         self.assertIn("test_data", output)
 
     def test_format_template_type_names(self):

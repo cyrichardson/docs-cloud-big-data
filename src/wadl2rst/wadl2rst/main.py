@@ -17,7 +17,6 @@ from wadl2rst.transformations.collapse_resources import collapse_resources
 from wadl2rst.transformations.invert_method import invert_method
 from wadl2rst.transformations.resolve_external_code import resolve_external_code
 from wadl2rst.transformations.resolve_internal import resolve_internal
-from wadl2rst.transformations.wrap_code_elements import wrap_code_elements
 from wadl2rst.transformations.wrap_param_elements import wrap_param_elements
 from wadl2rst.transformations.wrap_response_elements import wrap_response_elements
 
@@ -114,9 +113,6 @@ def execute_translations(ir, filename):
 
     # resolve the internal references in the tree
     resolve_internal(ir)
-
-    # make sure all the code elements are wrapped in samples
-    wrap_code_elements(ir)
 
     # resolve the external code references
     path = os.path.abspath(os.path.dirname(filename))

@@ -1,7 +1,9 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-Show Node Details
+.. _get-show-node-details-v1.0-tenant-id-clusters-clusterid-nodes-nodeid:
+
+Show node details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -33,17 +35,20 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
+
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |xsd:string               |The tenant ID in a multi-|
+|{tenant_id}               |String                   |The tenant ID in a multi-|
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{clusterId}               |xsd:string               |Specifies the cluster ID.|
+|{clusterId}               |String                   |Specifies the cluster ID.|
 +--------------------------+-------------------------+-------------------------+
-|{nodeId}                  |xsd:string               |Specifies the node ID.   |
+|{nodeId}                  |String                   |Specifies the node ID.   |
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -55,15 +60,18 @@ This operation does not accept a request body.
 
 
 
-**Example Show Node Details: JSON request**
+**Example Show node details: JSON request**
 
 
 .. code::
 
-    GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/7654321/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes/000
-    Accept: application/json 
-    X-Auth-Token:ea85e6ac-baff-4a6c-bf43-848020ea3812
-    Content-Type: application/json               
+   GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/7654321/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes/000
+   Accept: application/json 
+   X-Auth-Token:ea85e6ac-baff-4a6c-bf43-848020ea3812
+   Content-Type: application/json               
+
+
+
 
 
 Response
@@ -73,58 +81,65 @@ Response
 
 
 
-**Example Show Node Details: JSON response**
+
+
+
+
+
+**Example Show node details: JSON response**
 
 
 .. code::
 
-    {
-       "node":{
-          "id":"000",
-          "created":"2012-12-27T10:10:10Z",
-          "role":"NAMENODE",
-          "name":"NAMENODE-1",
-          "postInitScriptStatus":null,
-          "status":"ACTIVE",
-          "addresses":{
-             "public":[
-                {
-                   "addr":"168.x.x.3",
-                   "version":4
-                }
-             ],
-             "private":[
-                {
-                   "addr":"10.x.x.3",
-                   "version":4
-                }
-             ]
-          },
-          "services":[
-             {
-                "name":"datanode"
-             },
-             {
-                "name":"tasktracker"
-             },
-             {
-                "name":"ssh",
-                "uri":"ssh://user@168.x.x.3"
-             }
-          ],
-          "links":[
-             {
-                "rel":"self",
-                "href":"https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
-             },
-             {
-                "rel":"bookmark",
-                "href":"https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
-             }
-          ]
-       }
-    }
-    
-            
+   {
+      "node":{
+         "id":"000",
+         "created":"2012-12-27T10:10:10Z",
+         "role":"NAMENODE",
+         "name":"NAMENODE-1",
+         "postInitScriptStatus":null,
+         "status":"ACTIVE",
+         "addresses":{
+            "public":[
+               {
+                  "addr":"168.x.x.3",
+                  "version":4
+               }
+            ],
+            "private":[
+               {
+                  "addr":"10.x.x.3",
+                  "version":4
+               }
+            ]
+         },
+         "services":[
+            {
+               "name":"datanode"
+            },
+            {
+               "name":"tasktracker"
+            },
+            {
+               "name":"ssh",
+               "uri":"ssh://user@168.x.x.3"
+            }
+         ],
+         "links":[
+            {
+               "rel":"self",
+               "href":"https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
+            },
+            {
+               "rel":"bookmark",
+               "href":"https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
+            }
+         ]
+      }
+   }
+   
+           
+
+
 
 

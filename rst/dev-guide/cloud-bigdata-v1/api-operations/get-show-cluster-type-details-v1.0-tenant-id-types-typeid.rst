@@ -1,7 +1,9 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-Show Cluster Type Details
+.. _get-show-cluster-type-details-v1.0-tenant-id-types-typeid:
+
+Show cluster type details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -29,15 +31,18 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
+
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |xsd:string               |The tenant ID in a multi-|
+|{tenant_id}               |String                   |The tenant ID in a multi-|
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{typeId}                  |xsd:string               |Specifies the type ID.   |
+|{typeId}                  |String                   |Specifies the type ID.   |
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -56,30 +61,37 @@ Response
 
 
 
-**Example Show Cluster Type Details: JSON response**
+
+
+
+
+
+**Example Show cluster type details: JSON response**
 
 
 .. code::
 
-    {
-       "type":{
-          "id":"HADOOP_HDP2_1",
-          "links":[
-             {
-                "href":"http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/types/HADOOP_HDP2_1",
-                "rel":"self"
-             },
-             {
-                "href":"http://dfw.bigdata.api.rackspacecloud.com/1234/types/HADOOP_HDP2_1",
-                "rel":"bookmark"
-             }
-          ],
-          "name":"Hadoop (HDP 2.1)",
-          "services":[
-    
-          ]
-       }
-    }
-            
+   {
+      "type":{
+         "id":"HADOOP_HDP2_1",
+         "links":[
+            {
+               "href":"http://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/types/HADOOP_HDP2_1",
+               "rel":"self"
+            },
+            {
+               "href":"http://dfw.bigdata.api.rackspacecloud.com/1234/types/HADOOP_HDP2_1",
+               "rel":"bookmark"
+            }
+         ],
+         "name":"Hadoop (HDP 2.1)",
+         "services":[
+   
+         ]
+      }
+   }
+           
+
+
 
 

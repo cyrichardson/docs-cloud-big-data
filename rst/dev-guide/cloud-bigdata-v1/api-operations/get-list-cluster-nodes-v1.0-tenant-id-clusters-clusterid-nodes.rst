@@ -1,7 +1,9 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-List Cluster Nodes
+.. _get-list-cluster-nodes-v1.0-tenant-id-clusters-clusterid-nodes:
+
+List cluster nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -33,15 +35,18 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
+
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |xsd:string               |The tenant ID in a multi-|
+|{tenant_id}               |String                   |The tenant ID in a multi-|
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
-|{clusterId}               |xsd:string               |Specifies the cluster ID.|
+|{clusterId}               |String                   |Specifies the cluster ID.|
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -53,15 +58,18 @@ This operation does not accept a request body.
 
 
 
-**Example List Cluster Nodes: JSON request**
+**Example List cluster nodes: JSON request**
 
 
 .. code::
 
-    GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/7654321/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes
-    Accept: application/json 
-    X-Auth-Token:ea85e6ac-baff-4a6c-bf43-848020ea3812
-    Content-Type: application/json              
+   GET https://dfw.bigdata.api.rackspacecloud.com/v1.0/7654321/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes
+   Accept: application/json 
+   X-Auth-Token:ea85e6ac-baff-4a6c-bf43-848020ea3812
+   Content-Type: application/json              
+
+
+
 
 
 Response
@@ -71,195 +79,202 @@ Response
 
 
 
-**Example List Cluster Nodes: JSON response**
+
+
+
+
+
+**Example List cluster nodes: JSON response**
 
 
 .. code::
 
-    {
-       "nodes":[
-          {
-             "id":"000",
-             "created":"2012-12-27T10:10:10Z",
-             "role":"NAMENODE",
-             "name":"NAMENODE-1",
-             "postInitScriptStatus":null,
-             "status":"ACTIVE",
-             "addresses":{
-                "public":[
-                   {
-                      "addr":"168.x.x.3",
-                      "version":4
-                   }
-                ],
-                "private":[
-                   {
-                      "addr":"10.x.x.3",
-                      "version":4
-                   }
-                ]
-             },
-             "services":[
-                {
-                   "name":"namenode"
-                },
-                {
-                   "name":"jobtracker"
-                },
-                {
-                   "name":"ssh",
-                   "uri":"ssh://user@168.x.x.3"
-                }
-             ],
-             "links":[
-                {
-                   "rel":"self",
-                   "href":"https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
-                },
-                {
-                   "rel":"bookmark",
-                   "href":"https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
-                }
-             ]
-          },
-          {
-             "id":"aaa",
-             "role":"GATEWAY",
-             "name":"GATEWAY-1",
-             "postInitScriptStatus":null,
-             "status":"ACTIVE",
-             "addresses":{
-                "public":[
-                   {
-                      "addr":"168.x.x.4",
-                      "version":4
-                   }
-                ],
-                "private":[
-                   {
-                      "addr":"10.x.x.4",
-                      "version":4
-                   }
-                ]
-             },
-             "services":[
-                {
-                   "name":"pig"
-                },
-                {
-                   "name":"hive"
-                },
-                {
-                   "name":"ssh",
-                   "uri":"ssh://user@168.x.x.4"
-                },
-                {
-                   "name":"status",
-                   "uri":"http://10.x.x.4"
-                },
-                {
-                   "name":"hdfs-scp",
-                   "uri":"scp://user@168.x.x.4:9022"
-                }
-             ],
-             "links":[
-                {
-                   "rel":"self",
-                   "href":"https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/aaa"
-                },
-                {
-                   "rel":"bookmark",
-                   "href":"https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/aaa"
-                }
-             ]
-          },
-          {
-             "id":"bbb",
-             "role":"DATANODE",
-             "name":"DATANODE-1",
-             "postInitScriptStatus":null,
-             "status":"ACTIVE",
-             "addresses":{
-                "public":[
-                   {
-                      "addr":"168.x.x.5",
-                      "version":4
-                   }
-                ],
-                "private":[
-                   {
-                      "addr":"10.x.x.5",
-                      "version":4
-                   }
-                ]
-             },
-             "services":[
-                {
-                   "name":"datanode"
-                },
-                {
-                   "name":"tasktracker"
-                },
-                {
-                   "name":"ssh",
-                   "uri":"ssh://user@168.x.x.5"
-                }
-             ],
-             "links":[
-                {
-                   "rel":"self",
-                   "href":"https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/bbb"
-                },
-                {
-                   "rel":"bookmark",
-                   "href":"https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/bbb"
-                }
-             ]
-          },
-          {
-             "id":"ccc",
-             "role":"DATANODE",
-             "name":"DATANODE-2",
-             "postInitScriptStatus":null,
-             "status":"ACTIVE",
-             "addresses":{
-                "public":[
-                   {
-                      "addr":"168.x.x.6",
-                      "version":4
-                   }
-                ],
-                "private":[
-                   {
-                      "addr":"10.x.x.6",
-                      "version":4
-                   }
-                ]
-             },
-             "services":[
-                {
-                   "name":"datanode"
-                },
-                {
-                   "name":"tasktracker"
-                },
-                {
-                   "name":"ssh",
-                   "uri":"ssh://user@168.x.x.6"
-                }
-             ],
-             "links":[
-                {
-                   "rel":"self",
-                   "href":"https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/ccc"
-                },
-                {
-                   "rel":"bookmark",
-                   "href":"https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/ccc"
-                }
-             ]
-          }
-       ]
-    }
+   {
+      "nodes":[
+         {
+            "id":"000",
+            "created":"2012-12-27T10:10:10Z",
+            "role":"NAMENODE",
+            "name":"NAMENODE-1",
+            "postInitScriptStatus":null,
+            "status":"ACTIVE",
+            "addresses":{
+               "public":[
+                  {
+                     "addr":"168.x.x.3",
+                     "version":4
+                  }
+               ],
+               "private":[
+                  {
+                     "addr":"10.x.x.3",
+                     "version":4
+                  }
+               ]
+            },
+            "services":[
+               {
+                  "name":"namenode"
+               },
+               {
+                  "name":"jobtracker"
+               },
+               {
+                  "name":"ssh",
+                  "uri":"ssh://user@168.x.x.3"
+               }
+            ],
+            "links":[
+               {
+                  "rel":"self",
+                  "href":"https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
+               },
+               {
+                  "rel":"bookmark",
+                  "href":"https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/000"
+               }
+            ]
+         },
+         {
+            "id":"aaa",
+            "role":"GATEWAY",
+            "name":"GATEWAY-1",
+            "postInitScriptStatus":null,
+            "status":"ACTIVE",
+            "addresses":{
+               "public":[
+                  {
+                     "addr":"168.x.x.4",
+                     "version":4
+                  }
+               ],
+               "private":[
+                  {
+                     "addr":"10.x.x.4",
+                     "version":4
+                  }
+               ]
+            },
+            "services":[
+               {
+                  "name":"pig"
+               },
+               {
+                  "name":"hive"
+               },
+               {
+                  "name":"ssh",
+                  "uri":"ssh://user@168.x.x.4"
+               },
+               {
+                  "name":"status",
+                  "uri":"http://10.x.x.4"
+               },
+               {
+                  "name":"hdfs-scp",
+                  "uri":"scp://user@168.x.x.4:9022"
+               }
+            ],
+            "links":[
+               {
+                  "rel":"self",
+                  "href":"https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/aaa"
+               },
+               {
+                  "rel":"bookmark",
+                  "href":"https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/aaa"
+               }
+            ]
+         },
+         {
+            "id":"bbb",
+            "role":"DATANODE",
+            "name":"DATANODE-1",
+            "postInitScriptStatus":null,
+            "status":"ACTIVE",
+            "addresses":{
+               "public":[
+                  {
+                     "addr":"168.x.x.5",
+                     "version":4
+                  }
+               ],
+               "private":[
+                  {
+                     "addr":"10.x.x.5",
+                     "version":4
+                  }
+               ]
+            },
+            "services":[
+               {
+                  "name":"datanode"
+               },
+               {
+                  "name":"tasktracker"
+               },
+               {
+                  "name":"ssh",
+                  "uri":"ssh://user@168.x.x.5"
+               }
+            ],
+            "links":[
+               {
+                  "rel":"self",
+                  "href":"https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/bbb"
+               },
+               {
+                  "rel":"bookmark",
+                  "href":"https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/bbb"
+               }
+            ]
+         },
+         {
+            "id":"ccc",
+            "role":"DATANODE",
+            "name":"DATANODE-2",
+            "postInitScriptStatus":null,
+            "status":"ACTIVE",
+            "addresses":{
+               "public":[
+                  {
+                     "addr":"168.x.x.6",
+                     "version":4
+                  }
+               ],
+               "private":[
+                  {
+                     "addr":"10.x.x.6",
+                     "version":4
+                  }
+               ]
+            },
+            "services":[
+               {
+                  "name":"datanode"
+               },
+               {
+                  "name":"tasktracker"
+               },
+               {
+                  "name":"ssh",
+                  "uri":"ssh://user@168.x.x.6"
+               }
+            ],
+            "links":[
+               {
+                  "rel":"self",
+                  "href":"https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/ccc"
+               },
+               {
+                  "rel":"bookmark",
+                  "href":"https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41/nodes/ccc"
+               }
+            ]
+         }
+      ]
+   }
+
+
 
 

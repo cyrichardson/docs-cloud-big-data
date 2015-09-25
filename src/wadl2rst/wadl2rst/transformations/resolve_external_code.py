@@ -5,7 +5,7 @@ import functools
 import os
 import sys
 
-from wadl2rst.nodes.char import CharNode
+from wadl2rst.nodes.code_example import CodeExampleNode
 
 
 def resolve_external_code(base_path, tree):
@@ -32,10 +32,9 @@ def resolve_external_code(base_path, tree):
             mimetype = mimetype_translation.get(mimetype, mimetype)
 
         # create a node with the contents and put it into the file
-        output_node = CharNode(node.parent, text)
-        node.parent.add_child(output_node)
+        output_node = CodeExampleNode(node.parent, text)
+        node.parent.replace_child(node, output_node)
 
-        node.parent.remove_child(node)
         node.parent = None
 
 

@@ -9,7 +9,7 @@ from wadl2rst.templates import templates
 FILENAME_TITLE = re.compile(r" |/")
 FILENAME_PATH = re.compile(r"/|{|}")
 FILENAME_DASHES = re.compile(r"[-]+")
-FILENAME_TRAILING_DASHES = re.compile(r"-\.")
+FILENAME_TRAILING_DASHES = re.compile(r"-$")
 FILENAME_UNDERSCORES = re.compile(r"_")
 
 
@@ -71,17 +71,20 @@ class MethodNode(BaseNode):
             "http_method": self.attributes.get("name", ''),
             "query_table": None,
             "request_examples": [],
-            "responses_table": None,
+            "request_header_table": None,
+            "response_header_table": None,
+            "response_table": None,
             "response_examples": [],
             "short_desc": "",
             "title": "",
             "uri_table": None,
             "uri": "",
+            "has_response_body": False
         }
 
         if document_node is not None:
             output['docs_rst'] = document_node.to_rst()
-            output['title'] = document_node.attributes.get("title", '').title()
+            output['title'] = document_node.attributes.get("title", '')
 
         if short_desc_node is not None:
             output['short_desc'] = short_desc_node.to_rst()
@@ -98,6 +101,7 @@ class MethodNode(BaseNode):
             request_params = request_node.find_first("params")
 
             if request_params is not None:
+                output['request_header_table'] = request_params.to_table("header")
                 output['query_table'] = request_params.to_table("query")
                 output['body_table'] = request_params.to_table("plain")
 
@@ -114,10 +118,12 @@ class MethodNode(BaseNode):
 
             # stash the responses table
             if response_params is not None:
+                output['response_header_table'] = response_params.to_table("header")
                 output['response_table'] = response_params.to_table("plain")
 
             # handle responses nodes
             responses = [self.get_response_info(child) for child in responses_node.children]
+            responses.sort()
             output['responses_table'] = self.get_responses_table(responses)
 
             # stash any response examples
@@ -129,25 +135,37 @@ class MethodNode(BaseNode):
 
         # create the filename
         output['filename'] = self.get_filename(output, 'html')
+        output['refid'] = self.get_filename_format(output)
+
+        if output['response_table'] != None:
+            output['has_response_body'] = True
+
+        for example in output['response_examples']:
+            if example['type'] != "HTTP":
+                output['has_response_body'] = True
 
         return output
 
-    def get_filename(self, data=None, extention="rst"):
+    def get_filename_format(self, data=None):
         http_method = data['http_method']
 
         title = FILENAME_TITLE.sub("-", data['title'].lower())
         uri = FILENAME_PATH.sub("-", data['uri'].lower())
 
-        output = "{}-{}-{}.{}".format(
+        output = "{}-{}-{}".format(
             http_method,
             title,
-            uri,
-            extention
+            uri
         )
 
         output = FILENAME_DASHES.sub("-", output)
-        output = FILENAME_TRAILING_DASHES.sub(".", output)
+        output = FILENAME_TRAILING_DASHES.sub("", output)
         output = FILENAME_UNDERSCORES.sub("-", output)
+        return output.lower()
+
+    def get_filename(self, data=None, extension="rst"):
+        output = self.get_filename_format(data)
+        output += ".{}".format(extension)
         return output.lower()
 
     def get_responses_table(self, responses):

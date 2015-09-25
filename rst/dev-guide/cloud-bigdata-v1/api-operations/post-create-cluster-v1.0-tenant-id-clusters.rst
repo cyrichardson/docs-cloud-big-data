@@ -1,7 +1,9 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-Create Cluster
+.. _post-create-cluster-v1.0-tenant-id-clusters:
+
+Create cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -63,12 +65,15 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
+
+
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{tenant_id}               |xsd:string               |The tenant ID in a multi-|
+|{tenant_id}               |String                   |The tenant ID in a multi-|
 |                          |                         |tenancy cloud.           |
 +--------------------------+-------------------------+-------------------------+
 
@@ -81,20 +86,23 @@ This operation does not accept a request body.
 
 
 
-**Example Create Cluster: JSON request**
+**Example Create cluster: JSON request**
 
 
 .. code::
 
-    {
-       "cluster":{
-          "name":"slice",
-          "clusterType":"HADOOP_HDP2_1",
-          "flavorId":"hadoop1-7",
-          "nodeCount":5,
-          "postInitScript":"http://example.com/configure_cluster.sh"
-       }
-    }
+   {
+      "cluster":{
+         "name":"slice",
+         "clusterType":"HADOOP_HDP2_1",
+         "flavorId":"hadoop1-7",
+         "nodeCount":5,
+         "postInitScript":"http://example.com/configure_cluster.sh"
+      }
+   }
+
+
+
 
 
 Response
@@ -104,34 +112,41 @@ Response
 
 
 
-**Example Create Cluster: JSON response**
+
+
+
+
+
+**Example Create cluster: JSON response**
 
 
 .. code::
 
-    {
-       "cluster":{
-          "id":"db478fc1-2d86-4597-8010-cbe787bbbc41",
-          "created":"2012-12-27T10:10:10Z",
-          "updated":"",
-          "name":"slice",
-          "clusterType":"HADOOP_HDP2_1",
-          "flavorId":"hadoop1-7",
-          "nodeCount":5,
-          "postInitScriptStatus":"PENDING",
-          "progress":0.0,
-          "status":"BUILDING",
-          "links":[
-             {
-                "rel":"self",
-                "href":"https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
-             },
-             {
-                "rel":"bookmark",
-                "href":"https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
-             }
-          ]
-       }
-    }
+   {
+      "cluster":{
+         "id":"db478fc1-2d86-4597-8010-cbe787bbbc41",
+         "created":"2012-12-27T10:10:10Z",
+         "updated":"",
+         "name":"slice",
+         "clusterType":"HADOOP_HDP2_1",
+         "flavorId":"hadoop1-7",
+         "nodeCount":5,
+         "postInitScriptStatus":"PENDING",
+         "progress":0.0,
+         "status":"BUILDING",
+         "links":[
+            {
+               "rel":"self",
+               "href":"https://dfw.bigdata.api.rackspacecloud.com/v1.0/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
+            },
+            {
+               "rel":"bookmark",
+               "href":"https://dfw.bigdata.api.rackspacecloud.com/1234/clusters/db478fc1-2d86-4597-8010-cbe787bbbc41"
+            }
+         ]
+      }
+   }
+
+
 
 

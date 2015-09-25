@@ -1,55 +1,22 @@
 ====================================
-Cloud Big Data Developer Guide, v2.0
+Cloud Big Data API, v2.0
 ====================================
 
-Overview
---------
+*Last updated:* |today|
 
-.. toctree::
+Learn how to use the Cloud Big Data service by using the ReST API.
+
+    For details, about using the API, ses :ref:`Developer Guide <developer-guide>` for details about using the API.
+    For detials about API resources, operations, request, and responses, see the :ref:`API reference <api-reference>`.
+
+.. toctree:: :hidden:
    :maxdepth: 2
-
-   overview
-
-Concepts
---------
-
-.. toctree::
-   :maxdepth: 2
-
+   
+   overview/index
+   developer-guide
    concepts
-
-General API information
------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   general-api-info
-   authentication
-   role-based-access-control
-   service-access-endpoints
-   request-and-response-types
-   faults
-   limits
-   date-time-format
-   pagination
-   data-node-instances
-   cluster-status
-   node-status
-   
-API Operations
--------------------
-
-.. toctree::
-    :maxdepth: 1
-    :glob:
-
-    api-operations/*      
-   
-Glossary
---------
-.. toctree::
-   :maxdepth: 2
-
+   general-api-info/index
+   api-reference
+   api-operations/index
    glossary
-   
+
