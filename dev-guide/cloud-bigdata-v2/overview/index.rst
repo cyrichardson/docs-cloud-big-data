@@ -16,7 +16,7 @@ Rackspace Knowledge Center.
 API contract changes
 ~~~~~~~~~~~~~~~~~~~~
 
-The API contract is not locked and might change. If the contractchanges, Rackspace will 
+The API contract is not locked and might change. If the contract changes, Rackspace will 
 notify customers in release notes.
 
 

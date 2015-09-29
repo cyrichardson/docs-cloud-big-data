@@ -7,16 +7,14 @@ Delete a script
 
     DELETE /v2/{tenant_id}/scripts/{scriptId}
 
-Thie operation deletes the specified user script.
+This operation deletes the specified user script.
 
 You can delete only user-created scripts. Global scripts are read-only and you 
 cannot delete them.
 
-The 400 error code can indicate either of the following conditions: 
+The 400 error code might indicate missing or invalid parameters.
 
-- Missing or invalid parameters
-
-- An invalid state
+The 409 error code might indicate an invalid state.
 
 This table shows the possible response codes for this operation:
 

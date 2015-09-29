@@ -1,7 +1,7 @@
 .. _scripts:
 
-Scripts 
-~~~~~~~~~~~~
+Scripts API operations	
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can create a custom script that runs during various phases of the cluster's lifecycle. 
 The script is invoked on all nodes of the cluster. The script types currently supported are 

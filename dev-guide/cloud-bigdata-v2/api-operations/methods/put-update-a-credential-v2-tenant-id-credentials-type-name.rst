@@ -13,7 +13,7 @@ The update marks clusters that already use the credential as out of sync.
 
 The 400 error code might indicate missing or invalid parameters.
 
-
+The 409 error code might indicate an invalid state.
 
 This table shows the possible response codes for this operation:
 

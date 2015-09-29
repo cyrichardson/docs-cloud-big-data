@@ -9,15 +9,12 @@ Delete a cluster
 
 This operation deletes the specified cluster.
 
-The 400 error code can indicate either of the following conditions:
+The 400 error code might indicate missing or invalid parameters.
 
-- Missing or invalid parameters
-
-- An invalid state
+The 409 error code might indicate an invalid state.
 
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |

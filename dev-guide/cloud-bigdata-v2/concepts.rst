@@ -6,14 +6,23 @@ Concepts
 
 To use the Cloud Big Data API effectively, you should understand the following terminology:
 
-.. _distros-versions:
+
+.. _credentials-def:
+
+Credentials
+~~~~~~~~~~~~~
+
+Credentials allow you to set up SSH keys and other connector credentials for use with clusters.
+
+
+.. _distros-versions-def:
 
 Distros
 ~~~~~~~
 
 Distros provide a list of supported distributions and their corresponding versions, as well as a list of supported services and components per distribution.
 
-.. _stacks-blocks: 
+.. _stacks-blocks-def: 
 
 Stacks
 ~~~~~~
@@ -41,7 +50,7 @@ Scripts
 
 You can create a custom script that runs during various phases of the cluster's lifecycle. The script is invoked on all nodes of the cluster. The script types currently supported are "POST_INIT", which run after the cluster is completely set up. The script must be executable. Preferably, the script should be a bash script, but it could be a python script, or a self-contained executable that works with the base OS-installed libraries.
 
-.. _flavor: 
+.. _flavor-def: 
 
 Flavor
 ~~~~~~

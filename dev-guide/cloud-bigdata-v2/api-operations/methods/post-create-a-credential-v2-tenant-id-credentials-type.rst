@@ -10,11 +10,12 @@ Create a credential
 
     POST /v2/{tenant_id}/credentials/{type}
 
-This operations creates a new credential for the specified type.
+This operation creates a new credential for the specified type.
 
-Based on the chosen type, the 					request body varies. A general pattern is followed of a dict of the ``type`` that 					contains one or more credential related fields.
+Based on the chosen type, the request body varies. A general pattern is followed of a 
+dict of the ``type`` that contains one or more credential related fields.
 
-The 400 error code might indicate any of the 				following issues:
+The 400 error code might indicate any of the following issues:
 
 
 
@@ -23,12 +24,10 @@ The 400 error code might indicate any of the 				following issues:
 *  The credential type is invalid.
 
 
-The 409 error code might indicate that there is a duplicate primary identifier for the create request, for example, a duplicate key name or user name.
-
-
+The 409 error code might indicate that there is a duplicate primary identifier for the 
+create request, for example, a duplicate key name or user name.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -48,9 +47,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -68,10 +64,6 @@ This table shows the URI parameters for the request:
 |                          |                         |``connectors``.          |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -83,8 +75,6 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |ssh_keys.\ **public_key** |*(Required)*             |SSH public key.          |
 +--------------------------+-------------------------+-------------------------+
-
-
 
 
 
@@ -101,8 +91,19 @@ This table shows the body parameters for the request:
    }
    
 
+This table shows the body parameters for the request:
 
-
++---------------------------+-------------------------+-------------------------+
+|Name                       |Type                     |Description              |
++===========================+=========================+=========================+
+|**cloud-files**            |*(Required)*             |                         |
++---------------------------+-------------------------+-------------------------+
+|cloud-files.\ **username** |*(Required)*             |Cloud Files account user | 
+|                           |                         |name.                    |
++---------------------------+-------------------------+-------------------------+
+|cloud-files.\ **api_key**  |*(Required)*             |API key for Cloud Files  |
+|                           |                         |                         |
++---------------------------+-------------------------+-------------------------+
 
 
 **Example Create a credential - cloud_files example: JSON request**

@@ -12,7 +12,7 @@ This operation lists all nodes for the specified cluster.
 Valid values for the ``postInitScriptStatus`` parameter are: 
 ``FAILED``, ``PENDING``, ``DELIVERED``, ``RUNNING``, ``SUCCEEDED``, and ``None``.
 
-Valid values for the node status are in :ref:`cbd-dgv2-node <cbd-dgv2-node>`.
+Valid values for the node status are in :ref:`Node status <cbd-dgv2-node>`.
 
 
 This table shows the possible response codes for this operation:

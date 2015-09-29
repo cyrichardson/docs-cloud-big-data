@@ -102,9 +102,7 @@ This table shows the body parameters for the request:
 |stack.node_groups.\             |*(Optional)*          |Flavor ID for the     |
 |**flavor_id**                   |                      |node group.           |
 +--------------------------------+----------------------+----------------------+
-|stack.node_groups.components.\  |*(Required)*          |Component name. For   |
-|**name**                        |                      |example: Namenode     |
-+--------------------------------+----------------------+----------------------+
+
 
 **Example Create a stack - first example: JSON request**
 

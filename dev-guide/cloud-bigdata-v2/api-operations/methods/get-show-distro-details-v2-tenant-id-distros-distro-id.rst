@@ -102,8 +102,8 @@ This table shows the body parameters for the response:
 |                              |                       |Namenode, Federated    |
 |                              |                       |HDFS.                  |
 +------------------------------+-----------------------+-----------------------+
-|distro.services.*description* |                       |Short description of   |
-|                              |                       |the service.           |
+|distro.\                      |                       |Short description of   |
+|services.\ **description**    |                       |the service.           |                 
 +------------------------------+-----------------------+-----------------------+
 
 **Example Show distro details: JSON response**
