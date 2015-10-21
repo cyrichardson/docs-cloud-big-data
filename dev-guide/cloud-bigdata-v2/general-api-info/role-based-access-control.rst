@@ -1,10 +1,13 @@
-.. _cbd-dgv2-rbac:
+.. _rbac:
 
 =========================
 Role Based Access Control
 =========================
 
-Role Based Access Control (RBAC) restricts access to the capabilities of Rackspace Cloud services, including the Cloud Big Data API, to authorized users only. RBAC enables Rackspace Cloud customers to specify which account users of their Cloud account have access to which Cloud Big Data API service capabilities, based on :ref:`roles defined by Rackspace <cbd-dgv2-rbac-available>`.
+Role Based Access Control (RBAC) restricts access to the capabilities of Rackspace Cloud 
+services, including the Cloud Big Data API, to authorized users only. RBAC enables Rackspace 
+Cloud customers to specify which account users of their Cloud account have access to which 
+Cloud Big Data API service capabilities, based on :ref:`roles defined by Rackspace <rbac-available>`.
 
 The permissions to perform certain operations in Cloud Big Data API&mdash;create, read, update, delete&mdash;are assigned to specific roles, and these roles can be assigned by the Cloud account admin user to account users of the account.
 
@@ -17,22 +20,17 @@ The account owner (identity:user-admin) can create account users on the account 
 
 See the *Cloud Identity Client Developer Guide* for information about how to perform the following tasks:
 
--  `Create account users`_
+-  :rax-devdocs:`Add account user <cloud-identity/v2/developer-guide/#add-user>`   
 
--  `Assign roles to account users`_
+-  :rax-devdocs:`Assign roles to account users <cloud-identity/v2/developer-guide/#add-role-to-user>`
 
--  `Delete roles from account users`_
+-  :rax-devdocs:`Delete roles from account users <cloud-identity/v2/developer-guide/#delete-global-role-from-user>`
 
 ..  note:: 
     The account admin user (identity:user-admin) role cannot hold any additional roles because it already has full access to all capabilities by default.
 
-.. _Create account users: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html
 
-.. _Assign roles to account users: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html
-
-.. _Delete roles from account users: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html
-
-.. _cbd-dgv2-rbac-available: 
+.. _rbac-available: 
 
 Roles available for Cloud Big Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,7 +69,7 @@ Additionally, two multiproduct roles apply to all products. Users with multiprod
 |                                      | granted.                             |
 +--------------------------------------+--------------------------------------+
 
-.. _cbd-dgv2-rbac-resolving:
+.. _rbac-resolving:
 
 Resolving conflicts between RBAC multiproduct vs. custom (product-specific) roles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -96,7 +94,7 @@ The following table shows two examples of how potential conflicts between user r
 | Cloud Big Data observer  | role                 | ignored.                |
 +--------------------------+----------------------+-------------------------+
 
-.. _cbd-dgv2-rbac-permissions:
+.. _rbac-permissions:
 
 RBAC permissions cross-reference to Cloud Big Data API operations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
