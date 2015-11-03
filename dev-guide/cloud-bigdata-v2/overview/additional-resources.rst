@@ -1,7 +1,7 @@
 .. _additional-resources:
 
 Additional resources
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 We welcome feedback, comments, and bug reports. Visit the Rackspace customer portal 
 at https://feedback.rackspace.com/. You can email all support questions to cbdteam@rackspace.com.

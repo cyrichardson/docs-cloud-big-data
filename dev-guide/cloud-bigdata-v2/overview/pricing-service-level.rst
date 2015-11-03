@@ -1,7 +1,7 @@
 .. _pricing-service-level:
 
 Pricing and terms of service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 |product name| is part of the Rackspace Cloud. The `cost for API usage`_ follows the pricing 
 for the service. 
