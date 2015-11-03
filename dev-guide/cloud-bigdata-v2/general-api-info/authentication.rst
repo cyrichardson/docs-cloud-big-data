@@ -135,5 +135,5 @@ send the token to a service.
     	uniquely named services that perform similar functions. In Cloud Identity 2.0, 
     	the service type attribute can be used as a key by which to recognize similar 
     	services. For more information about the service catalog, see 
-    	:rax-devguide:`Identity API Developer Guide <docs-cloud-identity>`. 
+    	:rax-devguide:`Identity API Developer Guide <v2/docs-cloud-identity>`. 
     	
