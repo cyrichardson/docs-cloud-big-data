@@ -81,7 +81,7 @@ release = '1'
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
-today = 'October 20, 2015'
+today = 'November 2, 2015'
 # Else, today_fmt is used as the format for a strftime call.
 # today_fmt = '%B %d, %Y'
 
@@ -134,6 +134,15 @@ extlinks = {
     'rackerlabs': ('https://github.com/rackerlabs/%s', ''),
     'rocket': ('https://objectrocket.com/%s', '')
 }
+
+# Global variables that are replaced by the specified value during the build process.
+
+rst_epilog = """
+.. |apiservice| replace:: Rackspace Cloud Big Data API
+.. |no changes| replace:: None for this release.
+.. |contract version| replace:: 1.0
+.. |product name| replace:: Rackspace Cloud Big Data
+"""
 
 # A list of ignored prefixes for module index sorting.
 # modindex_common_prefix = []
