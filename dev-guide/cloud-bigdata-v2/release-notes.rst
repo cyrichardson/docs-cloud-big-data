@@ -12,4 +12,4 @@ details in |apiservice| |contract version| service updates.
 .. toctree::
    :maxdepth: 2
 
-   June 30, 2015 (eGA) <release-notes/cbd-20150630>
+   June 30, 2015 <release-notes/cbd-20150630>
