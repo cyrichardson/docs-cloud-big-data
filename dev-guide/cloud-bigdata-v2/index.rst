@@ -16,7 +16,7 @@ REST API.
 .. toctree:: :hidden:
    :maxdepth: 2
    
-   Cloud Big Data API <self>
+   Cloud Big Data 2.0 <self>
    API Status <http://www.rackspacestatus.com/>
    About the API <overview/index>
    developer-guide
