@@ -1,7 +1,7 @@
 .. _index:
 
 ====================================
-Cloud Big Data API, v2.0
+**Cloud Big Data API, v2.0**
 ====================================
 
 *Last updated:* |today|
@@ -16,6 +16,8 @@ REST API.
 .. toctree:: :hidden:
    :maxdepth: 2
    
+   Cloud Big Data API <self>
+   API Status <https://status.rackspace.com/#current-group-27>
    About the API <overview/index>
    developer-guide
    concepts
