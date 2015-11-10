@@ -1,80 +1,81 @@
 .. _cbd-release-2015-06-30:
 
-API |contract version| eGA, June 30, 2015
+API |contract version| GA, June 30, 2015
 -------------------------------------------------
-
-.. contents::
-   :local:
-   :depth: 1
 
 Rackspace is pleased to announce the General Availability (GA) release
 of Rackspace Cloud Big Data 2.0. 
 
-Review these release notes to learn about the new release and how to migrate your data 
+What's new
+~~~~~~~~~~~~
+
+Review this section to learn about the new release and how to migrate your data 
 from Cloud Big Data 1.0 to 2.0.
 
 
 Differences between Cloud Big Data 1.0 and 2.0
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following table describes the differences between Cloud Big Data 1.0 and 2.0 services.
 
 +--------------------+---------------------------------------+-----------------------------------------+
-|                    |               Version 1               |               Version 2                 |
+|                    |                   1.0                 |                   2.0                   |
 +====================+=======================================+=========================================+
-| API                | Simple and easy with limited required | Same simplicity but with more advanced  |
-|                    | inputs                                | options to customize everything         |
+| API                | Limited required inputs               | More advanced options for customization |
 +--------------------+---------------------------------------+-----------------------------------------+
-| Cluster Options    | Limited set of cluster types          | Predefined stacks with ability to fine  |
-|                    |                                       | tune node configurations, added ability |
-|                    |  - Hadoop HDP 1.3                     | to create custom stacks                 |
-|                    |  - Hadoop/Spark HDP 2.1               |                                         |
-|                    |  - Hadoop/Spark HDP 2.2 (backported)  |  - Multiple HDP 2.2 and 2.3 Stacks      |
-|                    |                                       |  - Custom Stacks                        |
+| Cluster options    | Limited set of cluster types          | Predefined stacks with the ability to   |
+|                    |                                       | fine-tune node configurations, and the  |
+|                    |  - Hadoop HDP 1.3                     | the added ability to create custom      |
+|                    |  - Hadoop/Spark HDP 2.1               | stacks.                                 |
+|                    |  - Hadoop/Spark HDP 2.2 (backported)  |                                         |
+|                    |                                       |  - Multiple HDP 2.2 and 2.3 stacks      |
+|                    |                                       |  - Custom stacks                        |
 +--------------------+---------------------------------------+-----------------------------------------+
 | Provisioning       | Custom (agent based)                  | Apache Ambari                           |
 +--------------------+---------------------------------------+-----------------------------------------+
-| Cluster Login      | Password (required), SSH Key          | SSH Key (required)                      |
+| Cluster login      | Password (required), SSH key          | SSH key (required)                      |
 |                    | (optional)                            |                                         |
 +--------------------+---------------------------------------+-----------------------------------------+
-| Multiple SSH Keys  | No                                    | Yes                                     |
+| Multiple SSH keys  | No                                    | Yes                                     |
 +--------------------+---------------------------------------+-----------------------------------------+
-| Storage Options    | Local HDFS, Cloud Files               | Local HDFS, Cloud Files, Amazon S3      |
+| Storage options    | Local HDFS, Cloud Files               | Local HDFS, Cloud Files, Amazon S3      |
 +--------------------+---------------------------------------+-----------------------------------------+
 | UI (Cloud Control) | No                                    | Yes                                     |
 +--------------------+---------------------------------------+-----------------------------------------+
-| Client & Curl      | Yes                                   | Yes                                     |
+| Client & cURL      | Yes                                   | Yes                                     |
 +--------------------+---------------------------------------+-----------------------------------------+
-| Cluster layout     | Predefined flavors for Gateway,       | Users have full choice on flavor of all |
-|                    | Namenode and Secondary nodes. Users   | node groups with the ability to define  |
-|                    | can choose size of Datanode.          | custom node groups using custom stacks. |
+| Cluster layout     | Predefined flavors for the Gateway,   | Users have full choice on the flavor of |
+|                    | Name, and Secondary nodes. Users      | all node groups with the ability to     |
+|                    | can choose the size of the Data node. | define custom node groups using custom  |
+|                    |                                       | stacks.                                 |
 +--------------------+---------------------------------------+-----------------------------------------+
-| Cluster Monitoring | No                                    | Yes via Ambari                          |
+| Cluster monitoring | No                                    | Yes via Ambari                          |
 +--------------------+---------------------------------------+-----------------------------------------+
-| Cluster Configs    | No                                    | Yes via Ambari                          |
+| Cluster configs    | No                                    | Yes via Ambari                          |
 +--------------------+---------------------------------------+-----------------------------------------+
-| Post Install Script| Yes - One                             | Yes - Multiple                          |
+| Post installation  | Yes - One                             | Yes - Multiple                          |
+| script             |                                       |                                         |
 +--------------------+---------------------------------------+-----------------------------------------+
-| Supported Services | HDFS, YARN, MapReduce, Tez, Hive, Pig,| HDFS, YARN, MapReduce, Tez, Hive, Pig,  |
-|                    | Spark                                 | Spark, Flume, Sqoop, Oozie, Zooekeeper, |
-|                    |                                       | Storm, Kafka, Falcon, Ambari            |
+| Supported services | HDFS, YARN, MapReduce, Tez, Hive, Pig,| HDFS, YARN, MapReduce, Tez, Hive, Pig,  |
+|                    | and Spark                             | Spark, Flume, Sqoop, Oozie, Zookeeper,  |
+|                    |                                       | Storm, Kafka, Falcon, and Ambari        |
 +--------------------+---------------------------------------+-----------------------------------------+
-| Coming soon        |                                       | HBase, Phoenix, Knox, Ranger, Zeppelin  |
-|                    |                                       | Tachyon                                 |
+| Coming soon        | Not applicable.                       | HBase, Phoenix, Knox, Ranger, Zeppelin  |
+|                    |                                       | and Tachyon                             |
 +--------------------+---------------------------------------+-----------------------------------------+
 
 
 
-Supported Operations
-~~~~~~~~~~~~~~~~~~~~~~
+Supported operations
+^^^^^^^^^^^^^^^^^^^^^^
 
-The following table describes Cloud Big Data 2.0 API operations to support clusters created by using the 
-Cloud Big Data 1.0.
+The following table describes Cloud Big Data 2.0 API operations that support clusters created by using the 
+Cloud Big Data 1.0 API.
 
 **API operations to manage clusters created by using Cloud Big Data 1.0**
 
 +--------------------+---------------------------------------+-----------------------------------------+
-| Cluster Type       | v1 API                                | v2 API                                  |
+| Cluster type       | 1.0 API                               | 2.0 API                                 |
 +--------------------+-------------+-------------+-----------+-------------+-------------+-------------+
 |                    | Create      | Resize      | Delete    | Create      | Resize      | Delete      |
 +====================+=============+=============+===========+=============+=============+=============+
@@ -90,13 +91,13 @@ Cloud Big Data 1.0.
 +--------------------+-------------+-------------+-----------+-------------+-------------+-------------+
 
 
-The following table describes the API operations to support clusters created 
+The following table describes the API operations that support clusters created 
 by using the Cloud Big Data 2.0 API. 
 
 **API operations to manage clusters created by using Cloud Big Data 2.0**
 
 +--------------------+---------------------------------------+-----------------------------------------+
-| Stack              | v1 API                                | v2 API                                  |
+| Stack              | 1.0 API                               | 2.0 API                                 |
 +--------------------+-------------+-------------+-----------+-------------+-------------+-------------+
 |                    | Create      | Resize      | Delete    | Create      | Resize      | Delete      |
 +====================+=============+=============+===========+=============+=============+=============+
@@ -104,19 +105,19 @@ by using the Cloud Big Data 2.0 API.
 +--------------------+-------------+-------------+-----------+-------------+-------------+-------------+
 | \*_HDP2_3          |             |             |           | X           | X           | X           |
 +--------------------+-------------+-------------+-----------+-------------+-------------+-------------+
-| Custom Stacks      |             |             |           | X           | X           | X           |
+| Custom stacks      |             |             |           | X           | X           | X           |
 +--------------------+-------------+-------------+-----------+-------------+-------------+-------------+
 
 
 Migrating a cluster
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
 Based on your current usage patterns, you have several options for migrating a cluster created by using 
 Cloud Big Data 1.0 to version 2.0.
 
-- Recreate the cluster.
+- Re-create the cluster.
 
-  If you have a development or test cluster that you can recreate easily, the best method to 
+  If you have a development or test cluster that you can re-create easily, the best method to 
   update to Cloud Big Data 2.0 is to delete the existing cluster and create a new one by 
   using the Cloud Big Data 2.0 API. You can do this by using the 
   :ref:`Cluster API operations <clusters>`, or by using the 
@@ -124,26 +125,39 @@ Cloud Big Data 1.0 to version 2.0.
   
 - Use Cloud Files to migrate.
 
-  If you are using Cloud Files as your primary data storage, 
+  If you are using Cloud Files as your primary data storage, perform the following steps:
   
-  - Backup all scripts and code.
+  - Back up all scripts and code.
   - Create a new cluster by using the Cloud Big Data 2.0 API. 
   - Copy the scripts and code. 
   
   After you complete these steps, you can access data from Cloud Files using the same process 
   you used before the migration.
 
-- Use Hadoop's `distcp` command.
+- Use Hadoop's ``distcp`` command.
 
   For all other cases our support team is standing by to help you migrate data from your 
-  old cluster to new cluster using Hadoop's built in distcp command. This involves standing 
-  up the new cluster with a similar node configuraiton as the old cluster, enabling full 
-  access from old cluster to new cluster. Stop all running jobs and perform distcp to 
-  move the data.
-	
-  After the data is migrated, copy over any code/scripts and test to make sure the new 
-  cluster still works with your exisitng scripts.
+  old cluster to new cluster using Hadoop's built in ``distcp`` command. This migration 
+  involves the following steps: 
+  
+  1. Create the new cluster with a similar node configuration as the old cluster. 
+  2. Enable full access from the old cluster to the new cluster. 
+  3. Stop all running jobs and run the distcp command to move the data.
+  4. After the data is migrated, copy over any code or scripts and test to ensure that the 
+     new cluster works with your existing scripts.
 
     .. note:: 
        If you have HDP 1.3 clusters, the migration process is more complex because there 
        are major changes in the underlying framework.
+       
+       
+Resolved issues
+~~~~~~~~~~~~~~~~~~	
+
+|no changes|
+
+
+Resolved issues
+~~~~~~~~~~~~~~~~
+
+|no changes|
