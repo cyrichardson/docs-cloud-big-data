@@ -1,4 +1,4 @@
-.. _cbd-dgv2-request:
+.. _request-and-response-types:
 
 ==========================
 Request and response types

@@ -1,7 +1,7 @@
 .. _index:
 
 ====================================
-**Cloud Big Data API, v2.0**
+Cloud Big Data API, v2.0
 ====================================
 
 *Last updated:* |today|
@@ -19,6 +19,8 @@ REST API.
    Cloud Big Data 2.0 <self>
    API Status <http://www.rackspacestatus.com/>
    About the API <overview/index>
+   getting-started
+   getting-started/index
    developer-guide
    concepts
    general-api-info/index

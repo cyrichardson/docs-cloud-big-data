@@ -1,23 +1,19 @@
-.. _prerequisites:
+.. _service-prerequisites:
 
-Prerequisites
+Using the API
 ~~~~~~~~~~~~~~
 
-To work with the Cloud Big Data API, you must have the following resources available and 
-understand certain limitations and conditions for using the API:
+You need a Rackspace Cloud account and :ref:`valid credentials<get-credentials>` to use 
+the |apiservice|. 
 
--  A Rackspace Cloud account
-
--  A Rackspace Cloud username and password, as specified during
-   registration
-
-The following OS and Hadoop distribution are supported:
+Cloud Big Data supports the following OS and Hadoop distributions: 
 
 -  CentOS 6.5
 
 -  HDP version 2.1 and 1.3
 
-By using the Cloud Big Data API, you understand and agree to the following limitations and conditions:
+By using the Cloud Big Data API, you understand and agree to the following limitations 
+and conditions:
 
 -  Cloud Big Data includes a Swift integration feature wherein Hadoop, MapReduce, or 
    Apache Pig jobs can directly reference Cloud Files containers.

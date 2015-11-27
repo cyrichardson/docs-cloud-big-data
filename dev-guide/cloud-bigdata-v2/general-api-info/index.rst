@@ -1,8 +1,7 @@
 .. _ general-api-info:
 
-=======================
 General API Information
-=======================
+------------------------
 
 The Cloud Big Data API is implemented using a RESTful web service interface. Cloud Big 
 Data shares a common token-based authentication system with other products in the Rackspace 
@@ -14,7 +13,7 @@ Cloud suite. This system enables seamless access between Rackspace products and 
 .. toctree:: :hidden:
    :maxdepth: 3
     
-   authentication
+   authentication-gen-api
    service-access-endpoints
    request-and-response-types
    date-time-format
