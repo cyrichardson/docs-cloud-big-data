@@ -30,8 +30,7 @@ Follow these steps to authenticate.
                            
 
 2. Export the ``AUTH_TOKEN`` and ``LAVA2_API_URL`` environment variables
-   as shown in the following example. Replace ``yourTenantId`` with the
-   your actual tenant ID.
+   as shown in the following example. Replace ``yourTenantId`` with your actual tenant ID.
 
     
    **Example: Export environment variables**
