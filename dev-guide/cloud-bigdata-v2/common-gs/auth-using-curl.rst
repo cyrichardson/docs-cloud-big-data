@@ -20,7 +20,7 @@ From a command prompt, send a **POST tokens** request to the Rackspace Cloud Ide
 service.  Include your username and :ref:`API key<get-credentials>` 
 as shown in the following example.
 
-.. include:: ../common/samples/auth-req-curl.rst
+.. include:: ../common-gs/samples/auth-req-curl.rst
 
 
 .. _review-auth-resp:
@@ -41,7 +41,7 @@ returned is specific to your account.
       
 **Example: Authentication response**  
     
-.. include:: ../common/samples/auth-resp-json.rst
+.. include:: ../common-gs/samples/auth-resp-json.rst
 
 
 If the request was successful, you can find the authentication token and other information in the
@@ -104,14 +104,14 @@ create an ``API_ENDPOINT`` variable to store the URL for accessing an API servic
 To reference the value in an API request, prefix the variable name with a $, for example 
 ``$API_ENDPOINT``.
 
-.. include:: ../common/using-env-variables.rst
+.. include:: ../common-gs/using-env-variables.rst
 		   
 **Create environment variables**
 
 #. In the ``token`` section of the authentication response, copy the token ``id`` and 
    tenant ``id`` values from the token object.
 
-      .. include:: ../common/samples/auth-token-object.rst
+      .. include:: ../common-gs/samples/auth-token-object.rst
    
 #. Export the token ID to an environment variable
    that can be supplied in the `X-Auth-Token` header required in each
@@ -139,7 +139,7 @@ To reference the value in an API request, prefix the variable name with a $, for
    
    This example shows the endpoints available for the |apiservice|. 
    
-   .. include:: ../common/samples/service-catalog-endpoint.rst
+   .. include:: ../common-gs/samples/service-catalog-endpoint.rst
           
    
 #. Copy the URL, and then export it to an environment variable.

@@ -19,7 +19,7 @@ the Rackspace Cloud Identity service.
 
 **cURL command example: JSON request**
 
-.. include:: ../common/samples/auth-req-curl.rst
+.. include:: ../common-gs/samples/auth-req-curl.rst
     
 In this example, ``$apiKey`` is an environment variable that stores your API key value.
 Environment variables make it easier to reference account information in API requests, 

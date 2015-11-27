@@ -1,7 +1,7 @@
 .. _auth-using-client:
 
 Authenticating by using the Lava client
-----------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Prerequisites**
 
@@ -54,6 +54,6 @@ Follow these steps to authenticate.
        +--------+---------------------------+---------+
        
 
-.. include:: ../common/using-env-variables.rst
+.. include:: ../common-gs/using-env-variables.rst
 		   
 		   

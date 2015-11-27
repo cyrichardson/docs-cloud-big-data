@@ -25,3 +25,7 @@ expires, you can send another authentication request to get a new one.
     
      - :rax-devdocs:`Manage tokens and token expiration<cloud-identity/v2/developer-guide/#manage-authentication-tokens>`  
   
+.. include:: ../common-gs/auth-using-curl.rst
+.. include:: ../common-gs/auth-using-client.rst
+
+
