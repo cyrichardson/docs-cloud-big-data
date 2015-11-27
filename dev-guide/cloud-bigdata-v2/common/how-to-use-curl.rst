@@ -14,7 +14,7 @@ of this guide directly to the command line or a script.
 
 .. _auth-curl-json:
 
-The following command is an example cURL command that sends an authentication request to 
+The following example shows a cURL command for sending an authentication request to 
 the Rackspace Cloud Identity service.
 
 **cURL command example: JSON request**
