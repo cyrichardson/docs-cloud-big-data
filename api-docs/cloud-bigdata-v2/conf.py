@@ -86,7 +86,7 @@ release = '1'
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
-today = 'November 2, 2015'
+today = 'December 3, 2015'
 # Else, today_fmt is used as the format for a strftime call.
 # today_fmt = '%B %d, %Y'
 
