@@ -21,10 +21,10 @@ the option to edit these scripts.
 
 .. note::
    A POST_INIT script runs on all new nodes. This script runs first on all nodes when 
-   you create the cluster and then runs on any subsequent resizing of the cluster. 
+   you create the cluster, and then runs on any subsequent resizing of the cluster. 
    The script also runs when you add new nodes to the cluster.
    
-You receive an error is a script with the specified name already exists.
+You receive an error if a script with the specified name already exists.
 
 This table shows the possible response codes for this operation:
 
@@ -97,15 +97,6 @@ This table shows the body parameters for the request:
 
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
-
 
 **Example Create a script example: JSON response**
 

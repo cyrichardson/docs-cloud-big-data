@@ -42,11 +42,16 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
-    'sphinx.ext.extlinks'
+    'sphinx.ext.extlinks',
+    'sphinxcontrib.spelling'
 ]
 
+# Specify spell check options
+spelling_lang='en_US'
+spelling_word_list_filename='spellcheck-wordlist.txt'
+
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+#templates_path = ['_templates']
 
 # The suffix of source filenames.
 source_suffix = '.rst'
@@ -87,7 +92,8 @@ today = 'November 2, 2015'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'common-gs', 'samples', 'api-operations/methods', 'getting-started/procedures']
+exclude_patterns = ['_build', 'common-gs', 'samples', 'api-operations/methods', 
+                    'getting-started/examples']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -106,9 +112,6 @@ exclude_patterns = ['_build', 'common-gs', 'samples', 'api-operations/methods', 
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
-
-# Adding substitution values
-rst_epilog = """.. |product name| replace:: Rackspace Big Data"""
 
 # External link library
 extlinks = {

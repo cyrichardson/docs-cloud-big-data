@@ -126,16 +126,7 @@ This table shows the body parameters for the request:
 Response
 """"""""""""""""
 
-
-
-
-
-
-
-
-
-
-**Example Create a credential - ssh_keys example: JSON response**
+**Example: Create a credential - ssh_keys example: JSON response**
 
 
 .. code::

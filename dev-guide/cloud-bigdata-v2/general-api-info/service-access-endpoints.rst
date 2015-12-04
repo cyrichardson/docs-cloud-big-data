@@ -27,7 +27,8 @@ considerations for choosing a data center.
 | London (LON)            | ``https://lon.bigdata.api.rackspacecloud.com/v2/yourAccountID/``    |
 +-------------------------+---------------------------------------------------------------------+
 
-Replace the ``yourAccountID`` placeholder with your actual account number, which is returned as 
-part of the authentication service response, after the final **/** in the ``publicURL`` field.
+Replace the ``yourAccountID`` placeholder with your actual account number, which is returned 
+as part of the :ref:`authentication service response<review-auth-resp>`, after the final 
+**/** in the ``publicURL`` field.
 
 .. _About regions: http://www.rackspace.com/knowledge_center/article/about-regions

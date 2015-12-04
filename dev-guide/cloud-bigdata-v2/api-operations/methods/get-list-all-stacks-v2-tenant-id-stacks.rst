@@ -7,7 +7,7 @@ List all stacks
 
     GET /v2/{tenant_id}/stacks
 
-This operation lists all stacks, includingglobal stacks and user-created stacks.
+This operation lists all stacks, including global stacks and user-created stacks.
 
 
 This table shows the possible response codes for this operation:

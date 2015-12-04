@@ -45,14 +45,14 @@ Follow these steps to authenticate.
 
    .. code::  
 
-       $ lava distros list
-       +--------+---------------------------+---------+
-       |   ID   |            Name           | Version |
-       +--------+---------------------------+---------+
-       | HDP2.2 | HortonWorks Data Platform |   2.2   |
-       +--------+---------------------------+---------+
+       +----------+----------------------------------+---------+
+       |    ID    |               Name               | Version |
+       +----------+----------------------------------+---------+
+       |  HDP2.3  |    HortonWorks Data Platform     |   2.3   |
+       | Spark1.5 | Apache Spark (Technical Preview) |   1.5   |
+       +----------+----------------------------------+---------+
        
 
 .. include:: ../common-gs/using-env-variables.rst
-		   
-		   
+     
+     
