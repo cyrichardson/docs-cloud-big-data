@@ -43,12 +43,11 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.extlinks',
-    'sphinxcontrib.spelling'
 ]
 
 # Specify spell check options
-spelling_lang='en_US'
-spelling_word_list_filename='spellcheck-wordlist.txt'
+#spelling_lang='en_US'
+#spelling_word_list_filename='spellcheck-wordlist.txt'
 
 # Add any paths that contain templates here, relative to this directory.
 #templates_path = ['_templates']
