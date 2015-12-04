@@ -12,5 +12,5 @@ else
   echo "Not submitting ${TRAVIS_BRANCH} anywhere."
 fi
 
-cd dev-guide/cloud-bigdata-v2
+cd api-docs/cloud-bigdata-v2
 deconst-preparer-sphinx
