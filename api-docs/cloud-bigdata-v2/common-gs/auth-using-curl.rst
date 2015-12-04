@@ -110,7 +110,8 @@ To reference the value in an API request, prefix the variable name with a $, for
 
 .. include:: ../common-gs/using-env-variables.rst
 		   
-**Create environment variables**
+Create environment variables
+..............................
 
 #. In the ``token`` section of the authentication response, copy the token ``id`` and 
    tenant ``id`` values from the token object.
