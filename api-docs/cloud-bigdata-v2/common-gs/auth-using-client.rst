@@ -1,6 +1,6 @@
 .. _auth-using-client:
 
-Authenticating by using the Lava client
+Using the Lava client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Prerequisites**
