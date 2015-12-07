@@ -55,9 +55,9 @@
 - [ ] Authentication section contains short section referencing GS auth example and Identity doc. 
       See [example](https://developer.rackspace.com/docs/cloud-big-data/v2/developer-guide/#document-general-api-info/authentication-gen-api)
 
-- [ ] Service access endpoints topic follows authentication
+- [ ] Service access endpoints topic is just below the Authentication topic. 
 
-- [ ] Service access endpoints topic has link to the authentication response in the Auth-using-cURL > Review authentication response section. 
+- [ ] Service access endpoints topic has link to the authentication response in the Auth-using-cURL ===> Review authentication response section. 
 
 - [ ] How to use cURL topic not included in the General API section (info provided in common auth section)
 
