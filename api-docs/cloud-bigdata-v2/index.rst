@@ -6,7 +6,7 @@ Cloud Big Data API, v2.0
 
 *Last updated:* |today|
 
-Use the following links to get user and reference information for using the Rackspace Cloud Databases service 
+Use the following links to get user and reference information for using the |apiservice| service 
 REST API. 
 
 - :ref:`Getting Started Guide <getting-started>`
