@@ -8,6 +8,7 @@ Prerequisites
 - API key to access Rackspace Cloud services
 - Account number
 - :ref:`Command line tool or browser client<send-api-requests>` to communicate with the API service
+- Configure environment variables for :ref:`cURL <configure-environment-variables>`
 
 If you don't have an account, `sign up`_ for one.
 You can find your account number and API key on the Account Settings page in the Cloud Control Panel.
