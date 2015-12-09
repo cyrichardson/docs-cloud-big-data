@@ -18,7 +18,7 @@ REST API.
    :maxdepth: 2
    
    Cloud Big Data 2.0 <self>
-   API Status <http://www.rackspacestatus.com/>
+   API Status <https://status.rackspace.com>
    About the API <overview/index>
    getting-started
    getting-started/index
