@@ -33,7 +33,7 @@ for listing all scripts.
 
 .. code::  
 
-    $ curl -i -X GET $API_ENDPOINT/scripts -d \
+    $ curl -i -X GET $ENDPOINT/scripts -d \
         -H "X-Auth-Token: $AUTH_TOKEN" \
         -H "Accept: application/json" \
         -H "Content-type: application/json" 

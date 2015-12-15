@@ -33,9 +33,9 @@ add 4 slave nodes to a cluster.
 
 .. code::  
 
-    $ curl -i -X PUT $endpoint/clusters/$testClusterId -d \
+    $ curl -i -X PUT $ENDPOINT/clusters/$testClusterId -d \
         -H "Accept: application/json" \
-        -H "X-Auth-Token:yourAuthToken" \
+        -H "X-Auth-Token:$AUTH_TOKEN" \
         -H "Content-Type: application/json"  
 
  

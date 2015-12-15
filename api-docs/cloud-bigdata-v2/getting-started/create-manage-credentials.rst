@@ -53,7 +53,7 @@ for creating a credential.
 
 .. code::  
 
-    $ curl -i -X POST $API_ENDPOINT/credentials/ssh_keys -d \
+    $ curl -i -X POST $ENDPOINT/credentials/ssh_keys -d \
         -H "X-Auth-Token: $AUTH_TOKEN" \
         -H "Accept: application/json" \
         -H "Content-type: application/json" 
@@ -86,7 +86,7 @@ for creating a credential.
 
 .. code::  
 
-    $ curl -i -X POST $API_ENDPOINT/credentials/cloud_files  -d \
+    $ curl -i -X POST $ENDPOINT/credentials/cloud_files  -d \
         -H "X-Auth-Token: $AUTH_TOKEN" \
         -H "Accept: application/json" \
         -H "Content-type: application/json" 
@@ -122,7 +122,7 @@ for creating a credential.
 
 .. code::  
     
-    $ curl -i -X POST $API_ENDPOINT/credentials/ssh_keys -d \
+    $ curl -i -X POST $ENDPOINT/credentials/ssh_keys -d \
         -H "X-Auth-Token: $AUTH_TOKEN" \
         -H "Accept: application/json" \
         -H "Content-type: application/json" 
@@ -157,7 +157,7 @@ for creating a credential.
  
 .. code::  
     
-    $ curl -i -X POST $API_ENDPOINT/credentials/ssh_keys -d \
+    $ curl -i -X POST $ENDPOINT/credentials/ssh_keys -d \
         -H "X-Auth-Token: $AUTH_TOKEN" \
         -H "Accept: application/json" \
         -H "Content-type: application/json"
@@ -239,7 +239,7 @@ to get all credentials that have been added to Cloud Big Data.
 
 .. code::  
 
-    $ curl -i -X GET $API_ENDPOINT/credentials \
+    $ curl -i -X GET $ENDPOINT/credentials \
         -H "X-Auth-Token: yourAuthToken" \
         -H "Accept: application/json" \
         -H "Content-type: application/json" 
@@ -305,7 +305,7 @@ Following is the operation template:
 
 .. code::
 
-     PUT $API_ENDPOINT/credentials/{type}/{name} 
+     PUT $ENDPOINT/credentials/{type}/{name} 
      
     
 cURL example
@@ -378,7 +378,7 @@ Following is the operation template:
 
 .. code::
 
-     DELETE $API_ENDPOINT/credentials/{type}/{name} 
+     DELETE $ENDPOINT/credentials/{type}/{name} 
      
 
 cURL example

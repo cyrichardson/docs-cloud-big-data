@@ -11,7 +11,7 @@ Following is the operation template:
 
 .. code::
 
-     GET $API_ENDPOINT/limits
+     GET ENDPOINT/limits
      
      
 cURL example
@@ -25,7 +25,7 @@ for viewing resource limits.
 
 .. code::  
 
-    curl -i -X GET $API_ENDPOINT/limits -d \
+    curl -i -X GET ENDPOINT/limits -d \
     -H "X-Auth-Token: yourAuthToken" \
     -H "Accept: application/json" \
     -H "Content-type: application/json" 

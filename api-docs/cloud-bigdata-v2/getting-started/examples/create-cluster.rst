@@ -26,7 +26,7 @@ corresponding response body.
 
 .. code::  
 
-    curl -i -X POST $API_ENDPOINT/clusters -d \
+    curl -i -X POST $ENDPOINT/clusters -d \
     -H "X-Auth-Token: $AUTH_TOKEN" \
     -H "Accept: application/json" \
     -H "Content-type: application/json"

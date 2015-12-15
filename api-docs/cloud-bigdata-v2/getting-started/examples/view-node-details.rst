@@ -49,8 +49,8 @@ account username and the SSH key for the cluster in the connection request.
 
 .. code::  
 
-    $ curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v2/yourAccountID/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes -d \
-        -H "X-Auth-Token: yourAuthToken" \
+    $ curl -i -X GET $ENDPOINT/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes -d \
+        -H "X-Auth-Token: $AUTH_TOKEN" \
         -H "Accept: application/json" \
         -H "Content-Type: application/json"
 

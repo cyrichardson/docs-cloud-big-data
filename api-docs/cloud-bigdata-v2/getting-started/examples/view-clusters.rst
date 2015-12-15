@@ -24,8 +24,8 @@ response for listing clusters.
 
 .. code::  
 
-    curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v2/yourAccountID/clusters -d \
-    -H "X-Auth-Token: yourAuthToken" \
+    curl -i -X GET $ENDPOINT/clusters -d \
+    -H "X-Auth-Token: $AUTH_TOKEN" \
     -H "Accept: application/json" \
     -H "Content-type: application/json"
 
