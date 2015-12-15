@@ -98,15 +98,15 @@ tenant ID
     tenant ID is appended to the API endpoint in the service catalog automatically. You 
      
 endpoint 
-	The API endpoint provides the URL that you use to access the API service. For guidance 
+	The endpoint provides the URL that you use to access the API service. For guidance 
 	on choosing an endpoint, see :ref:`Service access<service-access-endpoints>`.
         
 
 To make it easier to include the values in API requests, use the export command to create 
 environment variables that can be substituted for the actual values. For example, you can 
-create an ``API_ENDPOINT`` variable to store the URL for accessing an API service. 
+create an ``ENDPOINT`` variable to store the URL for accessing an API service. 
 To reference the value in an API request, prefix the variable name with a $, for example 
-``$API_ENDPOINT``.
+``$ENDPOINT``.
 
 .. include:: ../common-gs/using-env-variables.rst
 		   
@@ -151,10 +151,15 @@ Create environment variables
 
    .. code::
       
-        $ export API_ENDPOINT="publicURL"
+        $ export ENDPOINT="publicURL"
       
       
    Replace *publicURL* with the publicURL value listed in the service catalog.
+   
+   .. note:: 
+        The publicURL for |apiservice| consists of the service access endpoint URL to 
+        access the service with the tenant ID for your account appended. 
+    
    
    
 

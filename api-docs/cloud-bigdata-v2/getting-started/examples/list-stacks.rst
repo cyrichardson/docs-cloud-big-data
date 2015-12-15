@@ -27,8 +27,8 @@ for listing all stacks. This operation does not accept a request body.
 
 .. code::  
 
-    $ curl -i -X GET https://dfw.bigdata.api.rackspacecloud.com/v2/yourAccountID/stacks -d \         
-        -H "X-Auth-Token: yourAuthToken" \
+    $ curl -i -X GET $ENDPOINT/stacks -d \         
+        -H "X-Auth-Token: $AUTH_TOKEN" \
         -H "Accept: application/json" \
         -H "Content-type: application/json"
     

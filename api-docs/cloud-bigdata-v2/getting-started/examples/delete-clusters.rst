@@ -1,6 +1,6 @@
 .. _delete-clusters:
 
-Delete clusters
+Deleting clusters
 ~~~~~~~~~~~~~~~~~~
 
 You can use the delete clusters operation to remove unused Hadoop clusters.
@@ -27,7 +27,7 @@ to delete a cluster.
 
 .. code::  
 
-    $ curl -i -X DELETE $API_ENDPOINT/clusters/yourClusterID -d \
+    $ curl -i -X DELETE $ENDPOINT/clusters/yourClusterID -d \
         -H "Accept: application/json" \
         -H "X-Auth-Token:$AUTH_TOKEN" \
         -H "Content-Type: application/json"

@@ -27,7 +27,7 @@ for listing
 
 .. code::  
 
-    $ curl -i -X GET $API_ENDPOINT/flavors -d \
+    $ curl -i -X GET $ENDPOINT/flavors -d \
         -H "X-Auth-Token: $AUTH_TOKEN" \
         -H "Accept: application/json" \
         -H "Content-type: application/json"

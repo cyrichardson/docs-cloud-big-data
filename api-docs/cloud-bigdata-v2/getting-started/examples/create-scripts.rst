@@ -33,7 +33,7 @@ to add a script that installs iPython Notebooks on a cluster.
 
 .. code::  
 
-    $curl -i -X POST $API_ENDPOINT/script -d \
+    $curl -i -X POST $ENDPOINT/script -d \
        -H "X-Auth-Token: $AUTH_TOKEN" \
        -H "Accept: application/json" \
        -H "Content-type: application/json" 

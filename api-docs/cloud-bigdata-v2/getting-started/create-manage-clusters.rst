@@ -16,10 +16,17 @@ to complete the following API operations by using the cURL and the lava client.
 - Get information about all server nodes in a cluster
 - Add scripts that run automatically against all servers after cluster set up is completed
 
+.. note:: 
+     These examples use the ``$ENDPOINT`` and ``$AUTH_TOKEN`` environment 
+     variables to specify the API endpoint and authentication values for accessing the 
+     service. Make sure you :ref:`configure these variables<configure-environment-variables>` 
+     before running the code samples. 
+
 .. include:: examples/list-flavors.rst
 .. include:: examples/list-distros.rst
 .. include:: examples/list-stacks.rst
 .. include:: examples/create-cluster.rst
+.. include:: examples/list-clusters.rst
 .. include:: examples/view-node-details.rst
 .. include:: examples/resize-clusters.rst
 .. include:: examples/create-scripts.rst

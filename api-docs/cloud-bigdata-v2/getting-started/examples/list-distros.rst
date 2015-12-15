@@ -24,7 +24,7 @@ for listing information about the data platform distributions supported by |prod
 
 .. code::  
 
-    $ curl -i -X GET $API_ENDPOINT/distros -d \
+    $ curl -i -X GET $ENDPOINT/distros -d \
         -H "X-Auth-Token: $AUTH_TOKEN" \
         -H "Accept: application/json" \
         -H "Content-type: application/json"
