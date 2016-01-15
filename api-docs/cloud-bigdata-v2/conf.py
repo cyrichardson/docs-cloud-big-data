@@ -74,7 +74,7 @@ copyright = '2015, Rackspace'
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 # The short X.Y version.
-version = '1'
+version = '2'
 
 # The full version, including alpha/beta/rc tags.
 release = '1'
@@ -85,7 +85,7 @@ release = '1'
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
-today = 'December 3, 2015'
+#today = 'December 3, 2015'
 # Else, today_fmt is used as the format for a strftime call.
 # today_fmt = '%B %d, %Y'
 
