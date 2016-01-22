@@ -1,13 +1,13 @@
-# Rackspace Cloud Databases API documentation
+# Rackspace Cloud Big Data API documentation
 
 [![Build Status](https://travis-ci.org/rackerlabs/docs-cloud-big-data.svg?branch=master)](https://travis-ci.org/rackerlabs/docs-cloud-big-data)
 
 
 ## Purpose
 
-This GitHub repository contains the source files for the following Rackspace Cloud Databases API documentation:
+This GitHub repository contains the source files for the following Rackspace Cloud Big Data API documentation:
 
-* [Cloud Databases Developer Guide](https://developer.rackspace.com/docs/cloud-big-data/v2/developer-guide/)
+* [Cloud Big Data Developer Guide](https://developer.rackspace.com/docs/cloud-big-data/v2/developer-guide/)
 
 ## Contributing
 
