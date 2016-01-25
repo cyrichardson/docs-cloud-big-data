@@ -5,12 +5,14 @@
 
 ## Purpose
 
-This GitHub repository contains the source files for the following Rackspace Cloud Big Data API documentation:
+This GitHub repository contains the source files for the following Rackspace Cloud Big Data API 2.0 documentation:
 
 * [Getting Started Guide](https://developer.rackspace.com/docs/cloud-big-data/v2/developer-guide/#getting-started)
 * [Developer Guide](https://developer.rackspace.com/docs/cloud-big-data/v2/developer-guide/)
 * [API Reference](https://developer.rackspace.com/docs/cloud-big-data/v2/developer-guide/#document-api-reference)
 * [Release Notes](https://developer.rackspace.com/docs/cloud-big-data/v2/developer-guide/#document-release-notes)
+
+**Note:** The Rackpsace Cloud Big Data API 1.0 and API documentation have been deprecated.
 
 ## Contributing
 
