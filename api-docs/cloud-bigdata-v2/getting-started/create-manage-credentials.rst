@@ -122,7 +122,7 @@ for creating a credential.
 
 .. code::  
     
-    $ curl -i -X POST $ENDPOINT/credentials/ssh_keys -d \
+    $ curl -i -X POST $ENDPOINT/credentials/s3 -d \
         -H "X-Auth-Token: $AUTH_TOKEN" \
         -H "Accept: application/json" \
         -H "Content-type: application/json" 
@@ -134,8 +134,8 @@ for creating a credential.
    
     {
       "s3": {
-        "accesss_key_id": "<s3-access-key-id>",
-        "access_key": "<s3_access-key>"
+        "access_key_id": "<s3-access-key-id>",
+        "access_secret_key": "<s3-access-key>"
       }
     }
     
@@ -157,7 +157,7 @@ for creating a credential.
  
 .. code::  
     
-    $ curl -i -X POST $ENDPOINT/credentials/ssh_keys -d \
+    $ curl -i -X POST $ENDPOINT/credentials/ambari -d \
         -H "X-Auth-Token: $AUTH_TOKEN" \
         -H "Accept: application/json" \
         -H "Content-type: application/json"
