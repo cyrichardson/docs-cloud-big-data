@@ -28,4 +28,5 @@ REST API.
    api-reference
    api-operations/index
    release-notes
+   copyright
 
