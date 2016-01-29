@@ -1,3 +1,8 @@
 {
-  "contentIDBase": "https://github.com/rackerlabs/docs-cloud-big-data/v2/"
+  "contentIDBase": "https://github.com/rackerlabs/docs-cloud-big-data/",
+  "githubUrl": "https://github.com/rackerlabs/docs-cloud-big-data/",
+  "githubBranch": "master",
+  "meta": {
+    "preferGithubIssues": false
+  }
 }
