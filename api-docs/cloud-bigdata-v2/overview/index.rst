@@ -17,6 +17,5 @@ Rackspace Knowledge Center.
    
    prerequisites
    additional-resources
-   pricing-service-level
    api-contract-changes
    api-service-updates
