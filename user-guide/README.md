@@ -19,7 +19,7 @@ Here's a summary of the steps to create a publishable deliverable from this mode
 
 - Copy the entire /user-guide-single-product/ directory
   to wherever you want to work with it
-- Install Sphinx and its prereqs to confirm that you can [build from source](#build-from-source)
+- Install Sphinx and its prereqs to confirm that you can [build from source](#building-from-source)
 - Customize your content
 - Run `make html`` to confirm that your customizations build
 - Merge your customized content into the master branch of your GitHub repository,
@@ -29,7 +29,8 @@ Here's a summary of the steps to create a publishable deliverable from this mode
 ##Alternatives
 
 If this template is not a good match for the user guide you intend to create,
-examine the other templates in /docs-templates/user-guide.
+examine the other 
+[Rackspace documentation templates](https://github.com/rackerlabs//docs-templates/)
 
 ##Customizing your guide
 
