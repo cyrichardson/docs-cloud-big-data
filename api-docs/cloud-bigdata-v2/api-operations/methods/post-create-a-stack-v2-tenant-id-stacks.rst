@@ -104,23 +104,23 @@ This table shows the body parameters for the request:
 +--------------------------------+----------------------+----------------------+
 
 
-**Example Create a stack - first example: JSON request**
+**Example Create a stack: JSON request**
 
 
 .. code::
 
    {
        "stack": {
-           "distro": "HDP2.2",
-           "name": "HDP2.2_Hadoop",
+           "distro": "HDP2.3",
+           "name": "HDP2.3_Hadoop",
            "description": "Core Hadoop Stack with Hive",
            "services": [
                {
                    "name": "HDFS",
-                   "modes": ["HA"]
+                   "modes": ["Secondary"]
                },
                {
-                   "name": "Yarn"
+                   "name": "YARN"
                },
                {
                    "name": "MapReduce"
@@ -135,476 +135,525 @@ This table shows the body parameters for the request:
        }
    }
    
-
-
-
-
-
-**Example Create a stack - second example: JSON request**
-
-
-.. code::
-
-   {
-       "stack": {
-           "distro": "HDP2.2",
-           "name": "HDP2.2_Hadoop",
-           "description": "Core Hadoop Stack with Hive",
-           "services": [
-               {
-                   "name": "HDFS"
-               },
-               {
-                   "name": "Yarn"
-               },
-               {
-                   "name": "MapReduce"
-               },
-               {
-                   "name": "Hive"
-               },
-               {
-                   "name": "Pig"
-               }
-           ],
-           "node_groups": [
-               {
-                   "components": [
-                       {
-                           "name": "Namenode"
-                       }
-                   ],
-                   "count": 1,
-                   "flavor_id": "hadoop1-7",
-                   "id": "master1"
-               },
-               {
-                   "components": [
-                       {
-                           "name": "ResourceManager"
-                       },
-                       {
-                           "name": "YarnTimelineServer"
-                       },
-                       {
-                           "name": "JobHistoryServer"
-                       }
-                   ],
-                   "count": 1,
-                   "flavor_id": "hadoop1-4",
-                   "id": "master2"
-               },
-               {
-                   "components": [
-                       {
-                           "name": "Datanode"
-                       },
-                       {
-                           "name": "NodeManager"
-                       }
-                   ],
-                   "id": "slave"
-               },
-               {
-                   "components": [
-                       {
-                           "name": "HiveServer2"
-                       },
-                       {
-                           "name": "HiveMetastore"
-                       },
-                       {
-                           "name": "HiveClient"
-                       },
-                       {
-                           "name": "PigClient"
-                       }
-                   ],
-                   "count": 1,
-                   "flavor_id": "hadoop1-4",
-                   "id": "hive"
-               }
-           ]
-       }
-   }
-   
-
-
-
 
 
 Response
 """"""""""""""""
 
 
+.. code::
+
+   {
+        "stack": {
+            "created": "2016-02-19T15:36:10+00:00",
+            "description": "Core Hadoop Stack with Hive",
+            "distro": "HDP2.3",
+            "id": "d1a2b3cb-5423-4b91-a804-02970b05159a",
+            "is_deletable": true,
+            "links": [
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/123456/stacks/d1a2b3cb-5423-4b91-a804-02970b05159a",
+                    "rel": "self"
+                },
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/stacks/d1a2b3cb-5423-4b91-a804-02970b05159a",
+                    "rel": "bookmark"
+                }
+            ],
+            "name": "HDP2.3_Hadoop",
+            "node_groups": [
+                {
+                    "components": [
+                        {
+                            "name": "AmbariServer"
+                        },
+                        {
+                            "name": "AmbariMetricsCollector"
+                        },
+                        {
+                            "name": "ZookeeperServer"
+                        },
+                        {
+                            "name": "ZookeeperClient"
+                        }
+                    ],
+                    "count": 1,
+                    "flavor_id": "hadoop1-4",
+                    "id": "ambari",
+                    "resource_limits": {
+                        "max_count": 1,
+                        "min_count": 1,
+                        "min_ram": 1520
+                    }
+                },
+                {
+                    "components": [
+                        {
+                            "name": "ResourceManager"
+                        },
+                        {
+                            "name": "HiveAPI"
+                        },
+                        {
+                            "name": "TimelineHistoryServer"
+                        },
+                        {
+                            "name": "HiveServer2"
+                        },
+                        {
+                            "name": "HiveMetastore"
+                        },
+                        {
+                            "name": "Namenode"
+                        },
+                        {
+                            "name": "MRHistoryServer"
+                        }
+                    ],
+                    "count": 1,
+                    "flavor_id": "hadoop1-7",
+                    "id": "master0",
+                    "resource_limits": {
+                        "max_count": 1,
+                        "min_count": 1,
+                        "min_ram": 6645
+                    }
+                },
+                {
+                    "components": [
+                        {
+                            "name": "SecondaryNamenode"
+                        }
+                    ],
+                    "count": 1,
+                    "flavor_id": "hadoop1-2",
+                    "id": "master1",
+                    "resource_limits": {
+                        "max_count": 1,
+                        "min_count": 1,
+                        "min_ram": 1126
+                    }
+                },
+                {
+                    "components": [
+                        {
+                            "name": "HiveClient"
+                        },
+                        {
+                            "name": "MRClient"
+                        },
+                        {
+                            "name": "PigClient"
+                        },
+                        {
+                            "name": "HdfsScp"
+                        },
+                        {
+                            "name": "Datanode"
+                        },
+                        {
+                            "name": "NodeManager"
+                        }
+                    ],
+                    "count": 1,
+                    "flavor_id": "hadoop1-7",
+                    "id": "slave0",
+                    "resource_limits": {
+                        "max_count": 999,
+                        "min_count": 1,
+                        "min_ram": 5237
+                    }
+                }
+            ],
+            "services": [
+                {
+                    "components": [
+                        {
+                            "name": "SecondaryNamenode"
+                        },
+                        {
+                            "name": "HdfsScp"
+                        },
+                        {
+                            "name": "Datanode"
+                        },
+                        {
+                            "name": "Namenode"
+                        }
+                    ],
+                    "modes": [
+                        "Secondary"
+                    ],
+                    "name": "HDFS",
+                    "version": "2.7.1"
+                },
+                {
+                    "components": [
+                        {
+                            "name": "ResourceManager"
+                        },
+                        {
+                            "name": "TimelineHistoryServer"
+                        },
+                        {
+                            "name": "NodeManager"
+                        }
+                    ],
+                    "modes": [],
+                    "name": "YARN",
+                    "version": "2.7.1"
+                },
+                {
+                    "components": [
+                        {
+                            "name": "MRClient"
+                        },
+                        {
+                            "name": "MRHistoryServer"
+                        }
+                    ],
+                    "modes": [],
+                    "name": "MapReduce",
+                    "version": "2.7.1"
+                },
+                {
+                    "components": [
+                        {
+                            "name": "HiveClient"
+                        },
+                        {
+                            "name": "HiveAPI"
+                        },
+                        {
+                            "name": "HiveServer2"
+                        },
+                        {
+                            "name": "HiveMetastore"
+                        }
+                    ],
+                    "modes": [],
+                    "name": "Hive",
+                    "version": "1.2.1"
+                },
+                {
+                    "components": [
+                        {
+                            "name": "PigClient"
+                        }
+                    ],
+                    "modes": [],
+                    "name": "Pig",
+                    "version": "0.15.0"
+                }
+            ]
+        }
+    }
 
 
 
-
-
-
-
-
-**Example Create a stack - first example: JSON response**
+**Example JSON request with node_groups**
 
 
 .. code::
 
    {
-       "stack": {
-           "id": "aaa-bbb-ccc",
-           "created": "2014-06-14T10:10:10Z",
-           "distro": "HDP2.2",
-           "name": "HDP2.2_Hadoop",
-           "description": "Core Hadoop Stack with Hive",
-           "links": [
-               {
-                   "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/stacks/HDP2.2_Hadoop",
-                   "rel": "self"
-               },
-               {
-                   "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/stacks/HDP2.2_Hadoop",
-                   "rel": "bookmark"
-               }
-           ],
-           "services": [
-               {
-                   "components": [
-                       {
-                           "name": "Namenode"
-                       },
-                       {
-                           "name": "Datanode"
-                       },
-                       {
-                           "name": "JournalNode"
-                       }
-                   ],
-                   "modes": ["HA"],
-                   "name": "HDFS",
-                   "version": "2.6"
-               },
-               {
-                   "components": [
-                       {
-                           "name": "ResourceManager"
-                       },
-                       {
-                           "name": "NodeManager"
-                       }
-                   ],
-                   "name": "Yarn",
-                   "version": "2.6"
-               },
-               {
-                   "components": [
-                       {
-                           "name": "JobHistoryServer"
-                       },
-                       {
-                           "name": "MRClient"
-                       }
-                   ],
-                   "name": "MapReduce",
-                   "version": "2.6"
-               },
-               {
-                   "components": [
-                       {
-                           "name": "HiveServer2"
-                       },
-                       {
-                           "name": "HiveMetastore"
-                       },
-                       {
-                           "name": "HiveAPI"
-                       },
-                       {
-                           "name": "HiveClient"
-                       }
-                   ],
-                   "name": "Hive",
-                   "version": "0.14"
-               },
-               {
-                   "components": [
-                       {
-                           "name": "PigClient"
-                       }
-                   ],
-                   "name": "Pig",
-                   "version": "0.14"
-               }
-           ],
-           "node_groups": [
-               {
-                   "components": [
-                       {
-                           "name": "Namenode"
-                       },
-                       {
-                           "name": "ResourceManager"
-                       },
-                       {
-                           "name": "YarnTimelineServer"
-                       },
-                       {
-                           "name": "JobHistoryServer"
-                       }
-                   ],
-                   "count": 1,
-                   "flavor_id": "hadoop1-7",
-                   "id": "master",
-                   "resource_limits": {
-                       "min_count": 1,
-                       "max_count": 1,
-                       "min_ram": 6144
-                   }
-               },
-               {
-                   "components": [
-                       {
-                           "name": "Namenode"
-                       }
-                   ],
-                   "count": 1,
-                   "flavor_id": "hadoop1-7",
-                   "id": "standby-namenode",
-                   "resource_limits": {
-                       "min_count": 1,
-                       "max_count": 1,
-                       "min_ram": 2048
-                   }
-               },
-               {
-                   "components": [
-                       {
-                           "name": "JournalNode"
-                       }
-                   ],
-                   "count": 3,
-                   "flavor_id": "hadoop1-1",
-                   "id": "journalnodes",
-                   "resource_limits": {
-                       "min_count": 3,
-                       "max_count": 99,
-                       "min_ram": 1024
-                   }
-               },
-               {
-                   "components": [
-                       {
-                           "name": "Datanode"
-                       },
-                       {
-                           "name": "NodeManager"
-                       }
-                   ],
-                   "id": "slave",
-                   "resource_limits": {
-                       "min_count": 1,
-                       "max_count": 9999,
-                       "min_ram": 6144
-                   }
-               },
-               {
-                   "components": [
-                       {
-                           "name": "HiveServer2"
-                       },
-                       {
-                           "name": "HiveMetastore"
-                       },
-                       {
-                           "name": "HiveClient"
-                       },
-                       {
-                           "name": "HiveAPI"
-                       },
-                       {
-                           "name": "PigClient"
-                       }
-                   ],
-                   "count": 1,
-                   "flavor_id": "hadoop1-2",
-                   "id": "gateway",
-                   "resource_limits": {
-                       "min_count": 1,
-                       "max_count": 1,
-                       "min_ram": 2048
-                   }
-               }
-           ]
-       }
-   }
-   
+        "stack": {
+            "description": "Core Hadoop Stack with Hive",
+            "distro": "HDP2.3",
+            "name": "HDP2.3_Hadoop",
+            "node_groups": [
+                {
+                    "components": [
+                        {
+                            "name": "Namenode"
+                        },
+                        {
+                            "name": "ResourceManager"
+                        },
+                        {
+                            "name": "HiveAPI"
+                        },
+                        {
+                            "name": "TimelineHistoryServer"
+                        },
+                        {
+                            "name": "HiveServer2"
+                        },
+                        {
+                            "name": "HiveMetastore"
+                        },
+                        {
+                            "name": "MRHistoryServer"
+                        }
+                    ],
+                    "count": 1,
+                    "flavor_id": "hadoop1-7",
+                    "id": "master0"
+                },
+                {
+                    "components": [
+                        {
+                            "name": "SecondaryNamenode"
+                        }
+                    ],
+                    "count": 1,
+                    "flavor_id": "hadoop1-4",
+                    "id": "master1"
+                },
+                {
+                    "components": [
+                        {
+                            "name": "Datanode"
+                        },
+                        {
+                            "name": "HdfsScp"
+                        },
+                        {
+                            "name": "NodeManager"
+                        },
+                        {
+                            "name": "MRClient"
+                        },
+                        {
+                            "name": "HiveClient"
+                        },
+                        {
+                            "name": "PigClient"
+                        }
+                    ],
+                    "count": 1,
+                    "flavor_id": "hadoop1-7",
+                    "id": "slave0"
+                }
+            ],
+            "services": [
+                {
+                    "name": "HDFS"
+                },
+                {
+                    "name": "YARN"
+                },
+                {
+                    "name": "Hive"
+                },
+                {
+                    "name": "MapReduce"
+                },
+                {
+                    "name": "Pig"
+                }
+            ]
+        }
+    }
 
 
+**Example JSON response**
 
 
 .. code::
 
    {
-       "stack": {
-           "id": "aaa-bbb-ccc",
-           "created": "2014-06-14T10:10:10Z",
-           "distro": "HDP2.2",
-           "name": "HDP2.2_Hadoop",
-           "description": "Core Hadoop Stack with Hive",
-           "links": [
-               {
-                   "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/1234/stacks/HDP2.2_Hadoop",
-                   "rel": "self"
-               },
-               {
-                   "href": "https://dfw.bigdata.api.rackspacecloud.com/1234/stacks/HDP2.2_Hadoop",
-                   "rel": "bookmark"
-               }
-           ],
-           "services": [
-               {
-                   "components": [
-                       {
-                           "name": "Namenode"
-                       },
-                       {
-                           "name": "Datanode"
-                       }
-                   ],
-                   "name": "HDFS",
-                   "version": "2.6"
-               },
-               {
-                   "components": [
-                       {
-                           "name": "ResourceManager"
-                       },
-                       {
-                           "name": "NodeManager"
-                       }
-                   ],
-                   "name": "Yarn",
-                   "version": "2.6"
-               },
-               {
-                   "components": [
-                       {
-                           "name": "JobHistoryServer"
-                       },
-                       {
-                           "name": "MRClient"
-                       }
-                   ],
-                   "name": "MapReduce",
-                   "version": "2.6"
-               },
-               {
-                   "components": [
-                       {
-                           "name": "HiveServer2"
-                       },
-                       {
-                           "name": "HiveMetastore"
-                       },
-                       {
-                           "name": "HiveClient"
-                       }
-                   ],
-                   "name": "Hive",
-                   "version": "0.14"
-               },
-               {
-                   "components": [
-                       {
-                           "name": "PigClient"
-                       }
-                   ],
-                   "name": "Pig",
-                   "version": "0.14"
-               }
-           ],
-           "node_groups": [
-               {
-                   "components": [
-                       {
-                           "name": "Namenode"
-                       }
-                   ],
-                   "count": 1,
-                   "flavor_id": "hadoop1-7",
-                   "id": "master1",
-                   "resource_limits": {
-                       "min_count": 1,
-                       "max_count": 1,
-                       "min_ram": 2048
-                   }
-               },
-               {
-                   "components": [
-                       {
-                           "name": "ResourceManager"
-                       },
-                       {
-                           "name": "YarnTimelineServer"
-                       },
-                       {
-                           "name": "JobHistoryServer"
-                       }
-                   ],
-                   "count": 1,
-                   "flavor_id": "hadoop1-4",
-                   "id": "master2",
-                   "resource_limits": {
-                       "min_count": 1,
-                       "max_count": 1,
-                       "min_ram": 4096
-                   }
-               },
-               {
-                   "components": [
-                       {
-                           "name": "Datanode"
-                       },
-                       {
-                           "name": "NodeManager"
-                       }
-                   ],
-                   "id": "slave",
-                   "resource_limits": {
-                       "min_count": 1,
-                       "max_count": 9999,
-                       "min_ram": 6144
-                   }
-               },
-               {
-                   "components": [
-                       {
-                           "name": "HiveServer2"
-                       },
-                       {
-                           "name": "HiveMetastore"
-                       },
-                       {
-                           "name": "HiveClient"
-                       },
-                       {
-                           "name": "PigClient"
-                       }
-                   ],
-                   "count": 1,
-                   "flavor_id": "hadoop1-4",
-                   "id": "hive",
-                   "resource_limits": {
-                       "min_count": 1,
-                       "max_count": 1,
-                       "min_ram": 2048
-                   }
-               }
-           ]
-       }
-   }
-   
-
-
-
-
+        "stack": {
+            "created": "2016-02-19T04:21:03+00:00",
+            "description": "Core Hadoop Stack with Hive",
+            "distro": "HDP2.3",
+            "id": "d1a2b3cb-5423-4b91-a804-02970b05159a",
+            "is_deletable": true,
+            "links": [
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/v2/123456/stacks/d1a2b3cb-5423-4b91-a804-02970b05159a",
+                    "rel": "self"
+                },
+                {
+                    "href": "https://dfw.bigdata.api.rackspacecloud.com/123456/stacks/d1a2b3cb-5423-4b91-a804-02970b05159a",
+                    "rel": "bookmark"
+                }
+            ],
+            "name": "HDP2.3_Hadoop",
+            "node_groups": [
+                {
+                    "components": [
+                        {
+                            "name": "AmbariServer"
+                        },
+                        {
+                            "name": "AmbariMetricsCollector"
+                        },
+                        {
+                            "name": "ZookeeperServer"
+                        },
+                        {
+                            "name": "ZookeeperClient"
+                        }
+                    ],
+                    "count": 1,
+                    "flavor_id": "hadoop1-4",
+                    "id": "ambari",
+                    "resource_limits": {
+                        "max_count": 1,
+                        "min_count": 1,
+                        "min_ram": 1520
+                    }
+                },
+                {
+                    "components": [
+                        {
+                            "name": "Namenode"
+                        },
+                        {
+                            "name": "ResourceManager"
+                        },
+                        {
+                            "name": "HiveAPI"
+                        },
+                        {
+                            "name": "TimelineHistoryServer"
+                        },
+                        {
+                            "name": "HiveServer2"
+                        },
+                        {
+                            "name": "HiveMetastore"
+                        },
+                        {
+                            "name": "MRHistoryServer"
+                        }
+                    ],
+                    "count": 1,
+                    "flavor_id": "hadoop1-7",
+                    "id": "master0",
+                    "resource_limits": {
+                        "max_count": 1,
+                        "min_count": 1,
+                        "min_ram": 6645
+                    }
+                },
+                {
+                    "components": [
+                        {
+                            "name": "SecondaryNamenode"
+                        }
+                    ],
+                    "count": 1,
+                    "flavor_id": "hadoop1-4",
+                    "id": "master1",
+                    "resource_limits": {
+                        "max_count": 1,
+                        "min_count": 1,
+                        "min_ram": 1126
+                    }
+                },
+                {
+                    "components": [
+                        {
+                            "name": "Datanode"
+                        },
+                        {
+                            "name": "HdfsScp"
+                        },
+                        {
+                            "name": "NodeManager"
+                        },
+                        {
+                            "name": "MRClient"
+                        },
+                        {
+                            "name": "HiveClient"
+                        },
+                        {
+                            "name": "PigClient"
+                        }
+                    ],
+                    "count": 1,
+                    "flavor_id": "hadoop1-7",
+                    "id": "slave0",
+                    "resource_limits": {
+                        "max_count": 999,
+                        "min_count": 1,
+                        "min_ram": 5237
+                    }
+                }
+            ],
+            "services": [
+                {
+                    "components": [
+                        {
+                            "name": "SecondaryNamenode"
+                        },
+                        {
+                            "name": "HdfsScp"
+                        },
+                        {
+                            "name": "Datanode"
+                        },
+                        {
+                            "name": "Namenode"
+                        }
+                    ],
+                    "modes": [
+                        "Secondary"
+                    ],
+                    "name": "HDFS",
+                    "version": "2.7.1"
+                },
+                {
+                    "components": [
+                        {
+                            "name": "ResourceManager"
+                        },
+                        {
+                            "name": "TimelineHistoryServer"
+                        },
+                        {
+                            "name": "NodeManager"
+                        }
+                    ],
+                    "modes": [],
+                    "name": "YARN",
+                    "version": "2.7.1"
+                },
+                {
+                    "components": [
+                        {
+                            "name": "MRClient"
+                        },
+                        {
+                            "name": "MRHistoryServer"
+                        }
+                    ],
+                    "modes": [],
+                    "name": "MapReduce",
+                    "version": "2.7.1"
+                },
+                {
+                    "components": [
+                        {
+                            "name": "HiveClient"
+                        },
+                        {
+                            "name": "HiveAPI"
+                        },
+                        {
+                            "name": "HiveServer2"
+                        },
+                        {
+                            "name": "HiveMetastore"
+                        }
+                    ],
+                    "modes": [],
+                    "name": "Hive",
+                    "version": "1.2.1"
+                },
+                {
+                    "components": [
+                        {
+                            "name": "PigClient"
+                        }
+                    ],
+                    "modes": [],
+                    "name": "Pig",
+                    "version": "0.15.0"
+                }
+            ]
+        }
+    }
