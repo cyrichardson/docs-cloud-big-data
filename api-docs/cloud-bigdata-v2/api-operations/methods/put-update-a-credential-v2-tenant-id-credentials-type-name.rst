@@ -7,7 +7,8 @@ Update a credential
 
     PUT /v2/{tenant_id}/credentials/{type}/{name}
 
-This operation updates the specified user credential.
+This operation updates the specified user credential. 
+Note that credential names are immutable and **cannot** be changed.
 
 The update marks clusters that already use the credential as out of sync.
 
