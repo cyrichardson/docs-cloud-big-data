@@ -1,6 +1,6 @@
-# Rackspace Cloud Cloud Big Data API documentation
+# Rackspace Cloud Big Data API documentation
 
-[![build badge](https://build.developer.rackspace.com/rackerlabs/docs-cloud-Cloud Big Data/badge?branch=master)](https://build.developer.rackspace.com/rackerlabs/docs-cloud-Cloud Big Data/)
+[![build badge](https://build.developer.rackspace.com/rackerlabs/docs-cloud-big-data Data/badge?branch=master)](https://build.developer.rackspace.com/rackerlabs/docs-cloud-big-data/)
 
 This repository contains the source files that generate the following Cloud Cloud Big Data API documentation: 
 
