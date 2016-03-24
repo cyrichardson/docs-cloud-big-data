@@ -138,7 +138,7 @@ extlinks = {
 rst_epilog = """
 .. |apiservice| replace:: Rackspace Cloud Big Data API
 .. |no changes| replace:: None for this release
-.. |contract version| replace:: 1.0
+.. |contract version| replace:: 2.0
 .. |product name| replace:: Rackspace Cloud Big Data
 """
 
