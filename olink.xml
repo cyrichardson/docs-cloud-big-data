@@ -1,6 +1,0 @@
-<books xmlns="http://docs.rackspace.com/olink">
-  <book path="src/docbkx/cbd-devguide.xml"/>
-  <book path="src/docbkx/cbd-mgmt-devguide.xml"/>
-  <book path="src/docbkx/cbd-getting-started.xml"/>
-  <book path="src/docbkx/cbd-releasenotes.xml"/>
-</books>
