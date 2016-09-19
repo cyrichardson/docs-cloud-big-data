@@ -156,12 +156,11 @@ cluster created by using Cloud Big Data 1.0 to version 2.0.
 
 
 Resolved issues
-~~~~~~~~~~~~~~~
+---------------
 
 |no changes|
 
-
-Resolved issues
-~~~~~~~~~~~~~~~
+Known issues
+------------
 
 |no changes|
