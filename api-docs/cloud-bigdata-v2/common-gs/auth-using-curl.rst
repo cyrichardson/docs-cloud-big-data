@@ -97,7 +97,7 @@ the following error message descriptions to determine next steps.
 ..  note::
        For additional information about authentication errors, see the
        :rax-devdocs:`Identity API Reference documentation
-       <loud-identity/v2/general-api-info/http-status-codes/>`.
+       <cloud-identity/v2/general-api-info/http-status-codes/>`.
 
 .. _configure-environment-variables:
 
