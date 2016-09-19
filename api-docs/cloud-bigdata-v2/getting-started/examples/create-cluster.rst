@@ -1,40 +1,41 @@
 .. _create-cluster:
 
 Creating a cluster
-~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------
 
-When you use the Cloud Big Data service, you can create a :ref:`cluster<clusters-def>` 
-of virtual and OnMetal servers to host your Hadoop instance.
+When you use the Cloud Big Data service, you can create a
+:ref:`cluster<clusters-def>` of virtual and OnMetal servers to host your Hadoop
+instance.
 
-You can create a stack or use one of the preconfigured stacks. 
+You can create a stack or use one of the preconfigured stacks.
 
 Following is the operation template:
 
 .. code::
 
      POST /v2/{tenant_id}/clusters
-    
- 
-cURL example
-^^^^^^^^^^^^^^
 
-Use the cURL request shown in the following example to create a server cluster on the 
-Cloud Big Data service.  The example shows the cURL request, request body, and the 
-corresponding response body.
- 
+
+cURL example
+~~~~~~~~~~~~
+
+Use the cURL request shown in the following example to create a server cluster
+on the Cloud Big Data service.  The example shows the cURL request, request
+body, and the corresponding response body.
+
 **Example: Create cluster cURL request**
 
-.. code::  
+.. code::
 
     curl -i -X POST $ENDPOINT/clusters -d \
     -H "X-Auth-Token: $AUTH_TOKEN" \
     -H "Accept: application/json" \
     -H "Content-type: application/json"
 
- 
+
 **JSON request body**
 
-.. code::  
+.. code::
 
     {
         "cluster": {
@@ -65,10 +66,10 @@ corresponding response body.
         }
     }
 
- 
+
 **JSON response**
 
-.. code::  
+.. code::
 
     {
         "cluster": {
@@ -188,15 +189,15 @@ corresponding response body.
 
 
 Client example
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
-Using the client, create a cluster using the ``clusters create`` lava client command
-as shown in the following example.
+Using the client, create a cluster using the ``clusters create`` lava client
+command as shown in the following example.
 
- 
+
 **Create a cluster by using the lava client**
 
-.. code::  
+.. code::
 
     $ lava clusters create test KAFKA_HDP2_2 --node-groups='slave(flavor_id=hadoop1-7, count=3)' \
     --ssh-key cbdkey --username cbduser

@@ -1,39 +1,41 @@
+.. _view-resource-limits:
 
+=======================
 Viewing resource limits
----------------------------
+=======================
 
-Your use of the Rackspace Cloud Big Data API is subject to resource
-limits. You can view the limits associated with a user account by 
-using the get limits operation. The response returns a list of limits that includes 
-information such as remaining node count, available RAM, and remaining disk space.
+Your use of the |apiservice| is subject to resource limits. You can view the
+limits associated with a user account by using the get limits operation. The
+response returns a list of limits that includes information such as remaining
+node count, available RAM, and remaining disk space.
 
 Following is the operation template:
 
 .. code::
 
      GET ENDPOINT/limits
-     
-     
+
+
 cURL example
-^^^^^^^^^^^^^^^
-     
+------------
+
 The following examples show the cURL request and corresponding response
 for viewing resource limits.
 
- 
+
 **View resource limits cURL request**
 
-.. code::  
+.. code::
 
     curl -i -X GET ENDPOINT/limits -d \
     -H "X-Auth-Token: yourAuthToken" \
     -H "Accept: application/json" \
-    -H "Content-type: application/json" 
+    -H "Content-type: application/json"
 
- 
+
 **JSON response**
 
-.. code::  
+.. code::
 
     {
         "limits": {
@@ -59,14 +61,15 @@ for viewing resource limits.
     }
 
 Client example
-^^^^^^^^^^^^^^^^^^
+--------------
 
-The following example shows how to view resource limits by using the lava client.
+The following example shows how to view resource limits by using the lava
+client.
 
- 
+
 **View resource limits by using the lava client**
 
-.. code::  
+.. code::
 
     $ lava limits get
     +-------------------------------+

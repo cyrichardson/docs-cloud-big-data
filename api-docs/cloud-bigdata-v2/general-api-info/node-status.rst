@@ -1,10 +1,11 @@
-.. _cbd-dgv2-node:
+.. _node-status:
 
 ===========
 Node status
 ===========
 
-When you send an API request to list or get details about a node or nodes, the following node status values might be returned:
+When you send an API request to list or get details about a node or nodes, the
+following node status values might be returned:
 
 -  ``BUILDING`` – Cloud Big Data is waiting for a nova resource to become
    available.
