@@ -56,7 +56,7 @@ Use the following links to get user and reference information for using the
 .. COMMENT  :ref:`General API information <general-api-info>`
 
 .. toctree:: :hidden:
-   :maxdepth: 2
+   :maxdepth: 3
 
    Cloud Big Data 2.0 <self>
    getting-started/index
