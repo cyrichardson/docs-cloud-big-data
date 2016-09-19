@@ -6,7 +6,7 @@
 
 *Last updated:* |today|
 
-The Rackspace Cloud Big Data API enables developers to deploy, manage, and
+The Rackspace |apiservice| enables developers to deploy, manage, and
 scale Hadoop clusters through a simple Representational State Transfer (REST)
 web service interface.
 
@@ -46,9 +46,10 @@ technologies:
 -  JSON data serialization format
 
 Use the following links to get user and reference information for using the
-|apiservice| service REST API.
+|product name| service REST API.
 
 - :ref:`Getting Started Guide <getting-started-guide>`
+- :ref:`General API information <general-api-info>`
 - :ref:`API Reference <api-reference>`
 - :ref:`Release Notes <release-notes-collection>`
 
