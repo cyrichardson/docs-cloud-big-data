@@ -1,9 +1,9 @@
 .. _view-node-details:
 
 Viewing node details
-~~~~~~~~~~~~~~~~~~~~~~
+--------------------
 
-Use the view node details operation to get information about all server nodes 
+Use the view node details operation to get information about all server nodes
 in a specified cluster.
 
 
@@ -12,10 +12,10 @@ Following is the operation template:
 .. code::
 
      GET /v2/{tenant_id}/clusters/{clusterId}/nodes
-     
-In the :ref:`cURL<node-details-curl-ex>` and :ref:`client<node-details-client-ex>`  
-examples for the view node details operations, the cluster includes 
-the following components:
+
+In the :ref:`cURL<node-details-curl-ex>` and
+:ref:`client<node-details-client-ex>` examples for the view node details
+operations, the cluster includes the following components:
 
 -  One master node
 
@@ -28,36 +28,36 @@ Each server node has the following IP addresses:
 -  A public IP address that allows you to access the server over the
    public Internet
 
-     
+
 .. _node-details-curl-ex:
-     
+
 cURL example
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~
 
-The following example shows the cURL request and corresponding response for listing all 
-nodes in a cluster.
+The following example shows the cURL request and corresponding response for
+listing all nodes in a cluster.
 
-You can use SSH to connect to a node through the IP address. Supply your 
-account username and the SSH key for the cluster in the connection request. 
+You can use SSH to connect to a node through the IP address. Supply your
+account username and the SSH key for the cluster in the connection request.
 
-.. note:: 
-    Use the :ref:`Credentials <create-manage-credentials>` operations to get information 
-    about SSH key credentials.
+.. note::
+    Use the :ref:`Credentials <create-manage-credentials>` operations to get
+    information about SSH key credentials.
 
- 
+
 **List node details cURL request**
 
-.. code::  
+.. code::
 
     $ curl -i -X GET $ENDPOINT/clusters/ac111111-2d86-4597-8010-cbe787bbbc41/nodes -d \
         -H "X-Auth-Token: $AUTH_TOKEN" \
         -H "Accept: application/json" \
         -H "Content-Type: application/json"
 
- 
+
 **JSON response**
 
-.. code::  
+.. code::
 
     {
         "nodes": [
@@ -215,18 +215,18 @@ account username and the SSH key for the cluster in the connection request.
         ]
     }
 
-    
-.. _node-details-client-ex:
-    
-Client example
-^^^^^^^^^^^^^^^^^
 
-The following example shows the ``nodes list`` lava client command to get 
-details about the server nodes in a specified cluster. 
+.. _node-details-client-ex:
+
+Client example
+~~~~~~~~~~~~~~
+
+The following example shows the ``nodes list`` lava client command to get
+details about the server nodes in a specified cluster.
 
 **List server nodes by using the lava client**
 
-.. code::  
+.. code::
 
     $ lava nodes list cc5444b98-f4b4-aaaa-bbbb-b6e9d3313da1
     +--------------------------------------+-------------+-----------+--------+----------------+----------------+--------------------------------+

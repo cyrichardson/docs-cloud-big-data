@@ -4,36 +4,44 @@
 Faults
 ======
 
-When an error occurs, the Cloud Big Data service returns a fault object that contains 
-an HTTP error response code that denotes the type of error. In the body of the response, 
-the system will return additional information about the fault.
+When an error occurs, the |product name| service returns a fault object that
+contains an HTTP error response code that denotes the type of error. In the
+body of the response, the system will return additional information about the
+fault.
 
-The following table lists possible fault types with their associated error codes and 
-descriptions.
+The following table lists possible fault types with their associated error
+codes and descriptions.
 
-+--------------------------+------------+-----------------------------------------+
-|     Fault type           | Associated | Description                             |
-|                          | error code |                                         |
-+==========================+============+=========================================+
-| Bad Request              | 400        | The user-provided request contained an  |
-|                          |            | error.                                  |
-+--------------------------+------------+-----------------------------------------+
-| Unauthorized             | 401        | The supplied token is not authorized to |
-|                          |            | access the resources. The token is      |
-|                          |            | either expired or invalid.              |
-+--------------------------+------------+-----------------------------------------+
-| Forbidden                | 403        | Access to the requested resource was    |
-|                          |            | denied.                                 |
-+--------------------------+------------+-----------------------------------------+
-| Not Found                | 404        | The back-end services did not find      |
-|                          |            | anything matching the request URI.      |
-+--------------------------+------------+-----------------------------------------+
-| Conflict                 | 409        | The requested resource cannot currently |
-|                          |            | be operated on.                         |
-+--------------------------+------------+-----------------------------------------+
-| Request Entity Too Large | 413        | The resource quota was exceeded.        |
-+--------------------------+------------+-----------------------------------------+
-| Lava Fault               | 500        | An unknown exception occurred.          |
-+--------------------------+------------+-----------------------------------------+
-| Service Unavailable      | 503        | The service is currently unavailable.   |
-+--------------------------+------------+-----------------------------------------+
+.. list-table:: **Example of resolving permissions**
+   :widths: 17 13 40
+   :header-rows: 1
+
+   * - Fault type
+     - Associated error code
+     - Description
+   * - Bad Request
+     - 400
+     - The user-provided request contained an error.
+   * - Unauthorized
+     - 401
+     - The supplied token is not authorized to access the resources. The token
+       is either expired or invalid.
+   * - Forbidden
+     - 403
+     - Access to the requested resource was denied.
+   * - Not Found
+     - 404
+     - The back-end services did not find anything matching the request URI.
+   * - Conflict
+     - 409
+     - The requested resource cannot currently be operated on.
+   * - Request Entity Too Large
+     - 413
+     - The resource quota was exceeded.
+   * - Lava Fault
+     - 500
+     - An unknown exception occurred.
+   * - Service Unavailable
+     - 503
+     - The service is currently unavailable.
+

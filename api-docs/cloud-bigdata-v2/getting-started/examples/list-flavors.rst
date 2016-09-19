@@ -1,31 +1,32 @@
 .. _listing-hardware-configuration-flavors:
 
 Listing flavors
-~~~~~~~~~~~~~~~~~~
+---------------
 
-A flavor is an available hardware configuration for a cluster. Each flavor has a unique 
-combination of memory capacity and priority for CPU time. As the flavor size increases, a 
-cluster has more RAM and higher priority for CPU time. 
+A flavor is an available hardware configuration for a cluster. Each flavor has
+a unique combination of memory capacity and priority for CPU time. As the
+flavor size increases, a cluster has more RAM and higher priority for CPU time.
 
-Before you create a cluster, use the list flavors operation to view the 
-available configurations and determine which one to use for building your cluster.
+Before you create a cluster, use the list flavors operation to view the
+available configurations and determine which one to use for building your
+cluster.
 
 Following is the operation template:
 
 .. code::
 
      GET /v2/{tenant\_id}/flavors
-     
-     
+
+
 cURL example
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 The following example shows the cURL request and corresponding response
-for listing 
- 
+for listing
+
 **List flavors cURL request**
 
-.. code::  
+.. code::
 
     $ curl -i -X GET $ENDPOINT/flavors -d \
         -H "X-Auth-Token: $AUTH_TOKEN" \
@@ -35,10 +36,10 @@ for listing
 
 This operation does not require a request body.
 
- 
+
 **JSON response body**
 
-.. code::  
+.. code::
 
     {
         "flavors": [
@@ -77,14 +78,14 @@ This operation does not require a request body.
 
 
 Client example
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
-The following example shows the ``flavors list`` lava client command to list the 
-hardware configuration flavors available for building a cluster.
- 
+The following example shows the ``flavors list`` lava client command to list
+the hardware configuration flavors available for building a cluster.
+
 **List available hardware configuration flavors by using the lava client**
 
-.. code::  
+.. code::
 
     $ lava flavors list
     +------------+------------------------+-------+-------+-------+

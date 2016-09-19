@@ -1,5 +1,7 @@
 .. _cbd-dgv2-glossary:
 
+.. COMMENT not included anywhere in doc, but possibly useful
+
 ========
 Glossary
 ========
@@ -9,7 +11,7 @@ Cluster
 
 Component
     A service can have one or more components. A component can be a specific configuration for a service or additional modes of operation. Examples are HDFS Secondary Namenode or HDFS HA.
-    
+
 Credentials
     Credentials allow you to setup ssh keys and other connector credentials for use with clusters.
 
@@ -18,7 +20,7 @@ Distro
 
 Flavor
     A flavor is an available configuration for Cloud Big Data. Each flavor has a unique combination of memory capacity and priority for CPU time.
-    
+
 HDFS
     The Apache Hadoop Distributed File System. This is the default file system used in Cloud Big Data.
 
@@ -33,7 +35,7 @@ Resource limits
 
 SCP server proxy
     An SCP service that runs on your Hadoop cluster and distributes your files across the cluster.
-    
+
 Scripts
     You can create a custom script that runs during various phases of the cluster's lifecycle. The script is invoked on all nodes of the cluster. The script types currently supported are "POST_INIT", which run after the cluster is completely set up. The script must be executable. Preferably, the script should be a bash script, but it could be a python script, or a self-contained executable that works with the base OS-installed libraries.
 

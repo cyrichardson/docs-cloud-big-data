@@ -1,41 +1,41 @@
 .. _list-stacks:
 
 Listing available stacks
-~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
-Stacks are high-level software building blocks that compose a Cloud Big Data architecture. 
-Stacks are comprised of services, which in turn are comprised of components. A stack is 
-specific to a distribution due to differences in services that are supported across 
-distributions.
+Stacks are high-level software building blocks that compose a Cloud Big Data
+architecture. Stacks are comprised of services, which in turn are comprised of
+components. A stack is specific to a distribution due to differences in
+services that are supported across distributions.
 
-You can create a stack or use one of the preconfigured stacks. 
+You can create a stack or use one of the preconfigured stacks.
 
 Following is the operation template:
 
 .. code::
 
      GET /v2/{tenant_id}/stacks
-    
- 
-cURL example
-^^^^^^^^^^^^^^
 
-The following example show the cURL request and corresponding response
-for listing all stacks. This operation does not accept a request body.
- 
+
+cURL example
+~~~~~~~~~~~~
+
+The following example show the cURL request and corresponding response for
+listing all stacks. This operation does not accept a request body.
+
 **List all stacks cURL request**
 
-.. code::  
+.. code::
 
-    $ curl -i -X GET $ENDPOINT/stacks -d \         
+    $ curl -i -X GET $ENDPOINT/stacks -d \
         -H "X-Auth-Token: $AUTH_TOKEN" \
         -H "Accept: application/json" \
         -H "Content-type: application/json"
-    
-    
+
+
 **JSON response**
 
-.. code::  
+.. code::
 
     {
         "stacks": [
@@ -121,15 +121,15 @@ for listing all stacks. This operation does not accept a request body.
 
 
 Client example
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
-The following example shows the ``stacks list`` lava client command to view the 
+The following example shows the ``stacks list`` lava client command to view the
 available software stack for each distribution.
 
- 
+
 **View available stacks by using the lava client**
 
-.. code::  
+.. code::
 
     $ lava stacks list
     +---------------+---------------------------+--------+---------------------------------------------------+----------------------------------+

@@ -1,15 +1,35 @@
-.. _getting-started-intro:
+.. _getting-started-guide:
 
-.. contents::
-   :local:
-   :depth: 2
+===============
+Getting started
+===============
 
-.. toctree:: 
-   :maxdepth: 2
+Use the following information to learn how to authenticate, send API requests,
+and complete basic operations by using the |apiservice|.
 
-   prerequisites <prerequisites-for-using-api>
-   Send API requests <send-request-ovw>
-   Authenticate <authenticate>
-   Manage credentials <create-manage-credentials>
-   View resource limits <view-resource-limits>
-   Manage clusters <create-manage-clusters>
+.. toctree::
+   :maxdepth: 1
+
+   get-credentials-include
+   install-CLI-client
+   send-request-ovw
+   authenticate
+   concepts
+   create-manage-credentials
+   view-resource-limits
+   create-manage-clusters
+
+
+To start using the API and run the examples in this section, you need the
+following items:
+
+- Rackspace Cloud account. If you don't have one, sign up for a
+  :rax-cart:`Rackspace Cloud account <cloud>`.
+- :ref:`Command-line tool or browser client <send-api-requests>` for
+  communicating with the API service.
+
+.. comment: link reference
+
+
+
+
