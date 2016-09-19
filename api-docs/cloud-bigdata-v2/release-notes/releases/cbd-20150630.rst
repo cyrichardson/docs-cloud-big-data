@@ -1,0 +1,167 @@
+.. _cbd-release-2015-06-30:
+
+API |contract version|, June 30, 2015
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Rackspace is pleased to announce the General Availability (GA) release
+of Rackspace Cloud Big Data 2.0.
+
+What's new
+----------
+
+Review this section to learn about the new release and how to migrate your data
+from Cloud Big Data 1.0 to 2.0.
+
+
+Differences between Cloud Big Data 1.0 and 2.0
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following table describes the differences between Cloud Big Data 1.0 and
+2.0 services.
+
++--------------------+---------------------------------------+-----------------------------------------+
+|                    |                   1.0                 |                   2.0                   |
++====================+=======================================+=========================================+
+| API                | Limited required inputs               | More advanced options for customization |
++--------------------+---------------------------------------+-----------------------------------------+
+| Cluster options    | Limited set of cluster types          | Predefined stacks with the ability to   |
+|                    |                                       | fine-tune node configurations, and the  |
+|                    |  - Hadoop HDP 1.3                     | the added ability to create custom      |
+|                    |  - Hadoop/Spark HDP 2.1               | stacks.                                 |
+|                    |  - Hadoop/Spark HDP 2.2 (backported)  |                                         |
+|                    |                                       |  - Multiple HDP 2.2 and 2.3 stacks      |
+|                    |                                       |  - Custom stacks                        |
++--------------------+---------------------------------------+-----------------------------------------+
+| Provisioning       | Custom (agent based)                  | Apache Ambari                           |
++--------------------+---------------------------------------+-----------------------------------------+
+| Cluster login      | Password (required), SSH key          | SSH key (required)                      |
+|                    | (optional)                            |                                         |
++--------------------+---------------------------------------+-----------------------------------------+
+| Multiple SSH keys  | No                                    | Yes                                     |
++--------------------+---------------------------------------+-----------------------------------------+
+| Storage options    | Local HDFS, Cloud Files               | Local HDFS, Cloud Files, Amazon S3      |
++--------------------+---------------------------------------+-----------------------------------------+
+| UI (Cloud Control) | No                                    | Yes                                     |
++--------------------+---------------------------------------+-----------------------------------------+
+| Client & cURL      | Yes                                   | Yes                                     |
++--------------------+---------------------------------------+-----------------------------------------+
+| Cluster layout     | Predefined flavors for the Gateway,   | Users have full choice on the flavor of |
+|                    | Name, and Secondary nodes. Users      | all node groups with the ability to     |
+|                    | can choose the size of the Data node. | define custom node groups using custom  |
+|                    |                                       | stacks.                                 |
++--------------------+---------------------------------------+-----------------------------------------+
+| Cluster monitoring | No                                    | Yes via Ambari                          |
++--------------------+---------------------------------------+-----------------------------------------+
+| Cluster configs    | No                                    | Yes via Ambari                          |
++--------------------+---------------------------------------+-----------------------------------------+
+| Post installation  | Yes - One                             | Yes - Multiple                          |
+| script             |                                       |                                         |
++--------------------+---------------------------------------+-----------------------------------------+
+| Supported services | HDFS, YARN, MapReduce, Tez, Hive, Pig,| HDFS, YARN, MapReduce, Tez, Hive, Pig,  |
+|                    | and Spark                             | Spark, Flume, Sqoop, Oozie, Zookeeper,  |
+|                    |                                       | Storm, Kafka, Falcon, and Ambari        |
++--------------------+---------------------------------------+-----------------------------------------+
+| Coming soon        | Not applicable.                       | HBase, Phoenix, Knox, Ranger, Zeppelin  |
+|                    |                                       | and Tachyon                             |
++--------------------+---------------------------------------+-----------------------------------------+
+
+
+
+Supported operations
+^^^^^^^^^^^^^^^^^^^^
+
+The following table describes Cloud Big Data 2.0 API operations that support
+clusters created by using the Cloud Big Data 1.0 API.
+
+**API operations to manage clusters created by using Cloud Big Data 1.0**
+
++--------------------+---------------------------------------+-----------------------------------------+
+| Cluster type       | 1.0 API                               | 2.0 API                                 |
++--------------------+-------------+-------------+-----------+-------------+-------------+-------------+
+|                    | Create      | Resize      | Delete    | Create      | Resize      | Delete      |
++====================+=============+=============+===========+=============+=============+=============+
+| HADOOP_HDP1_3      |             | X           | X         |             |             | X           |
++--------------------+-------------+-------------+-----------+-------------+-------------+-------------+
+| HADOOP_HDP2_1      | X           | X           | X         |             |             | X           |
++--------------------+-------------+-------------+-----------+-------------+-------------+-------------+
+| SPARK_HDP2_1       |             | X           | X         |             |             | X           |
++--------------------+-------------+-------------+-----------+-------------+-------------+-------------+
+| HADOOP_HDP2_2      |             | X           | X         |             |             | X           |
++--------------------+-------------+-------------+-----------+-------------+-------------+-------------+
+| SPARK_HDP2_2       |             | X           | X         |             |             | X           |
++--------------------+-------------+-------------+-----------+-------------+-------------+-------------+
+
+
+The following table describes the API operations that support clusters created
+by using the Cloud Big Data 2.0 API.
+
+**API operations to manage clusters created by using Cloud Big Data 2.0**
+
++--------------------+---------------------------------------+-----------------------------------------+
+| Stack              | 1.0 API                               | 2.0 API                                 |
++--------------------+-------------+-------------+-----------+-------------+-------------+-------------+
+|                    | Create      | Resize      | Delete    | Create      | Resize      | Delete      |
++====================+=============+=============+===========+=============+=============+=============+
+| \*_HDP2_2          |             |             |           | X           | X           | X           |
++--------------------+-------------+-------------+-----------+-------------+-------------+-------------+
+| \*_HDP2_3          |             |             |           | X           | X           | X           |
++--------------------+-------------+-------------+-----------+-------------+-------------+-------------+
+| Custom stacks      |             |             |           | X           | X           | X           |
++--------------------+-------------+-------------+-----------+-------------+-------------+-------------+
+
+
+Migrating a cluster
+^^^^^^^^^^^^^^^^^^^
+
+Based on your current usage patterns, you have several options for migrating a
+cluster created by using Cloud Big Data 1.0 to version 2.0.
+
+- Re-create the cluster.
+
+  If you have a development or test cluster that you can re-create easily, the
+  best method to update to Cloud Big Data 2.0 is to delete the existing cluster
+  and create a new one by using the Cloud Big Data 2.0 API. You can do this by
+  using the :ref:`Cluster API operations <clusters>`, or by using the
+  `Cloud Control Panel <https://mycloud.rackspace.com>`_.
+
+- Use Cloud Files to migrate.
+
+  If you are using Cloud Files as your primary data storage, perform the
+  following steps:
+
+  - Back up all scripts and code.
+  - Create a new cluster by using the Cloud Big Data 2.0 API.
+  - Copy the scripts and code.
+
+  After you complete these steps, you can access data from Cloud Files using
+  the same process you used before the migration.
+
+- Use Hadoop's ``distcp`` command.
+
+  For all other cases our support team is standing by to help you migrate data
+  from your old cluster to new cluster using Hadoop's built in ``distcp``
+  command. This migration involves the following steps:
+
+  1. Create the new cluster with a similar node configuration as the old
+     cluster.
+  2. Enable full access from the old cluster to the new cluster.
+  3. Stop all running jobs and run the distcp command to move the data.
+  4. After the data is migrated, copy over any code or scripts and test to
+     ensure that the new cluster works with your existing scripts.
+
+    .. note::
+
+       If you have HDP 1.3 clusters, the migration process is more complex
+       because there are major changes in the underlying framework.
+
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|
+
+
+Resolved issues
+~~~~~~~~~~~~~~~
+
+|no changes|

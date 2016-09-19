@@ -1,41 +1,42 @@
 .. _listing-distros:
 
 Listing distros
-~~~~~~~~~~~~~~~~~~
+---------------
 
-Use the list :ref:`Distros<distros-versions-def>` operation to review the list of supported 
-data platform distributions and versions along with information about the services and 
-components supported by each distribution. 
+Use the list :ref:`Distros<distros-versions-def>` operation to review the list
+of supported data platform distributions and versions along with information
+about the services and components supported by each distribution.
 
 Following is the operation template:
 
 .. code::
 
      GET /v2/{tenant\_id}/distros
-     
-     
-cURL example
-^^^^^^^^^^^^^^
 
-The following example shows the cURL request and corresponding response
-for listing information about the data platform distributions supported by |product name|.
- 
+
+cURL example
+~~~~~~~~~~~~
+
+The following example shows the cURL request and corresponding response for
+listing information about the data platform distributions supported by
+|product name|.
+
 **List available distros cURL request**
 
-.. code::  
+.. code::
 
     $ curl -i -X GET $ENDPOINT/distros -d \
         -H "X-Auth-Token: $AUTH_TOKEN" \
         -H "Accept: application/json" \
         -H "Content-type: application/json"
-    
+
 
 This operation does not require a request body.
 
- 
+
 **JSON response**
 
-.. code::  
+.. code::
 
     {
         "distros": [
@@ -90,15 +91,15 @@ This operation does not require a request body.
 
 
 Client example
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
-The following example shows the ``distros list`` lava client command to list 
+The following example shows the ``distros list`` lava client command to list
 information about the data platform distributions supported by |product name|.
 
- 
+
 **View available distros by using the lava client**
 
-.. code::  
+.. code::
 
     $ lava distros list
     +--------+---------------------------+---------+

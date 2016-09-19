@@ -1,48 +1,49 @@
 .. _create-scripts:
 
 Creating scripts
-~~~~~~~~~~~~~~~~~~
+----------------
 
-You can create a custom script and add it to the Cloud Big Data environment. Scripts can 
-be run during various phases of a cluster's lifecycle. When it is invoked, the script 
-runs on all nodes in a cluster. Cloud Big Data only supports scripts with a ``POST_INIT`` 
-type. These scripts run after cluster setup is complete. 
-  
-The script must be executable. You can create bash scripts, python scripts, or 
-a self-contained executable that works with the base OS-installed libraries. The
+You can create a custom script and add it to the Cloud Big Data environment.
+Scripts can be run during various phases of a cluster's lifecycle. When it is
+invoked, the script runs on all nodes in a cluster. Cloud Big Data only
+supports scripts with a ``POST_INIT`` type. These scripts run after cluster
+setup is complete.
+
+The script must be executable. You can create bash scripts, python scripts, or
+a self-contained executable that works with the base OS-installed libraries.
 
 .. note::
-     Cloud Big Data has a few default, product-provided scripts that have an ``is_public`` 
-     flag. You do not have the option to edit them.
+     Cloud Big Data has a few default, product-provided scripts that have an
+     ``is_public`` flag. You do not have the option to edit them.
 
 Following is the operation template:
 
 .. code::
 
-    POST /v2/{tenant_id}/scripts 	
-    
-.. _create-script-curl-example:
-    
-cURL example
-^^^^^^^^^^^^^^
+    POST /v2/{tenant_id}/scripts
 
-The following examples show the cURL request, request body, and corresponding response
-to add a script that installs iPython Notebooks on a cluster. 
- 
+.. _create-script-curl-example:
+
+cURL example
+~~~~~~~~~~~~
+
+The following examples show the cURL request, request body, and corresponding
+response to add a script that installs iPython Notebooks on a cluster.
+
 **Create a script cURL request**
 
-.. code::  
+.. code::
 
     $curl -i -X POST $ENDPOINT/script -d \
        -H "X-Auth-Token: $AUTH_TOKEN" \
        -H "Accept: application/json" \
-       -H "Content-type: application/json" 
-     
+       -H "Content-type: application/json"
 
- 
+
+
 **JSON request body**
 
-.. code::  
+.. code::
 
     {
         "script": {
@@ -52,10 +53,10 @@ to add a script that installs iPython Notebooks on a cluster.
         }
     }
 
- 
+
 **JSON response**
 
-.. code::  
+.. code::
 
     {
         "script": {
@@ -79,18 +80,18 @@ to add a script that installs iPython Notebooks on a cluster.
         }
     }
 
-    
-.. _create-script-client-example:
-    
-Client example
-^^^^^^^^^^^^^^^^^
 
-The following example shows the ``scripts create`` lava client command to create 
-a script to run on a cluster.
- 
+.. _create-script-client-example:
+
+Client example
+~~~~~~~~~~~~~~
+
+The following example shows the ``scripts create`` lava client command to
+create a script to run on a cluster.
+
 **Create a script by using the lava client**
 
-.. code::  
+.. code::
 
     $ lava scripts create sample http://example.com/sample.sh post_init
     +---------+--------------------------------------+

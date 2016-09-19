@@ -1,7 +1,7 @@
 .. _listing-scripts:
 
 Listing scripts
-~~~~~~~~~~~~~~~~~~
+---------------
 
 Use the list :ref:`Scripts<scripts-def>` operation to view the scripts
 available in your Cloud Big Data environment.
@@ -11,38 +11,38 @@ Following is the operation template:
 .. code::
 
      GET /v2/{tenant\_id}/distros
-     
-In the following :ref:`curl<list-script-curl-example>` and 
-:ref:`client<list-script-client-example>`, the Cloud Big Data environment includes the 
-following two scripts:
+
+In the following :ref:`curl<list-script-curl-example>` and
+:ref:`client<list-script-client-example>`, the Cloud Big Data environment
+includes the following two scripts:
 
 - The ipynb_install.sh script installs iPython notebooks on a cluster.
 - The mllibs.sh script installs the MongoDB connector on a cluster.
 
-These scripts run automatically on each server node after a cluster is set up. 
+These scripts run automatically on each server node after a cluster is set up.
 
 .. _list-script-curl-example:
-     
+
 cURL example
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 The following example shows the cURL request and corresponding response
-for listing all scripts. 
- 
+for listing all scripts.
+
 **Example: List all scripts cURL request**
 
-.. code::  
+.. code::
 
     $ curl -i -X GET $ENDPOINT/scripts -d \
         -H "X-Auth-Token: $AUTH_TOKEN" \
         -H "Accept: application/json" \
-        -H "Content-type: application/json" 
-     
+        -H "Content-type: application/json"
 
- 
+
+
 **JSON response**
 
-.. code::  
+.. code::
 
     {
         "scripts": [
@@ -114,15 +114,15 @@ for listing all scripts.
 
 
 .. _list-script-client-example:
-     
-Client example
-^^^^^^^^^^^^^^^^^
 
-The following example shows the ``scripts list`` lava client command. 
- 
+Client example
+~~~~~~~~~~~~~~
+
+The following example shows the ``scripts list`` lava client command.
+
 **List scripts by using the lava client**
 
-.. code::  
+.. code::
 
     $ lava scripts list
     +--------------------------------------+--------+-----------+--------+---------------------------+------------------------------+

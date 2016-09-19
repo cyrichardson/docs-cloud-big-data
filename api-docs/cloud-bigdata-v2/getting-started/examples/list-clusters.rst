@@ -1,9 +1,9 @@
 .. _list-clusters:
 
 Listing clusters
-~~~~~~~~~~~~~~~~~~
+----------------
 
-Use the list clusters operation to view the clusters available in your account. 
+Use the list clusters operation to view the clusters available in your account.
 
 
 Following is the operation template:
@@ -11,28 +11,28 @@ Following is the operation template:
 .. code::
 
      GET /v2/{tenant\_id}/clusters
-     
-     
+
+
 cURL example
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~
 
-The following examples show the cURL request and the corresponding
-response for listing clusters.
+The following examples show the cURL request and the corresponding response for
+listing clusters.
 
- 
+
 **Example: List clusters cURL request**
 
-.. code::  
+.. code::
 
     curl -i -X GET $ENDPOINT/clusters -d \
     -H "X-Auth-Token: $AUTH_TOKEN" \
     -H "Accept: application/json" \
     -H "Content-type: application/json"
 
- 
+
 **JSON response**
 
-.. code::  
+.. code::
 
     {
         "clusters": [
@@ -62,18 +62,18 @@ response for listing clusters.
             }
         ]
     }
-    
-    
+
+
 Client example
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
-Using the client, list clusters using the ``clusters list`` command as
-shown in the following example.
+Using the client, list clusters using the ``clusters list`` command as shown in
+the following example.
 
- 
+
 **Example: List clusters lava client command**
 
-.. code::  
+.. code::
 
     $ lava clusters list
     +--------------------------------------+-------------+--------+--------------+---------------------------+

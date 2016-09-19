@@ -1,10 +1,11 @@
-.. cbd-dgv2-clusterstatus:
+.. _clusterstatus:
 
 ==============
 Cluster status
 ==============
 
-When you send an API request to create, list, or delete a cluster or clusters, the following cluster status values might be returned:
+When you send an API request to create, list, or delete a cluster or clusters,
+the following cluster status values might be returned:
 
 -  BUILDING – The cluster is being provisioned.
 
@@ -12,7 +13,8 @@ When you send an API request to create, list, or delete a cluster or clusters, t
 
 -  ACTIVE – The cluster is online and available to for use.
 
--  UPDATING – The cluster is being updated, either through a resize operation or another update operation.
+-  UPDATING – The cluster is being updated, either through a resize operation
+   or another update operation.
 
 -  ERROR – The cluster failed to start up.
 
@@ -20,7 +22,8 @@ When you send an API request to create, list, or delete a cluster or clusters, t
 
 -  DELETED – The cluster is deleted.
 
-The following figure shows the cluster states and the operations that are valid for each one.
+The following figure shows the cluster states and the operations that are valid
+for each one.
 
 **Cluster states with valid operations**
 

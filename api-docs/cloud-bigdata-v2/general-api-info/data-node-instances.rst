@@ -1,10 +1,10 @@
-.. cbd-dgv2-datanode:
+.. _datanode:
 
 ===================
 Data node instances
 ===================
 
-Cloud Big Data offers the data node instances described in the following
+|product name| offers the data node instances described in the following
 table.
 
 +--------------+--------------------------+--------+----------+-----------+
@@ -21,6 +21,6 @@ table.
 | onmetal-io1  | OnMetal IO v1            | 40     | 120 GB   | 3.2 TB    |
 +--------------+--------------------------+--------+----------+-----------+
 
-For more information about data node instances, see `Cloud Big Data Platform provisioning and pricing`_.
-
-.. _Cloud Big Data Platform provisioning and pricing: http://www.rackspace.com/knowledge_center/article/cloud-big-data-platform-provisioning-and-pricing
+For more information about data node instances, see
+:how-to:`Cloud Big Data Platform provisioning and pricing \
+<cloud-big-data-platform-provisioning-and-pricing>`.

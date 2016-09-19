@@ -1,47 +1,50 @@
 .. _resize-clusters:
 
 Resizing clusters
-~~~~~~~~~~~~~~~~~~
+-----------------
 
-You can increase or decrease the size of an existing cluster by using the resize operation.
+You can increase or decrease the size of an existing cluster by using the
+resize operation.
 
 Following is the operation template:
 
 .. code::
 
      GET /v2/{tenant_id}/clusters/{clusterId}
-     
-In the following :ref:`cURL<resize-cluster-curl-example>` and 
-:ref:`client<resize-cluster-client-example>` examples, the resize operations increases the 
-size of the test cluster to add four slave nodes. 
 
-In the resize operation parameters, you specify the total number nodes per node group 
-that you want the cluster to have, not just the number of nodes to add or remove. 
+In the following :ref:`cURL<resize-cluster-curl-example>` and
+:ref:`client<resize-cluster-client-example>` examples, the resize operations
+increases the size of the test cluster to add four slave nodes.
 
-After you complete the operations, you can use the :ref:`view nodes<view-node-details>` 
-operation to confirm that the resize operation had the intended affect. 
-    
+In the resize operation parameters, you specify the total number nodes per node
+group that you want the cluster to have, not just the number of nodes to add or
+remove.
+
+After you complete the operations, you can use the
+:ref:`view nodes<view-node-details>` operation to confirm that the resize
+operation had the intended affect.
+
 .. _resize-cluster-curl-example:
-    
-cURL example
-^^^^^^^^^^^^^^
 
-The following examples show the resize cluster cURL request and corresponding response to 
-add 4 slave nodes to a cluster.
- 
+cURL example
+~~~~~~~~~~~~
+
+The following examples show the resize cluster cURL request and corresponding
+response to add four slave nodes to a cluster.
+
 **Resize cluster cURL request**
 
-.. code::  
+.. code::
 
     $ curl -i -X PUT $ENDPOINT/clusters/$testClusterId -d \
         -H "Accept: application/json" \
         -H "X-Auth-Token:$AUTH_TOKEN" \
-        -H "Content-Type: application/json"  
+        -H "Content-Type: application/json"
 
- 
+
 **JSON request body**
 
-.. code::  
+.. code::
 
     {
         "cluster": {
@@ -54,10 +57,10 @@ add 4 slave nodes to a cluster.
         }
     }
 
- 
+
 **JSON response**
 
-.. code::  
+.. code::
 
     {
         "cluster": {
@@ -157,18 +160,18 @@ add 4 slave nodes to a cluster.
         }
     }
 
-    
-.. _resize-cluster-client-example:
-    
-Client example
-^^^^^^^^^^^^^^^^^
 
-The following example shows the ``clusters resize`` client command to add 4 slave 
-nodes to a cluster. 
- 
+.. _resize-cluster-client-example:
+
+Client example
+~~~~~~~~~~~~~~
+
+The following example shows the ``clusters resize`` client command to add four
+slave nodes to a cluster.
+
 **Resize a cluster by using the lava client**
 
-.. code::  
+.. code::
 
     $ lava clusters resize c5444b98-f4b4-aaaa-bbbb-b6e9d3313da1 --node-groups='slave(flavor_id=hadoop1-7, count=4)'
     +----------------------------------------------------+

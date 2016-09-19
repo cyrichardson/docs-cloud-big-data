@@ -1,8 +1,0 @@
-.. _cbd-release-2015-09-03:
-
-API |contract version| updates, September 3, 2015
--------------------------------------------------
-
-Rackspace is pleased to announce the General Availability (GA) release
-of Rackspace Cloud Big Data, v2.
-
