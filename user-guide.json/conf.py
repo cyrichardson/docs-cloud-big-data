@@ -102,7 +102,6 @@ extlinks = {
     'rax-dev-quickstart': ('https://developer.rackspace.com/docs/%s', ''),
     'rax-dev-devguide': ('https://developer.rackspace.com/docs/%s', ''),
     'rax-dev-userguide': ('https://developer.rackspace.com/docs/user-guides/%s', ''),
-    'rax-api': ('http://api.rackspace.com/%s', ''),
     'rax-git': ('https://github.com/rackspace/%s', ''),
     'mycloud': ('https://mycloud.rackspace.com/%s', ''),
     'kc': ('http://www.rackspace.com/knowledge_center/%s', ''),
