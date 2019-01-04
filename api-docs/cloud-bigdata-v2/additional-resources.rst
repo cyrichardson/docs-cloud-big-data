@@ -4,9 +4,7 @@
 Additional resources
 ====================
 
-We welcome feedback, comments, and bug reports. Visit the `Rackspace
-Product Feedback forum`_.
-
+We welcome feedback, comments, and bug reports.
 
 Use the following resources to learn more about the |product name| service and
 API.
@@ -22,10 +20,3 @@ API.
 
 - To get information about other Rackspace Cloud services APIs, see the
   :rax-devdocs:`API documentation home <>`.
-
-.. _Rackspace Product Feedback forum: https://community.rackspace.com/feedback/default
-
-
-
-
-

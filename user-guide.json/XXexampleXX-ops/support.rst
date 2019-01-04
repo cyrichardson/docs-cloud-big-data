@@ -13,9 +13,6 @@ in many ways:
 * `System Status <https://status.rackspace.com/>`__
   identifies alerts and disruptions.
 
-* `Rackspace Community <https://community.rackspace.com/>`__
-  enables discussion with Rackers and Rackspace customers.
-
 * :kc:`Knowledge Center <>`
   publishes documentation primarily written for
   Cloud Control Panel users.
