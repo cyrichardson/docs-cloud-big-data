@@ -7,7 +7,6 @@
 To use the |apiservice| effectively, you should understand several key
 concepts.
 
-
 .. _credentials-def:
 
 Credentials
@@ -82,4 +81,3 @@ Resource limits
 
 Resource limits include items such as remaining node count, available RAM, and
 remaining disk space for the user.
-
