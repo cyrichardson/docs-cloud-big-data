@@ -15,9 +15,5 @@ ways to keep up with the news:
    and the
    :rax-dev-blog:`developer blog < >`.
 
-*  Suggest new ideas, vote for development of your favorite ideas,
-   and monitor progress at
-   `Rackspace Product Feedback <https://feedback.rackspace.com/>`__.
-
 *  Follow the
    `Rackspace twitter feed <https://twitter.com/rackspace>`__.
