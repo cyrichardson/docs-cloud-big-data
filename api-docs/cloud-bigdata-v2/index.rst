@@ -55,6 +55,7 @@ Use the following links to get user and reference information for using the
 
 .. COMMENT  :ref:`General API information <general-api-info>`
 
+
 .. toctree:: :hidden:
    :maxdepth: 3
 
@@ -66,4 +67,3 @@ Use the following links to get user and reference information for using the
    service-updates
    additional-resources
    copyright
-
