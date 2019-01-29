@@ -46,6 +46,6 @@ final slash (/) in the ``publicURL`` field.
    the catalog for the service name, ``cloudServersOpenStack``. Then copy the
    URI from the *publicURL* field included in the service information.
 
-   Rackspace Cloud Identity returns a service catalog, which includes regional
+   The Identity service returns a service catalog, which includes regional
    endpoints with your account ID. Your account ID, also known as project ID or
    tenant ID, refers to your Rackspace account number.
