@@ -14,9 +14,8 @@ starting points:
   :mycloud:`Cloud Control Panel <>`.
 
 * To learn about the Rackspace cloud
-  through tutorials, case studies, and white papers,
-  start at the
-  :kc:`Rackspace Knowledge Center <>`.
+  through tutorials, FAQs, troubleshooting resources, and articles,
+  see the `Rackspace How-To articles <https://support.rackspace.com/how-to/>`.
 
 * To develop your own software to interact with cloud services, start
   at the

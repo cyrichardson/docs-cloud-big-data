@@ -3,6 +3,7 @@
 ---------------
 Getting support
 ---------------
+
 You can find support for your work with
 XXexampleXX
 in many ways:
@@ -13,9 +14,8 @@ in many ways:
 * `System Status <https://status.rackspace.com/>`__
   identifies alerts and disruptions.
 
-* :kc:`Knowledge Center <>`
-  publishes documentation primarily written for
-  Cloud Control Panel users.
+* `Rackspace How-To articles <https://support.rackspace.com/how-to/>`
+  publishes tutorials, FAQs, troubleshooting resources, and articles.
 
 * :rax-dev:`Developer Center <>`
   publishes documentation primarily written for software developers:
