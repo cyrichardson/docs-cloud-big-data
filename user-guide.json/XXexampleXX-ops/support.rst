@@ -3,6 +3,7 @@
 ---------------
 Getting support
 ---------------
+
 You can find support for your work with
 XXexampleXX
 in many ways:
