@@ -29,7 +29,7 @@ Except as expressly provided in any written license agreement from
 Rackspace, the furnishing of this document does not give you any license
 to patents, trademarks, copyrights, or other intellectual property.
 
-Rackspace®, Rackspace logo and Fanatical Support® are registered service
+Rackspace®, Rackspace logo, and Fanatical Experience are registered service
 marks of Rackspace US, Inc. All other product names and trademarks used
 in this document are for identification purposes only and are property
 of their respective owners.
