@@ -15,8 +15,5 @@ API.
 - For information about getting started using |product name|, see the
   :ref:`Getting started section <getting-started-guide>`.
 
-- To learn about using Rackspace Cloud SDKs, see
-  :rax-devdocs:`Software Development Kits & Tools <#sdks>`.
-
 - To get information about other Rackspace Cloud services APIs, see the
   :rax-devdocs:`API documentation home <>`.
