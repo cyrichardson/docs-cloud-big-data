@@ -10,7 +10,7 @@ This section shows how to send requests by using cURL.
      You can also use Rackspace Cloud API services by using the following
      methods:
 
-     -  If you are developing applications or automation, try using
+     -  If you are developing applications or automation, try using the
         :os-wiki:`OpenStack client applications <wiki/OpenStackClients>`.
 
      -  For API development, testing and workflow management in a graphical
