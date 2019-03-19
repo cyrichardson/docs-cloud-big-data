@@ -20,7 +20,6 @@ in many ways:
 * :rax-dev:`Developer Center <>`
   publishes documentation primarily written for software developers:
 
-  * :rax-dev:`Software Development Kits (SDKs) <sdks/>`
   * :rax-api:`API cross-reference <>`
   * :rax-docs:`API documentation, including release notes, developer guides, and getting started guides <>`
 
